@@ -1270,7 +1270,6 @@
           casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color) +
           '<span style="flex:1"></span>' +
           '<button type="button" class="ih-sync-case" data-sync-slug="' + esc(m.slug) + '" title="Sync now — fresh docket entries + a news search; the briefing refreshes if it’s older than 12 hours"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg></button>' +
-          '<button type="button" class="ih-gear" data-case-gear="' + esc(m.slug) + '" title="Colors"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></button>' +
         "</label>";
     });
     html +=
@@ -1416,6 +1415,8 @@
     CASE_DATA = MANIFEST.map(function (m) {
       return { m: m, c: bySlug[m.slug] || {} };
     });
+    COVERAGE_ITEMS = coverageFeedItems();
+    rebuildFeed();
     renderCaseGrid();
     renderDates();
     renderNotes();
@@ -1425,12 +1426,52 @@
     fill("ih-calendar", "");
   });
 
-  fetchJson(BASE + "bondoro.json").then(function (d) {
-    FEED_ITEMS = ((d && d.items) || []).slice()
-      .sort(function (a, b) { return (b.published_at || b.date || "").localeCompare(a.published_at || a.date || ""); });
+  // The tile is "latest news", so it merges BOTH sources the news page uses:
+  // the bondoro feed and each case's own coverage (which is where case-tagged
+  // reporting lands — it used to be missing here entirely).
+  var BONDORO_ITEMS = [];
+  var COVERAGE_ITEMS = [];
+  function rebuildFeed() {
+    var seen = {};
+    FEED_ITEMS = BONDORO_ITEMS.concat(COVERAGE_ITEMS).filter(function (b) {
+      var u = b && b.url;
+      if (!u || seen[u]) return false;
+      seen[u] = 1;
+      return true;
+    }).sort(function (a, b) {
+      return (b.published_at || b.date || "").localeCompare(a.published_at || a.date || "");
+    });
     renderCaseGrid();
     renderUnassigned();
-  }).catch(function () { fill("ih-unassigned", ""); });
+  }
+  function coverageFeedItems() {
+    var out = [];
+    (CASE_DATA || []).forEach(function (cd) {
+      var slug = cd && cd.m && cd.m.slug;
+      var cov = (cd && cd.c && cd.c.coverage) || [];
+      if (!slug) return;
+      cov.forEach(function (a) {
+        var dt = String((a && a.date) || "").slice(0, 10);
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(dt)) return;  // seeded pretty dates don't sort
+        if (!a.url || !(a.headline || a.title)) return;
+        out.push({
+          title: a.headline || a.title,
+          url: a.url,
+          source: a.source || "",
+          kind: "news",
+          date: dt,
+          published_at: dt,
+          case_slug: slug,
+        });
+      });
+    });
+    return out;
+  }
+
+  fetchJson(BASE + "bondoro.json").then(function (d) {
+    BONDORO_ITEMS = ((d && d.items) || []).slice();
+    rebuildFeed();
+  }).catch(function () { rebuildFeed(); });
 
   fetchJson(BASE + "api/notes")
     .then(function (p) { return (p && p.ok && p.entries) || {}; })
