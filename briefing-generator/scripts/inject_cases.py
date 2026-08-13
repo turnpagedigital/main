@@ -82,7 +82,7 @@ UD_CSS = r"""
   .ud-dd-row:hover{background:var(--paper-2);}
   .ud-dd-row input{accent-color:var(--neon);cursor:pointer;flex-shrink:0;margin:0;}
   .ud-dd-spacer{flex:1;}
-  .ud-dd-empty{padding:8px;font-size:13px;color:var(--ink-40);}
+  .ud-dd-empty{padding:10px 12px;font-size:13px;color:var(--ink-60);}
   .ud-dd-groups{border-top:1px solid var(--line);margin-top:6px;padding-top:6px;}
   .ud-dd-groups-title{font-size:10px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-40);padding:2px 8px 4px;}
   .ud-dd-group-row{display:flex;align-items:center;gap:6px;padding:6px 8px;}
@@ -90,7 +90,7 @@ UD_CSS = r"""
   .ud-dd-group-name{flex:1;background:none;border:none;font-family:inherit;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer;text-align:left;padding:0;}
   .ud-dd-group-name:hover{color:var(--ink);text-decoration:underline;}
   .ud-dd-group-n{font-size:11px;color:var(--ink-40);font-weight:400;margin-left:4px;}
-  .ud-dd-group-act{background:none;border:1px solid var(--line-strong);color:var(--ink-60);font-family:inherit;font-size:10px;font-weight:700;letter-spacing:0.04em;cursor:pointer;padding:2px 7px;text-transform:uppercase;}
+  .ud-dd-group-act{background:none;border:1px solid var(--line-strong);color:var(--ink-60);font-family:inherit;font-size:10px;font-weight:700;letter-spacing:0.02em;cursor:pointer;padding:2px 7px;}
   .ud-dd-group-act:hover{border-color:var(--ink-40);color:var(--ink);}
   .ud-dd-group-del{background:none;border:none;color:var(--ink-40);font-size:14px;cursor:pointer;padding:0 3px;line-height:1;}
   .ud-dd-group-del:hover{color:#C84141;}
@@ -362,7 +362,7 @@ UD_CSS = r"""
   .ud-sync-static{color:var(--ink-40);}
   .ud-link{color:var(--ink);font-weight:400;text-decoration:underline;}
 
-  .ud-link-empty{color:var(--ink-40);font-size:inherit;}
+  .ud-link-empty{color:var(--ink-60);font-size:inherit;}
   .ud-empty{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}
   /* ── Shared restyle (ported from the docket): white light canvas, white rows
      with hover, ink header with a 2px rule, darker dividers + day lines,
@@ -1137,7 +1137,7 @@ def render_unified_docket(cases):
     <span id="ud-count"></span>
     <span id="ud-hidden-info" class="uc-curation-info"></span>
     <div class="ud-sync-dd" id="ud-sync-dd">
-      <button type="button" id="ud-sync-btn" class="ud-sync-btn" title="Pull fresh docket entries + news for one case, and refresh its briefing if due">⟳ Sync case</button>
+      <button type="button" id="ud-sync-btn" class="ud-sync-btn" title="Sync now — fresh docket entries + a news search; the briefing refreshes if it’s older than 12 hours">⟳ Sync now</button>
       <div id="ud-sync-panel" class="ud-sync-panel" style="display:none;"></div>
     </div>
   </div>

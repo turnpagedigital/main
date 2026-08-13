@@ -188,8 +188,8 @@
   /* ══ CASES ═══════════════════════════════════════════════════════════════ */
 
   var SYNC_MODES = [
-    { value: "active", label: "Active Sync", hint: "Hourly + nightly syncing, live docket polling, daily news search." },
-    { value: "manual", label: "Manual Sync", hint: "Updates only when you press Sync now. No scheduled searching." },
+    { value: "active", label: "Active sync", hint: "Hourly + nightly syncing, live docket polling, daily news search." },
+    { value: "manual", label: "Manual sync", hint: "Updates only when you press Sync now. No scheduled searching." },
     { value: "archived", label: "Archived", hint: "Docket entries are kept but the case is never searched again." },
   ];
   // ── Pill color popover (same store the dashboard gears use) ───────────────
@@ -319,7 +319,7 @@
           '<td title="' + esc((c.topics || []).map(themeName).join(", ")) + '">' + (c.topics || []).map(themeEmoji).join(" ") + "</td>" +
           '<td class="mg-right">' +
             (dockUrl ? '<a class="mg-btn mg-btn-ghost" href="' + esc(dockUrl) + '" target="_blank" rel="noopener">Docket ↗</a> ' : "") +
-            (sync !== "archived" ? '<button type="button" class="mg-btn" data-sync="' + esc(c.slug) + '">Sync now</button> ' : "") +
+            (sync !== "archived" ? '<button type="button" class="mg-btn" data-sync="' + esc(c.slug) + '" title="Sync now — fresh docket entries + a news search; the briefing refreshes if it’s older than 12 hours">Sync now</button> ' : "") +
             '<button type="button" class="mg-btn" data-export="' + esc(c.slug) + '">Export</button> ' +
             (CASES_LITE ? "" :
               '<button type="button" class="mg-btn" data-edit="' + esc(c.slug) + '">Edit</button> ' +
