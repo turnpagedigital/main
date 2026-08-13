@@ -275,20 +275,6 @@
     "sync": "active"
   },
   {
-    "slug": "sleep-number",
-    "added": "2026-06-12",
-    "display_name": "Sleep Number",
-    "short_name": "Sleep Number",
-    "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "default_color": "#FB923C",
-    "category": "bankruptcy",
-    "topics": [
-      "bankruptcy-creditor-rights"
-    ],
-    "court": "United States Bankruptcy Court, S.D. New York",
-    "sync": "archived"
-  },
-  {
     "slug": "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",
     "added": "2026-08-07",
     "display_name": "Burlap and Barrel",
