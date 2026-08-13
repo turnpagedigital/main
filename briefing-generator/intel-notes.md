@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-13 00:52 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-13 15:08 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -41,6 +41,14 @@ hi
 ### Dkt. 36107 — 2026-08-10 ★
 
 > Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Name on file (Claim No. 8231) To GreenWulf Master Fund, LP. Filed by Cherokee Acquisition. (Faucher, Lisa)
+
+## Getty Images (US) v. Stability AI (N.D. Cal.)
+
+### Dkt. 71 — 2026-08-12
+
+> Opposition/Response to Motion
+
+Discovery-related.
 
 ## Goliath
 
