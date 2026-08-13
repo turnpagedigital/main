@@ -400,8 +400,14 @@
   function renderCaseFilter() {
     var btn = document.getElementById("ud-case-dd-btn");
     var panel = document.getElementById("ud-case-dd-panel");
-    if (!btn || !panel) return;
-    btn.innerHTML = esc(caseFilterLabel()) + ' <span class="ud-dd-caret">▾</span>';
+    if (!panel) return;
+    if (btn) btn.innerHTML = esc(caseFilterLabel()) + ' <span class="ud-dd-caret">▾</span>';
+    // The CASE header cell underlines while a case filter is active.
+    var thc = document.getElementById("uc-th-case");
+    if (thc && CASES.length) {
+      thc.classList.toggle("ud-th-on",
+        CASES.filter(function (c) { return activeCases[c.slug]; }).length !== CASES.length);
+    }
     if (!CASES.length) {
       panel.innerHTML = '<div class="ud-dd-empty">No cases loaded.</div>';
       return;
@@ -1358,6 +1364,33 @@
         closePopover();
       }
     });
+
+    var thCase = document.getElementById("uc-th-case");
+    var casePanel = document.getElementById("ud-case-dd-panel");
+    if (thCase && casePanel) {
+      document.body.appendChild(casePanel);  // page-level positioning under the th
+      thCase.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        if (casePanel.style.display !== "none") { casePanel.style.display = "none"; closePopover(); return; }
+        renderCaseFilter();
+        var rect = thCase.getBoundingClientRect();
+        casePanel.style.position = "absolute";
+        casePanel.style.top = (rect.bottom + window.scrollY + 4) + "px";
+        var left = rect.left + window.scrollX;
+        var maxLeft = window.scrollX + document.documentElement.clientWidth - 288;
+        casePanel.style.left = Math.max(8, Math.min(left, maxLeft)) + "px";
+        casePanel.style.display = "block";
+      });
+      document.addEventListener("click", function (ev) {
+        if (casePanel.style.display === "none") return;
+        if (ev.target && !ev.target.isConnected) return;
+        if (casePanel.contains(ev.target) || thCase.contains(ev.target)) return;
+        var pop = document.getElementById("ud-color-pop");
+        if (pop && pop.contains(ev.target)) return;
+        casePanel.style.display = "none";
+        closePopover();
+      });
+    }
 
     var ddBtn = document.getElementById("ud-case-dd-btn");
     var ddPanel = document.getElementById("ud-case-dd-panel");
