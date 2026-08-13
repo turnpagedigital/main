@@ -141,6 +141,10 @@
   .mg-bi-grp-checks { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 4px 14px; max-height: 220px; overflow-y: auto; margin-bottom: 10px; }
   .mg-bi-grp-check { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--ink); cursor: pointer; }
   .mg-bi-grp-check input { accent-color: var(--neon-block); margin: 0; }
+  .mg-grp-sw { display: inline-flex; align-items: center; gap: 3px; margin-left: 10px; vertical-align: middle; }
+  .mg-grp-swb { width: 15px; height: 15px; border: 1px solid var(--line-strong); cursor: pointer; padding: 0; }
+  .mg-grp-swb.on { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .mg-grp-swb-none { background: transparent; color: var(--ink-60); font-size: 11px; line-height: 1; }
   .mg-bi-grp-check.taken { color: var(--ink-40); cursor: default; }
   .mg-bi-grp-foot { display: flex; align-items: center; gap: 10px; }
 
@@ -204,7 +208,7 @@
       <a class="tn-back" href="news.html">📡 News</a>
       <a class="tn-back" href="prospects.html">🔭 Prospects</a>
     </div>
-    <div class="tn-gear" id="tn-gear"><button type="button" class="tn-gear-btn" id="tn-gear-btn" title="Settings" aria-haspopup="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></button><div class="tn-gear-panel"><a href="manage.html#cases">Cases</a><a href="manage.html#themes">Themes</a><a href="manage.html#groups">Groups</a><a href="manage.html#voice">Voice</a><a href="manage.html#colors">Colors</a></div></div><button id="theme-toggle">🖥️</button>
+    <div class="tn-gear" id="tn-gear"><button type="button" class="tn-gear-btn" id="tn-gear-btn" title="Settings" aria-haspopup="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></button><div class="tn-gear-panel"><a href="manage.html#cases">Cases</a><a href="manage.html#themes">Themes</a><a href="manage.html#groups">Groups</a><a href="manage.html#sources">Sources</a><a href="manage.html#voice">Voice</a><a href="manage.html#colors">Colors</a></div></div><button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
@@ -218,6 +222,7 @@
     <a class="mg-tab" href="#cases" data-tab="cases">Cases</a>
     <a class="mg-tab" href="#themes" data-tab="themes">Themes</a>
     <a class="mg-tab" href="#groups" data-tab="groups">Groups</a>
+    <a class="mg-tab" href="#sources" data-tab="sources">Sources</a>
     <a class="mg-tab" href="#voice" data-tab="voice">Voice</a>
     <a class="mg-tab" href="#colors" data-tab="colors">Colors</a>
     <a class="mg-tab" href="#briefing" data-tab="briefing">Briefings</a>
@@ -226,6 +231,7 @@
   <div id="mg-root"><div class="mg-empty">Loading…</div></div>
 </div>
 
+<script src="intel-sync.js" defer></script>
 <script src="manage.js" defer></script>
 <footer id="tn-site-footer"></footer>
 <script src="intel-footer.js" defer></script>

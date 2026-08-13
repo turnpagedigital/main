@@ -67,6 +67,7 @@
     return "rgba(" + (n >> 16 & 255) + "," + (n >> 8 & 255) + "," + (n & 255) + "," + alpha + ")";
   }
 
+  var SHOW_THEME_EMOJIS = true;  // admin toggle (themes.json show_emojis)
   var THEMES = {
     "rewind-tariffs":               { name: "Tariffs / Trade",            emoji: "⚖️", bg: "#ECFCCB", fg: "#3f6212" },
     "llm-class-action":             { name: "LLM / Copyright",            emoji: "🤖", bg: "#DBEAFE", fg: "#1e40af" },
@@ -111,7 +112,22 @@
   // Monochrome outline pill — white bg / black outline+text, inverted in dark.
   function themePill(slug) {
     var t = themeOf(slug);
-    return '<span class="ih-pill ih-pill-sq ih-pill-theme">' + t.emoji + " " + esc(t.name) + "</span>";
+    return '<span class="ih-pill ih-pill-sq ih-pill-theme">' + (SHOW_THEME_EMOJIS && t.emoji ? t.emoji + " " : "") + esc(t.name) + "</span>";
+  }
+
+  // Briefing-group pills pick up the admin-set group color (Manage →
+  // Briefings); colorless groups keep the muted default.
+  function groupColorOf(name) {
+    var list = (typeof BRIEFING_GROUPS !== "undefined" && BRIEFING_GROUPS) || [];
+    for (var i = 0; i < list.length; i++) {
+      if (list[i] && (list[i].name === name || list[i].id === name)) return list[i].color || "";
+    }
+    return "";
+  }
+  function groupPill(name) {
+    var c = groupColorOf(name);
+    var style = c ? "background:" + c + ";color:" + autoFg(c) : "background:var(--paper-2);color:var(--ink-60)";
+    return '<span class="ih-pill" style="' + style + '">' + esc(name) + "</span>";
   }
 
   // Factory palette = Andrew's Aug 2026 light/dark pairings (was the neon set).
@@ -359,7 +375,7 @@
         slug: g.id,
         display_name: g.name,
         short_name: g.name,
-        default_color: members[0].default_color,
+        default_color: (g.color || members[0].default_color),
         topics: topics,
         added: added,
         group: g,
@@ -727,7 +743,7 @@
         if (!g.length) return;
         g.forEach(function (c) { seen[c.slug] = 1; });
         var t = THEMES[tk] || { emoji: "📰", name: tk };
-        htmlOut += grpHead(t.emoji + " " + t.name, g.length) + join(g);
+        htmlOut += grpHead((SHOW_THEME_EMOJIS && t.emoji ? t.emoji + " " : "") + t.name, g.length) + join(g);
       });
       var rest = cards.filter(function (c) { return !seen[c.slug]; }).sort(byName);
       if (rest.length) htmlOut += grpHead("📰 Other", rest.length) + join(rest);
@@ -828,7 +844,7 @@
       } else if (b.theme_slug && THEMES[b.theme_slug]) {
         pill = themePill(b.theme_slug);
       } else if (b.group_name) {
-        pill = '<span class="ih-pill" style="background:var(--paper-2);color:var(--ink-60)">' + esc(b.group_name) + "</span>";
+        pill = groupPill(b.group_name);
       }
       return row(BASE + "news.html#u=" + encodeURIComponent(b.url),
         fmtDate(b.date) + " \u00b7 " + (b.source || "") + " \u00b7 " + (b.kind || "news"),
@@ -1335,6 +1351,21 @@
       renderCaseGrid();
     });
 
+  // Admin-managed theme names/emojis + the global emoji toggle (slim
+  // projection written by /api/admin/themes).
+  fetchJson(BASE + "themes.json").then(function (d) {
+    SHOW_THEME_EMOJIS = !d || d.show_emojis !== false;
+    ((d && d.themes) || []).forEach(function (t) {
+      if (!t || !t.slug) return;
+      var cur = THEMES[t.slug] || { bg: "#E0E7FF", fg: "#3730a3" };
+      cur.name = t.display_name || cur.name || t.slug;
+      cur.emoji = t.emoji || cur.emoji || "";
+      THEMES[t.slug] = cur;
+    });
+    renderCaseGrid();
+    if (typeof renderUnassigned === "function") renderUnassigned();
+  }).catch(function () {});
+
   // Prospects: live API first (fresh triage state), static file as fallback.
   fetchJson(BASE + "api/prospects")
     .then(function (p) { return (p && p.ok && p.items) || []; })
@@ -1833,32 +1864,69 @@
       });
     });
   }
-  function runManualSync(slug, btn) {
-    btn = btn || document.getElementById("ih-sync-btn");
-    if (!btn) return;
-    var reset = btn.innerHTML, resetTitle = btn.getAttribute("title");
-    btn.disabled = true;
-    btn.textContent = "⏳";
-    btn.setAttribute("title", "Syncing…");
-    fetch("api/admin/manual-sync", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-      body: JSON.stringify({ slug: slug }),
-    }).then(function (r) {
-      return r.json().catch(function () { return {}; }).then(function (j) { return { status: r.status, body: j }; });
-    }).then(function (res) {
-      if (res.status === 401 || res.status === 403) { btn.textContent = "🔒"; btn.setAttribute("title", "Session expired — reload"); }
-      else if (res.body && res.body.ok) { btn.textContent = "✓"; btn.setAttribute("title", "Sync started"); }
-      else { btn.textContent = "✗"; btn.setAttribute("title", "Sync failed"); }
-    }).catch(function () {
-      btn.textContent = "✗"; btn.setAttribute("title", "Sync failed");
-    }).then(function () {
-      setTimeout(function () {
-        btn.disabled = false; btn.innerHTML = reset;
-        if (resetTitle) btn.setAttribute("title", resetTitle);
-      }, 2500);
+  // Live run state per case — drives the ⟳ / ✓ / ⚠ badge next to each
+  // card's action buttons. Failures persist (with the failing step in the
+  // tooltip, click-through to the Actions log) until a newer run clears them.
+  var RUN_STATES = {};
+
+  function paintRunBadge(slug) {
+    var st = RUN_STATES[slug];
+    document.querySelectorAll('[data-run-status="' + slug + '"]').forEach(function (el) {
+      if (!st) { el.innerHTML = ""; el.removeAttribute("title"); el.onclick = null; return; }
+      var url = st.run && st.run.html_url;
+      if (st.state === "queued" || st.state === "running") {
+        el.innerHTML = '<span class="run-spin">⟳</span>';
+        el.setAttribute("title", window.IntelSync ? IntelSync.describe(st) : "Running…");
+        el.onclick = null;
+      } else if (st.state === "success") {
+        el.innerHTML = '<span class="run-ok">✓</span>';
+        el.setAttribute("title", (window.IntelSync ? IntelSync.label(st.run) : "Run") + " finished — fresh data lands on the page shortly.");
+        el.onclick = null;
+      } else {
+        el.innerHTML = '<span class="run-err">⚠</span>';
+        el.setAttribute("title", st.msg || (window.IntelSync ? IntelSync.describe(st) : "Failed"));
+        el.onclick = url ? function (ev) { ev.preventDefault(); ev.stopPropagation(); window.open(url, "_blank"); } : null;
+      }
     });
+  }
+  function paintRunBadges() {
+    Object.keys(RUN_STATES).forEach(paintRunBadge);
+  }
+
+  function runCaseAction(kind, slug) {
+    if (!window.IntelSync) return;
+    var call = kind === "brief" ? IntelSync.briefCase : IntelSync.syncCase;
+    RUN_STATES[slug] = { state: "queued" };
+    paintRunBadge(slug);
+    call(slug).then(function (res) {
+      if (res.status === 401 || res.status === 403) {
+        RUN_STATES[slug] = { state: "failure", msg: "Session expired — reload the page and sign in again" };
+        paintRunBadge(slug);
+      } else if (!(res.body && res.body.ok)) {
+        RUN_STATES[slug] = { state: "failure", msg: (res.body && res.body.error) || "Dispatch failed" };
+        paintRunBadge(slug);
+      } else {
+        IntelSync.watch(slug, kind === "brief" ? ["briefing"] : ["manual-sync", "docket-sync"], function (st) {
+          RUN_STATES[slug] = st;
+          paintRunBadge(slug);
+          if (st.state === "success") {
+            setTimeout(function () {
+              if (RUN_STATES[slug] && RUN_STATES[slug].state === "success") {
+                delete RUN_STATES[slug];
+                paintRunBadge(slug);
+              }
+            }, 30000);
+          }
+        });
+      }
+    }).catch(function () {
+      RUN_STATES[slug] = { state: "failure", msg: "Network error — sync not dispatched" };
+      paintRunBadge(slug);
+    });
+  }
+
+  function runManualSync(slug) {
+    runCaseAction("sync", slug);
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -1875,6 +1943,16 @@
     }
     updateStamp();
     setInterval(updateStamp, 30000);
+    // Surface any failed case run from the last 24h as a persistent ⚠
+    // (so an overnight sync failure is visible without opening GitHub).
+    if (window.IntelSync) {
+      IntelSync.recentFailures().then(function (fails) {
+        Object.keys(fails).forEach(function (slug) {
+          if (!RUN_STATES[slug]) RUN_STATES[slug] = { state: "failure", run: fails[slug] };
+        });
+        paintRunBadges();
+      });
+    }
     wireDropdown("ih-themes-btn", "ih-themes-panel", function () { paintThemePills(); });
     wireDropdown("ih-cases-btn", "ih-cases-panel", buildCasesPanel);
     updateFilterButtons();

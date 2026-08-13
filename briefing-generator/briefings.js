@@ -23,6 +23,7 @@
   }
 
   // ── Theme labels (tags in the meta line) ──────────────────────────────────
+  var SHOW_THEME_EMOJIS = true;
   var THEMES = {};
   function themeOf(slug) {
     return THEMES[slug] || { name: slug, emoji: "📰" };
@@ -30,7 +31,7 @@
   // Monochrome outline tag — white bg / black outline+text, inverted in dark.
   function themeTag(slug) {
     var t = themeOf(slug);
-    return '<span class="ub-tag" title="' + esc(t.name) + '">' + t.emoji + " " + esc(t.name) + "</span>";
+    return '<span class="ub-tag" title="' + esc(t.name) + '">' + (SHOW_THEME_EMOJIS && t.emoji ? t.emoji + " " : "") + esc(t.name) + "</span>";
   }
 
   // ── Case pill colors (shared store: ud-case-colors + intel-prefs) ─────────
@@ -316,7 +317,7 @@
     box.innerHTML = list.map(function (t) {
       var on = sel.indexOf(t.slug) !== -1;
       return '<label class="ce-theme"><input type="checkbox" value="' + esc(t.slug) + '"' + (on ? " checked" : "") + ">" +
-        (t.emoji ? esc(t.emoji) + " " : "") + esc(t.display_name || t.slug) + "</label>";
+        (SHOW_THEME_EMOJIS && t.emoji ? esc(t.emoji) + " " : "") + esc(t.display_name || t.slug) + "</label>";
     }).join("");
   }
   function checkedThemes() {
@@ -496,6 +497,7 @@
 
     // Display names for theme tags follow /admin/intelligence renames.
     fetchJson("themes.json").then(function (d) {
+      SHOW_THEME_EMOJIS = !d || d.show_emojis !== false;
       var list = (d && d.themes) || [];
       THEME_LIST = list.filter(function (t) { return t && t.slug; })
         .map(function (t) { return { slug: t.slug, display_name: t.display_name || t.slug, emoji: t.emoji || "📰" }; });

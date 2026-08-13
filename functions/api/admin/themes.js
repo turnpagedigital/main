@@ -11,9 +11,10 @@
 */
 
 import { isAuthed, jsonResponse } from "./_utils.js";
-import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
+import { getFileFromGitHub, commitFilesToGitHub } from "./_github.js";
 
 const THEMES_PATH = "src/data/themes.json";
+const PUBLIC_PATH = "briefing-generator/themes.json";  // slim projection the intel pages fetch
 const SCHEDULES = ["daily", "weekly", "manual"];
 
 /* ── Validation & normalization ─────────────────────────────────────────── */
@@ -69,15 +70,29 @@ async function loadThemesFile(env) {
   const themes = Array.isArray(data.themes) ? data.themes : [];
   // preserve the file's _comment if present
   const comment = data._comment || null;
-  return { ok: true, themes, comment, sha: r.sha };
+  const showEmojis = data.show_emojis !== false;
+  return { ok: true, themes, comment, showEmojis, sha: r.sha };
 }
 
-async function saveThemesFile(env, themes, comment, sha, message) {
+async function saveThemesFile(env, themes, comment, showEmojis, message) {
   const body = {};
   if (comment) body._comment = comment;
+  body.show_emojis = showEmojis !== false;
   body.themes = themes;
-  const content = JSON.stringify(body, null, 2) + "\n";
-  return commitFileToGitHub(env, THEMES_PATH, content, sha, message);
+  // Slim public projection (no keywords/guidance) for the intel pages.
+  const pub = {
+    show_emojis: showEmojis !== false,
+    themes: themes.map(t => ({
+      slug: t.slug,
+      display_name: t.display_name,
+      emoji: t.emoji || "",
+      active: t.active !== false,
+    })),
+  };
+  return commitFilesToGitHub(env, [
+    { path: THEMES_PATH, content: JSON.stringify(body, null, 2) + "\n" },
+    { path: PUBLIC_PATH, content: JSON.stringify(pub, null, 2) + "\n" },
+  ], message);
 }
 
 /* ── Handler ────────────────────────────────────────────────────────────── */
@@ -96,7 +111,7 @@ export async function onRequest({ request, env }) {
   if (method === "GET") {
     const f = await loadThemesFile(env);
     if (!f.ok) return jsonResponse({ ok: false, error: f.error }, 500);
-    return jsonResponse({ ok: true, themes: f.themes });
+    return jsonResponse({ ok: true, themes: f.themes, show_emojis: f.showEmojis });
   }
 
   // POST — create a new theme
@@ -110,7 +125,7 @@ export async function onRequest({ request, env }) {
     if (err) return jsonResponse({ ok: false, error: err }, 400);
 
     const next = [...f.themes, theme];
-    const saved = await saveThemesFile(env, next, f.comment, f.sha, `Add theme: ${theme.display_name}`);
+    const saved = await saveThemesFile(env, next, f.comment, f.showEmojis, `Add theme: ${theme.display_name}`);
     if (!saved.ok) return jsonResponse({ ok: false, error: saved.error }, 500);
     return jsonResponse({ ok: true, slug: theme.slug });
   }
@@ -120,13 +135,21 @@ export async function onRequest({ request, env }) {
     const f = await loadThemesFile(env);
     if (!f.ok) return jsonResponse({ ok: false, error: f.error }, 500);
 
-    const theme = normalizeTheme(await request.json());
+    const raw = await request.json();
+    // Flag-only update: { show_emojis: bool } with no slug toggles the
+    // site-wide emoji display without touching any theme record.
+    if (raw && typeof raw.show_emojis === "boolean" && !raw.slug) {
+      const saved = await saveThemesFile(env, f.themes, f.comment, raw.show_emojis, `Theme emojis ${raw.show_emojis ? "on" : "off"}`);
+      if (!saved.ok) return jsonResponse({ ok: false, error: saved.error }, 500);
+      return jsonResponse({ ok: true, show_emojis: raw.show_emojis });
+    }
+    const theme = normalizeTheme(raw);
     const existingSlugs = f.themes.map(t => t.slug);
     const err = validateTheme(theme, false, existingSlugs);
     if (err) return jsonResponse({ ok: false, error: err }, 400);
 
     const next = f.themes.map(t => (t.slug === theme.slug ? theme : t));
-    const saved = await saveThemesFile(env, next, f.comment, f.sha, `Update theme: ${theme.display_name}`);
+    const saved = await saveThemesFile(env, next, f.comment, f.showEmojis, `Update theme: ${theme.display_name}`);
     if (!saved.ok) return jsonResponse({ ok: false, error: saved.error }, 500);
     return jsonResponse({ ok: true, slug: theme.slug });
   }
@@ -143,7 +166,7 @@ export async function onRequest({ request, env }) {
       return jsonResponse({ ok: false, error: "theme not found" }, 404);
     }
     const next = f.themes.filter(t => t.slug !== slug);
-    const saved = await saveThemesFile(env, next, f.comment, f.sha, `Remove theme: ${slug}`);
+    const saved = await saveThemesFile(env, next, f.comment, f.showEmojis, `Remove theme: ${slug}`);
     if (!saved.ok) return jsonResponse({ ok: false, error: saved.error }, 500);
     return jsonResponse({ ok: true });
   }
