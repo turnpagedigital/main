@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
-<title>Notes — Turnpage Daily Briefing</title>
+<title>Notes — Turnpage Intelligence</title>
 <script src="theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
@@ -435,7 +435,11 @@
   [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:first-child { border-left: none; }
   [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:last-child { border-right: none; }
   [data-theme="light"] .ud-table tbody tr:last-child td { border-bottom: none; }
-  [data-theme="light"] .ud-row-article td { background: #E7E9EE; border-bottom-color: var(--line-strong); }
+  [data-theme="light"] .ud-row-article td { background: #E7E9EE; }
+  /* One opaque divider color on every row — translucent hairlines read darker
+     over the gray article band than over white, which looked like mixed line
+     weights. */
+  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td { border-bottom-color: #D4D5D9; }
   [data-theme="light"] .ud-row-article:hover td { background: #F0F1F4; }
   /* Header row: ink text (black in light, white in dark), no background bar —
      a thick ink rule under the row separates it from the entries, spanning the
