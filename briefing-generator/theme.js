@@ -172,6 +172,7 @@
     st.textContent=
       '.tn-hamburger{display:none;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:15px;width:32px;height:30px;font-size:16px;line-height:1;cursor:pointer;flex:0 0 auto;}'+
       '.tn.tn-compact .tn-lbl{display:none;}'+
+      '.tn-menu{display:none;}'+
       '[data-theme="light"] .tn-hamburger{border-color:rgba(10,10,10,0.14);color:#0A0A0A;}'+
       '@media (max-width:720px){'+
         '.tn-kbd,#tn-fs{display:none !important;}'+
@@ -182,10 +183,10 @@
         '.tn-row{justify-content:flex-start;flex-wrap:nowrap;}'+
         '.tn-brand-logo{height:26px;}'+
         '.tn-gear{margin-left:auto;}'+
-        '.tn-left.open{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#000;padding:2px 20px 12px;z-index:200;border-bottom:1px solid rgba(255,255,255,0.12);}'+
-        '[data-theme="light"] .tn-left.open{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}'+
-        '.tn-left.open .tn-back{display:block;width:100%;padding:12px 0;border-left:none;border-top:1px solid rgba(255,255,255,0.12);font-size:14px;}'+
-        '[data-theme="light"] .tn-left.open .tn-back{border-top-color:rgba(10,10,10,0.08);}'+
+        '.tn-menu.open{display:block;position:absolute;top:100%;left:0;right:0;background:#000;padding:2px 20px 12px;z-index:200;border-bottom:1px solid rgba(255,255,255,0.12);}'+
+        '[data-theme="light"] .tn-menu.open{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}'+
+        '.tn-menu .tn-back{display:block;width:100%;padding:12px 0;border-left:none;border-top:1px solid rgba(255,255,255,0.12);font-size:14px;}'+
+        '[data-theme="light"] .tn-menu .tn-back{border-top-color:rgba(10,10,10,0.08);}'+
       '}'+
       // Landscape phones: the bar has room for the links but not icon+label —
       // show icons only (short viewport, but wide enough the hamburger is off).
@@ -237,9 +238,37 @@
     // Append to the row (not tn-left) so on mobile it sits to the RIGHT of the
     // gear — logo … gear ☰ on one shorter row. Still toggles the tn-left menu.
     (row||left).appendChild(btn);
-    btn.addEventListener('click',function(e){e.stopPropagation();left.classList.toggle('open');});
-    left.querySelectorAll('.tn-back').forEach(function(a){a.addEventListener('click',function(){left.classList.remove('open');});});
-    document.addEventListener('click',function(e){if(!left.contains(e.target))left.classList.remove('open');});
+    // The dropdown is its own panel appended to the bar — the brand stays put
+    // (making .tn-left itself the panel dragged the logo into the menu).
+    var navBar=document.querySelector('.tn');
+    var menu=document.getElementById('tn-menu');
+    if(!menu&&navBar){
+      menu=document.createElement('div');
+      menu.className='tn-menu';
+      menu.id='tn-menu';
+      navBar.appendChild(menu);
+    }
+    function closeMenu(){if(menu)menu.classList.remove('open');}
+    function fillMenu(){
+      if(!menu)return;
+      menu.innerHTML='';
+      left.querySelectorAll('.tn-back').forEach(function(a){
+        var c=a.cloneNode(true);
+        c.addEventListener('click',closeMenu);
+        menu.appendChild(c);
+      });
+    }
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      if(!menu)return;
+      var open=menu.classList.contains('open');
+      if(open){closeMenu();return;}
+      fillMenu();
+      menu.classList.add('open');
+    });
+    document.addEventListener('click',function(e){
+      if(menu&&menu.classList.contains('open')&&!menu.contains(e.target)&&e.target!==btn)closeMenu();
+    });
   }
 
   // ── Case-color pills — flip background/text in dark mode ──────────────────
