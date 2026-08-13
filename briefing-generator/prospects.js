@@ -214,11 +214,7 @@
       countEl.textContent = list.length + " prospect" + (list.length === 1 ? "" : "s") +
         (TAB === "all" ? "" : " · " + TAB) + " — " + newCount + " awaiting triage";
     }
-    var showSel = document.getElementById("pr-show");
-    if (showSel) Array.prototype.forEach.call(showSel.options, function (o) {
-      var n = tabCount(o.value);
-      o.textContent = TAB_LABELS[o.value] + (o.value === "all" || !n ? "" : " (" + n + ")");
-    });
+    renderStatusPanel();
     var triageTh = document.getElementById("pr-th-triage");
     if (triageTh) {
       var lbl = triageTh.querySelector(".ud-th-label");
@@ -227,8 +223,6 @@
         (TAB === "all" || !n ? "" : " (" + n + ")");
       triageTh.classList.toggle("ud-th-on", TAB !== "new");
     }
-    var showSelSync = document.getElementById("pr-show");
-    if (showSelSync && showSelSync.value !== TAB) showSelSync.value = TAB;
     if (!tbody) return;
     if (!list.length) {
       tbody.innerHTML = '<tr><td colspan="5" class="ud-empty">' +
@@ -903,12 +897,46 @@
 
   // ── Tabs + boot ───────────────────────────────────────────────────────────
   function wireTabs() {
-    var sel = document.getElementById("pr-show");
-    if (!sel) return;
-    sel.value = TAB;
-    sel.addEventListener("change", function () {
-      TAB = sel.value;
-      render();
+    wireStatusDropdown();
+    renderStatusPanel();
+  }
+
+  function renderStatusPanel() {
+    var btn = document.getElementById("pr-status-btn");
+    var panel = document.getElementById("pr-status-panel");
+    if (!btn || !panel) return;
+    var n = tabCount(TAB);
+    btn.innerHTML = "Status: " + esc(TAB_LABELS[TAB] || "New") +
+      (TAB === "all" || !n ? "" : " (" + n + ")") + ' <span class="ud-dd-caret">▾</span>';
+    panel.innerHTML = ["new", "snoozed", "hidden", "dismissed", "tracked", "all"].map(function (t) {
+      var c = tabCount(t);
+      return '<button type="button" class="ud-dd-row pr-status-row' + (t === TAB ? " on" : "") +
+        '" data-status-pick="' + t + '">' + esc(TAB_LABELS[t]) +
+        (t === "all" || !c ? "" : " (" + c + ")") + "</button>";
+    }).join("");
+    panel.querySelectorAll("[data-status-pick]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        TAB = b.getAttribute("data-status-pick");
+        panel.style.display = "none";
+        render();
+      });
+    });
+  }
+
+  function wireStatusDropdown() {
+    var btn = document.getElementById("pr-status-btn");
+    var panel = document.getElementById("pr-status-panel");
+    if (!btn || !panel) return;
+    btn.addEventListener("click", function (ev) {
+      ev.stopPropagation();
+      panel.style.display = panel.style.display === "none" ? "block" : "none";
+      if (panel.style.display === "block") renderStatusPanel();
+    });
+    document.addEventListener("click", function (ev) {
+      if (panel.style.display === "none") return;
+      if (ev.target && !ev.target.isConnected) return;
+      if (panel.contains(ev.target) || btn.contains(ev.target)) return;
+      panel.style.display = "none";
     });
   }
 

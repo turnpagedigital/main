@@ -173,6 +173,7 @@
       '.tn-hamburger{display:none;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:15px;width:32px;height:30px;font-size:16px;line-height:1;cursor:pointer;flex:0 0 auto;}'+
       '.tn.tn-compact .tn-lbl{display:none;}'+
       '.tn-menu{display:none;}'+
+      '.tn-back .tn-ico{font-size:1.2em;margin-right:3px;vertical-align:-1px;}'+
       '[data-theme="light"] .tn-hamburger{border-color:rgba(10,10,10,0.14);color:#0A0A0A;}'+
       '@media (max-width:720px){'+
         '.tn-kbd,#tn-fs{display:none !important;}'+
