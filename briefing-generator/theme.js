@@ -4,6 +4,15 @@
   selCss.id='tn-sel-vars';
   selCss.textContent=':root{--sel-bg:#0A0A0A;--sel-fg:#FFFFFF;}[data-theme="dark"]{--sel-bg:#D4FF00;--sel-fg:#0A0A0A;}';
   (document.head||document.documentElement).appendChild(selCss);
+  // Critical hides, injected NOW (this script is parser-blocking in <head>)
+  // rather than with the rest of the gear CSS at DOMContentLoaded: the gear
+  // panel's links and the legacy theme toggle are in every page's markup, so
+  // deferring these rules flashed "CasesThemesGroupsSourcesVoiceColors" and a
+  // stray toggle button in the top-right on every navigation.
+  var hideCss=document.createElement('style');
+  hideCss.id='tn-critical-hide';
+  hideCss.textContent='.tn-gear-panel{display:none;}.tn-kbd-panel{display:none;}#theme-toggle{display:none !important;}#tn-fs{display:none !important;}';
+  (document.head||document.documentElement).appendChild(hideCss);
   var K='daily-briefing-theme';
   var ST=['system','dark','light'];
   var IC={dark:'\ud83c\udf19',light:'\u2600\ufe0f',system:'\ud83d\udda5\ufe0f'};

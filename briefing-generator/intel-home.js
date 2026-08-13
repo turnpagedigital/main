@@ -837,6 +837,29 @@
   function newsRowsForLevel() {
     return Math.round(NEWS_MIN_ROWS + bandLevel * (NEWS_MAX_ROWS - NEWS_MIN_ROWS));
   }
+  // The band is a stretch grid: all three tiles take the height of the
+  // TALLEST (usually the calendar/notes card), so a low row level left the
+  // News tile half empty until you nudged the slider. newsFitRows is the
+  // measured floor — how many rows it takes to reach the bottom of the tile.
+  var newsFitRows = 0;
+  function newsRowCount() {
+    return Math.max(newsRowsForLevel(), newsFitRows);
+  }
+  function fillNewsToHeight(pass) {
+    var list = document.getElementById("ih-unassigned");
+    if (!list || !list.children.length) return;
+    var last = list.children[list.children.length - 1];
+    var gap = list.getBoundingClientRect().bottom - last.getBoundingClientRect().bottom;
+    var rowH = last.getBoundingClientRect().height;
+    if (!rowH || gap < rowH) return;                       // already full
+    var want = Math.min(list.children.length + Math.floor(gap / rowH), NEWS_MAX_ROWS);
+    if (want <= list.children.length) return;              // feed exhausted
+    newsFitRows = want;
+    renderUnassigned();
+    // Rows wrap to 1-2 lines, so one measurement can undershoot; cap the
+    // passes so an exhausted feed can't spin.
+    if ((pass || 0) < 2) fillNewsToHeight((pass || 0) + 1);
+  }
   function calWantsTwoWeeks() {
     return bandLevel > 0.5;
   }
@@ -852,7 +875,7 @@
     });
     var countEl = document.getElementById("ih-unassigned-count");
     if (countEl) countEl.textContent = "View all \u2192";
-    fill("ih-unassigned", items.slice(0, newsRowsForLevel()).map(function (b) {
+    fill("ih-unassigned", items.slice(0, newsRowCount()).map(function (b) {
       var pill = "";
       var mc = b.case_slug && MANIFEST.find(function (m) { return m.slug === b.case_slug; });
       if (mc) {
@@ -1075,6 +1098,9 @@
     renderDates();
     renderNotes();
     updateFilterButtons();
+    // After the siblings have laid out, top the News list up to the tile
+    // height so it never renders short with dead space beneath it.
+    requestAnimationFrame(function () { fillNewsToHeight(0); });
   }
 
   // ── Prospects tile — candidate cases from the theme scans ─────────────────
@@ -1893,6 +1919,7 @@
         var oldRows = newsRowsForLevel();
         var oldTwoWeeks = calWantsTwoWeeks();
         bandLevel = next;
+        newsFitRows = 0;   // the drag is authoritative while it's happening
         if (newsRowsForLevel() !== oldRows) renderUnassigned();
         if (calWantsTwoWeeks() !== oldTwoWeeks) renderDates();
       }
@@ -1902,6 +1929,7 @@
         grip.classList.remove("on");
         document.body.style.cursor = "";
         try { localStorage.setItem(BAND_ROWS_KEY, String(bandLevel)); } catch (e2) {}
+        fillNewsToHeight(0);   // settle back to a full tile on release
       }
       document.addEventListener("mousemove", mv);
       document.addEventListener("mouseup", up);
@@ -2028,7 +2056,11 @@
     var _reflowTimer;
     window.addEventListener("resize", function () {
       clearTimeout(_reflowTimer);
-      _reflowTimer = setTimeout(reflowThemeFilter, 150);
+      _reflowTimer = setTimeout(function () {
+        reflowThemeFilter();
+        newsFitRows = 0;
+        fillNewsToHeight(0);
+      }, 150);
     });
     // Re-measure once the web font has loaded and the page has fully settled —
     // the first pass can run before Archivo is ready and under-measure the pills.
