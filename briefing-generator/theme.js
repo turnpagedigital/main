@@ -325,9 +325,16 @@
     var key='tn-colw-'+((location.pathname.split('/').pop()||'index.html').replace(/\.html$/,'')||'index');
     var saved={};
     try{saved=JSON.parse(localStorage.getItem(key)||'{}')||{};}catch(e){}
+    var cleaned=false;
     ths.forEach(function(th,i){
       var id=th.id||('col'+i);
-      if(saved[id])th.style.width=saved[id]+'px';
+      // A th with no baked-in inline width is the FLEX column (Entry) — it must
+      // absorb leftover space, so never apply or persist a width for it: with
+      // every column pinned, Safari's fixed layout sizes the table to the sum
+      // instead of 100% and the table collapses to half the window.
+      var flex=!th.style.width;
+      if(flex&&saved[id]){delete saved[id];cleaned=true;}
+      if(saved[id]&&!flex)th.style.width=saved[id]+'px';
       var g=document.createElement('span');
       g.className='tn-col-grip';
       g.title='Drag to resize column';
@@ -341,7 +348,7 @@
         function mv(ev){
           var w=Math.max(48,Math.round(w0+(ev.clientX-x0)));
           th.style.width=w+'px';
-          saved[id]=w;
+          if(!flex)saved[id]=w;
         }
         function up(){
           document.removeEventListener('mousemove',mv);
@@ -354,6 +361,9 @@
         document.addEventListener('mouseup',up);
       });
     });
+    // Write the cleanup back right away so a stored flex-column width from
+    // before this fix stops breaking layouts on the very next load.
+    if(cleaned){try{localStorage.setItem(key,JSON.stringify(saved));}catch(e3){}}
   }
   apply();
   if(document.readyState!=='loading') wire();
