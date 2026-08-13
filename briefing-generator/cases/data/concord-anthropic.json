@@ -8,14 +8,30 @@
     "judge": "Eumi K. Lee",
     "docket_id": "68889092",
     "status": "active",
-    "sync": "manual"
+    "sync": "manual",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
-    "new_in_72h": 0,
+    "date_last_filing": "2026-08-11",
+    "meta_fetched_at": "2026-08-13T16:16:38.115265+00:00",
+    "fetched_at": "2026-08-13T16:16:38.115265+00:00",
+    "as_of": "Aug 13, 2026",
+    "backfilled": true,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-11",
+        "time_filed": "14:20:47",
+        "date_display": "Aug 11, 2026",
+        "description": "Clerk's Notice AND Clerk's Notice Setting Zoom Hearing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 754,
         "date_filed": "2026-07-29",
@@ -35,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 753,
-        "date_filed": "2026-07-27",
-        "time_filed": "16:25:45",
-        "date_display": "Jul 27, 2026",
-        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal Opposition to Publishers' Motion to Exclude Expert Testimony of Dr. Abhishek Nagaraj by Anthropic PBC. (Attachments: # 1 Exhibit 2, # 2 Exhibit 3, # 3 Exhibit 4, # 4 Exhibit 5)(Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-11",
+        "time_filed": "14:20:47",
+        "date_display": "Aug 11, 2026",
+        "description": "Clerk's Notice AND Clerk's Notice Setting Zoom Hearing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 754,
         "date_filed": "2026-07-29",
@@ -8373,11 +8389,7 @@
         "landmark": "",
         "doc_url": ""
       }
-    ],
-    "date_last_filing": "2026-07-29",
-    "fetched_at": "2026-08-10T23:53:01.708026+00:00",
-    "as_of": "Aug 10, 2026",
-    "backfilled": true
+    ]
   },
   "claims_administrator": null,
   "coverage": [

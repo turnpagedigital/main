@@ -2,59 +2,145 @@
   "case": {
     "slug": "blockfills",
     "display_name": "BlockFills",
-    "case_name": "Reliz Technology Group Holdings Inc., et al. (BlockFills)",
+    "case_name": "Reliz Technology Group Holdings Inc.",
     "court": "Bankr. D. Del.",
     "case_number": "26-10371",
     "judge": "Thomas M. Horan",
     "docket_id": "72494188",
     "status": "active",
-    "sync": "archived"
+    "sync": "archived",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72494188/reliz-technology-group-holdings-inc/",
-    "new_in_72h": 1,
+    "date_last_filing": "2026-08-12",
+    "meta_fetched_at": "2026-08-13T16:16:26.650790+00:00",
+    "fetched_at": "2026-08-13T16:16:26.650790+00:00",
+    "as_of": "Aug 13, 2026",
+    "backfilled": true,
+    "new_in_72h": 8,
     "recent": [
       {
-        "entry_number": 561,
-        "date_filed": "2026-08-10",
-        "time_filed": "11:53:50",
-        "date_display": "Aug 10, 2026",
-        "description": "Employ (Application)",
+        "entry_number": 568,
+        "date_filed": "2026-08-12",
+        "time_filed": "18:47:52",
+        "date_display": "Aug 12, 2026",
+        "description": "Certificate of Service",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 560,
-        "date_filed": "2026-08-07",
-        "time_filed": "16:01:48",
-        "date_display": "Aug 7, 2026",
-        "description": "Certificate of No Objection",
-        "is_new": false,
+        "entry_number": 567,
+        "date_filed": "2026-08-12",
+        "time_filed": "18:43:38",
+        "date_display": "Aug 12, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 559,
-        "date_filed": "2026-08-06",
-        "time_filed": "20:20:36",
-        "date_display": "Aug 6, 2026",
-        "description": "Certificate of Service",
-        "is_new": false,
+        "entry_number": 566,
+        "date_filed": "2026-08-11",
+        "time_filed": "17:53:46",
+        "date_display": "Aug 11, 2026",
+        "description": "Appearance - Notice",
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
       {
+        "entry_number": 568,
+        "date_filed": "2026-08-12",
+        "time_filed": "18:47:52",
+        "date_display": "Aug 12, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 567,
+        "date_filed": "2026-08-12",
+        "time_filed": "18:43:38",
+        "date_display": "Aug 12, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 566,
+        "date_filed": "2026-08-11",
+        "time_filed": "17:53:46",
+        "date_display": "Aug 11, 2026",
+        "description": "Appearance - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 565,
+        "date_filed": "2026-08-11",
+        "time_filed": "17:51:19",
+        "date_display": "Aug 11, 2026",
+        "description": "Appearance - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 564,
+        "date_filed": "2026-08-11",
+        "time_filed": "14:13:16",
+        "date_display": "Aug 11, 2026",
+        "description": "Compensation - Application (Attorney)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 563,
+        "date_filed": "2026-08-11",
+        "time_filed": "09:00:52",
+        "date_display": "Aug 11, 2026",
+        "description": "Agenda of Matters Scheduled for Hearing (HEARING CANCELLED) - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 562,
+        "date_filed": "2026-08-11",
+        "time_filed": "08:54:02",
+        "date_display": "Aug 11, 2026",
+        "description": "Appearance - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-11",
+        "time_filed": "17:55:36",
+        "date_display": "Aug 11, 2026",
+        "description": "Add Attorney",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 561,
         "date_filed": "2026-08-10",
         "time_filed": "11:53:50",
         "date_display": "Aug 10, 2026",
         "description": "Employ (Application)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -5871,11 +5957,7 @@
         "landmark": "",
         "doc_url": ""
       }
-    ],
-    "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-10T23:52:50.304449+00:00",
-    "as_of": "Aug 10, 2026",
-    "backfilled": true
+    ]
   },
   "claims_administrator": {
     "name": "Veritaglobal",
