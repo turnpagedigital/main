@@ -27,7 +27,7 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "Bankr. D. Del.",
-    "sync": "archived"
+    "sync": "active"
   },
   {
     "slug": "britannica-merriam-webster-v-openai",
@@ -41,7 +41,7 @@
       "llm-class-action"
     ],
     "court": "U.S. District Court (filed March 2026; district not confirmed in sources)",
-    "sync": "manual"
+    "sync": "active"
   },
   {
     "slug": "concord-anthropic",
@@ -55,7 +55,7 @@
       "llm-class-action"
     ],
     "court": "District Court, N.D. California",
-    "sync": "manual"
+    "sync": "active"
   },
   {
     "slug": "getty-images-us-v-stability-ai-nd-cal",
@@ -84,7 +84,7 @@
       "crypto-insolvency"
     ],
     "court": "S.D. Fl.",
-    "sync": "manual"
+    "sync": "active"
   },
   {
     "slug": "hachette-et-al-v-google-llc-gemini",
@@ -98,7 +98,7 @@
       "llm-class-action"
     ],
     "court": "S.D.N.Y.",
-    "sync": "manual"
+    "sync": "active"
   },
   {
     "slug": "hachette-et-al-v-meta-platforms-llama",
@@ -112,7 +112,7 @@
       "llm-class-action"
     ],
     "court": "To be confirmed (filed May 5, 2026)",
-    "sync": "manual"
+    "sync": "active"
   },
   {
     "slug": "harvest-sherwood",
@@ -140,7 +140,7 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "To be confirmed (financials sector Ch. 11, filed ~July 21, 2026)",
-    "sync": "manual"
+    "sync": "active"
   },
   {
     "slug": "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026",
@@ -156,7 +156,7 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "United States Bankruptcy Court, D. Delaware",
-    "sync": "manual"
+    "sync": "active"
   },
   {
     "slug": "kadrey-v-meta-contributory-infringement-amendment",
@@ -170,7 +170,7 @@
       "llm-class-action"
     ],
     "court": "District Court N.D. Cal.",
-    "sync": "manual"
+    "sync": "active"
   },
   {
     "slug": "kahan",
@@ -228,7 +228,7 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "Bankr. D. N.J.",
-    "sync": "manual"
+    "sync": "active"
   },
   {
     "slug": "power-block-coin",
@@ -244,7 +244,7 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "Bankr. D. Utah",
-    "sync": "manual"
+    "sync": "active"
   },
   {
     "slug": "publishers-v-google-llc-gemini-books",
@@ -316,7 +316,7 @@
       "llm-class-action"
     ],
     "court": "U.S. Court of Appeals for the Third Circuit",
-    "sync": "archived"
+    "sync": "active"
   },
   {
     "slug": "vos-selections-v-trump",

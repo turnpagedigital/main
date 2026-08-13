@@ -8,12 +8,18 @@
     "judge": "Robert Mark",
     "docket_id": "72497647",
     "status": "active",
-    "sync": "manual"
+    "sync": "manual",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72497647/goliath-ventures-inc/",
+    "date_last_filing": "2026-07-28",
+    "meta_fetched_at": "2026-08-13T16:16:49.542994+00:00",
+    "fetched_at": "2026-08-13T16:16:49.542994+00:00",
+    "as_of": "Aug 13, 2026",
+    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -329,11 +335,7 @@
         "landmark": "",
         "doc_url": ""
       }
-    ],
-    "date_last_filing": "2026-07-28",
-    "fetched_at": "2026-08-10T22:59:19.222371+00:00",
-    "as_of": "Aug 10, 2026",
-    "backfilled": true
+    ]
   },
   "claims_administrator": null,
   "coverage": [

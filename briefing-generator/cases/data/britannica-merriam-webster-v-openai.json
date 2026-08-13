@@ -2,20 +2,36 @@
   "case": {
     "slug": "britannica-merriam-webster-v-openai",
     "display_name": "Britannica v. OpenAI",
-    "case_name": "Encyclopaedia Britannica, Inc. and Merriam-Webster, Inc. v. OpenAI, Inc. et al.",
+    "case_name": "Encyclopaedia Britannica, Inc. v. OpenAI, Inc.",
     "court": "U.S. District Court (filed March 2026; district not confirmed in sources)",
     "case_number": "1:26-cv-02097",
     "judge": "Sidney H. Stein",
     "docket_id": "72492986",
     "status": "active",
-    "sync": "manual"
+    "sync": "manual",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/",
-    "new_in_72h": 0,
+    "date_last_filing": "2026-08-12",
+    "meta_fetched_at": "2026-08-13T16:16:32.261940+00:00",
+    "fetched_at": "2026-08-13T16:16:32.261940+00:00",
+    "as_of": "Aug 13, 2026",
+    "backfilled": true,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 59,
+        "date_filed": "2026-08-12",
+        "time_filed": "11:58:14",
+        "date_display": "Aug 12, 2026",
+        "description": "Memo Endorsement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.59.0.pdf"
+      },
       {
         "entry_number": 58,
         "date_filed": "2026-08-07",
@@ -35,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.57.0.pdf"
-      },
-      {
-        "entry_number": 56,
-        "date_filed": "2026-08-05",
-        "time_filed": "17:34:43",
-        "date_display": "Aug 5, 2026",
-        "description": "Proposed Stipulation and Order",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.56.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 59,
+        "date_filed": "2026-08-12",
+        "time_filed": "11:58:14",
+        "date_display": "Aug 12, 2026",
+        "description": "Memo Endorsement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.59.0.pdf"
+      },
       {
         "entry_number": 58,
         "date_filed": "2026-08-07",
@@ -958,11 +974,7 @@
         "landmark": "",
         "doc_url": ""
       }
-    ],
-    "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-10T23:52:56.119889+00:00",
-    "as_of": "Aug 10, 2026",
-    "backfilled": true
+    ]
   },
   "claims_administrator": null,
   "coverage": [
