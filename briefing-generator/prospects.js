@@ -27,6 +27,7 @@
   }
 
   var THEMES = {};   // slug → {name, emoji} (hydrated from themes.json)
+  var SHOW_THEME_EMOJIS = true;
 
   function themeOf(slug) {
     return THEMES[slug] || { name: slug || "untagged", emoji: "📰" };
@@ -35,7 +36,7 @@
   // Monochrome outline pill — white bg / black outline+text, inverted in dark.
   function themePill(slug) {
     var t = themeOf(slug);
-    return '<span class="ud-pill ud-pill-sq ud-pill-theme">' + t.emoji + " " + esc(t.name) + "</span>";
+    return '<span class="ud-pill ud-pill-sq ud-pill-theme">' + (SHOW_THEME_EMOJIS && t.emoji ? t.emoji + " " : "") + esc(t.name) + "</span>";
   }
 
   function fmtDate(iso) {
@@ -914,6 +915,7 @@
     if (xTa) xTa.addEventListener("input", function () { updateSocialCount("pr-social-x", "pr-social-x-count", 280); });
 
     fetchJson("themes.json").then(function (d) {
+      SHOW_THEME_EMOJIS = !d || d.show_emojis !== false;
       ((d && d.themes) || []).forEach(function (t) {
         if (!t || !t.slug) return;
         THEMES[t.slug] = { name: t.display_name || t.slug, emoji: t.emoji || "📰" };

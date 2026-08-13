@@ -115,9 +115,11 @@
   var UPLOADS = {};
   var UNASSIGNED_KEY = "__unassigned__";
   var THEME_INFO = {};  // slug → {name, emoji} from themes.json (admin-managed)
+  var SHOW_THEME_EMOJIS = true;
 
   function loadThemeInfo() {
     fetchJson("themes.json").then(function (d) {
+      SHOW_THEME_EMOJIS = !d || d.show_emojis !== false;
       ((d && d.themes) || []).forEach(function (t) {
         if (t && t.slug) THEME_INFO[t.slug] = { name: t.display_name || t.slug, emoji: t.emoji || "" };
       });
@@ -130,7 +132,7 @@
   function themePillHtml(slug) {
     var info = THEME_INFO[slug] || { name: slug, emoji: "" };
     return '<span class="ud-pill ud-pill-sq" style="background:var(--surface);color:var(--ink);border:1px solid var(--ink)">' +
-      (info.emoji ? info.emoji + " " : "") + esc(info.name) + "</span>";
+      (SHOW_THEME_EMOJIS && info.emoji ? info.emoji + " " : "") + esc(info.name) + "</span>";
   }
   var RENDERED = [];
   var RENAMED = {};  // "slug|nNN" → manual title (case JSON is canonical)
@@ -510,6 +512,7 @@
       "</div>" +
       section("Feeds", "feed", feeds) +
       section("News outlets", "press", press) +
+      '<a href="manage.html#sources" style="display:block;padding:8px 12px;font-size:11px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;color:var(--ink-60,inherit);border-top:1px solid rgba(128,128,128,0.25);">\u2699 Manage sources</a>' +
       '<button type="button" class="ud-dd-save-btn ud-dd-saveview" data-close-panel>Save view</button>';
 
     var saveView = panel.querySelector("[data-close-panel]");
@@ -1401,10 +1404,26 @@
     return matches.every(function (s) { return s.mode === "case-only"; }) ? "case-only" : "all";
   }
 
+  // Where a feed item is allowed to surface (Manage → Sources "Shows in").
+  // Items scanned since Aug 2026 carry their own `show`; older ones fall
+  // back to the current source list, defaulting to visible everywhere.
+  function feedShowTarget(item) {
+    if (item.show === "docket" || item.show === "news") return item.show;
+    if (!FEED_SOURCES.length) return "both";
+    var matches = FEED_SOURCES.filter(function (s) {
+      if (item.source_id && s.id) return s.id === item.source_id;
+      return (s.name || "").toLowerCase() === (item.source || "").toLowerCase();
+    });
+    if (!matches.length) return "both";
+    var shows = matches.map(function (s) { return s.show === "docket" || s.show === "news" ? s.show : "both"; });
+    return shows.every(function (v) { return v === shows[0]; }) ? shows[0] : "both";
+  }
+
   function bondoroEntries() {
     var out = [];
     BONDORO.forEach(function (b) {
       if (!b.url || !b.title) return;
+      if (feedShowTarget(b) === "docket") return;  // docket-only sources stay off the news rail
       var c = b.case_slug ? caseBySlug(b.case_slug) : null;
       var grp = !c && b.group_name ? findGroup(b.group_name) : null;
       var themeSlug = b.theme_slug || "";
@@ -1497,7 +1516,7 @@
         tb.type = "button";
         tb.className = "ud-th-menu-item";
         var on = cur && cur.theme_slug === slug;
-        tb.textContent = (on ? "\u2713 " : "") + (info.emoji ? info.emoji + " " : "") + info.name;
+        tb.textContent = (on ? "\u2713 " : "") + (SHOW_THEME_EMOJIS && info.emoji ? info.emoji + " " : "") + info.name;
         tb.addEventListener("click", function () {
           assignTheme(url, on ? null : slug);
           closeAssignMenu();

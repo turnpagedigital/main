@@ -97,6 +97,7 @@
   var CASES = [];        // /api/admin/cases
   var CASES_ERR = "";    // load failure surfaced in the Cases tab (page still works)
   var CASES_LITE = false; // true = roster built from the static manifest (read-only editing)
+  var THEMES_SHOW_EMOJIS = true;  // /api/admin/themes show_emojis flag
   var THEMES = [          // /api/admin/themes overwrites; fallback keeps editors usable
     { slug: "rewind-tariffs", display_name: "Tariffs / Trade", emoji: "⚖️" },
     { slug: "llm-class-action", display_name: "LLM / Copyright", emoji: "🤖" },
@@ -165,9 +166,9 @@
   }
 
   // ── Tab router ─────────────────────────────────────────────────────────────
-  var TABS = { cases: renderCases, themes: renderThemes, groups: renderGroups, voice: renderVoice, colors: renderColors, briefing: renderBriefingInputs };
+  var TABS = { cases: renderCases, themes: renderThemes, groups: renderGroups, sources: renderSources, voice: renderVoice, colors: renderColors, briefing: renderBriefingInputs };
   function currentTab() {
-    var m = /#(cases|themes|groups|voice|colors|briefing)/.exec(location.hash || "");
+    var m = /#(cases|themes|groups|sources|voice|colors|briefing)/.exec(location.hash || "");
     return m ? m[1] : "cases";
   }
   function paintTabs() {
@@ -293,6 +294,7 @@
   function defaultCase() {
     return {
       slug: "", display_name: "", short_name: "", type: "case", status: "active", sync: "active",
+      docket_history: "full",
       topics: [],
       case: { parties: "", court: "", case_number: "", judge: "" },
       docket_source: { type: "courtlistener", docket_id: null, url: "", awaiting_sync: false },
@@ -395,14 +397,29 @@
     });
     root.querySelectorAll("[data-sync]").forEach(function (b) {
       b.addEventListener("click", function () {
-        b.disabled = true; b.textContent = "…";
-        apiFetch("/api/admin/sync-case", {
-          method: "POST", headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ slug: b.getAttribute("data-sync") }),
-        }).then(function (r) { return r.json(); }).then(function (j) {
-          if (!j.ok) throw new Error(j.error || "Sync dispatch failed");
-          setBanner("ok", j.note || "Sync started."); renderCases();
-        }).catch(function (e) { setBanner("err", String(e.message || e)); renderCases(); });
+        var slug = b.getAttribute("data-sync");
+        function reset() { b.disabled = false; b.textContent = "Sync now"; }
+        b.disabled = true; b.textContent = "Dispatching…";
+        if (!window.IntelSync) { setBanner("err", "Sync helper failed to load — hard-refresh the page."); reset(); return; }
+        IntelSync.syncCase(slug).then(function (res) {
+          if (res.status === 401 || res.status === 403) {
+            setBanner("err", "Session expired — reload and sign in again."); reset();
+          } else if (res.body && res.body.ok) {
+            setBanner("ok", "Sync started for " + slug + " — fresh docket + news search, and a briefing if the last one is over 12h old. Watching the run…");
+            b.textContent = "Running…";
+            IntelSync.watch(slug, ["manual-sync", "docket-sync"], function (st) {
+              if (st.state === "success") {
+                setBanner("ok", "Sync finished for " + slug + "."); reset();
+              } else if (st.state === "failure" || st.state === "timeout" || st.state === "lost") {
+                setBanner("err", "Sync for " + slug + ": " + IntelSync.describe(st) +
+                  (st.run && st.run.html_url ? " — " + st.run.html_url : ""));
+                reset();
+              }
+            });
+          } else {
+            setBanner("err", (res.body && res.body.error) || "Sync dispatch failed"); reset();
+          }
+        }).catch(function (e) { setBanner("err", String((e && e.message) || e)); reset(); });
       });
     });
     root.querySelectorAll("[data-export]").forEach(function (b) {
@@ -482,6 +499,10 @@
             '<button type="button" class="mg-btn" id="cf-lookup">Look up</button></div>' +
             '<div class="mg-note" id="cf-lookup-msg">Enter the CourtListener docket ID and click Look up to auto-fill parties, court, case number, and judge.</div></div>' +
           '<div class="mg-field"><label>Docket URL</label><input type="url" id="cf-docketurl" value="' + esc(form.docket_source.url || "") + '" placeholder="https://www.courtlistener.com/docket/…"></div>' +
+          '<div class="mg-field" style="max-width:360px"><label>Docket history</label><select id="cf-history">' +
+            '<option value="full"' + ((form.docket_history || "full") !== "prospective" ? " selected" : "") + ">Full — backfill older filings</option>" +
+            '<option value="prospective"' + ((form.docket_history || "full") === "prospective" ? " selected" : "") + ">Prospective — new filings only</option>" +
+          '</select><div class="mg-note">Full walks the entire docket history over time — thorough, but it spends CourtListener quota (heavy on monster dockets like FTX). Prospective only pulls filings from now on.</div></div>' +
           '<label class="mg-check" style="max-width:420px"><input type="checkbox" id="cf-awaiting"' + (form.docket_source.awaiting_sync ? " checked" : "") + "> Awaiting sync (dormant until docket refresh)</label>" +
         "</div>" +
         '<div id="cf-src-ca" style="display:' + (isCL ? "none" : "block") + '">' +
@@ -609,6 +630,7 @@
         type: form.type || "case",
         status: $("cf-status").value.trim() || "active",
         sync: $("cf-sync").value,
+        docket_history: isCLNow ? $("cf-history").value : "full",
         topics: topics,
         case: {
           parties: $("cf-parties").value.trim(),
@@ -678,12 +700,25 @@
       '<div class="mg-head"><h2>Themes</h2>' +
         '<button type="button" class="mg-btn mg-btn-primary" id="mg-new-theme">＋ New theme</button></div>' +
       '<p class="mg-hint">The standing practice areas. Each theme drives its own scan (keywords + guidance) and appears as a filter pill on the dashboard.</p>' +
+      '<label class="mg-check" style="display:inline-flex;align-items:center;gap:7px;margin:0 0 16px;"><input type="checkbox" id="mg-emoji-toggle"' + (THEMES_SHOW_EMOJIS ? " checked" : "") + '> Show theme emojis across the site</label>' +
       '<div class="mg-box"><table class="mg-table">' +
         "<thead><tr><th>Theme</th><th>Status</th><th>Schedule</th><th>Scan</th><th class=\"mg-right\">Actions</th></tr></thead>" +
         "<tbody>" + (rows || '<tr><td colspan="5" class="mg-empty">No themes.</td></tr>') + "</tbody>" +
       "</table></div>";
 
     $("mg-new-theme").addEventListener("click", function () { renderThemeEditor(null); });
+    var emT = $("mg-emoji-toggle");
+    if (emT) emT.addEventListener("change", function () {
+      var want = emT.checked;
+      apiFetch("/api/admin/themes", {
+        method: "PUT", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ show_emojis: want }),
+      }).then(function (r) { return r.json(); }).then(function (j) {
+        if (!j.ok) throw new Error(j.error || "save failed");
+        THEMES_SHOW_EMOJIS = want;
+        setBanner("ok", "Theme emojis " + (want ? "shown" : "hidden") + " across the site (next page load).");
+      }).catch(function (e) { emT.checked = !want; setBanner("err", String(e.message || e)); });
+    });
     root.querySelectorAll("[data-edit]").forEach(function (b) {
       b.addEventListener("click", function () {
         var t = THEMES.filter(function (x) { return x.slug === b.getAttribute("data-edit"); })[0];
@@ -1059,6 +1094,8 @@
       .catch(function () { el.textContent = "Couldn’t load."; });
   }
 
+  var GROUP_SWATCHES = ["#fff5c7", "#fde864", "#cafb67", "#8df7e0", "#ffca9e", "#ffc2c8", "#d7cdff", "#c2d7ff", "#a9e2ff", "#ffc2e7", "#e6e6e6"];
+
   function slugifyGroup(name) {
     return String(name || "").toLowerCase().replace(/['’.]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 50);
   }
@@ -1093,7 +1130,14 @@
                 var c = CASES.filter(function (x) { return x.slug === slug; })[0];
                 return c ? casePill(c.slug, c.short_name || c.display_name) : esc(slug);
               }).join(" ");
-              return '<div class="mg-bi-grp-row"><strong style="font-size:12.5px;">' + esc(g.name) + "</strong> — " + members +
+              var nameHtml = g.color
+                ? '<span style="display:inline-block;background:' + esc(g.color) + ";color:" + autoFg(g.color) + ';padding:2px 10px;font-weight:800;font-size:11.5px;">' + esc(g.name) + "</span>"
+                : '<strong style="font-size:12.5px;">' + esc(g.name) + "</strong>";
+              var sw = '<span class="mg-grp-sw" title="Pill color for this group">' + GROUP_SWATCHES.map(function (c) {
+                  return '<button type="button" class="mg-grp-swb' + (g.color === c ? " on" : "") + '" data-gsw="' + gi + "|" + c + '" style="background:' + c + '"></button>';
+                }).join("") +
+                '<button type="button" class="mg-grp-swb mg-grp-swb-none' + (!g.color ? " on" : "") + '" data-gsw="' + gi + '|" title="No color">×</button></span>';
+              return '<div class="mg-bi-grp-row">' + nameHtml + " — " + members + sw +
                 ' <button type="button" class="mg-bi-grp-del" data-del="' + gi + '" title="Ungroup — members go back to their own briefings">×</button></div>';
             }).join("")
           : '<div class="mg-hint" style="margin:0 0 10px;">No briefing groups yet — every case gets its own briefing.</div>';
@@ -1117,6 +1161,18 @@
             biSaveGroups(groups.filter(function (_, j) { return j !== i; }), el.querySelector(".mg-bi-grp-status"));
           });
         });
+        el.querySelectorAll("[data-gsw]").forEach(function (b) {
+          b.addEventListener("click", function () {
+            var parts = b.getAttribute("data-gsw").split("|");
+            var idx = Number(parts[0]), col = parts[1];
+            biSaveGroups(groups.map(function (g, j) {
+              if (j !== idx) return g;
+              var ng = { id: g.id, name: g.name, members: g.members };
+              if (col) ng.color = col;
+              return ng;
+            }), el.querySelector(".mg-bi-grp-status"));
+          });
+        });
         var createBtn = el.querySelector(".mg-bi-grp-create");
         if (createBtn) createBtn.addEventListener("click", function () {
           var status = el.querySelector(".mg-bi-grp-status");
@@ -1132,97 +1188,173 @@
       .catch(function () { el.textContent = "Couldn’t load."; });
   }
 
-  // ── News feed sources — relocated from the docket/news toolbar "Sources"
-  // button (same /intel/api/feed-sources data; docket.js/news.js keep only
-  // the read side, feedSourceMode(), for their own row filtering). ─────────
-  var BI_FEED_SOURCES = [];
+  /* ══ SOURCES — every outlet feeding the docket + news pages ═════════════
+     One home for feed-sources.json (was: Briefings tab / docket toolbar).
+     Each source: type "rss" (URL may be a plain page — the scanner
+     autodiscovers the feed) or "search" (Claude + web_search sweeps the
+     outlet each scan), and a `show` target (docket / news / both). ────────*/
+  var SRC_LIST = [];
+  var SRC_READONLY = false;
+  var SRC_TYPES = [
+    { value: "rss", label: "RSS feed" },
+    { value: "search", label: "Web search" },
+  ];
+  var SRC_SHOWS = [
+    { value: "both", label: "Docket + News" },
+    { value: "docket", label: "Docket only" },
+    { value: "news", label: "News only" },
+  ];
 
-  function biRenderSourceList() {
-    var list = $("mg-bi-src-list");
-    if (!list) return;
-    if (!BI_FEED_SOURCES.length) {
-      list.innerHTML = '<div class="mg-empty" style="padding:14px;">No sources configured.</div>';
-      return;
-    }
-    list.innerHTML = '<div class="ud-src-list">' + BI_FEED_SOURCES.map(function (s, i) {
-      return (
-        '<div class="ud-src-row">' +
-          '<input type="checkbox" data-idx="' + i + '"' + (s.enabled !== false ? " checked" : "") + ' title="Enabled">' +
-          '<span class="ud-src-name">' + esc(s.name) + "</span>" +
-          '<span class="ud-src-url" title="' + esc(s.url) + '">' + esc(s.url) + "</span>" +
-          '<select class="ud-src-mode" data-mode-idx="' + i + '" title="All entries: every item appears on the docket. Case matches only: items appear once tied to a tracked case.">' +
-            '<option value="all"' + (s.mode !== "case-only" ? " selected" : "") + ">All entries</option>" +
-            '<option value="case-only"' + (s.mode === "case-only" ? " selected" : "") + ">Case matches only</option>" +
-          "</select>" +
-          '<span class="ud-src-kind">' + esc(s.kind || "News") + "</span>" +
-          '<button type="button" class="ud-src-del" data-idx="' + i + '" title="Remove source">×</button>' +
-        "</div>"
-      );
-    }).join("") + "</div>";
-    list.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
-      cb.addEventListener("change", function () {
-        BI_FEED_SOURCES[Number(cb.getAttribute("data-idx"))].enabled = cb.checked;
-      });
-    });
-    list.querySelectorAll(".ud-src-mode").forEach(function (sel) {
-      sel.addEventListener("change", function () {
-        BI_FEED_SOURCES[Number(sel.getAttribute("data-mode-idx"))].mode = sel.value;
-      });
-    });
-    list.querySelectorAll(".ud-src-del").forEach(function (b) {
-      b.addEventListener("click", function () {
-        BI_FEED_SOURCES.splice(Number(b.getAttribute("data-idx")), 1);
-        biRenderSourceList();
-      });
-    });
-  }
-
-  function biSrcStatus(text, isError) {
-    var el = $("mg-bi-src-status");
+  function srcStatus(text, isError) {
+    var el = $("mg-src-status");
     if (el) { el.textContent = text; el.style.color = isError ? "var(--danger)" : ""; }
   }
 
-  function biLoadSources() {
-    var list = $("mg-bi-src-list");
-    if (list) list.innerHTML = '<div class="mg-empty" style="padding:14px;">Loading…</div>';
+  function srcSelect(cls, i, options, current, title) {
+    return '<select class="' + cls + '" data-idx="' + i + '"' + (title ? ' title="' + esc(title) + '"' : "") + ">" +
+      options.map(function (o) {
+        return '<option value="' + o.value + '"' + (current === o.value ? " selected" : "") + ">" + esc(o.label) + "</option>";
+      }).join("") + "</select>";
+  }
+
+  function renderSourceRows() {
+    var list = $("mg-src-list");
+    if (!list) return;
+    if (!SRC_LIST.length) {
+      list.innerHTML = '<div class="mg-empty">No sources yet — add the first one below.</div>';
+      return;
+    }
+    list.innerHTML =
+      '<table class="mg-table"><thead><tr><th title="Enabled">On</th><th>Source</th><th>URL / outlet</th><th>Type</th><th>Tag</th><th>Shows in</th><th>Untagged items</th><th></th></tr></thead><tbody>' +
+      SRC_LIST.map(function (s, i) {
+        return (
+          "<tr" + (s.enabled === false ? ' style="opacity:0.55"' : "") + ">" +
+            '<td><input type="checkbox" class="mg-src-on" data-idx="' + i + '"' + (s.enabled !== false ? " checked" : "") + ' title="Enabled — disabled sources are kept but never scanned"></td>' +
+            '<td><input type="text" class="mg-src-name mg-input" data-idx="' + i + '" value="' + esc(s.name || "") + '" style="width:120px"></td>' +
+            '<td><input type="text" class="mg-src-url mg-input" data-idx="' + i + '" value="' + esc(s.url || "") + '" style="width:100%;min-width:220px" title="' + esc(s.url || "") + '"></td>' +
+            "<td>" + srcSelect("mg-src-type", i, SRC_TYPES, s.type === "search" ? "search" : "rss",
+              "RSS feed: pulled directly (a page URL is fine — the scanner finds its feed). Web search: no feed — each scan sweeps the outlet with a web search.") + "</td>" +
+            '<td><input type="text" class="mg-src-kind mg-input" data-idx="' + i + '" value="' + esc(s.kind || "News") + '" style="width:80px" title="Tag label shown on the item (Alert / Summary / News / …)"></td>' +
+            "<td>" + srcSelect("mg-src-show", i, SRC_SHOWS, s.show === "docket" || s.show === "news" ? s.show : "both",
+              "Where this source’s items surface.") + "</td>" +
+            "<td>" + srcSelect("mg-src-mode", i,
+              [{ value: "all", label: "Show all" }, { value: "case-only", label: "Case matches only" }],
+              s.mode === "case-only" ? "case-only" : "all",
+              "Show all: every item appears even before it’s tied to a case. Case matches only: items appear once tied to a tracked case.") + "</td>" +
+            '<td class="mg-right"><button type="button" class="mg-btn mg-btn-danger mg-src-del" data-idx="' + i + '" title="Remove source">×</button></td>' +
+          "</tr>"
+        );
+      }).join("") + "</tbody></table>";
+
+    function wire(cls, fn) {
+      list.querySelectorAll(cls).forEach(function (el) {
+        el.addEventListener("change", function () { fn(SRC_LIST[Number(el.getAttribute("data-idx"))], el); });
+      });
+    }
+    wire(".mg-src-on", function (s, el) { s.enabled = el.checked; renderSourceRows(); });
+    wire(".mg-src-name", function (s, el) { s.name = el.value.trim(); });
+    wire(".mg-src-url", function (s, el) { s.url = el.value.trim(); });
+    wire(".mg-src-type", function (s, el) { s.type = el.value; });
+    wire(".mg-src-kind", function (s, el) { s.kind = el.value.trim() || "News"; });
+    wire(".mg-src-show", function (s, el) { s.show = el.value; });
+    wire(".mg-src-mode", function (s, el) { s.mode = el.value; });
+    list.querySelectorAll(".mg-src-del").forEach(function (b) {
+      b.addEventListener("click", function () {
+        SRC_LIST.splice(Number(b.getAttribute("data-idx")), 1);
+        renderSourceRows();
+      });
+    });
+  }
+
+  function loadSourcesTab() {
+    var list = $("mg-src-list");
+    if (list) list.innerHTML = '<div class="mg-empty">Loading…</div>';
     apiFetch(BASE + "api/feed-sources").then(function (r) { return r.json(); })
       .then(function (p) {
-        BI_FEED_SOURCES = (p && p.ok && p.sources) || [];
-        biRenderSourceList();
+        if (!(p && p.ok)) throw new Error((p && p.error) || "load failed");
+        SRC_LIST = p.sources || [];
+        SRC_READONLY = false;
+        renderSourceRows();
       })
       .catch(function () {
-        BI_FEED_SOURCES = [];
-        biRenderSourceList();
-        biSrcStatus("Couldn’t load sources.", true);
+        // Degrade to the static file: list still renders, saving stays off.
+        fetch(BASE + "feed-sources.json").then(function (r) { return r.json(); })
+          .then(function (f) { SRC_LIST = (f && f.sources) || []; })
+          .catch(function () { SRC_LIST = []; })
+          .then(function () {
+            SRC_READONLY = true;
+            renderSourceRows();
+            srcStatus("Read-only — the admin API isn’t reachable (sign in to edit).", true);
+            var sv = $("mg-src-save");
+            if (sv) sv.disabled = true;
+          });
       });
   }
 
-  function biAddSourceFromForm() {
-    var name = ($("mg-bi-src-name").value || "").trim();
-    var url = ($("mg-bi-src-url").value || "").trim();
-    var kind = ($("mg-bi-src-kind").value || "").trim() || "News";
+  function addSourceFromForm() {
+    var name = ($("mg-src-add-name").value || "").trim();
+    var url = ($("mg-src-add-url").value || "").trim();
+    var type = $("mg-src-add-type").value === "search" ? "search" : "rss";
+    var kind = ($("mg-src-add-kind").value || "").trim() || "News";
+    var show = $("mg-src-add-show").value;
     if (!name || !/^https?:\/\//.test(url)) {
-      biSrcStatus("Name and a valid feed URL are required", true);
+      srcStatus("Name and a valid URL (https://…) are required", true);
       return;
     }
-    BI_FEED_SOURCES.push({ name: name, url: url, kind: kind, mode: "all", enabled: true });
-    $("mg-bi-src-name").value = "";
-    $("mg-bi-src-url").value = "";
-    $("mg-bi-src-kind").value = "";
-    biSrcStatus("");
-    biRenderSourceList();
+    SRC_LIST.push({ name: name, url: url, kind: kind, type: type, show: show, mode: "all", enabled: true });
+    $("mg-src-add-name").value = "";
+    $("mg-src-add-url").value = "";
+    $("mg-src-add-kind").value = "";
+    srcStatus("Added — hit Save sources to make it live.");
+    renderSourceRows();
   }
 
-  function biSaveSources() {
-    biSrcStatus("Saving…");
+  function saveSources() {
+    srcStatus("Saving…");
     apiFetch(BASE + "api/feed-sources", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sources: BI_FEED_SOURCES }),
+      body: JSON.stringify({ sources: SRC_LIST }),
     }).then(function (r) { return r.json(); }).then(function (p) {
-      if (p && p.ok) biSrcStatus("Saved — new sources pull on the next daily scan");
-      else biSrcStatus((p && p.error) || "Save failed", true);
-    }).catch(function () { biSrcStatus("Save failed — network error", true); });
+      if (p && p.ok) {
+        SRC_LIST = p.sources || SRC_LIST;
+        renderSourceRows();
+        srcStatus("Saved — sources pull on the next news scan (runs twice a day).");
+      } else srcStatus((p && p.error) || "Save failed", true);
+    }).catch(function () { srcStatus("Save failed — network error", true); });
+  }
+
+  function renderSources() {
+    root.innerHTML =
+      bannerHtml() +
+      '<div class="mg-head"><h2>News sources</h2></div>' +
+      '<p class="mg-hint">One place for every outlet feeding the <a href="docket.html">docket</a> and <a href="news.html">news</a> pages. ' +
+      "<strong>RSS feed</strong> sources are forgiving — paste the site or section page and the scanner autodiscovers the real feed. " +
+      "<strong>Web search</strong> sources have no feed: each scan sweeps the outlet with a web search for fresh items. " +
+      "Scans run twice a day (8:40 AM &amp; 4:40 PM ET); “Shows in” controls whether a source’s items surface on the docket, the news page, or both.</p>" +
+      '<div class="mg-box" style="padding:14px;">' +
+        '<div id="mg-src-list">Loading…</div>' +
+        '<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);">' +
+          '<input type="text" id="mg-src-add-name" class="mg-input" placeholder="Name (e.g. PETITION)" style="flex:0 0 150px;">' +
+          '<input type="text" id="mg-src-add-url" class="mg-input" placeholder="Site, page, or feed URL (https://…)" style="flex:1;min-width:220px;">' +
+          '<select id="mg-src-add-type" class="mg-input" style="flex:0 0 auto;">' +
+            SRC_TYPES.map(function (o) { return '<option value="' + o.value + '">' + esc(o.label) + "</option>"; }).join("") +
+          "</select>" +
+          '<input type="text" id="mg-src-add-kind" class="mg-input" placeholder="Tag (News)" style="flex:0 0 90px;">' +
+          '<select id="mg-src-add-show" class="mg-input" style="flex:0 0 auto;">' +
+            SRC_SHOWS.map(function (o) { return '<option value="' + o.value + '">' + esc(o.label) + "</option>"; }).join("") +
+          "</select>" +
+          '<button type="button" class="mg-btn" id="mg-src-add-btn">Add</button>' +
+        "</div>" +
+        '<div style="display:flex;align-items:center;gap:10px;margin-top:12px;">' +
+          '<span id="mg-src-status" class="mg-hint" style="margin:0;"></span>' +
+          '<span style="flex:1"></span>' +
+          '<button type="button" class="mg-btn mg-btn-primary" id="mg-src-save">Save sources</button>' +
+        "</div>" +
+      "</div>";
+    loadSourcesTab();
+    $("mg-src-add-btn").addEventListener("click", addSourceFromForm);
+    $("mg-src-save").addEventListener("click", saveSources);
   }
 
   function renderBriefingInputs() {
@@ -1263,22 +1395,8 @@
         '<div class="mg-box" style="padding:14px;" id="mg-bi-groups">Loading…</div>' +
       "</div>" +
 
-      '<div class="mg-bi-section"><div class="mg-bi-section-head"><h3>News feed sources</h3></div>' +
-        '<p class="mg-hint" style="margin:-4px 0 10px;">Each source’s RSS feed is pulled once a day. “All entries” puts every item on the docket (unassigned until tied to a case). “Case matches only” shows a feed’s items solely once matched to a tracked case.</p>' +
-        '<div class="mg-box" style="padding:14px;">' +
-          '<div id="mg-bi-src-list">Loading…</div>' +
-          '<div class="ud-src-add">' +
-            '<input type="text" id="mg-bi-src-name" placeholder="Name (e.g. PETITION)" style="flex:0 0 140px;">' +
-            '<input type="text" id="mg-bi-src-url" placeholder="RSS feed URL (https://…/rss)" style="flex:1;min-width:200px;">' +
-            '<input type="text" id="mg-bi-src-kind" placeholder="Tag (News)" style="flex:0 0 90px;">' +
-            '<button type="button" class="mg-btn" id="mg-bi-src-add-btn">Add</button>' +
-          "</div>" +
-          '<div style="display:flex;align-items:center;gap:10px;margin-top:10px;">' +
-            '<span id="mg-bi-src-status" class="mg-hint" style="margin:0;"></span>' +
-            '<span style="flex:1"></span>' +
-            '<button type="button" class="mg-btn mg-btn-primary" id="mg-bi-src-save">Save sources</button>' +
-          "</div>" +
-        "</div>" +
+      '<div class="mg-bi-section"><div class="mg-bi-section-head"><h3>News feed sources</h3><a class="mg-btn mg-btn-ghost" href="#sources">Moved to the Sources tab →</a></div>' +
+        '<p class="mg-hint" style="margin:0;">Every outlet feeding the docket and news pages now lives in one place: <a href="#sources">Manage → Sources</a>.</p>' +
       "</div>" +
 
       '<div class="mg-bi-section"><div class="mg-bi-section-head"><h3>Scan guidance — per case</h3></div>' +
@@ -1293,11 +1411,6 @@
       biVoicePreview();
       biXAccounts();
       biGroups();
-      biLoadSources();
-      var _srcAdd = $("mg-bi-src-add-btn");
-      if (_srcAdd) _srcAdd.addEventListener("click", biAddSourceFromForm);
-      var _srcSave = $("mg-bi-src-save");
-      if (_srcSave) _srcSave.addEventListener("click", biSaveSources);
     } catch (e) { /* keep going — the per-case guidance wiring below must still run */ }
 
     root.querySelectorAll(".mg-bi-row").forEach(function (row) {
@@ -1362,6 +1475,7 @@
   function loadThemes() {
     return apiFetch("/api/admin/themes").then(function (r) { return r.json(); }).then(function (j) {
       if (j.ok && Array.isArray(j.themes) && j.themes.length) THEMES = j.themes;
+      if (j.ok) THEMES_SHOW_EMOJIS = j.show_emojis !== false;
     }).catch(function () { /* keep fallback list */ });
   }
   function loadManifest() {

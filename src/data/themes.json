@@ -1,5 +1,6 @@
 {
   "_comment": "Intelligence themes — the standing beats Andrew covers. Managed via /admin/intelligence/themes. Each theme's slug is its stable ID and intentionally matches the slugs that cases reference in their topics[] field. sources.whitelist here is THEME-SPECIFIC trusted sources layered ON TOP of the global trusted+blocked lists in Defaults (intelligence-settings.json). Seeded from the daily-briefing skill's per-tab configs and voice grades — fully editable. Read at pipeline startup by briefing-generator/scripts/generate.py — edits here take effect on the next daily run.",
+  "show_emojis": true,
   "themes": [
     {
       "slug": "rewind-tariffs",

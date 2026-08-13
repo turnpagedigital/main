@@ -1,0 +1,41 @@
+{
+  "show_emojis": true,
+  "themes": [
+    {
+      "slug": "rewind-tariffs",
+      "display_name": "Tariff Refunds",
+      "emoji": "⚖️",
+      "active": true
+    },
+    {
+      "slug": "llm-class-action",
+      "display_name": "LLM / Copyright",
+      "emoji": "🤖",
+      "active": true
+    },
+    {
+      "slug": "crypto-insolvency",
+      "display_name": "Crypto Distress",
+      "emoji": "🪙",
+      "active": true
+    },
+    {
+      "slug": "fraud-recovery",
+      "display_name": "Ponzi / Fraud",
+      "emoji": "🕵️",
+      "active": true
+    },
+    {
+      "slug": "billion-dollar-class-actions",
+      "display_name": "Mass Actions",
+      "emoji": "💰",
+      "active": true
+    },
+    {
+      "slug": "bankruptcy-creditor-rights",
+      "display_name": "Chapter 11",
+      "emoji": "📜",
+      "active": true
+    }
+  ]
+}

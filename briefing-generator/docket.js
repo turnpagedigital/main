@@ -114,9 +114,11 @@
   var UPLOADS = {};
   var UNASSIGNED_KEY = "__unassigned__";
   var THEME_INFO = {};  // slug → {name, emoji} from themes.json (admin-managed)
+  var SHOW_THEME_EMOJIS = true;
 
   function loadThemeInfo() {
     fetchJson("themes.json").then(function (d) {
+      SHOW_THEME_EMOJIS = !d || d.show_emojis !== false;
       ((d && d.themes) || []).forEach(function (t) {
         if (t && t.slug) THEME_INFO[t.slug] = { name: t.display_name || t.slug, emoji: t.emoji || "" };
       });
@@ -129,7 +131,7 @@
   function themePillHtml(slug) {
     var info = THEME_INFO[slug] || { name: slug, emoji: "" };
     return '<span class="ud-pill ud-pill-sq" style="background:var(--surface);color:var(--ink);border:1px solid var(--ink)">' +
-      (info.emoji ? info.emoji + " " : "") + esc(info.name) + "</span>";
+      (SHOW_THEME_EMOJIS && info.emoji ? info.emoji + " " : "") + esc(info.name) + "</span>";
   }
   var RENDERED = [];
   var RENAMED = {};  // "slug|nNN" → manual title (case JSON is canonical)
@@ -517,6 +519,7 @@
       "</div>" +
       section("Feeds", "feed", feeds) +
       section("News outlets", "press", press) +
+      '<a href="manage.html#sources" style="display:block;padding:8px 12px;font-size:11px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;color:var(--ink-60,inherit);border-top:1px solid rgba(128,128,128,0.25);">\u2699 Manage sources</a>' +
       '<button type="button" class="ud-dd-save-btn ud-dd-saveview" data-close-panel>Save view</button>';
 
     var saveView = panel.querySelector("[data-close-panel]");
@@ -1474,10 +1477,26 @@
     return matches.every(function (s) { return s.mode === "case-only"; }) ? "case-only" : "all";
   }
 
+  // Where a feed item is allowed to surface (Manage → Sources "Shows in").
+  // Items scanned since Aug 2026 carry their own `show`; older ones fall
+  // back to the current source list, defaulting to visible everywhere.
+  function feedShowTarget(item) {
+    if (item.show === "docket" || item.show === "news") return item.show;
+    if (!FEED_SOURCES.length) return "both";
+    var matches = FEED_SOURCES.filter(function (s) {
+      if (item.source_id && s.id) return s.id === item.source_id;
+      return (s.name || "").toLowerCase() === (item.source || "").toLowerCase();
+    });
+    if (!matches.length) return "both";
+    var shows = matches.map(function (s) { return s.show === "docket" || s.show === "news" ? s.show : "both"; });
+    return shows.every(function (v) { return v === shows[0]; }) ? shows[0] : "both";
+  }
+
   function bondoroEntries() {
     var out = [];
     BONDORO.forEach(function (b) {
       if (!b.url || !b.title) return;
+      if (feedShowTarget(b) === "news") return;  // news-only sources stay off the docket
       var c = b.case_slug ? caseBySlug(b.case_slug) : null;
       var grp = !c && b.group_name ? findGroup(b.group_name) : null;
       var themeSlug = b.theme_slug || "";
@@ -1571,7 +1590,7 @@
         tb.type = "button";
         tb.className = "ud-th-menu-item";
         var on = cur && cur.theme_slug === slug;
-        tb.textContent = (on ? "\u2713 " : "") + (info.emoji ? info.emoji + " " : "") + info.name;
+        tb.textContent = (on ? "\u2713 " : "") + (SHOW_THEME_EMOJIS && info.emoji ? info.emoji + " " : "") + info.name;
         tb.addEventListener("click", function () {
           assignTheme(url, on ? null : slug);
           closeAssignMenu();
@@ -3228,28 +3247,34 @@
     var syncPanel = document.getElementById("ud-sync-panel");
     function runManualSync(slug) {
       if (!syncBtn) return;
+      function reset() { syncBtn.disabled = false; syncBtn.textContent = "⟳ Sync case"; }
       syncBtn.disabled = true;
-      syncBtn.textContent = "Syncing…";
-      fetch("api/admin/manual-sync", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({ slug: slug }),
-      }).then(function (r) {
-        return r.json().catch(function () { return {}; }).then(function (j) { return { status: r.status, body: j }; });
-      }).then(function (res) {
+      syncBtn.textContent = "Dispatching…";
+      if (!window.IntelSync) { noteToast("Sync helper failed to load — hard-refresh the page", true); reset(); return; }
+      IntelSync.syncCase(slug).then(function (res) {
         if (res.status === 401 || res.status === 403) {
           noteToast("Session expired — reload the page and try again", true);
+          reset();
         } else if (res.body && res.body.ok) {
-          noteToast(res.body.note || "Sync started.", false);
+          noteToast("Sync dispatched for " + slug + " — docket + news search, briefing if >12h old. Watching the run…", false);
+          IntelSync.watch(slug, ["manual-sync", "docket-sync"], function (st) {
+            if (st.state === "running") {
+              syncBtn.textContent = "Running…";
+            } else if (st.state === "success") {
+              noteToast("Sync finished for " + slug + " — fresh rows land on the next auto-refresh (≤60s).", false);
+              reset();
+            } else if (st.state === "failure" || st.state === "timeout" || st.state === "lost") {
+              noteToast(IntelSync.describe(st) + (st.run && st.run.html_url ? " · " + st.run.html_url : ""), true);
+              reset();
+            }
+          });
         } else {
           noteToast((res.body && res.body.error) || "Sync failed to start", true);
+          reset();
         }
       }).catch(function () {
         noteToast("Sync failed — network error", true);
-      }).then(function () {
-        syncBtn.disabled = false;
-        syncBtn.textContent = "⟳ Sync case";
+        reset();
       });
     }
     if (syncBtn && syncPanel) {

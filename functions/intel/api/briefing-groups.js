@@ -51,16 +51,23 @@ function validate(groups) {
       if (members.has(m)) return `case ${m} is in more than one group`;
       members.add(m);
     }
+    if (g.color != null && g.color !== "" && !/^#[0-9a-fA-F]{6}$/.test(String(g.color))) {
+      return `group ${g.id}: color must be #RRGGBB`;
+    }
   }
   return null;
 }
 
 function clean(groups) {
-  return groups.map((g) => ({
-    id: String(g.id),
-    name: String(g.name).trim().slice(0, 80),
-    members: g.members.map(String),
-  }));
+  return groups.map((g) => {
+    const out = {
+      id: String(g.id),
+      name: String(g.name).trim().slice(0, 80),
+      members: g.members.map(String),
+    };
+    if (g.color) out.color = String(g.color);
+    return out;
+  });
 }
 
 export async function onRequestGet(context) {
