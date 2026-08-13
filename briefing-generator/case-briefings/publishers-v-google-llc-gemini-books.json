@@ -1,0 +1,44 @@
+{
+  "slug": "publishers-v-google-llc-gemini-books",
+  "case_name": "Publishers v. Google",
+  "items": [
+    {
+      "date": "2026-08-13",
+      "updated": "2026-08-13",
+      "lede": "On August 13, the docket recorded a Notice of Appearance/Substitution/Change/Withdrawal of Attorney — procedural and routine, with no bearing on claim exposure or case trajectory.",
+      "body_md": "On August 13, the docket recorded a Notice of Appearance/Substitution/Change/Withdrawal of Attorney — procedural and routine, with no bearing on claim exposure or case trajectory.\n\nThe substantive posture entering today remains fixed on the unresolved motion sequence in the consolidated N.D. California action (5:23-cv-03440, Judge Lee). The most recent contested activity was the July 10–15 Cengage/Hachette motion to withdraw their intervention (Dkt. 473), Google's opposition (Dkt. 474), and the movants' administrative motion for leave to reply (Dkt. 475, with responses due July 20). That withdrawal, if granted, would remove the publisher intervenors from the consolidated track — a notable posture shift given that those same parties filed a separate, stand-alone action in the Southern District of New York on July 10 (\n*Hachette Book Group et al. v. Google LLC*, No. 1:26-cv-05870, S.D.N.Y., with the complaint docketed July 10\n). The two-track strategy — exit the intervention, press a direct action — concentrates the publishers' claims in a forum and on pleadings they fully control, rather than subordinating them to the consolidated class posture in California.\n\nThe New York complaint's theory is not procedurally identical to what was pending in the consolidated action. \nHachette, Elsevier, Cengage, and Scott Turow allege Google used millions of copyrighted books and journal articles without permission to build Gemini, copying works from sources including Google Books, online libraries, and allegedly pirated websites\n. \nThe complaint separately alleges Google intentionally removed or changed copyright information to \"conceal… that its Gemini Models were trained on stolen materials,\"\n adding a DMCA § 1202 CMI-removal layer on top of the core infringement theory. \nThe suit also argues Gemini now competes directly with the books it learned from by generating content that could reduce demand for the original materials\n — the § 107(4) market-harm prong that will be the decisive fair-use battleground across the AI-copyright track. The next concrete milestone in the N.D. California action is the outcome of the Dkt. 473/474/475 withdrawal motion sequence; once Judge Lee rules, the intervention question is resolved and the class certification record (indexed at Dkt. 472) governs the remaining plaintiff structure in the consolidated case.\n\n## Sources\n\n- [Google Faces Another AI Training Lawsuit from Major Publishers](https://techcrunch.com/2026/07/14/google-faces-another-ai-training-lawsuit-from-major-publishers/) — TechCrunch, July 14, 2026\n- [Google Gemini Sued Over Book Training in Hachette Case](https://windowsforum.com/threads/google-gemini-sued-over-book-training-in-hachette-case.438468/) — Windows Forum, July 2026\n- [Authors, Publishers Sue Google Over Alleged AI Copyright Infringement](https://www.aljazeera.com/economy/2026/7/15/authors-publishers-sue-google-over-alleged-ai-copyright-infringement) — Al Jazeera, July 15, 2026\n- [Hachette, Scott Turow Sue Google for Using Books to Train Gemini](https://www.thewrap.com/industry-news/tech/hachette-scott-turow-google-gemini-ai-copyright-lawsuit/) — The Wrap, July 2026\n- [Google Hit With New Gemini Copyright Lawsuit](https://www.eweek.com/news/google-gemini-publisher-lawsuit-2026/) — eWeek, July 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Google Faces Another AI Training Lawsuit from Major Publishers",
+          "url": "https://techcrunch.com/2026/07/14/google-faces-another-ai-training-lawsuit-from-major-publishers/",
+          "note": "TechCrunch, July 14, 2026"
+        },
+        {
+          "title": "Google Gemini Sued Over Book Training in Hachette Case",
+          "url": "https://windowsforum.com/threads/google-gemini-sued-over-book-training-in-hachette-case.438468/",
+          "note": "Windows Forum, July 2026"
+        },
+        {
+          "title": "Authors, Publishers Sue Google Over Alleged AI Copyright Infringement",
+          "url": "https://www.aljazeera.com/economy/2026/7/15/authors-publishers-sue-google-over-alleged-ai-copyright-infringement",
+          "note": "Al Jazeera, July 15, 2026"
+        },
+        {
+          "title": "Hachette, Scott Turow Sue Google for Using Books to Train Gemini",
+          "url": "https://www.thewrap.com/industry-news/tech/hachette-scott-turow-google-gemini-ai-copyright-lawsuit/",
+          "note": "The Wrap, July 2026"
+        },
+        {
+          "title": "Google Hit With New Gemini Copyright Lawsuit",
+          "url": "https://www.eweek.com/news/google-gemini-publisher-lawsuit-2026/",
+          "note": "eWeek, July 2026"
+        }
+      ],
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-08-13"
+      }
+    }
+  ]
+}
