@@ -291,6 +291,8 @@
           landmark:      "",
           type:          "article",
           party:         a.source || "",
+          social_title:  a.headline,
+          social_excerpt: a.summary || "",
           is_article:    true,
         });
       });
@@ -902,8 +904,182 @@
       '<td class="ud-mark-cell"><button type="button" class="ud-del-btn" ' +
         'data-nk="' + esc(nk) + '" title="Delete this row (X) \u2014 restorable for 30 days"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M3 6h18\"/><path d=\"M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2\"/><path d=\"M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6\"/><path d=\"M10 11v6\"/><path d=\"M14 11v6\"/></svg></button></td>' +
       '<td class="ud-mark-cell"><button type="button" class="ud-note-btn' + (hasNote ? " ud-note-on" : "") + '" ' +
-        'data-nk="' + esc(nk) + '" title="' + (hasNote ? "Edit note" : "Add note") + '"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z\"/></svg></button></td>'
+        'data-nk="' + esc(nk) + '" title="' + (hasNote ? "Edit note" : "Add note") + '"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z\"/></svg></button></td>' +
+      '<td class="ud-mark-cell"><button type="button" class="ud-soc-btn" ' +
+        'data-nk="' + esc(nk) + '" title="Draft social post \u2014 one-time briefing + LinkedIn / X drafts, written as Andrew"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><circle cx=\"18\" cy=\"5\" r=\"3\"/><circle cx=\"6\" cy=\"12\" r=\"3\"/><circle cx=\"18\" cy=\"19\" r=\"3\"/><line x1=\"8.59\" y1=\"13.51\" x2=\"15.42\" y2=\"17.49\"/><line x1=\"15.41\" y1=\"6.51\" x2=\"8.59\" y2=\"10.49\"/></svg></button></td>'
     );
+  }
+
+
+  // ── Social post drafting — same flow as the Prospects page button:
+  // POST api/social-draft with the story's verified facts (plus the tagged
+  // case's identifiers when there is one) → briefing + LinkedIn + X drafts
+  // written as Andrew. Draft only: nothing is posted or saved. ─────────────
+  var SOCIAL_CSS =
+    ".pr-overlay{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,0.45);display:flex;align-items:flex-start;justify-content:center;padding:5vh 20px 20px;overflow-y:auto;}" +
+    ".pr-box{background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 10px 40px rgba(0,0,0,0.35);width:min(680px,100%);padding:22px;display:flex;flex-direction:column;gap:12px;}" +
+    ".pr-box h2{margin:0;font-size:17px;font-weight:800;}" +
+    ".pr-box .sub{font-size:12.5px;color:var(--ink-60);line-height:1.5;border-bottom:1px solid var(--line);padding-bottom:10px;}" +
+    ".pr-modal-actions{display:flex;align-items:center;gap:10px;border-top:1px solid var(--line);padding-top:12px;}" +
+    ".pr-modal-status{font-size:12.5px;color:var(--ink-60);flex:1;line-height:1.4;}" +
+    ".pr-modal-status.err{color:#C84141;font-weight:700;}" +
+    ".pr-social-loading{display:flex;align-items:center;gap:10px;padding:26px 4px;font-size:13.5px;color:var(--ink-60);}" +
+    ".pr-social-spin{width:15px;height:15px;border:2px solid var(--line-strong);border-top-color:var(--neon);border-radius:50%;display:inline-block;animation:pr-social-spin 0.7s linear infinite;}" +
+    "@keyframes pr-social-spin{to{transform:rotate(360deg);}}" +
+    ".pr-social-field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px;}" +
+    ".pr-social-lbl{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-60);}" +
+    ".pr-social-count{font-weight:600;letter-spacing:0;text-transform:none;color:var(--ink-40);margin-left:6px;}" +
+    ".pr-social-count.over{color:#C84141;}" +
+    ".pr-social-ta{width:100%;box-sizing:border-box;font-size:13.5px;font-family:inherit;line-height:1.5;padding:10px 11px;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;resize:vertical;}" +
+    ".pr-social-ta:focus{border-color:var(--neon);}" +
+    ".pr-copy{font-size:10.5px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;padding:3px 11px;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;flex:none;}" +
+    ".pr-copy:hover{border-color:var(--neon);}" +
+    ".pr-copy.done{color:#1a7f37;border-color:#1a7f37;}";
+
+  var activeSocialEntry = null;
+
+  function ensureSocialModal() {
+    if (document.getElementById("pr-social-overlay")) return;
+    var st = document.createElement("style");
+    st.textContent = SOCIAL_CSS;
+    document.head.appendChild(st);
+    var ov = document.createElement("div");
+    ov.id = "pr-social-overlay";
+    ov.className = "pr-overlay";
+    ov.style.display = "none";
+    ov.innerHTML =
+      '<div class="pr-box" style="width:min(720px,100%);">' +
+        '<h2 id="pr-social-title">Draft social post</h2>' +
+        '<div class="sub">A one-time briefing plus LinkedIn / X drafts, written as Andrew from this story’s facts. Draft only — nothing is posted or saved.</div>' +
+        '<div id="pr-social-loading" class="pr-social-loading"><span class="pr-social-spin"></span> Drafting from the story’s facts…</div>' +
+        '<div id="pr-social-content" style="display:none;">' +
+          '<div class="pr-social-field">' +
+            '<div class="pr-social-lbl"><span>Briefing</span><button type="button" class="pr-copy" data-copy="pr-social-briefing">Copy</button></div>' +
+            '<textarea id="pr-social-briefing" class="pr-social-ta" rows="4"></textarea>' +
+          '</div>' +
+          '<div class="pr-social-field">' +
+            '<div class="pr-social-lbl"><span>LinkedIn <span id="pr-social-li-count" class="pr-social-count"></span></span><button type="button" class="pr-copy" data-copy="pr-social-li">Copy</button></div>' +
+            '<textarea id="pr-social-li" class="pr-social-ta" rows="11"></textarea>' +
+          '</div>' +
+          '<div class="pr-social-field">' +
+            '<div class="pr-social-lbl"><span>X / Twitter <span id="pr-social-x-count" class="pr-social-count"></span></span><button type="button" class="pr-copy" data-copy="pr-social-x">Copy</button></div>' +
+            '<textarea id="pr-social-x" class="pr-social-ta" rows="3"></textarea>' +
+          '</div>' +
+        '</div>' +
+        '<div class="pr-modal-actions">' +
+          '<span class="pr-modal-status" id="pr-social-status"></span>' +
+          '<button type="button" class="ud-clear-btn" id="pr-social-regen" style="display:none;">Regenerate</button>' +
+          '<button type="button" class="ud-clear-btn" id="pr-social-close">Close</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(ov);
+    ov.addEventListener("click", function (ev) { if (ev.target === ov) closeSocialModal(); });
+    document.getElementById("pr-social-close").addEventListener("click", closeSocialModal);
+    document.getElementById("pr-social-regen").addEventListener("click", function () {
+      if (activeSocialEntry) generateSocial(activeSocialEntry);
+    });
+    ov.querySelectorAll(".pr-copy").forEach(function (cp) {
+      cp.addEventListener("click", function () {
+        var ta = document.getElementById(cp.getAttribute("data-copy"));
+        if (ta) copyText(ta.value, cp);
+      });
+    });
+    [["pr-social-li", "pr-social-li-count", 0], ["pr-social-x", "pr-social-x-count", 280]].forEach(function (spec) {
+      var ta = document.getElementById(spec[0]);
+      if (ta) ta.addEventListener("input", function () { updateSocialCount(spec[0], spec[1], spec[2]); });
+    });
+  }
+
+  function openSocialModal(nk) {
+    var e = findEntryByKey(nk);
+    if (!e) return;
+    ensureSocialModal();
+    activeSocialEntry = e;
+    var title = (e.social_title || (e.description || "").split(" — ")[0] || "").slice(0, 120);
+    document.getElementById("pr-social-title").textContent = "Draft social post — " + title;
+    document.getElementById("pr-social-overlay").style.display = "flex";
+    generateSocial(e);
+  }
+
+  function closeSocialModal() {
+    activeSocialEntry = null;
+    var ov = document.getElementById("pr-social-overlay");
+    if (ov) ov.style.display = "none";
+  }
+
+  function updateSocialCount(taId, countId, max) {
+    var ta = document.getElementById(taId), c = document.getElementById(countId);
+    if (!ta || !c) return;
+    var n = ta.value.length;
+    c.textContent = n + (max ? " / " + max : "") + " chars";
+    c.classList.toggle("over", !!max && n > max);
+  }
+
+  function generateSocial(e) {
+    var st = document.getElementById("pr-social-status");
+    var loading = document.getElementById("pr-social-loading");
+    var content = document.getElementById("pr-social-content");
+    var regen = document.getElementById("pr-social-regen");
+    if (loading) loading.style.display = "flex";
+    if (content) content.style.display = "none";
+    if (regen) regen.style.display = "none";
+    if (st) { st.textContent = ""; st.className = "pr-modal-status"; }
+    var c = e.slug ? caseBySlug(e.slug) : null;
+    var excerpt = e.social_excerpt || "";
+    var prospect = {
+      case_name: e.social_title || (e.description || "").split(" — ")[0] || "News item",
+      parties: (c && (c.case_name || c.display_name)) || "",
+      court: (c && c.court) || "",
+      case_number: (c && c.case_number) || "",
+      why: excerpt + (c ? (excerpt ? " " : "") + "(Coverage relates to the tracked case " + (c.display_name || e.name || "") + ".)" : ""),
+      source_name: e.party || "",
+      source_url: e.doc_url || "",
+      date: e.date_filed || "",
+    };
+    fetch("api/social-draft", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prospect: prospect }),
+    }).then(function (r) { return r.json(); }).then(function (j) {
+      if (!j || !j.ok) throw new Error((j && j.error) || "generation failed");
+      document.getElementById("pr-social-briefing").value = j.briefing || "";
+      document.getElementById("pr-social-li").value = j.linkedin || "";
+      document.getElementById("pr-social-x").value = j.x || "";
+      updateSocialCount("pr-social-li", "pr-social-li-count", 0);
+      updateSocialCount("pr-social-x", "pr-social-x-count", 280);
+      if (loading) loading.style.display = "none";
+      if (content) content.style.display = "";
+      if (regen) regen.style.display = "";
+      if (st) { st.textContent = "Draft only — nothing is posted or saved."; st.className = "pr-modal-status"; }
+    }).catch(function (err) {
+      if (loading) loading.style.display = "none";
+      if (regen) regen.style.display = "";
+      if (st) { st.textContent = "Couldn’t draft: " + err.message; st.className = "pr-modal-status err"; }
+    });
+  }
+
+  function copyText(text, btn) {
+    function done() {
+      if (!btn) return;
+      var orig = btn.getAttribute("data-label") || btn.textContent;
+      btn.setAttribute("data-label", orig);
+      btn.textContent = "Copied";
+      btn.classList.add("done");
+      setTimeout(function () { btn.textContent = orig; btn.classList.remove("done"); }, 1400);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function () { fallbackCopy(text); done(); });
+    } else { fallbackCopy(text); done(); }
+  }
+
+  function fallbackCopy(text) {
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.focus(); ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    } catch (e2) {}
   }
 
   // ── Render table ───────────────────────────────────────────────────────────
@@ -934,7 +1110,7 @@
       }
     }
     if (!entries.length) {
-      tbody.innerHTML = '<tr><td colspan="10" class="ud-empty">No entries match the current filters.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="11" class="ud-empty">No entries match the current filters.</td></tr>';
       return;
     }
     var prevDay = null;
@@ -948,7 +1124,7 @@
         var wd = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][new Date(d + "T00:00:00").getDay()];
         label = wd + " \u00b7 " + (e.date_display || d);
       }
-      return '<tr class="ud-day-row"><td colspan="10">' + esc(label) + "</td></tr>";
+      return '<tr class="ud-day-row"><td colspan="11">' + esc(label) + "</td></tr>";
     }
     RENDERED = entries;
     tbody.innerHTML = entries.map(function (e, ridx) {
@@ -1365,7 +1541,7 @@
       var tbody = document.getElementById("ud-tbody");
       if (tbody) {
         tbody.innerHTML =
-          '<tr><td colspan="10" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
+          '<tr><td colspan="11" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
       }
       var meta = document.getElementById("ud-meta");
       if (meta) meta.textContent = "Failed to load";
@@ -1446,6 +1622,8 @@
         landmark:      "",
         type:          "article",
         party:         b.source || "Bondoro",
+        social_title:  b.title,
+        social_excerpt: b.excerpt || "",
         is_article:    true,
         is_bondoro:    true,
         archived:      !!b.archived,
@@ -2896,6 +3074,8 @@
             "Deleted \u2014 restorable from the toolbar for 30 days");
           return;
         }
+        var sb = ev.target.closest(".ud-soc-btn");
+        if (sb) { openSocialModal(sb.getAttribute("data-nk")); return; }
         var nb = ev.target.closest(".ud-note-btn");
         if (nb) { openNoteModal(nb.getAttribute("data-nk")); }
       });
