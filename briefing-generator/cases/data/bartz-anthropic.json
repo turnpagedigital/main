@@ -2,24 +2,18 @@
   "case": {
     "slug": "bartz-anthropic",
     "display_name": "Bartz v. Anthropic",
-    "case_name": "Bartz v. Anthropic PBC",
+    "case_name": "Bartz, et al. v. Anthropic PBC",
     "court": "U.S. District Court, N.D. Cal. (San Francisco)",
     "case_number": "3:24-cv-05417",
     "judge": "Hon. Araceli Martínez-Olguín",
     "docket_id": "69058235",
     "status": "active",
-    "sync": "active",
-    "court_id": ""
+    "sync": "active"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
-    "date_last_filing": "2026-07-21",
-    "meta_fetched_at": "2026-08-13T16:11:50.767551+00:00",
-    "fetched_at": "2026-08-13T16:11:50.767551+00:00",
-    "as_of": "Aug 13, 2026",
-    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -7499,7 +7493,12 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
-    ]
+    ],
+    "date_last_filing": "2026-07-21",
+    "meta_fetched_at": "2026-08-13T16:11:50.767551+00:00",
+    "fetched_at": "2026-08-13T16:11:50.767551+00:00",
+    "as_of": "Aug 13, 2026",
+    "backfilled": true
   },
   "claims_administrator": {
     "name": "JND Legal Administration",
@@ -7651,16 +7650,6 @@
       "source": "Writer Beware (Science Fiction & Fantasy Writers Association)",
       "date": "2026-07-17",
       "summary": "Pre-final-approval update noting high class participation rates and a handful of late opt-out and late objection requests still pending before Judge Martínez-Olguín, alongside unresolved attorneys'-fees disputes, ahead of the July 20 ruling."
-    }
-  ],
-  "events": [
-    {
-      "title": "30-Day Appeal Deadline — Bartz v. Anthropic Final Judgment (July 20, 2026 Order)",
-      "date": "2026-08-19",
-      "time": "",
-      "kind": "Deadline",
-      "url": "https://blog.taaonline.net/2026/08/bartz-v-anthropic-when-to-expect-payments-next-steps/",
-      "source": "TAA / Class Counsel"
     }
   ]
 }
