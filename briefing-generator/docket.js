@@ -130,7 +130,7 @@
   // inverted in dark mode (both come from the page's --surface/--ink vars).
   function themePillHtml(slug) {
     var info = THEME_INFO[slug] || { name: slug, emoji: "" };
-    return '<span class="ud-pill ud-pill-sq" style="background:var(--surface);color:var(--ink);border:1px solid var(--ink)">' +
+    return '<span class="ud-pill ud-pill-theme">' +
       (SHOW_THEME_EMOJIS && info.emoji ? info.emoji + " " : "") + esc(info.name) + "</span>";
   }
   var RENDERED = [];

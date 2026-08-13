@@ -36,7 +36,7 @@
   // Monochrome outline pill — white bg / black outline+text, inverted in dark.
   function themePill(slug) {
     var t = themeOf(slug);
-    return '<span class="ud-pill ud-pill-sq ud-pill-theme">' + (SHOW_THEME_EMOJIS && t.emoji ? t.emoji + " " : "") + esc(t.name) + "</span>";
+    return '<span class="ud-pill ud-pill-theme">' + (SHOW_THEME_EMOJIS && t.emoji ? t.emoji + " " : "") + esc(t.name) + "</span>";
   }
 
   function fmtDate(iso) {

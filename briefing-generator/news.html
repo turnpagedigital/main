@@ -165,6 +165,8 @@
   .ud-type-select:focus{border-color:var(--neon);}
   /* Color popover */
   .ud-pill.ud-pill-sq{border-radius:0;}
+  .ud-pill-theme{background:#0A0A0A;color:#FFFFFF;border:1px solid #0A0A0A;border-radius:99px;}
+  [data-theme="dark"] .ud-pill-theme{background:#FFFFFF;color:#0A0A0A;border-color:#FFFFFF;}
   .ud-color-pop{position:absolute;z-index:1000;background:var(--surface);border:1px solid var(--line-strong);padding:16px;width:232px;box-shadow:0 6px 24px rgba(0,0,0,0.22);}
   .ud-pop-title{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .ud-pop-swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:14px;}
@@ -433,11 +435,7 @@
   [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:first-child { border-left: none; }
   [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:last-child { border-right: none; }
   [data-theme="light"] .ud-table tbody tr:last-child td { border-bottom: none; }
-  [data-theme="light"] .ud-row-article td { background: #E7E9EE; }
-  /* One opaque divider color on every row — translucent hairlines read darker
-     over the gray article band than over white, which looked like mixed line
-     weights. */
-  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td { border-bottom-color: #D4D5D9; }
+  [data-theme="light"] .ud-row-article td { background: #E7E9EE; border-bottom-color: var(--line-strong); }
   [data-theme="light"] .ud-row-article:hover td { background: #F0F1F4; }
   /* Header row: ink text (black in light, white in dark), no background bar —
      a thick ink rule under the row separates it from the entries, spanning the
