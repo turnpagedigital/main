@@ -166,7 +166,9 @@
 
     document.title = name + " — Briefing | Turnpage Intelligence";
     var h1 = document.querySelector(".page-title h1");
-    if (h1) h1.innerHTML = esc(emoji) + " " + casePill(slug, name, isGroup ? (b.members || [])[0] : null);
+    if (h1) h1.innerHTML = esc(emoji) + " " + (isGroup
+      ? '<span class="ud-pill ud-pill-theme">' + esc(name) + "</span>"
+      : casePill(slug, name, null));
     var meta = document.getElementById("ud-meta");
     if (meta) {
       meta.innerHTML = statusChip(b) +

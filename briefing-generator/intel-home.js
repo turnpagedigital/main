@@ -112,7 +112,7 @@
   // Monochrome outline pill — white bg / black outline+text, inverted in dark.
   function themePill(slug) {
     var t = themeOf(slug);
-    return '<span class="ih-pill ih-pill-sq ih-pill-theme">' + (SHOW_THEME_EMOJIS && t.emoji ? t.emoji + " " : "") + esc(t.name) + "</span>";
+    return '<span class="ih-pill ih-pill-theme">' + (SHOW_THEME_EMOJIS && t.emoji ? t.emoji + " " : "") + esc(t.name) + "</span>";
   }
 
   // Briefing-group pills pick up the admin-set group color (Manage →
@@ -125,9 +125,7 @@
     return "";
   }
   function groupPill(name) {
-    var c = groupColorOf(name);
-    var style = c ? "background:" + c + ";color:" + autoFg(c) : "background:var(--paper-2);color:var(--ink-60)";
-    return '<span class="ih-pill" style="' + style + '">' + esc(name) + "</span>";
+    return '<span class="ih-pill ih-pill-theme">' + esc(name) + "</span>";
   }
 
   // Factory palette = Andrew's Aug 2026 light/dark pairings (was the neon set).
@@ -679,7 +677,8 @@
       var head =
         '<div class="ih-tc-head">' +
           '<a href="' + BASE + 'docket.html#case=' + docketTarget + '" style="text-decoration:none">' +
-            casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color) + "</a>" +
+            (isGroup ? '<span class="ih-pill ih-pill-theme">' + esc(m.short_name || m.display_name || m.slug) + "</span>"
+                     : casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color)) + "</a>" +
           '<span class="ih-tc-right"><span class="ih-tc-count">' + esc(count) + "</span>" +
             (isGroup
               ? '<span class="ih-run-status" data-run-status="' + esc(m.slug) + '"></span>' +
@@ -700,7 +699,8 @@
       // Compact list-view row for the same case — same data, one line.
       var listHtml =
         '<a class="ih-case-listrow' + (moved ? " ih-lr-moved" : "") + '" href="' + readHref + '">' +
-          casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color) +
+          (isGroup ? '<span class="ih-pill ih-pill-theme">' + esc(m.short_name || m.display_name || m.slug) + "</span>"
+                   : casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color)) +
           '<span class="ih-lr-count">' + esc(count) + "</span>" +
           '<span class="ih-lr-lede' + (moved ? "" : " ih-quiet") + '">' +
             (lede ? esc(lede) : "No briefing yet — generates when the case moves.") + "</span>" +
