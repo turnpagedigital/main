@@ -12,16 +12,11 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap"></noscript>
 <link rel="stylesheet" href="intel-chrome.css">
   <style>
-    :root { color-scheme: light;
-      --bg: #FFFFFF; --surface: #FFFFFF; --paper-2: #F4F5F7; --canvas: #F4F5F7;
-      --ink: #0A0A0A; --ink-60: rgba(10,10,10,0.6); --ink-40: rgba(10,10,10,0.4); --ink-20: rgba(10,10,10,0.18);
-      --line: rgba(10,10,10,0.08); --line-strong: rgba(10,10,10,0.14);
-      --neon: #D4FF00; --neon-block: #D4FF00; --neon-on-block: #0A0A0A;
-    }
-    [data-theme="dark"] { color-scheme: dark;
-      --bg: #0D0D0D; --surface: #17171B; --paper-2: #17171B; --canvas: #0D0D0D;
-      --ink: #E5E7EB; --ink-60: rgba(229,231,235,0.62); --ink-40: rgba(229,231,235,0.42); --ink-20: rgba(229,231,235,0.18);
-      --line: rgba(229,231,235,0.1); --line-strong: rgba(229,231,235,0.18);
+    /* Palette comes from intel-chrome.css; these are the dashboard's own:
+       --canvas is its grey page field, and the neon pair stays !important
+       because the nav pill/dropdown set it that way at use sites. */
+    :root { --canvas: #F4F5F7; }
+    [data-theme="dark"] { --canvas: #0D0D0D;
       --neon-block: #D4FF00 !important; --neon-on-block: #0A0A0A !important;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }

@@ -41,7 +41,6 @@ THEME_SCRIPT_SUBDIR = '<script src="../theme.js"></script>' # cases/ pages
 
 # Shared stylesheet for the unified docket + unified calendar shells
 UD_CSS = r"""
-  .page-title{max-width:1680px;}
   /* Main page area — no sidebar */
   .ud-page{max-width:1680px;margin:0 auto;padding:20px 32px 60px;}
   /* Nav shares the content grid so left/right margins match the page */
@@ -92,6 +91,12 @@ UD_CSS = r"""
   .ud-details-link{display:inline-flex;align-items:center;padding:1px 5px;color:var(--ink-40);line-height:1;flex-shrink:0;opacity:0;transition:opacity 0.15s;text-decoration:none;}
   .ud-dd-row:hover .ud-details-link,.ud-details-link:focus{opacity:1;}
   .ud-details-link:hover{color:var(--ink);}
+  .ud-dd-sync-btn{display:inline-flex;align-items:center;padding:1px 5px;color:var(--ink-40);line-height:1;flex-shrink:0;opacity:0;transition:opacity 0.15s;background:none;border:none;cursor:pointer;}
+  .ud-dd-row:hover .ud-dd-sync-btn,.ud-dd-sync-btn:focus{opacity:1;}
+  .ud-dd-sync-btn:hover{color:var(--ink);}
+  .ud-dd-sync-btn:disabled{opacity:1;cursor:default;color:var(--ink-60);}
+  .ud-dd-sync-btn.ud-dd-sync-spin svg{animation:ud-dd-sync-spin 0.9s linear infinite;}
+  @keyframes ud-dd-sync-spin{to{transform:rotate(360deg);}}
   .ud-dd-row:hover .ud-gear-btn,.ud-gear-btn:focus{opacity:1;}
   .ud-gear-btn:hover{color:var(--ink);}
   .ud-filter-right{display:flex;align-items:center;gap:12px;flex-shrink:0;flex-wrap:wrap;}
@@ -428,15 +433,6 @@ UD_CSS = r"""
 
 # ── full case-page stylesheet (brand tokens; no f-string — CSS braces) ───────
 PAGE_CSS = """<style>
-  :root{color-scheme:light;--bg:#FFFFFF;--surface:#FFFFFF;--paper-2:#F4F5F7;--ink:#0A0A0A;--ink-60:rgba(10,10,10,0.6);--ink-40:rgba(10,10,10,0.4);--line:rgba(10,10,10,0.08);--line-strong:rgba(10,10,10,0.14);--neon:#D4FF00;}
-  [data-theme="dark"]{color-scheme:dark;--bg:#0D0D0D;--surface:#17171B;--paper-2:#17171B;--ink:#E5E7EB;--ink-60:rgba(229,231,235,0.62);--ink-40:rgba(229,231,235,0.42);--line:rgba(229,231,235,0.1);--line-strong:rgba(229,231,235,0.18);}
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Archivo',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
-  a{color:var(--ink);}
-  .page-title{max-width:1180px;margin:0 auto;padding:26px 32px 16px;border-bottom:2px solid var(--ink);}
-  .page-title .eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);font-weight:700;}
-  .page-title h1{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:800;letter-spacing:-0.02em;margin:8px 0 12px;display:flex;align-items:center;gap:10px;}
-  .case-meta{display:flex;gap:22px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-60);}
   .case-meta strong{color:var(--ink);font-weight:700;}
   .status-badge{display:inline-block;margin-top:13px;font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;background:rgba(212,255,0,0.16);color:var(--ink);border:1px solid var(--neon);padding:3px 10px;}
   .also{margin-top:13px;font-size:11.5px;color:var(--ink-60);}
@@ -1120,10 +1116,6 @@ def render_unified_docket(cases):
     </span>
     <span id="ud-count"></span>
     <span id="ud-hidden-info" class="uc-curation-info"></span>
-    <div class="ud-sync-dd" id="ud-sync-dd">
-      <button type="button" id="ud-sync-btn" class="ud-sync-btn" title="Sync now — fresh docket entries + a news search; the briefing refreshes if it’s older than 12 hours">⟳ Sync now</button>
-      <div id="ud-sync-panel" class="ud-sync-panel" style="display:none;"></div>
-    </div>
   </div>
 
   <table class="ud-table">

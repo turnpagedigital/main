@@ -1,6 +1,6 @@
-/* intel-chrome.css — the shared shell every /intel page wears.
-   ONE definition of the top nav, brand logo, section links, keyboard-
-   shortcut panel, and theme toggle. Before this file these rules were
+/* intel-chrome.css — the shared shell every /intel page wears: design
+   tokens, base reset, page-title block, and the top nav (brand, section
+   links, keyboard-shortcut panel, theme toggle). Before this file these rules were
    copy-pasted into six places (index/manage/prospects/briefings, plus two
    separate blocks inside scripts/inject_cases.py) and had drifted: the nav's
    inner width was 1680px on some pages, 1240px on Manage and 1180px on the
@@ -9,6 +9,38 @@
    Load it FIRST, before a page's own <style>, so page-specific tweaks and
    the runtime CSS theme.js injects (hamburger, gear menu, nav fitting) still
    win. Anything that belongs to one page does NOT go here. */
+
+/* ── Design tokens ──────────────────────────────────────────────────────────
+   The palette every page reads. A page that genuinely needs a different
+   value (Manage runs a grey canvas) overrides just that token in its own
+   <style>, which loads after this file. */
+:root{
+  color-scheme:light;
+  --bg:#FFFFFF; --surface:#FFFFFF; --paper-2:#F4F5F7;
+  --ink:#0A0A0A; --ink-60:rgba(10,10,10,0.6); --ink-40:rgba(10,10,10,0.4); --ink-20:rgba(10,10,10,0.18);
+  --line:rgba(10,10,10,0.08); --line-strong:rgba(10,10,10,0.14);
+  --neon:#D4FF00; --neon-block:#D4FF00; --neon-on-block:#0A0A0A;
+  --ok:#1a7f37; --warn:#9a6700; --danger:#c0392b;
+}
+[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0D0D0D; --surface:#17171B; --paper-2:#17171B;
+  --ink:#E5E7EB; --ink-60:rgba(229,231,235,0.62); --ink-40:rgba(229,231,235,0.42); --ink-20:rgba(229,231,235,0.18);
+  --line:rgba(229,231,235,0.1); --line-strong:rgba(229,231,235,0.18);
+  --neon-block:#D4FF00; --neon-on-block:#0A0A0A;
+  --ok:#4cc38a; --warn:#d4a72c; --danger:#e5726a;
+}
+
+/* ── Base ───────────────────────────────────────────────────────────────── */
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Archivo',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:var(--ink);}
+
+/* ── Page title block ───────────────────────────────────────────────────── */
+.page-title{max-width:1680px;margin:0 auto;padding:26px 32px 16px;border-bottom:2px solid var(--ink);}
+.page-title .eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);font-weight:700;}
+.page-title h1{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:800;letter-spacing:-0.02em;margin:8px 0 12px;display:flex;align-items:center;gap:10px;}
+.case-meta{display:flex;gap:22px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-60);}
 
 /* ── Bar ────────────────────────────────────────────────────────────────── */
 .tn{background:#000;border-bottom:1px solid rgba(255,255,255,0.12);padding:10px 0;position:sticky;top:0;z-index:100;}
