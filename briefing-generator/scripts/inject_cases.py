@@ -41,23 +41,10 @@ THEME_SCRIPT_SUBDIR = '<script src="../theme.js"></script>' # cases/ pages
 
 # Shared stylesheet for the unified docket + unified calendar shells
 UD_CSS = r"""
-  .tn-kbd{position:relative;display:inline-flex;align-items:center;margin-left:auto;margin-right:10px;}
-  .tn-kbd-btn{font-family:inherit;font-size:16px;font-weight:700;background:transparent;border:none;color:inherit;opacity:0.7;cursor:pointer;padding:4px 6px;line-height:1;white-space:nowrap;}
-  .tn-kbd-btn:hover{opacity:1;}
-  .tn-kbd-btn:hover{color:var(--ink);}
-  .tn-kbd-panel{display:none;position:absolute;top:100%;right:0;z-index:250;background:var(--surface);border:1px solid var(--line-strong);padding:12px 14px;min-width:290px;box-shadow:0 10px 30px rgba(0,0,0,0.14);text-align:left;}
-  @media (hover:hover){.tn-kbd:hover .tn-kbd-panel{display:block;}}
-  .tn-kbd.open .tn-kbd-panel{display:block;}
-  .tn-kbd-title{font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:7px;}
-  .tn-kbd-row{font-size:12.5px;color:var(--ink-60);margin:6px 0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
-  .tn-kbd-row em{font-style:normal;color:var(--ink-40);font-size:10.5px;margin-left:auto;padding-left:10px;}
-  .tn-key{display:inline-block;font-size:10.5px;font-weight:800;border:1px solid var(--line-strong);padding:1px 6px;background:var(--paper-2);color:var(--ink);min-width:13px;text-align:center;}
   .page-title{max-width:1680px;}
   /* Main page area — no sidebar */
   .ud-page{max-width:1680px;margin:0 auto;padding:20px 32px 60px;}
   /* Nav shares the content grid so left/right margins match the page */
-  .tn{padding:10px 0;}
-  .tn-row{max-width:1680px;padding:0 32px;}
   /* Controls bar */
   .ud-controls{background:transparent;border:none;padding:14px 0;margin-bottom:16px;display:flex;flex-direction:row;align-items:center;gap:12px;flex-wrap:wrap;}
   .ud-search-row,.ud-filter-row{display:contents;}
@@ -300,9 +287,6 @@ UD_CSS = r"""
   .ud-case-topics input{accent-color:var(--neon);}
   /* ── Mobile (≤720px): tables become stacked cards ─────────────────────── */
   @media (max-width: 720px) {
-    .tn-left{flex-wrap:wrap;gap:8px 14px;}
-    .tn{padding:8px 0;}
-    .tn-row{padding:0 12px;}
     body{overflow-x:hidden;}
     .ud-party-empty{display:none;}
     .ud-page{padding:12px 12px 48px;}
@@ -444,37 +428,11 @@ PAGE_CSS = """<style>
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Archivo',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
   a{color:var(--ink);}
-  .tn{background:#000;border-bottom:1px solid rgba(255,255,255,0.12);padding:10px 20px;position:sticky;top:0;z-index:100;}
-  .tn-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between;max-width:1180px;margin:0 auto;}
-  .tn-left{display:flex;align-items:center;gap:16px;}
-  .tn-brand{display:inline-flex;align-items:center;padding:4px 0;text-decoration:none;}
-  .tn-brand-logo{height:34px;width:auto;}
-  .tn-logo-dark{display:none;}
-  [data-theme="dark"] .tn-logo-light{display:none;}
-  [data-theme="dark"] .tn-logo-dark{display:block;}
-  .tn-back{color:rgba(255,255,255,0.72);font-size:12px;text-decoration:none;border-left:1px solid rgba(255,255,255,0.18);padding-left:16px;filter:grayscale(1);}
-  .tn-back:hover,.tn-back.tn-on{color:#fff;font-weight:700;filter:none;}
-  [data-theme="light"] .tn{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}
-  [data-theme="light"] .tn-back{color:rgba(10,10,10,0.6);border-left-color:rgba(10,10,10,0.14);}
-  [data-theme="light"] .tn-back:hover,[data-theme="light"] .tn-back.tn-on{color:#0A0A0A;}
-  #theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.25);border-radius:99px;padding:2px 8px;cursor:pointer;font-size:13px;font-family:inherit;line-height:1;color:#fff;}
-  [data-theme="light"] #theme-toggle{border-color:rgba(10,10,10,0.14);color:#0A0A0A;}
   .page-title{max-width:1180px;margin:0 auto;padding:26px 32px 16px;border-bottom:2px solid var(--ink);}
   .page-title .eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);font-weight:700;}
   .page-title h1{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:800;letter-spacing:-0.02em;margin:8px 0 12px;display:flex;align-items:center;gap:10px;}
   .case-meta{display:flex;gap:22px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-60);}
   .case-meta strong{color:var(--ink);font-weight:700;}
-  .tn-kbd{position:relative;display:inline-flex;align-items:center;margin-left:auto;margin-right:10px;}
-  .tn-kbd-btn{font-family:inherit;font-size:16px;font-weight:700;background:transparent;border:none;color:inherit;opacity:0.7;cursor:pointer;padding:4px 6px;line-height:1;white-space:nowrap;}
-  .tn-kbd-btn:hover{opacity:1;}
-  .tn-kbd-btn:hover{color:var(--ink);}
-  .tn-kbd-panel{display:none;position:absolute;top:100%;right:0;z-index:250;background:var(--surface);border:1px solid var(--line-strong);padding:12px 14px;min-width:290px;box-shadow:0 10px 30px rgba(0,0,0,0.14);text-align:left;}
-  @media (hover:hover){.tn-kbd:hover .tn-kbd-panel{display:block;}}
-  .tn-kbd.open .tn-kbd-panel{display:block;}
-  .tn-kbd-title{font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:7px;}
-  .tn-kbd-row{font-size:12.5px;color:var(--ink-60);margin:6px 0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
-  .tn-kbd-row em{font-style:normal;color:var(--ink-40);font-size:10.5px;margin-left:auto;padding-left:10px;}
-  .tn-key{display:inline-block;font-size:10.5px;font-weight:800;border:1px solid var(--line-strong);padding:1px 6px;background:var(--paper-2);color:var(--ink);min-width:13px;text-align:center;}
   .status-badge{display:inline-block;margin-top:13px;font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;background:rgba(212,255,0,0.16);color:var(--ink);border:1px solid var(--neon);padding:3px 10px;}
   .also{margin-top:13px;font-size:11.5px;color:var(--ink-60);}
   .also a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);}
@@ -775,6 +733,7 @@ def render_case_page(case):
 <link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
 <title>{name} — Case Docket | Turnpage Intelligence</title>
 {THEME_SCRIPT_SUBDIR}
+<link rel="stylesheet" href="../intel-chrome.css">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 {PAGE_CSS}
@@ -995,6 +954,7 @@ def render_unified_docket(cases):
 <link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
 <title>Docket — Turnpage Intelligence</title>
 {THEME_SCRIPT}
+<link rel="stylesheet" href="intel-chrome.css">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 {PAGE_CSS}
@@ -1252,6 +1212,7 @@ def render_news_page(cases):
 <link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
 <title>News — Turnpage Intelligence</title>
 {THEME_SCRIPT}
+<link rel="stylesheet" href="intel-chrome.css">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 {PAGE_CSS}
@@ -1465,6 +1426,7 @@ def render_unified_calendar(cases):
 <link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
 <title>Calendar — Turnpage Intelligence</title>
 {THEME_SCRIPT}
+<link rel="stylesheet" href="intel-chrome.css">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 {PAGE_CSS}
@@ -1648,6 +1610,7 @@ def render_unified_notes(cases):
 <link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
 <title>Notes — Turnpage Intelligence</title>
 {THEME_SCRIPT}
+<link rel="stylesheet" href="intel-chrome.css">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 {PAGE_CSS}

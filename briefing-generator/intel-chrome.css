@@ -1,0 +1,56 @@
+/* intel-chrome.css — the shared shell every /intel page wears.
+   ONE definition of the top nav, brand logo, section links, keyboard-
+   shortcut panel, and theme toggle. Before this file these rules were
+   copy-pasted into six places (index/manage/prospects/briefings, plus two
+   separate blocks inside scripts/inject_cases.py) and had drifted: the nav's
+   inner width was 1680px on some pages, 1240px on Manage and 1180px on the
+   generated shells, so the bar never lined up with the content under it.
+
+   Load it FIRST, before a page's own <style>, so page-specific tweaks and
+   the runtime CSS theme.js injects (hamburger, gear menu, nav fitting) still
+   win. Anything that belongs to one page does NOT go here. */
+
+/* ── Bar ────────────────────────────────────────────────────────────────── */
+.tn{background:#000;border-bottom:1px solid rgba(255,255,255,0.12);padding:10px 0;position:sticky;top:0;z-index:100;}
+.tn-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between;max-width:1680px;margin:0 auto;padding:0 32px;}
+.tn-left{display:flex;align-items:center;gap:16px;}
+[data-theme="light"] .tn{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}
+
+/* ── Brand ──────────────────────────────────────────────────────────────── */
+.tn-brand{display:inline-flex;align-items:center;padding:4px 0;text-decoration:none;}
+.tn-brand-logo{height:34px;width:auto;}
+.tn-logo-dark{display:none;}
+[data-theme="dark"] .tn-logo-light{display:none;}
+[data-theme="dark"] .tn-logo-dark{display:block;}
+
+/* ── Section links ──────────────────────────────────────────────────────── */
+.tn-back{color:rgba(255,255,255,0.72);font-size:12px;text-decoration:none;border-left:1px solid rgba(255,255,255,0.18);padding-left:16px;filter:grayscale(1);}
+.tn-back:hover,.tn-back.tn-on{color:#fff;font-weight:700;filter:none;}
+[data-theme="light"] .tn-back{color:rgba(10,10,10,0.6);border-left-color:rgba(10,10,10,0.14);}
+[data-theme="light"] .tn-back:hover,[data-theme="light"] .tn-back.tn-on{color:#0A0A0A;}
+
+/* ── Theme toggle (legacy control — theme.js hides it and moves the
+      switcher into the gear menu; kept styled for any page still showing it) ── */
+#theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.25);border-radius:99px;padding:2px 8px;cursor:pointer;font-size:13px;font-family:inherit;line-height:1;color:#fff;}
+[data-theme="light"] #theme-toggle{border-color:rgba(10,10,10,0.14);color:#0A0A0A;}
+
+/* ── Keyboard-shortcuts panel ───────────────────────────────────────────── */
+.tn-kbd{position:relative;display:inline-flex;align-items:center;margin-left:auto;margin-right:10px;}
+.tn-kbd-btn{font-family:inherit;font-size:16px;font-weight:700;background:transparent;border:none;color:rgba(255,255,255,0.72);cursor:pointer;padding:4px 6px;line-height:1;white-space:nowrap;}
+.tn-kbd-btn:hover{color:#fff;}
+[data-theme="light"] .tn-kbd-btn{color:rgba(10,10,10,0.6);}
+[data-theme="light"] .tn-kbd-btn:hover{color:#0A0A0A;}
+.tn-kbd-panel{display:none;position:absolute;top:100%;right:0;z-index:250;background:var(--surface);border:1px solid var(--line-strong);padding:12px 14px;min-width:270px;box-shadow:0 10px 30px rgba(0,0,0,0.14);text-align:left;}
+@media (hover:hover){.tn-kbd:hover .tn-kbd-panel{display:block;}}
+.tn-kbd.open .tn-kbd-panel{display:block;}
+.tn-kbd-title{font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:7px;}
+.tn-kbd-row{font-size:12.5px;color:var(--ink-60);margin:6px 0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.tn-kbd-row em{font-style:normal;color:var(--ink-40);font-size:10.5px;margin-left:auto;padding-left:10px;}
+.tn-key{display:inline-block;font-size:10.5px;font-weight:800;border:1px solid var(--line-strong);padding:1px 6px;background:var(--paper-2);color:var(--ink);min-width:13px;text-align:center;}
+
+/* ── Phones: tighter bar, links wrap ────────────────────────────────────── */
+@media (max-width: 720px){
+  .tn{padding:8px 0;}
+  .tn-row{padding:0 12px;}
+  .tn-left{flex-wrap:wrap;gap:8px 14px;}
+}
