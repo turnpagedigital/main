@@ -170,7 +170,7 @@
     if(!left||document.getElementById('tn-hamburger'))return;
     var st=document.createElement('style');
     st.textContent=
-      '.tn-hamburger{display:none;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:4px;width:32px;height:30px;font-size:16px;line-height:1;cursor:pointer;flex:0 0 auto;}'+
+      '.tn-hamburger{display:none;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:15px;width:32px;height:30px;font-size:16px;line-height:1;cursor:pointer;flex:0 0 auto;}'+
       '.tn.tn-compact .tn-lbl{display:none;}'+
       '[data-theme="light"] .tn-hamburger{border-color:rgba(10,10,10,0.14);color:#0A0A0A;}'+
       '@media (max-width:720px){'+

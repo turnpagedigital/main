@@ -180,6 +180,7 @@ UD_CSS = r"""
   .ud-table thead th:last-child,.ud-table tbody tr:not(.ud-day-row) td:last-child{padding-right:14px;}
   .ud-th-icon{padding-left:1px;padding-right:1px;}
   .ud-mark-cell button{padding-left:2px;padding-right:2px;}
+  .ud-table td.ud-mark-cell,.ud-table th.ud-th-icon{width:1%;}
   .ud-bm-btn,.ud-note-btn,.ud-soc-btn{background:none;border:none;cursor:pointer;font-size:15px;padding:2px 4px;line-height:1;color:var(--ink-40);}
   .ud-bm-btn:hover,.ud-note-btn:hover,.ud-soc-btn:hover{color:var(--ink);}
   .ud-bm-btn.ud-bm-on{color:#EAB308;}
@@ -228,6 +229,7 @@ UD_CSS = r"""
   .ud-snz-btn:hover{color:var(--ink);}
   .ud-snz-btn.ud-snz-on{color:#3B78D8;}
   .ud-del-btn{background:none;border:none;cursor:pointer;padding:2px 4px;line-height:1;color:var(--ink-40);}
+  .ud-table td .ud-bm-btn,.ud-table td .ud-note-btn,.ud-table td .ud-del-btn{margin:0 3px;}
   .ud-del-btn:hover{color:#C84141;}
   .ud-hide-btn{background:none;border:none;cursor:pointer;padding:2px 4px;line-height:1;color:var(--ink-40);}
   .ud-hide-btn:hover{color:var(--ink);}
@@ -265,7 +267,7 @@ UD_CSS = r"""
   /* Each snoozed reminder is styled to match the dashboard Notes card exactly
      — same paper color, title + artifact + date-prefixed body — so a due
      reminder reads as the same kind of object as a note. */
-  .ud-due-card{background:#EEFFA3;border-top:4px solid var(--cc, transparent);border-radius:14px;padding:14px 17px;box-shadow:0 6px 10px -7px rgba(10,10,10,0.4);}
+  .ud-due-card{background:#EEFFA3;border-top:4px solid var(--cc, transparent);border-radius:15px;padding:14px 17px;box-shadow:0 6px 10px -7px rgba(10,10,10,0.4);}
   [data-theme="dark"] .ud-due-card{background:#2B2723;box-shadow:0 6px 14px -7px rgba(0,0,0,0.7);}
   .ud-due-title{font-size:15px;font-weight:800;color:#21201A;padding-bottom:7px;margin-bottom:10px;border-bottom:1px solid rgba(10,10,10,0.14);}
   .ud-due-artifact{display:flex;align-items:center;gap:6px;font-size:12px;font-style:italic;color:rgba(10,10,10,0.5);margin-bottom:10px;}
@@ -354,7 +356,7 @@ UD_CSS = r"""
   .ud-desc{color:var(--ink);}
   .ud-desc-empty{color:var(--ink-40);}
   .ud-doc{white-space:nowrap;text-align:right;overflow:hidden;}
-  .ud-landmark{display:inline-block;font-size:10px;font-weight:700;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 6px;margin-right:4px;vertical-align:middle;border-radius:3px;}
+  .ud-landmark{display:inline-block;font-size:10px;font-weight:700;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 6px;margin-right:4px;vertical-align:middle;border-radius:15px;}
   .ud-news-tag{display:inline-block;font-size:9px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);background:transparent;border:1px solid var(--ink);padding:1px 7px;margin-right:5px;vertical-align:middle;}
   .ud-new-pill{display:inline-block;font-size:9px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;color:#0A0A0A;background:var(--neon);padding:1px 7px;margin-left:6px;vertical-align:middle;}
   #ud-sync{margin-left:10px;font-size:12px;}
@@ -858,8 +860,8 @@ DOCKET_LIGHT_CSS = """<style>
   .ud-table td.ud-more-cell .ud-more-btn { display: none; }
   .ud-more-btn { background: none; border: none; color: var(--ink-60); font-size: 17px; font-weight: 700; cursor: pointer; padding: 2px 8px; line-height: 1; }
   .ud-more-btn:hover { color: var(--ink); }
-  .ud-more-menu { position: fixed; z-index: 1400; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); padding: 4px; min-width: 170px; display: none; }
-  .ud-more-menu button { display: flex; align-items: center; gap: 9px; width: 100%; background: none; border: none; font-family: inherit; font-size: 12.5px; font-weight: 600; color: var(--ink); cursor: pointer; padding: 8px 10px; text-align: left; border-radius: 6px; }
+  .ud-more-menu { position: fixed; z-index: 1400; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); padding: 4px; min-width: 170px; display: none; }
+  .ud-more-menu button { display: flex; align-items: center; gap: 9px; width: 100%; background: none; border: none; font-family: inherit; font-size: 12.5px; font-weight: 600; color: var(--ink); cursor: pointer; padding: 8px 10px; text-align: left; border-radius: 15px; }
   .ud-more-menu button:hover { background: var(--paper-2); }
   @media (min-width: 721px) and (max-width: 1080px) {
     /* auto layout: with the icon columns display:none they truly collapse —
