@@ -291,9 +291,11 @@
     .ih-dd-row:hover { background: var(--paper-2); }
     [data-theme="dark"] .ih-dd-row:hover { background: rgba(229,231,235,0.07); }
     .ih-dd-row input[type="checkbox"] { width: 15px; height: 15px; flex: 0 0 auto; margin: 0; accent-color: var(--neon-block); cursor: pointer; }
-    .ih-dd-row .ih-gear { opacity: 0; transition: opacity 0.12s; }
-    .ih-dd-row:hover .ih-gear, .ih-dd-row .ih-gear:focus-visible { opacity: 1; }
-    @media (hover: none) { .ih-dd-row .ih-gear { opacity: 1; } }
+    .ih-dd-row .ih-gear, .ih-dd-row .ih-sync-case { opacity: 0; transition: opacity 0.12s; }
+    .ih-dd-row:hover .ih-gear, .ih-dd-row .ih-gear:focus-visible,
+    .ih-dd-row:hover .ih-sync-case, .ih-dd-row .ih-sync-case:focus-visible,
+    .ih-dd-row .ih-sync-case:disabled { opacity: 1; }
+    @media (hover: none) { .ih-dd-row .ih-gear, .ih-dd-row .ih-sync-case { opacity: 1; } }
     @media (max-width: 700px) { .ih-dd-panel { min-width: 0; width: calc(100vw - 32px); max-width: calc(100vw - 32px); } }
     .ih-grp-head { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 8px; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-60); margin: 12px 0 0; padding-bottom: 7px; border-bottom: 1px solid var(--line-strong); }
     .ih-grp-head:first-child { margin-top: 0; }
@@ -427,9 +429,9 @@
     [data-theme="dark"] .ih-note-counter { color: rgba(237,231,222,0.6); }
     .ih-gear { margin-left: auto; background: none; border: none; cursor: pointer; color: var(--ink-60); font-size: 17px; padding: 0 2px; }
     .ih-gear:hover { color: var(--ink); }
-    .ih-sync-case { background: none; border: none; cursor: pointer; font-size: 14px; line-height: 1; padding: 0 4px; opacity: 0.75; flex: 0 0 auto; }
-    .ih-sync-case:hover { opacity: 1; }
-    .ih-sync-case:disabled { cursor: default; opacity: 0.5; }
+    .ih-sync-case { background: none; border: none; cursor: pointer; font-size: 14px; line-height: 1; padding: 0 4px; color: var(--ink-60); flex: 0 0 auto; }
+    .ih-sync-case:hover { color: var(--ink); }
+    .ih-sync-case:disabled { cursor: default; }
     .ih-color-pop { position: absolute; z-index: 1000; background: var(--surface); border: 1px solid var(--line-strong); padding: 14px; width: 240px; box-shadow: 0 6px 24px rgba(0,0,0,0.22); }
     .ih-color-pop .ud-pop-title { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
     .ih-color-pop .ud-pop-swatches { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-bottom: 12px; }

@@ -1237,7 +1237,7 @@
           '<input type="checkbox" data-case="' + esc(m.slug) + '"' + (caseOn(m.slug) ? " checked" : "") + ">" +
           casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color) +
           '<span style="flex:1"></span>' +
-          '<button type="button" class="ih-sync-case" data-sync-slug="' + esc(m.slug) + '" title="Sync this case now — pull fresh docket + news">🔄</button>' +
+          '<button type="button" class="ih-sync-case" data-sync-slug="' + esc(m.slug) + '" title="Sync this case now — pull fresh docket + news"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg></button>' +
           '<button type="button" class="ih-gear" data-case-gear="' + esc(m.slug) + '" title="Colors"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></button>' +
         "</label>";
     });
@@ -1836,7 +1836,7 @@
   function runManualSync(slug, btn) {
     btn = btn || document.getElementById("ih-sync-btn");
     if (!btn) return;
-    var reset = btn.textContent, resetTitle = btn.getAttribute("title");
+    var reset = btn.innerHTML, resetTitle = btn.getAttribute("title");
     btn.disabled = true;
     btn.textContent = "⏳";
     btn.setAttribute("title", "Syncing…");
@@ -1855,7 +1855,7 @@
       btn.textContent = "✗"; btn.setAttribute("title", "Sync failed");
     }).then(function () {
       setTimeout(function () {
-        btn.disabled = false; btn.textContent = reset;
+        btn.disabled = false; btn.innerHTML = reset;
         if (resetTitle) btn.setAttribute("title", resetTitle);
       }, 2500);
     });
