@@ -936,8 +936,7 @@
         var meta = document.getElementById("ud-meta");
         if (meta && ITEMS.length) {
           var newCount = ITEMS.filter(function (i) { return (i.status || "new") === "new" && !isBuried(i); }).length;
-          meta.textContent = newCount + " candidate case" + (newCount === 1 ? "" : "s") +
-            " awaiting triage. Vote to steer the scans, note your thinking, snooze or hide the clutter — Track promotes, Dismiss buries for good.";
+          meta.textContent = newCount + " candidate case" + (newCount === 1 ? "" : "s") + " awaiting triage.";
         }
         render();
         renderThemePanel();
