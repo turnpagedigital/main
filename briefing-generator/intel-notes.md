@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-13 15:08 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-13 15:09 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
