@@ -64,7 +64,7 @@ export default function Footer() {
                 src="/TPDM%20Logo%20Std.png"
                 alt="TURNPAGE"
                 loading="lazy"
-                style={{ height: 56, width: "auto", display: "block" }}
+                style={{ maxWidth: 200, width: "100%", height: "auto", display: "block" }}
               />
             </a>
           </div>

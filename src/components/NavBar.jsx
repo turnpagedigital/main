@@ -132,7 +132,7 @@ export default function NavBar({ currentPage, open, onOpenChange }) {
           <img
             src="/TPDM%20Logo%20Std.png"
             alt="TURNPAGE"
-            style={{ height: 36, width: "auto", display: "block" }}
+            style={{ height: 28, width: "auto", display: "block" }}
           />
         </a>
 

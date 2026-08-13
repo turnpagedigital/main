@@ -10,7 +10,8 @@
         "hachette-et-al-v-meta-platforms-llama",
         "kadrey-v-meta-contributory-infringement-amendment",
         "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153"
-      ]
+      ],
+      "color": "#cafb67"
     },
     {
       "id": "tariffs",
@@ -18,7 +19,8 @@
       "members": [
         "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",
         "vos-selections-v-trump"
-      ]
+      ],
+      "color": "#ffc2c8"
     }
   ]
 }
