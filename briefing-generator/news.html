@@ -457,6 +457,7 @@
   [data-theme="dark"] .ud-table tbody tr:first-child td { padding-top: 20px; }
   .ud-table tr.ud-row-daycollapsed { display: none; }
   .ud-table tbody tr.ud-day-row td { padding-top: 30px; }
+  .ud-th-menu-sep { border-top: 1px solid var(--line); margin: 4px 0; }
   @media (max-width: 720px) {
     .ud-table { background: transparent; border: none; }
     [data-theme="light"] .ud-table tbody tr { border-bottom-color: var(--line); }
@@ -575,6 +576,9 @@
   <button type="button" class="ud-th-menu-item" data-val="30d">Last 30 days</button>
   <button type="button" class="ud-th-menu-item" data-val="90d">Last 90 days</button>
   <button type="button" class="ud-th-menu-item" data-val="custom">Set custom date range…</button>
+  <div class="ud-th-menu-sep"></div>
+  <button type="button" class="ud-th-menu-item" data-sort="desc">Sort — newest first</button>
+  <button type="button" class="ud-th-menu-item" data-sort="asc">Sort — oldest first</button>
 </div>
 
 <div class="ud-page">
@@ -613,7 +617,6 @@
     </span>
     <span id="ud-count"></span>
     <span id="ud-hidden-info" class="uc-curation-info"></span>
-    <button id="ud-sort-btn">Date ↓</button>
   </div>
 
   <table class="ud-table">

@@ -400,6 +400,7 @@ UD_CSS = r"""
   [data-theme="dark"] .ud-table tbody tr:first-child td { padding-top: 20px; }
   .ud-table tr.ud-row-daycollapsed { display: none; }
   .ud-table tbody tr.ud-day-row td { padding-top: 30px; }
+  .ud-th-menu-sep { border-top: 1px solid var(--line); margin: 4px 0; }
   @media (max-width: 720px) {
     .ud-table { background: transparent; border: none; }
     [data-theme="light"] .ud-table tbody tr { border-bottom-color: var(--line); }
@@ -1087,6 +1088,9 @@ def render_unified_docket(cases):
   <button type="button" class="ud-th-menu-item" data-val="30d">Last 30 days</button>
   <button type="button" class="ud-th-menu-item" data-val="90d">Last 90 days</button>
   <button type="button" class="ud-th-menu-item" data-val="custom">Set custom date range…</button>
+  <div class="ud-th-menu-sep"></div>
+  <button type="button" class="ud-th-menu-item" data-sort="desc">Sort — newest first</button>
+  <button type="button" class="ud-th-menu-item" data-sort="asc">Sort — oldest first</button>
 </div>
 
 <div class="ud-page">
@@ -1126,7 +1130,6 @@ def render_unified_docket(cases):
     </span>
     <span id="ud-count"></span>
     <span id="ud-hidden-info" class="uc-curation-info"></span>
-    <button id="ud-sort-btn">Date ↓</button>
     <div class="ud-sync-dd" id="ud-sync-dd">
       <button type="button" id="ud-sync-btn" class="ud-sync-btn" title="Pull fresh docket entries + news for one case, and refresh its briefing if due">⟳ Sync case</button>
       <div id="ud-sync-panel" class="ud-sync-panel" style="display:none;"></div>
@@ -1335,6 +1338,9 @@ def render_news_page(cases):
   <button type="button" class="ud-th-menu-item" data-val="30d">Last 30 days</button>
   <button type="button" class="ud-th-menu-item" data-val="90d">Last 90 days</button>
   <button type="button" class="ud-th-menu-item" data-val="custom">Set custom date range…</button>
+  <div class="ud-th-menu-sep"></div>
+  <button type="button" class="ud-th-menu-item" data-sort="desc">Sort — newest first</button>
+  <button type="button" class="ud-th-menu-item" data-sort="asc">Sort — oldest first</button>
 </div>
 
 <div class="ud-page">
@@ -1373,7 +1379,6 @@ def render_news_page(cases):
     </span>
     <span id="ud-count"></span>
     <span id="ud-hidden-info" class="uc-curation-info"></span>
-    <button id="ud-sort-btn">Date ↓</button>
   </div>
 
   <table class="ud-table">
@@ -1459,7 +1464,7 @@ def render_unified_calendar(cases):
   .uc-week-grid{{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-left:1px solid var(--line-strong);border-top:1px solid var(--line-strong);}}
   .uc-week-col{{min-height:200px;padding:6px;border-right:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);}}
   .uc-week-dow{{font-size:11px;font-weight:800;letter-spacing:0.05em;color:var(--ink-60);margin-bottom:6px;}}
-  .uc-week-card{{border:1px solid var(--line-strong);border-left-width:3px;padding:6px 7px;margin-bottom:6px;background:var(--surface);cursor:pointer;}}
+  .uc-week-card{{border:none;border-left:3px solid var(--line-strong);padding:6px 7px;margin-bottom:6px;background:var(--surface);cursor:pointer;}}
   .uc-week-card .ud-pill{{font-size:10px;}}
   .uc-week-kind{{font-size:11px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;margin-top:4px;}}
   .uc-week-snip{{font-size:11px;color:var(--ink-60);line-height:1.4;margin-top:3px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}}
@@ -1520,7 +1525,6 @@ def render_unified_calendar(cases):
     </div>
     <div class="ud-filter-row">
       <div class="ud-case-dd" id="ud-case-dd">
-        <button type="button" id="ud-case-dd-btn" class="ud-type-select ud-case-dd-btn">Cases <span class="ud-dd-caret">▾</span></button>
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
       <div class="ud-filter-right">
@@ -1602,6 +1606,7 @@ def render_unified_notes(cases):
   .ud-table th:nth-child(2){{width:1% !important;}}
   .ud-table td.ud-case{{width:1%;}}
   .ud-table td.ud-case .ud-pill{{max-width:200px;overflow:hidden;text-overflow:ellipsis;vertical-align:middle;}}
+  #ud-sort-btn.ud-sort-on, #ud-sort-entry-btn.ud-sort-on{{background:var(--ink);border-color:var(--ink);color:var(--bg);}}
   .un-note-text{{white-space:pre-wrap;font-size:inherit;line-height:1.5;}}
   .un-export{{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}}
 </style>
@@ -1683,7 +1688,6 @@ def render_unified_notes(cases):
     </div>
     <div class="ud-filter-row">
       <div class="ud-case-dd" id="ud-case-dd">
-        <button type="button" id="ud-case-dd-btn" class="ud-type-select ud-case-dd-btn">Cases <span class="ud-dd-caret">▾</span></button>
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
       <div class="ud-filter-right un-export">
@@ -1696,13 +1700,19 @@ def render_unified_notes(cases):
 
   <div class="ud-toolbar">
     <span id="ud-count"></span>
-    <button id="ud-sort-btn">Edited ↓</button>
   </div>
+
+<div id="un-th-timemenu" class="ud-th-menu" style="display:none;">
+  <button type="button" class="ud-th-menu-item" data-sort="edited-desc">Edited — newest first</button>
+  <button type="button" class="ud-th-menu-item" data-sort="edited-asc">Edited — oldest first</button>
+  <button type="button" class="ud-th-menu-item" data-sort="entry-desc">Entry date — newest first</button>
+  <button type="button" class="ud-th-menu-item" data-sort="entry-asc">Entry date — oldest first</button>
+</div>
 
   <table class="ud-table">
     <thead><tr>
-      <th style="width:170px">Last edited</th>
-      <th style="width:130px">Case</th>
+      <th id="un-th-time" class="ud-th-filter" style="width:170px" title="Sort by edited or entry date"><span class="ud-th-label">Last edited</span> <span class="ud-th-caret">▾</span></th>
+      <th id="un-th-case" class="ud-th-filter" style="width:130px" title="Filter by case"><span class="ud-th-label">Case</span> <span class="ud-th-caret">▾</span></th>
       <th style="width:260px">Entry</th>
       <th>Note</th>
       <th style="width:90px;text-align:right">Source</th>

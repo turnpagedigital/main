@@ -67,6 +67,7 @@
   var activeCases = {};
   var UNASSIGNED_KEY = "__unassigned__";
   var sortDir = "desc";       // by last edit
+  var sortField = "edited";   // "edited" | "entry" — which timestamp the sort uses
   var searchText = "";
   var dateFrom = "";
   var dateTo = "";
@@ -81,6 +82,7 @@
     try {
       var s = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
       if (s.sortDir === "asc" || s.sortDir === "desc") sortDir = s.sortDir;
+      if (s.sortField === "edited" || s.sortField === "entry") sortField = s.sortField;
       if (["24h", "7d", "30d", "90d", "all", "custom"].indexOf(s.lookback) !== -1) lookback = s.lookback;
       _savedState = s;
     } catch (e) {}
@@ -88,7 +90,7 @@
   function saveFilterState() {
     try {
       localStorage.setItem(FILTER_KEY, JSON.stringify({
-        sortDir: sortDir, activeCases: activeCases, lookback: lookback,
+        sortDir: sortDir, sortField: sortField, activeCases: activeCases, lookback: lookback,
       }));
     } catch (e) {}
   }
@@ -144,8 +146,14 @@
   function renderCaseFilter() {
     var btn = document.getElementById("ud-case-dd-btn");
     var panel = document.getElementById("ud-case-dd-panel");
-    if (!btn || !panel) return;
-    btn.innerHTML = esc(caseFilterLabel()) + ' <span class="ud-dd-caret">▾</span>';
+    if (!panel) return;
+    if (btn) btn.innerHTML = esc(caseFilterLabel()) + ' <span class="ud-dd-caret">▾</span>';
+    // The CASE header cell underlines while a case filter is active (docket pattern).
+    var thc = document.getElementById("un-th-case");
+    if (thc && CASES.length) {
+      thc.classList.toggle("ud-th-on",
+        CASES.filter(function (c) { return activeCases[c.slug]; }).length !== CASES.length);
+    }
     if (!CASES.length) {
       panel.innerHTML = '<div class="ud-dd-empty">No cases loaded.</div>';
       return;
@@ -445,7 +453,10 @@
         url: p.source_url || "",
       });
     });
-    return out;
+    // Only records with actual note text belong on this page — bookmark-only
+    // (and snooze/hide-only) rows keep their state on the docket/news rows
+    // themselves without cluttering the notes list.
+    return out.filter(function (n) { return (n.note || "").trim(); });
   }
 
   function filtered() {
@@ -472,8 +483,9 @@
       return true;
     });
     list.sort(function (a, b) {
-      var cmp = (a.updated_at || "") < (b.updated_at || "") ? -1
-        : (a.updated_at || "") > (b.updated_at || "") ? 1 : 0;
+      var ak = sortField === "entry" ? (a.date_filed || a.updated_at || "") : (a.updated_at || "");
+      var bk = sortField === "entry" ? (b.date_filed || b.updated_at || "") : (b.updated_at || "");
+      var cmp = ak < bk ? -1 : ak > bk ? 1 : 0;
       return sortDir === "desc" ? -cmp : cmp;
     });
     return list;
@@ -848,19 +860,27 @@
       if (pop && pop.style.display !== "none" && !pop.contains(ev.target)) closePopover();
     });
 
-    var ddBtn = document.getElementById("ud-case-dd-btn");
+    // Case filter opens from the CASE header cell (same pattern as the docket).
+    var thCase = document.getElementById("un-th-case");
     var ddPanel = document.getElementById("ud-case-dd-panel");
-    if (ddBtn && ddPanel) {
-      ddBtn.addEventListener("click", function (ev) {
+    if (thCase && ddPanel) {
+      document.body.appendChild(ddPanel);  // page-level positioning under the th
+      thCase.addEventListener("click", function (ev) {
         ev.stopPropagation();
         var open = ddPanel.style.display !== "none";
-        ddPanel.style.display = open ? "none" : "block";
-        if (open) closePopover();
+        if (open) { ddPanel.style.display = "none"; closePopover(); return; }
+        var rect = thCase.getBoundingClientRect();
+        ddPanel.style.position = "absolute";
+        ddPanel.style.top = (rect.bottom + window.scrollY + 4) + "px";
+        var left = rect.left + window.scrollX;
+        var maxLeft = window.scrollX + document.documentElement.clientWidth - 288;
+        ddPanel.style.left = Math.max(8, Math.min(left, maxLeft)) + "px";
+        ddPanel.style.display = "block";
       });
       document.addEventListener("click", function (ev) {
         if (ddPanel.style.display === "none") return;
         if (ev.target && !ev.target.isConnected) return;  // click landed on re-rendered UI inside the panel
-        if (ddPanel.contains(ev.target) || ddBtn.contains(ev.target)) return;
+        if (ddPanel.contains(ev.target) || thCase.contains(ev.target)) return;
         var pop = document.getElementById("ud-color-pop");
         if (pop && pop.contains(ev.target)) return;
         ddPanel.style.display = "none";
@@ -977,15 +997,47 @@
       });
     }
 
-    var sortBtn = document.getElementById("ud-sort-btn");
-    if (sortBtn) {
-      sortBtn.textContent = sortDir === "desc" ? "Edited ↓" : "Edited ↑";
-      sortBtn.addEventListener("click", function () {
-        sortDir = sortDir === "desc" ? "asc" : "desc";
-        sortBtn.textContent = sortDir === "desc" ? "Edited ↓" : "Edited ↑";
-        saveFilterState();
-        render();
+    // Sorting lives in the LAST EDITED header cell's dropdown (same pattern as
+    // the docket's TIME menu): edited or entry date, newest or oldest first.
+    var thTime = document.getElementById("un-th-time");
+    var thTimeMenu = document.getElementById("un-th-timemenu");
+    if (thTime && thTimeMenu) {
+      document.body.appendChild(thTimeMenu);
+      var markSort = function () {
+        thTimeMenu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
+          b.classList.toggle("ud-th-menu-on", b.getAttribute("data-sort") === sortField + "-" + sortDir);
+        });
+        thTime.classList.toggle("ud-th-on", !(sortField === "edited" && sortDir === "desc"));
+      };
+      thTime.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        var open = thTimeMenu.style.display !== "none";
+        if (open) { thTimeMenu.style.display = "none"; return; }
+        var rect = thTime.getBoundingClientRect();
+        thTimeMenu.style.display = "block";
+        thTimeMenu.style.position = "absolute";
+        thTimeMenu.style.top = (rect.bottom + window.scrollY + 4) + "px";
+        var maxLeft = window.scrollX + document.documentElement.clientWidth - thTimeMenu.offsetWidth - 8;
+        thTimeMenu.style.left = Math.max(8, Math.min(rect.left + window.scrollX, maxLeft)) + "px";
+        markSort();
       });
+      thTimeMenu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var v = (b.getAttribute("data-sort") || "").split("-");
+          sortField = v[0] === "entry" ? "entry" : "edited";
+          sortDir = v[1] === "asc" ? "asc" : "desc";
+          thTimeMenu.style.display = "none";
+          saveFilterState();
+          markSort();
+          render();
+        });
+      });
+      document.addEventListener("click", function (ev) {
+        if (thTimeMenu.style.display === "none") return;
+        if (thTimeMenu.contains(ev.target) || thTime.contains(ev.target)) return;
+        thTimeMenu.style.display = "none";
+      });
+      markSort();
     }
 
     var mdBtn = document.getElementById("un-export-md");

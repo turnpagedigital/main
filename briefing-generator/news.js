@@ -2995,7 +2995,9 @@
       if (lbl) lbl.textContent = LB_LABELS[lookback] || "All time";
       var menu = document.getElementById("ud-th-timemenu");
       if (menu) menu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
-        b.classList.toggle("ud-th-menu-on", b.getAttribute("data-val") === lookback);
+        b.classList.toggle("ud-th-menu-on", b.hasAttribute("data-sort")
+          ? b.getAttribute("data-sort") === sortDir
+          : b.getAttribute("data-val") === lookback);
       });
     }
     var thTimeEl = document.getElementById("ud-th-time");
@@ -3013,6 +3015,14 @@
       });
       thTimeMenuEl.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
         b.addEventListener("click", function () {
+          var srt = b.getAttribute("data-sort");
+          if (srt) {  // "Sort — newest/oldest first" lives in this menu too
+            sortDir = srt;
+            thTimeMenuEl.style.display = "none";
+            saveFilterState();
+            render();
+            return;
+          }
           lookback = b.getAttribute("data-val");
           if (lookback !== "custom") {
             dateFrom = ""; dateTo = "";
