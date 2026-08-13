@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
+<title>RNDC — Case Docket | Turnpage Daily Briefing</title>
+<script src="../theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{color-scheme:light;--bg:#FFFFFF;--surface:#FFFFFF;--paper-2:#F4F5F7;--ink:#0A0A0A;--ink-60:rgba(10,10,10,0.6);--ink-40:rgba(10,10,10,0.4);--line:rgba(10,10,10,0.08);--line-strong:rgba(10,10,10,0.14);--neon:#D4FF00;}
+  [data-theme="dark"]{color-scheme:dark;--bg:#0D0D0D;--surface:#17171B;--paper-2:#17171B;--ink:#E5E7EB;--ink-60:rgba(229,231,235,0.62);--ink-40:rgba(229,231,235,0.42);--line:rgba(229,231,235,0.1);--line-strong:rgba(229,231,235,0.18);}
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Archivo',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:var(--ink);}
+  .tn{background:#000;border-bottom:1px solid rgba(255,255,255,0.12);padding:10px 20px;position:sticky;top:0;z-index:100;}
+  .tn-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between;max-width:1180px;margin:0 auto;}
+  .tn-left{display:flex;align-items:center;gap:16px;}
+  .tn-brand{display:inline-flex;align-items:center;padding:4px 0;text-decoration:none;}
+  .tn-brand-logo{height:34px;width:auto;}
+  .tn-logo-dark{display:none;}
+  [data-theme="dark"] .tn-logo-light{display:none;}
+  [data-theme="dark"] .tn-logo-dark{display:block;}
+  .tn-back{color:rgba(255,255,255,0.72);font-size:12px;text-decoration:none;border-left:1px solid rgba(255,255,255,0.18);padding-left:16px;filter:grayscale(1);}
+  .tn-back:hover,.tn-back.tn-on{color:#fff;font-weight:700;filter:none;}
+  [data-theme="light"] .tn{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}
+  [data-theme="light"] .tn-back{color:rgba(10,10,10,0.6);border-left-color:rgba(10,10,10,0.14);}
+  [data-theme="light"] .tn-back:hover,[data-theme="light"] .tn-back.tn-on{color:#0A0A0A;}
+  #theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.25);border-radius:99px;padding:2px 8px;cursor:pointer;font-size:13px;font-family:inherit;line-height:1;color:#fff;}
+  [data-theme="light"] #theme-toggle{border-color:rgba(10,10,10,0.14);color:#0A0A0A;}
+  .page-title{max-width:1180px;margin:0 auto;padding:26px 32px 16px;border-bottom:2px solid var(--ink);}
+  .page-title .eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);font-weight:700;}
+  .page-title h1{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800;letter-spacing:-0.02em;margin:8px 0 12px;display:flex;align-items:center;gap:10px;}
+  .case-meta{display:flex;gap:22px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-60);}
+  .case-meta strong{color:var(--ink);font-weight:700;}
+  .tn-kbd{position:relative;display:inline-flex;align-items:center;margin-left:auto;margin-right:10px;}
+  .tn-kbd-btn{font-family:inherit;font-size:11.5px;font-weight:800;letter-spacing:0.04em;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;padding:5px 10px;line-height:1;white-space:nowrap;}
+  .tn-kbd-btn:hover{color:var(--ink);}
+  .tn-kbd-panel{display:none;position:absolute;top:100%;right:0;z-index:250;background:var(--surface);border:1px solid var(--line-strong);padding:12px 14px;min-width:290px;box-shadow:0 10px 30px rgba(0,0,0,0.14);text-align:left;}
+  @media (hover:hover){.tn-kbd:hover .tn-kbd-panel{display:block;}}
+  .tn-kbd.open .tn-kbd-panel{display:block;}
+  .tn-kbd-title{font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:7px;}
+  .tn-kbd-row{font-size:12.5px;color:var(--ink-60);margin:6px 0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+  .tn-kbd-row em{font-style:normal;color:var(--ink-40);font-size:10.5px;margin-left:auto;padding-left:10px;}
+  .tn-key{display:inline-block;font-size:10.5px;font-weight:800;border:1px solid var(--line-strong);padding:1px 6px;background:var(--paper-2);color:var(--ink);min-width:13px;text-align:center;}
+  .status-badge{display:inline-block;margin-top:13px;font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;background:rgba(212,255,0,0.16);color:var(--ink);border:1px solid var(--neon);padding:3px 10px;}
+  .also{margin-top:13px;font-size:11.5px;color:var(--ink-60);}
+  .also a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);}
+  .seed-note{max-width:1180px;margin:16px auto 0;padding:0 32px;}
+  .seed-note .inner{border:1px dashed var(--line-strong);padding:9px 13px;font-size:11.5px;color:var(--ink-60);}
+  .seed-note strong{color:var(--ink);}
+  .wrap{max-width:1180px;margin:0 auto;padding:22px 32px 12px;display:grid;gap:24px;grid-template-columns:1fr;}
+  @media(min-width:920px){.wrap{grid-template-columns:1.9fr 1fr;align-items:start;}}
+  .panel{background:var(--surface);border:1px solid var(--line-strong);}
+  .panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line-strong);}
+  .panel-head h2{margin:0;font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding-left:1.4em;position:relative;color:var(--ink);}
+  .panel-head h2::before{content:"";position:absolute;left:0;top:0.36em;width:1.1em;height:0.18em;background:var(--neon);}
+  .panel-head .meta{display:flex;align-items:center;gap:12px;}
+  .panel-head .src{font-size:11px;color:var(--ink-60);}
+  .tc-counter{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;white-space:nowrap;}
+  .tc-counter.active{background:rgba(239,68,68,0.14);color:#ef4444;}
+  .tc-counter.quiet{background:var(--paper-2);color:var(--ink-60);}
+  .tc-pip{width:7px;height:7px;border-radius:50%;background:currentColor;}
+  table{width:100%;border-collapse:collapse;}
+  th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:10px 18px;border-bottom:1px solid var(--line-strong);font-weight:700;}
+  td{padding:12px 18px;font-size:13px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink);}
+  tr:last-child td{border-bottom:none;}
+  tr.is-new td{background:rgba(212,255,0,0.06);}
+  .dkt{font-variant-numeric:tabular-nums;color:var(--ink-60);white-space:nowrap;}
+  .date{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;}
+  .new-pill{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.04em;color:#0A0A0A;background:var(--neon);padding:1px 6px;margin-left:8px;vertical-align:middle;}
+  .landmark{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.04em;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 6px;margin-left:8px;vertical-align:middle;}
+  .panel-foot{padding:12px 18px;border-top:1px solid var(--line-strong);font-size:12px;}
+  .panel-foot a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);}
+  .empty{font-size:12.5px;color:var(--ink-60);font-style:italic;padding:14px 18px;}
+  .stat{padding:16px 18px;border-bottom:1px solid var(--line-strong);}
+  .stat .big{font-size:30px;font-weight:800;line-height:1;color:var(--ink);}
+  .stat .big .accent{box-shadow:inset 0 -0.34em 0 var(--neon);}
+  [data-theme="dark"] .stat .big .accent{box-shadow:inset 0 -0.34em 0 #D4FF00;}
+  .stat .sub{font-size:12px;color:var(--ink-60);margin-top:7px;}
+  .dates{list-style:none;margin:0;padding:6px 18px;}
+  .dates li{padding:11px 0 11px 22px;border-bottom:1px solid var(--line);position:relative;font-size:12.5px;}
+  .dates li:last-child{border-bottom:none;}
+  .dates li::before{content:"";position:absolute;left:2px;top:15px;width:9px;height:9px;border-radius:50%;background:var(--line-strong);}
+  .dates li.done::before{background:var(--neon);}
+  .dates .d-date{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;}
+  .dates .d-label{color:var(--ink-60);display:block;}
+  .section-label{max-width:1180px;margin:14px auto 0;padding:0 32px;font-size:0.74rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);}
+  .cards{max-width:1180px;margin:14px auto 0;padding:0 32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+  @media(max-width:760px){.cards{grid-template-columns:1fr;}}
+  @media(max-width:720px){table{table-layout:fixed;}td,th{overflow-wrap:break-word;word-break:break-word;}}
+  .news-card{background:var(--surface);border:1px solid var(--line-strong);padding:14px;text-decoration:none;display:block;}
+  .news-card:hover{border-color:var(--ink-40);}
+  .news-card .src-line{font-size:10.5px;color:var(--ink-40);display:flex;justify-content:space-between;gap:8px;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em;}
+  .news-card .h{font-size:13px;font-weight:600;color:var(--ink);line-height:1.4;}
+  .foot{max-width:1180px;margin:28px auto 0;padding:24px 32px 50px;border-top:2px solid var(--ink);font-size:11px;color:var(--ink-60);line-height:1.7;}
+</style>
+<!-- AUTH GATE START -->
+<!-- AUTH GATE END -->
+</head>
+<body>
+
+<nav class="tn">
+  <div class="tn-row">
+    <div class="tn-left">
+      <a class="tn-brand" href="../index.html"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="../assets/turnpage-intel-logo.png"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="../assets/turnpage-intel-logo-dark.png"></a>
+      <a class="tn-back" href="../index.html">🏠 Dashboard</a>
+      <a class="tn-back" href="../docket.html">⚖️ Docket</a>
+      <a class="tn-back" href="../calendar.html">📅 Calendar</a>
+      <a class="tn-back" href="../notes.html">🗒️ Notes</a>
+      <a class="tn-back" href="../news.html">📡 News</a>
+      <a class="tn-back" href="../prospects.html">🔭 Prospects</a>
+    </div>
+    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">G</span> then <span class="tn-key">H</span> Home · <span class="tn-key">D</span> Docket · <span class="tn-key">C</span> Calendar · <span class="tn-key">P</span> Prospects · <span class="tn-key">N</span> Notes · <span class="tn-key">R</span> News</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">T</span> Today <em>Calendar · Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><div class="tn-gear" id="tn-gear"><button type="button" class="tn-gear-btn" id="tn-gear-btn" title="Settings" aria-haspopup="true">⚙️</button><div class="tn-gear-panel"><a href="manage.html#cases">Cases</a><a href="manage.html#themes">Themes</a><a href="manage.html#groups">Groups</a><a href="manage.html#voice">Voice</a><a href="manage.html#colors">Colors</a></div></div><button id="theme-toggle">🖥️</button>
+  </div>
+</nav>
+
+<div class="page-title">
+  <div class="eyebrow">Tracked Case · Docket Mirror</div>
+  <h1><span>⚖️</span>RNDC</h1>
+  <div class="case-meta">
+        <span><strong>Court:</strong> Bankr. S.D.Tx.</span>
+        <span><strong>No.:</strong> 26-90737</span>
+        <span><strong>Judge:</strong> Hon. Christopher M. Lopez</span>
+  </div>
+  <span class="status-badge">active</span>
+  <div class="also">Themes: 📜 Bankruptcy Creditor Rights</div>
+</div>
+
+
+
+<main class="wrap">
+  <div class="panel"><div class="panel-head"><h2>Docket</h2><div class="meta"><span class="tc-counter active"><span class="tc-pip"></span>15 new · 72h</span><span class="src">via CourtListener</span></div></div><table><thead><tr><th style="width:54px;">Dkt.</th><th style="width:104px;">Filed</th><th>Entry</th></tr></thead><tbody>
+<tr class="is-new"><td class="dkt">182</td><td class="date">Aug 13, 2026</td><td>Notice of Appearance and Request for Notice Filed by John Kendrick Turner Filed by on behalf of Tarrant County, Dallas County (Turner, John) (Entered: 08/13/2026)<span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">181</td><td class="date">Aug 12, 2026</td><td>Order Granting Motion for Phillip A. Cantwell To Appear pro hac vice (Related Doc # 160) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/12/2026. (rgs4) (Entered: 08/12/2026)<span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">180</td><td class="date">Aug 12, 2026</td><td>Order Granting Motion for Lucian B. Murley To Appear pro hac vice (Related Doc # 169) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/12/2026. (rgs4) (Entered: 08/12/2026)<span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">179</td><td class="date">Aug 12, 2026</td><td>Order Granting Motion for Benjamin M. Fischer To Appear pro hac vice (Related Doc # 171) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/12/2026. (rgs4) (Entered: 08/12/2026)<span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">178</td><td class="date">Aug 12, 2026</td><td>Order Granting Motion for Ryan T. Jareck To Appear pro hac vice (Related Doc # 170) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/12/2026. (rgs4) (Entered: 08/12/2026)<span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">177</td><td class="date">Aug 12, 2026</td><td>Notice of Appearance and Request for Notice Filed by Tara L Grundemeier Filed by on behalf of Cypress-Fairbanks ISD (Grundemeier, Tara) (Entered: 08/12/2026)<span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">176</td><td class="date">Aug 12, 2026</td><td>Motion / Debtors' Motion for Entry of an Order (I) Establishing Procedures for Interim Compensation and Reimbursement of Expenses for Professionals and (II) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 08/12/2026)<span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">175</td><td class="date">Aug 12, 2026</td><td>Notice of Appearance and Request for Notice Filed by Don Stecker Filed by on behalf of City of El Paso (Stecker, Don) (Entered: 08/12/2026)<span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">—</td><td class="date">Aug 12, 2026</td><td>Hearing Set<span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">—</td><td class="date">Aug 12, 2026</td><td>Hearing Set On (Related document(s): 145 Emergency Motion). Hybrid Hearing scheduled for 8/17/2026 at 11:30 AM at Houston, Courtroom 402 (CML). (rgs4)<span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">174</td><td class="date">Aug 11, 2026</td><td>Notice of Hearing on Emergency Motion. (Related document(s):145 Emergency Motion) Filed by Republic National Distributing Company, LLC (Higgins, John) (Entered: 08/11/2026)<span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">173</td><td class="date">Aug 11, 2026</td><td>Notice of Appearance and Request for Notice Filed by Berry D Spears Filed by on behalf of Winery Exchange, Inc. dba WX Brands (Spears, Berry) (Entered: 08/11/2026)<span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">172</td><td class="date">Aug 11, 2026</td><td>Affidavit Re: Debtors Emergency Motion for Entry of an Order (I) Approving Procedures for De Minimis Asset Sales, (II) Approving Procedures for De Minimis Asset Abandonment and Destruction, and (III) Granting Related Relief [Docket No. 145]. (related document(s):145 Emergency Motion). Filed by Republic National Distributing Company, LLC (Omni Agent Solutions) (Entered: 08/11/2026)<span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">171</td><td class="date">Aug 11, 2026</td><td>MOTION to Appear Pro Hac Vice for Benjamin M. Fischer, Esq. (Fee Paid: $100, receipt number A27477862) Filed by Creditor Databank IMX LLC (Geoghan, Daniel) (Entered: 08/11/2026)<span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">170</td><td class="date">Aug 11, 2026</td><td>MOTION to Appear Pro Hac Vice for Ryan T. Jareck, Esq. (Fee Paid: $100, receipt number A27477784) Filed by Creditor Databank IMX LLC (Geoghan, Daniel) (Entered: 08/11/2026)<span class="new-pill">NEW</span></td></tr>
+<tr><td class="dkt">169</td><td class="date">Aug 10, 2026</td><td>MOTION to Appear Pro Hac Vice for Lucian B. Murley, Esq. (Fee Paid: $100, receipt number A27475483) Filed by Creditor Proximo Spirits, Inc. (Murley, Lucian) (Entered: 08/10/2026)</td></tr>
+<tr><td class="dkt">168</td><td class="date">Aug 10, 2026</td><td>Notice of Appearance and Request for Notice Filed by Daniel Geoghan Filed by on behalf of Databank IMX LLC (Geoghan, Daniel) (Entered: 08/10/2026)</td></tr>
+<tr><td class="dkt">167</td><td class="date">Aug 10, 2026</td><td>Order Granting Motion for Darren Azman To Appear pro hac vice (Related Doc # 150) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/10/2026. (yml4) (Entered: 08/10/2026)</td></tr>
+<tr><td class="dkt">166</td><td class="date">Aug 10, 2026</td><td>Order Granting Motion for Bradley Thomas Giordano To Appear pro hac vice (Related Doc # 151) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/10/2026. (yml4) (Entered: 08/10/2026)</td></tr>
+<tr><td class="dkt">165</td><td class="date">Aug 10, 2026</td><td>Order Granting Motion for Steven Szanzer To Appear pro hac vice (Related Doc # 152) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/10/2026. (yml4) (Entered: 08/10/2026)</td></tr>
+<tr><td class="dkt">164</td><td class="date">Aug 10, 2026</td><td>Order Granting Motion for Robert Ethan Dover To Appear pro hac vice (Related Doc # 153) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/10/2026. (yml4) (Entered: 08/10/2026)</td></tr>
+<tr><td class="dkt">163</td><td class="date">Aug 10, 2026</td><td>Order Granting Motion for William B. Freeman To Appear pro hac vice (Related Doc # 155) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/10/2026. (yml4) (Entered: 08/10/2026)</td></tr>
+<tr><td class="dkt">162</td><td class="date">Aug 10, 2026</td><td>Notice of Appearance and Request for Notice Filed by Ben Alexander Barnes Filed by on behalf of Anheuser Busch, LLC and Its Subsidiaries (Barnes, Ben) (Entered: 08/10/2026)</td></tr>
+<tr><td class="dkt">161</td><td class="date">Aug 10, 2026</td><td>Affidavit Re: Notice of Commencement Cover Letter, Notice of Chapter 11 Bankruptcy Case, and Order Granting Complex Chapter 11 Bankruptcy Case Treatment [Docket No. 25]. (related document(s):25 Generic Order, 45 Order on Emergency Motion). Filed by Republic National Distributing Company, LLC (Omni Agent Solutions) (Entered: 08/10/2026)</td></tr>
+<tr><td class="dkt">160</td><td class="date">Aug 10, 2026</td><td>MOTION to Appear Pro Hac Vice for Philip A. Cantwell (Fee Paid: $100, receipt number A27473151) Filed by Creditor Anheuser Busch, LLC and Its Subsidiaries (Barnes, Ben) (Entered: 08/10/2026)</td></tr>
+<tr><td class="dkt">159</td><td class="date">Aug 9, 2026</td><td>BNC Certificate of Mailing. (Related document(s):149 Order on Motion to Appear pro hac vice) No. of Notices: 9. Notice Date 08/09/2026. (Admin.) (Entered: 08/09/2026)</td></tr>
+<tr><td class="dkt">158</td><td class="date">Aug 8, 2026</td><td>BNC Certificate of Mailing. (Related document(s):138 US Trustee's Notice) No. of Notices: 10. Notice Date 08/08/2026. (Admin.) (Entered: 08/08/2026)</td></tr>
+<tr><td class="dkt">157</td><td class="date">Aug 7, 2026</td><td>Affidavit</td></tr>
+<tr><td class="dkt">156</td><td class="date">Aug 7, 2026</td><td>Affidavit</td></tr>
+<tr><td class="dkt">155</td><td class="date">Aug 7, 2026</td><td>Appear pro hac vice</td></tr>
+<tr><td class="dkt">154</td><td class="date">Aug 7, 2026</td><td>Notice of Appearance and Request for Notice</td></tr>
+<tr><td class="dkt">153</td><td class="date">Aug 7, 2026</td><td>Appear pro hac vice</td></tr>
+<tr><td class="dkt">152</td><td class="date">Aug 7, 2026</td><td>Appear pro hac vice</td></tr>
+<tr><td class="dkt">151</td><td class="date">Aug 7, 2026</td><td>Appear pro hac vice</td></tr>
+<tr><td class="dkt">150</td><td class="date">Aug 7, 2026</td><td>Appear pro hac vice</td></tr>
+<tr><td class="dkt">149</td><td class="date">Aug 7, 2026</td><td>Order to Appear pro hac vice</td></tr>
+<tr><td class="dkt">148</td><td class="date">Aug 7, 2026</td><td>Notice of Appearance and Request for Notice</td></tr>
+<tr><td class="dkt">147</td><td class="date">Aug 7, 2026</td><td>Notice of Appearance and Request for Notice</td></tr>
+<tr><td class="dkt">146</td><td class="date">Aug 7, 2026</td><td>Relief from Stay</td></tr>
+<tr><td class="dkt">—</td><td class="date">Aug 7, 2026</td><td>none</td></tr>
+<tr><td class="dkt">145</td><td class="date">Aug 6, 2026</td><td>Emergency Motion</td></tr>
+<tr><td class="dkt">144</td><td class="date">Aug 6, 2026</td><td>Statement</td></tr>
+<tr><td class="dkt">143</td><td class="date">Aug 6, 2026</td><td>Notice of Appearance and Request for Notice</td></tr>
+<tr><td class="dkt">142</td><td class="date">Aug 6, 2026</td><td>Notice of Appearance and Request for Notice</td></tr>
+<tr><td class="dkt">141</td><td class="date">Aug 6, 2026</td><td>Appear pro hac vice</td></tr>
+<tr><td class="dkt">140</td><td class="date">Aug 6, 2026</td><td>Notice of Appearance and Request for Notice</td></tr>
+<tr><td class="dkt">139</td><td class="date">Aug 6, 2026</td><td>Order to Appear pro hac vice</td></tr>
+<tr><td class="dkt">138</td><td class="date">Aug 6, 2026</td><td>US Trustee's Notice - Generic (BNC NOTICING)</td></tr>
+<tr><td class="dkt">137</td><td class="date">Aug 6, 2026</td><td>Notice of Appointment of Creditors' Committee</td></tr>
+<tr><td class="dkt">136</td><td class="date">Aug 5, 2026</td><td>Notice</td></tr>
+<tr><td class="dkt">135</td><td class="date">Aug 5, 2026</td><td>Affidavit</td></tr>
+<tr><td class="dkt">134</td><td class="date">Aug 5, 2026</td><td>Notice of Appearance and Request for Notice</td></tr>
+<tr><td class="dkt">133</td><td class="date">Aug 5, 2026</td><td>Notice of Appearance and Request for Notice</td></tr>
+<tr><td class="dkt">132</td><td class="date">Aug 5, 2026</td><td>Notice of Appearance and Request for Notice Filed by Melissa T Harris Filed by on behalf of Pension Benefit Guaranty Corporation (Harris, Melissa) (Entered: 08/05/2026)</td></tr>
+<tr><td class="dkt">131</td><td class="date">Aug 5, 2026</td><td>Notice of Appearance and Request for Notice Filed by Andrea Wong Filed by on behalf of Pension Benefit Guaranty Corporation (Wong, Andrea) (Entered: 08/05/2026)</td></tr>
+<tr><td class="dkt">130</td><td class="date">Aug 5, 2026</td><td>Order Granting Motion for Dakota Pearce To Appear pro hac vice (Related Doc # 124) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/5/2026. (yml4) (Entered: 08/05/2026)</td></tr>
+<tr><td class="dkt">129</td><td class="date">Aug 5, 2026</td><td>AO 435 TRANSCRIPT ORDER FORM (Daily (24 hours)) by Eli Christopher. This is to order a transcript of Hearing on 07/27/2026 before Judge Christopher Lopez. Court Reporter/Transcriber: Veritext Legal Solutions (Filed By Christopher Eli ). (jgr4) Copy Request Electronically forwarded to Veritext Legal Solutions on 08/05/2026. Estimated completion date: 08/06/2026. Modified on 8/5/2026 (lnc4). (Entered: 08/05/2026)</td></tr>
+<tr><td class="dkt">128</td><td class="date">Aug 5, 2026</td><td>MOTION to Appear Pro Hac Vice for Monique D. Jewett-Brewster (Fee Paid: $100, receipt number A27453647) Filed by Creditor J. Lohr Winery Corporation (Jewett-Brewster, Monique) (Entered: 08/05/2026)</td></tr>
+<tr><td class="dkt">127</td><td class="date">Aug 4, 2026</td><td>Notice of Appearance and Request for Notice Filed by Michael G Colvard Filed by on behalf of Richard Diaz (Colvard, Michael) (Entered: 08/04/2026)</td></tr>
+<tr><td class="dkt">126</td><td class="date">Aug 4, 2026</td><td>Notice of Appearance and Request for Notice Filed by Ross A Plourde Filed by on behalf of Leon Cikota, Mark Moser, Daniel Zeigler, Jay Johnson (Plourde, Ross) (Entered: 08/04/2026)</td></tr>
+<tr><td class="dkt">125</td><td class="date">Aug 4, 2026</td><td>Affidavit Re: Proof of Publication - The New York Times (Filed By Republic National Distributing Company, LLC ).(Related document(s):48 Order on Emergency Motion) (Higgins, John) (Entered: 08/04/2026)</td></tr>
+<tr><td class="dkt">124</td><td class="date">Aug 4, 2026</td><td>MOTION to Appear Pro Hac Vice for Dakota Pearce (Fee Paid: $100, receipt number A27452521) Filed by Creditor Alaskan Brewing Co. (Pearce, Dakota) (Entered: 08/04/2026)</td></tr>
+<tr><td class="dkt">123</td><td class="date">Aug 4, 2026</td><td>Motion / Debtors' Motion for Entry of an Order (I) Authorizing, Effective Nunc Pro Tunc to the Closing Date, Debtor Republic National Distributing Company, LLC's (A) Consent to the Sale of Non-Debtor RNDC New York, LLC and (B) Compliance with Certain Restrictive Covenants Related Thereto and (II) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC (Attachments: # 1 Exhibit A # 2 Proposed Order) (Higgins, John) (Entered: 08/04/2026)</td></tr>
+<tr><td class="dkt">122</td><td class="date">Aug 4, 2026</td><td>Order Granting Motion for Eric D. Goldberg To Appear pro hac vice (Related Doc # 116) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/4/2026. (yml4) (Entered: 08/04/2026)</td></tr>
+<tr><td class="dkt">121</td><td class="date">Aug 4, 2026</td><td>Order Granting Motion for Nicholas Buchta To Appear pro hac vice (Related Doc # 114) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/4/2026. (yml4) (Entered: 08/04/2026)</td></tr>
+<tr><td class="dkt">120</td><td class="date">Aug 4, 2026</td><td>Order Granting Motion for Jeremy R. Johnson To Appear pro hac vice (Related Doc # 110) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/4/2026. (yml4) (Entered: 08/04/2026)</td></tr>
+<tr><td class="dkt">119</td><td class="date">Aug 4, 2026</td><td>Order Granting Motion for Carl E. Black To Appear pro hac vice (Related Doc # 113) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/4/2026. (yml4) (Entered: 08/04/2026)</td></tr>
+<tr><td class="dkt">118</td><td class="date">Aug 4, 2026</td><td>Disclosure Statement To The Joint Chapter 11 Plan Of Republic National Distributing Company, LLC And Its Debtor Subsidiaries</td></tr>
+<tr><td class="dkt">117</td><td class="date">Aug 3, 2026</td><td>Chapter 11 Plan of Reorganization Filed by Republic National Distributing Company, LLC. (Higgins, John) (Entered: 08/03/2026)</td></tr>
+<tr><td class="dkt">116</td><td class="date">Aug 3, 2026</td><td>MOTION to Appear Pro Hac Vice for Eric D. Goldberg (Fee Paid: $100, receipt number A27447573) Filed by Interested Party USLP Tracy IV, LP (Muenker, James) (Entered: 08/03/2026)</td></tr>
+<tr><td class="dkt">115</td><td class="date">Aug 3, 2026</td><td>Notice of Appearance and Request for Notice Filed by James P. Muenker Filed by on behalf of USLP Tracy IV, LP (Muenker, James) (Entered: 08/03/2026)</td></tr>
+<tr><td class="dkt">114</td><td class="date">Aug 3, 2026</td><td>MOTION to Appear Pro Hac Vice for Nicholas Buchta (Fee Paid: $100, receipt number A27446478) Filed by Creditor Treasury Wine Estates Americas Company (Zeltner, Oliver) (Entered: 08/03/2026)</td></tr>
+<tr><td class="dkt">113</td><td class="date">Aug 3, 2026</td><td>MOTION to Appear Pro Hac Vice for Carl E. Black (Fee Paid: $100, receipt number A27446434) Filed by Creditor Treasury Wine Estates Americas Company (Zeltner, Oliver) (Entered: 08/03/2026)</td></tr>
+<tr><td class="dkt">112</td><td class="date">Aug 3, 2026</td><td>Notice of Appearance and Request for Notice Filed by Oliver Stephen Zeltner Filed by on behalf of Treasury Wine Estates Americas Company (Zeltner, Oliver) (Entered: 08/03/2026)</td></tr>
+<tr><td class="dkt">111</td><td class="date">Aug 3, 2026</td><td>Notice of Appearance and Request for Notice Filed by Jordan W. Leu Filed by on behalf of Ansira Partners II, LLC (Leu, Jordan) (Entered: 08/03/2026)</td></tr>
+<tr><td class="dkt">110</td><td class="date">Aug 3, 2026</td><td>MOTION to Appear Pro Hac Vice for Jeremy R. Johnson (Fee Paid: $100, receipt number A27445169) Filed by Creditor Palm Bay International LLC (Johnson, Jeremy) (Entered: 08/03/2026)</td></tr>
+<tr><td class="dkt">109</td><td class="date">Aug 3, 2026</td><td>Order Granting Motion for Jeffrey P. Bast To Appear pro hac vice (Related Doc # 98) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/3/2026. (rgs4) (Entered: 08/03/2026)</td></tr>
+<tr><td class="dkt">108</td><td class="date">Aug 3, 2026</td><td>Order Granting Motion for Hagop T. Bedoyan To Appear pro hac vice (Related Doc # 101) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/3/2026. (rgs4) (Entered: 08/03/2026)</td></tr>
+<tr><td class="dkt">107</td><td class="date">Aug 3, 2026</td><td>Order Granting Motion for Marsha A. Houston To Appear pro hac vice (Related Doc # 93) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/3/2026. (rgs4) (Entered: 08/03/2026)</td></tr>
+<tr><td class="dkt">106</td><td class="date">Aug 3, 2026</td><td>Order Granting Motion for Christopher O. Rivas To Appear pro hac vice (Related Doc # 94) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/3/2026. (rgs4) (Entered: 08/03/2026)</td></tr>
+<tr><td class="dkt">105</td><td class="date">Aug 3, 2026</td><td>Order Granting Motion for Hagop T. Bedoyan To Appear pro hac vice (Related Doc # 91) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/3/2026. (rgs4) (Entered: 08/03/2026)</td></tr>
+<tr><td class="dkt">104</td><td class="date">Aug 3, 2026</td><td>Notice of Appearance and Request for Notice Filed by Carey L Menasco Filed by on behalf of MACH Flynt, Inc. (Menasco, Carey) (Entered: 08/03/2026)</td></tr>
+<tr><td class="dkt">103</td><td class="date">Aug 1, 2026</td><td>BNC Certificate of Mailing. (Related document(s):88 Transcript) No. of Notices: 2. Notice Date 08/01/2026. (Admin.) (Entered: 08/01/2026)</td></tr>
+<tr><td class="dkt">102</td><td class="date">Jul 31, 2026</td><td>Notice of Sale of Non-Debtor Affiliate RNDC New York, LLC. Filed by Republic National Distributing Company, LLC (Higgins, John) (Entered: 07/31/2026)</td></tr>
+<tr><td class="dkt">101</td><td class="date">Jul 31, 2026</td><td>Appear pro hac vice</td></tr>
+<tr><td class="dkt">100</td><td class="date">Jul 31, 2026</td><td>Notice</td></tr>
+<tr><td class="dkt">99</td><td class="date">Jul 31, 2026</td><td>Notice of Appearance and Request for Notice</td></tr>
+<tr><td class="dkt">98</td><td class="date">Jul 31, 2026</td><td>Appear pro hac vice</td></tr>
+<tr><td class="dkt">97</td><td class="date">Jul 31, 2026</td><td>Order to Appear pro hac vice</td></tr>
+<tr><td class="dkt">96</td><td class="date">Jul 31, 2026</td><td>Order to Appear pro hac vice</td></tr>
+<tr><td class="dkt">95</td><td class="date">Jul 31, 2026</td><td>Order to Appear pro hac vice</td></tr>
+<tr><td class="dkt">94</td><td class="date">Jul 31, 2026</td><td>Appear pro hac vice</td></tr>
+<tr><td class="dkt">93</td><td class="date">Jul 31, 2026</td><td>MOTION to Appear Pro Hac Vice for Marsha A. Houston (Fee Paid: $100, receipt number A27438267) Filed by Creditor The Edrington Group USA, LLC (Sierra, Tristan) (Entered: 07/31/2026)</td></tr>
+<tr><td class="dkt">92</td><td class="date">Jul 31, 2026</td><td>Notice of Appearance and Request for Notice</td></tr>
+<tr><td class="dkt">91</td><td class="date">Jul 31, 2026</td><td>MOTION to Appear Pro Hac Vice for Hagop T. Bedoyan (Fee Paid: $100, receipt number A27437744) Filed by Creditor E. &amp; J. Gallo Winery (Bedoyan, Hagop) (Entered: 07/31/2026)</td></tr>
+<tr><td class="dkt">90</td><td class="date">Jul 31, 2026</td><td>Certificate of No Objection (Complex 11 ONLY)</td></tr>
+<tr><td class="dkt">89</td><td class="date">Jul 31, 2026</td><td>Notice of Appearance and Request for Notice Filed by Dana R Quick Filed by on behalf of Park Street Imports LLC (Quick, Dana) (Entered: 07/31/2026)</td></tr>
+<tr><td class="dkt">—</td><td class="date">Jul 31, 2026</td><td>Cash Register Receipt</td></tr>
+<tr><td class="dkt">88</td><td class="date">Jul 30, 2026</td><td>Transcript</td></tr>
+<tr><td class="dkt">87</td><td class="date">Jul 30, 2026</td><td>Notice of Appearance and Request for Notice</td></tr>
+<tr><td class="dkt">86</td><td class="date">Jul 30, 2026</td><td>Order to Appear pro hac vice</td></tr>
+<tr><td class="dkt">85</td><td class="date">Jul 30, 2026</td><td>Order to Appear pro hac vice</td></tr>
+<tr><td class="dkt">84</td><td class="date">Jul 30, 2026</td><td>Order to Appear pro hac vice</td></tr>
+<tr><td class="dkt">83</td><td class="date">Jul 30, 2026</td><td>Order to Appear pro hac vice</td></tr>
+<tr><td class="dkt">82</td><td class="date">Jul 30, 2026</td><td>Order to Appear pro hac vice</td></tr>
+<tr><td class="dkt">81</td><td class="date">Jul 30, 2026</td><td>Appear pro hac vice</td></tr>
+<tr><td class="dkt">80</td><td class="date">Jul 30, 2026</td><td>Notice of Appearance and Request for Notice</td></tr>
+<tr><td class="dkt">—</td><td class="date">Jul 30, 2026</td><td>Transcript</td></tr>
+<tr><td class="dkt">79</td><td class="date">Jul 29, 2026</td><td>Appear pro hac vice</td></tr>
+<tr><td class="dkt">78</td><td class="date">Jul 29, 2026</td><td>Appear pro hac vice</td></tr>
+<tr><td class="dkt">77</td><td class="date">Jul 29, 2026</td><td>Notice of Appearance and Request for Notice</td></tr>
+<tr><td class="dkt">76</td><td class="date">Jul 29, 2026</td><td>Notice of Appearance and Request for Notice</td></tr>
+<tr><td class="dkt">75</td><td class="date">Jul 29, 2026</td><td>Notice of Appearance and Request for Notice</td></tr>
+<tr><td class="dkt">74</td><td class="date">Jul 29, 2026</td><td>AO 435 TRANSCRIPT ORDER FORM (Daily (24 hours)) by John F. Higgins. This is to order a transcript of 7/27/2026 before Judge Christopher Lopez. Court Reporter/Transcriber: Veritext Legal Solutions (Filed By Republic National Distributing Company, LLC ). (Higgins, John) (Entered: 07/29/2026)</td></tr>
+<tr><td class="dkt">73</td><td class="date">Jul 28, 2026</td><td>MOTION to Appear Pro Hac Vice for Stephen Rochester (Fee Paid: $100, receipt number A27424900) Filed by Interested Party New BG Distribution Partners, LLC (Reisman, Steven) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">72</td><td class="date">Jul 28, 2026</td><td>Notice of Appearance and Request for Notice Filed by Steven J. Reisman Filed by on behalf of New BG Distribution Partners, LLC (Reisman, Steven) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">71</td><td class="date">Jul 28, 2026</td><td>Notice of Demonstrative. Filed by Republic National Distributing Company, LLC (Attachments: # 1 Presentation) (Higgins, John) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">70</td><td class="date">Jul 28, 2026</td><td>Order Granting Motion for Joshua A. Sussberg To Appear pro hac vice (Related Doc # 37) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">69</td><td class="date">Jul 28, 2026</td><td>Order Granting Motion for Joshua Raphael To Appear pro hac vice (Related Doc # 36) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">68</td><td class="date">Jul 28, 2026</td><td>Order Granting Motion for Christopher Marcus To Appear pro hac vice (Related Doc # 35) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">67</td><td class="date">Jul 28, 2026</td><td>Order Granting Motion for Lindsey Henrikson To Appear pro hac vice (Related Doc # 34) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">66</td><td class="date">Jul 28, 2026</td><td>Order Granting Motion for Maddison Levine To Appear pro hac vice (Related Doc # 33) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">65</td><td class="date">Jul 28, 2026</td><td>Order Granting Motion for Geoffrey M. King To Appear pro hac vice (Related Doc # 32) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">64</td><td class="date">Jul 28, 2026</td><td>Order Granting Motion for Rachel Golden To Appear pro hac vice (Related Doc # 31) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">63</td><td class="date">Jul 28, 2026</td><td>Order Granting Motion for Justin Rawlins To Appear pro hac vice (Related Doc # 30) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">62</td><td class="date">Jul 28, 2026</td><td>MOTION to Appear Pro Hac Vice for Kwame O. Akuffo (Fee Paid: $100, receipt number A27423147) Filed by Interested Parties Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">61</td><td class="date">Jul 28, 2026</td><td>MOTION to Appear Pro Hac Vice for Thomas Ross Hooper (Fee Paid: $100, receipt number A27423085) Filed by Interested Parties Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">60</td><td class="date">Jul 28, 2026</td><td>Interim Order (I) Authorizing the Debtors to Obtain Postpetition Financing, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Status, (III) Authorizing the Use of Cash Collateral, (IV) Modifying the Automatic Stay, (V) Scheduling a Final Hearing, and (VI) Granting Related Relief. Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">59</td><td class="date">Jul 28, 2026</td><td>MOTION to Appear Pro Hac Vice for Robert J. Gayda (Fee Paid: $100, receipt number A27423070) Filed by Interested Parties Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">58</td><td class="date">Jul 28, 2026</td><td>MOTION to Appear Pro Hac Vice for John R. Ashmead (Fee Paid: $100, receipt number 27423019) Filed by Interested Parties Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">57</td><td class="date">Jul 28, 2026</td><td>Notice of Appearance and Request for Notice Filed by John R Ashmead Filed by on behalf of Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">56</td><td class="date">Jul 28, 2026</td><td>Notice of Appearance and Request for Notice Filed by John Kendrick Turner Filed by on behalf of Gregg County (Turner, John) (Entered: 07/28/2026)</td></tr>
+<tr><td class="dkt">55</td><td class="date">Jul 27, 2026</td><td>Notice of Filing of Revised Proposed Interim Order (I) Authorizing the Debtors to Obtain Postpetition Financing, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Status, (III) Authorizing the Use of Cash Collateral, (IV) Modifying the Automatic Stay, (V) Scheduling a Final Hearing, and (VI) Granting Related Relief. (Related document(s):19 Emergency Motion (with hearing date)) Filed by Republic National Distributing Company, LLC (Attachments: # 1 Proposed Order - Interim Order # 2 Exhibit 1) (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">54</td><td class="date">Jul 27, 2026</td><td>Notice of Non-Insider Key Employee Retention Program Payments. (Related document(s):52 Order on Emergency Motion) Filed by Republic National Distributing Company, LLC (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">53</td><td class="date">Jul 27, 2026</td><td>Proposed Order Submission After Hearing (Filed By Republic National Distributing Company, LLC ).(Related document(s):19 Emergency Motion (with hearing date)) (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">52</td><td class="date">Jul 27, 2026</td><td>Order (I) Authorizing the Debtors to (A) Pay Prepetition Wages, Salaries, Other Compensation, and Reimbursable Expenses and (B) Continue Employee Benefit Programs, and (II) Granting Related Relief (Related Doc # 14). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">51</td><td class="date">Jul 27, 2026</td><td>PDF with attached Audio File. Court Date &amp; Time [07/27/2026 02:01:37 PM]. File Size [ 38284 KB ]. Run Time [ 01:21:48 ]. (Hearing held July 27, 2026 at PM). (admin). (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">50</td><td class="date">Jul 27, 2026</td><td>Courtroom Minutes. Time Hearing Held: 2:00 PM. Appearances: PLEASE SEE ATTACHED. ERO\Courtroom Deputy: Y. Lila. (Related document(s):5,6,7,8,9,10,11,12,14) Hearing held. For the reasons stated on the record, Motions Granted. Orders Signed. (Related document(s):15,16) Motions Granted on Interim Basis. Orders Signed. (Related document(s):19) Motion Granted on Interim Basis. Parties to upload revised form of Order. Second Day Hearing scheduled for 8/24/2026 at 01:00 PM at Houston, Courtroom 402 (CML). (yml4) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">49</td><td class="date">Jul 27, 2026</td><td>Order Granting Motion for Jennifer Davis To Appear pro hac vice (Related Doc # 29) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">48</td><td class="date">Jul 27, 2026</td><td>Order (I) Approving Notification and Hearing Procedures for Certain Transfers of and Declarations of Worthlessness with Respect to Common Stock, (II) Directing that Any Such Transfer or Declaration of Worthlessness in Violations of Such Procedures Be Null and Void AB Initio, and (III) Granting Related Relief (Related Doc # 7). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">47</td><td class="date">Jul 27, 2026</td><td>Order (I) Authorizing the Debtors to (A) Pay Certain Taxes and Fees and (B) Undertake Certain Tax Planning Activities, and (II) Granting Related Relief (Related Doc # 6). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">46</td><td class="date">Jul 27, 2026</td><td>Order (I) Authorizing the Debtors to (A) Maintain Insurance Coverage, Surety Bond Program, and Letters of Credit Entered into Prepetition and Satisfy Prepetition Obligations Related Thereto, (B) Continue to Pay Certain Claims Processing Fees, and (C) Renew, Amend, Supplement, Extend, Purchase, Cancel, and Enter into New Insurance Policies, Letters of Credit, and Surety Bonds, and (II) Granting Related Relief (Related Doc # 5). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">45</td><td class="date">Jul 27, 2026</td><td>Order (I) Authorizing the Debtors to (A) File a Consolidated Creditor Matrix, (B) Redact or Withhold Certain Confidential Information of Customers, and (C) Redact Certain Personally Identifiable Information of Natural Persons, (II) Approving the Form and Manner of Notifying Creditors of the Commencement of the Chapter 11 Cases and Other Information, and (III) Granting Related Relief (Related Doc # 10). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">44</td><td class="date">Jul 27, 2026</td><td>Order (I) Authorizing the Debtors to (A) Maintain and Administer Their Existing Supplier and Customer Programs and Honor Certain Prepetition Obligations Related Thereto and (II) Granting Related Relief (Related Doc # 8). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">43</td><td class="date">Jul 27, 2026</td><td>Interim Order (I) Authorizing the Debtors to (A) Pay Certain Prepetition of Claims of Critical Vendors, 503(b)(9) Claimants, Lien Claimants, and Foreign Vendors and (B) Honor Their Obligations Under the Supplier Agreements in the Ordinary Course of Business, (II) Confirming Administrative Expense Priority of Outstanding Orders, and (III) Granting Related Relief (Related document(s): 15). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">42</td><td class="date">Jul 27, 2026</td><td>Order (I) Extending Time to File (A) Schedules and Statements and (B) Rule 2015.3 Financial Reports, (II) Modifying the Requirements of Bankruptcy Local Rule 2015-3, and (III) Granting Related Relief (Related Doc # 11). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">35</td><td class="date">Jul 27, 2026</td><td>MOTION to Appear Pro Hac Vice for Christopher Marcus (Fee Paid: $100, receipt number A27418972) Filed by Debtor Republic National Distributing Company, LLC (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">34</td><td class="date">Jul 27, 2026</td><td>MOTION to Appear Pro Hac Vice for Lindsey Henrikson (Fee Paid: $100, receipt number A27418967) Filed by Creditor Wells Fargo Bank, N.A., as Prepetition Agent and DIP Agent (Persons, Charles) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">33</td><td class="date">Jul 27, 2026</td><td>MOTION to Appear Pro Hac Vice for Maddison Levine (Fee Paid: $100, receipt number A27418957) Filed by Debtor Republic National Distributing Company, LLC (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">32</td><td class="date">Jul 27, 2026</td><td>MOTION to Appear Pro Hac Vice for Geoffrey M. King (Fee Paid: $100, receipt number A27418949) Filed by Creditor Wells Fargo Bank, N.A., as Prepetition Agent and DIP Agent (Persons, Charles) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">31</td><td class="date">Jul 27, 2026</td><td>MOTION to Appear Pro Hac Vice for Rachel Golden (Fee Paid: $100, receipt number A27418947) Filed by Debtor Republic National Distributing Company, LLC (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">30</td><td class="date">Jul 27, 2026</td><td>MOTION to Appear Pro Hac Vice for Justin Rawlins (Fee Paid: $100, receipt number A27418925) Filed by Creditor Wells Fargo Bank, N.A., as Prepetition Agent and DIP Agent (Persons, Charles) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">29</td><td class="date">Jul 27, 2026</td><td>MOTION to Appear Pro Hac Vice for Jennifer Davis (Fee Paid: $100, receipt number A27418941) Filed by Debtor Republic National Distributing Company, LLC (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">28</td><td class="date">Jul 27, 2026</td><td>Notice of Appearance and Request for Notice Filed by Charles Martin Persons Filed by on behalf of Wells Fargo Bank, N.A., as Prepetition Agent and DIP Agent (Persons, Charles) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">27</td><td class="date">Jul 27, 2026</td><td>Agenda for Hearing on 7/27/2026 (Filed By Republic National Distributing Company, LLC ). (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">26</td><td class="date">Jul 27, 2026</td><td>Order Authorizing the Employment and Retention of Omni Agent Solutions, Inc. as Claims, Noticing, and Solicitation Agent (Related Doc # 4). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">25</td><td class="date">Jul 27, 2026</td><td>Order Granting Complex Chapter 11 Bankruptcy Case Treatment. Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">24</td><td class="date">Jul 27, 2026</td><td>Notice of Telephonic amd Video Conference Hearing on Emergency Motions. Filed by Republic National Distributing Company, LLC (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">23</td><td class="date">Jul 27, 2026</td><td>Witness List, Exhibit List (Filed By Republic National Distributing Company, LLC ). (Attachments: # 1 Exhibit 1 # 2 Exhibit 2 # 3 Exhibit 3 # 4 Exhibit 4 # 5 Exhibit 5 # 6 Exhibit 6 # 7 Exhibit 7 # 8 Exhibit 8 # 9 Exhibit 9 # 10 Exhibit 10 # 11 Exhibit 11 # 12 Exhibit 12 # 13 Exhibit 13 # 14 Exhibit 14 # 15 Exhibit 15) (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">22</td><td class="date">Jul 27, 2026</td><td>Order for Joint Administration Signed on 7/27/2026 (Related Doc # 2). (rgs4) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">21</td><td class="date">Jul 27, 2026</td><td>Declaration re: Declaration of Christian Tempke In Support of the Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing the Debtors to Obtain Postpetition Financing, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Status, (III) Authorizing the Use of Cash Collateral, (IV) Modifying the Automatic Stay, (V) Scheduling a Final Hearing, and (VI) Granting Related Relief (Filed By Republic National Distributing Company, LLC ). (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">20</td><td class="date">Jul 27, 2026</td><td>Declaration re: Declaration of John R. Castellano In Support of the Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing the Debtors to Obtain Postpetition Financing, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Status, (III) Authorizing the Use of Cash Collateral, (IV) Modifying the Automatic Stay, (V) Scheduling a Final Hearing, and (VI) Granting Related Relief (Filed By Republic National Distributing Company, LLC ). (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">19</td><td class="date">Jul 27, 2026</td><td>Emergency Motion - Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing the Debtors to Obtain Postpetition Financing, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Status, (III) Authorizing the Use of Cash Collateral, (IV) Modifying the Automatic Stay, (V) Scheduling a Final Hearing, and (VI) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">18</td><td class="date">Jul 27, 2026</td><td>Declaration re: / Declaration of John R. Castellano, Chief Restructuring Officer of Republic National Distributing Company, LLC and its Debtor Affiliates, in Support of the Debtors' Chapter 11 Petitions and First Day Motions (Filed By Republic National Distributing Company, LLC ). (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">17</td><td class="date">Jul 27, 2026</td><td>Motion / Debtors' Motion for Entry of Interim and Final Orders (I) Authorizing and Approving the Reyes Settlement Process, (II) Approving the Form of Reyes Settlement Notice, (III) Authorizing and Approving the Reyes Settlement Upon Satisfaction of the Settlement Conditions, and (IV) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC (Attachments: # 1 proposed Interim Order # 2 proposed Final Order) (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">16</td><td class="date">Jul 27, 2026</td><td>Emergency Motion - Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing the Debtors to (A) Continue to Operate the Cash Management System, (B) Maintain Existing Bank Accounts, Business Forms, and Books and Records, and (C) Continue Intercompany Transactions, (II) Granting Administrative Expense Status to Certain Postpetition Intercompany Transactions, and (III) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Proposed Order - Interim # 4 Proposed Order - Final) (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">15</td><td class="date">Jul 27, 2026</td><td>Emergency Motion - Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing the Debtors to (A) Pay Certain Prepetition of Claims of Critical Vendors, 503(b)(9) Claimants, Lien Claimants, and Foreign Vendors and (B) Honor Their Obligations Under the Supplier Agreements in the Ordinary Course of Business, (II) Confirming Administrative Expense Priority of Outstanding Orders, and (III) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order - Interim # 2 Proposed Order - Final) (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">14</td><td class="date">Jul 27, 2026</td><td>Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Pay Prepetition Wages, Salaries, Other Compensation, and Reimbursable Expenses and (B) Continue Employee Benefit Programs, and (II) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">13</td><td class="date">Jul 27, 2026</td><td>Motion - Debtors' First Omnibus Motion for Entry of an Order (I) Authorizing, Effective Nunc Pro Tunc to the Petition Date, the (A) Rejection of Certain Unexpired Leases and (B) Abandonment of Certain Personal Property, if any, Each Effective as of the Rejection Date and (II) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">12</td><td class="date">Jul 27, 2026</td><td>Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Authorizing the Debtors to Continue to Provide All TSA Services and Honor All Obligations Related Thereto and (II) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">11</td><td class="date">Jul 27, 2026</td><td>Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Extending Time to File (A) Schedules and Statements and (B) Rule 2015.3 Financial Reports, (II) Modifying the Requirements of Bankruptcy Local Rule 2015-3, and (III) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">10</td><td class="date">Jul 27, 2026</td><td>Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) File a Consolidated Creditor Matrix, (B) Redact or Withhold Certain Confidential Information of Customers, and (C) Redact Certain Personally Identifiable Information of Natural Persons, (II) Approving the Form and Manner of Notifying Creditors of the Commencement of the Chapter 11 Cases and Other Information, and (III) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">9</td><td class="date">Jul 27, 2026</td><td>Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Approving the Debtors' Proposed Adequate Assurance of Payment for Future Utility Services, (II) Prohibiting Utility Providers from Altering, Refusing, or Discontinuing Services, (III) Approving the Debtors' Proposed Procedures for Resolving Adequate Assurance Requests, and (IV) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">8</td><td class="date">Jul 27, 2026</td><td>Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Maintain and Administer Their Existing Supplier and Customer Programs and Honor Certain Prepetition Obligations Related Thereto and (II) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">7</td><td class="date">Jul 27, 2026</td><td>Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Approving Notification and Hearing Procedures for Certain Transfers of and Declarations of Worthlessness with Respect to Common Stock, (II) Directing that Any Such Transfer or Declaration of Worthlessness in Violations of Such Procedures Be Null and Void AB Initio, and (III) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">6</td><td class="date">Jul 27, 2026</td><td>Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Pay Certain Taxes and Fees and (B) Undertake Certain Tax Planning Activities, and (II) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Exhibit A # 2 Proposed Order) (Higgins, John) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">5</td><td class="date">Jul 27, 2026</td><td>Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Maintain Insurance Coverage, Surety Bond Program, and Letters of Credit Entered into Prepetition and Satisfy Prepetition Obligations Related Thereto, (B) Continue to Pay Certain Claims Processing Fees, and (C) Renew, Amend, Supplement, Extend, Purchase, Cancel, and Enter into New Insurance Policies, Letters of Credit, and Surety Bonds, and (II) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Johnson, Michael) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">4</td><td class="date">Jul 27, 2026</td><td>Emergency Motion - Debtors' Emergency Ex Parte Application for Entry of an Order Authorizing the Employment and Retention of Omni Agent Solutions, Inc. as Claims, Noticing, and Solicitation Agent Filed by Debtor Republic National Distributing Company, LLC (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Proposed Order) (Young-John, Megan) (Entered: 07/27/2026)</td></tr>
+<tr><td class="dkt">—</td><td class="date">Jul 27, 2026</td><td>Notice of Appearance and Request for Notice Filed by Jana Smith Whitworth (Whitworth, Jana)</td></tr>
+<tr><td class="dkt">3</td><td class="date">Jul 26, 2026</td><td>Designation of Complex Chapter 11 Bankruptcy Case (Filed By Republic National Distributing Company, LLC ). (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/26/2026)</td></tr>
+<tr><td class="dkt">2</td><td class="date">Jul 26, 2026</td><td>Motion for Joint Administration Filed by Debtor Republic National Distributing Company, LLC (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/26/2026)</td></tr>
+<tr><td class="dkt">1</td><td class="date">Jul 26, 2026</td><td>Chapter 11 Voluntary Petition Non-Individual Fee Amount $1738 Filed by Republic National Distributing Company, LLC. (Higgins, John) (Entered: 07/26/2026)</td></tr>
+<tr><td class="dkt">—</td><td class="date">Jul 26, 2026</td><td>Receipt of Voluntary Petition (Chapter 11)( 26-90737) [misc,volp11] (1738.00) Filing Fee. Receipt number A27416552. Fee amount $1738.00. (U.S. Treasury)</td></tr>
+</tbody></table><div class="panel-foot"><a href="https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/" target="_blank" rel="noopener">View full docket on CourtListener →</a></div></div>
+  <div class="panel"><div class="panel-head"><h2>Claims Administrator</h2><span class="src">settlement site</span></div><div class="panel-foot"><a href="https://cases.omniagentsolutions.com/calendar?clientId=3793" target="_blank" rel="noopener">cases.omniagentsolutions.com/calendar?clientId=3793 →</a></div></div>
+</main>
+
+<div class="section-label">Coverage &amp; Commentary</div>
+<div class="cards">
+<a class="news-card" href="https://www.law360.com/bankruptcy-authority/articles/2510660/wine-and-spirit-distributor-gets-9-member-creditor-committee" target="_blank" rel="noopener"><div class="src-line"><span>Law360</span><span>2026-08-07</span></div><div class="h">Wine And Spirit Distributor Gets 9-Member Creditor Committee</div></a>
+<a class="news-card" href="https://www.thedrinksbusiness.com/2026/08/rndc-court-filings-reveal-scale-of-distributors-financial-collapse/" target="_blank" rel="noopener"><div class="src-line"><span>The Drinks Business</span><span>2026-08-03</span></div><div class="h">RNDC court filings reveal scale of distributor's financial collapse</div></a>
+<a class="news-card" href="https://www.petition11.com/p/rndc-chapter-11-bankruptcy-filing" target="_blank" rel="noopener"><div class="src-line"><span>Petition (petition11.com)</span><span>2026-07-29</span></div><div class="h">New Chapter 11 Bankruptcy Filing – Republic National Distributing Company LLC</div></a>
+<a class="news-card" href="https://www.inc.com/lucia-auerbach/biggest-liquor-distributors-just-filed-for-bankruptcy-expert-warns-massive-ripple-effect-could-follow/91380927" target="_blank" rel="noopener"><div class="src-line"><span>Inc. Magazine</span><span>2026-07-29</span></div><div class="h">One of America's Biggest Liquor Distributors Just Filed for Bankruptcy. An Expert Warns a Massive Ripple Effect Could Follow</div></a>
+<a class="news-card" href="https://bondoro.com/republic-national-distributing-company/" target="_blank" rel="noopener"><div class="src-line"><span>Bondoro</span><span>2026-07-29</span></div><div class="h">Case Summary: Republic National Distributing Company Chapter 11</div></a>
+<a class="news-card" href="https://vinepair.com/booze-news/rndc-files-for-bankruptcy/" target="_blank" rel="noopener"><div class="src-line"><span>VinePair</span><span>2026-07-28</span></div><div class="h">RNDC Files for Chapter 11 Bankruptcy, Seeks Buyers for Remaining Operations</div></a>
+<a class="news-card" href="https://www.thespiritsbusiness.com/2026/07/rndc-begins-bankruptcy-process/" target="_blank" rel="noopener"><div class="src-line"><span>The Spirits Business</span><span>2026-07-28</span></div><div class="h">RNDC begins bankruptcy process</div></a>
+<a class="news-card" href="https://www.thedrinksbusiness.com/2026/07/rndc-files-for-bankruptcy-as-distributor-seeks-buyers-for-remaining-business/" target="_blank" rel="noopener"><div class="src-line"><span>The Drinks Business</span><span>2026-07-28</span></div><div class="h">'Parties have expressed an interest': RNDC seeks buyers as Chapter 11 begins</div></a>
+<a class="news-card" href="https://www.shankennewsdaily.com/2026/07/28/40463/rndc-winding-down-with-bankruptcy-filing/" target="_blank" rel="noopener"><div class="src-line"><span>Shanken News Daily</span><span>2026-07-28</span></div><div class="h">RNDC Winding Down With Bankruptcy Filing</div></a>
+<a class="news-card" href="https://www.mdm.com/news/top-distributor-sectors/consumer-retail/rndc-files-for-chapter-11-pursues-sales-and-wind-down/" target="_blank" rel="noopener"><div class="src-line"><span>Modern Distribution Management</span><span>2026-07-28</span></div><div class="h">RNDC Files for Chapter 11, Pursues Sales and Wind-Down</div></a>
+<a class="news-card" href="https://distributionstrategy.com/2026/07/rndc-files-for-chapter-11-bankruptcy-plans-asset-sales-and-wind-down/" target="_blank" rel="noopener"><div class="src-line"><span>Distribution Strategy Group</span><span>2026-07-28</span></div><div class="h">RNDC Files for Chapter 11 Bankruptcy, Plans Asset Sales and Wind-Down</div></a>
+<a class="news-card" href="https://www.woodtv.com/news/michigan/alcohol-distributor-files-for-bankruptcy-michigan-joint-venture-excluded/" target="_blank" rel="noopener"><div class="src-line"><span>WOOD-TV (NBC Grand Rapids)</span><span>2026-07-28</span></div><div class="h">Republic National Distributing Company files for bankruptcy</div></a>
+<a class="news-card" href="https://www.thestreet.com/retail/republic-national-distributing-company-files-chapter-11-bankruptcy" target="_blank" rel="noopener"><div class="src-line"><span>TheStreet</span><span>2026-07-28</span></div><div class="h">National beer and wine distributor files Chapter 11 bankruptcy</div></a>
+<a class="news-card" href="https://drinks-intel.com/wine/republic-national-distributing-co-applies-for-bankruptcy/" target="_blank" rel="noopener"><div class="src-line"><span>Global Drinks Intel</span><span>2026-07-28</span></div><div class="h">Republic National Distributing Co applies for bankruptcy</div></a>
+<a class="news-card" href="https://www.law360.com/bankruptcy-authority/large-cap/articles/2506169/wine-and-spirit-distributor-hits-ch-11-with-540m-of-debt" target="_blank" rel="noopener"><div class="src-line"><span>Law360</span><span>2026-07-27</span></div><div class="h">Wine And Spirit Distributor Hits Ch. 11 With $540M Of Debt</div></a>
+<a class="news-card" href="https://news.bloomberglaw.com/bankruptcy-law/republic-national-distributing-company-files-for-ch-11-in-texas" target="_blank" rel="noopener"><div class="src-line"><span>Bloomberg Law</span><span>2026-07-27</span></div><div class="h">Republic National Distributing Company Files for Ch. 11 in Texas</div></a>
+<a class="news-card" href="https://www.shankennewsdaily.com/2026/07/27/40442/news-alert-with-bankruptcy-filing-rndc-is-officially-winding-down/" target="_blank" rel="noopener"><div class="src-line"><span>Shanken News Daily</span><span>2026-07-27</span></div><div class="h">News Alert: With Bankruptcy Filing, RNDC Is Officially Winding Down</div></a>
+</div>
+
+<footer class="foot">
+  Docket data via CourtListener (Free Law Project) · claim status via the settlement administrator · coverage per the case's source tiers.<br>
+  Provided for informational purposes only and does not constitute legal advice.
+</footer>
+
+<footer id="tn-site-footer"></footer>
+<script src="../intel-footer.js"></script>
+</body>
+</html>
