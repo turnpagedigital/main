@@ -65,6 +65,8 @@ jobs:
             if git pull --rebase origin main && git push; then
               echo "pushed on attempt ${attempt}"; break
             fi
+            git rebase --abort 2>/dev/null || true
+            git checkout -- . 2>/dev/null || true
             echo "push attempt ${attempt} failed; retrying"; sleep 5
           done
 
@@ -86,6 +88,8 @@ jobs:
             git commit -m "Agent fetch: mirror uploads to dev"
             for attempt in 1 2 3 4 5; do
               if git pull --rebase origin dev && git push origin HEAD:dev; then break; fi
+              git rebase --abort 2>/dev/null || true
+              git checkout -- . 2>/dev/null || true
               sleep 5
             done
           fi

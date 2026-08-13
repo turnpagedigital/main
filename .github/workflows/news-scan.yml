@@ -74,6 +74,8 @@ jobs:
             if git pull --rebase origin main && git push; then
               echo "pushed to main on attempt ${attempt}"; break
             fi
+            git rebase --abort 2>/dev/null || true
+            git checkout -- . 2>/dev/null || true
             echo "main push attempt ${attempt} failed; retrying in 5s"; sleep 5
           done
 
@@ -116,6 +118,8 @@ jobs:
               if git pull --rebase origin dev && git push origin HEAD:dev; then
                 echo "pushed to dev on attempt ${attempt}"; break
               fi
+              git rebase --abort 2>/dev/null || true
+              git checkout -- . 2>/dev/null || true
               echo "dev push attempt ${attempt} failed; retrying in 5s"; sleep 5
             done
           fi
