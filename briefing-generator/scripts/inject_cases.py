@@ -177,8 +177,8 @@ UD_CSS = r"""
   .ud-table thead th:last-child,.ud-table tbody tr:not(.ud-day-row) td:last-child{padding-right:14px;}
   .ud-th-icon{padding-left:1px;padding-right:1px;}
   .ud-mark-cell button{padding-left:2px;padding-right:2px;}
-  .ud-bm-btn,.ud-note-btn{background:none;border:none;cursor:pointer;font-size:15px;padding:2px 4px;line-height:1;color:var(--ink-40);}
-  .ud-bm-btn:hover,.ud-note-btn:hover{color:var(--ink);}
+  .ud-bm-btn,.ud-note-btn,.ud-soc-btn{background:none;border:none;cursor:pointer;font-size:15px;padding:2px 4px;line-height:1;color:var(--ink-40);}
+  .ud-bm-btn:hover,.ud-note-btn:hover,.ud-soc-btn:hover{color:var(--ink);}
   .ud-bm-btn.ud-bm-on{color:#EAB308;}
   .ud-note-btn{color:var(--ink-40);}
   .ud-note-btn.ud-note-on{color:#3FA07A;}
@@ -1395,9 +1395,10 @@ def render_news_page(cases):
       <th class="ud-th-icon" style="width:26px;text-align:center" title="Hide rows (H)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></th>
       <th class="ud-th-icon" style="width:26px;text-align:center" title="Delete rows (X)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M3 6h18"/><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></th>
       <th id="ud-th-note" class="ud-th-toggle ud-th-icon" style="width:44px;text-align:center" title="Show entries with notes only"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></th>
+      <th class="ud-th-icon" style="width:30px;text-align:center" title="Draft social post"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></th>
     </tr></thead>
     <tbody id="ud-tbody">
-      <tr><td colspan="10" class="ud-empty">Loading…</td></tr>
+      <tr><td colspan="11" class="ud-empty">Loading…</td></tr>
     </tbody>
   </table>
 
@@ -1442,10 +1443,10 @@ def render_unified_calendar(cases):
   .uc-rel{{font-size:12px;font-weight:700;color:var(--ink-60);}}
   .uc-kind{{display:inline-block;font-size:11px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:2px 8px;margin-right:6px;vertical-align:middle;white-space:nowrap;}}
   .uc-snippet{{color:var(--ink-60);font-size:inherit;}}
-  .uc-mode{{display:inline-flex;border:1px solid var(--line-strong);margin-right:8px;}}
-  .uc-mode button{{font-family:inherit;font-size:12px;font-weight:700;padding:7px 14px;background:transparent;border:0;border-right:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;}}
-  .uc-mode button:last-child{{border-right:0;}}
-  .uc-mode button.uc-mode-on{{background:var(--sel-bg,#0A0A0A);color:var(--sel-fg,#fff);}}
+  .uc-mode{{display:inline-flex;gap:8px;margin-right:8px;}}
+  .uc-mode button{{font-family:inherit;font-size:12px;font-weight:700;padding:7px 14px;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;transition:background .15s,color .15s,border-color .15s;}}
+  .uc-mode button:hover{{background:var(--paper-2);color:var(--ink);}}
+  .uc-mode button.uc-mode-on{{background:var(--sel-bg,#0A0A0A);border-color:var(--sel-bg,#0A0A0A);color:var(--sel-fg,#fff);}}
   .uc-cal-head{{display:flex;align-items:center;gap:8px;margin:14px 0 10px;}}
   .uc-cal-label{{font-size:16px;font-weight:800;letter-spacing:-0.01em;}}
   .uc-cal-nav{{font-family:inherit;font-size:13px;font-weight:700;padding:4px 10px;background:transparent;border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;}}

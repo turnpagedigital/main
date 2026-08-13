@@ -234,8 +234,8 @@
   .ud-table thead th:last-child,.ud-table tbody tr:not(.ud-day-row) td:last-child{padding-right:14px;}
   .ud-th-icon{padding-left:1px;padding-right:1px;}
   .ud-mark-cell button{padding-left:2px;padding-right:2px;}
-  .ud-bm-btn,.ud-note-btn{background:none;border:none;cursor:pointer;font-size:15px;padding:2px 4px;line-height:1;color:var(--ink-40);}
-  .ud-bm-btn:hover,.ud-note-btn:hover{color:var(--ink);}
+  .ud-bm-btn,.ud-note-btn,.ud-soc-btn{background:none;border:none;cursor:pointer;font-size:15px;padding:2px 4px;line-height:1;color:var(--ink-40);}
+  .ud-bm-btn:hover,.ud-note-btn:hover,.ud-soc-btn:hover{color:var(--ink);}
   .ud-bm-btn.ud-bm-on{color:#EAB308;}
   .ud-note-btn{color:var(--ink-40);}
   .ud-note-btn.ud-note-on{color:#3FA07A;}
@@ -472,10 +472,10 @@
   .uc-rel{font-size:12px;font-weight:700;color:var(--ink-60);}
   .uc-kind{display:inline-block;font-size:11px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:2px 8px;margin-right:6px;vertical-align:middle;white-space:nowrap;}
   .uc-snippet{color:var(--ink-60);font-size:inherit;}
-  .uc-mode{display:inline-flex;border:1px solid var(--line-strong);margin-right:8px;}
-  .uc-mode button{font-family:inherit;font-size:12px;font-weight:700;padding:7px 14px;background:transparent;border:0;border-right:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;}
-  .uc-mode button:last-child{border-right:0;}
-  .uc-mode button.uc-mode-on{background:var(--sel-bg,#0A0A0A);color:var(--sel-fg,#fff);}
+  .uc-mode{display:inline-flex;gap:8px;margin-right:8px;}
+  .uc-mode button{font-family:inherit;font-size:12px;font-weight:700;padding:7px 14px;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;transition:background .15s,color .15s,border-color .15s;}
+  .uc-mode button:hover{background:var(--paper-2);color:var(--ink);}
+  .uc-mode button.uc-mode-on{background:var(--sel-bg,#0A0A0A);border-color:var(--sel-bg,#0A0A0A);color:var(--sel-fg,#fff);}
   .uc-cal-head{display:flex;align-items:center;gap:8px;margin:14px 0 10px;}
   .uc-cal-label{font-size:16px;font-weight:800;letter-spacing:-0.01em;}
   .uc-cal-nav{font-family:inherit;font-size:13px;font-weight:700;padding:4px 10px;background:transparent;border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;}
