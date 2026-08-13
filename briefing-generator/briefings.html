@@ -371,6 +371,53 @@
   .ce-del{margin-left:auto;font-family:inherit;font-size:13px;font-weight:700;padding:9px 16px;background:transparent;border:1px solid #e3b7b1;color:#B3261E;cursor:pointer;}
   .ce-toast{font-size:12px;color:var(--ink-60);}
   .ce-section-h{font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-40);margin:18px 0 10px;padding-top:14px;border-top:1px solid var(--line);}
+  /* ── Shared restyle (ported from the docket): white light canvas, white rows
+     with hover, ink header with a 2px rule, darker dividers + day lines,
+     auto-fitting full-width table. Applies to every page on this chassis. ── */
+  [data-theme="light"], [data-theme="light"] body { background: #FFFFFF; }
+  [data-theme="light"] .page-title { border-bottom: 1px solid var(--line-strong); }
+  [data-theme="light"] .ud-table { border-collapse: collapse; }
+  [data-theme="light"] .ud-table tbody tr { background: var(--surface); }
+  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row):hover { background: linear-gradient(rgba(10,10,10,0.03), rgba(10,10,10,0.03)), var(--surface); }
+  [data-theme="light"] .ud-table tbody tr.ud-day-row { background: transparent; }
+  [data-theme="light"] .ud-table td { border-bottom-color: var(--line); }
+  [data-theme="light"] .ud-day-row td { border-top: none; border-bottom: 1px solid var(--line-strong); }
+  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:first-child { border-left: none; }
+  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:last-child { border-right: none; }
+  [data-theme="light"] .ud-table tbody tr:last-child td { border-bottom: none; }
+  [data-theme="light"] .ud-row-article td { background: #E7E9EE; }
+  [data-theme="light"] .ud-row-article:hover td { background: #F0F1F4; }
+  /* Header row: ink text (black in light, white in dark), no background bar —
+     a thick ink rule under the row separates it from the entries, spanning the
+     same width as the rows below. Active filters underline instead of recolor. */
+  .ud-table thead th { background: transparent; border: none; border-bottom: 2px solid var(--ink); box-shadow: none; color: var(--ink); position: relative; z-index: 1; padding-top: 13px; padding-bottom: 13px; }
+  /* The base chassis pins border-left/right on the end header cells with higher
+     specificity than the border:none above — kill the vertical end ticks. */
+  .ud-table thead th:first-child { border-left: none; }
+  .ud-table thead th:last-child { border-right: none; }
+  .ud-table thead th.ud-th-on { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+  /* The table must always fill its container — saved column widths or engine
+     quirks may otherwise shrink it to the sum of its columns. And auto layout
+     (not the chassis's fixed) at every width: columns size to their content —
+     the Dkt/agent/upload cell can never be clipped — and re-fit on resize,
+     with ENTRY absorbing the remainder. */
+  .ud-table { width: 100% !important; min-width: 100%; table-layout: auto; }
+  [data-theme="light"] .ud-table tbody tr:first-child td { padding-top: 20px; }
+  [data-theme="light"] .ud-search-input:focus { background: #FFFFFF; }
+  [data-theme="dark"] .page-title { border-bottom: 1px solid var(--line-strong); }
+  [data-theme="dark"] .ud-day-row td { border-top: none; }
+  [data-theme="dark"] .ud-table tbody tr:first-child td { padding-top: 20px; }
+  .ud-table tr.ud-row-daycollapsed { display: none; }
+  .ud-table tbody tr.ud-day-row td { padding-top: 30px; }
+  @media (max-width: 720px) {
+    .ud-table { background: transparent; border: none; }
+    [data-theme="light"] .ud-table tbody tr { border-bottom-color: var(--line); }
+    [data-theme="light"] .ud-table tbody tr.ud-day-row { border-bottom: 1px solid var(--line-strong); }
+    [data-theme="light"] .ud-table tbody tr.ud-row-article { background: #E7E9EE; }
+    [data-theme="dark"] .ud-table tbody tr { border-bottom-color: var(--bg); }
+    #ud-count, #ud-hidden-info { display: none; }
+    .ud-case-dd-panel, #ud-source-dd-panel, .ud-th-menu { position: fixed !important; top: auto !important; bottom: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; max-width: none !important; min-width: 0 !important; max-height: 72vh; overflow-y: auto; border-radius: 16px 16px 0 0 !important; box-shadow: 0 -10px 34px rgba(0,0,0,0.28) !important; padding-bottom: 20px !important; z-index: 1300 !important; }
+  }
 </style>
 <!-- AUTH GATE START -->
 <!-- AUTH GATE END -->
