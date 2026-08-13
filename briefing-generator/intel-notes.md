@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-13 15:09 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-13 15:11 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -101,6 +101,10 @@ Ciao
 ### Dkt. 365 — 2026-08-12
 
 > Objection
+
+### Dkt. 360 — 2026-08-10
+
+> Order To Set Hearing
 
 ## New Filing
 
