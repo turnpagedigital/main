@@ -1110,9 +1110,8 @@ def render_unified_docket(cases):
       </div>
       <div class="ud-filter-right">
         <select id="ud-rowkind" class="ud-type-select" title="What to show">
-          <option value="both">Filings + Articles</option>
-          <option value="filings">Court filings only</option>
-          <option value="articles">Articles only</option>
+          <option value="both">Filings + news</option>
+          <option value="filings">Filings only</option>
         </select>
       </div>
     </div>

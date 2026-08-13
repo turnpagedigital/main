@@ -168,7 +168,8 @@
     try {
       var s = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
       if (s.entryFilter)   entryFilter   = s.entryFilter;
-      if (s.rowKind === "both" || s.rowKind === "filings" || s.rowKind === "articles") rowKind = s.rowKind;
+      if (s.rowKind === "both" || s.rowKind === "filings") rowKind = s.rowKind;
+      else if (s.rowKind === "articles") rowKind = "both";  // articles-only view retired (lives on the News page)
       else if (s.showArticles === false) rowKind = "filings";  // migrate the retired checkbox
       if (typeof s.bmOnly === "boolean") bmOnly = s.bmOnly;
       if (typeof s.noteOnly === "boolean") noteOnly = s.noteOnly;

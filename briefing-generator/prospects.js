@@ -172,9 +172,9 @@
         bits.push('<span class="pr-status-chip">Hidden</span>');
       }
       bits.push(toolsHtml(i));
+      bits.push('<button type="button" class="pr-ico pr-ico-trash" data-status="dismissed" data-id="' + esc(i.id) + '" title="Dismiss — buries for good">' + SVG_TRASH + "</button>");
       bits.push('<button type="button" class="pr-btn pr-btn-track" data-track="' + esc(i.id) + '">Track</button>');
       bits.push('<button type="button" class="pr-btn" data-social="' + esc(i.id) + '" title="Draft a one-off briefing + LinkedIn post from this prospect, without tracking it">Social post</button>');
-      bits.push('<button type="button" class="pr-ico pr-ico-trash" data-status="dismissed" data-id="' + esc(i.id) + '" title="Dismiss — buries for good">' + SVG_TRASH + "</button>");
     } else if (status === "dismissed") {
       if (TAB === "all") bits.push('<span class="pr-status-chip">Dismissed</span>');
       bits.push('<button type="button" class="pr-btn" data-status="new" data-id="' + esc(i.id) + '">Restore</button>');
