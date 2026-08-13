@@ -16,10 +16,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
     "date_last_filing": "2026-08-05",
-    "meta_fetched_at": "2026-08-11T18:09:36.916707+00:00",
-    "fetched_at": "2026-08-13T05:10:45.052026+00:00",
+    "meta_fetched_at": "2026-08-13T08:53:47.913575+00:00",
+    "fetched_at": "2026-08-13T08:53:47.913575+00:00",
     "as_of": "Aug 13, 2026",
-    "backfilled": true,
+    "backfilled": false,
     "new_in_72h": 0,
     "recent": [
       {
@@ -332,6 +332,16 @@
         "time_filed": "14:33:24",
         "date_display": "Jul 15, 2026",
         "description": "Certificate of No Objection Regarding Motion of the Plan Administrator for Entry of an Order Authorizing Him to File Under Seal Certain Information Designated as Confidential by Jump Included in the Plan Administrator's Motion to Clarify or Modify the Protective Order and to Strip Confidentiality Designations (related document(s)1245) Filed by Todd R. Snyder. (Attachments: # 1 Exhibit A) (Steiger, Alexander) (Entered: 07/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1289,
+        "date_filed": "2026-07-15",
+        "time_filed": "",
+        "date_display": "Jul 15, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 24-10070-BLS) [claims,trclm11] ( 28.00). Receipt Number A12744170, amount $ 28.00. (U.S. Treasury) (Entered: 07/15/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -937,6 +947,16 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.1237.0.pdf"
       },
       {
+        "entry_number": 1236,
+        "date_filed": "2026-06-01",
+        "time_filed": "10:08:31",
+        "date_display": "Jun 1, 2026",
+        "description": "Certificate of Mailing of Claims Agent re Motion of the Plan Administrator to Shorten Notice and Objection Periods with Respect to the Plan Administrator's Motion to Clarify or Modify the Protective Order and to Strip Confidentiality Designations; Plan Administrator's Motion to Clarify or Modify the Protective Order and to Strip Confidentiality Designations. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1224, 1225) (Mailloux, Kathryn) (Entered: 06/01/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 1235,
         "date_filed": "2026-06-01",
         "time_filed": "09:34:08",
@@ -967,6 +987,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 1232,
+        "date_filed": "2026-06-01",
+        "time_filed": "09:28:35",
+        "date_display": "Jun 1, 2026",
+        "description": "Order Approving Motion for Admission pro hac vice of Christopher Harris (Related Doc # 1227) Order Signed on 6/1/2026. (JMW) (Entered: 06/01/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 1231,
         "date_filed": "2026-06-01",
         "time_filed": "08:24:43",
@@ -992,6 +1022,16 @@
         "time_filed": "07:57:00",
         "date_display": "Jun 1, 2026",
         "description": "Motion to Appear pro hac vice of Gary Feinerman of Latham & Watkins LLP. Receipt Number 4981198, Filed by Jump Trading, LLC. (Hammond Coyle, Kara) (Entered: 06/01/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1228,
+        "date_filed": "2026-06-01",
+        "time_filed": "07:52:43",
+        "date_display": "Jun 1, 2026",
+        "description": "Motion to Appear pro hac vice of Elizabeth A. Morris of Latham & Watkins LLP. Receipt Number 4981198, Filed by Jump Trading, LLC. (Hammond Coyle, Kara) (Entered: 06/01/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -13696,7 +13736,8 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68180454&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": {
     "name": "Epiq11",

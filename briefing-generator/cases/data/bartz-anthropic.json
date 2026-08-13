@@ -16,10 +16,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-07-21",
-    "meta_fetched_at": "2026-08-11T18:08:59.371930+00:00",
-    "fetched_at": "2026-08-13T05:10:13.623085+00:00",
+    "meta_fetched_at": "2026-08-13T08:51:52.672249+00:00",
+    "fetched_at": "2026-08-13T08:51:52.672249+00:00",
     "as_of": "Aug 13, 2026",
-    "backfilled": true,
+    "backfilled": false,
     "new_in_72h": 0,
     "recent": [
       {
@@ -272,6 +272,16 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.662.0_1.pdf"
       },
       {
+        "entry_number": 661,
+        "date_filed": "2026-05-14",
+        "time_filed": "08:25:59",
+        "date_display": "May 14, 2026",
+        "description": "Letter from Victoria Pinder dated May 14, 2026. (Geman, Rachel) (Filed on 5/14/2026) (Entered: 05/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.661.0.pdf"
+      },
+      {
         "entry_number": null,
         "date_filed": "2026-05-14",
         "time_filed": "18:13:19",
@@ -380,6 +390,16 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.653.0.pdf"
+      },
+      {
+        "entry_number": 652,
+        "date_filed": "2026-05-04",
+        "time_filed": "16:00:54",
+        "date_display": "May 4, 2026",
+        "description": "REPLY IN SUPPORT OF OBJECTION FILED BY JORDI CASTELLS [Dkt. 636] TO PROPOSED CLASS ACTION SETTLEMENT re 636 Objection, 646 Response ( Non Motion ), by Jordi Castells. (Bartolomei, James) (Filed on 5/4/2026) Modified on 5/5/2026 (anj, COURT STAFF). (Entered: 05/04/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.652.0.pdf"
       },
       {
         "entry_number": 651,
@@ -7379,7 +7399,8 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": {
     "name": "JND Legal Administration",
