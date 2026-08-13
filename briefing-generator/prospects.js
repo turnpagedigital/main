@@ -142,6 +142,7 @@
   var SVG_DN = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M17 14V2"/><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"/></svg>';
   var SVG_NOTE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>';
   var SVG_SNZ = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+  var SVG_SHARE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>';
   var SVG_TRASH = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m3-3h8a1 1 0 0 1 1 1v2H7V4a1 1 0 0 1 1-1z"/></svg>';
   var SVG_EYE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>';
 
@@ -154,9 +155,11 @@
       '<span class="pr-tools">' +
         '<button type="button" class="pr-ico' + (up ? " pr-vote-up-on" : "") + '" data-vote="1" data-id="' + esc(i.id) + '" title="More like this — biases the next scan">' + SVG_UP + "</button>" +
         '<button type="button" class="pr-ico' + (dn ? " pr-vote-dn-on" : "") + '" data-vote="-1" data-id="' + esc(i.id) + '" title="Less like this — biases the next scan">' + SVG_DN + "</button>" +
-        '<button type="button" class="pr-ico' + ((i.note || "").trim() ? " pr-note-on" : "") + '" data-note="' + esc(i.id) + '" title="' + ((i.note || "").trim() ? "Edit note" : "Add a note") + '">' + SVG_NOTE + "</button>" +
         '<button type="button" class="pr-ico' + (snz ? " pr-snz-on" : "") + '" data-snooze="' + esc(i.id) + '" title="' + esc(snzTitle) + '">' + SVG_SNZ + "</button>" +
         '<button type="button" class="pr-ico' + (i.hidden ? " pr-hide-on" : "") + '" data-hide="' + esc(i.id) + '" title="' + (i.hidden ? "Unhide" : "Hide from the triage list") + '">' + SVG_EYE + "</button>" +
+        '<button type="button" class="pr-ico pr-ico-trash" data-status="dismissed" data-id="' + esc(i.id) + '" title="Dismiss — buries for good">' + SVG_TRASH + "</button>" +
+        '<button type="button" class="pr-ico' + ((i.note || "").trim() ? " pr-note-on" : "") + '" data-note="' + esc(i.id) + '" title="' + ((i.note || "").trim() ? "Edit note" : "Add a note") + '">' + SVG_NOTE + "</button>" +
+        '<button type="button" class="pr-ico" data-social="' + esc(i.id) + '" title="Draft social post — one-time briefing + LinkedIn / X drafts">' + SVG_SHARE + "</button>" +
       "</span>"
     );
   }
@@ -173,9 +176,7 @@
         bits.push('<span class="pr-status-chip">Hidden</span>');
       }
       bits.push(toolsHtml(i));
-      bits.push('<button type="button" class="pr-ico pr-ico-trash" data-status="dismissed" data-id="' + esc(i.id) + '" title="Dismiss — buries for good">' + SVG_TRASH + "</button>");
-      bits.push('<button type="button" class="pr-btn pr-btn-track" data-track="' + esc(i.id) + '">Track</button>');
-      bits.push('<button type="button" class="pr-btn" data-social="' + esc(i.id) + '" title="Draft a one-off briefing + LinkedIn post from this prospect, without tracking it">Social post</button>');
+      bits.push('<div class="pr-act-track"><button type="button" class="pr-btn pr-btn-track" data-track="' + esc(i.id) + '">Track</button></div>');
     } else if (status === "dismissed") {
       if (TAB === "all") bits.push('<span class="pr-status-chip">Dismissed</span>');
       bits.push('<button type="button" class="pr-btn" data-status="new" data-id="' + esc(i.id) + '">Restore</button>');
