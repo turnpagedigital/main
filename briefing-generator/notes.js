@@ -67,7 +67,6 @@
   var activeCases = {};
   var UNASSIGNED_KEY = "__unassigned__";
   var sortDir = "desc";       // by last edit
-  var sortField = "edited";   // "edited" | "entry" — which timestamp the sort uses
   var searchText = "";
   var dateFrom = "";
   var dateTo = "";
@@ -82,7 +81,6 @@
     try {
       var s = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
       if (s.sortDir === "asc" || s.sortDir === "desc") sortDir = s.sortDir;
-      if (s.sortField === "edited" || s.sortField === "entry") sortField = s.sortField;
       if (["24h", "7d", "30d", "90d", "all", "custom"].indexOf(s.lookback) !== -1) lookback = s.lookback;
       _savedState = s;
     } catch (e) {}
@@ -90,7 +88,7 @@
   function saveFilterState() {
     try {
       localStorage.setItem(FILTER_KEY, JSON.stringify({
-        sortDir: sortDir, sortField: sortField, activeCases: activeCases, lookback: lookback,
+        sortDir: sortDir, activeCases: activeCases, lookback: lookback,
       }));
     } catch (e) {}
   }
@@ -483,9 +481,8 @@
       return true;
     });
     list.sort(function (a, b) {
-      var ak = sortField === "entry" ? (a.date_filed || a.updated_at || "") : (a.updated_at || "");
-      var bk = sortField === "entry" ? (b.date_filed || b.updated_at || "") : (b.updated_at || "");
-      var cmp = ak < bk ? -1 : ak > bk ? 1 : 0;
+      var cmp = (a.updated_at || "") < (b.updated_at || "") ? -1
+        : (a.updated_at || "") > (b.updated_at || "") ? 1 : 0;
       return sortDir === "desc" ? -cmp : cmp;
     });
     return list;
@@ -1005,9 +1002,11 @@
       document.body.appendChild(thTimeMenu);
       var markSort = function () {
         thTimeMenu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
-          b.classList.toggle("ud-th-menu-on", b.getAttribute("data-sort") === sortField + "-" + sortDir);
+          b.classList.toggle("ud-th-menu-on", b.hasAttribute("data-sort")
+            ? b.getAttribute("data-sort") === "edited-" + sortDir
+            : b.getAttribute("data-val") === lookback);
         });
-        thTime.classList.toggle("ud-th-on", !(sortField === "edited" && sortDir === "desc"));
+        thTime.classList.toggle("ud-th-on", sortDir !== "desc" || lookback !== "all");
       };
       thTime.addEventListener("click", function (ev) {
         ev.stopPropagation();
@@ -1023,13 +1022,26 @@
       });
       thTimeMenu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
         b.addEventListener("click", function () {
-          var v = (b.getAttribute("data-sort") || "").split("-");
-          sortField = v[0] === "entry" ? "entry" : "edited";
-          sortDir = v[1] === "asc" ? "asc" : "desc";
+          if (b.hasAttribute("data-sort")) {
+            sortDir = (b.getAttribute("data-sort") || "").indexOf("asc") !== -1 ? "asc" : "desc";
+          } else {
+            lookback = b.getAttribute("data-val");
+            if (lookback !== "custom") {
+              dateFrom = ""; dateTo = "";
+              var fEl = document.getElementById("ud-date-from");
+              var tEl = document.getElementById("ud-date-to");
+              if (fEl) fEl.value = ""; if (tEl) tEl.value = "";
+            }
+          }
           thTimeMenu.style.display = "none";
           saveFilterState();
           markSort();
+          applyCustomVisibility();
           render();
+          if (lookback === "custom") {
+            var f2 = document.getElementById("ud-date-from");
+            if (f2) f2.focus();
+          }
         });
       });
       document.addEventListener("click", function (ev) {

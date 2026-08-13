@@ -935,7 +935,8 @@
       }
       var noteHtml = "";
       if (olderHidden) {
-        noteHtml += " · <span style=\"color:var(--ink-40)\">last " + (lookbackDays() || 90) + " days</span> · " +
+        // The window itself is already shown in the lookback box — no need to repeat it here.
+        noteHtml += " · " +
           "<button type=\"button\" id=\"ud-window-note\" style=\"background:none;border:none;padding:0;font:inherit;color:var(--ink-60);text-decoration:underline;cursor:pointer;\">" +
           olderHidden + " older hidden — show all</button>";
       }
