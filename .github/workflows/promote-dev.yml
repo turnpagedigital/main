@@ -1,12 +1,13 @@
-# Auto-promote dev → main so data refreshes (news scan, docket sync) and admin
-# saves reach production without a manual "Deploy to Production" click.
+# Auto-promote INTEL to production — hourly sync of briefing-generator/ from
+# dev onto main, so news scans, docket syncs, intel notes, and case edits reach
+# the live site on their own.
 #
-# Runs hourly at :25 (offset from the hourly docket-sync and the daily news
-# scan) plus on demand. Merges origin/dev into main; conflicts in the known
-# concurrent-edit files (intel-prefs/intel-notes/uploads/votes) resolve
-# latest-wins in dev's favor — anything else aborts loudly rather than
-# guessing. Skips cleanly when main already contains dev.
-name: Promote dev to production
+# Deliberately NOT a branch merge: admin/site content (src/, public/,
+# functions/, …) stays staged on dev until Andrew's manual "Deploy to
+# Production" (or the in-session Step 2 merge). Only the briefing-generator/
+# tree is copied — exactly as it stands on dev, deletions included — so a
+# pending admin draft never rides along.
+name: Promote intel to production
 
 on:
   schedule:
@@ -30,36 +31,32 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Merge dev into main and push
+      - name: Sync briefing-generator/ from dev
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git fetch origin dev main
-          if git merge-base --is-ancestor origin/dev HEAD; then
-            echo "main already contains dev — nothing to promote"
+          git fetch origin dev
+          if git diff --quiet origin/dev HEAD -- briefing-generator/; then
+            echo "intel already in sync — nothing to promote"
             exit 0
           fi
-          if ! git merge origin/dev --no-edit; then
-            echo "merge conflict — taking dev's version of conflicted files (latest-wins)"
-            conflicted=$(git diff --name-only --diff-filter=U)
-            echo "$conflicted"
-            for f in $conflicted; do
-              git checkout --theirs -- "$f" && git add "$f"
-            done
-            if ! git -c core.editor=true commit --no-edit; then
-              echo "unresolvable conflicts — aborting promote (fix manually)"
-              git merge --abort || true
-              exit 1
-            fi
+          # Replace main's briefing-generator/ with dev's exact tree (rm first
+          # so files deleted on dev — e.g. removed cases — are deleted here too).
+          git rm -r -q --ignore-unmatch -- briefing-generator/
+          git checkout origin/dev -- briefing-generator/
+          if git diff --cached --quiet; then
+            echo "no staged intel changes after sync — done"
+            exit 0
           fi
+          git commit -m "Auto-promote intel: sync briefing-generator from dev"
           for attempt in 1 2 3; do
             if git push origin main; then
-              echo "promoted to main on attempt ${attempt}"
+              echo "intel promoted on attempt ${attempt}"
               exit 0
             fi
-            echo "push attempt ${attempt} failed (main moved) — remerging"
+            echo "push attempt ${attempt} failed (main moved) — rebasing"
             git fetch origin main
-            git merge origin/main --no-edit || { echo "remerge failed"; exit 1; }
+            git rebase origin/main || { git rebase --abort; echo "rebase conflict — will retry next hour"; exit 1; }
             sleep 5
           done
           exit 1

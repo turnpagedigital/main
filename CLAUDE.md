@@ -25,7 +25,7 @@ git fetch origin && git checkout main && git merge --ff-only origin/main && git 
 ```
 Andrew can do Step 2 himself with the admin's "Deploy to Production" button — for briefings and routine site updates, run Step 2 in-session so changes are live same-day. After the main push, Cloudflare builds in ~1–2 min; Cmd+Shift+R to clear cache.
 
-**Auto-promote (added Aug 2026)**: `.github/workflows/promote-dev.yml` merges dev→main hourly at :25 (conflicts in concurrent-edit files resolve latest-wins in dev's favor), so news scans, docket syncs, and admin saves reach production within the hour even when nobody runs Step 2. Step 2 remains for making a change live immediately.
+**Auto-promote, intel only (added Aug 2026)**: `.github/workflows/promote-dev.yml` copies the `briefing-generator/` tree from dev onto main hourly at :25 (exact tree, deletions included — NOT a branch merge), so news scans, docket syncs, intel notes, and case edits reach production within the hour. Admin/site content (`src/`, `public/`, `functions/`, …) stays staged on dev until the manual Deploy — a pending admin draft never rides along. Step 2 remains for making anything live immediately.
 
 ## Checks (run before pushing)
 ```bash
