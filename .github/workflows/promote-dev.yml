@@ -1,0 +1,65 @@
+# Auto-promote dev → main so data refreshes (news scan, docket sync) and admin
+# saves reach production without a manual "Deploy to Production" click.
+#
+# Runs hourly at :25 (offset from the hourly docket-sync and the daily news
+# scan) plus on demand. Merges origin/dev into main; conflicts in the known
+# concurrent-edit files (intel-prefs/intel-notes/uploads/votes) resolve
+# latest-wins in dev's favor — anything else aborts loudly rather than
+# guessing. Skips cleanly when main already contains dev.
+name: Promote dev to production
+
+on:
+  schedule:
+    - cron: "25 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: promote-dev
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Merge dev into main and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin dev main
+          if git merge-base --is-ancestor origin/dev HEAD; then
+            echo "main already contains dev — nothing to promote"
+            exit 0
+          fi
+          if ! git merge origin/dev --no-edit; then
+            echo "merge conflict — taking dev's version of conflicted files (latest-wins)"
+            conflicted=$(git diff --name-only --diff-filter=U)
+            echo "$conflicted"
+            for f in $conflicted; do
+              git checkout --theirs -- "$f" && git add "$f"
+            done
+            if ! git -c core.editor=true commit --no-edit; then
+              echo "unresolvable conflicts — aborting promote (fix manually)"
+              git merge --abort || true
+              exit 1
+            fi
+          fi
+          for attempt in 1 2 3; do
+            if git push origin main; then
+              echo "promoted to main on attempt ${attempt}"
+              exit 0
+            fi
+            echo "push attempt ${attempt} failed (main moved) — remerging"
+            git fetch origin main
+            git merge origin/main --no-edit || { echo "remerge failed"; exit 1; }
+            sleep 5
+          done
+          exit 1

@@ -370,6 +370,7 @@
     return units;
   }
   var NOTES_LIST = [];
+  var ARCHIVED_SLUGS = {};  // archived cases: notes stay case-labeled but hidden while archived
   var FEED_ITEMS = [];
   var NOTE_STACK = [];   // current filtered notes shown in the dashboard tile
   var noteFront = 0;     // index into NOTE_STACK of the note currently shown
@@ -976,6 +977,9 @@
 
   function renderNotes() {
     var list = NOTES_LIST.filter(function (n) {
+      // Older records may lack case_slug — the note key is "slug|entry…" either way.
+      var s = n.case_slug || ((n._key || "").split("|")[0] || "");
+      if (ARCHIVED_SLUGS[s]) return false;  // hidden while archived, back on un-archive
       if (!n.case_slug) return caseOn("__unassigned__");
       var known = MANIFEST.some(function (m) { return m.slug === n.case_slug; });
       return known ? caseVisibleBySlug(n.case_slug) : true;
@@ -1346,6 +1350,7 @@
 
   fetchJson(BASE + "cases/data/_manifest.json").then(function (man) {
     // Archived cases are hidden from every reader-facing view (Settings still lists them).
+    (man || []).forEach(function (m) { if ((m.sync || "active") === "archived") ARCHIVED_SLUGS[m.slug] = true; });
     MANIFEST = (man || []).filter(function (m) { return (m.sync || "active") !== "archived"; });
     renderCaseGrid();
     // One compact ~90-day summary instead of a 23-file/~5.5 MB fan-out — the

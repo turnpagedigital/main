@@ -62,6 +62,7 @@
 
   // ── State ──────────────────────────────────────────────────────────────────
   var CASES = [];             // from manifest (pills, colors, docket links)
+  var ARCHIVED = {};          // slug → true — archived cases keep their notes (and labels) but are hidden
   var NOTES = {};             // key → record
   var activeCases = {};
   var UNASSIGNED_KEY = "__unassigned__";
@@ -450,6 +451,8 @@
   function filtered() {
     var sq = searchText.toLowerCase().trim();
     var list = noteList().filter(function (n) {
+      // Archived case → note is hidden (not "uncategorized"); it returns intact on un-archive.
+      if (ARCHIVED[n.slug]) return false;
       var known = caseOf(n.slug);
       if (CASES.length) {
         if (known) {
@@ -792,6 +795,7 @@
 
   function init() {
     var manifestP = fetchJson("cases/data/_manifest.json").then(function (man) {
+      (man || []).forEach(function (m) { if ((m.sync || "active") === "archived") ARCHIVED[m.slug] = true; });
       return (man || []).filter(function (m) { return (m.sync || "active") !== "archived"; });
     }).catch(function () { return []; });
     var notesP = fetchJson("api/notes")
@@ -815,8 +819,9 @@
       activeCases[UNASSIGNED_KEY] = savedAC ? savedAC[UNASSIGNED_KEY] !== false : true;
       var meta = document.getElementById("ud-meta");
       if (meta) {
-        var total = noteList().length;
-        var bm = noteList().filter(function (n) { return n.bookmarked; }).length;
+        var visible = noteList().filter(function (n) { return !ARCHIVED[n.slug]; });
+        var total = visible.length;
+        var bm = visible.filter(function (n) { return n.bookmarked; }).length;
         meta.textContent = total + " note" + (total === 1 ? "" : "s") + " · " + bm + " bookmarked";
       }
       renderCaseFilter();

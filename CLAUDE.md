@@ -25,6 +25,8 @@ git fetch origin && git checkout main && git merge --ff-only origin/main && git 
 ```
 Andrew can do Step 2 himself with the admin's "Deploy to Production" button — for briefings and routine site updates, run Step 2 in-session so changes are live same-day. After the main push, Cloudflare builds in ~1–2 min; Cmd+Shift+R to clear cache.
 
+**Auto-promote (added Aug 2026)**: `.github/workflows/promote-dev.yml` merges dev→main hourly at :25 (conflicts in concurrent-edit files resolve latest-wins in dev's favor), so news scans, docket syncs, and admin saves reach production within the hour even when nobody runs Step 2. Step 2 remains for making a change live immediately.
+
 ## Checks (run before pushing)
 ```bash
 npm run lint    # ESLint — errors gate real breakage; warnings are advisory
