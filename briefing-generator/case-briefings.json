@@ -1,75 +1,7 @@
 {
-<<<<<<< HEAD
-  "generated_at": "2026-08-13T21:04:43+00:00",
-  "items": [
-    {
-      "slug": "goliath",
-      "case_name": "Goliath",
-      "short_name": "Goliath",
-      "emoji": "⚖️",
-      "themes": [
-        "fraud-recovery",
-        "crypto-insolvency"
-      ],
-      "court": "S.D. Fl.",
-      "status": "active",
-      "signature": "59c596fd01db",
-      "activity": {
-        "filings": 0,
-        "articles": 5,
-        "latest": "2026-08-12"
-      },
-      "checked": "2026-08-13T21:04:43+00:00",
-      "date": "2026-08-13",
-      "updated": "2026-08-13",
-      "moved": true,
-      "no_change_since": null,
-      "lede": "On August 11, the SEC and CFTC filed parallel civil complaints against Goliath Ventures Inc. and Christopher Delgado in the U.S. District Court for the Middle District of Florida, two months after Delgado's June guilty plea to wire fraud, conspiracy, and money laundering. The SEC alleges that from at least January 2023 through January 2026, defendants operated the scheme through an unregistered securities offering…",
-      "body_md": "On August 11, the SEC and CFTC filed parallel civil complaints against Goliath Ventures Inc. and Christopher Delgado in the U.S. District Court for the Middle District of Florida, two months after Delgado's June guilty plea to wire fraud, conspiracy, and money laundering. \nThe SEC alleges that from at least January 2023 through January 2026, defendants operated the scheme through an unregistered securities offering in which investors would \"partner\" with Goliath to invest in purported crypto asset liquidity pools.\n \nThe SEC puts total fundraising at at least $425 million from more than 1,300 investors.\n \nThe CFTC's complaint separately alleges that approximately 1,600 customers contributed at least $397 million.\n The divergence between the two figures — $425 million (SEC) versus $397 million (CFTC) — reflects differing agency jurisdictional theories and investor/customer populations, and does not resolve the question of aggregate loss for the bankruptcy estate. \nThe SEC alleges at least $51 million was diverted by Delgado for homes, luxury vehicles, a yacht, and travel.\n \nThe CFTC further alleges that defendants misappropriated all customer funds, including by paying fictitious profits to existing customers and funding Delgado's lifestyle, and falsely guaranteed the return of principal and/or profits while issuing false account statements reflecting nonexistent gains.\n\n\nThe SEC action carries an immediate structural consequence for creditors: \nDelgado has agreed to a bifurcated settlement in connection with the SEC's civil enforcement action.\n \nSubject to court approval, the settlement would permanently bar him from violating the securities-law provisions charged, prohibit him from participating in securities transactions outside personal-account activity, and bar him from associating with a broker or dealer; the court will separately determine disgorgement, prejudgment interest, and a civil penalty.\n The bifurcated structure means the injunctive relief is proceeding on consent while the dollar amount of the SEC's monetary judgment remains open — the court has yet to set a schedule for that determination, and no figures are confirmed. \nThe CFTC is pursuing restitution, disgorgement, civil monetary penalties, trading and registration bans, and a permanent injunction under the Commodity Exchange Act\n without any settlement in place, so that action will proceed to contested litigation. \nDelgado pleaded guilty to federal criminal charges in connection with a case brought by the U.S. Attorney's Office for the Middle District of Florida in June 2026.\n\n\nFor claimants in the Chapter 11, both civil actions are substantive developments in the recovery picture, though their direct bearing on estate assets requires care. The civil complaints enlarge the public record of fraud mechanics and asset diversion, potentially supporting turnover and fraudulent-transfer theories available to the estate, but neither agency action automatically flows value into the bankruptcy estate — any restitution or disgorgement ordered in the civil cases runs through those courts' own distribution processes, not the Chapter 11 plan, absent coordination. \nFederal investigators say they are continuing to locate property held by Delgado or others that can be traced to Goliath Ventures proceeds\n — the scope of that asset hunt directly affects what remains for estate administration. One scheduling note warrants flagging: \nthe Justice Department's case page lists Delgado's sentencing for October 21, 2026, before U.S. District Judge Gregory A. Presnell in Orlando — an update that replaces the October 8 date announced when prosecutors disclosed the guilty plea in June\n; __[crypto.news](https://crypto.news/goliath-ventures-hit-by-sec-cftc/)__ reports this date change, but it is unconfirmed against the case docket record, which continues to reflect October 8. Confirmation would require an updated scheduling order in *United States v. Delgado* in the Middle District of Florida. The next confirmed milestone on the bankruptcy side is the September 30 proof-of-claim bar date in Case No. 26-13174-RAM, which will establish the universe of creditors whose recoveries the plan must address.\n\n## Sources\n\n- [CFTC Charges Goliath Ventures Inc. and CEO with $400 Million Fraud Scheme](https://www.cftc.gov/PressRoom/PressReleases/9280-26) — CFTC, August 11, 2026\n- [Goliath Ventures, Inc.; Christopher A. Delgado](https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26608) — SEC.gov, August 11, 2026\n- [SEC, CFTC Sue Goliath Over $400M Crypto Ponzi Scheme](https://www.law360.com/articles/2512347/sec-cftc-sue-goliath-over-400m-crypto-ponzi-scheme) — Law360, August 11, 2026\n- [SEC and CFTC Hit Goliath Ventures With Parallel Crypto Fraud Complaints](https://beincrypto.com/goliath-ventures-sec-cftc-crypto-ponzi/) — BeInCrypto, August 12, 2026\n- [CFTC Sues Goliath Ventures Over Alleged $397M DeFi Liquidity Pool Ponzi](https://thedefiant.io/news/regulation/cftc-sues-goliath-ventures-over-alleged-397m-defi-liquidity-pool-ponzi) — The Defiant, August 11, 2026\n- [Goliath Ventures Faces SEC, CFTC Suits Over $400M Ponzi](https://cointelegraph.com/news/sec-cftc-sue-goliath-ventures-400m-crypto-ponzi) — CoinTelegraph, August 11, 2026\n- [Goliath Ventures hit by SEC, CFTC in $425M crypto case](https://crypto.news/goliath-ventures-hit-by-sec-cftc/) — crypto.news, August 11, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
-      "sources": [
-        {
-          "title": "CFTC Charges Goliath Ventures Inc. and CEO with $400 Million Fraud Scheme",
-          "url": "https://www.cftc.gov/PressRoom/PressReleases/9280-26",
-          "note": "CFTC, August 11, 2026"
-        },
-        {
-          "title": "Goliath Ventures, Inc.; Christopher A. Delgado",
-          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26608",
-          "note": "SEC.gov, August 11, 2026"
-        },
-        {
-          "title": "SEC, CFTC Sue Goliath Over $400M Crypto Ponzi Scheme",
-          "url": "https://www.law360.com/articles/2512347/sec-cftc-sue-goliath-over-400m-crypto-ponzi-scheme",
-          "note": "Law360, August 11, 2026"
-        },
-        {
-          "title": "SEC and CFTC Hit Goliath Ventures With Parallel Crypto Fraud Complaints",
-          "url": "https://beincrypto.com/goliath-ventures-sec-cftc-crypto-ponzi/",
-          "note": "BeInCrypto, August 12, 2026"
-        },
-        {
-          "title": "CFTC Sues Goliath Ventures Over Alleged $397M DeFi Liquidity Pool Ponzi",
-          "url": "https://thedefiant.io/news/regulation/cftc-sues-goliath-ventures-over-alleged-397m-defi-liquidity-pool-ponzi",
-          "note": "The Defiant, August 11, 2026"
-        },
-        {
-          "title": "Goliath Ventures Faces SEC, CFTC Suits Over $400M Ponzi",
-          "url": "https://cointelegraph.com/news/sec-cftc-sue-goliath-ventures-400m-crypto-ponzi",
-          "note": "CoinTelegraph, August 11, 2026"
-        },
-        {
-          "title": "Goliath Ventures hit by SEC, CFTC in $425M crypto case",
-          "url": "https://crypto.news/goliath-ventures-hit-by-sec-cftc/",
-          "note": "crypto.news, August 11, 2026"
-        }
-      ]
-    },
-    {
-=======
   "generated_at": "2026-08-13T21:06:47+00:00",
   "items": [
     {
->>>>>>> 190ef1ea (Daily briefing 2026-08-13)
       "slug": "other-copyright-suits",
       "case_name": "Other Copyright Suits",
       "short_name": "Other Copyright Suits",
@@ -94,11 +26,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-<<<<<<< HEAD
-      "checked": "2026-08-13T21:04:43+00:00",
-=======
       "checked": "2026-08-13T21:06:47+00:00",
->>>>>>> 190ef1ea (Daily briefing 2026-08-13)
       "date": "",
       "updated": "",
       "moved": false,
@@ -123,11 +51,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-<<<<<<< HEAD
-      "checked": "2026-08-13T21:04:43+00:00",
-=======
       "checked": "2026-08-13T21:06:47+00:00",
->>>>>>> 190ef1ea (Daily briefing 2026-08-13)
       "date": "",
       "updated": "",
       "moved": false,
@@ -152,11 +76,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-<<<<<<< HEAD
-      "checked": "2026-08-13T21:04:43+00:00",
-=======
       "checked": "2026-08-13T21:06:47+00:00",
->>>>>>> 190ef1ea (Daily briefing 2026-08-13)
       "date": "",
       "updated": "",
       "moved": false,
@@ -182,11 +102,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-<<<<<<< HEAD
-      "checked": "2026-08-13T21:04:43+00:00",
-=======
       "checked": "2026-08-13T21:06:47+00:00",
->>>>>>> 190ef1ea (Daily briefing 2026-08-13)
       "date": "",
       "updated": "",
       "moved": false,
@@ -211,11 +127,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-<<<<<<< HEAD
-      "checked": "2026-08-13T21:04:43+00:00",
-=======
       "checked": "2026-08-13T21:06:47+00:00",
->>>>>>> 190ef1ea (Daily briefing 2026-08-13)
       "date": "",
       "updated": "",
       "moved": false,
@@ -240,11 +152,7 @@
         "articles": 0,
         "latest": "2026-08-12"
       },
-<<<<<<< HEAD
-      "checked": "2026-08-13T21:04:43+00:00",
-=======
       "checked": "2026-08-13T21:06:47+00:00",
->>>>>>> 190ef1ea (Daily briefing 2026-08-13)
       "date": "",
       "updated": "",
       "moved": false,
@@ -270,11 +178,7 @@
         "articles": 0,
         "latest": "2026-08-12"
       },
-<<<<<<< HEAD
-      "checked": "2026-08-13T21:04:43+00:00",
-=======
       "checked": "2026-08-13T21:06:47+00:00",
->>>>>>> 190ef1ea (Daily briefing 2026-08-13)
       "date": "",
       "updated": "",
       "moved": false,
@@ -299,11 +203,7 @@
         "articles": 0,
         "latest": "2026-08-11"
       },
-<<<<<<< HEAD
-      "checked": "2026-08-13T21:04:43+00:00",
-=======
       "checked": "2026-08-13T21:06:47+00:00",
->>>>>>> 190ef1ea (Daily briefing 2026-08-13)
       "date": "",
       "updated": "",
       "moved": false,
@@ -328,11 +228,7 @@
         "articles": 0,
         "latest": "2026-08-11"
       },
-<<<<<<< HEAD
-      "checked": "2026-08-13T21:04:43+00:00",
-=======
       "checked": "2026-08-13T21:06:47+00:00",
->>>>>>> 190ef1ea (Daily briefing 2026-08-13)
       "date": "",
       "updated": "",
       "moved": false,
@@ -363,11 +259,7 @@
         "articles": 0,
         "latest": "2026-08-10"
       },
-<<<<<<< HEAD
-      "checked": "2026-08-13T21:04:43+00:00",
-=======
       "checked": "2026-08-13T21:06:47+00:00",
->>>>>>> 190ef1ea (Daily briefing 2026-08-13)
       "date": "",
       "updated": "",
       "moved": false,
@@ -394,11 +286,7 @@
         "articles": 0,
         "latest": "2026-08-07"
       },
-<<<<<<< HEAD
-      "checked": "2026-08-13T21:04:43+00:00",
-=======
       "checked": "2026-08-13T21:06:47+00:00",
->>>>>>> 190ef1ea (Daily briefing 2026-08-13)
       "date": "",
       "updated": "",
       "moved": false,
@@ -424,11 +312,7 @@
         "articles": 0,
         "latest": "2026-08-05"
       },
-<<<<<<< HEAD
-      "checked": "2026-08-13T21:04:43+00:00",
-=======
       "checked": "2026-08-13T21:06:47+00:00",
->>>>>>> 190ef1ea (Daily briefing 2026-08-13)
       "date": "",
       "updated": "",
       "moved": false,
@@ -436,8 +320,6 @@
       "lede": "",
       "body_md": "",
       "sources": []
-<<<<<<< HEAD
-=======
     },
     {
       "slug": "goliath",
@@ -464,7 +346,6 @@
       "lede": "",
       "body_md": "",
       "sources": []
->>>>>>> 190ef1ea (Daily briefing 2026-08-13)
     }
   ]
 }
