@@ -1,87 +1,141 @@
 {
-  "generated_at": "2026-08-13T14:51:32+00:00",
+  "generated_at": "2026-08-13T20:50:03+00:00",
   "items": [
     {
-      "slug": "rndc",
-      "case_name": "RNDC",
-      "short_name": "RNDC",
-      "emoji": "⚖️",
-      "themes": [
-        "bankruptcy-creditor-rights"
-      ],
-      "court": "Bankr. S.D.Tx.",
-      "status": "active",
-      "signature": "cce81a518e04",
-      "activity": {
-        "filings": 14,
-        "articles": 0,
-        "latest": "2026-08-13"
-      },
-      "checked": "2026-08-13T14:51:32+00:00",
-      "date": "2026-08-13",
-      "updated": "2026-08-13",
-      "moved": true,
-      "no_change_since": null,
-      "lede": "On August 11, RNDC filed an affidavit in support of its Emergency Motion for Entry of an Order Approving Procedures for De Minimis Asset Sales, Abandonment, and Destruction (Dkt. 172, supporting Dkt. 145). The affidavit, filed by Omni Agent Solutions as claims and noticing agent, completes the evidentiary record behind Dkt. 145 and signals that the debtors are moving the de minimis sales motion toward a hearing.",
-      "body_md": "On August 11, RNDC filed an affidavit in support of its Emergency Motion for Entry of an Order Approving Procedures for De Minimis Asset Sales, Abandonment, and Destruction (Dkt. 172, supporting Dkt. 145). The affidavit, filed by Omni Agent Solutions as claims and noticing agent, completes the evidentiary record behind Dkt. 145 and signals that the debtors are moving the de minimis sales motion toward a hearing. Dkt. 174, also filed August 11, is RNDC's notice of hearing on that emergency motion — and a hearing has been set (docketed August 12 without an assigned docket number), placing Dkt. 145 on a concrete near-term calendar before Judge Lopez. The relief sought in Dkt. 145 — court-approved procedures to sell, abandon, or destroy assets below a threshold value without further court approval on each transaction — is substantive: if granted, it gives the estate a streamlined mechanism to dispose of residual assets outside the 363 full-process framework, which accelerates wind-down execution but also means individual dispositions will occur outside public competitive bidding, reducing per-transaction creditor visibility.\n\nDkt. 176, filed August 12 and entered as a \"Generic Motion,\" carries no further description from the docket line. Its identity cannot be determined from the record as produced; it is classified up pending the full text becoming available. If it is an emergency motion or a motion implicating estate property or plan mechanics, it would be material — confirmation requires a PACER pull.\n\nThe creditor constituency continues to build out representation. Databank IMX LLC, appearing as a creditor, filed pro hac vice motions for Benjamin M. Fischer and Ryan T. Jareck (Dkts. 170–171, filed August 11), following Daniel Geoghan's notice of appearance on August 10 (Dkt. 168). Winery Exchange, Inc. dba WX Brands appeared through Berry Spears (Dkt. 173). Dkts. 175, 177, and 182 are further notices of appearance; Dkts. 178–181 are pro hac vice orders — all procedural and routine. The accumulation of new creditor counsel now spans more than a dozen separate appearances across the past week, consistent with active positioning ahead of the August 24 second-day hearing, though no formal objections to Dkt. 145 or the lift-stay motion at Dkt. 146 have yet appeared on the docket. With the response deadline on Dkt. 146 falling on or about August 22 under S.D. Tex. Bankruptcy Local Rule 4001-1, the next two business days are the window in which any creditor or party in interest must file to contest lift-stay relief before that issue arrives before Judge Lopez on August 24.\n\nThe next concrete milestone is the August 24 second-day hearing at 1:00 p.m. CT — at which the de minimis asset sales procedures motion (Dkt. 145, now with its evidentiary affidavit complete), the lift-stay motion (Dkt. 146), and any other pending first/second-day relief will be before Judge Lopez. The Disclosure Statement (Dkt. 118) remains unapproved; no conditional approval order has appeared, and solicitation cannot commence until it does.\n\n## Sources\n\n- [New Chapter 11 Bankruptcy Filing – Republic National Distributing Company LLC](https://www.petition11.com/p/rndc-chapter-11-bankruptcy-filing) — Petition, 2026-07-29\n- [RNDC court filings reveal scale of distributor's financial collapse](https://www.thedrinksbusiness.com/2026/08/rndc-court-filings-reveal-scale-of-distributors-financial-collapse/) — The Drinks Business, 2026-08-03\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
-      "sources": [
-        {
-          "title": "New Chapter 11 Bankruptcy Filing – Republic National Distributing Company LLC",
-          "url": "https://www.petition11.com/p/rndc-chapter-11-bankruptcy-filing",
-          "note": "Petition, 2026-07-29"
-        },
-        {
-          "title": "RNDC court filings reveal scale of distributor's financial collapse",
-          "url": "https://www.thedrinksbusiness.com/2026/08/rndc-court-filings-reveal-scale-of-distributors-financial-collapse/",
-          "note": "The Drinks Business, 2026-08-03"
-        }
-      ]
-    },
-    {
-      "slug": "getty-images-us-v-stability-ai-nd-cal",
-      "case_name": "Getty Images (US) v. Stability AI (N.D. Cal.)",
-      "short_name": "Getty Images v. Stability AI",
+      "slug": "publishers-v-google-llc-gemini-books",
+      "case_name": "Publishers v. Google",
+      "short_name": "Publishers v. Google",
       "emoji": "⚖️",
       "themes": [
         "llm-class-action"
       ],
-      "court": "U.S. District Court for the Northern District of California",
+      "court": "District Court, N.D. California",
       "status": "active",
-      "signature": "ceb986091c43",
+      "signature": "fd210bc5ebce",
       "activity": {
-        "filings": 2,
+        "filings": 1,
         "articles": 0,
-        "latest": "2026-08-12"
+        "latest": "2026-08-13"
       },
-      "checked": "2026-08-13T14:51:32+00:00",
+      "checked": "2026-08-13T20:50:03+00:00",
       "date": "2026-08-13",
       "updated": "2026-08-13",
       "moved": true,
       "no_change_since": null,
-      "lede": "On August 12, one of the parties filed an Opposition or Response (Dkt. 71) to the Administrative Motion filed August 11 (Dkt. 70), completing a second paired administrative-motion cycle in less than a week and mirroring the Dkt. 68 / Dkt. 69 pairing covered yesterday. Neither filing's document text is publicly available through RECAP as of this writing, so the precise relief sought in Dkt. 70 — and the ground on…",
-      "body_md": "On August 12, one of the parties filed an Opposition or Response (Dkt. 71) to the Administrative Motion filed August 11 (Dkt. 70), completing a second paired administrative-motion cycle in less than a week and mirroring the Dkt. 68 / Dkt. 69 pairing covered yesterday. Neither filing's document text is publicly available through RECAP as of this writing, so the precise relief sought in Dkt. 70 — and the ground on which it is being opposed in Dkt. 71 — remains unverified beyond its procedural classification under Civil Local Rule 7-11. That classification governs the analysis: L.R. 7-11 is reserved for non-noticed administrative relief from case-management rules, not for contested merits disputes, and nothing in the docket captions signals a substantive claim, right, or obligation at stake. What is now clear is that both Administrative Motion cycles (Dkts. 68-69 and Dkts. 70-71) have drawn opposition, which means Judge Thompson will need to rule on each — neither resolved by consent. If either ruling touches the scope or timing of discovery, it becomes substantive under any materiality reading and will warrant immediate coverage. Absent the underlying documents, the safer read is that these oppositions are disputes over the administrative relief itself — page limits, filing accommodations, or analogous housekeeping — rather than over any discovery position.\n\nThe pattern is worth noting structurally: two separate administrative motions filed six days apart (August 6 and August 11), each opposed within four to five days. That cadence, against a September 18 fact-discovery close that is now thirty-six days out, suggests at least one side is pressing for procedural adjustments the other is resisting — consistent with the pre-cutoff friction common in IP discovery. \nThe close of fact discovery is September 18, 2026.\n \nExpert-report obligations follow in sequence: Opening Reports due October 30, 2026; Rebuttal Reports due December 18, 2026; and Close of Expert Discovery February 12, 2027.\n Any slippage to the September 18 cutoff would compress or shift each of those downstream dates and, more directly, would affect Getty's ability to complete the production record it needs to support damages quantification before any summary-judgment phase. Discovery disputes have been referred to Magistrate Judge Sallie Kim; if either motion crosses from administrative housekeeping into a genuine discovery dispute, that referral path is already in place.\n\nThe next concrete milestone is September 18, 2026 — close of fact discovery. Before that date, Judge Thompson (or Magistrate Judge Kim, if any administrative motion is re-characterized as a discovery dispute) will need to rule on both pending administrative motions. Those rulings are the next docket events worth watching.\n\n## Sources\n\n- [Getty Images (US), Inc. v. Stability AI, Ltd. — CourtListener Docket](https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/) — CourtListener, ongoing\n- [Getty Images v. Stability AI: Case Status May 2026](https://ailawsuittracker.com/cases/getty-v-stability-ai/) — AI Lawsuit Tracker, May 25, 2026\n- [Getty Images mostly wins, surviving motion to dismiss](https://chatgptiseatingtheworld.com/2026/04/24/getty-images-mostly-wins-surviving-motion-to-dismiss-claims-except-for-dmca-cmi-claim-but-can-amend-that-claim-in-light-of-judge-thompsons-ruling/) — ChatGPT Is Eating the World, April 24, 2026\n- [Northern District of California Allows Trademark Claims Against AI To Proceed](https://www.thefirewall-blog.com/2026/05/northern-district-of-california-allows-trademark-claims-against-ai-to-proceed/) — The Firewall, May 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "lede": "On August 13, the docket recorded a Notice of Appearance/Substitution/Change/Withdrawal of Attorney — procedural and routine, with no bearing on claim exposure or case trajectory.",
+      "body_md": "On August 13, the docket recorded a Notice of Appearance/Substitution/Change/Withdrawal of Attorney — procedural and routine, with no bearing on claim exposure or case trajectory.\n\nThe substantive posture entering today remains fixed on the unresolved motion sequence in the consolidated N.D. California action (5:23-cv-03440, Judge Lee). The most recent contested activity was the July 10–15 Cengage/Hachette motion to withdraw their intervention (Dkt. 473), Google's opposition (Dkt. 474), and the movants' administrative motion for leave to reply (Dkt. 475, with responses due July 20). That withdrawal, if granted, would remove the publisher intervenors from the consolidated track — a notable posture shift given that those same parties filed a separate, stand-alone action in the Southern District of New York on July 10 (\n*Hachette Book Group et al. v. Google LLC*, No. 1:26-cv-05870, S.D.N.Y., with the complaint docketed July 10\n). The two-track strategy — exit the intervention, press a direct action — concentrates the publishers' claims in a forum and on pleadings they fully control, rather than subordinating them to the consolidated class posture in California.\n\nThe New York complaint's theory is not procedurally identical to what was pending in the consolidated action. \nHachette, Elsevier, Cengage, and Scott Turow allege Google used millions of copyrighted books and journal articles without permission to build Gemini, copying works from sources including Google Books, online libraries, and allegedly pirated websites\n. \nThe complaint separately alleges Google intentionally removed or changed copyright information to \"conceal… that its Gemini Models were trained on stolen materials,\"\n adding a DMCA § 1202 CMI-removal layer on top of the core infringement theory. \nThe suit also argues Gemini now competes directly with the books it learned from by generating content that could reduce demand for the original materials\n — the § 107(4) market-harm prong that will be the decisive fair-use battleground across the AI-copyright track. The next concrete milestone in the N.D. California action is the outcome of the Dkt. 473/474/475 withdrawal motion sequence; once Judge Lee rules, the intervention question is resolved and the class certification record (indexed at Dkt. 472) governs the remaining plaintiff structure in the consolidated case.\n\n## Sources\n\n- [Google Faces Another AI Training Lawsuit from Major Publishers](https://techcrunch.com/2026/07/14/google-faces-another-ai-training-lawsuit-from-major-publishers/) — TechCrunch, July 14, 2026\n- [Google Gemini Sued Over Book Training in Hachette Case](https://windowsforum.com/threads/google-gemini-sued-over-book-training-in-hachette-case.438468/) — Windows Forum, July 2026\n- [Authors, Publishers Sue Google Over Alleged AI Copyright Infringement](https://www.aljazeera.com/economy/2026/7/15/authors-publishers-sue-google-over-alleged-ai-copyright-infringement) — Al Jazeera, July 15, 2026\n- [Hachette, Scott Turow Sue Google for Using Books to Train Gemini](https://www.thewrap.com/industry-news/tech/hachette-scott-turow-google-gemini-ai-copyright-lawsuit/) — The Wrap, July 2026\n- [Google Hit With New Gemini Copyright Lawsuit](https://www.eweek.com/news/google-gemini-publisher-lawsuit-2026/) — eWeek, July 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
         {
-          "title": "Getty Images (US), Inc. v. Stability AI, Ltd. — CourtListener Docket",
-          "url": "https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/",
-          "note": "CourtListener, ongoing"
+          "title": "Google Faces Another AI Training Lawsuit from Major Publishers",
+          "url": "https://techcrunch.com/2026/07/14/google-faces-another-ai-training-lawsuit-from-major-publishers/",
+          "note": "TechCrunch, July 14, 2026"
         },
         {
-          "title": "Getty Images v. Stability AI: Case Status May 2026",
-          "url": "https://ailawsuittracker.com/cases/getty-v-stability-ai/",
-          "note": "AI Lawsuit Tracker, May 25, 2026"
+          "title": "Google Gemini Sued Over Book Training in Hachette Case",
+          "url": "https://windowsforum.com/threads/google-gemini-sued-over-book-training-in-hachette-case.438468/",
+          "note": "Windows Forum, July 2026"
         },
         {
-          "title": "Getty Images mostly wins, surviving motion to dismiss",
-          "url": "https://chatgptiseatingtheworld.com/2026/04/24/getty-images-mostly-wins-surviving-motion-to-dismiss-claims-except-for-dmca-cmi-claim-but-can-amend-that-claim-in-light-of-judge-thompsons-ruling/",
-          "note": "ChatGPT Is Eating the World, April 24, 2026"
+          "title": "Authors, Publishers Sue Google Over Alleged AI Copyright Infringement",
+          "url": "https://www.aljazeera.com/economy/2026/7/15/authors-publishers-sue-google-over-alleged-ai-copyright-infringement",
+          "note": "Al Jazeera, July 15, 2026"
         },
         {
-          "title": "Northern District of California Allows Trademark Claims Against AI To Proceed",
-          "url": "https://www.thefirewall-blog.com/2026/05/northern-district-of-california-allows-trademark-claims-against-ai-to-proceed/",
-          "note": "The Firewall, May 2026"
+          "title": "Hachette, Scott Turow Sue Google for Using Books to Train Gemini",
+          "url": "https://www.thewrap.com/industry-news/tech/hachette-scott-turow-google-gemini-ai-copyright-lawsuit/",
+          "note": "The Wrap, July 2026"
+        },
+        {
+          "title": "Google Hit With New Gemini Copyright Lawsuit",
+          "url": "https://www.eweek.com/news/google-gemini-publisher-lawsuit-2026/",
+          "note": "eWeek, July 2026"
         }
       ]
+    },
+    {
+      "slug": "other-copyright-suits",
+      "case_name": "Other Copyright Suits",
+      "short_name": "Other Copyright Suits",
+      "emoji": "⚖️",
+      "is_group": true,
+      "members": [
+        "britannica-merriam-webster-v-openai",
+        "getty-images-us-v-stability-ai-nd-cal",
+        "hachette-et-al-v-google-llc-gemini",
+        "hachette-et-al-v-meta-platforms-llama",
+        "kadrey-v-meta-contributory-infringement-amendment",
+        "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153"
+      ],
+      "themes": [
+        "llm-class-action"
+      ],
+      "court": "6 related cases",
+      "status": "",
+      "signature": "97580825ddb1",
+      "activity": {
+        "filings": 7,
+        "articles": 0,
+        "latest": "2026-08-13"
+      },
+      "checked": "2026-08-13T20:50:03+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-08-13",
+      "lede": "",
+      "body_md": "",
+      "sources": []
+    },
+    {
+      "slug": "in-re-cashcall-inc",
+      "case_name": "CashCall",
+      "short_name": "CashCall",
+      "emoji": "⚖️",
+      "themes": [
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "To be confirmed (financials sector Ch. 11, filed ~July 21, 2026)",
+      "status": "active",
+      "signature": "f9112a468d57",
+      "activity": {
+        "filings": 10,
+        "articles": 0,
+        "latest": "2026-08-13"
+      },
+      "checked": "2026-08-13T20:50:03+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-08-13",
+      "lede": "",
+      "body_md": "",
+      "sources": []
+    },
+    {
+      "slug": "poolin",
+      "case_name": "Poolin",
+      "short_name": "Poolin",
+      "emoji": "⚖️",
+      "themes": [
+        "crypto-insolvency",
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "Bankr. D. N.J.",
+      "status": "active",
+      "signature": "a4f944aa6fb9",
+      "activity": {
+        "filings": 7,
+        "articles": 0,
+        "latest": "2026-08-13"
+      },
+      "checked": "2026-08-13T20:50:03+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-08-13",
+      "lede": "",
+      "body_md": "",
+      "sources": []
     },
     {
       "slug": "harvest-sherwood",
@@ -99,11 +153,11 @@
         "articles": 0,
         "latest": "2026-08-12"
       },
-      "checked": "2026-08-13T14:51:32+00:00",
+      "checked": "2026-08-13T20:50:03+00:00",
       "date": "2026-08-13",
       "updated": "2026-08-13",
-      "moved": true,
-      "no_change_since": null,
+      "moved": false,
+      "no_change_since": "2026-08-12",
       "lede": "On August 12, the claims agent docketed two additional assignments and transfers of claim (Dkts. 1205 and 1206), continuing the secondary-market activity that has run without interruption since plan confirmation on August 5.",
       "body_md": "On August 12, the claims agent docketed two additional assignments and transfers of claim (Dkts. 1205 and 1206), continuing the secondary-market activity that has run without interruption since plan confirmation on August 5. The document text for this pair has not been pulled, but the structural pattern is identical to the CRG Financial / Technical Truck And Trailer transfer (Dkt. 1165): Rule 3001(e)(2) transfers other than for security, each carrying a 20-day objection window from mailing before the transferee is substituted without further court order. Combined with the four transfers filed August 10–11 (Dkts. 1192, 1195, 1196, and 1197) covered in yesterday's briefing, the post-confirmation transfer count now stands at a minimum of eleven entries since August 7. The volume confirms continued secondary-market appetite for Harvest Sherwood paper at confirmed-plan pricing, but no individual small-balance transfer alters the recovery calculus for general unsecured creditors, which turns on the antitrust portfolio being pursued by plan funder Atlas Grove and, more immediately, the outcome of Adv. Pro. 25-08002, __[Law360](https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval)__.\n\nDkt. 1207, also filed August 12, is a BNC certificate of mailing — filing infrastructure, not a reportable event. Dkts. 1201–1204 are four pro hac vice admissions filed August 11; the identity of the admitting attorneys and the parties they represent has not been pulled, but the filing cluster is noteworthy given its proximity to the September 21 trial date in Adv. Pro. 25-08002. Four simultaneous pro hac admissions in a case with active trial counsel already on the record is consistent with a trial team expanding ahead of a hearing — whether for Harvest Sherwood, Sprouts, or a third-party witness group cannot be confirmed without a PACER pull of the underlying applications. That question carries practical significance: new counsel appearances in the adversary proceeding could signal a shift in litigation posture or the addition of claims or defenses, both of which this desk would classify up. The certificates of service at Dkts. 1199 and 1200, filed August 11, are omitted.\n\nThe next concrete milestone is trial in *Harvest Sherwood Food Distributors, Inc. v. Sprouts Farmers Market, Inc., et al*, Adv. Pro. 25-08002, set for September 21, 2026, at 9:30 a.m. before Judge Jernigan in Dallas, __[Epiq](https://dm.epiq11.com/case/hvs/advproc/223?debtorId=15030)__. With 39 days to trial, the adversary docket is the priority watch for this desk. Any in limine ruling, stipulation, or pre-trial motion filed in that proceeding before September 21 carries higher materiality than anything presently moving on the main case docket.\n\n## Sources\n\n- [Harvest Sherwood Wins Ch. 11 Plan Approval](https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval) — Law360, August 5, 2026\n- [Harvest Sherwood Food Distributors, Inc. Adversary Proceedings](https://dm.epiq11.com/case/hvs/advproc/223?debtorId=15030) — Epiq, Case No. 25-08002\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
@@ -136,11 +190,11 @@
         "articles": 0,
         "latest": "2026-08-12"
       },
-      "checked": "2026-08-13T14:51:32+00:00",
+      "checked": "2026-08-13T20:50:03+00:00",
       "date": "2026-08-13",
       "updated": "2026-08-13",
-      "moved": true,
-      "no_change_since": null,
+      "moved": false,
+      "no_change_since": "2026-08-12",
       "lede": "On August 12, Judge Bostwick entered an Order on Motion to Compel (Dkt. 366), resolving the compel motion Trustee Donald Lassman filed August 10 (Dkt. 359) — the same motion for which the court set a hearing on August 10 (Dkt. 360). The order arrived the same day an objection was filed at Dkt. 365, indicating the court ruled either simultaneously with or immediately after receiving opposition, which is an…",
       "body_md": "On August 12, Judge Bostwick entered an Order on Motion to Compel (Dkt. 366), resolving the compel motion Trustee Donald Lassman filed August 10 (Dkt. 359) — the same motion for which the court set a hearing on August 10 (Dkt. 360). The order arrived the same day an objection was filed at Dkt. 365, indicating the court ruled either simultaneously with or immediately after receiving opposition, which is an accelerated disposition consistent with a hearing having been held. The full text of Dkt. 366 is not in the pulled-document record, so the precise terms — granted, denied, or granted in part — cannot be stated with certainty from the materials available; that determination requires a direct PACER pull of Dkt. 366.\n\nWhat the docket sequence does establish is significant for recovery posture. The underlying compel motion (Dkt. 359) arose in the context of the pending appeal of the July 17 sale order (Dkt. 343), in which Samara CR Holdings and Kahan are challenging the bankruptcy court's approval of the PBTC Recovery Partners sale on due process, good-faith purchaser, and insider-conflict grounds (Dkt. 357). Discovery in that contested posture — particularly any Rule 2004 or adversary-style compelled production — bears directly on the evidentiary record appellants are assembling. If Dkt. 366 granted the compel motion, it could open or expand the document record available to appellants before the district court. If it denied or limited compelled production, it narrows that record and cuts against the appellants' ability to supplement the designation of record filed August 3 (Dkt. 357). Until Dkt. 366's operative language is confirmed, the recovery implication remains directionally meaningful but factually indeterminate.\n\nThe next concrete milestone is confirmation of whether a further hearing or compliance deadline runs from Dkt. 366; that date and any production deadline should be verified directly on the docket, as the order's terms will govern the pace of pre-appellate discovery.\n\n## Sources\n\n*No press sources were used. All propositions derive from the docket record and pulled document text, which are primary sources requiring no citation.*\n\n---\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": []
@@ -161,11 +215,11 @@
         "articles": 0,
         "latest": "2026-08-12"
       },
-      "checked": "2026-08-13T14:51:32+00:00",
+      "checked": "2026-08-13T20:50:03+00:00",
       "date": "2026-08-13",
       "updated": "2026-08-13",
-      "moved": true,
-      "no_change_since": null,
+      "moved": false,
+      "no_change_since": "2026-08-12",
       "lede": "On August 12, McDermott Will & Schulte LLP filed a Notice of Withdrawal of Appearance (Dkt. 73), exiting the case entirely on behalf of TRAG LLC and RG Energy LLC — the first-lien creditors whose $87.3 million lien position defines the secured layer of this capital structure. The withdrawal is the substantive event of the past 24 hours and warrants attention.",
       "body_md": "On August 12, McDermott Will & Schulte LLP filed a Notice of Withdrawal of Appearance (Dkt. 73), exiting the case entirely on behalf of TRAG LLC and RG Energy LLC — the first-lien creditors whose $87.3 million lien position defines the secured layer of this capital structure. The withdrawal is the substantive event of the past 24 hours and warrants attention. As recently as August 7, McDermott Will & Schulte had admitted two partners pro hac vice (Dkts. 69-72), making the exit unusually abrupt: two admissions and a notice of appearance, all reversed within five days. No substitute counsel has appeared on behalf of TRAG or RG Energy as of this writing. \nTRAG LLC and RG Energy LLC, both connected to investor Tony Robbins, hold liens and security interests granted at the end of June in the amount of $87.3 million.\n That position gives them leverage over essentially every outcome in this case — plan confirmation, any § 363 sale process, and cash-collateral use — making their counsel posture directly relevant to recovery prospects for the broader creditor body.\n\nThe practical consequences of an unrepresented first-lien creditor are immediate. Without active counsel of record, TRAG and RG Energy cannot file an objection, respond to a motion, or participate at the September 3 final hearing on the first-day critical operations orders — wages, utilities, and critical vendor payments — without first securing replacement representation and moving that new counsel through admission. The objection deadline for those final orders is August 19, six days out. If no new counsel appears before then, the entities most capable of contesting the final first-day relief lose their standing to do so. Whether the withdrawal reflects a strategic decision by TRAG/RG Energy to allow the operational orders to pass uncontested, a breakdown in the client-counsel relationship, or a transition to different outside counsel not yet announced is unknown on the current record. None of those readings is verifiable from the docket alone, and reasonable observers could disagree on which is most plausible. Dkts. 74, 75, and 76 — the U.S. Trustee's scheduling request, Zoom logistics notice, and formal Notice of Meeting of Creditors — set the § 341(a) meeting for September 2, 2026 at 1:00 p.m. ET, with a § 523 dischargeability objection deadline of November 2, 2026. Those filings are administrative infrastructure; they are noted for timing but carry no independent bearing on creditor recovery.\n\nThe next hard deadline is August 19 — objections to the final orders on wages, utilities, and taxes are due at 4:00 p.m. ET per Dkt. 49. The absence of counsel for TRAG and RG Energy against that deadline is the position to watch. The September 2 § 341(a) meeting follows, and the September 3 final hearings on the first-day operational orders are the next substantive event on the calendar.\n\n## Sources\n\n- [Future of former Pleasants Power Plant uncertain as Omnis Pleasants files for bankruptcy](https://www.newsandsentinel.com/news/business/2026/07/future-of-former-pleasants-power-plant-uncertain-as-omnis-pleasants-files-for-bankruptcy/) — News and Sentinel, July 2026\n- [Pleasants Power Station's Omnis firm reports 600+ creditors](https://www.herald-dispatch.com/news/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_5b21adc9-1c75-433a-be51-5ed26f74a819.html) — Herald-Dispatch, August 5, 2026\n- [Pleasants Power Station's Omnis firm reports 600+ creditors](https://www.wvgazettemail.com/news/legal_affairs/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_1f5045c2-ed17-4993-b2e5-8c7ede971f62.html) — Charleston Gazette-Mail, August 4, 2026\n- [Power Struggle: New Pleasants Power Leadership Fights With Former Management In Bankruptcy Filings](https://www.theintelligencer.net/news/top-headlines/2026/08/power-struggle-new-pleasants-power-leadership-fights-with-former-management-in-bankruptcy-filings/) — The Intelligencer, August 2026\n- [McDermott Will & Schulte — Wikipedia](https://en.wikipedia.org/wiki/McDermott_Will_%26_Schulte) — Wikipedia\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
@@ -197,6 +251,31 @@
       ]
     },
     {
+      "slug": "concord-anthropic",
+      "case_name": "Concord v. Anthropic",
+      "short_name": "Concord v. Anthropic",
+      "emoji": "⚖️",
+      "themes": [
+        "llm-class-action"
+      ],
+      "court": "District Court, N.D. California",
+      "status": "active",
+      "signature": "e2f9bcd581e6",
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-08-11"
+      },
+      "checked": "2026-08-13T20:50:03+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-08-11",
+      "lede": "",
+      "body_md": "",
+      "sources": []
+    },
+    {
       "slug": "papaya-gaming",
       "case_name": "Papaya Gaming",
       "short_name": "Papaya Gaming",
@@ -212,7 +291,7 @@
         "articles": 0,
         "latest": "2026-08-11"
       },
-      "checked": "2026-08-13T14:51:32+00:00",
+      "checked": "2026-08-13T20:50:03+00:00",
       "date": "2026-08-12",
       "updated": "2026-08-12",
       "moved": false,
@@ -259,7 +338,7 @@
         "articles": 0,
         "latest": "2026-08-10"
       },
-      "checked": "2026-08-13T14:51:32+00:00",
+      "checked": "2026-08-13T20:50:03+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -285,7 +364,7 @@
         "articles": 0,
         "latest": "2026-08-07"
       },
-      "checked": "2026-08-13T14:51:32+00:00",
+      "checked": "2026-08-13T20:50:03+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -295,26 +374,28 @@
       "sources": []
     },
     {
-      "slug": "publishers-v-google-llc-gemini-books",
-      "case_name": "Publishers v. Google",
-      "short_name": "Publishers v. Google",
+      "slug": "power-block-coin",
+      "case_name": "Power Block Coin",
+      "short_name": "Power Block Coin",
       "emoji": "⚖️",
       "themes": [
-        "llm-class-action"
+        "crypto-insolvency",
+        "fraud-recovery",
+        "bankruptcy-creditor-rights"
       ],
-      "court": "District Court, N.D. California",
+      "court": "Bankr. D. Utah",
       "status": "active",
-      "signature": "d8c6e160dc89",
+      "signature": "e98e6efe259c",
       "activity": {
         "filings": 0,
         "articles": 0,
-        "latest": "2026-08-05"
+        "latest": "2026-08-07"
       },
-      "checked": "2026-08-13T14:51:32+00:00",
+      "checked": "2026-08-13T20:50:03+00:00",
       "date": "",
       "updated": "",
       "moved": false,
-      "no_change_since": "2026-08-05",
+      "no_change_since": "2026-08-07",
       "lede": "",
       "body_md": "",
       "sources": []
@@ -336,11 +417,37 @@
         "articles": 0,
         "latest": "2026-08-05"
       },
-      "checked": "2026-08-13T14:51:32+00:00",
+      "checked": "2026-08-13T20:50:03+00:00",
       "date": "",
       "updated": "",
       "moved": false,
       "no_change_since": "2026-08-05",
+      "lede": "",
+      "body_md": "",
+      "sources": []
+    },
+    {
+      "slug": "goliath",
+      "case_name": "Goliath",
+      "short_name": "Goliath",
+      "emoji": "⚖️",
+      "themes": [
+        "fraud-recovery",
+        "crypto-insolvency"
+      ],
+      "court": "S.D. Fl.",
+      "status": "active",
+      "signature": "d71c533116ba",
+      "activity": {
+        "filings": 0,
+        "articles": 0,
+        "latest": "2026-07-28"
+      },
+      "checked": "2026-08-13T20:50:03+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-07-28",
       "lede": "",
       "body_md": "",
       "sources": []
