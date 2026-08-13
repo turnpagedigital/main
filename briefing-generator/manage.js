@@ -335,13 +335,20 @@
       (CASES_LITE ? '<div class="mg-banner warn">Showing the pipeline manifest (roster + colors only) — the admin API isn’t reachable yet. Editing prompts for sign-in.</div>' : "") +
       '<div class="mg-head"><h2>Tracked cases</h2>' +
         '<button type="button" class="mg-btn mg-btn-primary" id="mg-new-case">＋ New case</button></div>' +
-      '<p class="mg-hint">Every matter the pipeline follows. A case can span multiple themes and carries its own scan guidance. Colors are set from the pill <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg> menus on the dashboard; the default palette lives in Colors.</p>' +
+      '<p class="mg-hint">Every matter the pipeline follows. A case can span multiple themes and carries its own scan guidance. Colors are set from the pill <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg> menu in this table — the only place pill colors can be changed; the default palette lives in Colors.</p>' +
       '<div class="mg-box"><table class="mg-table">' +
         "<thead><tr><th>Case</th><th>Sync</th><th>Themes</th><th class=\"mg-right\">Actions</th></tr></thead>" +
         "<tbody>" + (rows || '<tr><td colspan="4" class="mg-empty">No cases yet — create the first one.</td></tr>') + "</tbody>" +
       "</table></div>";
 
     $("mg-new-case").addEventListener("click", function () { renderCaseEditor(null); });
+    // Deep link from a reader page's case dropdown ("Edit case details…"):
+    // #cases=<slug> opens straight into that case's editor.
+    var deepLink = /#cases=([a-z0-9-]+)/.exec(location.hash || "");
+    if (deepLink) {
+      var target = CASES.filter(function (x) { return x.slug === deepLink[1]; })[0];
+      if (target) renderCaseEditor(target);
+    }
     root.querySelectorAll("[data-color]").forEach(function (b) {
       b.addEventListener("click", function (ev) {
         ev.stopPropagation();
