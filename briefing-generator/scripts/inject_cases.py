@@ -390,6 +390,12 @@ UD_CSS = r"""
   /* Action icons share one pitch across docket/news/notes: tight cell padding
      so the gap comes from the buttons, not the column share. */
   .ud-table td.ud-mark-cell, .ud-table th.ud-th-icon { padding-left: 3px; padding-right: 3px; width: 1%; }
+  /* Mobile: no day dividers — each card shows its own date, like the
+     calendar's list view. */
+  @media (max-width: 720px) {
+    .ud-table tbody tr.ud-day-row { display: none !important; }
+    .ud-table td.ud-date[data-day]:not([data-day=""])::before { content: attr(data-day); margin-right: 7px; }
+  }
   [data-theme="light"] .ud-row-article:hover td { background: #F0F1F4; }
   /* Header row: ink text (black in light, white in dark), no background bar —
      a thick ink rule under the row separates it from the entries, spanning the

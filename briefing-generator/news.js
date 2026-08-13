@@ -235,6 +235,16 @@
     return "";
   }
 
+  // Mobile cards drop the day dividers, so each row carries its own date
+  // (calendar-list style: "Tue, Aug 11, 2026"). Desktop ignores it.
+  function rowDayLabel(e) {
+    var d = (e.date_filed || (e.published_at || "").slice(0, 10) || "");
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return e.date_display || "";
+    var dt = new Date(d + "T00:00:00");
+    if (isNaN(dt)) return e.date_display || d;
+    return dt.toLocaleDateString([], { weekday: "short", month: "short", day: "numeric", year: "numeric" });
+  }
+
   function fmtTime(e) {
     // Docket entries: court-local time_filed "HH:MM:SS". Feed items: ISO
     // published_at rendered in the viewer's local time.
@@ -1169,7 +1179,7 @@
         return (
           header +
           '<tr class="' + artRowCls + '" data-ridx="' + ridx + '">' +
-            '<td class="ud-date">' + esc(fmtTime(e)) + "</td>" +
+            '<td class="ud-date" data-day="' + esc(rowDayLabel(e)) + '">' + esc(fmtTime(e)) + "</td>" +
             '<td class="ud-case">' + (e.is_bondoro && e.unassigned && e.theme_slug ? themePillHtml(e.theme_slug).replace('class="ud-pill ud-pill-sq"', 'class="ud-pill ud-pill-sq ud-pill-assign" data-bondoro="' + esc(e.bondoro_url) + '" role="button" tabindex="0" title="Click to assign"') : pill) + "</td>" +
             '<td class="ud-party">' + (e.party ? esc(e.party) : '<span class="ud-party-empty">\u2014</span>') + "</td>" +
             '<td class="ud-entry">' + descHtml + "</td>" +
@@ -1200,7 +1210,7 @@
       return (
         header +
         "<tr" + rowCls + ' data-ridx="' + ridx + '">' +
-          '<td class="ud-date">' + esc(fmtTime(e)) + "</td>" +
+          '<td class="ud-date" data-day="' + esc(rowDayLabel(e)) + '">' + esc(fmtTime(e)) + "</td>" +
           '<td class="ud-case">' + pill + "</td>" +
           '<td class="ud-party">' + partyHtml + "</td>" +
           '<td class="ud-entry">' + descHtml + "</td>" +
