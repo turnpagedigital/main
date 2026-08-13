@@ -1,12 +1,15 @@
 /* functions/intel/api/feed-sources.js — manage general news feed sources.
 
-   The docket page's Sources modal reads and writes feed-sources.json here;
-   scripts/scan_feeds.py pulls every enabled source's RSS daily into the
-   docket feed. Gated by the intel middleware.
+   Manage → Sources reads and writes feed-sources.json here;
+   scripts/scan_feeds.py pulls every enabled source into the docket/news
+   feed on each news-scan run. Gated by the intel middleware.
 
-   GET → { ok, sources: [{id, name, url, kind, mode, enabled}] }
-   mode: "all" shows every feed item on the docket; "case-only" shows a
-   feed's items only once tied to a tracked case (auto-match or manual).
+   GET → { ok, sources: [{id, name, url, kind, type, show, mode, enabled}] }
+   type: "rss" (URL is a feed — or a page; the scanner autodiscovers) or
+   "search" (no feed: Claude + web_search sweeps the outlet each scan).
+   show: where the source's items surface — "docket", "news", or "both".
+   mode: "all" shows every feed item; "case-only" shows a feed's items only
+   once tied to a tracked case (auto-match or manual).
    PUT → { sources: [...] } (whole list, sanitized) */
 
 import { jsonResponse } from "../../api/admin/_utils.js";
@@ -33,6 +36,8 @@ function sanitize(body) {
       name,
       url,
       kind: (String(s.kind || "News").trim() || "News").slice(0, 20),
+      type: s.type === "search" ? "search" : "rss",
+      show: s.show === "docket" || s.show === "news" ? s.show : "both",
       mode: s.mode === "case-only" ? "case-only" : "all",
       enabled: s.enabled !== false,
     });

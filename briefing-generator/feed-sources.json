@@ -3,40 +3,50 @@
     {
       "id": "petition",
       "name": "Petition",
-      "url": "https://www.petition11.com/",
+      "url": "https://www.petition11.com/feed",
       "kind": "News",
+      "type": "rss",
+      "show": "both",
       "mode": "all",
       "enabled": true
     },
     {
-      "id": "bondoro",
+      "id": "bondoro-summaries",
       "name": "Bondoro",
-      "url": "https://bondoro.com/tag/case-summaries/",
+      "url": "https://bondoro.com/tag/case-summaries/rss/",
       "kind": "Summaries",
+      "type": "rss",
+      "show": "both",
       "mode": "all",
       "enabled": true
     },
     {
-      "id": "bondoro",
+      "id": "bondoro-alert",
       "name": "Bondoro",
-      "url": "https://bondoro.com/tag/chapter-11-filing-alerts/",
+      "url": "https://bondoro.com/tag/chapter-11-filing-alerts/rss/",
       "kind": "Alert",
+      "type": "rss",
+      "show": "both",
       "mode": "all",
       "enabled": true
     },
     {
-      "id": "daily-dac",
+      "id": "daily-dac-alert",
       "name": "Daily DAC",
-      "url": "https://www.dailydac.com/chapter-11-bankruptcy-alert-system/",
+      "url": "https://www.dailydac.com/chapter-11-bankruptcy-alert-system/feed/",
       "kind": "ALERT",
+      "type": "rss",
+      "show": "both",
       "mode": "all",
       "enabled": true
     },
     {
-      "id": "daily-dac",
+      "id": "daily-dac-article",
       "name": "Daily DAC",
-      "url": "https://www.dailydac.com/latest-articles/",
+      "url": "https://www.dailydac.com/feed/",
       "kind": "ARTICLE",
+      "type": "rss",
+      "show": "both",
       "mode": "all",
       "enabled": true
     }

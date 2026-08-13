@@ -3,12 +3,15 @@ name: Daily News & Events Scan
 # Finds reputable-press articles and upcoming webinars/events for every
 # tracked case (scripts/scan_news.py) and merges them into the case data:
 # articles surface on the unified docket (toggleable) and case pages,
-# events land on the unified calendar. Runs before the daily briefing so
-# the briefing can lean on fresh coverage too.
+# events land on the unified calendar. Twice daily — the morning run lands
+# before the daily briefing so the briefing can lean on fresh coverage; the
+# afternoon run catches the day's news. (Weekly prospect scanning lives in
+# prospects-scan.yml.)
 
 on:
   schedule:
-    - cron: '40 12 * * *'   # daily 12:40 UTC (before the 14:00 briefing run)
+    - cron: '40 12 * * *'   # morning: 12:40 UTC (8:40 AM ET, before the 14:00 briefing run)
+    - cron: '40 20 * * *'   # afternoon: 20:40 UTC (4:40 PM ET)
   workflow_dispatch: {}
 
 permissions:
@@ -42,20 +45,16 @@ jobs:
           pip install --upgrade pip
           pip install -r scripts/requirements.txt
 
-      - name: Scan news + prospects, regenerate case pages
+      - name: Scan news, regenerate case pages
         working-directory: briefing-generator
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           python scripts/scan_feeds.py
           python scripts/scan_news.py
-          # Theme-driven prospect scan is weekly (Mondays) — broad and slow,
-          # and prospects don't move day to day.
-          if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            python scripts/scan_prospects.py
-          else
-            echo "prospects: weekly-only (Mondays / manual dispatch) — skipping today"
-          fi
+          # Prospect scanning moved to its own weekly workflow
+          # (prospects-scan.yml) — its broad sweep was blowing this job's
+          # timeout on Mondays.
           python scripts/extract_uploads.py
           python scripts/inject_cases.py
 

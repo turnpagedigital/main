@@ -1,4 +1,7 @@
 name: Daily Briefing Generation
+# Single-case runs (admin "Brief now" / manual form) carry their slug so
+# /api/admin/sync-status can match them; scheduled runs keep the default.
+run-name: "${{ (inputs.case || github.event.client_payload.case) && format('Briefing — {0}', inputs.case || github.event.client_payload.case) || '' }}"
 
 on:
   schedule:

@@ -1,4 +1,5 @@
 name: Manual Case Sync
+run-name: "Manual sync — ${{ inputs.case }}"
 
 # On-demand, single-case refresh triggered by the admin's Sync button
 # (dashboard + docket page): pulls fresh docket entries and news for one

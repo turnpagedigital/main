@@ -632,6 +632,16 @@
     <button type="button" class="ih-carousel-nav ih-carousel-next" id="ih-carousel-next" aria-label="More briefings">›</button>
   </div>
 
+<style>
+  .ih-act{background:none;border:none;cursor:pointer;color:var(--ink-40);padding:2px 3px;line-height:1;display:inline-flex;align-items:center;}
+  .ih-act:hover{color:var(--ink);}
+  .ih-run-status{display:inline-flex;align-items:center;font-size:13px;line-height:1;min-width:0;}
+  .ih-run-status .run-spin{display:inline-block;animation:ihspin 1.1s linear infinite;color:var(--ink-60);}
+  .ih-run-status .run-ok{color:var(--ok,#1a7f37);font-weight:800;}
+  .ih-run-status .run-err{color:var(--danger,#c0392b);font-weight:800;cursor:pointer;}
+  @keyframes ihspin{to{transform:rotate(360deg)}}
+</style>
+<script src="intel-sync.js" defer></script>
 <script src="intel-home.js" defer></script>
 <footer id="tn-site-footer"></footer>
 <script src="intel-footer.js" defer></script>

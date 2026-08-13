@@ -34,16 +34,23 @@ export async function onRequestPost({ request, env }) {
 
   const repo = env.GITHUB_BRIEFING_REPO || env.GITHUB_REPO || "turnpagedigital/main";
 
-  // Optional topic filter from the request body — slugs only, comma string or
-  // array. Anything that isn't kebab-case is dropped rather than forwarded.
+  // Optional filters from the request body. `case` (+ `force`) runs a single
+  // case's briefing — the dashboard "Brief now" button; daily-briefing.yml
+  // reads them from client_payload. `topics` is the older topic filter.
+  // Anything that isn't kebab-case is dropped rather than forwarded.
   let topics = [];
+  let caseSlug = "";
+  let force = false;
   try {
     const body = await request.json();
+    const rawCase = String(body?.case ?? "").trim();
+    if (/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(rawCase)) caseSlug = rawCase;
+    force = body?.force === true;
     const raw = body?.topics ?? body?.topic ?? [];
     const list = Array.isArray(raw) ? raw : String(raw).split(",");
     topics = list.map(s => String(s).trim()).filter(s => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(s));
   } catch {
-    // No/invalid JSON body — run all topics.
+    // No/invalid JSON body — run everything.
   }
 
   try {
@@ -58,13 +65,17 @@ export async function onRequestPost({ request, env }) {
       },
       body: JSON.stringify({
         event_type: "daily-briefing",
-        ...(topics.length ? { client_payload: { topics: topics.join(",") } } : {}),
+        ...(caseSlug
+          ? { client_payload: { case: caseSlug, ...(force ? { force: true } : {}) } }
+          : topics.length ? { client_payload: { topics: topics.join(",") } } : {}),
       }),
     });
 
     // Success is 204 No Content
     if (response.status === 204) {
-      const scope = topics.length
+      const scope = caseSlug
+        ? `for ${caseSlug}${force ? " (forced)" : ""} — takes ~5 minutes`
+        : topics.length
         ? `for ${topics.join(", ")} only — takes ~3–5 minutes`
         : "for all topics — takes ~10–15 minutes";
       return jsonResponse({
