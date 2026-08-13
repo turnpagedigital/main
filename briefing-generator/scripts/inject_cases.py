@@ -315,9 +315,8 @@ UD_CSS = r"""
     .ud-case{order:3;overflow:visible;}
     .ud-party{order:4;font-size:12px;color:var(--ink-60);}
     .ud-entry, .un-note-cell{order:5;flex-basis:100%;max-width:none;}
-    .ud-doc{order:6;flex-basis:100%;text-align:right;}
+    .ud-doc{order:6;margin-left:auto;text-align:right;}
     .ud-mark-cell, .uc-curate-cell{order:7;}
-    .ud-doc + .ud-mark-cell{margin-left:auto;}
     .ud-mark-cell button{font-size:16px;padding:4px 6px;}
     .ud-day-row{padding:0;border-bottom:none;}
     .ud-day-row td{flex-basis:100%;padding:7px 10px;}
@@ -325,6 +324,8 @@ UD_CSS = r"""
     .ud-row-article{background:var(--paper-2);}
     .ud-table .ud-row-bondoro{background:rgba(212,255,0,0.10);}
     [data-theme="dark"] .ud-table .ud-row-bondoro{background:rgba(212,255,0,0.07);}
+    [data-theme="dark"] .ud-table tr.ud-row-article td{background:transparent;}
+    [data-theme="dark"] .ud-table tr.ud-row-article{background:rgba(229,231,235,0.05);}
     .ud-case-dd-panel{max-width:calc(100vw - 16px);min-width:240px;}
     .ud-th-menu{max-width:calc(100vw - 16px);}
     .ud-case-grid{grid-template-columns:1fr;}
