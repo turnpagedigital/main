@@ -327,14 +327,21 @@
       '.tn-col-grip::after{content:"";position:absolute;top:0;bottom:0;left:4px;width:2px;background:transparent;}'+
       '.tn-col-grip:hover::after,.tn-col-grip.on::after{background:var(--neon,#D4FF00);}';
     document.head.appendChild(st);
-    // Persisted column widths are retired: widths saved under the old fixed
-    // layout kept overriding the auto-fit tables (frozen Entry column, tables
-    // shrunk to the column sum, a 600px Case column on Notes). Drags still
-    // work live within the page; nothing is stored, and any previously-saved
-    // widths are purged so every load starts auto-fit.
+    // Column widths persist for the SESSION only (sessionStorage): drags
+    // survive reloads and page hops in this tab, then reset when it closes —
+    // widths saved under old layouts can never haunt future visits (the
+    // localStorage version froze the Entry column, shrank tables to the
+    // column sum, and pinned a 600px Case column on Notes; old keys are
+    // still purged). The flex column — the th with no baked-in inline
+    // width — is never persisted: pinning it is what broke the layouts.
     var key='tn-colw-'+((location.pathname.split('/').pop()||'index.html').replace(/\.html$/,'')||'index');
     try{localStorage.removeItem(key);}catch(e){}
-    ths.forEach(function(th){
+    var saved={};
+    try{saved=JSON.parse(sessionStorage.getItem(key)||'{}')||{};}catch(e){}
+    ths.forEach(function(th,i){
+      var id=th.id||('col'+i);
+      var flex=!th.style.width;
+      if(saved[id]&&!flex)th.style.width=saved[id]+'px';
       var g=document.createElement('span');
       g.className='tn-col-grip';
       g.title='Drag to resize column';
@@ -346,13 +353,16 @@
         g.classList.add('on');
         document.body.style.cursor='col-resize';
         function mv(ev){
-          th.style.width=Math.max(48,Math.round(w0+(ev.clientX-x0)))+'px';
+          var w=Math.max(48,Math.round(w0+(ev.clientX-x0)));
+          th.style.width=w+'px';
+          if(!flex)saved[id]=w;
         }
         function up(){
           document.removeEventListener('mousemove',mv);
           document.removeEventListener('mouseup',up);
           g.classList.remove('on');
           document.body.style.cursor='';
+          try{sessionStorage.setItem(key,JSON.stringify(saved));}catch(e2){}
         }
         document.addEventListener('mousemove',mv);
         document.addEventListener('mouseup',up);
