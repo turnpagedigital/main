@@ -82,8 +82,10 @@
   .pr-why{margin-top:6px;color:var(--ink);}
   .pr-src a{color:var(--ink-60);font-weight:700;font-size:12px;}
   .pr-actions{text-align:right;}
-  .pr-act-row{display:flex;flex-direction:column;align-items:flex-end;gap:8px;white-space:nowrap;}
-  .pr-act-track{display:flex;justify-content:flex-end;}
+  .pr-act-row{display:flex;justify-content:flex-end;align-items:center;gap:7px;white-space:nowrap;}
+  .pr-th-ico{color:var(--ink-40);cursor:default;padding:2px 4px;}
+  .pr-th-tools{margin-right:0;}
+  .pr-track-cell{text-align:right;white-space:nowrap;}
   .pr-ico-trash{padding:4px 5px;}
   .pr-btn{font-family:inherit;font-size:11.5px;font-weight:800;letter-spacing:0.04em;padding:6px 14px;border:1px solid var(--line-strong);background:transparent;color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block;line-height:1.2;}
   .pr-btn-track{background:var(--neon);color:#0A0A0A;border-color:var(--neon);}
@@ -285,10 +287,11 @@
       <th style="width:96px">Seen</th>
       <th style="width:210px">Theme</th>
       <th>Prospect</th>
-      <th style="width:230px;text-align:right" id="pr-th-triage" class="ud-th-filter" title="Filter by triage status"><span class="ud-th-label">Triage</span> <span class="ud-th-caret">▾</span></th>
+      <th style="width:1%;white-space:nowrap;text-align:right" id="pr-th-triage" class="ud-th-filter" title="Filter by triage status"><span class="pr-tools pr-th-tools"><span class="pr-ico pr-th-ico" title="More like this"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg></span><span class="pr-ico pr-th-ico" title="Less like this"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M17 14V2"/><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"/></svg></span><span class="pr-ico pr-th-ico" title="Snooze"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="pr-ico pr-th-ico" title="Hide"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg></span><span class="pr-ico pr-th-ico" title="Dismiss"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m3-3h8a1 1 0 0 1 1 1v2H7V4a1 1 0 0 1 1-1z"/></svg></span><span class="pr-ico pr-th-ico" title="Note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span><span class="pr-ico pr-th-ico" title="Social post"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span></span> <span class="ud-th-caret">▾</span></th>
+      <th style="width:1%;white-space:nowrap;text-align:right">Track</th>
     </tr></thead>
     <tbody id="pr-tbody">
-      <tr><td colspan="4" class="ud-empty">Loading…</td></tr>
+      <tr><td colspan="5" class="ud-empty">Loading…</td></tr>
     </tbody>
   </table>
 
