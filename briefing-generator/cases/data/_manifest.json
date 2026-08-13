@@ -1,21 +1,5 @@
 [
   {
-    "slug": "bartz-anthropic",
-    "added": "2026-06-11",
-    "display_name": "Bartz v. Anthropic",
-    "short_name": "Bartz v. Anthropic",
-    "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
-    "default_color": "#D4FF00",
-    "category": "class-action",
-    "topics": [
-      "llm-class-action",
-      "billion-dollar-class-actions"
-    ],
-    "court": "U.S. District Court, N.D. Cal. (San Francisco)",
-    "sync": "active",
-    "docket_history": "full"
-  },
-  {
     "slug": "britannica-merriam-webster-v-openai",
     "added": "2026-08-07",
     "display_name": "Britannica v. OpenAI",
