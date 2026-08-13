@@ -1067,6 +1067,17 @@
     }).join("");
     applyCursor(false);
     jumpToHash();
+    sizeHeaderPill();
+  }
+
+  // The header pill (.ud-table::before) can't size itself off the thead —
+  // see the docket CSS note — so keep --ud-thead-h matched to the real
+  // header height (0 on mobile, where the thead is display:none).
+  function sizeHeaderPill() {
+    var t = document.querySelector("table.ud-table");
+    if (!t) return;
+    var th = t.querySelector("thead");
+    t.style.setProperty("--ud-thead-h", (th ? th.offsetHeight : 0) + "px");
   }
 
   // ── Keyboard navigation: arrows move a row cursor, letters act on it ──────
@@ -3398,5 +3409,11 @@
     })();
 
     init();
+    var _pillTimer = null;
+    window.addEventListener("resize", function () {
+      clearTimeout(_pillTimer);
+      _pillTimer = setTimeout(sizeHeaderPill, 120);
+    });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(sizeHeaderPill);
   });
 })();
