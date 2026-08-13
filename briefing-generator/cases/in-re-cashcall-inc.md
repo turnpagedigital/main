@@ -1,9 +1,10 @@
 ---
+added: 2026-08-07
 slug: in-re-cashcall-inc
 display_name: CashCall
 type: case
 status: active
-sync: manual
+sync: active
 topics:
   - bankruptcy-creditor-rights
 case:
@@ -16,5 +17,4 @@ docket_source:
   docket_id: 73643729
   url: "https://www.courtlistener.com/docket/73643729/cashcall-inc/"
 scan_guidance: "Subprime personal lender CashCall filed Chapter 11 circa July 21, 2026 in the face of more than $400M in adverse litigation judgments — a textbook free-fall foreshadowing a plan fight over whether judgment creditors constitute a separate class, cramdown feasibility, and whether estate assets can satisfy any material recovery to unsecured creditors."
-added: 2026-08-07
 ---

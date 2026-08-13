@@ -20,7 +20,6 @@ claims_administrator:
   name: "JND Legal Administration"
   url: ""
   key_dates_url: "https://www.anthropiccopyrightsettlement.com/dates"
-scan_guidance: "Look for appeals filed or any signals that an appeal will be timely filed. "
 added: 2026-06-11
 emoji: ⚖️
 research:

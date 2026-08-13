@@ -1,9 +1,9 @@
 ---
+added: 2026-07-30
 slug: goliath
 display_name: Goliath
 type: case
 status: active
-sync: manual
 topics:
   - fraud-recovery
   - crypto-insolvency
@@ -16,5 +16,4 @@ docket_source:
   type: courtlistener
   docket_id: 72497647
   url: "https://www.courtlistener.com/docket/72497647/goliath-ventures-inc/"
-added: 2026-07-30
 ---

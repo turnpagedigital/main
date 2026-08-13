@@ -4,7 +4,7 @@ display_name: Hachette v. Meta (Llama)
 short_name: "Hachette (Meta)"
 type: case
 status: active
-sync: manual
+sync: active
 topics:
   - llm-class-action
 case:

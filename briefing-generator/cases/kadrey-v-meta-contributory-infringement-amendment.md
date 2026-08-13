@@ -4,7 +4,7 @@ display_name: Kadrey v. Meta — Contributory Infringement Amendment
 short_name: "Kadrey v. Meta"
 type: case
 status: active
-sync: manual
+sync: active
 topics:
   - llm-class-action
 case:
