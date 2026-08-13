@@ -1,6 +1,68 @@
 {
-  "generated_at": "2026-08-13T21:06:47+00:00",
+  "generated_at": "2026-08-13T21:42:44+00:00",
   "items": [
+    {
+      "slug": "goliath",
+      "case_name": "Goliath",
+      "short_name": "Goliath",
+      "emoji": "⚖️",
+      "themes": [
+        "fraud-recovery",
+        "crypto-insolvency"
+      ],
+      "court": "S.D. Fl.",
+      "status": "active",
+      "signature": "59c596fd01db",
+      "activity": {
+        "filings": 0,
+        "articles": 5,
+        "latest": "2026-08-12"
+      },
+      "checked": "2026-08-13T21:42:44+00:00",
+      "date": "2026-08-13",
+      "updated": "2026-08-13",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "On August 11, the SEC and CFTC filed parallel civil complaints against Goliath Ventures Inc. and CEO Christopher Delgado in the U.S. District Court for the Middle District of Florida — SEC v. Goliath Ventures Inc. et al., No. 6:26-cv-01741, and CFTC v. Goliath Ventures Inc. et al., No. 6:26-cv-01737. Both complaints allege that Goliath and Delgado orchestrated a crypto Ponzi scheme, raising roughly $400 million by…",
+      "body_md": "On August 11, the SEC and CFTC filed parallel civil complaints against Goliath Ventures Inc. and CEO Christopher Delgado in the U.S. District Court for the Middle District of Florida — *SEC v. Goliath Ventures Inc. et al.*, No. 6:26-cv-01741, and *CFTC v. Goliath Ventures Inc. et al.*, No. 6:26-cv-01737. \nBoth complaints allege that Goliath and Delgado orchestrated a crypto Ponzi scheme, raising roughly $400 million by soliciting funds purportedly for cryptocurrency liquidity pools and using investor money to pay earlier participants and fund personal spending; the SEC's complaint puts investor intake at at least $425 million from more than 1,300 investors through an unregistered securities offering.\n \nThe CFTC's complaint, drawing on a different investor universe, alleges approximately 1,600 customers contributed at least $397 million to the fraud.\n The two figures are not necessarily inconsistent — the agencies' jurisdictional theories overlap rather than co-terminate, and the pool of claimants in the Chapter 11 likely spans both populations.\n\n\nThe CFTC complaint alleges the scheme ran from at least November 2022 through February 2026, with Goliath misappropriating all customer funds while issuing account statements reflecting profits the company had not earned; Delgado, who the CFTC says was never registered with the agency, is named as a controlling person liable for Goliath's conduct.\n \nAccording to the complaint, the money moved three ways: at least approximately $87 million paid fictitious returns to existing customers, at least approximately $174 million flowed to Goliath directors and staff as recruiting commissions, and Delgado personally extracted at least approximately $48 million for luxury homes, vehicles, and jewelry.\n \nThe SEC separately alleges Delgado misappropriated $51 million for homes, cars, and a yacht.\n \nDelgado has agreed to a bifurcated settlement with the SEC\n — meaning liability is conceded but monetary relief remains to be determined by the court — while \nthe CFTC is seeking restitution, disgorgement, civil monetary penalties, trading and registration bans, and a permanent injunction against further violations of the Commodity Exchange Act.\n\n\nFor the bankruptcy estate, the civil actions are a double-edged development. On the recovery side, they put two federal regulators formally in the queue as potential claimants or co-enforcement actors, which could complicate the receiver's ability to negotiate a clean plan and will need to be weighed against the September 30 proof-of-claim bar date in Case No. 26-13174-RAM. \nThe Defiant notes the CFTC complaint expressly acknowledges the ongoing Southern District of Florida bankruptcy as the forum where customer recoveries are currently running,\n which signals the agency does not intend to pursue a competing distribution outside the estate — a meaningful concession for creditor recovery posture. On the risk side, the forfeiture obligations Delgado admitted at the time of his guilty plea, and any restitution or disgorgement ordered in these civil actions, will compete with unsecured creditors for the same depleted asset pool. \nThe allegations in both civil complaints remain unproven, and counsel for Delgado and Goliath Ventures was not identified in the CFTC's announcement.\n\n\nThe next hard deadline is September 30, 2026 — the proof-of-claim bar date in Case No. 26-13174-RAM. Creditors who have not yet filed, and any claimants newly on notice from the SEC and CFTC press releases, must file by that date or risk being barred. Delgado's criminal sentencing before the Middle District follows on October 8, 2026, at which point the court will set restitution and forfeiture amounts that directly bear on what assets remain available to the estate.\n\n## Sources\n\n- [CFTC Charges Goliath Ventures Inc. and CEO with $400 Million Fraud Scheme](https://www.cftc.gov/PressRoom/PressReleases/9280-26) — CFTC, August 11, 2026\n- [SEC, CFTC Sue Goliath Over $400M Crypto Ponzi Scheme](https://www.law360.com/articles/2512347/sec-cftc-sue-goliath-over-400m-crypto-ponzi-scheme) — Law360, August 11, 2026\n- [CFTC Sues Goliath Ventures Over Alleged $397M DeFi Liquidity Pool Ponzi](https://thedefiant.io/news/regulation/cftc-sues-goliath-ventures-over-alleged-397m-defi-liquidity-pool-ponzi) — The Defiant, August 11, 2026\n- [SEC and CFTC Hit Goliath Ventures With Parallel Crypto Fraud Complaints](https://beincrypto.com/goliath-ventures-sec-cftc-crypto-ponzi/) — BeInCrypto, August 12, 2026\n- [SEC, CFTC Sue Goliath Ventures Over $400M Crypto Ponzi](https://www.gncrypto.news/news/sec-cftc-sue-goliath-ventures-400m-crypto-ponzi/) — GNCrypto News, August 12, 2026\n- [SEC and CFTC Target Goliath Ventures in Crypto Ponzi Scheme](https://www.bestinslot.co/news/sec-and-cftc-target-goliath-ventures-in-crypto-ponzi-scheme-38637) — BestInSlot, August 12, 2026\n- [CFTC Charges Goliath Ventures With $400M Bitcoin Fraud](https://bitcoinmagazine.com/news/cftc-charges-goliath-in-bitcoin-fraud) — Bitcoin Magazine, August 11, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "CFTC Charges Goliath Ventures Inc. and CEO with $400 Million Fraud Scheme",
+          "url": "https://www.cftc.gov/PressRoom/PressReleases/9280-26",
+          "note": "CFTC, August 11, 2026"
+        },
+        {
+          "title": "SEC, CFTC Sue Goliath Over $400M Crypto Ponzi Scheme",
+          "url": "https://www.law360.com/articles/2512347/sec-cftc-sue-goliath-over-400m-crypto-ponzi-scheme",
+          "note": "Law360, August 11, 2026"
+        },
+        {
+          "title": "CFTC Sues Goliath Ventures Over Alleged $397M DeFi Liquidity Pool Ponzi",
+          "url": "https://thedefiant.io/news/regulation/cftc-sues-goliath-ventures-over-alleged-397m-defi-liquidity-pool-ponzi",
+          "note": "The Defiant, August 11, 2026"
+        },
+        {
+          "title": "SEC and CFTC Hit Goliath Ventures With Parallel Crypto Fraud Complaints",
+          "url": "https://beincrypto.com/goliath-ventures-sec-cftc-crypto-ponzi/",
+          "note": "BeInCrypto, August 12, 2026"
+        },
+        {
+          "title": "SEC, CFTC Sue Goliath Ventures Over $400M Crypto Ponzi",
+          "url": "https://www.gncrypto.news/news/sec-cftc-sue-goliath-ventures-400m-crypto-ponzi/",
+          "note": "GNCrypto News, August 12, 2026"
+        },
+        {
+          "title": "SEC and CFTC Target Goliath Ventures in Crypto Ponzi Scheme",
+          "url": "https://www.bestinslot.co/news/sec-and-cftc-target-goliath-ventures-in-crypto-ponzi-scheme-38637",
+          "note": "BestInSlot, August 12, 2026"
+        },
+        {
+          "title": "CFTC Charges Goliath Ventures With $400M Bitcoin Fraud",
+          "url": "https://bitcoinmagazine.com/news/cftc-charges-goliath-in-bitcoin-fraud",
+          "note": "Bitcoin Magazine, August 11, 2026"
+        }
+      ]
+    },
     {
       "slug": "other-copyright-suits",
       "case_name": "Other Copyright Suits",
@@ -26,7 +88,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-13T21:06:47+00:00",
+      "checked": "2026-08-13T21:42:44+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -51,7 +113,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-13T21:06:47+00:00",
+      "checked": "2026-08-13T21:42:44+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -76,7 +138,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-13T21:06:47+00:00",
+      "checked": "2026-08-13T21:42:44+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -96,13 +158,13 @@
       ],
       "court": "Bankr. D. N.J.",
       "status": "active",
-      "signature": "38e5ed335425",
+      "signature": "19e97427a363",
       "activity": {
-        "filings": 8,
+        "filings": 11,
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-13T21:06:47+00:00",
+      "checked": "2026-08-13T21:42:44+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -127,7 +189,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-13T21:06:47+00:00",
+      "checked": "2026-08-13T21:42:44+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -152,7 +214,7 @@
         "articles": 0,
         "latest": "2026-08-12"
       },
-      "checked": "2026-08-13T21:06:47+00:00",
+      "checked": "2026-08-13T21:42:44+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -178,7 +240,7 @@
         "articles": 0,
         "latest": "2026-08-12"
       },
-      "checked": "2026-08-13T21:06:47+00:00",
+      "checked": "2026-08-13T21:42:44+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -203,7 +265,7 @@
         "articles": 0,
         "latest": "2026-08-11"
       },
-      "checked": "2026-08-13T21:06:47+00:00",
+      "checked": "2026-08-13T21:42:44+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -228,7 +290,7 @@
         "articles": 0,
         "latest": "2026-08-11"
       },
-      "checked": "2026-08-13T21:06:47+00:00",
+      "checked": "2026-08-13T21:42:44+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -259,11 +321,37 @@
         "articles": 0,
         "latest": "2026-08-10"
       },
-      "checked": "2026-08-13T21:06:47+00:00",
+      "checked": "2026-08-13T21:42:44+00:00",
       "date": "",
       "updated": "",
       "moved": false,
       "no_change_since": "2026-08-10",
+      "lede": "",
+      "body_md": "",
+      "sources": []
+    },
+    {
+      "slug": "bartz-anthropic",
+      "case_name": "Bartz v. Anthropic",
+      "short_name": "Bartz v. Anthropic",
+      "emoji": "⚖️",
+      "themes": [
+        "llm-class-action",
+        "billion-dollar-class-actions"
+      ],
+      "court": "U.S. District Court, N.D. Cal. (San Francisco)",
+      "status": "active",
+      "signature": "92319f613cc7",
+      "activity": {
+        "filings": 0,
+        "articles": 0,
+        "latest": "2026-08-07"
+      },
+      "checked": "2026-08-13T21:42:44+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-08-07",
       "lede": "",
       "body_md": "",
       "sources": []
@@ -286,7 +374,7 @@
         "articles": 0,
         "latest": "2026-08-07"
       },
-      "checked": "2026-08-13T21:06:47+00:00",
+      "checked": "2026-08-13T21:42:44+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -312,37 +400,11 @@
         "articles": 0,
         "latest": "2026-08-05"
       },
-      "checked": "2026-08-13T21:06:47+00:00",
+      "checked": "2026-08-13T21:42:44+00:00",
       "date": "",
       "updated": "",
       "moved": false,
       "no_change_since": "2026-08-05",
-      "lede": "",
-      "body_md": "",
-      "sources": []
-    },
-    {
-      "slug": "goliath",
-      "case_name": "Goliath",
-      "short_name": "Goliath",
-      "emoji": "⚖️",
-      "themes": [
-        "fraud-recovery",
-        "crypto-insolvency"
-      ],
-      "court": "S.D. Fl.",
-      "status": "active",
-      "signature": "d71c533116ba",
-      "activity": {
-        "filings": 0,
-        "articles": 0,
-        "latest": "2026-07-28"
-      },
-      "checked": "2026-08-13T21:06:47+00:00",
-      "date": "",
-      "updated": "",
-      "moved": false,
-      "no_change_since": "2026-07-28",
       "lede": "",
       "body_md": "",
       "sources": []
