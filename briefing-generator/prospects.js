@@ -202,10 +202,10 @@
       countEl.textContent = list.length + " prospect" + (list.length === 1 ? "" : "s") +
         (TAB === "all" ? "" : " · " + TAB) + " — " + newCount + " awaiting triage";
     }
-    document.querySelectorAll("#pr-tabs .pr-tab").forEach(function (t) {
-      var tab = t.getAttribute("data-tab");
-      var n = tabCount(tab);
-      t.textContent = TAB_LABELS[tab] + (tab === "all" || !n ? "" : " (" + n + ")");
+    var showSel = document.getElementById("pr-show");
+    if (showSel) Array.prototype.forEach.call(showSel.options, function (o) {
+      var n = tabCount(o.value);
+      o.textContent = TAB_LABELS[o.value] + (o.value === "all" || !n ? "" : " (" + n + ")");
     });
     if (!tbody) return;
     if (!list.length) {
@@ -833,13 +833,12 @@
 
   // ── Tabs + boot ───────────────────────────────────────────────────────────
   function wireTabs() {
-    var tabs = document.querySelectorAll("#pr-tabs .pr-tab");
-    tabs.forEach(function (t) {
-      t.addEventListener("click", function () {
-        TAB = t.getAttribute("data-tab");
-        tabs.forEach(function (x) { x.classList.toggle("on", x === t); });
-        render();
-      });
+    var sel = document.getElementById("pr-show");
+    if (!sel) return;
+    sel.value = TAB;
+    sel.addEventListener("change", function () {
+      TAB = sel.value;
+      render();
     });
   }
 

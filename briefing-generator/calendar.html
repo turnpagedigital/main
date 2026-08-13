@@ -559,20 +559,21 @@
       <div class="ud-case-dd" id="ud-case-dd">
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
-      <div class="ud-filter-right">
-        <select id="uc-scope" class="ud-type-select">
-          <option value="upcoming">Upcoming only</option>
-          <option value="all">All dates</option>
-          <option value="past">Past only</option>
-        </select>
-      </div>
     </div>
   </div>
 
   <div class="ud-toolbar">
+    <span class="ud-lookback-box">
+      <span id="ud-lookback-label">Upcoming</span>
+      <span class="ud-date-range" id="ud-daterange" style="display:none;">
+        <span class="ud-date-sep">·</span>
+        <input type="date" id="ud-date-from" class="ud-date-input" aria-label="From date">
+        <span class="ud-date-sep">–</span>
+        <input type="date" id="ud-date-to" class="ud-date-input" aria-label="To date">
+      </span>
+    </span>
     <span id="ud-count"></span>
     <span id="uc-curation-info" class="uc-curation-info"></span>
-    <button id="ud-sort-btn">Date ↑</button>
   </div>
 
   <div id="uc-merge-bar" class="uc-merge-bar" style="display:none;">
@@ -582,9 +583,22 @@
     <button type="button" id="uc-clear-sel" class="ud-clear-btn">Clear</button>
   </div>
 
+<div id="ud-th-timemenu" class="ud-th-menu" style="display:none;">
+  <button type="button" class="ud-th-menu-item" data-scope="upcoming" data-val="7d">Next 7 days</button>
+  <button type="button" class="ud-th-menu-item" data-scope="upcoming" data-val="30d">Next 30 days</button>
+  <button type="button" class="ud-th-menu-item" data-scope="upcoming" data-val="90d">Next 90 days</button>
+  <button type="button" class="ud-th-menu-item" data-scope="upcoming" data-val="all">All upcoming</button>
+  <button type="button" class="ud-th-menu-item" data-scope="past" data-val="all">Past only</button>
+  <button type="button" class="ud-th-menu-item" data-scope="all" data-val="all">All dates</button>
+  <button type="button" class="ud-th-menu-item" data-scope="all" data-val="custom">Set custom date range…</button>
+  <div class="ud-th-menu-sep"></div>
+  <button type="button" class="ud-th-menu-item" data-sort="asc">Sort — soonest first</button>
+  <button type="button" class="ud-th-menu-item" data-sort="desc">Sort — latest first</button>
+</div>
+
   <table class="ud-table">
     <thead><tr>
-      <th style="width:150px">Date</th>
+      <th id="ud-th-time" class="ud-th-filter" style="width:150px" title="Filter and sort by date"><span class="ud-th-label">Date</span> <span class="ud-th-caret">▾</span></th>
       <th style="width:100px">When</th>
       <th style="width:130px">Case</th>
       <th>Event</th>

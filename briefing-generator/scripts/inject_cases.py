@@ -1527,20 +1527,21 @@ def render_unified_calendar(cases):
       <div class="ud-case-dd" id="ud-case-dd">
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
-      <div class="ud-filter-right">
-        <select id="uc-scope" class="ud-type-select">
-          <option value="upcoming">Upcoming only</option>
-          <option value="all">All dates</option>
-          <option value="past">Past only</option>
-        </select>
-      </div>
     </div>
   </div>
 
   <div class="ud-toolbar">
+    <span class="ud-lookback-box">
+      <span id="ud-lookback-label">Upcoming</span>
+      <span class="ud-date-range" id="ud-daterange" style="display:none;">
+        <span class="ud-date-sep">·</span>
+        <input type="date" id="ud-date-from" class="ud-date-input" aria-label="From date">
+        <span class="ud-date-sep">–</span>
+        <input type="date" id="ud-date-to" class="ud-date-input" aria-label="To date">
+      </span>
+    </span>
     <span id="ud-count"></span>
     <span id="uc-curation-info" class="uc-curation-info"></span>
-    <button id="ud-sort-btn">Date ↑</button>
   </div>
 
   <div id="uc-merge-bar" class="uc-merge-bar" style="display:none;">
@@ -1550,9 +1551,22 @@ def render_unified_calendar(cases):
     <button type="button" id="uc-clear-sel" class="ud-clear-btn">Clear</button>
   </div>
 
+<div id="ud-th-timemenu" class="ud-th-menu" style="display:none;">
+  <button type="button" class="ud-th-menu-item" data-scope="upcoming" data-val="7d">Next 7 days</button>
+  <button type="button" class="ud-th-menu-item" data-scope="upcoming" data-val="30d">Next 30 days</button>
+  <button type="button" class="ud-th-menu-item" data-scope="upcoming" data-val="90d">Next 90 days</button>
+  <button type="button" class="ud-th-menu-item" data-scope="upcoming" data-val="all">All upcoming</button>
+  <button type="button" class="ud-th-menu-item" data-scope="past" data-val="all">Past only</button>
+  <button type="button" class="ud-th-menu-item" data-scope="all" data-val="all">All dates</button>
+  <button type="button" class="ud-th-menu-item" data-scope="all" data-val="custom">Set custom date range…</button>
+  <div class="ud-th-menu-sep"></div>
+  <button type="button" class="ud-th-menu-item" data-sort="asc">Sort — soonest first</button>
+  <button type="button" class="ud-th-menu-item" data-sort="desc">Sort — latest first</button>
+</div>
+
   <table class="ud-table">
     <thead><tr>
-      <th style="width:150px">Date</th>
+      <th id="ud-th-time" class="ud-th-filter" style="width:150px" title="Filter and sort by date"><span class="ud-th-label">Date</span> <span class="ud-th-caret">▾</span></th>
       <th style="width:100px">When</th>
       <th style="width:130px">Case</th>
       <th>Event</th>
@@ -1677,14 +1691,7 @@ def render_unified_notes(cases):
       <div class="ud-search-wrap">
         <input type="text" id="ud-search" class="ud-search-input" placeholder="Search notes, entries, cases…">
       </div>
-      <div class="ud-date-range">
-        <span class="ud-date-label">Edited from</span>
-        <input type="date" id="ud-date-from" class="ud-date-input">
-        <span class="ud-date-sep">–</span>
-        <span class="ud-date-label">to</span>
-        <input type="date" id="ud-date-to" class="ud-date-input">
-        <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
-      </div>
+      <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
     </div>
     <div class="ud-filter-row">
       <div class="ud-case-dd" id="ud-case-dd">
@@ -1699,6 +1706,15 @@ def render_unified_notes(cases):
   </div>
 
   <div class="ud-toolbar">
+    <span class="ud-lookback-box">
+      <span id="ud-lookback-label">All time</span>
+      <span class="ud-date-range" id="ud-daterange" style="display:none;">
+        <span class="ud-date-sep">·</span>
+        <input type="date" id="ud-date-from" class="ud-date-input" aria-label="From date">
+        <span class="ud-date-sep">–</span>
+        <input type="date" id="ud-date-to" class="ud-date-input" aria-label="To date">
+      </span>
+    </span>
     <span id="ud-count"></span>
   </div>
 
@@ -1718,8 +1734,8 @@ def render_unified_notes(cases):
     <thead><tr>
       <th id="un-th-time" class="ud-th-filter" style="width:170px" title="Sort by edited or entry date"><span class="ud-th-label">Last edited</span> <span class="ud-th-caret">▾</span></th>
       <th id="un-th-case" class="ud-th-filter" style="width:130px" title="Filter by case"><span class="ud-th-label">Case</span> <span class="ud-th-caret">▾</span></th>
-      <th style="width:260px">Entry</th>
-      <th>Note</th>
+      <th>Entry</th>
+      <th style="width:240px">Note</th>
       <th style="width:90px;text-align:right">Source</th>
       <th style="width:76px;text-align:center">★ <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></th>
     </tr></thead>

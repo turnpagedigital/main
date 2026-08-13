@@ -954,8 +954,8 @@
   function setListVisible(on) {
     var tbl = document.querySelector(".ud-table");
     if (tbl) tbl.style.display = on ? "" : "none";
-    var sb = document.getElementById("ud-sort-btn");
-    if (sb) sb.style.display = on ? "" : "none";
+    var lb = document.querySelector(".ud-lookback-box");
+    if (lb) lb.style.display = on ? "" : "none";
     var mb = document.getElementById("uc-merge-bar");
     if (mb && !on) mb.style.display = "none";
     var g = document.getElementById("uc-grid");
@@ -1456,16 +1456,6 @@
       });
     }
 
-    var scopeSelect = document.getElementById("uc-scope");
-    if (scopeSelect) {
-      scopeSelect.value = scope;
-      scopeSelect.addEventListener("change", function () {
-        scope = scopeSelect.value;
-        saveFilterState();
-        render();
-      });
-    }
-
     var searchInput = document.getElementById("ud-search");
     if (searchInput) {
       searchInput.addEventListener("input", function () {
@@ -1486,12 +1476,17 @@
     var LB_LABELS = { "7d": "Next 7 days", "30d": "Next 30 days", "90d": "Next 90 days", all: "All dates", custom: "Custom range" };
     function syncTimeHeader() {
       var th = document.getElementById("ud-th-time");
-      if (th) th.classList.toggle("ud-th-on", lookahead !== "all");
+      if (th) th.classList.toggle("ud-th-on", lookahead !== "all" || scope !== "upcoming" || sortDir !== "asc");
       var lbl = document.getElementById("ud-lookback-label");
-      if (lbl) lbl.textContent = LB_LABELS[lookahead] || "All dates";
+      if (lbl) lbl.textContent = lookahead !== "all"
+        ? (LB_LABELS[lookahead] || "All dates")
+        : (scope === "past" ? "Past only" : scope === "all" ? "All dates" : "Upcoming");
       var menu = document.getElementById("ud-th-timemenu");
       if (menu) menu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
-        b.classList.toggle("ud-th-menu-on", b.getAttribute("data-val") === lookahead);
+        var srt = b.getAttribute("data-sort");
+        if (srt) { b.classList.toggle("ud-th-menu-on", srt === sortDir); return; }
+        b.classList.toggle("ud-th-menu-on",
+          b.getAttribute("data-val") === lookahead && (b.getAttribute("data-scope") || "upcoming") === scope);
       });
     }
     var thTimeEl = document.getElementById("ud-th-time");
@@ -1509,7 +1504,17 @@
       });
       thTimeMenuEl.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
         b.addEventListener("click", function () {
+          var srt = b.getAttribute("data-sort");
+          if (srt) {
+            sortDir = srt;
+            thTimeMenuEl.style.display = "none";
+            saveFilterState();
+            syncTimeHeader();
+            render();
+            return;
+          }
           lookahead = b.getAttribute("data-val");
+          scope = b.getAttribute("data-scope") || scope;
           if (lookahead !== "custom") {
             dateFrom = ""; dateTo = "";
             if (lbFromEl) lbFromEl.value = "";
@@ -1537,6 +1542,7 @@
       clearBtn.addEventListener("click", function () {
         searchText = "";
         lookahead = "all";
+        scope = "upcoming";
         dateFrom = ""; dateTo = "";
         if (lbFromEl) lbFromEl.value = "";
         if (lbToEl) lbToEl.value = "";
@@ -1544,17 +1550,6 @@
         saveFilterState();
         syncTimeHeader();
         applyCustomVisibility();
-        render();
-      });
-    }
-
-    var sortBtn = document.getElementById("ud-sort-btn");
-    if (sortBtn) {
-      sortBtn.textContent = sortDir === "asc" ? "Date ↑" : "Date ↓";
-      sortBtn.addEventListener("click", function () {
-        sortDir = sortDir === "asc" ? "desc" : "asc";
-        sortBtn.textContent = sortDir === "asc" ? "Date ↑" : "Date ↓";
-        saveFilterState();
         render();
       });
     }

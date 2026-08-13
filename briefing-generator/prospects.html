@@ -62,10 +62,8 @@
   .ud-pill-sq{border-radius:0;}
   /* Theme pills: monochrome outline — white bg / black outline+text (inverts in dark) */
   .ud-pill-theme{background:var(--surface);color:var(--ink);border:1px solid var(--ink);}
-  .pr-tabs{display:flex;gap:0;}
-  .pr-tab{font-family:inherit;font-size:12.5px;font-weight:700;letter-spacing:0.03em;padding:7px 16px;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;margin-left:-1px;}
-  .pr-tab:first-child{margin-left:0;}
-  .pr-tab.on{background:var(--neon);border-color:var(--neon);color:#0A0A0A;}
+  .pr-show{display:flex;align-items:center;gap:8px;}
+  .pr-show-label{font-size:12.5px;font-weight:700;letter-spacing:0.03em;color:var(--ink-60);}
   .ud-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
   #ud-count{font-size:14px;color:var(--ink-60);flex:1;}
   .ud-table{width:100%;border-collapse:collapse;background:transparent;border:none;}
@@ -73,7 +71,7 @@
   .ud-table td{padding:12px 14px;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top;}
   [data-theme="dark"] .ud-table td{border-bottom-color:var(--bg);}
   .ud-table tr:last-child td{border-bottom:none;}
-  .ud-table tbody tr{cursor:default;}
+  .ud-table tbody tr{cursor:default;background:var(--surface);}
   .ud-table tbody tr.pr-row-cursor{outline:2px solid var(--neon);outline-offset:-2px;}
   .ud-date{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;}
   .ud-empty{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}
@@ -240,13 +238,16 @@
       <button type="button" id="pr-theme-btn" class="ud-type-select ud-case-dd-btn">Themes <span class="ud-dd-caret">▾</span></button>
       <div id="pr-theme-panel" class="ud-case-dd-panel" style="display:none;"></div>
     </div>
-    <div class="pr-tabs" id="pr-tabs">
-      <button type="button" class="pr-tab on" data-tab="new">New</button>
-      <button type="button" class="pr-tab" data-tab="snoozed">Snoozed</button>
-      <button type="button" class="pr-tab" data-tab="hidden">Hidden</button>
-      <button type="button" class="pr-tab" data-tab="dismissed">Dismissed</button>
-      <button type="button" class="pr-tab" data-tab="tracked">Tracked</button>
-      <button type="button" class="pr-tab" data-tab="all">All</button>
+    <div class="pr-show">
+      <label class="pr-show-label" for="pr-show">Show</label>
+      <select id="pr-show" class="ud-type-select">
+        <option value="new">New</option>
+        <option value="snoozed">Snoozed</option>
+        <option value="hidden">Hidden</option>
+        <option value="dismissed">Dismissed</option>
+        <option value="tracked">Tracked</option>
+        <option value="all">All</option>
+      </select>
     </div>
   </div>
 
