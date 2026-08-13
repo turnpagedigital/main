@@ -48,7 +48,7 @@
     .tn-tabs-row { max-width: 1680px; margin: 0 auto; padding: 0 32px; display: flex; gap: 8px; flex-wrap: wrap; position: relative; }
     .tn-tab { position: relative; }
     .tn-pill { padding: 9px 18px; font-size: 14.5px; font-weight: 600; border: 1px solid transparent; background: transparent; color: var(--ink); cursor: pointer; border-radius: 0; font-family: 'Archivo', sans-serif; }
-    .tn-pill.active { background: var(--neon-block); color: var(--neon-on-block); border: 1px solid var(--neon-block); font-weight: 700; pointer-events: none; }
+    .tn-pill.active { background: var(--sel-bg, #0A0A0A); color: var(--sel-fg, #fff); border: 1px solid var(--sel-bg, #0A0A0A); font-weight: 700; pointer-events: none; }
     .tn-pill:hover { background: var(--neon-block) !important; color: var(--neon-on-block) !important; border: 1px solid var(--neon-block) !important; font-weight: 700 !important; }
     .tn-tabs-row:has(.tn-tab:hover) .tn-tab.active:not(:hover) .tn-pill.active {
       background: rgba(10,10,10,0.06) !important;
@@ -256,7 +256,7 @@
     .ih-sort { display: inline-flex; gap: 6px; }
     .ih-sort-btn { font-family: inherit; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 7px 12px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; }
     .ih-sort-btn:hover { background: var(--paper-2); }
-    .ih-sort-btn.on { background: var(--neon-block); color: var(--neon-on-block); border-color: var(--neon-block); }
+    .ih-sort-btn.on { background: var(--sel-bg, #0A0A0A); color: var(--sel-fg, #fff); border-color: var(--sel-bg, #0A0A0A); }
     /* Inline theme filter — press-page type pills: black when on, thin gray outline when off */
     .ih-themes-wrap { margin-right: auto; }
     .ih-themes-wrap .ih-dd-panel { left: 0; right: auto; min-width: 260px; }
@@ -264,8 +264,7 @@
     .ih-theme-pills { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-right: auto; }
     .ih-tp-btn { font-family: inherit; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 7px 12px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s; }
     .ih-tp-btn:hover { background: var(--paper-2); color: var(--ink); }
-    .ih-tp-btn.on { background: var(--ink); border-color: var(--ink); color: var(--bg); }
-    [data-theme="dark"] .ih-tp-btn.on { background: var(--neon-block); border-color: var(--neon-block); color: var(--neon-on-block); }
+    .ih-tp-btn.on { background: var(--sel-bg, #0A0A0A); border-color: var(--sel-bg, #0A0A0A); color: var(--sel-fg, #fff); }
     .ih-tp-btn.pin { box-shadow: inset 0 -3px 0 var(--neon-block, var(--neon)); }
     /* Cases section header — title left, view + sort controls right */
     .ih-cases-head { max-width: 1680px; margin: 26px auto 12px; padding: 0 32px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
@@ -322,8 +321,7 @@
     .ih-wk-tgl button { font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 0.04em; padding: 2px 9px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; margin-left: -1px; }
     .ih-wk-tgl button:first-child { margin-left: 0; }
     .ih-wk-tgl button:hover { background: var(--paper-2); }
-    .ih-wk-tgl button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-    [data-theme="dark"] .ih-wk-tgl button.on { background: var(--neon-block); color: var(--neon-on-block); border-color: var(--neon-block); }
+    .ih-wk-tgl button.on { background: var(--sel-bg, #0A0A0A); color: var(--sel-fg, #fff); border-color: var(--sel-bg, #0A0A0A); }
     .ih-mm-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; }
     .ih-wk-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
     .ih-wk-col { min-height: 150px; }
@@ -562,7 +560,7 @@
       <a class="tn-back" href="news.html">📡 News</a>
       <a class="tn-back" href="prospects.html">🔭 Prospects</a>
     </div>
-    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">G</span> then <span class="tn-key">H</span> Home · <span class="tn-key">D</span> Docket · <span class="tn-key">C</span> Calendar · <span class="tn-key">P</span> Prospects · <span class="tn-key">N</span> Notes · <span class="tn-key">R</span> News</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case</div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">T</span> Today <em>Calendar · Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><div class="tn-gear" id="tn-gear"><button type="button" class="tn-gear-btn" id="tn-gear-btn" title="Settings" aria-haspopup="true">⚙️</button><div class="tn-gear-panel"><a href="manage.html#cases">Cases</a><a href="manage.html#themes">Themes</a><a href="manage.html#groups">Groups</a><a href="manage.html#voice">Voice</a><a href="manage.html#colors">Colors</a></div></div><button id="theme-toggle">🖥️</button>
+    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">G</span> then <span class="tn-key">H</span> Home · <span class="tn-key">D</span> Docket · <span class="tn-key">C</span> Calendar · <span class="tn-key">P</span> Prospects · <span class="tn-key">N</span> Notes · <span class="tn-key">R</span> News</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case</div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">T</span> Today <em>Calendar · Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><div class="tn-gear" id="tn-gear"><button type="button" class="tn-gear-btn" id="tn-gear-btn" title="Settings" aria-haspopup="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></button><div class="tn-gear-panel"><a href="manage.html#cases">Cases</a><a href="manage.html#themes">Themes</a><a href="manage.html#groups">Groups</a><a href="manage.html#voice">Voice</a><a href="manage.html#colors">Colors</a></div></div><button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 

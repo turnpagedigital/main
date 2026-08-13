@@ -1,4 +1,9 @@
 (function(){
+  // Selected-state convention: light = black box + white text, dark = neon + black.
+  var selCss=document.createElement('style');
+  selCss.id='tn-sel-vars';
+  selCss.textContent=':root{--sel-bg:#0A0A0A;--sel-fg:#FFFFFF;}[data-theme="dark"]{--sel-bg:#D4FF00;--sel-fg:#0A0A0A;}';
+  (document.head||document.documentElement).appendChild(selCss);
   var K='daily-briefing-theme';
   var ST=['system','dark','light'];
   var IC={dark:'\ud83c\udf19',light:'\u2600\ufe0f',system:'\ud83d\udda5\ufe0f'};
