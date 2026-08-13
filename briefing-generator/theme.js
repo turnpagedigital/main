@@ -170,7 +170,7 @@
     if(!left||document.getElementById('tn-hamburger'))return;
     var st=document.createElement('style');
     st.textContent=
-      '.tn-hamburger{display:none;align-items:center;justify-content:center;background:transparent;border:none;color:#fff;width:32px;height:30px;font-size:16px;line-height:1;cursor:pointer;flex:0 0 auto;}'+
+      '.tn-hamburger{display:none;align-items:center;justify-content:center;background:transparent;border:none;color:#fff;padding:4px 6px;font-size:15px;line-height:1;opacity:0.7;cursor:pointer;flex:0 0 auto;}'+'.tn-hamburger:hover{opacity:1;}'+
       '.tn.tn-compact .tn-lbl{display:none;}'+
       '.tn-menu{display:none;}'+
       '.tn-back .tn-ico{font-size:1.2em;margin-right:3px;vertical-align:-1px;}'+
@@ -235,7 +235,7 @@
     btn.title='Menu';
     btn.setAttribute('aria-haspopup','true');
     btn.setAttribute('aria-label','Menu');
-    btn.textContent='☰';
+    btn.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:block"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
     // Append to the row (not tn-left) so on mobile it sits to the RIGHT of the
     // gear — logo … gear ☰ on one shorter row. Still toggles the tn-left menu.
     (row||left).appendChild(btn);
@@ -264,6 +264,8 @@
       if(!menu)return;
       var open=menu.classList.contains('open');
       if(open){closeMenu();return;}
+      var _g=document.getElementById('tn-gear');
+      if(_g)_g.classList.remove('open');
       fillMenu();
       menu.classList.add('open');
     });
@@ -322,7 +324,26 @@
       '#tn-gf-label{font-size:11px;color:var(--ink-60);min-width:36px;text-align:center;font-variant-numeric:tabular-nums;}'+
       '#theme-toggle{display:none !important;}'+
       '#tn-fs{display:none !important;}'+
-      '@media (pointer: coarse){.tn-gear-font{display:none;}}';
+      '@media (pointer: coarse){.tn-gear-font{display:none;}}'+
+      // Mobile: drop the floating-card look — the gear panel becomes a
+      // full-width sheet under the nav bar, exactly like the hamburger
+      // menu (.tn-menu.open), and opens on tap only (no hover-open).
+      '@media (max-width:720px){'+
+        '.tn-row{position:static !important;}'+
+        '.tn-gear{position:static;}'+
+        '.tn-gear:hover .tn-gear-panel{display:none;}'+
+        '.tn-gear.open .tn-gear-panel{display:flex;position:absolute;top:100%;left:0;right:0;min-width:0;background:#000;border:none;border-bottom:1px solid rgba(255,255,255,0.12);box-shadow:none;padding:2px 20px 12px;z-index:200;}'+
+        '[data-theme="light"] .tn-gear.open .tn-gear-panel{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}'+
+        '.tn-gear-panel a{padding:12px 0;font-size:14px;border-top:1px solid rgba(255,255,255,0.12);}'+
+        '[data-theme="light"] .tn-gear-panel a{border-top-color:rgba(10,10,10,0.08);}'+
+        '.tn-gear-panel a:hover{background:transparent;}'+
+        '.tn-gear-theme,.tn-gear-font{margin-top:0;padding-top:0;border-top-color:rgba(255,255,255,0.12);}'+
+        '[data-theme="light"] .tn-gear-theme,[data-theme="light"] .tn-gear-font{border-top-color:rgba(10,10,10,0.08);}'+
+        '.tn-gear-theme button{padding:12px 0;font-size:14px;}'+
+        '.tn-gear-theme button:hover{background:transparent;}'+
+        '.tn-gt-lbl{padding:10px 0 2px;}'+
+        '.tn-gf-row{padding:6px 0 8px;}'+
+      '}';
     document.head.appendChild(st);
     var panel=gw.querySelector('.tn-gear-panel');
     if(panel&&!panel.querySelector('[data-gear-briefings]')){
@@ -369,7 +390,7 @@
       var glab=fwrap.querySelector('#tn-gf-label');
       if(glab)glab.textContent=fontScale()+'%';
     }
-    gb.addEventListener('click',function(e){e.stopPropagation();gw.classList.toggle('open');if(gw.classList.contains('open'))markTheme();});
+    gb.addEventListener('click',function(e){e.stopPropagation();gw.classList.toggle('open');if(gw.classList.contains('open')){var _m=document.getElementById('tn-menu');if(_m)_m.classList.remove('open');markTheme();}});
     document.addEventListener('click',function(e){if(!gw.contains(e.target))gw.classList.remove('open');});
   }
 
