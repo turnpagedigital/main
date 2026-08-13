@@ -128,22 +128,6 @@
     "sync": "active"
   },
   {
-    "slug": "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026",
-    "added": "2026-08-06",
-    "display_name": "FTX",
-    "short_name": "FTX",
-    "docket_url": "https://www.courtlistener.com/docket/65748821/ftx-trading-ltd/",
-    "default_color": "#94C6F8",
-    "category": "bankruptcy",
-    "topics": [
-      "crypto-insolvency",
-      "fraud-recovery",
-      "bankruptcy-creditor-rights"
-    ],
-    "court": "United States Bankruptcy Court, D. Delaware",
-    "sync": "active"
-  },
-  {
     "slug": "kadrey-v-meta-contributory-infringement-amendment",
     "added": "2026-08-07",
     "display_name": "Kadrey v. Meta — Contributory Infringement Amendment",
