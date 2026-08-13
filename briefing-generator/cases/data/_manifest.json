@@ -15,21 +15,6 @@
     "sync": "active"
   },
   {
-    "slug": "blockfills",
-    "added": "2026-06-12",
-    "display_name": "BlockFills",
-    "short_name": "BlockFills",
-    "docket_url": "https://www.courtlistener.com/docket/72494188/reliz-technology-group-holdings-inc/",
-    "default_color": "#94C6F8",
-    "category": "bankruptcy",
-    "topics": [
-      "crypto-insolvency",
-      "bankruptcy-creditor-rights"
-    ],
-    "court": "Bankr. D. Del.",
-    "sync": "active"
-  },
-  {
     "slug": "britannica-merriam-webster-v-openai",
     "added": "2026-08-07",
     "display_name": "Britannica v. OpenAI",
@@ -258,20 +243,6 @@
       "llm-class-action"
     ],
     "court": "District Court, N.D. California",
-    "sync": "active"
-  },
-  {
-    "slug": "rndc",
-    "added": "2026-07-29",
-    "display_name": "RNDC",
-    "short_name": "RNDC",
-    "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
-    "default_color": "#ffb8e0",
-    "category": "bankruptcy",
-    "topics": [
-      "bankruptcy-creditor-rights"
-    ],
-    "court": "Bankr. S.D.Tx.",
     "sync": "active"
   },
   {

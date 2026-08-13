@@ -361,7 +361,55 @@ UD_CSS = r"""
   .ud-link{color:var(--ink);font-weight:400;text-decoration:underline;}
 
   .ud-link-empty{color:var(--ink-40);font-size:inherit;}
-  .ud-empty{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}"""
+  .ud-empty{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}
+  /* ── Shared restyle (ported from the docket): white light canvas, white rows
+     with hover, ink header with a 2px rule, darker dividers + day lines,
+     auto-fitting full-width table. Applies to every page on this chassis. ── */
+  [data-theme="light"], [data-theme="light"] body { background: #FFFFFF; }
+  [data-theme="light"] .page-title { border-bottom: 1px solid var(--line-strong); }
+  [data-theme="light"] .ud-table { border-collapse: collapse; }
+  [data-theme="light"] .ud-table tbody tr { background: var(--surface); }
+  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row):hover { background: linear-gradient(rgba(10,10,10,0.03), rgba(10,10,10,0.03)), var(--surface); }
+  [data-theme="light"] .ud-table tbody tr.ud-day-row { background: transparent; }
+  [data-theme="light"] .ud-table td { border-bottom-color: var(--line); }
+  [data-theme="light"] .ud-day-row td { border-top: none; border-bottom: 1px solid var(--line-strong); }
+  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:first-child { border-left: none; }
+  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:last-child { border-right: none; }
+  [data-theme="light"] .ud-table tbody tr:last-child td { border-bottom: none; }
+  [data-theme="light"] .ud-row-article td { background: #E7E9EE; }
+  [data-theme="light"] .ud-row-article:hover td { background: #F0F1F4; }
+  /* Header row: ink text (black in light, white in dark), no background bar —
+     a thick ink rule under the row separates it from the entries, spanning the
+     same width as the rows below. Active filters underline instead of recolor. */
+  .ud-table thead th { background: transparent; border: none; border-bottom: 2px solid var(--ink); box-shadow: none; color: var(--ink); position: relative; z-index: 1; padding-top: 13px; padding-bottom: 13px; }
+  /* The base chassis pins border-left/right on the end header cells with higher
+     specificity than the border:none above — kill the vertical end ticks. */
+  .ud-table thead th:first-child { border-left: none; }
+  .ud-table thead th:last-child { border-right: none; }
+  .ud-table thead th.ud-th-on { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+  /* The table must always fill its container — saved column widths or engine
+     quirks may otherwise shrink it to the sum of its columns. And auto layout
+     (not the chassis's fixed) at every width: columns size to their content —
+     the Dkt/agent/upload cell can never be clipped — and re-fit on resize,
+     with ENTRY absorbing the remainder. */
+  .ud-table { width: 100% !important; min-width: 100%; table-layout: auto; }
+  [data-theme="light"] .ud-table tbody tr:first-child td { padding-top: 20px; }
+  [data-theme="light"] .ud-search-input:focus { background: #FFFFFF; }
+  [data-theme="dark"] .page-title { border-bottom: 1px solid var(--line-strong); }
+  [data-theme="dark"] .ud-day-row td { border-top: none; }
+  [data-theme="dark"] .ud-table tbody tr:first-child td { padding-top: 20px; }
+  .ud-table tr.ud-row-daycollapsed { display: none; }
+  .ud-table tbody tr.ud-day-row td { padding-top: 30px; }
+  @media (max-width: 720px) {
+    .ud-table { background: transparent; border: none; }
+    [data-theme="light"] .ud-table tbody tr { border-bottom-color: var(--line); }
+    [data-theme="light"] .ud-table tbody tr.ud-day-row { border-bottom: 1px solid var(--line-strong); }
+    [data-theme="light"] .ud-table tbody tr.ud-row-article { background: #E7E9EE; }
+    [data-theme="dark"] .ud-table tbody tr { border-bottom-color: var(--bg); }
+    #ud-count, #ud-hidden-info { display: none; }
+    .ud-case-dd-panel, #ud-source-dd-panel, .ud-th-menu { position: fixed !important; top: auto !important; bottom: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; max-width: none !important; min-width: 0 !important; max-height: 72vh; overflow-y: auto; border-radius: 16px 16px 0 0 !important; box-shadow: 0 -10px 34px rgba(0,0,0,0.28) !important; padding-bottom: 20px !important; z-index: 1300 !important; }
+  }
+"""
 
 
 # ── full case-page stylesheet (brand tokens; no f-string — CSS braces) ───────
@@ -760,38 +808,6 @@ def render_case_page(case):
 # [data-theme="light"]-scoped so dark mode is untouched. Mirror of the same
 # <style> block in docket.html — keep the two in sync.
 DOCKET_LIGHT_CSS = """<style>
-  [data-theme="light"], [data-theme="light"] body { background: #FFFFFF; }
-  [data-theme="light"] .page-title { border-bottom: 1px solid var(--line-strong); }
-  [data-theme="light"] .ud-table { border-collapse: collapse; }
-  [data-theme="light"] .ud-table tbody tr { background: var(--surface); }
-  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row):hover { background: linear-gradient(rgba(10,10,10,0.03), rgba(10,10,10,0.03)), var(--surface); }
-  [data-theme="light"] .ud-table tbody tr.ud-day-row { background: transparent; }
-  [data-theme="light"] .ud-table td { border-bottom-color: var(--line); }
-  [data-theme="light"] .ud-day-row td { border-top: none; border-bottom: 1px solid var(--line-strong); }
-  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:first-child { border-left: none; }
-  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:last-child { border-right: none; }
-  [data-theme="light"] .ud-table tbody tr:last-child td { border-bottom: none; }
-  [data-theme="light"] .ud-row-article td { background: #E7E9EE; }
-  [data-theme="light"] .ud-row-article:hover td { background: #F0F1F4; }
-  /* Header row: ink text (black in light, white in dark), no background bar —
-     a thick ink rule under the row separates it from the entries, spanning the
-     same width as the rows below. Active filters underline instead of recolor. */
-  .ud-table thead th { background: transparent; border: none; border-bottom: 2px solid var(--ink); box-shadow: none; color: var(--ink); position: relative; z-index: 1; padding-top: 13px; padding-bottom: 13px; }
-  /* The base chassis pins border-left/right on the end header cells with higher
-     specificity than the border:none above — kill the vertical end ticks. */
-  .ud-table thead th:first-child { border-left: none; }
-  .ud-table thead th:last-child { border-right: none; }
-  .ud-table thead th.ud-th-on { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
-  /* The table must always fill its container — saved column widths or engine
-     quirks may otherwise shrink it to the sum of its columns. */
-  .ud-table { width: 100% !important; min-width: 100%; }
-  [data-theme="light"] .ud-table tbody tr:first-child td { padding-top: 20px; }
-  [data-theme="light"] .ud-search-input:focus { background: #FFFFFF; }
-  [data-theme="dark"] .page-title { border-bottom: 1px solid var(--line-strong); }
-  [data-theme="dark"] .ud-day-row td { border-top: none; }
-  [data-theme="dark"] .ud-table tbody tr:first-child td { padding-top: 20px; }
-  .ud-table tr.ud-row-daycollapsed { display: none; }
-  .ud-table tbody tr.ud-day-row td { padding-top: 30px; }
   #ud-filter-btn { display: none; align-items: center; gap: 7px; font-family: inherit; font-size: 14px; font-weight: 700; padding: 9px 16px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 999px; color: var(--ink); cursor: pointer; }
   #ud-filter-btn.on { border-color: var(--ink); }
   #ud-filter-btn .ud-fb-badge { background: var(--ink); color: var(--bg); border-radius: 999px; font-size: 11px; font-weight: 800; padding: 1px 7px; }
@@ -818,15 +834,8 @@ DOCKET_LIGHT_CSS = """<style>
   .ud-fm-reset { background: var(--surface); border: 1px solid var(--line-strong); color: var(--ink); }
   .ud-fm-done { background: var(--ink); border: 1px solid var(--ink); color: var(--bg); }
   @media (max-width: 720px) {
-    .ud-table { background: transparent; border: none; }
-    [data-theme="light"] .ud-table tbody tr { border-bottom-color: var(--line); }
-    [data-theme="light"] .ud-table tbody tr.ud-day-row { border-bottom: 1px solid var(--line-strong); }
-    [data-theme="light"] .ud-table tbody tr.ud-row-article { background: #E7E9EE; }
-    [data-theme="dark"] .ud-table tbody tr { border-bottom-color: var(--bg); }
     #ud-filter-btn { display: inline-flex; }
-    #ud-count, #ud-hidden-info { display: none; }
     .ud-clear-filters { display: block; margin: 4px 2px 0; }
-    .ud-case-dd-panel, #ud-source-dd-panel, .ud-th-menu { position: fixed !important; top: auto !important; bottom: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; max-width: none !important; min-width: 0 !important; max-height: 72vh; overflow-y: auto; border-radius: 16px 16px 0 0 !important; box-shadow: 0 -10px 34px rgba(0,0,0,0.28) !important; padding-bottom: 20px !important; z-index: 1300 !important; }
   }
   /* Row-action icons (bookmark/snooze/hide/delete/note) collapse into one ⋮
      menu per row on narrow table layouts (721–1080px); full icons elsewhere,
