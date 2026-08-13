@@ -236,8 +236,10 @@ UD_CSS = r"""
   .ud-pal-list{list-style:none;margin:0;padding:4px 0;max-height:320px;overflow-y:auto;}
   .ud-pal-item{padding:9px 14px;font-size:13.5px;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
   .ud-pal-item .ud-pal-slug{color:var(--ink-60);font-size:11px;font-family:monospace;}
-  .ud-pal-item:hover{background:var(--paper-2);}
-  .ud-pal-cur,.ud-pal-cur:hover{background:var(--neon);color:var(--ink);}
+  .ud-pal-item:hover{background:var(--sel-bg,#0A0A0A);color:var(--sel-fg,#fff);}
+  .ud-pal-item:hover .ud-pal-slug{color:inherit;opacity:0.65;}
+  .ud-pal-cur,.ud-pal-cur:hover{background:var(--sel-bg,#0A0A0A);color:var(--sel-fg,#fff);}
+  .ud-pal-cur .ud-pal-slug,.ud-pal-cur:hover .ud-pal-slug{color:inherit;opacity:0.65;}
   .ud-pal-empty{padding:12px 14px;font-size:13px;color:var(--ink-60);}
   .ud-pal-hint{padding:7px 14px;font-size:10.5px;color:var(--ink-60);border-top:1px solid var(--line-strong);letter-spacing:0.03em;}
   .ud-rename-input{width:100%;font-family:inherit;font-size:13px;padding:5px 7px;border:1.5px solid var(--neon);background:var(--surface);color:var(--ink);box-sizing:border-box;}
