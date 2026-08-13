@@ -109,7 +109,9 @@
     var run = st.run;
     switch (st.state) {
       case "queued": return "Dispatched — waiting for the runner to pick it up…";
-      case "running": return label(run) + " running…";
+      case "running":
+        return label(run) + " running… " +
+          (run && run.workflow === "briefing" ? "(usually ~2 minutes)" : "(usually 2–5 minutes)");
       case "success": return label(run) + " finished — fresh data lands on the page shortly.";
       case "failure":
         return label(run) + " FAILED" +

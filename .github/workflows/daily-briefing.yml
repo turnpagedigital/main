@@ -70,6 +70,11 @@ jobs:
           # dispatch payload. Empty = every tracked case.
           BRIEFING_CASE: ${{ github.event.inputs.case || github.event.client_payload.case || '' }}
           BRIEFING_FORCE: ${{ (github.event.inputs.force == 'true' || github.event.client_payload.force == true) && '1' || '' }}
+          # Single-case runs skip the full 20-docket refresh — sync just the
+          # requested case (a group id matches nothing and skips the fetch
+          # entirely; member dockets are ≤1h old from the hourly sync). This
+          # is what makes the dashboard "Brief now" take ~2 min instead of ~8.
+          DOCKET_ONLY_CASE: ${{ github.event.inputs.case || github.event.client_payload.case || '' }}
           # Optional: X API bearer (read tier) — followed accounts feed briefings
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
         run: |
