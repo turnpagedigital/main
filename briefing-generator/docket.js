@@ -2855,7 +2855,9 @@
       var thTimeMenu = document.getElementById("ud-th-timemenu");
       if (thTimeMenu) {
         thTimeMenu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
-          b.classList.toggle("ud-th-menu-on", b.getAttribute("data-val") === lookback);
+          b.classList.toggle("ud-th-menu-on", b.hasAttribute("data-sort")
+            ? b.getAttribute("data-sort") === sortDir
+            : b.getAttribute("data-val") === lookback);
         });
       }
       if (thMenu) {
@@ -2936,6 +2938,14 @@
       });
       thTimeMenuEl.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
         b.addEventListener("click", function () {
+          var srt = b.getAttribute("data-sort");
+          if (srt) {  // "Sort — newest/oldest first" lives in this menu too
+            sortDir = srt;
+            thTimeMenuEl.style.display = "none";
+            saveFilterState();
+            render();
+            return;
+          }
           lookback = b.getAttribute("data-val");
           showAllDates = false;
           if (lookback !== "custom") {

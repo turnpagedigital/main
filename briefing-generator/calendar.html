@@ -457,6 +457,7 @@
   [data-theme="dark"] .ud-table tbody tr:first-child td { padding-top: 20px; }
   .ud-table tr.ud-row-daycollapsed { display: none; }
   .ud-table tbody tr.ud-day-row td { padding-top: 30px; }
+  .ud-th-menu-sep { border-top: 1px solid var(--line); margin: 4px 0; }
   @media (max-width: 720px) {
     .ud-table { background: transparent; border: none; }
     [data-theme="light"] .ud-table tbody tr { border-bottom-color: var(--line); }
@@ -495,7 +496,7 @@
   .uc-week-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-left:1px solid var(--line-strong);border-top:1px solid var(--line-strong);}
   .uc-week-col{min-height:200px;padding:6px;border-right:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);}
   .uc-week-dow{font-size:11px;font-weight:800;letter-spacing:0.05em;color:var(--ink-60);margin-bottom:6px;}
-  .uc-week-card{border:1px solid var(--line-strong);border-left-width:3px;padding:6px 7px;margin-bottom:6px;background:var(--surface);cursor:pointer;}
+  .uc-week-card{border:none;border-left:3px solid var(--line-strong);padding:6px 7px;margin-bottom:6px;background:var(--surface);cursor:pointer;}
   .uc-week-card .ud-pill{font-size:10px;}
   .uc-week-kind{font-size:11px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;margin-top:4px;}
   .uc-week-snip{font-size:11px;color:var(--ink-60);line-height:1.4;margin-top:3px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
@@ -556,7 +557,6 @@
     </div>
     <div class="ud-filter-row">
       <div class="ud-case-dd" id="ud-case-dd">
-        <button type="button" id="ud-case-dd-btn" class="ud-type-select ud-case-dd-btn">Cases <span class="ud-dd-caret">▾</span></button>
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
       <div class="ud-filter-right">
