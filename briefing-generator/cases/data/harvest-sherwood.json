@@ -16,10 +16,10 @@
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-12",
     "meta_fetched_at": "2026-08-12T21:06:56.792490+00:00",
-    "fetched_at": "2026-08-12T23:04:42.559151+00:00",
-    "as_of": "Aug 12, 2026",
+    "fetched_at": "2026-08-13T00:01:04.163211+00:00",
+    "as_of": "Aug 13, 2026",
     "backfilled": true,
-    "new_in_72h": 23,
+    "new_in_72h": 11,
     "recent": [
       {
         "entry_number": 1206,
@@ -169,7 +169,7 @@
         "time_filed": "16:37:57",
         "date_display": "Aug 10, 2026",
         "description": "Notice of hearing",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -179,7 +179,7 @@
         "time_filed": "15:58:42",
         "date_display": "Aug 10, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -189,7 +189,7 @@
         "time_filed": "14:37:56",
         "date_display": "Aug 10, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -199,7 +199,7 @@
         "time_filed": "14:31:58",
         "date_display": "Aug 10, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -209,7 +209,7 @@
         "time_filed": "14:19:56",
         "date_display": "Aug 10, 2026",
         "description": "Certificate of service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -219,7 +219,7 @@
         "time_filed": "14:17:07",
         "date_display": "Aug 10, 2026",
         "description": "Certificate of service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -229,7 +229,7 @@
         "time_filed": "13:45:14",
         "date_display": "Aug 10, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -239,7 +239,7 @@
         "time_filed": "11:42:54",
         "date_display": "Aug 10, 2026",
         "description": "Notice of hearing",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -249,7 +249,7 @@
         "time_filed": "08:27:14",
         "date_display": "Aug 10, 2026",
         "description": "Relief from stay",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -259,7 +259,7 @@
         "time_filed": "06:44:27",
         "date_display": "Aug 10, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -269,7 +269,7 @@
         "time_filed": "06:39:38",
         "date_display": "Aug 10, 2026",
         "description": "Withdrawal",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -279,7 +279,7 @@
         "time_filed": "13:46:01",
         "date_display": "Aug 10, 2026",
         "description": "none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
     "date_last_filing": "2026-08-12",
     "meta_fetched_at": "2026-08-12T21:07:02.581726+00:00",
-    "fetched_at": "2026-08-12T23:04:49.699512+00:00",
-    "as_of": "Aug 12, 2026",
+    "fetched_at": "2026-08-13T00:01:11.977780+00:00",
+    "as_of": "Aug 13, 2026",
     "backfilled": true,
-    "new_in_72h": 8,
+    "new_in_72h": 4,
     "recent": [
       {
         "entry_number": 366,
@@ -100,7 +100,7 @@
         "time_filed": "17:05:59",
         "date_display": "Aug 10, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.362.0.pdf"
       },
@@ -110,7 +110,7 @@
         "time_filed": "16:56:37",
         "date_display": "Aug 10, 2026",
         "description": "Certificate of Service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.361.0.pdf"
       },
@@ -120,7 +120,7 @@
         "time_filed": "15:16:11",
         "date_display": "Aug 10, 2026",
         "description": "Order To Set Hearing",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -130,7 +130,7 @@
         "time_filed": "14:04:08",
         "date_display": "Aug 10, 2026",
         "description": "Compel",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.359.0.pdf"
       },
