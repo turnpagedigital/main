@@ -16,8 +16,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-07-21",
-    "meta_fetched_at": "2026-08-13T08:51:52.672249+00:00",
-    "fetched_at": "2026-08-13T08:51:52.672249+00:00",
+    "meta_fetched_at": "2026-08-13T10:30:17.720357+00:00",
+    "fetched_at": "2026-08-13T10:30:17.720357+00:00",
     "as_of": "Aug 13, 2026",
     "backfilled": false,
     "new_in_72h": 0,
@@ -1331,6 +1331,16 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.549.0_2.pdf"
       },
       {
+        "entry_number": 548,
+        "date_filed": "2026-01-15",
+        "time_filed": "12:06:05",
+        "date_display": "Jan 15, 2026",
+        "description": "CASE MANAGEMENT STATEMENT in response to Dkt. 537 filed by Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, MJ + KJ, Inc.. (Geman, Rachel) (Filed on 1/15/2026) (Entered: 01/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.548.0.pdf"
+      },
+      {
         "entry_number": 547,
         "date_filed": "2026-01-15",
         "date_display": "Jan 15, 2026",
@@ -1710,6 +1720,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": null,
+        "date_filed": "2025-12-24",
+        "time_filed": "17:25:55",
+        "date_display": "Dec 24, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 515,
         "date_filed": "2025-12-23",
         "time_filed": "",
@@ -1878,6 +1898,16 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.501.0.pdf"
+      },
+      {
+        "entry_number": 500,
+        "date_filed": "2025-11-24",
+        "time_filed": "",
+        "date_display": "Nov 24, 2025",
+        "description": "NOTICE of Appearance filed by Elizabeth Rogers Brannen on behalf of Jane Adams, Lisa Barretta, John Carreyrou, Michael Kochin, Matthew Sacks, Philip Shishkin (Brannen, Elizabeth) (Filed on 11/24/2025) (Entered: 11/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       },
       {
         "entry_number": 499,
@@ -2258,6 +2288,16 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.466.0.pdf"
+      },
+      {
+        "entry_number": 465,
+        "date_filed": "2025-11-12",
+        "time_filed": "12:17:17",
+        "date_display": "Nov 12, 2025",
+        "description": "Declaration of John Carreyrou in Support of 460 Opposition/Response to Motion filed byClaimsHero Holdings LLC. (Related document(s) 460 ) (Freedman, Velvel (Devin)) (Filed on 11/12/2025) (Entered: 11/12/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.465.0.pdf"
       },
       {
         "entry_number": 464,
@@ -7400,7 +7440,7 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=13"
   },
   "claims_administrator": {
     "name": "JND Legal Administration",
