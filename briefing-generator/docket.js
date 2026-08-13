@@ -589,6 +589,7 @@
           '<input type="checkbox" data-slug="' + esc(c.slug) + '"' + (active ? " checked" : "") + ">" +
           '<span class="ud-pill" style="--pb:' + bg + ";--pf:" + fg + '">' + esc(c.short_name) + "</span>" +
           '<span class="ud-dd-spacer"></span>' +
+          '<button type="button" class="ud-dd-sync-btn" data-sync-slug="' + esc(c.slug) + '" title="Sync now — fresh docket entries + a news search; the briefing refreshes if it\u2019s older than 12 hours"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg></button>' +
           '<a class="ud-details-link" href="manage.html#cases=' + esc(c.slug) + '" title="Edit case details in Settings"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>' +
         "</label>"
       );
@@ -619,7 +620,7 @@
         "</div>" +
       "</div>";
 
-    panel.innerHTML = head + rows + groupsHtml + '<button type="button" class="ud-dd-save-btn ud-dd-saveview" data-close-panel>Save view</button>';
+    panel.innerHTML = groupsHtml + head + rows + '<button type="button" class="ud-dd-save-btn ud-dd-saveview" data-close-panel>Save view</button>';
 
     var saveView = panel.querySelector("[data-close-panel]");
     if (saveView) {
@@ -648,16 +649,13 @@
     panel.querySelectorAll(".ud-details-link").forEach(function (a) {
       a.addEventListener("click", function (ev) { ev.stopPropagation(); });
     });
-    if (false) panel.querySelectorAll(".ud-gear-btn-retired").forEach(function (g) {
-      g.addEventListener("click", function (ev) {
+    panel.querySelectorAll(".ud-dd-sync-btn").forEach(function (b) {
+      b.addEventListener("click", function (ev) {
         ev.preventDefault();
         ev.stopPropagation();
-        var slug = g.getAttribute("data-slug");
-        if (activeGearSlug === slug) closePopover();
-        else openPopover(slug, g);
+        runManualSync(b.getAttribute("data-sync-slug"), b);
       });
     });
-
     function applyGroup(idx, mode) {
       var g = loadGroups()[idx];
       if (!g) return;
@@ -719,6 +717,46 @@
         if (ev.key === "Enter") { ev.preventDefault(); saveCurrentAsGroup(); }
       });
     }
+  }
+
+  // Sync button — pull fresh docket + news for one case, refresh its
+  // briefing if the last one is more than 12h old (manual-case-sync.yml).
+  // Per-case sync is a row action inside the CASE header dropdown
+  // (renderCaseFilter) — top-level so that panel's click wiring can see it.
+  function runManualSync(slug, btn) {
+    function reset(title) {
+      if (!btn) return;
+      btn.disabled = false;
+      btn.classList.remove("ud-dd-sync-spin");
+      if (title) btn.title = title;
+    }
+    if (btn) { btn.disabled = true; btn.classList.add("ud-dd-sync-spin"); btn.title = "Dispatching…"; }
+    if (!window.IntelSync) { noteToast("Sync helper failed to load — hard-refresh the page", true); reset(); return; }
+    IntelSync.syncCase(slug).then(function (res) {
+      if (res.status === 401 || res.status === 403) {
+        noteToast("Session expired — reload the page and try again", true);
+        reset();
+      } else if (res.body && res.body.ok) {
+        noteToast("Sync dispatched for " + slug + " — docket + news search, briefing if >12h old. Watching the run…", false);
+        IntelSync.watch(slug, ["manual-sync", "docket-sync"], function (st) {
+          if (st.state === "running") {
+            if (btn) btn.title = "Running…";
+          } else if (st.state === "success") {
+            noteToast("Sync finished for " + slug + " — fresh rows land on the next auto-refresh (≤60s).", false);
+            reset("Sync now — fresh docket entries + a news search; the briefing refreshes if it’s older than 12 hours");
+          } else if (st.state === "failure" || st.state === "timeout" || st.state === "lost") {
+            noteToast(IntelSync.describe(st) + (st.run && st.run.html_url ? " · " + st.run.html_url : ""), true);
+            reset();
+          }
+        });
+      } else {
+        noteToast((res.body && res.body.error) || "Sync failed to start", true);
+        reset();
+      }
+    }).catch(function () {
+      noteToast("Sync failed — network error", true);
+      reset();
+    });
   }
 
   // ── Color popover ──────────────────────────────────────────────────────────
@@ -3251,78 +3289,6 @@
         sortBtn.textContent = sortDir === "desc" ? "Date ↓" : "Date ↑";
         saveFilterState();
         render();
-      });
-    }
-
-    // Sync button — pull fresh docket + news for one case, refresh its
-    // briefing if the last one is more than 12h old (manual-case-sync.yml).
-    var syncBtn = document.getElementById("ud-sync-btn");
-    var syncPanel = document.getElementById("ud-sync-panel");
-    function runManualSync(slug) {
-      if (!syncBtn) return;
-      function reset() { syncBtn.disabled = false; syncBtn.textContent = "⟳ Sync now"; }
-      syncBtn.disabled = true;
-      syncBtn.textContent = "Dispatching…";
-      if (!window.IntelSync) { noteToast("Sync helper failed to load — hard-refresh the page", true); reset(); return; }
-      IntelSync.syncCase(slug).then(function (res) {
-        if (res.status === 401 || res.status === 403) {
-          noteToast("Session expired — reload the page and try again", true);
-          reset();
-        } else if (res.body && res.body.ok) {
-          noteToast("Sync dispatched for " + slug + " — docket + news search, briefing if >12h old. Watching the run…", false);
-          IntelSync.watch(slug, ["manual-sync", "docket-sync"], function (st) {
-            if (st.state === "running") {
-              syncBtn.textContent = "Running…";
-            } else if (st.state === "success") {
-              noteToast("Sync finished for " + slug + " — fresh rows land on the next auto-refresh (≤60s).", false);
-              reset();
-            } else if (st.state === "failure" || st.state === "timeout" || st.state === "lost") {
-              noteToast(IntelSync.describe(st) + (st.run && st.run.html_url ? " · " + st.run.html_url : ""), true);
-              reset();
-            }
-          });
-        } else {
-          noteToast((res.body && res.body.error) || "Sync failed to start", true);
-          reset();
-        }
-      }).catch(function () {
-        noteToast("Sync failed — network error", true);
-        reset();
-      });
-    }
-    if (syncBtn && syncPanel) {
-      function closeSyncPanel() { syncPanel.style.display = "none"; }
-      function buildSyncPanel() {
-        var sorted = CASES.slice().sort(function (a, b) {
-          return (a.short_name || a.display_name || "").localeCompare(b.short_name || b.display_name || "");
-        });
-        var html = '<div class="ud-sync-hint">Fresh docket entries + a news search; the briefing refreshes if it’s older than 12 hours.</div>';
-        html += sorted.map(function (c) {
-          var bg = getBg(c.slug, c.default_color);
-          var fg = getFg(c.slug, bg);
-          return '<button type="button" class="ud-sync-row" data-sync-slug="' + esc(c.slug) + '">' +
-            '<span class="ud-pill" style="--pb:' + bg + ";--pf:" + fg + '">' + esc(c.short_name || c.display_name) + "</span>" +
-          "</button>";
-        }).join("");
-        syncPanel.innerHTML = html || '<div class="ud-sync-hint">No cases tracked yet.</div>';
-        syncPanel.querySelectorAll("[data-sync-slug]").forEach(function (row) {
-          row.addEventListener("click", function () {
-            closeSyncPanel();
-            runManualSync(row.getAttribute("data-sync-slug"));
-          });
-        });
-      }
-      syncBtn.addEventListener("click", function (ev) {
-        ev.stopPropagation();
-        var open = syncPanel.style.display !== "none";
-        if (open) { closeSyncPanel(); return; }
-        buildSyncPanel();
-        syncPanel.style.display = "block";
-      });
-      document.addEventListener("click", function (ev) {
-        if (syncPanel.style.display === "none") return;
-        if (syncPanel.contains(ev.target) || syncBtn.contains(ev.target)) return;
-        closeSyncPanel();
       });
     }
 

@@ -196,11 +196,12 @@
         "</div>"
       );
     }).join("");
-    panel.innerHTML = head + rows +
+    panel.innerHTML =
       '<div class="ud-dd-groups">' +
         '<div class="ud-dd-groups-title">Groups</div>' +
         (groupRows || '<div class="ud-dd-empty">No groups yet.</div>') +
       "</div>" +
+      head + rows +
       '<button type="button" class="ud-dd-save-btn ud-dd-saveview" data-close-panel>Save view</button>';
 
     var saveView = panel.querySelector("[data-close-panel]");
