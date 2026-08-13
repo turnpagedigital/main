@@ -1856,6 +1856,19 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    // Live timestamp — the value baked into the HTML is the build machine's UTC
+    // clock mislabeled "ET"; recompute the real Eastern time in the browser.
+    function updateStamp() {
+      var s = document.querySelector(".page-title .stamp") || document.querySelector(".stamp");
+      if (!s) return;
+      var d = new Date();
+      var opt = { timeZone: "America/New_York" };
+      var t = d.toLocaleString("en-US", Object.assign({ hour: "numeric", minute: "2-digit", hour12: true }, opt));
+      var dt = d.toLocaleString("en-US", Object.assign({ weekday: "long", month: "long", day: "numeric", year: "numeric" }, opt));
+      s.textContent = t + " ET · " + dt.toUpperCase();
+    }
+    updateStamp();
+    setInterval(updateStamp, 30000);
     wireDropdown("ih-themes-btn", "ih-themes-panel", function () { paintThemePills(); });
     wireDropdown("ih-cases-btn", "ih-cases-panel", buildCasesPanel);
     updateFilterButtons();

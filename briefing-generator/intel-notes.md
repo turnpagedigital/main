@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-12 15:53 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-13 15:11 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -17,6 +17,12 @@ Need to research fair use question and write a long-form article about this
 ### Dkt. 681 — 2026-07-21
 
 > REPORT on the determination of an action regarding Copyright(cc: form emailed to register). (hdj, COURT STAFF) (Filed on 7/21/2026) (Entered: 07/21/2026)
+
+## BlockFills
+
+### Dkt. 561 — 2026-08-10
+
+> Employ (Application)
 
 ## Concord Music Group v. Anthropic
 
@@ -42,6 +48,14 @@ hi
 
 > Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Name on file (Claim No. 8231) To GreenWulf Master Fund, LP. Filed by Cherokee Acquisition. (Faucher, Lisa)
 
+## Getty Images (US) v. Stability AI (N.D. Cal.)
+
+### Dkt. 71 — 2026-08-12
+
+> Opposition/Response to Motion
+
+Discovery-related.
+
 ## Goliath
 
 ### (no docket number) — 2026-07-28
@@ -49,6 +63,10 @@ hi
 > Auto-Docket of Credit Card
 
 ## Harvest Sherwood
+
+### Dkt. 1206 — 2026-08-12
+
+> Assignment/Transfer of claim (Claims Agent)
 
 ### (no docket number) — 2026-08-06
 
@@ -83,6 +101,16 @@ hi
 > Objection to confirmation of plan 11/12/13
 
 Ciao
+
+## Kahan
+
+### Dkt. 365 — 2026-08-12
+
+> Objection
+
+### Dkt. 360 — 2026-08-10
+
+> Order To Set Hearing
 
 ## New Filing
 

@@ -1678,8 +1678,10 @@
         settle({ kind: "err", label: "CL down \u2014 used agent",
           reason: why + " \u2014 opened the claims-agent copy instead" }, e.claims_url);
       } else {
-        settle({ kind: "err", label: "CL unavailable",
-          reason: why + " \u2014 no mirror on this row; try again in a few minutes" }, "");
+        // No mirror to fall back to. The edge check frequently false-negatives on
+        // CourtListener's bot-blocking (a real browser loads the page fine), so
+        // send the user to CourtListener anyway instead of dead-ending here.
+        settle(null, url);
       }
     }).catch(function () { settle(null, url); });
   }
