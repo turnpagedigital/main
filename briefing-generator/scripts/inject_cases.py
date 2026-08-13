@@ -1597,6 +1597,11 @@ def render_unified_notes(cases):
 {UD_CSS}
   .uc-snippet{{color:var(--ink-60);font-size:inherit;}}
   .un-note-cell{{max-width:420px;}}
+  /* CASE hugs its pills — leftover width flows to the flexible note column
+     (auto layout; !important beats the th's inline width). */
+  .ud-table th:nth-child(2){{width:1% !important;}}
+  .ud-table td.ud-case{{width:1%;}}
+  .ud-table td.ud-case .ud-pill{{max-width:200px;overflow:hidden;text-overflow:ellipsis;vertical-align:middle;}}
   .un-note-text{{white-space:pre-wrap;font-size:inherit;line-height:1.5;}}
   .un-export{{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}}
 </style>
