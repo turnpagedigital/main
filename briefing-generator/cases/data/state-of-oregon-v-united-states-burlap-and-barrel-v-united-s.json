@@ -567,6 +567,30 @@
     ]
   },
   "claims_administrator": null,
-  "coverage": [],
-  "events": []
+  "coverage": [
+    {
+      "headline": "IEEPA Tariff Refund: Key FAQs for Importers",
+      "url": "https://www.bdo.com/insights/tax/ieepa-tariff-refunds-frequently-asked-questions",
+      "source": "BDO",
+      "date": "2026-08-10",
+      "summary": "BDO's updated FAQ reports that class certification motions in Freestyle World and V.O.S. Selections — directly bearing on whether finally liquidated entries can access IEEPA refunds outside CAPE — have drawn DOJ opposition briefs, with CIT oral arguments scheduled for August 2026 and a ruling expected shortly thereafter, though further Federal Circuit appeal is anticipated."
+    },
+    {
+      "headline": "US Moves for Burlap and Barrel to Be 'Master Case' in Litigation Against Section 301 Tariffs",
+      "url": "https://tradelawdaily.com/article/2026/08/06/us-moves-for-burlap-and-barrel-to-be-master-case-in-litigation-against-section-301-tariffs-2608050035?BC=bc_6a73d6ed38210",
+      "source": "Trade Law Daily",
+      "date": "2026-08-06",
+      "summary": "The U.S. government filed an August 4 motion at the Court of International Trade asking that Burlap and Barrel v. United States (CIT # 26-03345) be designated the 'master case' for coordinated briefing and oral argument across three parallel challenges to the administration's new Section 301 forced-labor tariffs, with plaintiffs' motions for judgment proposed due August 14 and the government's consolidated response due September 15."
+    }
+  ],
+  "events": [
+    {
+      "title": "CIT Plaintiffs' Motions for Judgment Deadline — Burlap and Barrel / Section 301 Master Case (CIT # 26-03345)",
+      "date": "2026-08-14",
+      "time": "",
+      "kind": "Deadline",
+      "url": "https://tradelawdaily.com/article/2026/08/06/us-moves-for-burlap-and-barrel-to-be-master-case-in-litigation-against-section-301-tariffs-2608050035?BC=bc_6a73d6ed38210",
+      "source": "U.S. Court of International Trade"
+    }
+  ]
 }
