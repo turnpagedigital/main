@@ -199,18 +199,11 @@
     .pr-btn-track { background: var(--neon-block); color: var(--neon-on-block); border-color: var(--neon-block); }
     .pr-btn-track:hover { filter: brightness(0.94); }
     /* ⌘K case palette (docket-style) */
-    .ud-pal-overlay { position: fixed; inset: 0; background: rgba(10,10,10,0.35); z-index: 1300; display: flex; align-items: flex-start; justify-content: center; padding-top: 14vh; }
-    .ud-pal-box { background: var(--surface); border: 1px solid var(--line-strong); width: min(520px, 92vw); box-shadow: 0 12px 40px rgba(0,0,0,0.18); }
-    .ud-pal-input { width: 100%; padding: 13px 14px; font-size: 15px; font-family: inherit; border: 0; border-bottom: 1px solid var(--line-strong); outline: none; background: transparent; color: var(--ink); box-sizing: border-box; }
-    .ud-pal-list { list-style: none; margin: 0; padding: 4px 0; max-height: 320px; overflow-y: auto; }
-    .ud-pal-item { padding: 9px 14px; font-size: 13.5px; cursor: pointer; display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
     .ud-pal-item .ud-pal-slug { color: var(--ink-60); font-size: 11px; font-family: monospace; }
     .ud-pal-item:hover { background: var(--sel-bg,#0A0A0A); color: var(--sel-fg,#fff); }
     .ud-pal-item:hover .ud-pal-slug { color: inherit; opacity: 0.65; }
     .ud-pal-cur, .ud-pal-cur:hover { background: var(--sel-bg,#0A0A0A); color: var(--sel-fg,#fff); }
     .ud-pal-cur .ud-pal-slug, .ud-pal-cur:hover .ud-pal-slug { color: inherit; opacity: 0.65; }
-    .ud-pal-empty { padding: 12px 14px; font-size: 13px; color: var(--ink-60); }
-    .ud-pal-hint { padding: 7px 14px; font-size: 10.5px; color: var(--ink-60); border-top: 1px solid var(--line-strong); letter-spacing: 0.03em; }
     /* List view: one row per case */
     .ih-theme-grid.ih-list-mode { display: flex; flex-direction: column; gap: 0; }
     .ih-case-listrow { display: flex; align-items: center; gap: 12px; background: var(--surface); border: none; border-left: 3px solid transparent; border-bottom: 1px solid var(--line); padding: 10px 16px; text-decoration: none; color: inherit; }

@@ -622,7 +622,7 @@
         "</div>" +
       "</div>";
 
-    panel.innerHTML = head + rows + groupsHtml + '<button type="button" class="ud-dd-save-btn ud-dd-saveview" data-close-panel>Save view</button>';
+    panel.innerHTML = groupsHtml + head + rows + '<button type="button" class="ud-dd-save-btn ud-dd-saveview" data-close-panel>Save view</button>';
 
     var saveView = panel.querySelector("[data-close-panel]");
     if (saveView) {
@@ -928,34 +928,12 @@
   // POST api/social-draft with the story's verified facts (plus the tagged
   // case's identifiers when there is one) → briefing + LinkedIn + X drafts
   // written as Andrew. Draft only: nothing is posted or saved. ─────────────
-  var SOCIAL_CSS =
-    ".pr-overlay{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,0.45);display:flex;align-items:flex-start;justify-content:center;padding:5vh 20px 20px;overflow-y:auto;}" +
-    ".pr-box{background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 10px 40px rgba(0,0,0,0.35);width:min(680px,100%);padding:22px;display:flex;flex-direction:column;gap:12px;}" +
-    ".pr-box h2{margin:0;font-size:17px;font-weight:800;}" +
-    ".pr-box .sub{font-size:12.5px;color:var(--ink-60);line-height:1.5;border-bottom:1px solid var(--line);padding-bottom:10px;}" +
-    ".pr-modal-actions{display:flex;align-items:center;gap:10px;border-top:1px solid var(--line);padding-top:12px;}" +
-    ".pr-modal-status{font-size:12.5px;color:var(--ink-60);flex:1;line-height:1.4;}" +
-    ".pr-modal-status.err{color:#C84141;font-weight:700;}" +
-    ".pr-social-loading{display:flex;align-items:center;gap:10px;padding:26px 4px;font-size:13.5px;color:var(--ink-60);}" +
-    ".pr-social-spin{width:15px;height:15px;border:2px solid var(--line-strong);border-top-color:var(--neon);border-radius:50%;display:inline-block;animation:pr-social-spin 0.7s linear infinite;}" +
-    "@keyframes pr-social-spin{to{transform:rotate(360deg);}}" +
-    ".pr-social-field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px;}" +
-    ".pr-social-lbl{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-60);}" +
-    ".pr-social-count{font-weight:600;letter-spacing:0;text-transform:none;color:var(--ink-40);margin-left:6px;}" +
-    ".pr-social-count.over{color:#C84141;}" +
-    ".pr-social-ta{width:100%;box-sizing:border-box;font-size:13.5px;font-family:inherit;line-height:1.5;padding:10px 11px;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;resize:vertical;}" +
-    ".pr-social-ta:focus{border-color:var(--neon);}" +
-    ".pr-copy{font-size:10.5px;font-weight:800;letter-spacing:0.02em;padding:3px 11px;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;flex:none;}" +
-    ".pr-copy:hover{border-color:var(--neon);}" +
-    ".pr-copy.done{color:#1a7f37;border-color:#1a7f37;}";
+  // Social-modal styles live in intel-chrome.css (shared with Prospects).
 
   var activeSocialEntry = null;
 
   function ensureSocialModal() {
     if (document.getElementById("pr-social-overlay")) return;
-    var st = document.createElement("style");
-    st.textContent = SOCIAL_CSS;
-    document.head.appendChild(st);
     var ov = document.createElement("div");
     ov.id = "pr-social-overlay";
     ov.className = "pr-overlay";

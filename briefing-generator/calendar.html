@@ -79,30 +79,20 @@
   .ud-date-input{padding:7px 8px;font-size:13px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;width:132px;}
   .ud-date-input:focus{border-color:var(--neon);}
   .ud-date-sep{color:var(--ink-40);font-size:14px;}
-  .ud-clear-btn{padding:7px 14px;font-size:13px;font-weight:700;font-family:inherit;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;white-space:nowrap;}
   .ud-clear-btn:hover{border-color:var(--ink-40);color:var(--ink);}
   /* Case dropdown + filters row */
   .ud-case-dd{position:relative;margin-right:auto;}
   .ud-case-dd-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;}
   .ud-dd-caret{font-size:11px;color:var(--ink-60);}
-  .ud-case-dd-panel{position:absolute;top:calc(100% + 6px);left:0;z-index:900;background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 6px 24px rgba(0,0,0,0.22);min-width:270px;padding:8px;}
-  .ud-dd-head{display:flex;align-items:center;gap:10px;padding:2px 8px 8px;border-bottom:1px solid var(--line);margin-bottom:6px;}
-  .ud-dd-quick{background:none;border:none;color:var(--ink-60);font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;padding:2px 4px;letter-spacing:0.03em;}
-  .ud-dd-quick:hover{color:var(--ink);}
-  .ud-dd-row{display:flex;align-items:center;gap:10px;padding:7px 8px;cursor:pointer;}
-  .ud-dd-row:hover{background:var(--paper-2);}
   .ud-dd-row input{accent-color:var(--neon);cursor:pointer;flex-shrink:0;margin:0;}
   .ud-dd-spacer{flex:1;}
   .ud-dd-empty{padding:10px 12px;font-size:13px;color:var(--ink-60);}
   .ud-dd-groups{border-top:1px solid var(--line);margin-top:6px;padding-top:6px;}
-  .ud-dd-groups-title{font-size:10px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-40);padding:2px 8px 4px;}
   .ud-dd-group-row{display:flex;align-items:center;gap:6px;padding:6px 8px;}
   .ud-dd-group-row:hover{background:var(--paper-2);}
   .ud-dd-group-name{flex:1;background:none;border:none;font-family:inherit;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer;text-align:left;padding:0;}
   .ud-dd-group-name:hover{color:var(--ink);text-decoration:underline;}
   .ud-dd-group-n{font-size:11px;color:var(--ink-40);font-weight:400;margin-left:4px;}
-  .ud-dd-group-act{background:none;border:1px solid var(--line-strong);color:var(--ink-60);font-family:inherit;font-size:10px;font-weight:700;letter-spacing:0.02em;cursor:pointer;padding:2px 7px;}
-  .ud-dd-group-act:hover{border-color:var(--ink-40);color:var(--ink);}
   .ud-dd-group-del{background:none;border:none;color:var(--ink-40);font-size:14px;cursor:pointer;padding:0 3px;line-height:1;}
   .ud-dd-group-del:hover{color:#C84141;}
   .ud-dd-save-row{display:flex;align-items:center;gap:6px;padding:8px 8px 4px;}
@@ -159,18 +149,7 @@
   .ud-lookback-box .ud-date-input{width:130px;padding:2px 6px;font-size:12px;font-family:inherit;background:var(--surface);border:1px solid var(--line-strong);color:var(--ink);}
   #ud-sort-btn{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-size:14px;font-weight:700;padding:6px 14px;cursor:pointer;font-family:inherit;}
   #ud-sort-btn:hover{border-color:var(--ink-40);}
-  .ud-sync-dd{position:relative;}
-  .ud-sync-btn{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-size:14px;font-weight:700;padding:6px 14px;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;}
-  .ud-sync-btn:hover{border-color:var(--ink-40);}
-  .ud-sync-btn:disabled{opacity:0.5;cursor:default;}
-  .ud-sync-panel{position:absolute;top:calc(100% + 6px);right:0;z-index:90;min-width:240px;max-width:min(320px, calc(100vw - 32px));max-height:360px;overflow:auto;background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 12px 32px rgba(10,10,10,0.18);padding:6px;}
-  [data-theme="dark"] .ud-sync-panel{box-shadow:0 12px 32px rgba(0,0,0,0.5);}
-  .ud-sync-hint{font-size:11.5px;color:var(--ink-60);padding:6px 8px 8px;border-bottom:1px solid var(--line-strong);margin-bottom:4px;}
-  .ud-sync-row{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:13px;color:var(--ink);cursor:pointer;padding:8px;}
-  .ud-sync-row:hover{background:var(--paper-2);}
-  .ud-sync-row:disabled{opacity:0.5;cursor:default;}
   /* Pills */
-  .ud-pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.03em;padding:2px 10px;white-space:nowrap;border-radius:99px;}
   /* Table */
   .ud-table{width:100%;border-collapse:collapse;background:transparent;border:none;table-layout:fixed;}
   /* Frame lives on the cells (not the table) so day-separator rows can sit
@@ -187,13 +166,10 @@
   [data-theme="dark"] .ud-table tbody tr:not(.ud-day-row) td:first-child{border-left-color:var(--bg);}
   [data-theme="dark"] .ud-table tbody tr:not(.ud-day-row) td:last-child{border-right-color:var(--bg);}
   [data-theme="dark"] .ud-table tbody tr:last-child td{border-bottom-color:var(--bg);}
-  .ud-table th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:11px 14px;border-bottom:1px solid var(--line-strong);font-weight:700;}
-  .ud-table td{padding:12px 14px;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top;}
   [data-theme="dark"] .ud-table td{border-bottom-color:var(--bg);}
   .ud-table tr:last-child td{border-bottom:none;}
   .ud-row-new .ud-entry{font-weight:700;}  /* highlight new rows via the entry text only — dates and parties stay regular */
   .ud-table tr.ud-day-row{background:transparent;}
-  .ud-day-row td{background:transparent;border-left:none;border-right:none;border-top:2px solid var(--line-strong);border-bottom:1px solid var(--line-strong);font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-60);padding:7px 14px;}
   .ud-row-article td{background:var(--paper-2);}
   .ud-mark-cell{text-align:center;white-space:nowrap;padding-left:1px;padding-right:1px;}
   .ud-table thead th:last-child,.ud-table tbody tr:not(.ud-day-row) td:last-child{padding-right:14px;}
@@ -205,16 +181,10 @@
   .ud-bm-btn.ud-bm-on{color:#EAB308;}
   .ud-note-btn{color:var(--ink-40);}
   .ud-note-btn.ud-note-on{color:#3FA07A;}
-  .ud-note-overlay{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;padding:20px;}
-  .ud-note-box{background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 10px 40px rgba(0,0,0,0.35);width:min(640px,100%);padding:22px;display:flex;flex-direction:column;gap:10px;}
-  .ud-note-title{font-size:15px;font-weight:800;color:var(--ink);}
-  .ud-note-meta{font-size:12px;color:var(--ink-60);line-height:1.5;border-bottom:1px solid var(--line);padding-bottom:10px;}
   .ud-note-text{width:100%;min-height:180px;resize:vertical;padding:10px 12px;font-family:inherit;font-size:14px;line-height:1.55;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;box-sizing:border-box;}
   .ud-note-text:focus{border-color:var(--neon);}
   .ud-note-titlefield{width:100%;padding:9px 12px;font-family:inherit;font-size:14px;font-weight:700;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;box-sizing:border-box;}
   .ud-note-titlefield:focus{border-color:var(--neon);}
-  .ud-note-actions{display:flex;align-items:center;gap:8px;}
-  .ud-note-status{font-size:12px;color:var(--ink-40);}
   .ud-upload-btn{background:none;border:none;cursor:pointer;padding:1px 2px;color:var(--ink-40);vertical-align:middle;margin-left:4px;}
   .ud-upload-btn:hover{color:var(--ink);}
   .ud-file-group{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
@@ -230,8 +200,6 @@
   .ud-th-toggle:hover{color:var(--ink);}
   .ud-th-toggle.ud-th-on{color:#EAB308;}
   .ud-th-menu{position:absolute;z-index:950;background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 6px 24px rgba(0,0,0,0.22);min-width:180px;padding:6px;}
-  .ud-th-menu-item{display:block;width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:13px;color:var(--ink);cursor:pointer;padding:8px 10px;}
-  .ud-th-menu-item:hover{background:var(--paper-2);}
   .ud-mi-sub{font-size:11px;color:var(--ink-60);font-weight:400;margin-top:2px;}
   .ud-th-menu-item.ud-th-menu-on{font-weight:800;}
   .ud-th-menu-item.ud-th-menu-on::after{content:" \2713";color:var(--ink-60);}
@@ -388,7 +356,6 @@
   .ud-link{color:var(--ink);font-weight:400;text-decoration:underline;}
 
   .ud-link-empty{color:var(--ink-60);font-size:inherit;}
-  .ud-empty{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}
   /* ── Shared restyle (ported from the docket): white light canvas, white rows
      with hover, ink header with a 2px rule, darker dividers + day lines,
      auto-fitting full-width table. Applies to every page on this chassis. ── */
@@ -569,8 +536,8 @@
 
   <div id="uc-merge-bar" class="uc-merge-bar" style="display:none;">
     <span id="uc-merge-count"></span>
-    <button type="button" id="uc-merge-btn" class="ud-dd-save-btn">Merge into one event</button>
-    <button type="button" id="uc-dismiss-btn" class="ud-clear-btn">Dismiss selected</button>
+    <button type="button" id="uc-merge-btn" class="ud-dd-save-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px"><path d="M5 5c0 7 3 10 7 12"/><path d="M19 5c0 7-3 10-7 12"/><polyline points="9 14 12 19 15 14"/></svg>Merge into one event</button>
+    <button type="button" id="uc-dismiss-btn" class="ud-clear-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px"><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>Dismiss selected</button>
     <button type="button" id="uc-clear-sel" class="ud-clear-btn">Clear</button>
   </div>
 
