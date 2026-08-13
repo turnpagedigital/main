@@ -16,8 +16,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
     "date_last_filing": "2026-08-05",
-    "meta_fetched_at": "2026-08-13T12:03:08.220392+00:00",
-    "fetched_at": "2026-08-13T12:03:08.220392+00:00",
+    "meta_fetched_at": "2026-08-13T13:52:32.250419+00:00",
+    "fetched_at": "2026-08-13T13:52:32.250419+00:00",
     "as_of": "Aug 13, 2026",
     "backfilled": false,
     "new_in_72h": 0,
@@ -4347,6 +4347,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 907,
+        "date_filed": "2025-02-03",
+        "time_filed": "12:10:15",
+        "date_display": "Feb 3, 2025",
+        "description": "Order Approving Motion for Admission pro hac vice of Casey McGushin (Related Doc # 901) Order Signed on 2/3/2025. (JMW) (Entered: 02/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 906,
         "date_filed": "2025-02-03",
         "time_filed": "12:08:23",
@@ -4517,6 +4527,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 889,
+        "date_filed": "2025-01-24",
+        "time_filed": "18:35:28",
+        "date_display": "Jan 24, 2025",
+        "description": "Certificate of Service (related document(s)886, 887, 888) Filed by Terraform Labs Pte. Ltd.. (Milana, Matthew) (Entered: 01/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 888,
         "date_filed": "2025-01-24",
         "time_filed": "18:04:24",
@@ -4667,11 +4687,31 @@
         "doc_url": ""
       },
       {
+        "entry_number": 873,
+        "date_filed": "2024-12-09",
+        "time_filed": "17:16:12",
+        "date_display": "Dec 9, 2024",
+        "description": "Motion to Appear pro hac vice of Seth Roye of Reid Collins & Tsai LLP. Receipt Number 4565784, Filed by Plan Administrator. (Shapiro, Zachary) Modified text on 12/10/2024 (LCN). (Entered: 12/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 872,
         "date_filed": "2024-12-09",
         "time_filed": "17:10:49",
         "date_display": "Dec 9, 2024",
         "description": "Motion to Appear pro hac vice of Scott Saldana of Reid Collins & Tsai LLP. Receipt Number 4565784, Filed by Plan Administrator. (Shapiro, Zachary) Modified text on 12/10/2024 (LCN). (Entered: 12/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 871,
+        "date_filed": "2024-12-09",
+        "time_filed": "17:04:52",
+        "date_display": "Dec 9, 2024",
+        "description": "Motion to Appear pro hac vice of Eric D. Madden of Reid Collins & Tsai LLP. Receipt Number 4565784, Filed by Plan Administrator. (Shapiro, Zachary) Modified text on 12/10/2024 (LCN). (Entered: 12/09/2024)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -13777,7 +13817,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68180454&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=19"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68180454&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=25"
   },
   "claims_administrator": {
     "name": "Epiq11",
