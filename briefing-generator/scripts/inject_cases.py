@@ -337,7 +337,8 @@ UD_CSS = r"""
     .ud-note-box{padding:16px;}
     .uc-merge-bar{flex-wrap:wrap;}
   }
-  .uc-gcal{font-size:16px;text-decoration:none;opacity:0.55;}
+  .uc-gcal{text-decoration:none;color:var(--ink-40);line-height:1;}
+  .uc-gcal:hover{color:var(--ink);}
   .uc-gcal:hover{opacity:1;}
   .uc-curate-cell{text-align:center;white-space:nowrap;}
   .uc-sel{accent-color:var(--neon);cursor:pointer;margin-right:6px;}
@@ -1482,6 +1483,10 @@ def render_unified_calendar(cases):
   .uc-week-dow{{font-size:11px;font-weight:800;letter-spacing:0.05em;color:var(--ink-60);margin-bottom:6px;}}
   .uc-week-card{{border:none;border-left:3px solid var(--line-strong);padding:6px 7px;margin-bottom:6px;background:var(--surface);cursor:pointer;}}
   .uc-week-card .ud-pill{{font-size:10px;}}
+  .uc-selall-btn{{background:none;border:none;cursor:pointer;padding:2px 4px;line-height:1;color:var(--ink-40);}}
+  .uc-selall-btn:hover{{color:var(--ink);}}
+  .uc-selall-btn.uc-selall-on{{color:var(--ink);}}
+  .uc-selall-btn.uc-selall-some{{color:var(--ink-60);}}
   .uc-week-kind{{font-size:11px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;margin-top:4px;}}
   .uc-week-snip{{font-size:11px;color:var(--ink-60);line-height:1.4;margin-top:3px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}}
   .uc-week-links{{font-size:11.5px;margin-top:5px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;}}
@@ -1588,8 +1593,8 @@ def render_unified_calendar(cases):
       <th style="width:130px">Case</th>
       <th>Event</th>
       <th style="width:100px;text-align:right">Source</th>
-      <th style="width:52px;text-align:center" title="Add to Google Calendar">📆</th>
-      <th style="width:66px;text-align:center" title="Select all / deselect all visible"><input type="checkbox" id="uc-sel-all" class="uc-sel" style="margin:0;"></th>
+      <th style="width:52px;text-align:center" title="Add to Google Calendar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M12 14v4"/><path d="M10 16h4"/></svg></th>
+      <th style="width:66px;text-align:center" title="Select all / deselect all visible"><button type="button" id="uc-sel-all" class="uc-selall-btn" title="Select all / deselect all visible" aria-label="Select all / deselect all visible"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M2 12h9"/><path d="m7 8 4 4-4 4"/><path d="M22 12h-9"/><path d="m17 8-4 4 4 4"/></svg></button></th>
     </tr></thead>
     <tbody id="uc-tbody">
       <tr><td colspan="7" class="ud-empty">Loading…</td></tr>

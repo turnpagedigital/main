@@ -304,8 +304,10 @@
     if (!head) return;
     var list = visible || filtered();
     var n = list.filter(function (ev) { return selectedKeys[ev.key]; }).length;
-    head.checked = list.length > 0 && n === list.length;
-    head.indeterminate = n > 0 && n < list.length;
+    var all = list.length > 0 && n === list.length;
+    head.classList.toggle("uc-selall-on", all);
+    head.classList.toggle("uc-selall-some", n > 0 && !all);
+    head.setAttribute("aria-pressed", all ? "true" : "false");
   }
 
   function updateMergeBar() {
@@ -1046,7 +1048,7 @@
               '<div class="uc-week-kind">' + esc(ev.kind) + (ev.time ? " \u00b7 " + esc(ev.time) : "") + "</div>" +
               (ev.snippet ? '<div class="uc-week-snip">' + esc(ev.snippet) + "</div>" : "") +
               '<div class="uc-week-links">' + entryLink(ev) +
-              (gcalUrl(ev) ? ' <a class="uc-gcal" href="' + esc(gcalUrl(ev)) + '" target="_blank" rel="noopener" title="Add to Google Calendar">\ud83d\udcc6</a>' : "") +
+              (gcalUrl(ev) ? ' <a class="uc-gcal" href="' + esc(gcalUrl(ev)) + '" target="_blank" rel="noopener" title="Add to Google Calendar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M12 14v4"/><path d="M10 16h4"/></svg></a>' : "") +
               "</div></div>";
           }).join("") +
           "</div>";
@@ -1127,7 +1129,7 @@
           '<td class="ud-doc">' + entryLink(ev) + "</td>" +
           '<td class="ud-mark-cell">' +
             (gcalUrl(ev)
-              ? '<a class="uc-gcal" href="' + esc(gcalUrl(ev)) + '" target="_blank" rel="noopener" title="Add to Google Calendar">\ud83d\udcc6</a>'
+              ? '<a class="uc-gcal" href="' + esc(gcalUrl(ev)) + '" target="_blank" rel="noopener" title="Add to Google Calendar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M12 14v4"/><path d="M10 16h4"/></svg></a>'
               : "") +
           "</td>" +
           '<td class="uc-curate-cell">' +
@@ -1380,11 +1382,14 @@
     // Select-all header checkbox
     var selAll = document.getElementById("uc-sel-all");
     if (selAll) {
-      selAll.addEventListener("change", function () {
-        if (selAll.checked) {
-          filtered().forEach(function (ev) { selectedKeys[ev.key] = true; });
-        } else {
+      selAll.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        var list = filtered();
+        var n = list.filter(function (e) { return selectedKeys[e.key]; }).length;
+        if (n === list.length) {
           selectedKeys = {};
+        } else {
+          list.forEach(function (e) { selectedKeys[e.key] = true; });
         }
         updateMergeBar();
         render();
