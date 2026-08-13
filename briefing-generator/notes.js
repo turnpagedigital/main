@@ -791,7 +791,9 @@
   }
 
   function init() {
-    var manifestP = fetchJson("cases/data/_manifest.json").catch(function () { return []; });
+    var manifestP = fetchJson("cases/data/_manifest.json").then(function (man) {
+      return (man || []).filter(function (m) { return (m.sync || "active") !== "archived"; });
+    }).catch(function () { return []; });
     var notesP = fetchJson("api/notes")
       .then(function (p) { return (p && p.ok && p.entries) ? p.entries : {}; })
       .catch(function () {

@@ -1319,7 +1319,8 @@
       fetchJson("cases/data/_manifest.json"),
       fetchJson("cases/data/_summary.json"),
     ]).then(function (res) {
-      var manifest = res[0] || [];
+      // Archived cases are hidden from every reader-facing view (Settings still lists them).
+      var manifest = (res[0] || []).filter(function (m) { return (m.sync || "active") !== "archived"; });
       var summaries = res[1] || [];
       var bySlug = {};
       summaries.forEach(function (s) { bySlug[s.slug] = s; });
