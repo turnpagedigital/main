@@ -754,7 +754,7 @@ def render_case_page(case):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
-<title>{name} — Case Docket | Turnpage Daily Briefing</title>
+<title>{name} — Case Docket | Turnpage Intelligence</title>
 {THEME_SCRIPT_SUBDIR}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
@@ -974,7 +974,7 @@ def render_unified_docket(cases):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
-<title>Docket — Turnpage Daily Briefing</title>
+<title>Docket — Turnpage Intelligence</title>
 {THEME_SCRIPT}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
@@ -1231,7 +1231,7 @@ def render_news_page(cases):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
-<title>News — Turnpage Daily Briefing</title>
+<title>News — Turnpage Intelligence</title>
 {THEME_SCRIPT}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
@@ -1438,7 +1438,7 @@ def render_unified_calendar(cases):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
-<title>Calendar — Turnpage Daily Briefing</title>
+<title>Calendar — Turnpage Intelligence</title>
 {THEME_SCRIPT}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
@@ -1616,7 +1616,7 @@ def render_unified_notes(cases):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
-<title>Notes — Turnpage Daily Briefing</title>
+<title>Notes — Turnpage Intelligence</title>
 {THEME_SCRIPT}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
