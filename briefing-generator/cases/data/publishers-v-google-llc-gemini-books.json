@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67599029/in-re-google-generative-ai-copyright-litigation/",
     "date_last_filing": "2026-08-13",
-    "meta_fetched_at": "2026-08-13T19:29:42.155585+00:00",
-    "fetched_at": "2026-08-13T19:29:42.155585+00:00",
+    "meta_fetched_at": "2026-08-13T20:51:35.884011+00:00",
+    "fetched_at": "2026-08-13T20:51:35.884011+00:00",
     "as_of": "Aug 13, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 476,
+        "date_filed": "2026-08-13",
+        "time_filed": "",
+        "date_display": "Aug 13, 2026",
+        "description": "NOTICE of Withdrawal filed by Jeremy Paul Auster, no longer appearing on behalf of Alphabet Inc., Google LLC in this case (Auster, Jeremy) (Filed on 8/13/2026) (Entered: 08/13/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": null,
         "date_filed": "2026-08-13",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.475.0.pdf"
-      },
-      {
-        "entry_number": 474,
-        "date_filed": "2026-07-14",
-        "time_filed": "16:04:33",
-        "date_display": "Jul 14, 2026",
-        "description": "OPPOSITION/RESPONSE (re 473 ADMINISTRATIVE MOTION to Withdraw Motion to Intervene re 342 MOTION to Intervene ) filed byGoogle LLC. (Attachments: # 1 Proposed Order)(Kramer, David) (Filed on 7/14/2026) (Entered: 07/14/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.474.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 476,
+        "date_filed": "2026-08-13",
+        "time_filed": "",
+        "date_display": "Aug 13, 2026",
+        "description": "NOTICE of Withdrawal filed by Jeremy Paul Auster, no longer appearing on behalf of Alphabet Inc., Google LLC in this case (Auster, Jeremy) (Filed on 8/13/2026) (Entered: 08/13/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": null,
         "date_filed": "2026-08-13",
