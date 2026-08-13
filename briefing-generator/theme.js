@@ -29,6 +29,10 @@
     // Zoom scales the type, and width = 100%/z pins the layout to exactly one
     // viewport wide at any size — text grows within the same visual layout
     // instead of widening the page or reflowing columns.
+    // Touch devices are exempt: iOS mishandles CSS zoom on body (the first
+    // paint crops to the zoomed layout — "no padding until I pinch out") and
+    // phones already have OS-level text sizing.
+    if(matchMedia('(pointer: coarse)').matches) z=1;
     document.body.style.zoom=(z===1?'':String(z));
     document.body.style.width=(z===1?'':'calc(100% / '+z+')');
     document.body.style.minHeight=(z===1?'':'calc(100vh / '+z+')');
@@ -260,7 +264,8 @@
       '.tn-gf-row button:hover{border-color:var(--ink);}'+
       '#tn-gf-label{font-size:11px;color:var(--ink-60);min-width:36px;text-align:center;font-variant-numeric:tabular-nums;}'+
       '#theme-toggle{display:none !important;}'+
-      '#tn-fs{display:none !important;}';
+      '#tn-fs{display:none !important;}'+
+      '@media (pointer: coarse){.tn-gear-font{display:none;}}';
     document.head.appendChild(st);
     var panel=gw.querySelector('.tn-gear-panel');
     if(panel&&!panel.querySelector('[data-gear-briefings]')){
@@ -322,19 +327,14 @@
       '.tn-col-grip::after{content:"";position:absolute;top:0;bottom:0;left:4px;width:2px;background:transparent;}'+
       '.tn-col-grip:hover::after,.tn-col-grip.on::after{background:var(--neon,#D4FF00);}';
     document.head.appendChild(st);
+    // Persisted column widths are retired: widths saved under the old fixed
+    // layout kept overriding the auto-fit tables (frozen Entry column, tables
+    // shrunk to the column sum, a 600px Case column on Notes). Drags still
+    // work live within the page; nothing is stored, and any previously-saved
+    // widths are purged so every load starts auto-fit.
     var key='tn-colw-'+((location.pathname.split('/').pop()||'index.html').replace(/\.html$/,'')||'index');
-    var saved={};
-    try{saved=JSON.parse(localStorage.getItem(key)||'{}')||{};}catch(e){}
-    var cleaned=false;
-    ths.forEach(function(th,i){
-      var id=th.id||('col'+i);
-      // A th with no baked-in inline width is the FLEX column (Entry) — it must
-      // absorb leftover space, so never apply or persist a width for it: with
-      // every column pinned, Safari's fixed layout sizes the table to the sum
-      // instead of 100% and the table collapses to half the window.
-      var flex=!th.style.width;
-      if(flex&&saved[id]){delete saved[id];cleaned=true;}
-      if(saved[id]&&!flex)th.style.width=saved[id]+'px';
+    try{localStorage.removeItem(key);}catch(e){}
+    ths.forEach(function(th){
       var g=document.createElement('span');
       g.className='tn-col-grip';
       g.title='Drag to resize column';
@@ -346,24 +346,18 @@
         g.classList.add('on');
         document.body.style.cursor='col-resize';
         function mv(ev){
-          var w=Math.max(48,Math.round(w0+(ev.clientX-x0)));
-          th.style.width=w+'px';
-          if(!flex)saved[id]=w;
+          th.style.width=Math.max(48,Math.round(w0+(ev.clientX-x0)))+'px';
         }
         function up(){
           document.removeEventListener('mousemove',mv);
           document.removeEventListener('mouseup',up);
           g.classList.remove('on');
           document.body.style.cursor='';
-          try{localStorage.setItem(key,JSON.stringify(saved));}catch(e2){}
         }
         document.addEventListener('mousemove',mv);
         document.addEventListener('mouseup',up);
       });
     });
-    // Write the cleanup back right away so a stored flex-column width from
-    // before this fix stops breaking layouts on the very next load.
-    if(cleaned){try{localStorage.setItem(key,JSON.stringify(saved));}catch(e3){}}
   }
   apply();
   if(document.readyState!=='loading') wire();
