@@ -176,17 +176,26 @@
         bits.push('<span class="pr-status-chip">Hidden</span>');
       }
       bits.push(toolsHtml(i));
-      bits.push('<div class="pr-act-track"><button type="button" class="pr-btn pr-btn-track" data-track="' + esc(i.id) + '">Track</button></div>');
     } else if (status === "dismissed") {
       if (TAB === "all") bits.push('<span class="pr-status-chip">Dismissed</span>');
-      bits.push('<button type="button" class="pr-btn" data-status="new" data-id="' + esc(i.id) + '">Restore</button>');
     } else {
       if (TAB === "all" || !i.tracked_slug) bits.push('<span class="pr-status-chip tracked">Tracked</span>');
-      if (i.tracked_slug) {
-        bits.push('<a class="pr-btn" href="docket.html#case=' + encodeURIComponent(i.tracked_slug) + '">Open docket</a>');
-      }
     }
     return '<div class="pr-act-row">' + bits.join("") + "</div>";
+  }
+
+  // The Track column: the row's one primary action, per triage status.
+  function ctaCell(i) {
+    var status = i.status || "new";
+    if (status === "new") {
+      return '<button type="button" class="pr-btn pr-btn-track" data-track="' + esc(i.id) + '">Track</button>';
+    }
+    if (status === "dismissed") {
+      return '<button type="button" class="pr-btn" data-status="new" data-id="' + esc(i.id) + '">Restore</button>';
+    }
+    return i.tracked_slug
+      ? '<a class="pr-btn" href="docket.html#case=' + encodeURIComponent(i.tracked_slug) + '">Open docket</a>'
+      : "";
   }
 
   var TAB_LABELS = { new: "New", snoozed: "Snoozed", hidden: "Hidden", dismissed: "Dismissed", tracked: "Tracked", all: "All" };
@@ -222,7 +231,7 @@
     if (showSelSync && showSelSync.value !== TAB) showSelSync.value = TAB;
     if (!tbody) return;
     if (!list.length) {
-      tbody.innerHTML = '<tr><td colspan="4" class="ud-empty">' +
+      tbody.innerHTML = '<tr><td colspan="5" class="ud-empty">' +
         (EMPTY_TEXT[TAB] || "Nothing here.") +
         "</td></tr>";
       return;
@@ -248,6 +257,7 @@
             note + src +
           "</td>" +
           '<td class="pr-actions">' + actionCell(i) + "</td>" +
+          '<td class="pr-track-cell">' + ctaCell(i) + "</td>" +
         "</tr>"
       );
     }).join("");
