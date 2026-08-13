@@ -64,7 +64,8 @@
   /* Theme pills: monochrome outline — white bg / black outline+text (inverts in dark) */
   .ud-pill-theme{background:transparent;color:#0A0A0A;border:1px dotted #0A0A0A;border-radius:99px;}
   [data-theme="dark"] .ud-pill-theme{background:transparent;color:#FFFFFF;border-color:#FFFFFF;}
-  .pr-show{display:flex;align-items:center;gap:8px;}
+  .pr-show{display:flex;align-items:center;gap:8px;margin-left:auto;}
+  .pr-status-row.on{font-weight:800;}
   .pr-show-label{font-size:12.5px;font-weight:700;letter-spacing:0.03em;color:var(--ink-60);}
   .ud-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
   #ud-count{font-size:14px;color:var(--ink-60);flex:1;}
@@ -266,16 +267,9 @@
       <button type="button" id="pr-theme-btn" class="ud-type-select ud-case-dd-btn">Themes <span class="ud-dd-caret">▾</span></button>
       <div id="pr-theme-panel" class="ud-case-dd-panel" style="display:none;"></div>
     </div>
-    <div class="pr-show">
-      <label class="pr-show-label" for="pr-show">Show</label>
-      <select id="pr-show" class="ud-type-select">
-        <option value="new">New</option>
-        <option value="snoozed">Snoozed</option>
-        <option value="hidden">Hidden</option>
-        <option value="dismissed">Dismissed</option>
-        <option value="tracked">Tracked</option>
-        <option value="all">All</option>
-      </select>
+    <div class="ud-case-dd pr-show" id="pr-status-dd">
+      <button type="button" id="pr-status-btn" class="ud-type-select ud-case-dd-btn">Status: New <span class="ud-dd-caret">▾</span></button>
+      <div id="pr-status-panel" class="ud-case-dd-panel" style="display:none;"></div>
     </div>
   </div>
 
