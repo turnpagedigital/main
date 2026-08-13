@@ -16,8 +16,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
     "date_last_filing": "2026-08-05",
-    "meta_fetched_at": "2026-08-13T13:52:32.250419+00:00",
-    "fetched_at": "2026-08-13T13:52:32.250419+00:00",
+    "meta_fetched_at": "2026-08-13T14:50:25.138810+00:00",
+    "fetched_at": "2026-08-13T14:50:25.138810+00:00",
     "as_of": "Aug 13, 2026",
     "backfilled": false,
     "new_in_72h": 0,
@@ -5117,6 +5117,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 831,
+        "date_filed": "2024-11-08",
+        "time_filed": "11:38:26",
+        "date_display": "Nov 8, 2024",
+        "description": "Certificate of No Objection - No Order Required Regarding Sixth Monthly Fee Application of Dentons US LLP as Special Counsel for the Debtors and Debtors in Possession for Allowance of Compensation and Reimbursement of Expenses for the period July 1, 2024 to July 31, 2024 (related document(s)783) Filed by Dentons US LLP. (Milana, Matthew) (Entered: 11/08/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 830,
         "date_filed": "2024-11-08",
         "time_filed": "10:20:30",
@@ -5272,6 +5282,16 @@
         "time_filed": "16:11:56",
         "date_display": "Oct 30, 2024",
         "description": "Certificate of No Objection - No Order Required Regarding Eighth Monthly Fee Statement of Services Rendered and Expenses Incurred by Alvarez & Marsal North America, LLC as Financial Advisors to Debtors, for Compensation and Reimbursement of Expenses for the Period from August 1, 2024 through August 31, 2024 (related document(s)773) Filed by Terraform Labs Pte. Ltd.. (Milana, Matthew) (Entered: 10/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 815,
+        "date_filed": "2024-10-30",
+        "time_filed": "15:14:21",
+        "date_display": "Oct 30, 2024",
+        "description": "Order (SECOND OMNIBUS) Order Awarding Interim Allowance of Compensation for Services Rendered and for Reimbursement of Expenses (related document(s)586, 591, 593, 595, 596, 597, 598, 599, 601, 602, 611, 811) Order Signed on 10/30/2024. (Attachments: # 1 Exhibit A) (JMW) (Entered: 10/30/2024)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -13817,7 +13837,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68180454&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=25"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68180454&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=29"
   },
   "claims_administrator": {
     "name": "Epiq11",

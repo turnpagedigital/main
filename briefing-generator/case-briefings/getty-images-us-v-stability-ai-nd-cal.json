@@ -3,6 +3,39 @@
   "case_name": "Getty Images (US) v. Stability AI (N.D. Cal.)",
   "items": [
     {
+      "date": "2026-08-13",
+      "updated": "2026-08-13",
+      "lede": "On August 12, one of the parties filed an Opposition or Response (Dkt. 71) to the Administrative Motion filed August 11 (Dkt. 70), completing a second paired administrative-motion cycle in less than a week and mirroring the Dkt. 68 / Dkt. 69 pairing covered yesterday. Neither filing's document text is publicly available through RECAP as of this writing, so the precise relief sought in Dkt. 70 — and the ground on…",
+      "body_md": "On August 12, one of the parties filed an Opposition or Response (Dkt. 71) to the Administrative Motion filed August 11 (Dkt. 70), completing a second paired administrative-motion cycle in less than a week and mirroring the Dkt. 68 / Dkt. 69 pairing covered yesterday. Neither filing's document text is publicly available through RECAP as of this writing, so the precise relief sought in Dkt. 70 — and the ground on which it is being opposed in Dkt. 71 — remains unverified beyond its procedural classification under Civil Local Rule 7-11. That classification governs the analysis: L.R. 7-11 is reserved for non-noticed administrative relief from case-management rules, not for contested merits disputes, and nothing in the docket captions signals a substantive claim, right, or obligation at stake. What is now clear is that both Administrative Motion cycles (Dkts. 68-69 and Dkts. 70-71) have drawn opposition, which means Judge Thompson will need to rule on each — neither resolved by consent. If either ruling touches the scope or timing of discovery, it becomes substantive under any materiality reading and will warrant immediate coverage. Absent the underlying documents, the safer read is that these oppositions are disputes over the administrative relief itself — page limits, filing accommodations, or analogous housekeeping — rather than over any discovery position.\n\nThe pattern is worth noting structurally: two separate administrative motions filed six days apart (August 6 and August 11), each opposed within four to five days. That cadence, against a September 18 fact-discovery close that is now thirty-six days out, suggests at least one side is pressing for procedural adjustments the other is resisting — consistent with the pre-cutoff friction common in IP discovery. \nThe close of fact discovery is September 18, 2026.\n \nExpert-report obligations follow in sequence: Opening Reports due October 30, 2026; Rebuttal Reports due December 18, 2026; and Close of Expert Discovery February 12, 2027.\n Any slippage to the September 18 cutoff would compress or shift each of those downstream dates and, more directly, would affect Getty's ability to complete the production record it needs to support damages quantification before any summary-judgment phase. Discovery disputes have been referred to Magistrate Judge Sallie Kim; if either motion crosses from administrative housekeeping into a genuine discovery dispute, that referral path is already in place.\n\nThe next concrete milestone is September 18, 2026 — close of fact discovery. Before that date, Judge Thompson (or Magistrate Judge Kim, if any administrative motion is re-characterized as a discovery dispute) will need to rule on both pending administrative motions. Those rulings are the next docket events worth watching.\n\n## Sources\n\n- [Getty Images (US), Inc. v. Stability AI, Ltd. — CourtListener Docket](https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/) — CourtListener, ongoing\n- [Getty Images v. Stability AI: Case Status May 2026](https://ailawsuittracker.com/cases/getty-v-stability-ai/) — AI Lawsuit Tracker, May 25, 2026\n- [Getty Images mostly wins, surviving motion to dismiss](https://chatgptiseatingtheworld.com/2026/04/24/getty-images-mostly-wins-surviving-motion-to-dismiss-claims-except-for-dmca-cmi-claim-but-can-amend-that-claim-in-light-of-judge-thompsons-ruling/) — ChatGPT Is Eating the World, April 24, 2026\n- [Northern District of California Allows Trademark Claims Against AI To Proceed](https://www.thefirewall-blog.com/2026/05/northern-district-of-california-allows-trademark-claims-against-ai-to-proceed/) — The Firewall, May 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Getty Images (US), Inc. v. Stability AI, Ltd. — CourtListener Docket",
+          "url": "https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/",
+          "note": "CourtListener, ongoing"
+        },
+        {
+          "title": "Getty Images v. Stability AI: Case Status May 2026",
+          "url": "https://ailawsuittracker.com/cases/getty-v-stability-ai/",
+          "note": "AI Lawsuit Tracker, May 25, 2026"
+        },
+        {
+          "title": "Getty Images mostly wins, surviving motion to dismiss",
+          "url": "https://chatgptiseatingtheworld.com/2026/04/24/getty-images-mostly-wins-surviving-motion-to-dismiss-claims-except-for-dmca-cmi-claim-but-can-amend-that-claim-in-light-of-judge-thompsons-ruling/",
+          "note": "ChatGPT Is Eating the World, April 24, 2026"
+        },
+        {
+          "title": "Northern District of California Allows Trademark Claims Against AI To Proceed",
+          "url": "https://www.thefirewall-blog.com/2026/05/northern-district-of-california-allows-trademark-claims-against-ai-to-proceed/",
+          "note": "The Firewall, May 2026"
+        }
+      ],
+      "activity": {
+        "filings": 2,
+        "articles": 0,
+        "latest": "2026-08-12"
+      }
+    },
+    {
       "date": "2026-08-12",
       "updated": "2026-08-12",
       "lede": "On August 11, Stability AI (or Getty — the filing party is not identified in the docket caption) filed a second Administrative Motion under Civil Local Rule 7-11 (Dkt. 70), one day after Getty or Stability filed an Opposition or Response to the first such motion (Dkt. 69, August 10), which itself was directed at the Administrative Motion filed August 6 (Dkt. 68). All three entries are procedural in character: Civil…",
