@@ -1356,12 +1356,19 @@
     });
   }
 
+  // Re-pull the briefings and repaint the grid — called on load and again
+  // when a watched Sync/Brief run finishes, so the fresh briefing appears
+  // without a manual reload (cache-busted: the runs land minutes apart).
+  function reloadBriefings() {
+    return fetchJson(BASE + "case-briefings.json?ts=" + Date.now()).then(function (d) {
+      BRIEFING_ITEMS = ((d && d.items) || []).slice();
+      renderCaseGrid();
+      updateFilterButtons();
+    }).catch(function () { renderCaseGrid(); });
+  }
+
   // ── Loads ─────────────────────────────────────────────────────────────────
-  fetchJson(BASE + "case-briefings.json").then(function (d) {
-    BRIEFING_ITEMS = ((d && d.items) || []).slice();
-    renderCaseGrid();
-    updateFilterButtons();
-  }).catch(function () { renderCaseGrid(); });
+  reloadBriefings();
 
   // Briefing groups: live API first, static build copy as fallback.
   fetchJson(BASE + "api/briefing-groups")
@@ -1935,6 +1942,11 @@
           RUN_STATES[slug] = st;
           paintRunBadge(slug);
           if (st.state === "success") {
+            // The run pushed fresh case-briefings.json — pull it in (twice:
+            // once now, once after the 60s edge-cache window) so the new
+            // briefing shows up without a manual reload.
+            setTimeout(reloadBriefings, 4000);
+            setTimeout(reloadBriefings, 70000);
             setTimeout(function () {
               if (RUN_STATES[slug] && RUN_STATES[slug].state === "success") {
                 delete RUN_STATES[slug];
