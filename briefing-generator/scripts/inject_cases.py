@@ -108,8 +108,8 @@ UD_CSS = r"""
   .ud-type-select:focus{border-color:var(--neon);}
   /* Color popover */
   .ud-pill.ud-pill-sq{border-radius:0;}
-  .ud-pill-theme{background:#0A0A0A;color:#FFFFFF;border:1px solid #0A0A0A;border-radius:99px;}
-  [data-theme="dark"] .ud-pill-theme{background:#FFFFFF;color:#0A0A0A;border-color:#FFFFFF;}
+  .ud-pill-theme{background:transparent;color:#0A0A0A;border:1px dotted #0A0A0A;border-radius:99px;}
+  [data-theme="dark"] .ud-pill-theme{background:transparent;color:#FFFFFF;border-color:#FFFFFF;}
   .ud-color-pop{position:absolute;z-index:1000;background:var(--surface);border:1px solid var(--line-strong);padding:16px;width:232px;box-shadow:0 6px 24px rgba(0,0,0,0.22);}
   .ud-pop-title{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .ud-pop-swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:14px;}

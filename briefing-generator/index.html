@@ -138,8 +138,8 @@
     .ih-pill { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.03em; padding: 1px 8px; border-radius: 99px; white-space: nowrap; text-transform: none; }
     .ih-pill-sq { border-radius: 0; }
     /* Theme pills: monochrome outline — white bg / black outline+text (inverts in dark) */
-    .ih-pill-theme { background: #0A0A0A; color: #FFFFFF; border: 1px solid #0A0A0A; border-radius: 99px; }
-    [data-theme="dark"] .ih-pill-theme { background: #FFFFFF; color: #0A0A0A; border-color: #FFFFFF; }
+    .ih-pill-theme { background: transparent; color: #0A0A0A; border: 1px dotted #0A0A0A; border-radius: 99px; }
+    [data-theme="dark"] .ih-pill-theme { background: transparent; color: #FFFFFF; border-color: #FFFFFF; }
     /* Band: Prospects full-width first, then News (1) · Calendar (2) · Notes (1),
        all stretched to the same row height. */
     .ih-band { max-width: 1680px; margin: 0 auto 10px; padding: 0 32px; display: grid; grid-template-columns: var(--band-cols, 1fr 2fr 1fr); gap: 14px; align-items: stretch; }
