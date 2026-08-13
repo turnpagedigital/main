@@ -14,13 +14,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
-    "date_last_filing": "2026-08-12",
-    "meta_fetched_at": "2026-08-13T08:52:46.187653+00:00",
-    "fetched_at": "2026-08-13T19:28:37.319756+00:00",
+    "date_last_filing": "2026-08-13",
+    "meta_fetched_at": "2026-08-13T20:51:19.004383+00:00",
+    "fetched_at": "2026-08-13T20:51:19.004383+00:00",
     "as_of": "Aug 13, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 5,
     "recent": [
+      {
+        "entry_number": 77,
+        "date_filed": "2026-08-13",
+        "time_filed": "16:09:58",
+        "date_display": "Aug 13, 2026",
+        "description": "Authorize - Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 76,
         "date_filed": "2026-08-12",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.75.0.pdf"
-      },
-      {
-        "entry_number": 74,
-        "date_filed": "2026-08-12",
-        "time_filed": "13:11:25",
-        "date_display": "Aug 12, 2026",
-        "description": "Request of US Trustee to Schedule Section 341 Meeting of Creditors for Wednesday, September 2, 2026, at 1:00 p.m. (ET) Filed by U.S. Trustee. (Hackman, Benjamin) (Entered: 08/12/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 77,
+        "date_filed": "2026-08-13",
+        "time_filed": "16:09:58",
+        "date_display": "Aug 13, 2026",
+        "description": "Authorize - Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 76,
         "date_filed": "2026-08-12",
