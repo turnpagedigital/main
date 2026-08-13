@@ -15,12 +15,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-13",
-    "meta_fetched_at": "2026-08-13T20:51:19.004383+00:00",
-    "fetched_at": "2026-08-13T22:06:20.099809+00:00",
+    "meta_fetched_at": "2026-08-13T23:05:28.140714+00:00",
+    "fetched_at": "2026-08-13T23:05:28.140714+00:00",
     "as_of": "Aug 13, 2026",
     "backfilled": true,
-    "new_in_72h": 6,
+    "new_in_72h": 7,
     "recent": [
+      {
+        "entry_number": 79,
+        "date_filed": "2026-08-13",
+        "time_filed": "18:50:47",
+        "date_display": "Aug 13, 2026",
+        "description": "Employ/Retain - Application/Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 78,
         "date_filed": "2026-08-13",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 76,
-        "date_filed": "2026-08-12",
-        "time_filed": "17:21:12",
-        "date_display": "Aug 12, 2026",
-        "description": "Notice of Meeting of Creditors/Commencement of Case Filed by Omnis Pleasants, LLC. 341(a) meeting to be held on 9/2/2026 at 01:00 PM at Virtual Hearing: Refer to Notice of Zoom Hearing. Objection 523 due by 11/2/2026. (Diver, James) (Entered: 08/12/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 79,
+        "date_filed": "2026-08-13",
+        "time_filed": "18:50:47",
+        "date_display": "Aug 13, 2026",
+        "description": "Employ/Retain - Application/Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 78,
         "date_filed": "2026-08-13",
