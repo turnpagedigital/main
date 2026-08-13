@@ -493,8 +493,12 @@
      menu per row on narrow table layouts (721–1080px); full icons elsewhere,
      mobile cards untouched. td.ud-more-cell carries extra specificity so the
      mobile ".ud-table td{display:inline-block}" rule can't unhide it. */
-  .ud-table td.ud-more-cell { display: none; text-align: center; white-space: nowrap; }
-  .ud-table th.ud-th-more { display: none; }
+  /* Outside the narrow band the ⋮ column must not exist visually — but under
+     table-layout:fixed a display:none column STILL takes an auto share of the
+     table width (it swallowed ~500px of dead space on desktop). Zero-width it
+     instead, so ENTRY is the only flexible column. */
+  .ud-table td.ud-more-cell, .ud-table th.ud-th-more { width: 0 !important; max-width: 0; padding: 0 !important; border: none !important; overflow: hidden; text-align: center; white-space: nowrap; }
+  .ud-table td.ud-more-cell .ud-more-btn { display: none; }
   .ud-more-btn { background: none; border: none; color: var(--ink-60); font-size: 17px; font-weight: 700; cursor: pointer; padding: 2px 8px; line-height: 1; }
   .ud-more-btn:hover { color: var(--ink); }
   .ud-more-menu { position: fixed; z-index: 1400; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); padding: 4px; min-width: 170px; display: none; }
@@ -505,8 +509,10 @@
        under the base table-layout:fixed the hidden columns still ate width. */
     .ud-table { table-layout: auto; }
     .ud-table td.ud-mark-cell, .ud-table th.ud-th-icon { display: none; }
-    .ud-table td.ud-more-cell { display: table-cell; }
-    .ud-table th.ud-th-more { display: table-cell; }
+    .ud-table td.ud-more-cell, .ud-table th.ud-th-more { width: 36px !important; max-width: none; padding: 8px 6px !important; overflow: visible; }
+    .ud-table th.ud-th-more { border-bottom: 2px solid var(--ink) !important; }
+    .ud-table td.ud-more-cell { border-bottom: 1px solid var(--line) !important; }
+    .ud-table td.ud-more-cell .ud-more-btn { display: inline-block; }
     /* Slim the fixed columns so ENTRY stays readable (!important beats the
        inline base widths + drag-to-resize prefs). */
     .ud-table th#ud-th-time { width: 64px !important; }
