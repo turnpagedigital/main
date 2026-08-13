@@ -420,7 +420,7 @@
   .ud-empty{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}
 </style>
 <style>
-  [data-theme="light"], [data-theme="light"] body { background: var(--paper-2); }
+  [data-theme="light"], [data-theme="light"] body { background: #FFFFFF; }
   [data-theme="light"] .page-title { border-bottom: 1px solid var(--line-strong); }
   [data-theme="light"] .ud-table { border-collapse: collapse; }
   [data-theme="light"] .ud-table tbody tr { background: var(--surface); }
@@ -433,16 +433,19 @@
   [data-theme="light"] .ud-table tbody tr:last-child td { border-bottom: none; }
   [data-theme="light"] .ud-row-article td { background: #E7E9EE; }
   [data-theme="light"] .ud-row-article:hover td { background: #F0F1F4; }
-  [data-theme="light"] .ud-table thead { position: relative; }
+  /* Header pill is anchored to the TABLE, not the thead — iOS WebKit ignores
+     position:relative on thead, which exploded the inset:0 pill to page size.
+     Height comes from --ud-thead-h, kept current by docket.js. */
+  [data-theme="light"] .ud-table { position: relative; }
   [data-theme="light"] .ud-table thead th { background: transparent; border: none; box-shadow: none; position: relative; z-index: 1; padding-top: 13px; padding-bottom: 13px; }
-  [data-theme="light"] .ud-table thead::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: #FDFDFE; border-radius: 20px; box-shadow: 0 2px 10px rgba(10,10,10,0.08); }
+  [data-theme="light"] .ud-table::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: var(--ud-thead-h, 46px); z-index: 0; pointer-events: none; background: #FDFDFE; border-radius: 20px; box-shadow: 0 2px 10px rgba(10,10,10,0.08); }
   [data-theme="light"] .ud-table tbody tr:first-child td { padding-top: 20px; }
   [data-theme="light"] .ud-search-input:focus { background: #FFFFFF; }
   [data-theme="dark"] .page-title { border-bottom: 1px solid var(--line-strong); }
   [data-theme="dark"] .ud-day-row td { border-top: none; }
-  [data-theme="dark"] .ud-table thead { position: relative; }
+  [data-theme="dark"] .ud-table { position: relative; }
   [data-theme="dark"] .ud-table thead th { background: transparent; border: none; box-shadow: none; position: relative; z-index: 1; padding-top: 13px; padding-bottom: 13px; }
-  [data-theme="dark"] .ud-table thead::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 20px; box-shadow: 0 4px 14px rgba(0,0,0,0.4); }
+  [data-theme="dark"] .ud-table::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: var(--ud-thead-h, 46px); z-index: 0; pointer-events: none; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 20px; box-shadow: 0 4px 14px rgba(0,0,0,0.4); }
   [data-theme="dark"] .ud-table tbody tr:first-child td { padding-top: 20px; }
   .ud-table tr.ud-row-daycollapsed { display: none; }
   .ud-table tbody tr.ud-day-row td { padding-top: 30px; }
@@ -480,7 +483,18 @@
     #ud-filter-btn { display: inline-flex; }
     #ud-count, #ud-hidden-info { display: none; }
     .ud-clear-filters { display: block; margin: 4px 2px 0; }
+    .ud-table::before { display: none; }
     .ud-case-dd-panel, #ud-source-dd-panel, .ud-th-menu { position: fixed !important; top: auto !important; bottom: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; max-width: none !important; min-width: 0 !important; max-height: 72vh; overflow-y: auto; border-radius: 16px 16px 0 0 !important; box-shadow: 0 -10px 34px rgba(0,0,0,0.28) !important; padding-bottom: 20px !important; z-index: 1300 !important; }
+  }
+  /* Landscape phones (wide enough for the table, too tight for every column):
+     drop AUTHOR (usually em-dash) and slim the fixed widths so ENTRY can breathe. */
+  @media (min-width: 721px) and (max-height: 520px) {
+    .ud-table th#ud-th-source, .ud-table td.ud-party { display: none; }
+    /* !important: the th widths are inline (base HTML + drag-to-resize prefs) */
+    .ud-table th#ud-th-time { width: 64px !important; }
+    .ud-table th#ud-th-case { width: 110px !important; }
+    .ud-table th#ud-th-doc { width: 110px !important; }
+    .ud-table td.ud-doc { white-space: normal; }
   }
 </style>
 <!-- AUTH GATE START -->

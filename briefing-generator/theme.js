@@ -26,10 +26,16 @@
   function applyFont(){
     if(!document.body)return;
     var z=fontScale()/100;
-    document.body.style.zoom=z;
-    document.body.style.minHeight='calc(100vh / '+z+')';
+    // Zoom scales the type, and width = 100%/z pins the layout to exactly one
+    // viewport wide at any size — text grows within the same visual layout
+    // instead of widening the page or reflowing columns.
+    document.body.style.zoom=(z===1?'':String(z));
+    document.body.style.width=(z===1?'':'calc(100% / '+z+')');
+    document.body.style.minHeight=(z===1?'':'calc(100vh / '+z+')');
     var lab=document.getElementById('tn-fs-label');
     if(lab)lab.textContent=fontScale()+'%';
+    var glab=document.getElementById('tn-gf-label');
+    if(glab)glab.textContent=fontScale()+'%';
   }
   window.stepFont=function(d){
     var s=Math.max(80,Math.min(150,fontScale()+d*10));
@@ -240,15 +246,21 @@
       '.tn-gear-panel a:hover{background:var(--paper-2);}'+
       '@media (hover:hover){.tn-gear:hover .tn-gear-panel{display:flex;}}'+
       '.tn-gear.open .tn-gear-panel{display:flex;}'+
-      // Theme (System/Dark/Light) folded into the gear on mobile, where the
-      // standalone toggle is hidden — so settings + theme live in one menu.
-      '.tn-gear-theme{display:none;flex-direction:column;border-top:1px solid var(--line);margin-top:4px;padding-top:4px;}'+
+      // Theme (System/Dark/Light) and text size live in the gear menu on every
+      // viewport — the standalone toggle + A−/A+ strip are hidden for good.
+      '.tn-gear-theme{display:flex;flex-direction:column;border-top:1px solid var(--line);margin-top:4px;padding-top:4px;}'+
       '.tn-gear-theme .tn-gt-lbl{font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-40);padding:4px 10px 3px;}'+
       '.tn-gear-theme button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;padding:8px 10px;}'+
       '.tn-gear-theme button:hover{background:var(--paper-2);}'+
       '.tn-gear-theme button .tn-gt-check{margin-left:auto;color:var(--ink-60);visibility:hidden;}'+
       '.tn-gear-theme button.on .tn-gt-check{visibility:visible;}'+
-      '@media (max-width:720px){#theme-toggle{display:none !important;}.tn-gear-theme{display:flex;}}';
+      '.tn-gear-font{display:flex;flex-direction:column;border-top:1px solid var(--line);margin-top:4px;padding-top:4px;}'+
+      '.tn-gf-row{display:flex;align-items:center;gap:8px;padding:6px 10px 8px;}'+
+      '.tn-gf-row button{background:transparent;border:1px solid var(--line-strong);color:var(--ink);border-radius:99px;padding:3px 9px;cursor:pointer;font-family:inherit;font-size:11px;font-weight:800;line-height:1;}'+
+      '.tn-gf-row button:hover{border-color:var(--ink);}'+
+      '#tn-gf-label{font-size:11px;color:var(--ink-60);min-width:36px;text-align:center;font-variant-numeric:tabular-nums;}'+
+      '#theme-toggle{display:none !important;}'+
+      '#tn-fs{display:none !important;}';
     document.head.appendChild(st);
     var panel=gw.querySelector('.tn-gear-panel');
     if(panel&&!panel.querySelector('[data-gear-briefings]')){
@@ -277,6 +289,23 @@
         if(!b)return;
         localStorage.setItem(K,b.getAttribute('data-theme-set'));apply();markTheme();
       });
+    }
+    if(panel&&!panel.querySelector('.tn-gear-font')){
+      var fwrap=document.createElement('div');
+      fwrap.className='tn-gear-font';
+      fwrap.innerHTML='<div class="tn-gt-lbl">Text size</div>'+
+        '<div class="tn-gf-row"><button type="button" data-fs="-1" aria-label="Smaller text">A−</button>'+
+        '<span id="tn-gf-label">100%</span>'+
+        '<button type="button" data-fs="1" aria-label="Larger text">A+</button></div>';
+      panel.appendChild(fwrap);
+      fwrap.addEventListener('click',function(e){
+        var b=e.target.closest('[data-fs]');
+        if(!b)return;
+        e.stopPropagation();
+        window.stepFont(parseInt(b.getAttribute('data-fs'),10));
+      });
+      var glab=fwrap.querySelector('#tn-gf-label');
+      if(glab)glab.textContent=fontScale()+'%';
     }
     gb.addEventListener('click',function(e){e.stopPropagation();gw.classList.toggle('open');if(gw.classList.contains('open'))markTheme();});
     document.addEventListener('click',function(e){if(!gw.contains(e.target))gw.classList.remove('open');});
