@@ -115,15 +115,6 @@
     return '<span class="ih-pill ih-pill-theme">' + (SHOW_THEME_EMOJIS && t.emoji ? t.emoji + " " : "") + esc(t.name) + "</span>";
   }
 
-  // Briefing-group pills pick up the admin-set group color (Manage →
-  // Briefings); colorless groups keep the muted default.
-  function groupColorOf(name) {
-    var list = (typeof BRIEFING_GROUPS !== "undefined" && BRIEFING_GROUPS) || [];
-    for (var i = 0; i < list.length; i++) {
-      if (list[i] && (list[i].name === name || list[i].id === name)) return list[i].color || "";
-    }
-    return "";
-  }
   function groupPill(name) {
     return '<span class="ih-pill ih-pill-theme">' + esc(name) + "</span>";
   }

@@ -171,6 +171,7 @@
     var st=document.createElement('style');
     st.textContent=
       '.tn-hamburger{display:none;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:4px;width:32px;height:30px;font-size:16px;line-height:1;cursor:pointer;flex:0 0 auto;}'+
+      '.tn.tn-compact .tn-lbl{display:none;}'+
       '[data-theme="light"] .tn-hamburger{border-color:rgba(10,10,10,0.14);color:#0A0A0A;}'+
       '@media (max-width:720px){'+
         '.tn-kbd,#tn-fs{display:none !important;}'+
@@ -192,7 +193,7 @@
         '.tn-back .tn-lbl{display:none;}'+
         '.tn-back{padding:6px 5px;}'+
         '.tn-back .tn-ico{font-size:17px;}'+
-        '.tn-kbd-btn{font-size:0;}.tn-kbd-btn::before{content:"⌨";font-size:15px;}'+
+
       '}';
     document.head.appendChild(st);
     var row=document.querySelector('.tn-row');
@@ -204,6 +205,27 @@
       if(sp<1)return;
       a.innerHTML='<span class="tn-ico">'+txt.slice(0,sp)+'</span> <span class="tn-lbl">'+txt.slice(sp+1)+'</span>';
     });
+    // Icons-only when the full labels would wrap the row (desktop widths
+    // narrower than the nav's natural width — before the 720px mobile menu).
+    var navEl=document.querySelector('.tn');
+    var rowEl=navEl&&navEl.querySelector('.tn-row');
+    function navRowFits(){
+      if(!rowEl||rowEl.children.length<2)return true;
+      var t0=rowEl.children[0].offsetTop;
+      for(var i=1;i<rowEl.children.length;i++){
+        if(rowEl.children[i].offsetTop>t0+10)return false;
+      }
+      return true;
+    }
+    function fitNav(){
+      if(!navEl)return;
+      if(matchMedia('(max-width: 720px)').matches){navEl.classList.remove('tn-compact');return;}
+      navEl.classList.remove('tn-compact');
+      if(!navRowFits())navEl.classList.add('tn-compact');
+    }
+    var fitT=null;
+    window.addEventListener('resize',function(){clearTimeout(fitT);fitT=setTimeout(fitNav,120);});
+    fitNav();
     var btn=document.createElement('button');
     btn.type='button';
     btn.className='tn-hamburger';

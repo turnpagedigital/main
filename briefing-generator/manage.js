@@ -1094,8 +1094,6 @@
       .catch(function () { el.textContent = "Couldn’t load."; });
   }
 
-  var GROUP_SWATCHES = ["#fff5c7", "#fde864", "#cafb67", "#8df7e0", "#ffca9e", "#ffc2c8", "#d7cdff", "#c2d7ff", "#a9e2ff", "#ffc2e7", "#e6e6e6"];
-
   function slugifyGroup(name) {
     return String(name || "").toLowerCase().replace(/['’.]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 50);
   }
@@ -1130,14 +1128,7 @@
                 var c = CASES.filter(function (x) { return x.slug === slug; })[0];
                 return c ? casePill(c.slug, c.short_name || c.display_name) : esc(slug);
               }).join(" ");
-              var nameHtml = g.color
-                ? '<span style="display:inline-block;background:' + esc(g.color) + ";color:" + autoFg(g.color) + ';padding:2px 10px;font-weight:800;font-size:11.5px;">' + esc(g.name) + "</span>"
-                : '<strong style="font-size:12.5px;">' + esc(g.name) + "</strong>";
-              var sw = '<span class="mg-grp-sw" title="Pill color for this group">' + GROUP_SWATCHES.map(function (c) {
-                  return '<button type="button" class="mg-grp-swb' + (g.color === c ? " on" : "") + '" data-gsw="' + gi + "|" + c + '" style="background:' + c + '"></button>';
-                }).join("") +
-                '<button type="button" class="mg-grp-swb mg-grp-swb-none' + (!g.color ? " on" : "") + '" data-gsw="' + gi + '|" title="No color">×</button></span>';
-              return '<div class="mg-bi-grp-row">' + nameHtml + " — " + members + sw +
+              return '<div class="mg-bi-grp-row"><strong style="font-size:12.5px;">' + esc(g.name) + "</strong> — " + members +
                 ' <button type="button" class="mg-bi-grp-del" data-del="' + gi + '" title="Ungroup — members go back to their own briefings">×</button></div>';
             }).join("")
           : '<div class="mg-hint" style="margin:0 0 10px;">No briefing groups yet — every case gets its own briefing.</div>';
@@ -1159,18 +1150,6 @@
           b.addEventListener("click", function () {
             var i = Number(b.getAttribute("data-del"));
             biSaveGroups(groups.filter(function (_, j) { return j !== i; }), el.querySelector(".mg-bi-grp-status"));
-          });
-        });
-        el.querySelectorAll("[data-gsw]").forEach(function (b) {
-          b.addEventListener("click", function () {
-            var parts = b.getAttribute("data-gsw").split("|");
-            var idx = Number(parts[0]), col = parts[1];
-            biSaveGroups(groups.map(function (g, j) {
-              if (j !== idx) return g;
-              var ng = { id: g.id, name: g.name, members: g.members };
-              if (col) ng.color = col;
-              return ng;
-            }), el.querySelector(".mg-bi-grp-status"));
           });
         });
         var createBtn = el.querySelector(".mg-bi-grp-create");
