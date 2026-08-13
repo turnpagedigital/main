@@ -772,19 +772,15 @@ DOCKET_LIGHT_CSS = """<style>
   [data-theme="light"] .ud-table tbody tr:last-child td { border-bottom: none; }
   [data-theme="light"] .ud-row-article td { background: #E7E9EE; }
   [data-theme="light"] .ud-row-article:hover td { background: #F0F1F4; }
-  /* Header pill is anchored to the TABLE, not the thead — iOS WebKit ignores
-     position:relative on thead, which exploded the inset:0 pill to page size.
-     Height comes from --ud-thead-h, kept current by docket.js. */
-  [data-theme="light"] .ud-table { position: relative; }
-  [data-theme="light"] .ud-table thead th { background: transparent; border: none; box-shadow: none; position: relative; z-index: 1; padding-top: 13px; padding-bottom: 13px; }
-  [data-theme="light"] .ud-table::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: var(--ud-thead-h, 46px); z-index: 0; pointer-events: none; background: #FDFDFE; border-radius: 20px; box-shadow: 0 2px 10px rgba(10,10,10,0.08); }
+  /* Header row: ink text (black in light, white in dark), no background bar —
+     a thick ink rule under the row separates it from the entries, spanning the
+     same width as the rows below. Active filters underline instead of recolor. */
+  .ud-table thead th { background: transparent; border: none; border-bottom: 3px solid var(--ink); box-shadow: none; color: var(--ink); position: relative; z-index: 1; padding-top: 13px; padding-bottom: 13px; }
+  .ud-table thead th.ud-th-on { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
   [data-theme="light"] .ud-table tbody tr:first-child td { padding-top: 20px; }
   [data-theme="light"] .ud-search-input:focus { background: #FFFFFF; }
   [data-theme="dark"] .page-title { border-bottom: 1px solid var(--line-strong); }
   [data-theme="dark"] .ud-day-row td { border-top: none; }
-  [data-theme="dark"] .ud-table { position: relative; }
-  [data-theme="dark"] .ud-table thead th { background: transparent; border: none; box-shadow: none; position: relative; z-index: 1; padding-top: 13px; padding-bottom: 13px; }
-  [data-theme="dark"] .ud-table::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: var(--ud-thead-h, 46px); z-index: 0; pointer-events: none; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 20px; box-shadow: 0 4px 14px rgba(0,0,0,0.4); }
   [data-theme="dark"] .ud-table tbody tr:first-child td { padding-top: 20px; }
   .ud-table tr.ud-row-daycollapsed { display: none; }
   .ud-table tbody tr.ud-day-row td { padding-top: 30px; }
@@ -822,8 +818,33 @@ DOCKET_LIGHT_CSS = """<style>
     #ud-filter-btn { display: inline-flex; }
     #ud-count, #ud-hidden-info { display: none; }
     .ud-clear-filters { display: block; margin: 4px 2px 0; }
-    .ud-table::before { display: none; }
     .ud-case-dd-panel, #ud-source-dd-panel, .ud-th-menu { position: fixed !important; top: auto !important; bottom: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; max-width: none !important; min-width: 0 !important; max-height: 72vh; overflow-y: auto; border-radius: 16px 16px 0 0 !important; box-shadow: 0 -10px 34px rgba(0,0,0,0.28) !important; padding-bottom: 20px !important; z-index: 1300 !important; }
+  }
+  /* Row-action icons (bookmark/snooze/hide/delete/note) collapse into one ⋮
+     menu per row on narrow table layouts (721–1080px); full icons elsewhere,
+     mobile cards untouched. td.ud-more-cell carries extra specificity so the
+     mobile ".ud-table td{display:inline-block}" rule can't unhide it. */
+  .ud-table td.ud-more-cell { display: none; text-align: center; white-space: nowrap; }
+  .ud-table th.ud-th-more { display: none; }
+  .ud-more-btn { background: none; border: none; color: var(--ink-60); font-size: 17px; font-weight: 700; cursor: pointer; padding: 2px 8px; line-height: 1; }
+  .ud-more-btn:hover { color: var(--ink); }
+  .ud-more-menu { position: fixed; z-index: 1400; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); padding: 4px; min-width: 170px; display: none; }
+  .ud-more-menu button { display: flex; align-items: center; gap: 9px; width: 100%; background: none; border: none; font-family: inherit; font-size: 12.5px; font-weight: 600; color: var(--ink); cursor: pointer; padding: 8px 10px; text-align: left; border-radius: 6px; }
+  .ud-more-menu button:hover { background: var(--paper-2); }
+  @media (min-width: 721px) and (max-width: 1080px) {
+    /* auto layout: with the icon columns display:none they truly collapse —
+       under the base table-layout:fixed the hidden columns still ate width. */
+    .ud-table { table-layout: auto; }
+    .ud-table td.ud-mark-cell, .ud-table th.ud-th-icon { display: none; }
+    .ud-table td.ud-more-cell { display: table-cell; }
+    .ud-table th.ud-th-more { display: table-cell; }
+    /* Slim the fixed columns so ENTRY stays readable (!important beats the
+       inline base widths + drag-to-resize prefs). */
+    .ud-table th#ud-th-time { width: 64px !important; }
+    .ud-table th#ud-th-case { width: 118px !important; }
+    .ud-table th#ud-th-source { width: 110px !important; }
+    .ud-table th#ud-th-doc { width: 118px !important; }
+    .ud-table td.ud-doc { white-space: normal; }
   }
   /* Landscape phones (wide enough for the table, too tight for every column):
      drop AUTHOR (usually em-dash) and slim the fixed widths so ENTRY can breathe. */
@@ -1101,9 +1122,10 @@ def render_unified_docket(cases):
       <th class="ud-th-icon" style="width:26px;text-align:center" title="Hide rows (H)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></th>
       <th class="ud-th-icon" style="width:26px;text-align:center" title="Delete rows (X)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M3 6h18"/><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></th>
       <th id="ud-th-note" class="ud-th-toggle ud-th-icon" style="width:44px;text-align:center" title="Show entries with notes only"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></th>
+      <th id="ud-th-more" class="ud-th-more" style="width:36px;text-align:center" title="Row actions"></th>
     </tr></thead>
     <tbody id="ud-tbody">
-      <tr><td colspan="10" class="ud-empty">Loading…</td></tr>
+      <tr><td colspan="11" class="ud-empty">Loading…</td></tr>
     </tbody>
   </table>
 
