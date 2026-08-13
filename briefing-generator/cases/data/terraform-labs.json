@@ -8,18 +8,12 @@
     "judge": "Brendan Linehan Shannon",
     "docket_id": "68180454",
     "status": "active",
-    "sync": "active",
-    "court_id": ""
+    "sync": "active"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
-    "date_last_filing": "2026-08-05",
-    "meta_fetched_at": "2026-08-13T16:12:48.229832+00:00",
-    "fetched_at": "2026-08-13T16:12:48.229832+00:00",
-    "as_of": "Aug 13, 2026",
-    "backfilled": false,
     "new_in_72h": 0,
     "recent": [
       {
@@ -13867,6 +13861,11 @@
         "doc_url": ""
       }
     ],
+    "date_last_filing": "2026-08-05",
+    "meta_fetched_at": "2026-08-13T16:12:48.229832+00:00",
+    "fetched_at": "2026-08-13T16:12:48.229832+00:00",
+    "as_of": "Aug 13, 2026",
+    "backfilled": false,
     "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68180454&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=41"
   },
   "claims_administrator": {
@@ -13966,6 +13965,5 @@
       "date": "2025-12-19",
       "summary": "The administrator overseeing the wind-down of Terraform Labs filed a lawsuit against Jump Trading, alleging the Chicago-based firm illegally profited from and helped accelerate its 2022 collapse. The suit seeks $4 billion in damages from Jump Trading and its executives."
     }
-  ],
-  "events": []
+  ]
 }
