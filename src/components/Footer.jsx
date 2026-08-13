@@ -61,8 +61,8 @@ export default function Footer() {
           <div style={{ display: "flex", alignItems: "flex-start" }}>
             <a href={hashHref("")} style={{ display: "inline-block", lineHeight: 0 }}>
               <img
-                src="/turnpage-logo.png"
-                alt="Turnpage Digital Markets"
+                src="/TPDM%20Logo%20Std.png"
+                alt="TURNPAGE"
                 loading="lazy"
                 style={{ height: 56, width: "auto", display: "block" }}
               />

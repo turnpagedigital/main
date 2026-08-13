@@ -130,8 +130,8 @@ export default function NavBar({ currentPage, open, onOpenChange }) {
           aria-label="Turnpage Digital Markets — Home"
         >
           <img
-            src="/turnpage-logo.png"
-            alt="Turnpage Digital Markets"
+            src="/TPDM%20Logo%20Std.png"
+            alt="TURNPAGE"
             style={{ height: 36, width: "auto", display: "block" }}
           />
         </a>

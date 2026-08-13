@@ -1,5 +1,5 @@
 {
-  "_comment": "File library — centralised store for images, logos, favicons, documents, and videos used across the site. Managed via /admin/assets (file list) and /admin/pages (favicon picker). Files live in public/library/ (uploaded) or as external URLs. favicons map { production, preview, admin } → URL from this library or a static path under /. Schema: { files: [{ id, name, url, type, companies, source, addedAt }], favicons: { production, preview, admin } }.",
+  "_comment": "File library \u2014 centralised store for images, logos, favicons, documents, and videos used across the site. Managed via /admin/assets (file list) and /admin/pages (favicon picker). Files live in public/library/ (uploaded) or as external URLs. favicons map { production, preview, admin } \u2192 URL from this library or a static path under /. Schema: { files: [{ id, name, url, type, companies, source, addedAt }], favicons: { production, preview, admin } }.",
   "files": [
     {
       "id": "msni4dcp-u3szn",
@@ -98,15 +98,6 @@
       "addedAt": "2026-06-10T02:25:32.965Z"
     },
     {
-      "id": "mpnfgqbo-0ssio",
-      "name": "favicon3",
-      "url": "/favicon3.png",
-      "type": "favicon",
-      "companies": [],
-      "source": "upload",
-      "addedAt": "2026-05-27T02:11:05.412Z"
-    },
-    {
       "id": "mpnerg21-z8e58",
       "name": "logo_bloomberg",
       "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Bloomberg_logo.svg",
@@ -130,7 +121,7 @@
     },
     {
       "id": "mig-mpnhpe6o-ixwz6",
-      "name": "Logo — ABI Journal",
+      "name": "Logo \u2014 ABI Journal",
       "url": "/library/bio/media-abi-journal.jpg",
       "type": "logo",
       "companies": [
@@ -141,7 +132,7 @@
     },
     {
       "id": "mig-mpnhpe6o-km9zj",
-      "name": "Logo — Benzinga",
+      "name": "Logo \u2014 Benzinga",
       "url": "/library/bio/media-benzinga.png",
       "type": "logo",
       "companies": [
@@ -152,7 +143,7 @@
     },
     {
       "id": "mig-mpnhpe6o-1zslv",
-      "name": "Logo — CoinDesk",
+      "name": "Logo \u2014 CoinDesk",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/CoinDesk_logo.svg/3840px-CoinDesk_logo.svg.png",
       "type": "logo",
       "companies": [
@@ -163,7 +154,7 @@
     },
     {
       "id": "mig-mpnhpe6o-71hbg",
-      "name": "Logo — Grant's Interest Rate Observer",
+      "name": "Logo \u2014 Grant's Interest Rate Observer",
       "url": "https://grantspub.com/images/logo.svg",
       "type": "logo",
       "companies": [
@@ -174,7 +165,7 @@
     },
     {
       "id": "mig-mpnhpe6o-hdh3b",
-      "name": "Logo — NPR",
+      "name": "Logo \u2014 NPR",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/National_Public_Radio_logo.svg/3840px-National_Public_Radio_logo.svg.png",
       "type": "logo",
       "companies": [
@@ -185,7 +176,7 @@
     },
     {
       "id": "mig-mpnhpe6o-by57d",
-      "name": "Logo — PBS",
+      "name": "Logo \u2014 PBS",
       "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/PBS_logo_2019.svg",
       "type": "logo",
       "companies": [
@@ -196,7 +187,7 @@
     },
     {
       "id": "mig-mpnhpe6o-xx9yy",
-      "name": "Logo — The Block",
+      "name": "Logo \u2014 The Block",
       "url": "/library/screenshot-2026-06-04-at-10-46-17-pm-2.png",
       "type": "logo",
       "companies": [
@@ -207,7 +198,7 @@
     },
     {
       "id": "mig-mpnhpe6o-pdcph",
-      "name": "Logo — The New York Times",
+      "name": "Logo \u2014 The New York Times",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/NewYorkTimes.svg/500px-NewYorkTimes.svg.png?_=20190313030219",
       "type": "logo",
       "companies": [
@@ -218,7 +209,7 @@
     },
     {
       "id": "mig-mpnhpe6o-k2vst",
-      "name": "Logo — Wall Street Journal",
+      "name": "Logo \u2014 Wall Street Journal",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/The_Wall_Street_Journal.svg/3840px-The_Wall_Street_Journal.svg.png",
       "type": "logo",
       "companies": [
@@ -240,15 +231,6 @@
       "id": "mig-mpnhpe6t-hz9ph",
       "name": "Logotype green",
       "url": "/Logotype green.png",
-      "type": "logo",
-      "companies": [],
-      "source": "url",
-      "addedAt": "2026-05-27T03:13:48.811Z"
-    },
-    {
-      "id": "mig-mpnhpe6u-ekgao",
-      "name": "New TPDM Logo",
-      "url": "/New TPDM Logo.png",
       "type": "logo",
       "companies": [],
       "source": "url",
@@ -613,7 +595,7 @@
     },
     {
       "id": "mig-mpnhpe6x-pvm2n",
-      "name": "Logo — FTX Trading Ltd.",
+      "name": "Logo \u2014 FTX Trading Ltd.",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/FTX_logo.svg/960px-FTX_logo.svg.png?_=20241222133700",
       "type": "logo",
       "companies": [
@@ -625,7 +607,7 @@
     },
     {
       "id": "mig-mpnhpe6x-547ml",
-      "name": "Logo — Genesis Global Holdings Ch. 11",
+      "name": "Logo \u2014 Genesis Global Holdings Ch. 11",
       "url": "https://cdn.cookielaw.org/logos/feb266c9-c5e5-43b3-805c-55d16f266ad1/d365a1a6-9a06-4629-b3ca-c81a3ccdc275/8432db13-43c8-460b-9e9c-0ddec3c47e7b/genesis-logo-black-1000.png",
       "type": "logo",
       "companies": [
@@ -637,7 +619,7 @@
     },
     {
       "id": "mig-mpnhpe6x-qew6v",
-      "name": "Logo — Visa / Mastercard Payment Card Settlement",
+      "name": "Logo \u2014 Visa / Mastercard Payment Card Settlement",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Visa_Inc._logo_%282021%E2%80%93present%29.svg/960px-Visa_Inc._logo_%282021%E2%80%93present%29.svg.png",
       "type": "logo",
       "companies": [
@@ -648,7 +630,7 @@
     },
     {
       "id": "mig-mpnhpe6x-ajbc0",
-      "name": "Logo — Visa / Mastercard Payment Card Settlement",
+      "name": "Logo \u2014 Visa / Mastercard Payment Card Settlement",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Mastercard_2019_logo.svg/960px-Mastercard_2019_logo.svg.png",
       "type": "logo",
       "companies": [
@@ -659,7 +641,7 @@
     },
     {
       "id": "mig-mpnhpe6x-s7th3",
-      "name": "Logo — CIT Tariff Refund Process",
+      "name": "Logo \u2014 CIT Tariff Refund Process",
       "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/U.S._Customs_and_Border_Protection_logo.png?_=20130129223101",
       "type": "logo",
       "companies": [
@@ -670,7 +652,7 @@
     },
     {
       "id": "mig-mpnhpe6x-0xqal",
-      "name": "Logo — NCAA College Athlete Compensation Settlement",
+      "name": "Logo \u2014 NCAA College Athlete Compensation Settlement",
       "url": "https://vectorseek.com/wp-content/uploads/2023/08/Ncaa-Library-Logo-Vector.svg-.png",
       "type": "logo",
       "companies": [
@@ -681,7 +663,7 @@
     },
     {
       "id": "mig-mpnhpe6x-kszh4",
-      "name": "Logo — Voyager / Celsius / BlockFi Ch. 11 Cases",
+      "name": "Logo \u2014 Voyager / Celsius / BlockFi Ch. 11 Cases",
       "url": "https://companieslogo.com/img/orig/VOYG.TO_BIG-31c0d0c3.png?t=1720244494",
       "type": "logo",
       "companies": [
@@ -692,7 +674,7 @@
     },
     {
       "id": "mig-mpnhpe6x-i7a97",
-      "name": "Logo — Voyager / Celsius / BlockFi Ch. 11 Cases",
+      "name": "Logo \u2014 Voyager / Celsius / BlockFi Ch. 11 Cases",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Celsius_logo.svg/1280px-Celsius_logo.svg.png",
       "type": "logo",
       "companies": [
@@ -704,7 +686,7 @@
     },
     {
       "id": "mig-mpnhpe6x-0rvz6",
-      "name": "Logo — Voyager / Celsius / BlockFi Ch. 11 Cases",
+      "name": "Logo \u2014 Voyager / Celsius / BlockFi Ch. 11 Cases",
       "url": "/library/blockfi-logo.png",
       "type": "logo",
       "companies": [
@@ -715,7 +697,7 @@
     },
     {
       "id": "mig-mpnhpe6y-6zeem",
-      "name": "Press image — LinkedIn",
+      "name": "Press image \u2014 LinkedIn",
       "url": "https://media.licdn.com/dms/image/v2/D4E22AQEbKNtJxeWVbQ/feedshare-shrink_800/B4EZ2diwCYJAAg-/0/1776464626065?e=1781136000&v=beta&t=j5prKV5z1JyKHTzLIBasRBkaWpMJdzNTiUbuDwCp7Ec",
       "type": "image",
       "companies": [
@@ -726,7 +708,7 @@
     },
     {
       "id": "mig-mpnhpe6y-74gi7",
-      "name": "Logo — American Bankruptcy Institute",
+      "name": "Logo \u2014 American Bankruptcy Institute",
       "url": "/library/bio/press-american-bankruptcy-institute.jpg",
       "type": "logo",
       "companies": [
@@ -737,7 +719,7 @@
     },
     {
       "id": "mig-mpnhpe6y-ajby9",
-      "name": "Logo — Nalu Finance Podcast",
+      "name": "Logo \u2014 Nalu Finance Podcast",
       "url": "https://static.wixstatic.com/media/60cd5f_1da9b73fabcc49ad8ba791e952c66b98~mv2.png/v1/fill/w_378,h_102,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Nalu%20Finance%20Logo_Black.png",
       "type": "logo",
       "companies": [
@@ -748,7 +730,7 @@
     },
     {
       "id": "mig-mpnhpe6y-lqqci",
-      "name": "Logo — NPR Planet Money",
+      "name": "Logo \u2014 NPR Planet Money",
       "url": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/720x240+0+0/resize/1300/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F72%2F47%2F3af6563646acbc60a2c6e752fdec%2Fnpr-logo-color-cmyk-full.jpg",
       "type": "logo",
       "companies": [
@@ -759,7 +741,7 @@
     },
     {
       "id": "mig-mpnhpe6y-xehqt",
-      "name": "Logo — Benzinga",
+      "name": "Logo \u2014 Benzinga",
       "url": "https://www.benzinga.com/next-assets/images/schema-publisher-logo-benzinga.png",
       "type": "logo",
       "companies": [
@@ -770,7 +752,7 @@
     },
     {
       "id": "mig-mpnhpe6y-izpxh",
-      "name": "Logo — The Business, Humanities, Science and Ethics University, USA (BHSEU)",
+      "name": "Logo \u2014 The Business, Humanities, Science and Ethics University, USA (BHSEU)",
       "url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ9cnJZhd31rFBFrjz4oh4xK_F44cs-F6f-sEAaJLwq4Hk9Zf8M",
       "type": "logo",
       "companies": [
@@ -781,7 +763,7 @@
     },
     {
       "id": "mig-mpnhpe6y-aaj3o",
-      "name": "Logo — BBC Radio 4",
+      "name": "Logo \u2014 BBC Radio 4",
       "url": "https://logos-world.net/wp-content/uploads/2022/01/BBC-Logo.png",
       "type": "logo",
       "companies": [
@@ -789,22 +771,784 @@
       ],
       "source": "url",
       "addedAt": "2026-05-27T03:13:48.811Z"
-    },
-    {
-      "id": "turnpage-logo-standard",
-      "name": "Turnpage Logo (standard)",
-      "url": "/turnpage-logo.png",
-      "type": "logo",
-      "companies": [
-        "Turnpage"
-      ],
-      "source": "upload",
-      "addedAt": "2026-07-31"
     }
   ],
   "favicons": {
     "production": "/favicon1.png",
     "preview": "/library/screenshot-2026-05-26-at-9-09-54-pm.png",
     "admin": "/library/favicon-black-088882.png"
-  }
+  },
+  "items": [
+    {
+      "id": "msni4dcp-u3szn",
+      "name": "favicon-black-fa9f19",
+      "url": "/library/favicon-black-fa9f19.png",
+      "type": "favicon",
+      "companies": [],
+      "source": "upload",
+      "addedAt": "2026-08-10T17:24:34.585Z"
+    },
+    {
+      "id": "mrx1zxj5-nl5wj",
+      "name": "scanning-books-2",
+      "url": "/library/scanning-books-2-f1296f.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "upload",
+      "addedAt": "2026-07-23T05:11:13.026Z"
+    },
+    {
+      "id": "mrwo6o4u-7emva",
+      "name": "Scanning Books",
+      "url": "/library/scanning-books.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "upload",
+      "addedAt": "2026-07-22T22:44:32.814Z"
+    },
+    {
+      "id": "mqgsmw31-2fyuw",
+      "name": "Desk",
+      "url": "/library/desk.svg",
+      "type": "image",
+      "companies": [],
+      "source": "upload",
+      "addedAt": "2026-06-16T15:25:06.925Z"
+    },
+    {
+      "id": "mqg6gzgm-hvhzm",
+      "name": "giphy",
+      "url": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHg5d2V3bWxzZHQ1Nm9rcHNvaGFmenZrbHNoMGl5Mmk4OGRnMm1rNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JkADkL9786mQBORwCS/giphy.gif",
+      "type": "image",
+      "companies": [
+        "LinkedIn"
+      ],
+      "source": "url",
+      "addedAt": "2026-06-16T05:04:39.814Z"
+    },
+    {
+      "id": "mqb5bllu-z2e8r",
+      "name": "Yellow logo",
+      "url": "/library/yellow-logo.png",
+      "type": "logo",
+      "companies": [
+        "Yellow Corp. Ch. 11"
+      ],
+      "source": "upload",
+      "addedAt": "2026-06-12T16:33:38.082Z"
+    },
+    {
+      "id": "mqa5j7f9-shqis",
+      "name": "Section 122 Stay Order",
+      "url": "/library/section-122-stay-order.pdf",
+      "type": "document",
+      "companies": [
+        "LinkedIn"
+      ],
+      "source": "upload",
+      "addedAt": "2026-06-11T23:51:46.773Z"
+    },
+    {
+      "id": "mq8v76u6-05cfw",
+      "name": "data-center",
+      "url": "/library/data-center.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "upload",
+      "addedAt": "2026-06-11T02:14:43.806Z"
+    },
+    {
+      "id": "mq8v72wk-0b40n",
+      "name": "data-center-2",
+      "url": "/library/data-center-2.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "upload",
+      "addedAt": "2026-06-11T02:14:38.708Z"
+    },
+    {
+      "id": "mq7g592d-exapc",
+      "name": "robotwallet1",
+      "url": "/library/robotwallet1.mp4",
+      "type": "video",
+      "companies": [],
+      "source": "upload",
+      "addedAt": "2026-06-10T02:25:32.965Z"
+    },
+    {
+      "id": "mpnerg21-z8e58",
+      "name": "logo_bloomberg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Bloomberg_logo.svg",
+      "type": "logo",
+      "companies": [
+        "Bloomberg"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T01:51:25.705Z"
+    },
+    {
+      "id": "mpneqvjo-ch4sf",
+      "name": "logo_bbc",
+      "url": "https://logos-world.net/wp-content/uploads/2022/01/BBC-Logo-700x394.png",
+      "type": "logo",
+      "companies": [
+        "BBC"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T01:50:59.124Z"
+    },
+    {
+      "id": "mig-mpnhpe6o-ixwz6",
+      "name": "Logo \u2014 ABI Journal",
+      "url": "/library/bio/media-abi-journal.jpg",
+      "type": "logo",
+      "companies": [
+        "ABI Journal"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6o-km9zj",
+      "name": "Logo \u2014 Benzinga",
+      "url": "/library/bio/media-benzinga.png",
+      "type": "logo",
+      "companies": [
+        "Benzinga"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6o-1zslv",
+      "name": "Logo \u2014 CoinDesk",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/CoinDesk_logo.svg/3840px-CoinDesk_logo.svg.png",
+      "type": "logo",
+      "companies": [
+        "CoinDesk"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6o-71hbg",
+      "name": "Logo \u2014 Grant's Interest Rate Observer",
+      "url": "https://grantspub.com/images/logo.svg",
+      "type": "logo",
+      "companies": [
+        "Grant's Interest Rate Observer"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6o-hdh3b",
+      "name": "Logo \u2014 NPR",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/National_Public_Radio_logo.svg/3840px-National_Public_Radio_logo.svg.png",
+      "type": "logo",
+      "companies": [
+        "NPR"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6o-by57d",
+      "name": "Logo \u2014 PBS",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/PBS_logo_2019.svg",
+      "type": "logo",
+      "companies": [
+        "PBS"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6o-xx9yy",
+      "name": "Logo \u2014 The Block",
+      "url": "/library/screenshot-2026-06-04-at-10-46-17-pm-2.png",
+      "type": "logo",
+      "companies": [
+        "The Block"
+      ],
+      "source": "upload",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6o-pdcph",
+      "name": "Logo \u2014 The New York Times",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/NewYorkTimes.svg/500px-NewYorkTimes.svg.png?_=20190313030219",
+      "type": "logo",
+      "companies": [
+        "The New York Times"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6o-k2vst",
+      "name": "Logo \u2014 Wall Street Journal",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/The_Wall_Street_Journal.svg/3840px-The_Wall_Street_Journal.svg.png",
+      "type": "logo",
+      "companies": [
+        "Wall Street Journal"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6t-b6b1r",
+      "name": "Building Wide",
+      "url": "/Building_Wide.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6t-hz9ph",
+      "name": "Logotype green",
+      "url": "/Logotype green.png",
+      "type": "logo",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6u-wi794",
+      "name": "Paper",
+      "url": "/Paper.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6u-g5s2z",
+      "name": "TPDM Logo Black No BKGD",
+      "url": "/TPDM Logo Black_No BKGD .png",
+      "type": "logo",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6u-uq6lf",
+      "name": "TPDM Logo Green No BKGD",
+      "url": "/TPDM Logo Green_No BKGD.png",
+      "type": "logo",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6u-6pwdm",
+      "name": "TPDM Logo on Black",
+      "url": "/TPDM Logo on Black.png",
+      "type": "logo",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6u-460ng",
+      "name": "TPDM Logo on Green",
+      "url": "/TPDM Logo on Green.png",
+      "type": "logo",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6u-7bbd5",
+      "name": "a-chosen-soul-Q gpG90dW7c-unsplash",
+      "url": "/a-chosen-soul-Q_gpG90dW7c-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6u-vyav3",
+      "name": "anders-jilden-Sc5RKXLBjGg-unsplash",
+      "url": "/anders-jilden-Sc5RKXLBjGg-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6u-fqcvl",
+      "name": "andrew-avatar",
+      "url": "/andrew-avatar.png",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6u-lugs7",
+      "name": "andrew",
+      "url": "/andrew.png",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6u-wt5c5",
+      "name": "annie-spratt-OZ2BNYfF xM-unsplash",
+      "url": "/annie-spratt-OZ2BNYfF_xM-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6u-yq562",
+      "name": "annie-spratt-XZP2yFrhc4M-unsplash",
+      "url": "/annie-spratt-XZP2yFrhc4M-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6u-8jyks",
+      "name": "bg-paper",
+      "url": "/bg-paper.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6u-9psd7",
+      "name": "bharath-kumar-ML95FigqyR0-unsplash",
+      "url": "/bharath-kumar-ML95FigqyR0-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6u-0cjtf",
+      "name": "favicon",
+      "url": "/favicon.png",
+      "type": "favicon",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6u-3blch",
+      "name": "favicon1",
+      "url": "/favicon1.png",
+      "type": "favicon",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-k0q0q",
+      "name": "hero",
+      "url": "/hero.mp4",
+      "type": "video",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-fa9kl",
+      "name": "joel-filipe-Wc8k-KryEPM-unsplash",
+      "url": "/joel-filipe-Wc8k-KryEPM-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-i4mru",
+      "name": "joel-filipe-pyHPJEjUYHY-unsplash",
+      "url": "/library/joel-filipe-pyhpjejuyhy-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "upload",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-ik47a",
+      "name": "karen-bullaro-KU 6agYOPzQ-unsplash",
+      "url": "/karen-bullaro-KU_6agYOPzQ-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-byq5o",
+      "name": "lorem-5D6iogbblho-unsplash",
+      "url": "/lorem-5D6iogbblho-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-jrut7",
+      "name": "luis-de-leon-ZRw1-O RZ9g-unsplash",
+      "url": "/luis-de-leon-ZRw1-O_RZ9g-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-xso3h",
+      "name": "metal-folds",
+      "url": "/metal-folds.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-zqfhw",
+      "name": "metalarray",
+      "url": "/metalarray.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-egn6i",
+      "name": "paul-kramer-GKtS3leA5js-unsplash",
+      "url": "/paul-kramer-GKtS3leA5js-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-6jwrs",
+      "name": "pawel-czerwinski-OSLoqXdVdVU-unsplash",
+      "url": "/pawel-czerwinski-OSLoqXdVdVU-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-c1xkp",
+      "name": "pawel-czerwinski-T5VUBvCYqKk-unsplash",
+      "url": "/pawel-czerwinski-T5VUBvCYqKk-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-0ztkg",
+      "name": "photo-1454117096348-e4abbeba002c",
+      "url": "/photo-1454117096348-e4abbeba002c.avif",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-up3ig",
+      "name": "robotobriefcase1",
+      "url": "/robotobriefcase1.mp4",
+      "type": "video",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-737s1",
+      "name": "robotpages1",
+      "url": "/robotpages1.mp4",
+      "type": "video",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-311ds",
+      "name": "robottypes1",
+      "url": "/robottypes1.mp4",
+      "type": "video",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-hw3mk",
+      "name": "robotvault1",
+      "url": "/robotvault1.mp4",
+      "type": "video",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-yh6ve",
+      "name": "scott-webb-WcvkdGJywV8-unsplash",
+      "url": "/scott-webb-WcvkdGJywV8-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-cu205",
+      "name": "sebastian-schuster- i6LPp mu38-unsplash",
+      "url": "/sebastian-schuster-_i6LPp_mu38-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-ej8re",
+      "name": "syahmi-syahir-iOWt3la Xpc-unsplash",
+      "url": "/syahmi-syahir-iOWt3la_Xpc-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-eszqk",
+      "name": "turningpages1",
+      "url": "/turningpages1.mp4",
+      "type": "video",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6w-0dx5k",
+      "name": "1779753118342-screenshot-2026-05-25-at-7-49-22-pm",
+      "url": "/uploads/press/1779753118342-screenshot-2026-05-25-at-7-49-22-pm.png",
+      "type": "image",
+      "companies": [
+        "The Business, Humanities, Science and Ethics University, USA (BHSEU)"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6x-rg7xu",
+      "name": "1779759865862-screenshot-2026-05-25-at-9-44-10-pm",
+      "url": "/uploads/press/1779759865862-screenshot-2026-05-25-at-9-44-10-pm.png",
+      "type": "image",
+      "companies": [
+        "BBC Radio 4"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6x-eiizq",
+      "name": "1779761101829-screenshot-2026-05-25-at-10-04-46-pm",
+      "url": "/uploads/press/1779761101829-screenshot-2026-05-25-at-10-04-46-pm.png",
+      "type": "image",
+      "companies": [
+        "CoinDesk"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6x-prllp",
+      "name": "wudan3551-qcx33EkJ8ac-unsplash",
+      "url": "/wudan3551-qcx33EkJ8ac-unsplash.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6x-pvm2n",
+      "name": "Logo \u2014 FTX Trading Ltd.",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/FTX_logo.svg/960px-FTX_logo.svg.png?_=20241222133700",
+      "type": "logo",
+      "companies": [
+        "FTX Trading Ltd.",
+        "FTX Trading Ltd. Ch. 11"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6x-547ml",
+      "name": "Logo \u2014 Genesis Global Holdings Ch. 11",
+      "url": "https://cdn.cookielaw.org/logos/feb266c9-c5e5-43b3-805c-55d16f266ad1/d365a1a6-9a06-4629-b3ca-c81a3ccdc275/8432db13-43c8-460b-9e9c-0ddec3c47e7b/genesis-logo-black-1000.png",
+      "type": "logo",
+      "companies": [
+        "Genesis Global Holdings Ch. 11",
+        "Genesis"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6x-qew6v",
+      "name": "Logo \u2014 Visa / Mastercard Payment Card Settlement",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Visa_Inc._logo_%282021%E2%80%93present%29.svg/960px-Visa_Inc._logo_%282021%E2%80%93present%29.svg.png",
+      "type": "logo",
+      "companies": [
+        "Visa / Mastercard Payment Card Settlement"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6x-ajbc0",
+      "name": "Logo \u2014 Visa / Mastercard Payment Card Settlement",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Mastercard_2019_logo.svg/960px-Mastercard_2019_logo.svg.png",
+      "type": "logo",
+      "companies": [
+        "Visa / Mastercard Payment Card Settlement"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6x-s7th3",
+      "name": "Logo \u2014 CIT Tariff Refund Process",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/U.S._Customs_and_Border_Protection_logo.png?_=20130129223101",
+      "type": "logo",
+      "companies": [
+        "CIT Tariff Refund Process"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6x-0xqal",
+      "name": "Logo \u2014 NCAA College Athlete Compensation Settlement",
+      "url": "https://vectorseek.com/wp-content/uploads/2023/08/Ncaa-Library-Logo-Vector.svg-.png",
+      "type": "logo",
+      "companies": [
+        "NCAA College Athlete Compensation Settlement"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6x-kszh4",
+      "name": "Logo \u2014 Voyager / Celsius / BlockFi Ch. 11 Cases",
+      "url": "https://companieslogo.com/img/orig/VOYG.TO_BIG-31c0d0c3.png?t=1720244494",
+      "type": "logo",
+      "companies": [
+        "Voyager / Celsius / BlockFi Ch. 11 Cases"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6x-i7a97",
+      "name": "Logo \u2014 Voyager / Celsius / BlockFi Ch. 11 Cases",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Celsius_logo.svg/1280px-Celsius_logo.svg.png",
+      "type": "logo",
+      "companies": [
+        "Voyager / Celsius / BlockFi Ch. 11 Cases",
+        "Celsius"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6x-0rvz6",
+      "name": "Logo \u2014 Voyager / Celsius / BlockFi Ch. 11 Cases",
+      "url": "/library/blockfi-logo.png",
+      "type": "logo",
+      "companies": [
+        "Voyager / Celsius / BlockFi Ch. 11 Cases"
+      ],
+      "source": "upload",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6y-6zeem",
+      "name": "Press image \u2014 LinkedIn",
+      "url": "https://media.licdn.com/dms/image/v2/D4E22AQEbKNtJxeWVbQ/feedshare-shrink_800/B4EZ2diwCYJAAg-/0/1776464626065?e=1781136000&v=beta&t=j5prKV5z1JyKHTzLIBasRBkaWpMJdzNTiUbuDwCp7Ec",
+      "type": "image",
+      "companies": [
+        "LinkedIn"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6y-74gi7",
+      "name": "Logo \u2014 American Bankruptcy Institute",
+      "url": "/library/bio/press-american-bankruptcy-institute.jpg",
+      "type": "logo",
+      "companies": [
+        "American Bankruptcy Institute"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6y-ajby9",
+      "name": "Logo \u2014 Nalu Finance Podcast",
+      "url": "https://static.wixstatic.com/media/60cd5f_1da9b73fabcc49ad8ba791e952c66b98~mv2.png/v1/fill/w_378,h_102,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Nalu%20Finance%20Logo_Black.png",
+      "type": "logo",
+      "companies": [
+        "Nalu Finance Podcast"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6y-lqqci",
+      "name": "Logo \u2014 NPR Planet Money",
+      "url": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/720x240+0+0/resize/1300/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F72%2F47%2F3af6563646acbc60a2c6e752fdec%2Fnpr-logo-color-cmyk-full.jpg",
+      "type": "logo",
+      "companies": [
+        "NPR Planet Money"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6y-xehqt",
+      "name": "Logo \u2014 Benzinga",
+      "url": "https://www.benzinga.com/next-assets/images/schema-publisher-logo-benzinga.png",
+      "type": "logo",
+      "companies": [
+        "Benzinga"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6y-izpxh",
+      "name": "Logo \u2014 The Business, Humanities, Science and Ethics University, USA (BHSEU)",
+      "url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ9cnJZhd31rFBFrjz4oh4xK_F44cs-F6f-sEAaJLwq4Hk9Zf8M",
+      "type": "logo",
+      "companies": [
+        "The Business, Humanities, Science and Ethics University, USA (BHSEU)"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6y-aaj3o",
+      "name": "Logo \u2014 BBC Radio 4",
+      "url": "https://logos-world.net/wp-content/uploads/2022/01/BBC-Logo.png",
+      "type": "logo",
+      "companies": [
+        "BBC Radio 4"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    }
+  ]
 }

@@ -106,7 +106,7 @@
     mount.innerHTML =
       '<div class="tf-inner">' +
         '<div class="tf-grid">' +
-          '<div class="tf-logo"><a href="https://www.turnpagedigital.com/"><img src="/turnpage-logo.png" alt="Turnpage Digital Markets" loading="lazy"></a></div>' +
+          '<div class="tf-logo"><a href="https://www.turnpagedigital.com/"><img src="/TPDM%20Logo%20Std.png" alt="TURNPAGE" loading="lazy"></a></div>' +
           colsHtml +
         "</div>" +
         '<div class="tf-bottom">' +
