@@ -16,8 +16,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
     "date_last_filing": "2026-08-05",
-    "meta_fetched_at": "2026-08-13T14:50:25.138810+00:00",
-    "fetched_at": "2026-08-13T14:50:25.138810+00:00",
+    "meta_fetched_at": "2026-08-13T15:19:07.500683+00:00",
+    "fetched_at": "2026-08-13T15:19:07.500683+00:00",
     "as_of": "Aug 13, 2026",
     "backfilled": false,
     "new_in_72h": 0,
@@ -6347,6 +6347,16 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.717.0.pdf"
       },
       {
+        "entry_number": 716,
+        "date_filed": "2024-09-18",
+        "time_filed": "21:17:14",
+        "date_display": "Sep 18, 2024",
+        "description": "Certificate of Mailing . Filed by The Official Committee of Unsecured Creditors of Terraform Labs Pte. Ltd.. (related document(s)713) (Matthews, Gene) (Entered: 09/18/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 715,
         "date_filed": "2024-09-18",
         "time_filed": "18:00:23",
@@ -6355,6 +6365,26 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 714,
+        "date_filed": "2024-09-18",
+        "time_filed": "17:39:11",
+        "date_display": "Sep 18, 2024",
+        "description": "Reservation of Rights of Avalanche (BVI), Inc. to Amended Chapter 11 Plan of Liquidation of Terraform Labs Pte. Ltd. and Terraform Labs Limited (related document(s)568) Filed by Avalanche (BVI), Inc.. (Attachments: # 1 Certificate of Service) (Monzo, Eric) (Entered: 09/18/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 713,
+        "date_filed": "2024-09-18",
+        "time_filed": "15:26:27",
+        "date_display": "Sep 18, 2024",
+        "description": "Response // Statement of the Official Committee of Unsecured Creditors in Support of Confirmation of the Amended Chapter Plan of Terraform Labs Pte. Ltd. and Its Affiliated Debtor Filed by The Official Committee of Unsecured Creditors of Terraform Labs Pte. Ltd. (related document(s)703, 700, 699). (Hurst, David) (Entered: 09/18/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.713.0.pdf"
       },
       {
         "entry_number": 712,
@@ -13837,7 +13867,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68180454&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=29"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68180454&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=35"
   },
   "claims_administrator": {
     "name": "Epiq11",
