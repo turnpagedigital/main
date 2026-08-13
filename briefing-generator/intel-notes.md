@@ -98,9 +98,9 @@ Ciao
 
 ## Kahan
 
-### Dkt. 366 — 2026-08-12
+### Dkt. 365 — 2026-08-12
 
-> Order on Motion to Compel
+> Objection
 
 ## New Filing
 
