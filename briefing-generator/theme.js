@@ -75,9 +75,9 @@
   }
   // ── g-then-key section navigation (works on every intel page) ──────────
   // g+h Dashboard · g+d Docket · g+c Calendar · g+p Prospects · g+n Notes ·
-  // g+r News · Registered in the CAPTURE phase so the second
+  // g+w News · Registered in the CAPTURE phase so the second
   // key never leaks into a page's own single-key handlers (h=hide, n=note…).
-  var GOTO={h:'index.html',d:'docket.html',c:'calendar.html',p:'prospects.html',n:'notes.html',r:'news.html'};
+  var GOTO={h:'index.html',d:'docket.html',c:'calendar.html',p:'prospects.html',n:'notes.html',w:'news.html'};
   var gAt=0;
   // d-then-m / l-then-m / s-then-m  →  set the theme (m = "mode"). Same
   // capture-phase trick as the g-prefix: the first key still reaches a page's
@@ -170,7 +170,7 @@
     if(!left||document.getElementById('tn-hamburger'))return;
     var st=document.createElement('style');
     st.textContent=
-      '.tn-hamburger{display:none;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:15px;width:32px;height:30px;font-size:16px;line-height:1;cursor:pointer;flex:0 0 auto;}'+
+      '.tn-hamburger{display:none;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:0;width:32px;height:30px;font-size:16px;line-height:1;cursor:pointer;flex:0 0 auto;}'+
       '.tn.tn-compact .tn-lbl{display:none;}'+
       '.tn-menu{display:none;}'+
       '.tn-back .tn-ico{font-size:1.2em;margin-right:3px;vertical-align:-1px;}'+
