@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-13 21:02 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-13 21:03 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -165,6 +165,10 @@ Ciao
 ### (no docket number) — 2026-08-12
 
 > Filing Alert: Tetrad Enterprises Chapter 11 — Tetrad Enterprises Files Chapter 11 in District of Puerto Rico
+
+### (no docket number) — 2026-08-12
+
+> Filing Alert: Boatworks at Tahoe Chapter 11 — Boatworks at Tahoe Files Chapter 11 in Eastern District of California
 
 ## Unknown case
 
