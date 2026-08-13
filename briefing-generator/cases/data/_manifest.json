@@ -261,20 +261,6 @@
     "sync": "active"
   },
   {
-    "slug": "rndc",
-    "added": "2026-07-29",
-    "display_name": "RNDC",
-    "short_name": "RNDC",
-    "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
-    "default_color": "#ffb8e0",
-    "category": "bankruptcy",
-    "topics": [
-      "bankruptcy-creditor-rights"
-    ],
-    "court": "Bankr. S.D.Tx.",
-    "sync": "active"
-  },
-  {
     "slug": "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",
     "added": "2026-08-07",
     "display_name": "Burlap and Barrel",
