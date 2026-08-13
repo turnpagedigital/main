@@ -898,7 +898,10 @@
       '<td class="ud-mark-cell"><button type="button" class="ud-del-btn" ' +
         'data-nk="' + esc(nk) + '" title="Delete this row (X) \u2014 restorable for 30 days"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M3 6h18\"/><path d=\"M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2\"/><path d=\"M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6\"/><path d=\"M10 11v6\"/><path d=\"M14 11v6\"/></svg></button></td>' +
       '<td class="ud-mark-cell"><button type="button" class="ud-note-btn' + (hasNote ? " ud-note-on" : "") + '" ' +
-        'data-nk="' + esc(nk) + '" title="' + (hasNote ? "Edit note" : "Add note") + '"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z\"/></svg></button></td>'
+        'data-nk="' + esc(nk) + '" title="' + (hasNote ? "Edit note" : "Add note") + '"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z\"/></svg></button></td>' +
+      // Narrow table widths collapse the five cells above into this one ⋮ menu
+      // (see .ud-more-cell in the docket CSS); hidden at other widths.
+      '<td class="ud-more-cell"><button type="button" class="ud-more-btn" title="Row actions">⋮</button></td>'
     );
   }
 
@@ -959,7 +962,7 @@
       }
     }
     if (!entries.length) {
-      tbody.innerHTML = '<tr><td colspan="10" class="ud-empty">No entries match the current filters.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="11" class="ud-empty">No entries match the current filters.</td></tr>';
       return;
     }
     var prevDay = null;
@@ -975,7 +978,7 @@
       }
       var collapsed = !!COLLAPSED_DAYS[d];
       return '<tr class="ud-day-row' + (collapsed ? " ud-day-collapsed" : "") + '" data-day="' + esc(d) + '">' +
-        '<td colspan="10"><span class="ud-day-chevron">' + (collapsed ? "\u25b8" : "\u25be") + "</span>" + esc(label) + "</td></tr>";
+        '<td colspan="11"><span class="ud-day-chevron">' + (collapsed ? "\u25b8" : "\u25be") + "</span>" + esc(label) + "</td></tr>";
     }
     RENDERED = entries;
     tbody.innerHTML = entries.map(function (e, ridx) {
@@ -1067,17 +1070,6 @@
     }).join("");
     applyCursor(false);
     jumpToHash();
-    sizeHeaderPill();
-  }
-
-  // The header pill (.ud-table::before) can't size itself off the thead —
-  // see the docket CSS note — so keep --ud-thead-h matched to the real
-  // header height (0 on mobile, where the thead is display:none).
-  function sizeHeaderPill() {
-    var t = document.querySelector("table.ud-table");
-    if (!t) return;
-    var th = t.querySelector("thead");
-    t.style.setProperty("--ud-thead-h", (th ? th.offsetHeight : 0) + "px");
   }
 
   // ── Keyboard navigation: arrows move a row cursor, letters act on it ──────
@@ -1446,7 +1438,7 @@
       var tbody = document.getElementById("ud-tbody");
       if (tbody) {
         tbody.innerHTML =
-          '<tr><td colspan="10" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
+          '<tr><td colspan="11" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
       }
       var meta = document.getElementById("ud-meta");
       if (meta) meta.textContent = "Failed to load";
@@ -3408,12 +3400,53 @@
       refreshBtn();
     })();
 
+    // ⋮ row-actions menu — on narrow table widths the five mark buttons are
+    // hidden (CSS) and this menu proxies them: build items from the row's own
+    // hidden buttons so labels/state always match, and anchor the snooze
+    // popover to the ⋮ (its real button has no geometry while hidden).
+    (function setupMoreMenu() {
+      var menu = document.createElement("div");
+      menu.className = "ud-more-menu";
+      document.body.appendChild(menu);
+      function close() { menu.style.display = "none"; }
+      document.addEventListener("click", function (ev) {
+        var btn = ev.target.closest(".ud-more-btn");
+        if (btn) {
+          ev.preventDefault();
+          ev.stopPropagation();
+          var row = btn.closest("tr");
+          var actions = row ? row.querySelectorAll("td.ud-mark-cell button") : [];
+          if (!actions.length) { close(); return; }
+          menu.innerHTML = "";
+          [].forEach.call(actions, function (a) {
+            var item = document.createElement("button");
+            item.type = "button";
+            var label = (a.getAttribute("title") || "Action").split("—")[0].trim();
+            item.innerHTML = '<span style="width:18px;text-align:center;flex:0 0 auto;">' + a.innerHTML + "</span><span>" + esc(label) + "</span>";
+            item.addEventListener("click", function (e2) {
+              e2.stopPropagation();
+              close();
+              if (a.classList.contains("ud-snz-btn")) openSnoozeMenu(a.getAttribute("data-nk"), btn);
+              else a.click();
+            });
+            menu.appendChild(item);
+          });
+          menu.style.display = "block";
+          var r = btn.getBoundingClientRect();
+          var left = Math.min(r.right - menu.offsetWidth, window.innerWidth - menu.offsetWidth - 8);
+          if (left < 8) left = 8;
+          var top = r.bottom + 6;
+          if (top + menu.offsetHeight > window.innerHeight - 8) top = Math.max(8, r.top - menu.offsetHeight - 6);
+          menu.style.left = left + "px";
+          menu.style.top = top + "px";
+          return;
+        }
+        if (!menu.contains(ev.target)) close();
+      });
+      document.addEventListener("keydown", function (ev) { if (ev.key === "Escape") close(); });
+      window.addEventListener("scroll", close, true);
+    })();
+
     init();
-    var _pillTimer = null;
-    window.addEventListener("resize", function () {
-      clearTimeout(_pillTimer);
-      _pillTimer = setTimeout(sizeHeaderPill, 120);
-    });
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(sizeHeaderPill);
   });
 })();
