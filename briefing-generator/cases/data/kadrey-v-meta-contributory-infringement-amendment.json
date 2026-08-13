@@ -16,10 +16,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
     "date_last_filing": "2026-08-13",
-    "meta_fetched_at": "2026-08-13T16:14:19.652316+00:00",
-    "fetched_at": "2026-08-13T16:14:19.652316+00:00",
+    "meta_fetched_at": "2026-08-13T17:17:08.825965+00:00",
+    "fetched_at": "2026-08-13T17:17:08.825965+00:00",
     "as_of": "Aug 13, 2026",
-    "backfilled": false,
+    "backfilled": true,
     "new_in_72h": 4,
     "recent": [
       {
@@ -8905,6 +8905,16 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.25.0.pdf"
       },
       {
+        "entry_number": 24,
+        "date_filed": "2023-09-18",
+        "time_filed": "21:50:25",
+        "date_display": "Sep 18, 2023",
+        "description": "Request for Judicial Notice re 23 MOTION to Dismiss Plaintiffs' Complaint filed byMeta Platforms, Inc.. (Attachments: # 1 Proposed Order)(Related document(s) 23 ) (Lauter, Judd) (Filed on 9/18/2023) (Entered: 09/18/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.24.0.pdf"
+      },
+      {
         "entry_number": 23,
         "date_filed": "2023-09-18",
         "time_filed": "21:43:16",
@@ -8913,9 +8923,278 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.23.0.pdf"
+      },
+      {
+        "entry_number": 22,
+        "date_filed": "2023-09-14",
+        "time_filed": "16:32:47",
+        "date_display": "Sep 14, 2023",
+        "description": "Order by Judge Vince Chhabria granting 21 Stipulation to Enlarge Briefing on Defendant's Motion to Dismiss. (bxs, COURT STAFF) (Filed on 9/14/2023) (Entered: 09/14/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.22.0.pdf"
+      },
+      {
+        "entry_number": 21,
+        "date_filed": "2023-09-13",
+        "time_filed": "17:36:17",
+        "date_display": "Sep 13, 2023",
+        "description": "STIPULATION WITH PROPOSED ORDER to Enlarge Briefing on Defendant's Motion to Dismiss filed by Meta Platforms, Inc.. (Dunning, Angela) (Filed on 9/13/2023) (Entered: 09/13/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.21.0.pdf"
+      },
+      {
+        "entry_number": 20,
+        "date_filed": "2023-08-10",
+        "time_filed": "16:04:47",
+        "date_display": "Aug 10, 2023",
+        "description": "Certificate of Interested Entities by Christopher Golden, Richard Kadrey, Sarah Silverman (Saveri, Joseph) (Filed on 8/10/2023) (Entered: 08/10/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.20.0.pdf"
+      },
+      {
+        "entry_number": 19,
+        "date_filed": "2023-08-08",
+        "time_filed": "16:54:29",
+        "date_display": "Aug 8, 2023",
+        "description": "Certificate of Interested Entities by Meta Platforms, Inc. (Ghajar, Bobby) (Filed on 8/8/2023) (Entered: 08/08/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.19.0.pdf"
+      },
+      {
+        "entry_number": 18,
+        "date_filed": "2023-08-08",
+        "time_filed": "16:40:09",
+        "date_display": "Aug 8, 2023",
+        "description": "NOTICE of Appearance by Angela Lucille Dunning (Dunning, Angela) (Filed on 8/8/2023) (Entered: 08/08/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.18.0.pdf"
+      },
+      {
+        "entry_number": 17,
+        "date_filed": "2023-08-08",
+        "time_filed": "16:38:19",
+        "date_display": "Aug 8, 2023",
+        "description": "NOTICE of Appearance by Bobby A. Ghajar (Ghajar, Bobby) (Filed on 8/8/2023) (Entered: 08/08/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.17.0.pdf"
+      },
+      {
+        "entry_number": 16,
+        "date_filed": "2023-08-04",
+        "time_filed": "",
+        "date_display": "Aug 4, 2023",
+        "description": "ORDER. The 15 stipulation to move the defendant's deadline to respond to the complaint to September 18, 2023, is GRANTED. The parties are reminded that, per Local Rule 6-1, a stipulation to extend the deadline to respond to a complaint does not require a court order if the change will not alter any dates or deadlines already fixed by court order. (This is a text-only entry generated by the court. There is no document associated with this entry.) (vclc1, COURT STAFF) (Filed on 8/4/2023) (Entered: 08/04/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2023-08-04",
+        "time_filed": "09:21:39",
+        "date_display": "Aug 4, 2023",
+        "description": "Order on Stipulation",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 15,
+        "date_filed": "2023-08-02",
+        "time_filed": "16:06:21",
+        "date_display": "Aug 2, 2023",
+        "description": "STIPULATION WITH PROPOSED ORDER Regarding Deadline to Respond to Complaint filed by Christopher Golden, Richard Kadrey, Sarah Silverman. (Saveri, Joseph) (Filed on 8/2/2023) (Entered: 08/02/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.15.0.pdf"
+      },
+      {
+        "entry_number": 14,
+        "date_filed": "2023-07-26",
+        "time_filed": "14:15:46",
+        "date_display": "Jul 26, 2023",
+        "description": "REQUEST to Exclude submitted by Cody Philpot. (Attachments: # 1 Envelope) (gba, COURT STAFF) (Filed on 7/26/2023) (Entered: 07/26/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.14.0.pdf"
+      },
+      {
+        "entry_number": 13,
+        "date_filed": "2023-07-25",
+        "time_filed": "",
+        "date_display": "Jul 25, 2023",
+        "description": "REASSIGNED CASE - NOTICE OF NEW HEARING DATE: You are notified that the Court has scheduled an Initial Case Management Conference before Judge Vince Chhabria upon reassignment. For a copy of Judge Chhabria's Standing Order and other information, please refer to the Court's website at www.cand.uscourts.gov. Joint Case Management Statement due by 10/13/2023. Initial Case Management Conference set for 10/20/2023 at 10:00 AM by Videoconference Only. This proceeding will be held via a Zoom webinar.Webinar Access: All counsel, members of the public, and media may access the webinar information at https://www.cand.uscourts.gov/vc Court Appearances: Advanced notice is required of counsel or parties who wish to be identified by the court as making an appearance or will be participating in the argument at the hearing. One list of names of all counsel appearing for all parties must be sent in one…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2023-07-25",
+        "time_filed": "09:13:43",
+        "date_display": "Jul 25, 2023",
+        "description": "Clerk's Notice AND ~Util - Teleconference Zoom",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 12,
+        "date_filed": "2023-07-24",
+        "time_filed": "17:05:39",
+        "date_display": "Jul 24, 2023",
+        "description": "ORDER REASSIGNING CASE. Case reassigned using a proportionate, random, and blind system pursuant to General Order No. 44 to Judge Vince Chhabria for all further proceedings. Magistrate Judge Sallie Kim no longer assigned to case, Notice: The assigned judge participates in the Cameras in the Courtroom Pilot Project. See General Order No. 65 and http://cand.uscourts.gov/cameras. Signed by Clerk on 07/24/2023. (Attachments: # 1 Notice of Eligibility for Video Recording)(mbc, COURT STAFF) (Filed on 7/24/2023) (Entered: 07/24/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.12.0.pdf"
+      },
+      {
+        "entry_number": 11,
+        "date_filed": "2023-07-24",
+        "time_filed": "",
+        "date_display": "Jul 24, 2023",
+        "description": "CLERK'S NOTICE OF IMPENDING REASSIGNMENT TO A U.S. DISTRICT COURT JUDGE: The Clerk of this Court will now randomly reassign this case to a District Judge because either (1) a party has not consented to the jurisdiction of a Magistrate Judge, or (2) time is of the essence in deciding a pending judicial action for which the necessary consents to Magistrate Judge jurisdiction have not been secured. You will be informed by separate notice of the district judge to whom this case is reassigned. ALL HEARING DATES PRESENTLY SCHEDULED BEFORE THE CURRENT MAGISTRATE JUDGE ARE VACATED AND SHOULD BE RE-NOTICED FOR HEARING BEFORE THE JUDGE TO WHOM THIS CASE IS REASSIGNED. This is a text only docket entry; there is no document associated with this notice. (mkl, COURT STAFF) (Filed on 7/24/2023) (Entered: 07/24/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2023-07-24",
+        "time_filed": "08:55:51",
+        "date_display": "Jul 24, 2023",
+        "description": "Clerk's Notice of Impending Reassignment - Text Only",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 10,
+        "date_filed": "2023-07-21",
+        "time_filed": "18:28:40",
+        "date_display": "Jul 21, 2023",
+        "description": "CONSENT/DECLINATION to Proceed Before a US Magistrate Judge by Christopher Golden, Richard Kadrey, Sarah Silverman.. (Saveri, Joseph) (Filed on 7/21/2023) (Entered: 07/21/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.10.0.pdf"
+      },
+      {
+        "entry_number": 9,
+        "date_filed": "2023-07-20",
+        "time_filed": "16:47:43",
+        "date_display": "Jul 20, 2023",
+        "description": "SUMMONS Returned Executed by Richard Kadrey, Christopher Golden, Sarah Silverman. Meta Platforms, Inc. served on 7/13/2023, answer due 8/3/2023. (Saveri, Joseph) (Filed on 7/20/2023) (Entered: 07/20/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.9.0.pdf"
+      },
+      {
+        "entry_number": 8,
+        "date_filed": "2023-07-20",
+        "time_filed": "14:11:43",
+        "date_display": "Jul 20, 2023",
+        "description": "REQUEST to Exclude submitted by Jerzy Gruca. (Attachments: # 1 Envelope) (gba, COURT STAFF) (Filed on 7/20/2023) (Entered: 07/20/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.8.0.pdf"
+      },
+      {
+        "entry_number": 7,
+        "date_filed": "2023-07-19",
+        "time_filed": "",
+        "date_display": "Jul 19, 2023",
+        "description": "REQUEST to Exclude submitted by Emanuel McCray. (Attachments: # 1 Envelope) (gba, COURT STAFF) (Filed on 7/19/2023) (Entered: 07/20/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.7.0.pdf"
+      },
+      {
+        "entry_number": 6,
+        "date_filed": "2023-07-12",
+        "time_filed": "21:58:45",
+        "date_display": "Jul 12, 2023",
+        "description": "Summons Issued as to Meta Platforms, Inc. (gba, COURT STAFF) (Filed on 7/12/2023) (Entered: 07/12/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.6.0.pdf"
+      },
+      {
+        "entry_number": 5,
+        "date_filed": "2023-07-12",
+        "time_filed": "21:42:41",
+        "date_display": "Jul 12, 2023",
+        "description": "Initial Case Management Scheduling Order with ADR Deadlines: Case Management Statement due by 10/9/2023. Initial Case Management Conference set for 10/16/2023 01:30 PM in San Francisco, Courtroom C, 15th Floor. (gba, COURT STAFF) (Filed on 7/12/2023) (Entered: 07/12/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.5.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2023-07-12",
+        "time_filed": "22:11:08",
+        "date_display": "Jul 12, 2023",
+        "description": "Copy of 3 Report emailed to copyright office. (gba, COURT STAFF) (Filed on 7/12/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 4,
+        "date_filed": "2023-07-10",
+        "time_filed": "",
+        "date_display": "Jul 10, 2023",
+        "description": "Case assigned to Magistrate Judge Sallie Kim. Counsel for plaintiff or the removing party is responsible for serving the Complaint or Notice of Removal, Summons and the assigned judge's standing orders and all other new case documents upon the opposing parties. For information, visit E-Filing A New Civil Case at http://cand.uscourts.gov/ecf/caseopening.Standing orders can be downloaded from the court's web page at www.cand.uscourts.gov/judges. Upon receipt, the summons will be issued and returned electronically. A scheduling order will be sent by Notice of Electronic Filing (NEF) within two business days. Consent/Declination due by 7/24/2023. (mbc, COURT STAFF) (Filed on 7/10/2023) (Entered: 07/10/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2023-07-10",
+        "time_filed": "10:18:33",
+        "date_display": "Jul 10, 2023",
+        "description": "~Util - Case Assigned by Intake",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 3,
+        "date_filed": "2023-07-07",
+        "time_filed": "20:52:39",
+        "date_display": "Jul 7, 2023",
+        "description": "REPORT on the filing of an action regarding Copyrights Infringement (cc: form mailed to register). (Saveri, Joseph) (Filed on 7/7/2023) (Entered: 07/07/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.3.0.pdf"
+      },
+      {
+        "entry_number": 2,
+        "date_filed": "2023-07-07",
+        "time_filed": "20:51:21",
+        "date_display": "Jul 7, 2023",
+        "description": "Proposed Summons. (Saveri, Joseph) (Filed on 7/7/2023) (Entered: 07/07/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.2.0.pdf"
+      },
+      {
+        "entry_number": 1,
+        "date_filed": "2023-07-07",
+        "time_filed": "20:48:12",
+        "date_display": "Jul 7, 2023",
+        "description": "CLASS ACTION COMPLAINT; Demand for Jury Trial against Meta Platforms, Inc. (Filing fee $ 402, receipt number ACANDC-18431228.). Filed by Richard Kadrey, Christopher Golden, Sarah Silverman. (Attachments: # 1 Exhibit A, # 2 Exhibit B, # 3 Civil Cover Sheet) (Saveri, Joseph) (Filed on 7/7/2023) (Entered: 07/07/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.1.0_3.pdf"
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=67569326&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=46"
+    ]
   },
   "claims_administrator": null,
   "coverage": [

@@ -8,12 +8,18 @@
     "judge": "Hon. Araceli Martínez-Olguín",
     "docket_id": "69058235",
     "status": "active",
-    "sync": "active"
+    "sync": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
+    "date_last_filing": "2026-07-21",
+    "meta_fetched_at": "2026-08-13T16:11:50.767551+00:00",
+    "fetched_at": "2026-08-13T17:15:41.821783+00:00",
+    "as_of": "Aug 13, 2026",
+    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -7493,12 +7499,7 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
-    ],
-    "date_last_filing": "2026-07-21",
-    "meta_fetched_at": "2026-08-13T16:11:50.767551+00:00",
-    "fetched_at": "2026-08-13T16:11:50.767551+00:00",
-    "as_of": "Aug 13, 2026",
-    "backfilled": true
+    ]
   },
   "claims_administrator": {
     "name": "JND Legal Administration",
