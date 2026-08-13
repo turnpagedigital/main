@@ -776,8 +776,15 @@ DOCKET_LIGHT_CSS = """<style>
   /* Header row: ink text (black in light, white in dark), no background bar —
      a thick ink rule under the row separates it from the entries, spanning the
      same width as the rows below. Active filters underline instead of recolor. */
-  .ud-table thead th { background: transparent; border: none; border-bottom: 3px solid var(--ink); box-shadow: none; color: var(--ink); position: relative; z-index: 1; padding-top: 13px; padding-bottom: 13px; }
+  .ud-table thead th { background: transparent; border: none; border-bottom: 2px solid var(--ink); box-shadow: none; color: var(--ink); position: relative; z-index: 1; padding-top: 13px; padding-bottom: 13px; }
+  /* The base chassis pins border-left/right on the end header cells with higher
+     specificity than the border:none above — kill the vertical end ticks. */
+  .ud-table thead th:first-child { border-left: none; }
+  .ud-table thead th:last-child { border-right: none; }
   .ud-table thead th.ud-th-on { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+  /* The table must always fill its container — saved column widths or engine
+     quirks may otherwise shrink it to the sum of its columns. */
+  .ud-table { width: 100% !important; min-width: 100%; }
   [data-theme="light"] .ud-table tbody tr:first-child td { padding-top: 20px; }
   [data-theme="light"] .ud-search-input:focus { background: #FFFFFF; }
   [data-theme="dark"] .page-title { border-bottom: 1px solid var(--line-strong); }
