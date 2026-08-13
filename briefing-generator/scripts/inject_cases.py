@@ -1246,6 +1246,12 @@ def render_news_page(cases):
 {PAGE_CSS}
 <style>
 {UD_CSS}
+/* News page: every row IS an article, so the gray "article band" carries no
+   signal here — plain surface in light mode, dark gray retained in dark.
+   The docket keeps the band to separate articles from filings. */
+[data-theme="light"] .ud-table tbody tr.ud-row-article td,
+[data-theme="light"] .ud-table tbody tr.ud-row-article {{ background: var(--surface); }}
+[data-theme="light"] .ud-table tbody tr.ud-row-article:hover td {{ background: linear-gradient(rgba(10,10,10,0.03), rgba(10,10,10,0.03)), var(--surface); }}
 </style>
 <!-- AUTH GATE START -->
 <!-- AUTH GATE END -->

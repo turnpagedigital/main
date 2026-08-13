@@ -395,7 +395,8 @@
     .ud-note-box{padding:16px;}
     .uc-merge-bar{flex-wrap:wrap;}
   }
-  .uc-gcal{font-size:16px;text-decoration:none;opacity:0.55;}
+  .uc-gcal{text-decoration:none;color:var(--ink-40);line-height:1;}
+  .uc-gcal:hover{color:var(--ink);}
   .uc-gcal:hover{opacity:1;}
   .uc-curate-cell{text-align:center;white-space:nowrap;}
   .uc-sel{accent-color:var(--neon);cursor:pointer;margin-right:6px;}
@@ -481,6 +482,12 @@
     .ud-case-dd-panel, #ud-source-dd-panel, .ud-th-menu { position: fixed !important; top: auto !important; bottom: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; max-width: none !important; min-width: 0 !important; max-height: 72vh; overflow-y: auto; border-radius: 16px 16px 0 0 !important; box-shadow: 0 -10px 34px rgba(0,0,0,0.28) !important; padding-bottom: 20px !important; z-index: 1300 !important; }
   }
 
+/* News page: every row IS an article, so the gray "article band" carries no
+   signal here — plain surface in light mode, dark gray retained in dark.
+   The docket keeps the band to separate articles from filings. */
+[data-theme="light"] .ud-table tbody tr.ud-row-article td,
+[data-theme="light"] .ud-table tbody tr.ud-row-article { background: var(--surface); }
+[data-theme="light"] .ud-table tbody tr.ud-row-article:hover td { background: linear-gradient(rgba(10,10,10,0.03), rgba(10,10,10,0.03)), var(--surface); }
 </style>
 <!-- AUTH GATE START -->
 <!-- AUTH GATE END -->
