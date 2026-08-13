@@ -1348,6 +1348,7 @@
     if (CASES_FULL_LOADED) return _fullHistoryPromise || Promise.resolve();
     if (_fullHistoryPromise) return _fullHistoryPromise;
     _fullHistoryPromise = fetchJson("cases/data/_manifest.json").then(function (manifest) {
+      manifest = (manifest || []).filter(function (m) { return (m.sync || "active") !== "archived"; });
       return Promise.all(manifest.map(function (m) {
         return fetchJson("cases/data/" + m.slug + ".json").then(function (caseData) {
           return { slug: m.slug, entries: (caseData.docket && caseData.docket.entries) || [] };
@@ -1387,7 +1388,8 @@
       fetchJson("cases/data/_manifest.json"),
       fetchJson("cases/data/_summary.json"),
     ]).then(function (res) {
-      var manifest = res[0] || [];
+      // Archived cases are hidden from every reader-facing view (Settings still lists them).
+      var manifest = (res[0] || []).filter(function (m) { return (m.sync || "active") !== "archived"; });
       var summaries = res[1] || [];
       var bySlug = {};
       summaries.forEach(function (s) { bySlug[s.slug] = s; });

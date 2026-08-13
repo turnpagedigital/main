@@ -290,7 +290,9 @@
     Promise.all([
       loadAdminCases(),
       fetchJson("case-briefings.json").then(function (d) { BRIEFS = (d && d.items) || []; }).catch(function () {}),
-      fetchJson("cases/data/_manifest.json").then(function (man) { MANIFEST = man || []; }).catch(function () {}),
+      fetchJson("cases/data/_manifest.json").then(function (man) {
+        MANIFEST = (man || []).filter(function (m) { return (m.sync || "active") !== "archived"; });
+      }).catch(function () {}),
     ]).then(render);
   }
 

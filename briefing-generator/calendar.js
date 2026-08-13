@@ -1162,6 +1162,9 @@
 
   function init() {
     fetchJson("cases/data/_manifest.json").then(function (manifest) {
+      // Archived cases stay in the data (un-archivable from Settings) but are
+      // hidden from every reader-facing view.
+      manifest = (manifest || []).filter(function (m) { return (m.sync || "active") !== "archived"; });
       return Promise.all(manifest.map(function (m) {
         return fetchJson("cases/data/" + m.slug + ".json").then(function (caseData) {
           return {

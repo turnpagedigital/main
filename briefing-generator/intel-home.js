@@ -1345,7 +1345,8 @@
     });
 
   fetchJson(BASE + "cases/data/_manifest.json").then(function (man) {
-    MANIFEST = man || [];
+    // Archived cases are hidden from every reader-facing view (Settings still lists them).
+    MANIFEST = (man || []).filter(function (m) { return (m.sync || "active") !== "archived"; });
     renderCaseGrid();
     // One compact ~90-day summary instead of a 23-file/~5.5 MB fan-out — the
     // dashboard only ever renders recent filings + upcoming events anyway.
