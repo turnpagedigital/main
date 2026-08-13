@@ -15,21 +15,6 @@
     "sync": "active"
   },
   {
-    "slug": "blockfills",
-    "added": "2026-06-12",
-    "display_name": "BlockFills",
-    "short_name": "BlockFills",
-    "docket_url": "https://www.courtlistener.com/docket/72494188/reliz-technology-group-holdings-inc/",
-    "default_color": "#94C6F8",
-    "category": "bankruptcy",
-    "topics": [
-      "crypto-insolvency",
-      "bankruptcy-creditor-rights"
-    ],
-    "court": "Bankr. D. Del.",
-    "sync": "active"
-  },
-  {
     "slug": "britannica-merriam-webster-v-openai",
     "added": "2026-08-07",
     "display_name": "Britannica v. OpenAI",
