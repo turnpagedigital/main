@@ -18,12 +18,6 @@ Need to research fair use question and write a long-form article about this
 
 > REPORT on the determination of an action regarding Copyright(cc: form emailed to register). (hdj, COURT STAFF) (Filed on 7/21/2026) (Entered: 07/21/2026)
 
-## BlockFills
-
-### Dkt. 561 — 2026-08-10
-
-> Employ (Application)
-
 ## Concord Music Group v. Anthropic
 
 ### (no docket number) — 2026-08-05 ★
