@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-13 20:11 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-13 21:02 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -159,6 +159,12 @@ Ciao
 ### (no docket number) — 2026-08-05
 
 > Thomson Reuters Lifts Revenue Guidance After Growth — Thomson Reuters bumped up its revenue targets for the year after logging double-digit growth across its three big business segments in the latest 
+
+## Uncategorized
+
+### (no docket number) — 2026-08-12
+
+> Filing Alert: Tetrad Enterprises Chapter 11 — Tetrad Enterprises Files Chapter 11 in District of Puerto Rico
 
 ## Unknown case
 
