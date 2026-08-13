@@ -376,7 +376,7 @@ UD_CSS = r"""
   [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:first-child { border-left: none; }
   [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:last-child { border-right: none; }
   [data-theme="light"] .ud-table tbody tr:last-child td { border-bottom: none; }
-  [data-theme="light"] .ud-row-article td { background: #E7E9EE; }
+  [data-theme="light"] .ud-row-article td { background: #E7E9EE; border-bottom-color: var(--line-strong); }
   [data-theme="light"] .ud-row-article:hover td { background: #F0F1F4; }
   /* Header row: ink text (black in light, white in dark), no background bar —
      a thick ink rule under the row separates it from the entries, spanning the
