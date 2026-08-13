@@ -308,7 +308,7 @@
       return (
         "<tr" + (sync === "archived" ? ' style="opacity:0.55"' : "") + ">" +
           '<td><span data-pill="' + esc(c.slug) + '">' + casePill(c.slug, c.short_name || c.display_name) + "</span>" +
-            '<button type="button" class="mg-gear" data-color="' + esc(c.slug) + '" title="Pill colors">⚙</button>' +
+            '<button type="button" class="mg-gear" data-color="' + esc(c.slug) + '" title="Pill colors"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></button>' +
             '<div class="mg-slug">' + esc(c.slug) + "</div></td>" +
           '<td><select class="mg-sync-select mg-sync ' + esc(sync) + '" data-sync-select="' + esc(c.slug) + '" title="Sync mode">' +
             SYNC_MODES.map(function (s) { return '<option value="' + s.value + '"' + (sync === s.value ? " selected" : "") + ">" + esc(s.label) + "</option>"; }).join("") +
@@ -333,7 +333,7 @@
       (CASES_LITE ? '<div class="mg-banner warn">Showing the pipeline manifest (roster + colors only) — the admin API isn’t reachable yet. Editing prompts for sign-in.</div>' : "") +
       '<div class="mg-head"><h2>Tracked cases</h2>' +
         '<button type="button" class="mg-btn mg-btn-primary" id="mg-new-case">＋ New case</button></div>' +
-      '<p class="mg-hint">Every matter the pipeline follows. A case can span multiple themes and carries its own scan guidance. Colors are set from the pill ⚙ menus on the dashboard; the default palette lives in Colors.</p>' +
+      '<p class="mg-hint">Every matter the pipeline follows. A case can span multiple themes and carries its own scan guidance. Colors are set from the pill <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg> menus on the dashboard; the default palette lives in Colors.</p>' +
       '<div class="mg-box"><table class="mg-table">' +
         "<thead><tr><th>Case</th><th>Sync</th><th>Themes</th><th class=\"mg-right\">Actions</th></tr></thead>" +
         "<tbody>" + (rows || '<tr><td colspan="4" class="mg-empty">No cases yet — create the first one.</td></tr>') + "</tbody>" +
@@ -978,7 +978,7 @@
       '<div class="mg-head"><h2>Colors — default palette</h2>' +
         '<button type="button" class="mg-btn" id="mg-palette-reset">Reset to factory</button>' +
         '<button type="button" class="mg-btn mg-btn-primary" id="mg-palette-save">Save palette</button></div>' +
-      '<p class="mg-hint">The 12 preset swatches offered in every pill color picker (case ⚙ menus on the dashboard and docket). This is the only place the default palette can be changed; the pickers themselves just choose from it.</p>' +
+      '<p class="mg-hint">The 12 preset swatches offered in every pill color picker (case <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg> menus on the dashboard and docket). This is the only place the default palette can be changed; the pickers themselves just choose from it.</p>' +
       '<div class="mg-swatches" id="mg-swatches">' + swatchesHtml() + "</div>";
 
     function wire() {

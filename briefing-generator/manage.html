@@ -54,7 +54,7 @@
   .mg-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 18px 0 32px; }
   .mg-tab { font-family: inherit; font-size: 11px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; height: 30px; padding: 0 14px; display: inline-flex; align-items: center; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; text-decoration: none; transition: background .15s, color .15s, border-color .15s; }
   .mg-tab:hover { background: var(--paper-2); color: var(--ink); }
-  .mg-tab.on { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .mg-tab.on { background: var(--sel-bg, #0A0A0A); border-color: var(--sel-bg, #0A0A0A); color: var(--sel-fg, #fff); }
 
   /* Panels, tables, forms */
   .mg-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
@@ -204,13 +204,13 @@
       <a class="tn-back" href="news.html">📡 News</a>
       <a class="tn-back" href="prospects.html">🔭 Prospects</a>
     </div>
-    <div class="tn-gear" id="tn-gear"><button type="button" class="tn-gear-btn" id="tn-gear-btn" title="Settings" aria-haspopup="true">⚙️</button><div class="tn-gear-panel"><a href="manage.html#cases">Cases</a><a href="manage.html#themes">Themes</a><a href="manage.html#groups">Groups</a><a href="manage.html#voice">Voice</a><a href="manage.html#colors">Colors</a></div></div><button id="theme-toggle">🖥️</button>
+    <div class="tn-gear" id="tn-gear"><button type="button" class="tn-gear-btn" id="tn-gear-btn" title="Settings" aria-haspopup="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></button><div class="tn-gear-panel"><a href="manage.html#cases">Cases</a><a href="manage.html#themes">Themes</a><a href="manage.html#groups">Groups</a><a href="manage.html#voice">Voice</a><a href="manage.html#colors">Colors</a></div></div><button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
 <div class="mg-wrap">
   <div class="mg-title">
-    <h1>⚙️ Manage</h1>
+    <h1><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg> Manage</h1>
     <span class="mg-sub">Cases, themes, filter groups, and intelligence settings — changes commit to the repo like any admin save.</span>
   </div>
 
