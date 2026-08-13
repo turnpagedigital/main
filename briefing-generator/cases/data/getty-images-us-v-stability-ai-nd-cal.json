@@ -917,7 +917,29 @@
     ]
   },
   "claims_administrator": null,
-  "coverage": [],
+  "coverage": [
+    {
+      "headline": "Getty's AI Copyright Suit Survives Stability's Bid for Dismissal",
+      "url": "https://news.bloomberglaw.com/ip-law/gettys-ai-copyright-suit-survives-stabilitys-bid-for-dismissal",
+      "source": "Bloomberg Law",
+      "date": "2026-04-24",
+      "summary": "Judge Trina L. Thompson of the N.D. Cal. denied Stability AI's motion to dismiss, allowing Getty's copyright infringement, trademark infringement, unfair competition, and trademark dilution claims over 12 million scraped photographs to move forward. Only Getty's DMCA false copyright management information claim was dismissed for failure to adequately plead scienter."
+    },
+    {
+      "headline": "Judge Lets Getty's TM Claims Against Stability AI Proceed",
+      "url": "https://www.law360.com/articles/2469412/judge-lets-getty-s-tm-claims-against-stability-ai-proceed",
+      "source": "Law360",
+      "date": "2026-04-24",
+      "summary": "A California federal judge dismissed one of seven counts in Getty's lawsuit against Stability AI — the DMCA false CMI claim — while allowing the bulk of the trademark and copyright claims to proceed. The case centers on allegations that Stability AI's image generator produces outputs bearing distorted Getty watermarks."
+    },
+    {
+      "headline": "Getty Has Room to Fortify AI Infringement Claims, Judge Hints",
+      "url": "https://news.bloomberglaw.com/ip-law/gettys-ai-infringement-claims-could-be-fortified-judge-hints",
+      "source": "Bloomberg Law",
+      "date": "2026-04-08",
+      "summary": "During an hour-long hearing in San Francisco, Judge Trina L. Thompson signaled she was open to trimming Getty's lawsuit while suggesting Getty could amend its complaint to strengthen its DMCA copyright management information claim. The parties focused arguments on whether Stability AI's intent to facilitate infringement was sufficiently alleged."
+    }
+  ],
   "events": [
     {
       "title": "Close of Fact Discovery — Getty Images v. Stability AI (3:25-cv-06891)",

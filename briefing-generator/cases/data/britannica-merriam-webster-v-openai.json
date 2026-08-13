@@ -979,11 +979,33 @@
   "claims_administrator": null,
   "coverage": [
     {
+      "headline": "AI Infringement Case Updates: April 7, 2026",
+      "url": "https://www.mckoolsmith.com/newsroom-ailitigation-57",
+      "source": "McKool Smith",
+      "date": "2026-04-07",
+      "summary": "McKool Smith's litigation update reported that the court issued a show cause order to Encyclopaedia Britannica asking why its case should not be stayed pending summary judgment in the other active MDL cases, with a response deadline of April 15, 2026. The update noted it was likely the Britannica case would be stayed, as it had not been especially active in MDL filings."
+    },
+    {
+      "headline": "The dictionaries are suing OpenAI for 'massive' copyright infringement, and say ChatGPT is starving publishers of revenue",
+      "url": "https://fortune.com/2026/03/18/dictionaries-suing-openai-chatgpt-copyright-infringement",
+      "source": "Fortune",
+      "date": "2026-03-18",
+      "summary": "Fortune reported that Britannica and Merriam-Webster filed suit in the Southern District of New York, alleging OpenAI built its business on their researched content and that ChatGPT cannibalizes the traffic and ad revenue publishers depend on. The suit also accuses OpenAI of feeding its LLM with the fact-checked work of hundreds of human writers and editors."
+    },
+    {
+      "headline": "Encyclopedia Britannica sues OpenAI over AI training",
+      "url": "https://thedailyrecord.com/2026/03/17/encyclopedia-britannica-sues-openai-over-ai-training/",
+      "source": "Maryland Daily Record",
+      "date": "2026-03-17",
+      "summary": "The Maryland Daily Record reported that Britannica's lawsuit accuses OpenAI of unlawfully copying nearly 100,000 of its articles to train GPT large language models, with OpenAI responding that its models are 'grounded in fair use.' The piece situates the case within the broader wave of high-stakes copyright lawsuits by publishers and authors against AI companies."
+    },
+    {
       "headline": "Britannica, Merriam-Webster Accuse OpenAI of Copying Their Works",
       "url": "https://news.bloomberglaw.com/ip-law/britannica-merriam-webster-accuse-openai-of-copying-their-works",
       "source": "Bloomberg Law",
       "date": "2026-03-16",
       "summary": "Bloomberg Law reports that Encyclopaedia Britannica and Merriam-Webster filed suit against OpenAI in the S.D.N.Y. (No. 1:26-cv-02097) alleging massive copyright infringement, including copying the dictionary's own definition of 'plagiarize,' and trademark infringement when ChatGPT hallucinates false information attributed to the publishers. Both complaints were filed by Susman Godfrey LLP, which also represents news organizations in other AI copyright suits."
     }
-  ]
+  ],
+  "events": []
 }
