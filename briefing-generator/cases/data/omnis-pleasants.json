@@ -16,11 +16,21 @@
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-13",
     "meta_fetched_at": "2026-08-13T20:51:19.004383+00:00",
-    "fetched_at": "2026-08-13T20:51:19.004383+00:00",
+    "fetched_at": "2026-08-13T21:06:02.437108+00:00",
     "as_of": "Aug 13, 2026",
     "backfilled": true,
-    "new_in_72h": 5,
+    "new_in_72h": 6,
     "recent": [
+      {
+        "entry_number": 78,
+        "date_filed": "2026-08-13",
+        "time_filed": "16:45:07",
+        "date_display": "Aug 13, 2026",
+        "description": "Motion for Order Re: Interim Compensation Procedures",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 77,
         "date_filed": "2026-08-13",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 75,
-        "date_filed": "2026-08-12",
-        "time_filed": "13:14:37",
-        "date_display": "Aug 12, 2026",
-        "description": "The upcoming 341(a) meeting is scheduled to be held by Zoom. To join the meeting: Meeting ID: 160 0838 5103 ; Passcode: 4568293370 ; Phone: 1 (669) 254-5252. Filed by U.S. Trustee. (Hackman, Benjamin) (Entered: 08/12/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.75.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 78,
+        "date_filed": "2026-08-13",
+        "time_filed": "16:45:07",
+        "date_display": "Aug 13, 2026",
+        "description": "Motion for Order Re: Interim Compensation Procedures",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 77,
         "date_filed": "2026-08-13",
