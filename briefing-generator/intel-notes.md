@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-13 15:11 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-13 15:15 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -61,6 +61,14 @@ Discovery-related.
 ### (no docket number) — 2026-07-28
 
 > Auto-Docket of Credit Card
+
+## Hachette v. Google (Gemini)
+
+### Dkt. 25 — 2026-08-07
+
+> LETTER RESPONSE to Motion addressed to Judge Loretta A. Preska from Jeffrey M. Gould dated August 7, 2026 re: 21 LETTER MOTION for Conference concerning Defendant Google LLC's anticipated motion to tr
+
+Current dispute regarding transfer of venue from New York to ND Cal. Social post about this? biggest copyright case yet will be tried in NY or Cal? Implications?
 
 ## Harvest Sherwood
 
