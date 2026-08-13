@@ -1,0 +1,132 @@
+name: Weekly Prospect Scan
+
+# Theme-driven prospecting for NEW cases worth tracking (scan_prospects.py).
+# Split out of the daily news scan (Aug 2026): the broad web-search sweep
+# takes 10-20 minutes on its own and was blowing the news scan's timeout
+# (the 2026-08-10 Monday run died at the 20-minute limit and the week's
+# prospect refresh was lost).
+#
+# Runs Monday mornings: 5 AM ET primary, 10 AM ET retry. The retry checks
+# prospects.json first and exits quietly when the morning run already
+# succeeded, so a normal week costs one scan. GitHub cron is best-effort —
+# the retry also covers a silently skipped 5 AM tick.
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'    # Monday 09:00 UTC = 5:00 AM ET during DST (4 AM EST)
+    - cron: '0 14 * * 1'   # Monday 14:00 UTC = 10:00 AM ET retry (9 AM EST)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prospects-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Skip retry when the morning run already landed
+        id: gate
+        run: |
+          python3 - <<'PYEOF'
+          import json, os, datetime as dt
+          fresh = False
+          try:
+              p = json.load(open("briefing-generator/prospects.json", encoding="utf-8"))
+              updated = dt.datetime.fromisoformat(p.get("updated", "").replace("Z", "+00:00"))
+              age_h = (dt.datetime.now(dt.timezone.utc) - updated).total_seconds() / 3600
+              fresh = age_h < 8
+              print(f"prospects.json updated {age_h:.1f}h ago — {'fresh, skipping' if fresh else 'stale, scanning'}")
+          except Exception as ex:
+              print(f"no readable prospects.json ({ex}) — scanning")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f'run={"false" if fresh else "true"}\n')
+          PYEOF
+        # Manual dispatch always runs, fresh or not.
+        if: github.event_name == 'schedule'
+
+      - name: Set up Python
+        if: github.event_name != 'schedule' || steps.gate.outputs.run == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: briefing-generator/scripts/requirements.txt
+
+      - name: Install dependencies
+        if: github.event_name != 'schedule' || steps.gate.outputs.run == 'true'
+        working-directory: briefing-generator
+        run: |
+          pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: Scan prospects
+        if: github.event_name != 'schedule' || steps.gate.outputs.run == 'true'
+        working-directory: briefing-generator
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/scan_prospects.py
+
+      - name: Commit to main if anything changed
+        if: github.event_name != 'schedule' || steps.gate.outputs.run == 'true'
+        run: |
+          if git diff --exit-code -- briefing-generator > /dev/null; then
+            echo "No prospect changes"
+            echo "CHANGED=0" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          echo "CHANGED=1" >> "$GITHUB_ENV"
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Prospect Scan Bot"
+          git add briefing-generator
+          git commit -m "Prospect scan $(date -u +'%Y-%m-%d')"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push; then
+              echo "pushed to main on attempt ${attempt}"; break
+            fi
+            git rebase --abort 2>/dev/null || true
+            echo "main push attempt ${attempt} failed; retrying in 5s"; sleep 5
+          done
+
+      - name: Checkout dev branch
+        if: env.CHANGED == '1'
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+          path: dev-site
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Copy refreshed prospects into dev
+        if: env.CHANGED == '1'
+        run: |
+          cp -f briefing-generator/prospects.json dev-site/briefing-generator/ 2>/dev/null || true
+
+      - name: Commit to dev
+        if: env.CHANGED == '1'
+        working-directory: dev-site
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Prospect Scan Bot"
+          git add briefing-generator
+          if git diff --staged --quiet; then
+            echo "Nothing new for dev"
+          else
+            git commit -m "Prospect scan $(date -u +'%Y-%m-%d'): refresh dev"
+            for attempt in 1 2 3 4 5; do
+              if git pull --rebase origin dev && git push origin HEAD:dev; then
+                echo "pushed to dev on attempt ${attempt}"; break
+              fi
+              git rebase --abort 2>/dev/null || true
+              echo "dev push attempt ${attempt} failed; retrying in 5s"; sleep 5
+            done
+          fi

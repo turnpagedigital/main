@@ -12,7 +12,8 @@
       "billion-dollar-class-actions"
     ],
     "court": "U.S. District Court, N.D. Cal. (San Francisco)",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "britannica-merriam-webster-v-openai",
@@ -26,7 +27,8 @@
       "llm-class-action"
     ],
     "court": "U.S. District Court (filed March 2026; district not confirmed in sources)",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "concord-anthropic",
@@ -40,7 +42,8 @@
       "llm-class-action"
     ],
     "court": "District Court, N.D. California",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "getty-images-us-v-stability-ai-nd-cal",
@@ -54,7 +57,8 @@
       "llm-class-action"
     ],
     "court": "U.S. District Court for the Northern District of California",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "goliath",
@@ -69,7 +73,8 @@
       "crypto-insolvency"
     ],
     "court": "S.D. Fl.",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "hachette-et-al-v-google-llc-gemini",
@@ -83,7 +88,8 @@
       "llm-class-action"
     ],
     "court": "S.D.N.Y.",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "hachette-et-al-v-meta-platforms-llama",
@@ -97,7 +103,8 @@
       "llm-class-action"
     ],
     "court": "To be confirmed (filed May 5, 2026)",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "harvest-sherwood",
@@ -111,7 +118,8 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "N.D. Tex.",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "in-re-cashcall-inc",
@@ -125,7 +133,8 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "To be confirmed (financials sector Ch. 11, filed ~July 21, 2026)",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "kadrey-v-meta-contributory-infringement-amendment",
@@ -139,7 +148,8 @@
       "llm-class-action"
     ],
     "court": "District Court N.D. Cal.",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "kahan",
@@ -154,7 +164,8 @@
       "crypto-insolvency"
     ],
     "court": "Bankr. D. Mass",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "omnis-pleasants",
@@ -168,7 +179,8 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "United States Bankruptcy Court, D. Delaware",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "papaya-gaming",
@@ -182,7 +194,8 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "United States Bankruptcy Court, D. Delaware",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "poolin",
@@ -197,7 +210,8 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "Bankr. D. N.J.",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "power-block-coin",
@@ -213,7 +227,8 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "Bankr. D. Utah",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "publishers-v-google-llc-gemini-books",
@@ -227,7 +242,8 @@
       "llm-class-action"
     ],
     "court": "District Court, N.D. California",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",
@@ -242,7 +258,8 @@
       "billion-dollar-class-actions"
     ],
     "court": "U.S. Court of Appeals for the Federal Circuit (on appeal from CIT)",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "terraform-labs",
@@ -257,7 +274,8 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "Bankr. D. Del.",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153",
@@ -271,7 +289,8 @@
       "llm-class-action"
     ],
     "court": "U.S. Court of Appeals for the Third Circuit",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   },
   {
     "slug": "vos-selections-v-trump",
@@ -285,6 +304,7 @@
       "rewind-tariffs"
     ],
     "court": "C.I.T.",
-    "sync": "active"
+    "sync": "active",
+    "docket_history": "full"
   }
 ]

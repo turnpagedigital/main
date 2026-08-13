@@ -73,6 +73,12 @@ def parse_case_config(text):
         # "manual" (updates only via the admin Sync-now button), "archived"
         # (docket kept, never searched again). Absent → active.
         "sync": sync if sync in ("active", "manual", "archived") else "active",
+        # Docket history depth: "full" (default — trickle/backfill the whole
+        # docket) or "prospective" (new filings only; saves CL quota on
+        # monster dockets like FTX).
+        "docket_history": ("prospective"
+                           if (_scalar(fm, "docket_history") or "").lower() == "prospective"
+                           else "full"),
         # When Andrew started tracking the case (ISO date) — drives the
         # dashboard's Newest/Oldest sort.
         "added": _scalar(fm, "added") or "",

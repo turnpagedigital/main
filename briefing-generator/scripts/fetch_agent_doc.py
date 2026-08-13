@@ -118,9 +118,17 @@ def _pdf_via_download_or_fetch(page, link_handle, pdf_url):
 
 
 def stretto_fetch(base_url, docket_number):
-    """Stretto (WordPress + AWS WAF). The court-docket page filters server-side
-    via ?search_docket_no=N and renders each matching filing as a table row
-    with a direct PDF link. Returns (pdf_bytes, document_title)."""
+    """Stretto (WordPress + AWS WAF). The court-docket table is rendered
+    client-side from an admin-ajax POST — newest entries first, paginated —
+    so old entries never appear on the default listing. (?search_docket_no=N
+    was never a real query param: that's just the search input's name, and
+    relying on it only ever worked for entries young enough to sit on page 1.)
+    The page natively reads ?docketNo=N — the deep-link its docket-alert
+    emails use — and passes it server-side as a docket-number filter, so the
+    table renders just that entry's row(s) with a direct PDF link. If the
+    deep-link filter ever stops applying, fall back to driving the page's own
+    docket-number search form (same server-side filter). Returns
+    (pdf_bytes, document_title)."""
     from playwright.sync_api import sync_playwright
 
     parsed = urlparse(base_url)
@@ -128,62 +136,126 @@ def stretto_fetch(base_url, docket_number):
     if not case_seg:
         fail("could not derive the Stretto case path from the agent URL")
     origin = f"{parsed.scheme}://{parsed.netloc}"
-    docket_url = (f"{origin}/{case_seg[0]}/court-docket/"
-                  f"?search_docket_no={int(docket_number)}")
+    docket_base = f"{origin}/{case_seg[0]}/court-docket/"
+
+    # Classify what the AJAX draw put in the docket table (scoped to the
+    # table — the page has static PDF links elsewhere that must not count):
+    #   match    — row whose docket-number cell equals N (+ its PDF link and
+    #              document name; a.full_text always carries the untruncated
+    #              name via textContent even though the anchor is hidden)
+    #   noDocs   — Stretto's explicit "No Documents Found" row (the entry is
+    #              genuinely not listed)
+    #   otherNos — other docket numbers rendered, i.e. we're staring at an
+    #              unfiltered listing (the filter didn't apply)
+    MATCH_JS = """(n) => {
+        const out = { match: null, noDocs: false, rows: 0, otherNos: [] };
+        const tbody = document.querySelector('#court-docket-table tbody');
+        if (!tbody) return out;
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+        out.rows = rows.length;
+        if (/no documents found/i.test(tbody.innerText)) out.noDocs = true;
+        for (const row of rows) {
+            const cells = row.querySelectorAll('td');
+            if (!cells.length) continue;
+            const first = cells[0].innerText.replace(/docket\\s*(no\\.?|#)?/i, '').trim();
+            if (!/^\\d+$/.test(first)) continue;
+            if (parseInt(first, 10) !== n) {
+                if (out.otherNos.length < 8) out.otherNos.push(parseInt(first, 10));
+                continue;
+            }
+            const a = row.querySelector("a[href$='.pdf']") || row.querySelector('a.limited_text[href]');
+            const full = row.querySelector('a.full_text');
+            const title = ((full && full.textContent) || (a && a.textContent) ||
+                           (cells[2] ? cells[2].innerText : ''))
+                          .replace(/\\s+/g, ' ').trim().slice(0, 300);
+            out.match = { href: a ? a.href : null, title };
+            return out;
+        }
+        return out;
+    }"""
+
+    def rendered_state(page, timeout_ms=30000):
+        """Wait for AJAX-rendered rows (attached, not visible — the responsive
+        table keeps cells display:none at desktop width), then classify."""
+        try:
+            page.wait_for_selector("#court-docket-table tbody tr",
+                                   state="attached", timeout=timeout_ms)
+        except Exception:
+            return None
+        page.wait_for_timeout(1200)
+        return page.evaluate(MATCH_JS, int(docket_number))
 
     with sync_playwright() as pw:
         browser, ctx, page = _launch(pw)
         # Warm the AWS WAF challenge on the plain case page first: its
         # challenge.js computes an `aws-waf-token` cookie the browser must
-        # hold before content loads. Wait for that cookie, THEN hit search.
-        page.goto(f"{origin}/{case_seg[0]}/court-docket/",
-                  wait_until="networkidle", timeout=45000)
+        # hold before content loads. Wait for that cookie, THEN deep-link.
+        page.goto(docket_base, wait_until="networkidle", timeout=45000)
         for _ in range(20):
             if any(c["name"] == "aws-waf-token" for c in ctx.cookies()):
                 break
             page.wait_for_timeout(1000)
-        page.goto(docket_url, wait_until="networkidle", timeout=45000)
-        try:
-            # attached, not visible — the responsive table keeps one cell set
-            # display:none at desktop width, so the anchors exist but a
-            # visibility wait never resolves.
-            page.wait_for_selector("a[href$='.pdf']", state="attached", timeout=30000)
-        except Exception:
+        page.goto(f"{docket_base}?docketNo={int(docket_number)}",
+                  wait_until="networkidle", timeout=45000)
+        state = rendered_state(page)
+
+        if state and not state["match"] and not state["noDocs"] and state["otherNos"]:
+            # Deep-link filter didn't apply — we got the unfiltered
+            # newest-first listing. Drive the page's own search form (set the
+            # field and click via JS: the form starts collapsed, and the
+            # button click runs the page's runRecaptcha('search') flow).
+            print("  · ?docketNo deep-link not applied; using the docket search form",
+                  file=sys.stderr)
+            page.evaluate(
+                """(n) => {
+                    const f = document.querySelector('#search_docket_no');
+                    if (f) f.value = String(n);
+                    const b = document.querySelector('#submit-btn-court-docket-search');
+                    if (b) b.click();
+                }""",
+                int(docket_number),
+            )
+            for _ in range(5):
+                page.wait_for_timeout(2500)
+                state = rendered_state(page, timeout_ms=10000)
+                if state and (state["match"] or state["noDocs"]):
+                    break
+
+        if not state or not (state["match"] or state["noDocs"] or state["otherNos"]):
             diag = page.evaluate(
-                "() => ({ title: document.title, pdfs: document.querySelectorAll(\"a[href$='.pdf']\").length,"
+                "() => ({ title: document.title, rows: document.querySelectorAll('#court-docket-table tbody tr').length,"
+                " pdfs: document.querySelectorAll(\"a[href$='.pdf']\").length,"
                 " waf: document.body.innerText.slice(0,120) })")
             browser.close()
-            fail(f"no PDF links on the Stretto docket for {case_seg[0]} — diag={diag}")
-        page.wait_for_timeout(1000)
-
-        # Match in-page: for each PDF link, read its row's docket-number cell.
-        # Returns the href + document-name once the number matches N.
-        match = page.evaluate(
-            """(n) => {
-                const links = Array.from(document.querySelectorAll("a[href$='.pdf']"));
-                for (const a of links) {
-                    const row = a.closest('tr') || a.closest("[class*='row']");
-                    if (!row) continue;
-                    const cells = row.querySelectorAll('td');
-                    if (!cells.length) continue;
-                    const first = cells[0].innerText.replace(/docket\\s*(no\\.?|#)?/i, '').trim();
-                    if (/^\\d+$/.test(first) && parseInt(first, 10) === n) {
-                        return { href: a.href,
-                                 title: (cells[2] ? cells[2].innerText : a.innerText).replace(/\\s+/g,' ').trim().slice(0,300) };
-                    }
-                }
-                return null;
-            }""",
-            int(docket_number),
-        )
-        if not match:
+            fail(f"the Stretto docket for {case_seg[0]} did not render any entries — diag={diag}")
+        if not state["match"] and state["noDocs"]:
             browser.close()
-            fail(f"Dkt. {docket_number} not found on the Stretto docket for {case_seg[0]}")
-        target_href = match["href"]
-        title = clean(match["title"]) or None
-        link_handle = page.query_selector(f"a[href='{target_href}']")
+            fail(f"Dkt. {docket_number} is not listed on the Stretto docket for {case_seg[0]} "
+                 "(the agent's docket-number search returned \"No Documents Found\" — "
+                 "the agent may not host this entry; use PACER or download manually)")
+        if not state["match"]:
+            browser.close()
+            fail(f"Dkt. {docket_number} not found on the Stretto docket for {case_seg[0]} "
+                 f"(docket-number filter did not apply; rendered docket nos. {state['otherNos']})")
+        if not state["match"]["href"]:
+            browser.close()
+            fail(f"Dkt. {docket_number} is listed on the Stretto docket for {case_seg[0]} "
+                 "but its row has no document link (no PDF hosted for this entry)")
 
-        pdf_url = target_href if target_href.startswith("http") else urljoin(docket_url, target_href)
+        target_href = state["match"]["href"]
+        title = clean(state["match"]["title"]) or None
+        # The same href renders several times (truncated + full-text anchors in
+        # a display:none cell, plus the visible document-name row). Click the
+        # visible one — clicking a hidden anchor just burns the click timeout.
+        link_handle = None
+        for cand in page.query_selector_all(f"a[href='{target_href}']"):
+            if cand.is_visible():
+                link_handle = cand
+                break
+        if link_handle is None:
+            link_handle = page.query_selector(f"a[href='{target_href}']")
+
+        pdf_url = target_href if target_href.startswith("http") else urljoin(docket_base, target_href)
         body = _pdf_via_download_or_fetch(page, link_handle, pdf_url)
         browser.close()
 

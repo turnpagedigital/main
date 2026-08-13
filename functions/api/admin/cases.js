@@ -65,6 +65,7 @@ async function updateManifest(env, action, c) {
         court: (c.case && c.case.court) || "",
         topics: c.topics || prev.topics || [],
         sync: c.sync || "active",
+        docket_history: c.docket_history === "prospective" ? "prospective" : "full",
         added: prev.added || new Date().toISOString().slice(0, 10),
         default_color: prev.default_color || PILL_PALETTE[colorIdx % PILL_PALETTE.length],
       };
@@ -95,7 +96,8 @@ const TOPICS = [
 ];
 
 const MODELED_KEYS = new Set([
-  "slug", "display_name", "short_name", "type", "status", "sync", "topics",
+  "slug", "display_name", "short_name", "type", "status", "sync",
+  "docket_history", "topics",
   "case", "docket_source", "claims_administrator", "scan_guidance",
 ]);
 
@@ -147,6 +149,11 @@ function normalizeCase(raw) {
     type: c.type || "case",
     status: coerceStatus(c.status),
     sync: coerceSync(c.sync),
+    // "full" walks the whole docket history over time (backfill + nightly
+    // deep sync); "prospective" only ever pulls new filings — the cheap
+    // option for huge dockets (FTX) where history would burn the
+    // CourtListener quota.
+    docket_history: c.docket_history === "prospective" ? "prospective" : "full",
     topics: Array.isArray(c.topics)
       ? c.topics.map(t => String(t).trim()).filter(Boolean)
       : [],
@@ -210,6 +217,7 @@ function frontMatterBody(c) {
   y += `type: ${c.type}\n`;
   y += /^[a-z0-9-]+$/.test(c.status) ? `status: ${c.status}\n` : `status: ${dq(c.status)}\n`;
   y += `sync: ${c.sync}\n`;
+  if (c.docket_history === "prospective") y += `docket_history: prospective\n`;
   y += "topics:\n";
   for (const t of c.topics) y += `  - ${t}\n`;
   y += "case:\n";
@@ -335,6 +343,7 @@ function parseCaseMd(md, fallbackSlug) {
     type: top("type") || "case",
     status: coerceStatus(top("status") || ""),
     sync: coerceSync(top("sync") || ""),
+    docket_history: (top("docket_history") || "") === "prospective" ? "prospective" : "full",
     topics: byKey["topics"] ? listItems(byKey["topics"]) : [],
     case: {
       parties: caseB ? (subScalar(caseB, "parties") || "") : "",

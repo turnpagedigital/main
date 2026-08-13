@@ -680,7 +680,12 @@
         '<div class="ih-tc-head">' +
           '<a href="' + BASE + 'docket.html#case=' + docketTarget + '" style="text-decoration:none">' +
             casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color) + "</a>" +
-          '<span class="ih-tc-right"><span class="ih-tc-count">' + esc(count) + "</span>" + star + "</span>" +
+          '<span class="ih-tc-right"><span class="ih-tc-count">' + esc(count) + "</span>" +
+            (isGroup ? "" :
+              '<span class="ih-run-status" data-run-status="' + esc(m.slug) + '"></span>' +
+              '<button type="button" class="ih-act" data-act-sync="' + esc(m.slug) + '" title="Sync now — fresh docket entries + a news search; briefing refreshes if older than 12h">' + '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg>' + "</button>" +
+              '<button type="button" class="ih-act" data-act-brief="' + esc(m.slug) + '" title="Brief now — force-regenerate this case’s briefing">' + '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>' + "</button>") +
+            star + "</span>" +
         "</div>";
 
       var html =
@@ -696,6 +701,9 @@
           '<span class="ih-lr-count">' + esc(count) + "</span>" +
           '<span class="ih-lr-lede' + (moved ? "" : " ih-quiet") + '">' +
             (lede ? esc(lede) : "No briefing yet — generates when the case moves.") + "</span>" +
+          '<span class="ih-run-status" data-run-status="' + esc(m.slug) + '"></span>' +
+          '<button type="button" class="ih-act" data-act-sync="' + esc(m.slug) + '" title="Sync now — fresh docket entries + a news search; briefing refreshes if older than 12h">' + '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg>' + "</button>" +
+          '<button type="button" class="ih-act" data-act-brief="' + esc(m.slug) + '" title="Brief now — force-regenerate this case’s briefing">' + '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>' + "</button>" +
           star +
           '<span class="ih-lr-read">Read →</span>' +
         "</a>";
@@ -794,6 +802,20 @@
         renderAll();
       });
     }
+
+    grid.querySelectorAll("[data-act-sync]").forEach(function (b) {
+      b.addEventListener("click", function (ev) {
+        ev.preventDefault(); ev.stopPropagation();
+        runCaseAction("sync", b.getAttribute("data-act-sync"));
+      });
+    });
+    grid.querySelectorAll("[data-act-brief]").forEach(function (b) {
+      b.addEventListener("click", function (ev) {
+        ev.preventDefault(); ev.stopPropagation();
+        runCaseAction("brief", b.getAttribute("data-act-brief"));
+      });
+    });
+    paintRunBadges();
 
     grid.querySelectorAll("[data-star]").forEach(function (b) {
       b.addEventListener("click", function (ev) {

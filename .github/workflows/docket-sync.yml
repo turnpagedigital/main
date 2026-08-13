@@ -1,4 +1,7 @@
 name: Docket Sync
+# Scheduled runs keep the default title; a single-case dispatch (admin
+# Sync-now) carries its slug so /api/admin/sync-status can match it.
+run-name: "${{ inputs.case && format('Docket sync — {0}', inputs.case) || '' }}"
 
 # Keeps the tracked-case docket data fresh when nobody has the page open.
 # (While the page IS open it self-refreshes every minute via

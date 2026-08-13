@@ -229,6 +229,12 @@ def refresh_case(case, history_pages=0, force=False):
     cfg = case["config"]
     slug = case["slug"]
     ds = cfg["docket_source"]
+    # Prospective-only cases never walk history: no trickle, no nightly
+    # backfill — every run is just the cheap freshness pull.
+    prospective = cfg.get("docket_history") == "prospective"
+    if prospective:
+        history_pages = 0
+        force = False
     if ds["type"] != "courtlistener" or ds.get("awaiting_sync") or not ds.get("docket_id"):
         print(f"  · {slug}: not a live CourtListener case (seed kept)")
         return False
@@ -314,10 +320,13 @@ def refresh_case(case, history_pages=0, force=False):
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     case["data_path"].write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
-    tail = "complete" if block["backfilled"] else "in progress"
+    if prospective:
+        hist_tail = "history off (prospective)"
+    else:
+        hist_tail = "backfill " + ("complete" if block["backfilled"] else "in progress")
     meta_tail = "meta fetched" if need_meta else "meta skipped (quiet + fresh)"
     print(f"  ✓ {slug}: {len(block['entries'])} entries "
-          f"(+{crawled} history, backfill {tail}), {block['new_in_72h']} new in 72h, {meta_tail}")
+          f"(+{crawled} history, {hist_tail}), {block['new_in_72h']} new in 72h, {meta_tail}")
     return True
 
 
@@ -375,6 +384,11 @@ def main():
     cases = pri_cases + rest
     if pri_cases:
         print(f"  priority-first: {', '.join(c['slug'] for c in pri_cases)}")
+    if backfill_all:
+        # Deep-sync slots are scarce (backfill_cap) — never spend one on a
+        # prospective-only case that would ignore the force flag anyway.
+        cases = ([c for c in cases if c["config"].get("docket_history") != "prospective"]
+                 + [c for c in cases if c["config"].get("docket_history") == "prospective"])
     if backfill_all and cases:
         deep = ", ".join(c["slug"] for c in cases[:backfill_cap])
         print(f"  backfill rotation: deep-syncing {deep}; freshness pass for the rest")
