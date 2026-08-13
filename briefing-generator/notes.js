@@ -990,6 +990,7 @@
         saveFilterState();
         syncTimeHeader();
         applyCustomVisibility();
+        if (typeof markSort === "function") markSort();
         render();
       });
     }
@@ -1007,6 +1008,8 @@
             : b.getAttribute("data-val") === lookback);
         });
         thTime.classList.toggle("ud-th-on", sortDir !== "desc" || lookback !== "all");
+        var lbl = document.getElementById("ud-lookback-label");
+        if (lbl) lbl.textContent = LB_LABELS[lookback] || "All time";
       };
       thTime.addEventListener("click", function (ev) {
         ev.stopPropagation();
