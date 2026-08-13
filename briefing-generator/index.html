@@ -148,7 +148,7 @@
     .ih-band > .ih-tile { position: relative; }
     /* Drag the boundary between News / Calendar / Notes to resize them */
     .ih-band-grip { position: absolute; top: 0; bottom: 0; right: -15px; width: 15px; cursor: col-resize; z-index: 6; display: flex; align-items: center; justify-content: center; }
-    .ih-band-grip::after { content: ""; width: 2px; height: 44px; background: transparent; border-radius: 2px; transition: background 0.12s; }
+    .ih-band-grip::after { content: ""; width: 2px; height: 44px; background: transparent; border-radius: 15px; transition: background 0.12s; }
     .ih-band-grip:hover::after { background: var(--line-strong); }
     .ih-band-grip.on::after { background: var(--neon-block); }
     @media (max-width: 1100px) { .ih-band { grid-template-columns: 1fr; } .ih-band-grip { display: none; } }
@@ -156,7 +156,7 @@
        week — same "thin bar, highlights on hover/drag" language as the
        column-width grips above, just turned 90deg. */
     .ih-band-vgrip { max-width: 1680px; margin: 0 auto; padding: 6px 32px; height: 15px; box-sizing: content-box; cursor: row-resize; display: flex; align-items: center; justify-content: center; }
-    .ih-band-vgrip span { width: 44px; height: 2px; background: transparent; border-radius: 2px; transition: background 0.12s; }
+    .ih-band-vgrip span { width: 44px; height: 2px; background: transparent; border-radius: 15px; transition: background 0.12s; }
     .ih-band-vgrip:hover span { background: var(--line-strong); }
     .ih-band-vgrip.on span { background: var(--neon-block); }
     .ih-tile { background: var(--surface); border: 1px solid var(--line-strong); display: flex; flex-direction: column; }
@@ -164,7 +164,7 @@
     .ih-carousel { max-width: 1680px; margin: 0 auto 96px; padding: 0 32px; display: flex; align-items: stretch; gap: 6px; }
     .ih-theme-grid { flex: 1; min-width: 0; display: flex; gap: 10px; overflow-x: auto; scroll-behavior: smooth; padding-bottom: 6px; }
     .ih-theme-grid::-webkit-scrollbar { height: 6px; }
-    .ih-theme-grid::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 3px; }
+    .ih-theme-grid::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 15px; }
     .ih-theme-card { flex: 0 0 calc((100% - 20px) / 3); }
     .ih-carousel-nav { flex: 0 0 auto; align-self: stretch; width: 34px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); cursor: pointer; font-size: 20px; font-weight: 700; line-height: 1; }
     .ih-carousel-nav:hover { background: var(--paper-2); }
@@ -405,7 +405,7 @@
        doesn't change color when the room lights dim. The top stripe is the
        note's case color, the same raw value a case pill shows as its
        light-mode background. */
-    .ih-note-card { flex: 1; display: flex; flex-direction: column; min-height: 0; background: var(--nc); border-top: 4px solid var(--cc, transparent); border-radius: 14px; box-shadow: 0 6px 10px -7px rgba(10,10,10,0.4); overflow: hidden; }
+    .ih-note-card { flex: 1; display: flex; flex-direction: column; min-height: 0; background: var(--nc); border-top: 4px solid var(--cc, transparent); border-radius: 15px; box-shadow: 0 6px 10px -7px rgba(10,10,10,0.4); overflow: hidden; }
     [data-theme="dark"] .ih-note-card { background: var(--ncd); box-shadow: 0 6px 14px -7px rgba(0,0,0,0.7); }
     .ih-note-link { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 14px 17px 4px; text-decoration: none; cursor: pointer; }
     .ih-note-link .title { font-size: 15px; font-weight: 800; color: #21201A; padding-bottom: 7px; margin-bottom: 10px; border-bottom: 1px solid rgba(10,10,10,0.14); }
@@ -524,7 +524,7 @@
   .ih-tile { background: transparent; border: none; }
   .ih-tile > .ih-head { border-bottom: none; padding: 0 2px 8px; }
   .ih-tile .ih-name { color: var(--ink); }
-  .ih-tile > .ih-list, .ih-tile > .ih-dates { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 10px rgba(10,10,10,0.08); overflow: hidden; flex: 1; }
+  .ih-tile > .ih-list, .ih-tile > .ih-dates { background: var(--surface); border: 1px solid var(--line); border-radius: 15px; box-shadow: 0 2px 10px rgba(10,10,10,0.08); overflow: hidden; flex: 1; }
   [data-theme="dark"] .ih-tile > .ih-list, [data-theme="dark"] .ih-tile > .ih-dates { box-shadow: 0 4px 14px rgba(0,0,0,0.4); }
   /* Consistent 48px vertical rhythm between sections; 8px from a title to its box */
   .ih-controls { margin-bottom: 48px; }
