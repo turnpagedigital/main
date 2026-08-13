@@ -2,24 +2,18 @@
   "case": {
     "slug": "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",
     "display_name": "Burlap and Barrel",
-    "case_name": "Burlap and Barrel, Inc. v. Trump",
+    "case_name": "State of Oregon, et al. v. United States; Burlap and Barrel, Inc. v. United States",
     "court": "U.S. Court of Appeals for the Federal Circuit (on appeal from CIT)",
     "case_number": "1:26-cv-01606",
     "judge": "Timothy C. Stanceu",
     "docket_id": "72381015",
     "status": "active",
-    "sync": "active",
-    "court_id": ""
+    "sync": "active"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72381015/burlap-and-barrel-inc-v-trump/",
-    "date_last_filing": "2026-06-11",
-    "meta_fetched_at": "2026-08-11T18:10:51.098579+00:00",
-    "fetched_at": "2026-08-13T16:16:06.368041+00:00",
-    "as_of": "Aug 13, 2026",
-    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -564,7 +558,12 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "date_last_filing": "2026-06-11",
+    "meta_fetched_at": "2026-08-11T18:10:51.098579+00:00",
+    "fetched_at": "2026-08-13T16:16:06.368041+00:00",
+    "as_of": "Aug 13, 2026",
+    "backfilled": true
   },
   "claims_administrator": null,
   "coverage": [
@@ -581,16 +580,6 @@
       "source": "Trade Law Daily",
       "date": "2026-08-06",
       "summary": "The U.S. government filed an August 4 motion at the Court of International Trade asking that Burlap and Barrel v. United States (CIT # 26-03345) be designated the 'master case' for coordinated briefing and oral argument across three parallel challenges to the administration's new Section 301 forced-labor tariffs, with plaintiffs' motions for judgment proposed due August 14 and the government's consolidated response due September 15."
-    }
-  ],
-  "events": [
-    {
-      "title": "CIT Plaintiffs' Motions for Judgment Deadline — Burlap and Barrel / Section 301 Master Case (CIT # 26-03345)",
-      "date": "2026-08-14",
-      "time": "",
-      "kind": "Deadline",
-      "url": "https://tradelawdaily.com/article/2026/08/06/us-moves-for-burlap-and-barrel-to-be-master-case-in-litigation-against-section-301-tariffs-2608050035?BC=bc_6a73d6ed38210",
-      "source": "U.S. Court of International Trade"
     }
   ]
 }
