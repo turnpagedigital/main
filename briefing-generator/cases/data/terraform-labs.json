@@ -16,8 +16,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
     "date_last_filing": "2026-08-05",
-    "meta_fetched_at": "2026-08-13T10:31:20.875865+00:00",
-    "fetched_at": "2026-08-13T10:31:20.875865+00:00",
+    "meta_fetched_at": "2026-08-13T12:03:08.220392+00:00",
+    "fetched_at": "2026-08-13T12:03:08.220392+00:00",
     "as_of": "Aug 13, 2026",
     "backfilled": false,
     "new_in_72h": 0,
@@ -2527,6 +2527,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 1084,
+        "date_filed": "2025-09-19",
+        "time_filed": "12:05:12",
+        "date_display": "Sep 19, 2025",
+        "description": "Certificate of No Objection Regarding Plan Administrator's Fifth Omnibus (Non-Substantive) Objection to Claims Pursuant to Bankruptcy Code Sections 502(B) and 503(B), Bankruptcy Rules 3001, 3003, and 3007, and Local Rules 3007-1 (related document(s)1060) Filed by Todd R. Snyder. (Attachments: # 1 Exhibit A) (Shapiro, Zachary) (Entered: 09/19/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 1083,
         "date_filed": "2025-09-19",
         "time_filed": "12:02:00",
@@ -2715,6 +2725,16 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 1063,
+        "date_filed": "2025-08-28",
+        "time_filed": "16:40:26",
+        "date_display": "Aug 28, 2025",
+        "description": "Notice of Service // Notice of Further Adjournment of Hearing Regarding Final Fee Application of Dentons US LLP, Special Counsel to Debtors, for Final Allowance of Compensation and Reimbursement of Expenses for the Period From January 21, 2024 through and Including October 1, 2024 (related document(s)859) Filed by Dentons US LLP. (Jones, Laura Davis) (Entered: 08/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.1063.0.pdf"
       },
       {
         "entry_number": 1062,
@@ -13757,7 +13777,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68180454&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=13"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68180454&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=19"
   },
   "claims_administrator": {
     "name": "Epiq11",

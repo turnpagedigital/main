@@ -16,8 +16,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-07-21",
-    "meta_fetched_at": "2026-08-13T10:30:17.720357+00:00",
-    "fetched_at": "2026-08-13T10:30:17.720357+00:00",
+    "meta_fetched_at": "2026-08-13T12:01:58.675334+00:00",
+    "fetched_at": "2026-08-13T12:01:58.675334+00:00",
     "as_of": "Aug 13, 2026",
     "backfilled": false,
     "new_in_72h": 0,
@@ -2870,6 +2870,16 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.415.0.pdf"
       },
       {
+        "entry_number": 414,
+        "date_filed": "2025-09-23",
+        "time_filed": "11:38:41",
+        "date_display": "Sep 23, 2025",
+        "description": "EXHIBITS re 401 Supplemental Brief, Exhibit 11 Proposed Digital Placements filed byAndrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Related document(s) 401 ) (Geman, Rachel) (Filed on 9/23/2025) (Entered: 09/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 413,
         "date_filed": "2025-09-23",
         "time_filed": "",
@@ -2910,6 +2920,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 409,
+        "date_filed": "2025-09-23",
+        "time_filed": "11:32:19",
+        "date_display": "Sep 23, 2025",
+        "description": "EXHIBITS re 401 Supplemental Brief, Exhibit 6 Proposed Postcard Notice filed byAndrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Related document(s) 401 ) (Geman, Rachel) (Filed on 9/23/2025) (Entered: 09/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 408,
         "date_filed": "2025-09-23",
         "time_filed": "",
@@ -2918,6 +2938,16 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 407,
+        "date_filed": "2025-09-23",
+        "time_filed": "11:29:39",
+        "date_display": "Sep 23, 2025",
+        "description": "EXHIBITS re 401 Supplemental Brief, Exhibit 4 Proposed Short-form Mail Notice filed byAndrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Related document(s) 401 ) (Geman, Rachel) (Filed on 9/23/2025) (Entered: 09/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.407.0.pdf"
       },
       {
         "entry_number": 406,
@@ -3010,6 +3040,16 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.398.0_1.pdf"
       },
       {
+        "entry_number": 397,
+        "date_filed": "2025-09-22",
+        "time_filed": "11:29:33",
+        "date_display": "Sep 22, 2025",
+        "description": "Declaration of Nancy E. Wolff in Support of 363 MOTION for Settlement - Motion for Preliminary Approval of Settlement filed byAndrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Related document(s) 363 ) (Geman, Rachel) (Filed on 9/22/2025) (Entered: 09/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.397.0.pdf"
+      },
+      {
         "entry_number": 396,
         "date_filed": "2025-09-22",
         "time_filed": "",
@@ -3028,6 +3068,26 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.395.0.pdf"
+      },
+      {
+        "entry_number": 394,
+        "date_filed": "2025-09-22",
+        "time_filed": "11:20:03",
+        "date_display": "Sep 22, 2025",
+        "description": "Declaration of Tom West of Publishers Licensing Services Limited in Support of 363 MOTION for Settlement - Motion for Preliminary Approval of Settlement filed byAndrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Related document(s) 363 ) (Geman, Rachel) (Filed on 9/22/2025) (Entered: 09/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.394.0.pdf"
+      },
+      {
+        "entry_number": 393,
+        "date_filed": "2025-09-22",
+        "time_filed": "11:16:49",
+        "date_display": "Sep 22, 2025",
+        "description": "Declaration of Catriona Stevenson of Publishers Association in Support of 363 MOTION for Settlement - Motion for Preliminary Approval of Settlement filed byAndrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Related document(s) 363 ) (Geman, Rachel) (Filed on 9/22/2025) (Entered: 09/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.393.0.pdf"
       },
       {
         "entry_number": 392,
@@ -7440,7 +7500,7 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=13"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=19"
   },
   "claims_administrator": {
     "name": "JND Legal Administration",
