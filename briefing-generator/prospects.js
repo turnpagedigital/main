@@ -209,6 +209,16 @@
       var n = tabCount(o.value);
       o.textContent = TAB_LABELS[o.value] + (o.value === "all" || !n ? "" : " (" + n + ")");
     });
+    var triageTh = document.getElementById("pr-th-triage");
+    if (triageTh) {
+      var lbl = triageTh.querySelector(".ud-th-label");
+      var n = tabCount(TAB);
+      if (lbl) lbl.textContent = "Triage \u00b7 " + TAB_LABELS[TAB] +
+        (TAB === "all" || !n ? "" : " (" + n + ")");
+      triageTh.classList.toggle("ud-th-on", TAB !== "new");
+    }
+    var showSelSync = document.getElementById("pr-show");
+    if (showSelSync && showSelSync.value !== TAB) showSelSync.value = TAB;
     if (!tbody) return;
     if (!list.length) {
       tbody.innerHTML = '<tr><td colspan="4" class="ud-empty">' +
@@ -833,6 +843,53 @@
     });
   }
 
+  // ── Triage header filter — the desktop control (the #pr-show select
+  // stays wired below as the mobile card-view control; both drive TAB). ────
+  var triageMenuEl = null;
+
+  function closeTriageMenu() {
+    if (triageMenuEl && triageMenuEl.parentNode) triageMenuEl.parentNode.removeChild(triageMenuEl);
+    triageMenuEl = null;
+  }
+
+  function openTriageMenu(th) {
+    closeTriageMenu();
+    var menu = document.createElement("div");
+    menu.className = "ud-th-menu";
+    menu.innerHTML = ["new", "snoozed", "hidden", "dismissed", "tracked", "all"].map(function (v) {
+      var n = tabCount(v);
+      return '<button type="button" class="ud-th-menu-item' + (TAB === v ? " ud-th-menu-on" : "") +
+        '" data-tab="' + v + '">' + TAB_LABELS[v] + (v === "all" || !n ? "" : " (" + n + ")") + "</button>";
+    }).join("");
+    document.body.appendChild(menu);
+    var rect = th.getBoundingClientRect();
+    menu.style.top = (rect.bottom + window.scrollY + 4) + "px";
+    menu.style.left = Math.max(8, rect.right + window.scrollX - menu.offsetWidth) + "px";
+    menu.addEventListener("click", function (ev) {
+      var b = ev.target.closest("[data-tab]");
+      if (!b) return;
+      TAB = b.getAttribute("data-tab");
+      closeTriageMenu();
+      render();
+    });
+    triageMenuEl = menu;
+  }
+
+  function wireTriageHeader() {
+    var th = document.getElementById("pr-th-triage");
+    if (!th) return;
+    th.addEventListener("click", function (ev) {
+      ev.stopPropagation();
+      if (triageMenuEl) { closeTriageMenu(); return; }
+      openTriageMenu(th);
+    });
+    document.addEventListener("click", function (ev) {
+      if (!triageMenuEl) return;
+      if (triageMenuEl.contains(ev.target) || th.contains(ev.target)) return;
+      closeTriageMenu();
+    });
+  }
+
   // ── Tabs + boot ───────────────────────────────────────────────────────────
   function wireTabs() {
     var sel = document.getElementById("pr-show");
@@ -868,6 +925,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     wireTabs();
+    wireTriageHeader();
     wireDropdown();
     wireKeys();
     document.addEventListener("keydown", function (ev) {

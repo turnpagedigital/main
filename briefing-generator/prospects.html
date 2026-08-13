@@ -63,7 +63,7 @@
   /* Theme pills: monochrome outline — white bg / black outline+text (inverts in dark) */
   .ud-pill-theme{background:#0A0A0A;color:#FFFFFF;border:1px solid #0A0A0A;border-radius:99px;}
   [data-theme="dark"] .ud-pill-theme{background:#FFFFFF;color:#0A0A0A;border-color:#FFFFFF;}
-  .pr-show{display:flex;align-items:center;gap:8px;}
+  .pr-show{display:none;align-items:center;gap:8px;}  /* desktop filters from the Triage header; select is the mobile control */
   .pr-show-label{font-size:12.5px;font-weight:700;letter-spacing:0.03em;color:var(--ink-60);}
   .ud-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
   #ud-count{font-size:14px;color:var(--ink-60);flex:1;}
@@ -116,6 +116,10 @@
   .ud-clear-btn:hover{border-color:var(--ink-40);color:var(--ink);}
   /* Snooze menu (docket pattern) */
   .ud-th-menu{position:absolute;z-index:950;background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 6px 24px rgba(0,0,0,0.22);min-width:190px;padding:6px;}
+  .ud-th-filter{cursor:pointer;user-select:none;-webkit-user-select:none;}
+  .ud-th-caret{font-size:9px;}
+  th.ud-th-on{color:var(--ink);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px;}
+  .ud-th-menu-item.ud-th-menu-on{font-weight:800;}
   .ud-th-menu-item{display:block;width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:13px;color:var(--ink);cursor:pointer;padding:8px 10px;}
   .ud-th-menu-item:hover{background:var(--paper-2);}
   /* Track modal */
@@ -155,7 +159,7 @@
   .pr-social-count.over{color:#C84141;}
   .pr-social-ta{width:100%;box-sizing:border-box;font-size:13.5px;font-family:inherit;line-height:1.5;padding:10px 11px;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;resize:vertical;}
   .pr-social-ta:focus{border-color:var(--neon);}
-  .pr-copy{font-size:10.5px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;padding:3px 11px;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;flex:none;}
+  .pr-copy{font-size:10.5px;font-weight:800;letter-spacing:0.02em;padding:3px 11px;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;flex:none;}
   .pr-copy:hover{border-color:var(--neon);}
   .pr-copy.done{color:#1a7f37;border-color:#1a7f37;}
   /* ── Shared restyle (ported from the docket): white light canvas, white rows
@@ -203,7 +207,7 @@
     .ud-controls{padding:12px 0;gap:8px;}
     .ud-search-wrap{flex:1 1 100%;max-width:none;}
     #ud-count, #ud-hidden-info { display: none; }
-    .pr-show{margin-left:auto;}
+    .pr-show{display:flex;margin-left:auto;}
     .ud-table, .ud-table tbody{display:block;width:100%;}
     .ud-table{border:1px solid var(--line-strong);background:var(--surface);}
     .ud-table thead{display:none;}
@@ -279,7 +283,7 @@
       <th style="width:96px">Seen</th>
       <th style="width:210px">Theme</th>
       <th>Prospect</th>
-      <th style="width:230px;text-align:right">Triage</th>
+      <th style="width:230px;text-align:right" id="pr-th-triage" class="ud-th-filter" title="Filter by triage status"><span class="ud-th-label">Triage</span> <span class="ud-th-caret">▾</span></th>
     </tr></thead>
     <tbody id="pr-tbody">
       <tr><td colspan="4" class="ud-empty">Loading…</td></tr>

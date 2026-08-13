@@ -519,7 +519,7 @@
       "</div>" +
       section("Feeds", "feed", feeds) +
       section("News outlets", "press", press) +
-      '<a href="manage.html#sources" style="display:block;padding:8px 12px;font-size:11px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;color:var(--ink-60,inherit);border-top:1px solid rgba(128,128,128,0.25);">\u2699 Manage sources</a>' +
+      '<a href="manage.html#sources" style="display:block;padding:8px 12px;font-size:11px;font-weight:800;letter-spacing:0.02em;text-decoration:none;color:var(--ink-60,inherit);border-top:1px solid rgba(128,128,128,0.25);">\u2699 Manage sources</a>' +
       '<button type="button" class="ud-dd-save-btn ud-dd-saveview" data-close-panel>Save view</button>';
 
     var saveView = panel.querySelector("[data-close-panel]");
@@ -3247,7 +3247,7 @@
     var syncPanel = document.getElementById("ud-sync-panel");
     function runManualSync(slug) {
       if (!syncBtn) return;
-      function reset() { syncBtn.disabled = false; syncBtn.textContent = "⟳ Sync case"; }
+      function reset() { syncBtn.disabled = false; syncBtn.textContent = "⟳ Sync now"; }
       syncBtn.disabled = true;
       syncBtn.textContent = "Dispatching…";
       if (!window.IntelSync) { noteToast("Sync helper failed to load — hard-refresh the page", true); reset(); return; }
@@ -3283,7 +3283,7 @@
         var sorted = CASES.slice().sort(function (a, b) {
           return (a.short_name || a.display_name || "").localeCompare(b.short_name || b.display_name || "");
         });
-        var html = '<div class="ud-sync-hint">Pulls fresh docket entries + news, and refreshes the briefing if it hasn’t run in 12h.</div>';
+        var html = '<div class="ud-sync-hint">Fresh docket entries + a news search; the briefing refreshes if it’s older than 12 hours.</div>';
         html += sorted.map(function (c) {
           var bg = getBg(c.slug, c.default_color);
           var fg = getFg(c.slug, bg);

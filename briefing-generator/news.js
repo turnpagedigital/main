@@ -514,7 +514,7 @@
       "</div>" +
       section("Feeds", "feed", feeds) +
       section("News outlets", "press", press) +
-      '<a href="manage.html#sources" style="display:block;padding:8px 12px;font-size:11px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;color:var(--ink-60,inherit);border-top:1px solid rgba(128,128,128,0.25);">\u2699 Manage sources</a>' +
+      '<a href="manage.html#sources" style="display:block;padding:8px 12px;font-size:11px;font-weight:800;letter-spacing:0.02em;text-decoration:none;color:var(--ink-60,inherit);border-top:1px solid rgba(128,128,128,0.25);">\u2699 Manage sources</a>' +
       '<button type="button" class="ud-dd-save-btn ud-dd-saveview" data-close-panel>Save view</button>';
 
     var saveView = panel.querySelector("[data-close-panel]");
@@ -932,7 +932,7 @@
     ".pr-social-count.over{color:#C84141;}" +
     ".pr-social-ta{width:100%;box-sizing:border-box;font-size:13.5px;font-family:inherit;line-height:1.5;padding:10px 11px;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;resize:vertical;}" +
     ".pr-social-ta:focus{border-color:var(--neon);}" +
-    ".pr-copy{font-size:10.5px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;padding:3px 11px;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;flex:none;}" +
+    ".pr-copy{font-size:10.5px;font-weight:800;letter-spacing:0.02em;padding:3px 11px;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;flex:none;}" +
     ".pr-copy:hover{border-color:var(--neon);}" +
     ".pr-copy.done{color:#1a7f37;border-color:#1a7f37;}";
 

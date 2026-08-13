@@ -4,7 +4,7 @@
 html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Archivo',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
 a{color:var(--ink);}
 .tn{background:#000;border-bottom:1px solid rgba(255,255,255,0.12);padding:10px 20px;position:sticky;top:0;z-index:100;}
-.tn-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between;max-width:1180px;margin:0 auto;}
+.tn-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between;max-width:1680px;margin:0 auto;}
 .tn-left{display:flex;align-items:center;gap:16px;}
 .tn-brand{display:inline-flex;align-items:center;padding:4px 0;text-decoration:none;}
 .tn-brand-logo{height:34px;width:auto;}
@@ -18,7 +18,7 @@ a{color:var(--ink);}
 [data-theme="light"] .tn-back:hover,[data-theme="light"] .tn-back.tn-on{color:#0A0A0A;}
 #theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.25);border-radius:99px;padding:2px 8px;cursor:pointer;font-size:13px;font-family:inherit;line-height:1;color:#fff;}
 [data-theme="light"] #theme-toggle{border-color:rgba(10,10,10,0.14);color:#0A0A0A;}
-.page-title{max-width:1180px;margin:0 auto;padding:26px 32px 16px;border-bottom:2px solid var(--ink);}
+.page-title{max-width:1680px;margin:0 auto;padding:26px 32px 16px;border-bottom:2px solid var(--ink);}
 .page-title .eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);font-weight:700;}
 .page-title h1{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:800;letter-spacing:-0.02em;margin:8px 0 12px;display:flex;align-items:center;gap:10px;}
 .case-meta{display:flex;gap:22px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-60);}
@@ -36,10 +36,10 @@ a{color:var(--ink);}
 .status-badge{display:inline-block;margin-top:13px;font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;background:rgba(212,255,0,0.16);color:var(--ink);border:1px solid var(--neon);padding:3px 10px;}
 .also{margin-top:13px;font-size:11.5px;color:var(--ink-60);}
 .also a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);}
-.seed-note{max-width:1180px;margin:16px auto 0;padding:0 32px;}
+.seed-note{max-width:1680px;margin:16px auto 0;padding:0 32px;}
 .seed-note .inner{border:1px dashed var(--line-strong);padding:9px 13px;font-size:11.5px;color:var(--ink-60);}
 .seed-note strong{color:var(--ink);}
-.wrap{max-width:1180px;margin:0 auto;padding:22px 32px 12px;display:grid;gap:24px;grid-template-columns:1fr;}
+.wrap{max-width:1680px;margin:0 auto;padding:22px 32px 12px;display:grid;gap:24px;grid-template-columns:1fr;}
 @media(min-width:920px){.wrap{grid-template-columns:1.9fr 1fr;align-items:start;}}
 .panel{background:var(--surface);border:1px solid var(--line-strong);}
 .panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line-strong);}
@@ -75,11 +75,11 @@ tr.is-new td{background:rgba(212,255,0,0.06);}
 .dates li.done::before{background:var(--neon);}
 .dates .d-date{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;}
 .dates .d-label{color:var(--ink-60);display:block;}
-.section-label{max-width:1180px;margin:14px auto 0;padding:0 32px;font-size:0.74rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);}
-.cards{max-width:1180px;margin:14px auto 0;padding:0 32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+.section-label{max-width:1680px;margin:14px auto 0;padding:0 32px;font-size:0.74rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);}
+.cards{max-width:1680px;margin:14px auto 0;padding:0 32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
 @media(max-width:760px){.cards{grid-template-columns:1fr;}}
 .news-card{background:var(--surface);border:1px solid var(--line-strong);padding:14px;text-decoration:none;display:block;}
 .news-card:hover{border-color:var(--ink-40);}
 .news-card .src-line{font-size:10.5px;color:var(--ink-40);display:flex;justify-content:space-between;gap:8px;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em;}
 .news-card .h{font-size:13px;font-weight:600;color:var(--ink);line-height:1.4;}
-.foot{max-width:1180px;margin:28px auto 0;padding:24px 32px 50px;border-top:2px solid var(--ink);font-size:11px;color:var(--ink-60);line-height:1.7;}
+.foot{max-width:1680px;margin:28px auto 0;padding:24px 32px 50px;border-top:2px solid var(--ink);font-size:11px;color:var(--ink-60);line-height:1.7;}
