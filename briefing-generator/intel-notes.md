@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-13 15:15 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-13 15:37 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -161,12 +161,6 @@ Ciao
 ### (no docket number) — 2026-08-03
 
 > RNDC court filings reveal scale of distributor's financial collapse — Court documents show RNDC had been sinking into financial difficulty for several years, with the COVID-19 pandemic and its afterma
-
-## Sleep Number
-
-### (no docket number) — 2026-08-03
-
-> Notice of Adjournment of Hearing
 
 ## Terraform Labs
 

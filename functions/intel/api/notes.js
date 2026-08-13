@@ -60,7 +60,7 @@ async function loadMap(env) {
   return { entries: {} };
 }
 
-function renderMarkdown(map) {
+export function renderMarkdown(map) {
   const byCase = {};
   for (const [key, e] of Object.entries(map.entries)) {
     const name = e.case_name || e.case_slug || "Unknown case";

@@ -24,6 +24,7 @@ import {
   getFileSha,
   listDirFromGitHub,
 } from "./_github.js";
+import { renderMarkdown } from "../../intel/api/notes.js";
 
 function briefingRepo(env) { return env.GITHUB_BRIEFING_REPO || env.GITHUB_REPO || "turnpagedigital/main"; }
 function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || env.GITHUB_BRANCH || "dev"; }
@@ -528,7 +529,23 @@ export async function onRequest({ request, env }) {
         });
       }
     }
-    const del = await commitFilesToGitHub(env, files, `Remove case: ${slug} (config, data, page, uploads)`, repo, branch);
+    // The case's notes go with it — purge its entries from intel-notes.json
+    // (keys are "slug|entry…"; older records may only carry case_slug) and
+    // regenerate the human-readable md mirror in the same atomic commit.
+    const notesPath = "briefing-generator/intel-notes.json";
+    const nres = await getFileFromGitHub(env, notesPath, null, repo, branch);
+    if (nres.ok && nres.data && nres.data.entries) {
+      const entries = nres.data.entries;
+      const mine = Object.keys(entries).filter((k) =>
+        k === slug || k.startsWith(slug + "|") || (entries[k] && entries[k].case_slug === slug));
+      if (mine.length) {
+        for (const k of mine) delete entries[k];
+        files.push({ path: notesPath, sha: nres.sha, content: JSON.stringify(nres.data, null, 2) + "\n" });
+        files.push({ path: "briefing-generator/intel-notes.md", content: renderMarkdown(nres.data) });
+      }
+    }
+
+    const del = await commitFilesToGitHub(env, files, `Remove case: ${slug} (config, data, page, uploads, notes)`, repo, branch);
     if (!del.ok) return jsonResponse({ ok: false, error: `Failed to delete case: ${del.error}` }, 500);
 
     await updateManifest(env, "remove", { slug });
