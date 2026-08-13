@@ -3,6 +3,29 @@
   "case_name": "Harvest Sherwood",
   "items": [
     {
+      "date": "2026-08-13",
+      "updated": "2026-08-13",
+      "lede": "On August 12, the claims agent docketed two additional assignments and transfers of claim (Dkts. 1205 and 1206), continuing the secondary-market activity that has run without interruption since plan confirmation on August 5.",
+      "body_md": "On August 12, the claims agent docketed two additional assignments and transfers of claim (Dkts. 1205 and 1206), continuing the secondary-market activity that has run without interruption since plan confirmation on August 5. The document text for this pair has not been pulled, but the structural pattern is identical to the CRG Financial / Technical Truck And Trailer transfer (Dkt. 1165): Rule 3001(e)(2) transfers other than for security, each carrying a 20-day objection window from mailing before the transferee is substituted without further court order. Combined with the four transfers filed August 10–11 (Dkts. 1192, 1195, 1196, and 1197) covered in yesterday's briefing, the post-confirmation transfer count now stands at a minimum of eleven entries since August 7. The volume confirms continued secondary-market appetite for Harvest Sherwood paper at confirmed-plan pricing, but no individual small-balance transfer alters the recovery calculus for general unsecured creditors, which turns on the antitrust portfolio being pursued by plan funder Atlas Grove and, more immediately, the outcome of Adv. Pro. 25-08002, __[Law360](https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval)__.\n\nDkt. 1207, also filed August 12, is a BNC certificate of mailing — filing infrastructure, not a reportable event. Dkts. 1201–1204 are four pro hac vice admissions filed August 11; the identity of the admitting attorneys and the parties they represent has not been pulled, but the filing cluster is noteworthy given its proximity to the September 21 trial date in Adv. Pro. 25-08002. Four simultaneous pro hac admissions in a case with active trial counsel already on the record is consistent with a trial team expanding ahead of a hearing — whether for Harvest Sherwood, Sprouts, or a third-party witness group cannot be confirmed without a PACER pull of the underlying applications. That question carries practical significance: new counsel appearances in the adversary proceeding could signal a shift in litigation posture or the addition of claims or defenses, both of which this desk would classify up. The certificates of service at Dkts. 1199 and 1200, filed August 11, are omitted.\n\nThe next concrete milestone is trial in *Harvest Sherwood Food Distributors, Inc. v. Sprouts Farmers Market, Inc., et al*, Adv. Pro. 25-08002, set for September 21, 2026, at 9:30 a.m. before Judge Jernigan in Dallas, __[Epiq](https://dm.epiq11.com/case/hvs/advproc/223?debtorId=15030)__. With 39 days to trial, the adversary docket is the priority watch for this desk. Any in limine ruling, stipulation, or pre-trial motion filed in that proceeding before September 21 carries higher materiality than anything presently moving on the main case docket.\n\n## Sources\n\n- [Harvest Sherwood Wins Ch. 11 Plan Approval](https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval) — Law360, August 5, 2026\n- [Harvest Sherwood Food Distributors, Inc. Adversary Proceedings](https://dm.epiq11.com/case/hvs/advproc/223?debtorId=15030) — Epiq, Case No. 25-08002\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Harvest Sherwood Wins Ch. 11 Plan Approval",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval",
+          "note": "Law360, August 5, 2026"
+        },
+        {
+          "title": "Harvest Sherwood Food Distributors, Inc. Adversary Proceedings",
+          "url": "https://dm.epiq11.com/case/hvs/advproc/223?debtorId=15030",
+          "note": "Epiq, Case No. 25-08002"
+        }
+      ],
+      "activity": {
+        "filings": 12,
+        "articles": 0,
+        "latest": "2026-08-12"
+      }
+    },
+    {
       "date": "2026-08-12",
       "updated": "2026-08-12",
       "lede": "On August 10 and 11, the claims agent docketed four additional assignments and transfers of claim (Dkts. 1192, 1195, 1196, and 1197), extending the unbroken run of secondary-market claim purchases that has characterized the docket since plan confirmation on August 5.",
