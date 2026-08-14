@@ -15,18 +15,28 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-14",
-    "meta_fetched_at": "2026-08-14T21:43:34.129336+00:00",
-    "fetched_at": "2026-08-14T21:43:34.129336+00:00",
+    "meta_fetched_at": "2026-08-14T22:43:40.529905+00:00",
+    "fetched_at": "2026-08-14T22:43:40.529905+00:00",
     "as_of": "Aug 14, 2026",
     "backfilled": true,
-    "new_in_72h": 21,
+    "new_in_72h": 22,
     "recent": [
+      {
+        "entry_number": 94,
+        "date_filed": "2026-08-14",
+        "time_filed": "17:48:55",
+        "date_display": "Aug 14, 2026",
+        "description": "Declaration",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 93,
         "date_filed": "2026-08-14",
         "time_filed": "17:25:32",
         "date_display": "Aug 14, 2026",
-        "description": "Dismiss Case - Motion",
+        "description": "Motion to Dismiss Case Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. Objections due by 8/28/2026. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B # 4 Exhibit C # 5 Exhibit D) (Ward, Christopher) (Entered: 08/14/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -36,17 +46,7 @@
         "date_filed": "2026-08-14",
         "time_filed": "09:53:55",
         "date_display": "Aug 14, 2026",
-        "description": "Appear pro hac vice",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 91,
-        "date_filed": "2026-08-14",
-        "time_filed": "09:52:55",
-        "date_display": "Aug 14, 2026",
-        "description": "Appear pro hac vice",
+        "description": "Order Granting Motion for Admission pro hac vice of Dale K. Cathell, Esquire (Related Doc # 89) Order Signed on 8/14/2026. (CEB) (Entered: 08/14/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -54,11 +54,21 @@
     ],
     "entries": [
       {
+        "entry_number": 94,
+        "date_filed": "2026-08-14",
+        "time_filed": "17:48:55",
+        "date_display": "Aug 14, 2026",
+        "description": "Declaration",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 93,
         "date_filed": "2026-08-14",
         "time_filed": "17:25:32",
         "date_display": "Aug 14, 2026",
-        "description": "Dismiss Case - Motion",
+        "description": "Motion to Dismiss Case Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. Objections due by 8/28/2026. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B # 4 Exhibit C # 5 Exhibit D) (Ward, Christopher) (Entered: 08/14/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -68,7 +78,7 @@
         "date_filed": "2026-08-14",
         "time_filed": "09:53:55",
         "date_display": "Aug 14, 2026",
-        "description": "Appear pro hac vice",
+        "description": "Order Granting Motion for Admission pro hac vice of Dale K. Cathell, Esquire (Related Doc # 89) Order Signed on 8/14/2026. (CEB) (Entered: 08/14/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -78,7 +88,7 @@
         "date_filed": "2026-08-14",
         "time_filed": "09:52:55",
         "date_display": "Aug 14, 2026",
-        "description": "Appear pro hac vice",
+        "description": "Order Granting Motion for Admission pro hac vice of Jeffrey S. Torosian, Esquire (Related Doc # 88) Order Signed on 8/14/2026. (CEB) (Entered: 08/14/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -88,7 +98,7 @@
         "date_filed": "2026-08-14",
         "time_filed": "09:51:47",
         "date_display": "Aug 14, 2026",
-        "description": "Appear pro hac vice",
+        "description": "Order Granting Motion for Admission pro hac vice of Jonathan M. Kinney, Esquire (Related Doc # 87) Order Signed on 8/14/2026. (CEB) (Entered: 08/14/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -98,7 +108,7 @@
         "date_filed": "2026-08-14",
         "time_filed": "09:34:02",
         "date_display": "Aug 14, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "description": "Motion to Appear pro hac vice (Dale K. Cathell). Receipt Number DC-5042267, Filed by RG Energy LLC, TRAG LLC. (Martin, R.) (Entered: 08/14/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -108,7 +118,7 @@
         "date_filed": "2026-08-14",
         "time_filed": "09:31:21",
         "date_display": "Aug 14, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "description": "Motion to Appear pro hac vice (Jeffrey S. Torosian). Receipt Number DC-5042267, Filed by RG Energy LLC, TRAG LLC. (Martin, R.) (Entered: 08/14/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -118,7 +128,7 @@
         "date_filed": "2026-08-14",
         "time_filed": "09:28:19",
         "date_display": "Aug 14, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "description": "Motion to Appear pro hac vice (Jonathan M. Kinney). Receipt Number DC-5042267, Filed by RG Energy LLC, TRAG LLC. (Martin, R.) (Entered: 08/14/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -139,7 +149,7 @@
         "date_filed": "2026-08-13",
         "time_filed": "22:27:06",
         "date_display": "Aug 13, 2026",
-        "description": "Employ/Retain - Application/Motion",
+        "description": "Application/Motion to Employ/Retain Sidley Austin LLP as Special Regulatory Counsel for the Debtor and Debtor in Possession Effective as of the Petition Date Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Objections due by 8/27/2026. (Attachments: # 1 Notice # 2 Exhibit A - C) (Diver, James) (Entered: 08/13/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -149,7 +159,7 @@
         "date_filed": "2026-08-13",
         "time_filed": "22:06:50",
         "date_display": "Aug 13, 2026",
-        "description": "Employ/Retain - Application/Motion",
+        "description": "Application/Motion to Employ/Retain Houlihan Lokey Capital, Inc. as Investment Banker to the Debtor, Effective as of August 3, 2026 Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Objections due by 8/27/2026. (Attachments: # 1 Notice # 2 Exhibit A - C) (Diver, James) (Entered: 08/13/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -159,7 +169,7 @@
         "date_filed": "2026-08-13",
         "time_filed": "22:02:01",
         "date_display": "Aug 13, 2026",
-        "description": "Employ/Retain - Application/Motion",
+        "description": "Application/Motion to Employ/Retain Herbert Smith Freehills Kramer (US) LLP as Attorneys for the Debtor and Debtor in Possession Effective as of the Petition Date Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Objections due by 8/27/2026. (Attachments: # 1 Notice # 2 Exhibit A - C) (Diver, James) (Entered: 08/13/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -169,7 +179,7 @@
         "date_filed": "2026-08-13",
         "time_filed": "21:57:19",
         "date_display": "Aug 13, 2026",
-        "description": "Employ/Retain - Application/Motion",
+        "description": "Application/Motion to Employ/Retain Young Conaway Stargatt & Taylor, LLP as Co-Counsel for the Debtor, Effective as of the Petition Date Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Objections due by 8/27/2026. (Attachments: # 1 Notice # 2 Exhibit A - D) (Magaziner, Andrew) (Entered: 08/13/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -179,7 +189,7 @@
         "date_filed": "2026-08-13",
         "time_filed": "21:51:13",
         "date_display": "Aug 13, 2026",
-        "description": "Employ/Retain - Application/Motion",
+        "description": "Application/Motion to Employ/Retain AP Services, LLC as Designating David Hindman as Chief Executive Officer Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Objections due by 8/27/2026. (Attachments: # 1 Notice # 2 Exhibit A - C) (Diver, James) (Entered: 08/13/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -189,7 +199,7 @@
         "date_filed": "2026-08-13",
         "time_filed": "19:49:38",
         "date_display": "Aug 13, 2026",
-        "description": "Affidavit/Declaration of Service",
+        "description": "Affidavit/Declaration of Service re: Notice of Zoom-Based Section 341 Meeting (Docket No. 75), Notice of Chapter 11 Bankruptcy Case (Docket No. 76). Filed by Stretto, Inc.. (related document(s)75, 76) (Betance, Sheryl) (Entered: 08/13/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -210,7 +220,7 @@
         "date_filed": "2026-08-13",
         "time_filed": "16:45:07",
         "date_display": "Aug 13, 2026",
-        "description": "Motion for Order Re: Interim Compensation Procedures",
+        "description": "Motion for Order Establishing Procedures for Interim Compensation and Reimbursement of Expenses of Professionals Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Objections due by 8/27/2026. (Attachments: # 1 Notice # 2 Exhibit A) (Poppiti, Jr., Robert) (Entered: 08/13/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -220,7 +230,7 @@
         "date_filed": "2026-08-13",
         "time_filed": "16:09:58",
         "date_display": "Aug 13, 2026",
-        "description": "Authorize - Motion",
+        "description": "Motion to Authorize - Debtor's Motion for Entry of an Order Authorizing the Debtor to Retain and Compensate Certain Professionals Utilized by the Debtor in the Ordinary Course of Business Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Objections due by 8/27/2026. (Attachments: # 1 Notice # 2 Exhibit A - B) (Diver, James) (Entered: 08/13/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
