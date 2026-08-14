@@ -1427,7 +1427,7 @@ def render_unified_calendar(cases):
 
   <div id="uc-merge-bar" class="uc-merge-bar" style="display:none;">
     <span id="uc-merge-count"></span>
-    <button type="button" id="uc-merge-btn" class="ud-dd-save-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px"><path d="M4 19Q4 11 12 11"/><path d="M20 19Q20 11 12 11"/><path d="M12 11V5"/><polyline points="8 8 12 4 16 8"/></svg>Merge into one event</button>
+    <button type="button" id="uc-merge-btn" class="ud-dd-save-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px"><path d="M5 4c0 5.5 2.8 7 7 9"/><path d="M19 4c0 5.5-2.8 7-7 9"/><path d="M12 13v7"/><path d="M9 17l3 3 3-3"/></svg>Merge into one event</button>
     <button type="button" id="uc-dismiss-btn" class="ud-clear-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px"><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>Dismiss selected</button>
     <button type="button" id="uc-clear-sel" class="ud-clear-btn">Clear</button>
   </div>

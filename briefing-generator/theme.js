@@ -349,9 +349,10 @@
     '🗒':NI+'<rect x="4" y="4.5" width="16" height="16.5" rx="2"/><path d="M8 2.5v4M12 2.5v4M16 2.5v4"/><path d="M8 11h8M8 14.5h8M8 18h5" opacity="0.4"/></svg>',
     // News — front page, photo block in dim red
     '📡':NI+'<rect x="3" y="4" width="18" height="16" rx="2"/><rect x="6" y="7" width="7" height="5" rx="1" fill="currentColor" fill-opacity="0.4" stroke="none"/><path d="M16 8h2M16 11h2M6 15h12M6 17.8h8"/></svg>',
-    // Prospects — telescope (per Andrew\'s reference): angled barrel with a
-    // detached solid eyepiece, pivot knob, A-frame tripod
-    '🔭':NI+'<rect x="11.6" y="3.4" width="8.6" height="5.2" rx="1.2" transform="rotate(-35 15.9 6)" fill="currentColor" fill-opacity="0.4"/><rect x="4.2" y="10.6" width="3.4" height="3.8" rx="0.9" transform="rotate(-35 5.9 12.5)" fill="currentColor"/><circle cx="11.2" cy="10.8" r="1.7"/><path d="M10.6 13 7.6 21M12 13l3 8M8.8 18h5" opacity="0.75"/></svg>',
+    // Prospects — telescope drawn to the reference: two SOLID angled segments
+    // with a gap, black knockout circle ringed red at the joint, A-frame
+    // tripod. Deliberately bolder than the rest of the set.
+    '🔭':NI+'<rect x="11.8" y="3.3" width="9" height="5.5" rx="1.4" transform="rotate(-35 16.3 6.05)" fill="currentColor" stroke="none"/><rect x="4.3" y="10.9" width="4.1" height="4.5" rx="1.1" transform="rotate(-35 6.35 13.15)" fill="currentColor" stroke="none"/><circle cx="10.9" cy="10.9" r="2.1" fill="#000"/><path d="M11.6 12.9 7.7 21.4M11.6 12.9l3.9 8.5M8.9 18.3h5.4"/></svg>',
     // Cases — folder, divider dimmed (🗂️ is what the dashboard actually uses)
     '📁':NI+'<path d="M3 8V6a2 2 0 0 1 2-2h4l2.2 2.5H19a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 10.5h18" opacity="0.4"/></svg>',
     '🗂':NI+'<path d="M3 8V6a2 2 0 0 1 2-2h4l2.2 2.5H19a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 10.5h18" opacity="0.4"/></svg>',
