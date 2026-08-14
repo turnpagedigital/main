@@ -20,6 +20,27 @@ const API = "https://www.courtlistener.com/api/rest/v4";
 // browsing hour — the whole day's budget in <1h of open tabs. 10 minutes
 // keeps rows fresh enough for court filings at ~13% of budget per hour.
 const CACHE_SECONDS = 600;
+// When CourtListener throttles us, stop asking. Without this the page kept
+// retrying every minute, so the moment the rolling window freed up we spent
+// the new headroom on background polling instead of leaving it for the
+// reader's document downloads. A cooldown marker parks the whole live sync.
+const COOLDOWN_SECONDS = 1800;
+const COOLDOWN_KEY = new Request("https://intel-docket-cache.invalid/__cooldown");
+
+async function inCooldown(cache) {
+  const hit = await cache.match(COOLDOWN_KEY);
+  if (!hit) return 0;
+  const until = Number(await hit.text()) || 0;
+  const left = Math.ceil((until - Date.now()) / 1000);
+  return left > 0 ? left : 0;
+}
+
+function startCooldown(cache, waitUntil) {
+  const until = Date.now() + COOLDOWN_SECONDS * 1000;
+  waitUntil(cache.put(COOLDOWN_KEY, new Response(String(until), {
+    headers: { "Cache-Control": `s-maxage=${COOLDOWN_SECONDS}` },
+  })));
+}
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -89,7 +110,8 @@ async function fetchDocket(target, token, waitUntil) {
       "User-Agent": "turnpage-intel-live/1.0",
     },
   });
-  if (!res.ok) return null; // 429/5xx → this case keeps its static entries
+  if (res.status === 429) return { throttled: true };
+  if (!res.ok) return null; // 5xx → this case keeps its static entries
 
   const payload = await res.json();
   const entries = normalizeEntries(payload.results);
@@ -133,11 +155,27 @@ export async function onRequestGet(context) {
   // Sequential with a small gap — CourtListener's burst limiter 429s
   // simultaneous call volleys even with a token. Cached dockets return
   // instantly, so a warm pass costs no upstream calls at all.
+  const cache = caches.default;
+  const cooling = await inCooldown(cache);
+  if (cooling) {
+    return json({
+      ok: false, cooling,
+      error: `Live sync paused — CourtListener rate-limited · resuming in ${Math.ceil(cooling / 60)} min`,
+    });
+  }
+
   const cases = [];
   const failed = [];
   for (const t of targets) {
     try {
       const r = await fetchDocket(t, token, waitUntil);
+      if (r && r.throttled) {
+        // First 429 ends the pass: the rest would only 429 too, and each
+        // attempt still counts against the budget.
+        startCooldown(cache, waitUntil);
+        failed.push(t.slug);
+        break;
+      }
       if (r) { cases.push(r); if (!r.cached) await sleep(300); }
       else failed.push(t.slug);
     } catch {
@@ -146,7 +184,7 @@ export async function onRequestGet(context) {
   }
 
   if (!cases.length) {
-    return json({ ok: false, error: "CourtListener refused every request (rate-limited?) — retrying next minute" });
+    return json({ ok: false, cooling: COOLDOWN_SECONDS, error: "CourtListener refused every request (rate-limited) — live sync paused for 30 min" });
   }
   return json({ ok: true, fetched_at: new Date().toISOString(), cases, failed });
 }
