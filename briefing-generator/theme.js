@@ -51,10 +51,16 @@
     '[data-theme="night"] .tn-gear.open .tn-gear-panel{border-bottom-color:rgba(254,1,0,0.38);}'+
     '[data-theme="night"] .tn-gear-panel a{border-top-color:rgba(254,1,0,0.20);}'+
     '[data-theme="night"] .tn-gear-theme,[data-theme="night"] .tn-gear-font{border-top-color:rgba(254,1,0,0.20);}'+
-    // Color emoji: nav/gear icons → red monochrome via filter; the big
-    // decorative h1 glyph can't be tinted convincingly at size, so night
-    // drops it (watch-face minimalism — the title text carries the page).
-    '[data-theme="night"] .tn-back .tn-ico,[data-theme="night"] .tn-gt-ico{filter:grayscale(1) sepia(1) saturate(12) hue-rotate(-50deg) brightness(1.05);}'+
+    // Color emoji: nav/gear icons → red monochrome via filter (only where no
+    // drawn night icon replaced them — see NIGHT_ICONS); the big decorative
+    // h1 glyph can't be tinted convincingly at size, so night drops it.
+    '[data-theme="night"] :is(.tn-back .tn-ico,.tn-gt-ico):not(:has(.tn-nicon)){filter:grayscale(1) sepia(1) saturate(12) hue-rotate(-50deg) brightness(1.05);}'+
+    // Night icon set: drawn stroke icons (full red) with fill-opacity accents
+    // (partially transparent red). Hidden outside night; the wrapped raw emoji
+    // hides in night wherever an icon exists.
+    '.tn-nicon{display:none;width:1.06em;height:1.06em;vertical-align:-0.16em;}'+
+    '[data-theme="night"] .tn-nicon{display:inline-block;}'+
+    '[data-theme="night"] .tn-eraw{display:none;}'+
     // :not([class]) — the generated case pages wrap their title emoji in a bare
     // <span>, but briefings.html's first span is the case-title PILL (classed).
     '[data-theme="night"] h1 .tn-emj,[data-theme="night"] .page-title h1>span:first-child:not([class]){display:none;}'+
@@ -69,7 +75,7 @@
     '@supports (content: url("data:,")) {[data-theme="night"] .tn-logo-dark{content:url("'+THEME_BASE+'assets/turnpage-intel-logo-night.png");filter:none;}}'+
     // Every emoji on the page, red — wire() wraps each pictographic cluster
     // in a .tn-emj-i span for this filter to catch.
-    '[data-theme="night"] .tn-emj-i{filter:grayscale(1) sepia(1) saturate(12) hue-rotate(-50deg) brightness(1.02);}'+
+    '[data-theme="night"] .tn-emj-i:not(:has(.tn-nicon)){filter:grayscale(1) sepia(1) saturate(12) hue-rotate(-50deg) brightness(1.02);}'+
     // Everything raster (news favicons, uploaded images, charts) → red monochrome.
     '[data-theme="night"] :is(img,video,canvas):not(.tn-brand-logo){filter:grayscale(1) sepia(1) saturate(9) hue-rotate(-48deg) brightness(0.9);}'+
     // Popovers float without shadows now — a stronger red border does the lifting.
@@ -311,7 +317,52 @@
         node.parentNode.replaceChild(frag,node);
       });
     }
+    // ── Night icon set — drawn replacements for the workhorse emojis
+    // (Andrew: recognizable icons in full-opacity red + partially transparent
+    // red). The raw emoji is kept in a .tn-eraw span (shown in light/dark);
+    // the SVG shows only under [data-theme=night]. Keys are VS16-stripped.
+    var NI='<svg class="tn-nicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
+    var NIGHT_ICONS={
+      // Dashboard — house, door in dim red
+      '🏠':NI+'<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5"/><path d="M10 21v-6h4v6z" fill="currentColor" fill-opacity="0.4" stroke="none"/></svg>',
+      // Docket — scales, pans in dim red
+      '⚖':NI+'<path d="M12 4v16M8 20h8M5 7h14"/><circle cx="12" cy="4" r="1"/><path d="M5 7 2.4 13a3.1 3.1 0 0 0 5.2 0Z" fill="currentColor" fill-opacity="0.4" stroke="none"/><path d="M19 7l-2.6 6a3.1 3.1 0 0 0 5.2 0Z" fill="currentColor" fill-opacity="0.4" stroke="none"/></svg>',
+      // Calendar — grid frame, marked date in dim red
+      '📅':NI+'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/><rect x="13" y="13" width="4.5" height="4.5" rx="1" fill="currentColor" fill-opacity="0.4" stroke="none"/></svg>',
+      // Notes — pad, rule lines dimmed
+      '🗒':NI+'<rect x="4" y="4.5" width="16" height="16.5" rx="2"/><path d="M8 2.5v4M12 2.5v4M16 2.5v4"/><path d="M8 11h8M8 14.5h8M8 18h5" opacity="0.4"/></svg>',
+      // News — front page, photo block in dim red
+      '📡':NI+'<rect x="3" y="4" width="18" height="16" rx="2"/><rect x="6" y="7" width="7" height="5" rx="1" fill="currentColor" fill-opacity="0.4" stroke="none"/><path d="M16 8h2M16 11h2M6 15h12M6 17.8h8"/></svg>',
+      // Prospects — telescope, tripod + glint dimmed
+      '🔭':NI+'<path d="m4.8 13.4 12-7 2.4 4.2-12 7z"/><path d="M18.9 5.2l1.8 3.1" opacity="0.4"/><path d="M10 17.2 7 22M14 16.2 17 22" opacity="0.4"/></svg>',
+      // Cases — folder, divider dimmed
+      '📁':NI+'<path d="M3 8V6a2 2 0 0 1 2-2h4l2.2 2.5H19a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 10.5h18" opacity="0.4"/></svg>',
+      // System — monitor, screen in dim red
+      '🖥':NI+'<rect x="3" y="4" width="18" height="12" rx="2"/><rect x="5.5" y="6.5" width="13" height="7" rx="1" fill="currentColor" fill-opacity="0.4" stroke="none"/><path d="M9 20.5h6M12 16v4.5"/></svg>',
+      // Dark — crescent, dim-filled
+      '🌙':NI+'<path d="M20 13.2A8.2 8.2 0 1 1 10.8 4a6.6 6.6 0 0 0 9.2 9.2z" fill="currentColor" fill-opacity="0.4"/></svg>',
+      // Light — sun, core in dim red
+      '☀':NI+'<circle cx="12" cy="12" r="4" fill="currentColor" fill-opacity="0.4"/><path d="M12 2v2.3M12 19.7V22M2 12h2.3M19.7 12H22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M19.1 4.9l-1.6 1.6M6.5 17.5l-1.6 1.6"/></svg>',
+      // Night — the red dot, ringed
+      '🔴':NI+'<circle cx="12" cy="12" r="7.5" fill="currentColor" fill-opacity="0.45"/></svg>'
+    };
+    function nightIconify(root){
+      if(!root||root.nodeType!==1)return;
+      // The observer hands us added nodes that may BE an icon span themselves
+      // (wireMobileNav inserts .tn-ico spans directly) — querySelectorAll only
+      // sees descendants, so check the root too.
+      var els=[].slice.call(root.querySelectorAll('.tn-ico,.tn-gt-ico,.tn-emj-i'));
+      if(root.matches&&root.matches('.tn-ico,.tn-gt-ico,.tn-emj-i'))els.unshift(root);
+      for(var i=0;i<els.length;i++){
+        var el=els[i];
+        if(el.querySelector('.tn-nicon'))continue;
+        var svg=NIGHT_ICONS[(el.textContent||'').trim().replace(/️/g,'')];
+        if(!svg)continue;
+        el.innerHTML='<span class="tn-eraw">'+el.textContent+'</span>'+svg;
+      }
+    }
     tintEmojis(document.body);
+    nightIconify(document.body);
     // Pages render rows/cards after load — wrap emoji in whatever gets added.
     // Our own spans are skipped via EMO_SKIP, so this can't loop on itself.
     new MutationObserver(function(muts){
@@ -319,7 +370,7 @@
         var ad=muts[i].addedNodes;
         for(var j=0;j<ad.length;j++){
           var nd=ad[j];
-          if(nd.nodeType===1)tintEmojis(nd);
+          if(nd.nodeType===1){tintEmojis(nd);nightIconify(nd);}
           else if(nd.nodeType===3&&nd.parentElement)tintEmojis(nd.parentElement);
         }
       }
