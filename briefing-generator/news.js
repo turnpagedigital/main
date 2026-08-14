@@ -242,7 +242,8 @@
     if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return e.date_display || "";
     var dt = new Date(d + "T00:00:00");
     if (isNaN(dt)) return e.date_display || d;
-    return dt.toLocaleDateString([], { weekday: "short", month: "short", day: "numeric", year: "numeric" });
+    // Mobile-only label: month + day is enough context in a dated list.
+    return dt.toLocaleDateString([], { month: "short", day: "numeric" });
   }
 
   function fmtTime(e) {

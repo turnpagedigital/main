@@ -218,6 +218,10 @@
   earlyCss.textContent=
     _pb.join(',')+'{background:var(--pb);color:var(--pf);}'+
     _pb.map(function(s){return '[data-theme="dark"] '+s;}).join(',')+'{background:var(--pf);color:var(--pb);}'+
+    // Row date cells carry a full and a short form; phones show the short
+    // one (MMM D, no weekday/year — the row is already in a dated context).
+    '.ud-d-short{display:none;}'+
+    '@media (max-width:720px){.ud-d-full{display:none;}.ud-d-short{display:inline;}}'+
     '.tn-hamburger{display:none;align-items:center;justify-content:center;background:transparent;border:none;color:#fff;padding:4px 6px;font-size:15px;line-height:1;opacity:0.7;cursor:pointer;flex:0 0 auto;}'+
     '.tn-hamburger:hover{opacity:1;}'+
     '.tn.tn-compact .tn-lbl{display:none;}'+
