@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-08-11",
     "meta_fetched_at": "2026-08-13T08:53:19.898283+00:00",
-    "fetched_at": "2026-08-13T23:05:34.212718+00:00",
-    "as_of": "Aug 13, 2026",
+    "fetched_at": "2026-08-14T00:01:46.189446+00:00",
+    "as_of": "Aug 14, 2026",
     "backfilled": true,
-    "new_in_72h": 7,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 67,
@@ -28,7 +28,7 @@
         "time_filed": "16:50:24",
         "date_display": "Aug 11, 2026",
         "description": "Affidavit",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.67.0_1.pdf"
       },
@@ -38,7 +38,7 @@
         "time_filed": "16:48:34",
         "date_display": "Aug 11, 2026",
         "description": "Affidavit",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.66.0.pdf"
       },
@@ -48,7 +48,7 @@
         "time_filed": "08:39:24",
         "date_display": "Aug 11, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -60,7 +60,7 @@
         "time_filed": "16:50:24",
         "date_display": "Aug 11, 2026",
         "description": "Affidavit",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.67.0_1.pdf"
       },
@@ -70,7 +70,7 @@
         "time_filed": "16:48:34",
         "date_display": "Aug 11, 2026",
         "description": "Affidavit",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.66.0.pdf"
       },
@@ -80,7 +80,7 @@
         "time_filed": "08:39:24",
         "date_display": "Aug 11, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -90,7 +90,7 @@
         "time_filed": "08:38:55",
         "date_display": "Aug 11, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -100,7 +100,7 @@
         "time_filed": "08:38:24",
         "date_display": "Aug 11, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -110,7 +110,7 @@
         "time_filed": "08:14:11",
         "date_display": "Aug 11, 2026",
         "description": "Deposition - Notice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -120,7 +120,7 @@
         "time_filed": "08:11:11",
         "date_display": "Aug 11, 2026",
         "description": "Deposition - Notice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
