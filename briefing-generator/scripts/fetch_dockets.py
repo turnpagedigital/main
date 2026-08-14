@@ -147,6 +147,117 @@ def crawl_history(cursor_url, page_budget):
     return raw, url, url is None
 
 
+# ── Activity sentinel ───────────────────────────────────────────────────────
+# ONE request that answers "which of these dockets moved recently?" for every
+# tracked case at once, via the RECAP search API (the REST filters have no
+# __in lookup, so a per-docket poll is otherwise the only option).
+#
+# It is used ONLY to PROMOTE a case to an immediate check — never to suppress
+# one. That asymmetry is deliberate: if the query silently matches nothing,
+# the worst case is that cases fall back to their cadence ladder, exactly as
+# if the sentinel did not exist. It cannot cause a missed filing.
+SENTINEL_LOOKBACK_DAYS = 4
+
+
+def activity_sentinel(docket_ids, now):
+    """Returns (set_of_active_docket_ids, ok). ok=False → sentinel unavailable,
+    callers should use the FAST cadence ladder."""
+    if not docket_ids:
+        return set(), False
+    since = (now.date() - dt.timedelta(days=SENTINEL_LOOKBACK_DAYS)).isoformat()
+    q = " OR ".join(str(i) for i in docket_ids)
+    url = (f"{API}/search/?type=r"
+           f"&q={urllib.parse.quote(f'docket_id:({q})')}"
+           f"&entry_date_filed_after={since}"
+           f"&fields=docket_id&page_size=100")
+    try:
+        resp = get_json(url, retries=1)
+    except Exception as ex:
+        print(f"  · activity sentinel unavailable ({ex}) — using tight cadence")
+        return set(), False
+    results = resp.get("results")
+    if not isinstance(results, list):
+        print("  · activity sentinel returned no result list — using tight cadence")
+        return set(), False
+    wanted = {str(i) for i in docket_ids}
+    active = set()
+    for r in results:
+        did = r.get("docket_id")
+        if did is None and isinstance(r.get("docket"), dict):
+            did = r["docket"].get("id")
+        if did is not None and str(did) in wanted:
+            active.add(str(did))
+    # Sanity gate: if NOTHING in the response belongs to our docket set while
+    # results came back, the query was interpreted as free text — distrust it.
+    if results and not active:
+        print(f"  · activity sentinel matched none of our dockets in "
+              f"{len(results)} result(s) — treating as unavailable")
+        return set(), False
+    print(f"  ✓ activity sentinel: {len(active)} docket(s) moved since {since} "
+          f"(1 request covered {len(docket_ids)} cases)")
+    return active, True
+
+
+# ── Adaptive cadence ────────────────────────────────────────────────────────
+# CourtListener's budget counts REQUESTS, not data, so the fixed hourly
+# "anything new?" pull across every case was the single largest consumer
+# (~20 cases x 24 runs = ~480/day, against a budget as low as 125-600).
+# A docket that last moved in March does not need an hourly check; one that
+# moved this morning does. Cases are polled on a cadence derived from their
+# own recent activity, which typically cuts the daily spend by ~75% while
+# leaving active litigation just as fresh.
+#   moved <=3d ago  → every run (hourly)
+#   <=14d           → every 4h
+#   <=60d           → every 12h
+#   older / unknown → every 24h
+# Two ladders. RELAXED is used when the one-request activity sentinel below
+# is working (it promotes any docket with real movement to an immediate
+# check, so the ladder is only a safety net). FAST is used whenever the
+# sentinel is unavailable, so a sentinel outage can never make the docket
+# go stale — it just costs more requests, exactly like the old behavior.
+CADENCE_RELAXED = ((3, 6), (14, 12), (60, 24))
+CADENCE_FAST = ((3, 1), (14, 4), (60, 12))
+CADENCE_FALLBACK_H = 48
+CADENCE_FALLBACK_FAST_H = 24
+
+
+def _last_activity(prior):
+    """Newest filing date we know about, from metadata or stored entries."""
+    best = str(prior.get("date_last_filing") or "")[:10]
+    for e in (prior.get("entries") or [])[:5]:
+        d = str(e.get("date_filed") or "")[:10]
+        if d > best:
+            best = d
+    return best
+
+
+def _due_for_check(prior, now, relaxed=True):
+    """(is_due, reason). Never skips a case we've never successfully synced."""
+    ladder = CADENCE_RELAXED if relaxed else CADENCE_FAST
+    fallback = CADENCE_FALLBACK_H if relaxed else CADENCE_FALLBACK_FAST_H
+    last_checked = prior.get("fetched_at")
+    if not last_checked or not (prior.get("entries") or []):
+        return True, "first sync"
+    try:
+        checked = dt.datetime.fromisoformat(str(last_checked).replace("Z", "+00:00"))
+    except Exception:
+        return True, "unparsable last-check"
+    hours_since = (now - checked).total_seconds() / 3600.0
+    act = _last_activity(prior)
+    try:
+        age_days = (now.date() - dt.date.fromisoformat(act)).days
+    except Exception:
+        age_days = 10**6
+    interval = fallback
+    for max_age, hrs in ladder:
+        if age_days <= max_age:
+            interval = hrs
+            break
+    if hours_since + 0.15 >= interval:      # 9-min grace: hourly cron jitter
+        return True, f"due (quiet {age_days}d, every {interval}h)"
+    return False, f"quiet {age_days}d — next check in {interval - hours_since:.1f}h"
+
+
 def _is_stale(iso_ts, now, days):
     if not iso_ts:
         return True
@@ -225,7 +336,7 @@ def build_docket_block(docket_id, docket_url, merged, backfilled, backfill_next,
     return block
 
 
-def refresh_case(case, history_pages=0, force=False):
+def refresh_case(case, history_pages=0, force=False, active_ids=None, relaxed=True):
     cfg = case["config"]
     slug = case["slug"]
     ds = cfg["docket_source"]
@@ -250,6 +361,17 @@ def refresh_case(case, history_pages=0, force=False):
 
     backfilled = bool(prior.get("backfilled")) and not force
     cursor = None if force else prior.get("backfill_next")
+
+    # Adaptive cadence — skip this run entirely for a quiet docket. Manual
+    # sync-now (force) and SYNC_ALL=1 (the nightly full pass) bypass it.
+    if not force and os.environ.get("SYNC_ALL") != "1":
+        promoted = active_ids is not None and str(ds.get("docket_id")) in active_ids
+        due, why = _due_for_check(prior, now, relaxed=relaxed)
+        if promoted and not due:
+            print(f"  \u2191 {slug}: sentinel saw movement — checking now")
+        elif not due:
+            print(f"  \u00b7 {slug}: {why}")
+            return False
 
     # 1) Freshness: newest entries (cheap, keeps the page current)
     try:
@@ -394,6 +516,18 @@ def main():
         print(f"  backfill rotation: deep-syncing {deep}; freshness pass for the rest")
     print(f"=== Refreshing {len(cases)} tracked case(s) "
           f"(history trickle: {history_pages} page(s)/case/run) ===")
+    # One request that covers every tracked docket; promotes movers to an
+    # immediate check. Falls back to the tight cadence ladder if unavailable.
+    sentinel_ids = []
+    for c in cases:
+        _ds = c["config"].get("docket_source") or {}
+        if (_ds.get("type") == "courtlistener" and not _ds.get("awaiting_sync")
+                and _ds.get("docket_id")):
+            sentinel_ids.append(_ds["docket_id"])
+    active_ids, sentinel_ok = (set(), False)
+    if TOKEN and sentinel_ids and os.environ.get("SYNC_ALL") != "1":
+        active_ids, sentinel_ok = activity_sentinel(sentinel_ids, dt.datetime.now(dt.timezone.utc))
+
     throttled_streak = 0
     for i, c in enumerate(cases):
         if i and TOKEN:
@@ -402,7 +536,8 @@ def main():
         is_live = (ds.get("type") == "courtlistener" and not ds.get("awaiting_sync")
                    and ds.get("docket_id") and TOKEN)
         ok = refresh_case(c, history_pages=history_pages,
-                          force=backfill_all and i < backfill_cap)
+                          force=backfill_all and i < backfill_cap,
+                          active_ids=active_ids, relaxed=sentinel_ok)
         if is_live:
             throttled_streak = 0 if ok else throttled_streak + 1
             if throttled_streak >= 3:

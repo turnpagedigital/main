@@ -2719,16 +2719,28 @@
     return true;
   }
 
+  // Skip polling until this timestamp — set when the server reports a
+  // rate-limit cooldown. Retrying every minute while throttled spent the
+  // budget the instant CourtListener freed it, starving document downloads.
+  var SYNC_PAUSED_UNTIL = 0;
+
   function syncLive() {
+    if (Date.now() < SYNC_PAUSED_UNTIL) return;
     fetchJson("api/dockets").then(function (payload) {
+      if (payload && payload.cooling) {
+        SYNC_PAUSED_UNTIL = Date.now() + (Number(payload.cooling) || 1800) * 1000;
+        setSyncStatus(payload.error || "Live sync paused \u2014 CourtListener rate-limited", false);
+        return;
+      }
       if (applyLive(payload)) {
+        SYNC_PAUSED_UNTIL = 0;
         var t = new Date();
         setSyncStatus("Live · synced " +
           t.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }), true);
       } else {
         var reason = payload && payload.error ? payload.error : "live sync unavailable";
         setSyncStatus(/rate.?limit/i.test(reason)
-          ? "Live sync paused \u2014 CourtListener rate-limited \u00b7 retrying every minute"
+          ? "Live sync paused \u2014 CourtListener rate-limited"
           : "Static data \u2014 " + reason, false);
       }
     }).catch(function () {

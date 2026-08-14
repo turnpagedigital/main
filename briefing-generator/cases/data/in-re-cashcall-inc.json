@@ -2,24 +2,18 @@
   "case": {
     "slug": "in-re-cashcall-inc",
     "display_name": "CashCall",
-    "case_name": "CashCall, Inc.",
+    "case_name": "CashCall, Inc. (debtor); judgment creditors holding $400M+ in adverse litigation awards",
     "court": "To be confirmed (financials sector Ch. 11, filed ~July 21, 2026)",
     "case_number": "26-03102",
     "judge": "Barrett Marum",
-    "docket_id": "73643729",
+    "docket_id": null,
     "status": "active",
-    "sync": "manual",
-    "court_id": ""
+    "sync": "active"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73643729/cashcall-inc/",
-    "date_last_filing": "2026-08-13",
-    "meta_fetched_at": "2026-08-14T08:53:48.251796+00:00",
-    "fetched_at": "2026-08-14T11:11:53.858974+00:00",
-    "as_of": "Aug 14, 2026",
-    "backfilled": true,
     "new_in_72h": 10,
     "recent": [
       {
@@ -694,9 +688,18 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "date_last_filing": "2026-08-13",
+    "meta_fetched_at": "2026-08-14T08:53:48.251796+00:00",
+    "fetched_at": "2026-08-14T11:11:53.858974+00:00",
+    "as_of": "Aug 14, 2026",
+    "backfilled": true
   },
-  "claims_administrator": null,
+  "claims_administrator": {
+    "name": "Veritaglobal",
+    "url": "https://www.veritaglobal.net/cashcall/document/list/6595",
+    "key_dates_url": "https://www.veritaglobal.net/cashcall"
+  },
   "coverage": [
     {
       "headline": "New Chapter 11 Bankruptcy Filing — CashCall, Inc.",
@@ -746,24 +749,6 @@
       "source": "American Banker",
       "date": "2026-06-30",
       "summary": "CashCall sought to vacate a $134 million CFPB judgment, claiming the bureau acted in 'bad faith' by abandoning a settlement agreement, and argued that the Trump administration's revised enforcement posture — which led to dismissals against other companies — provided no policy basis for distinguishing its case. The motion cited four recent Supreme Court decisions as further undermining the legal foundation for the CFPB's enforcement action."
-    }
-  ],
-  "events": [
-    {
-      "title": "CashCall Ch. 11 Second-Day / DIP Final Hearing (Judge Marum)",
-      "date": "2026-08-26",
-      "time": "11:00 AM CT",
-      "kind": "Deadline",
-      "url": "https://www.petition11.com/p/cashcall-chapter-11-bankruptcy-filing",
-      "source": "U.S. Bankruptcy Court, Southern District of California (via Petition)"
-    },
-    {
-      "title": "CashCall Ch. 11 Plan & Disclosure Statement Deadline",
-      "date": "2026-11-17",
-      "time": "",
-      "kind": "Deadline",
-      "url": "https://www.pacermonitor.com/public/filings/DF6FACUA/CashCall_Inc__casbke-26-03102__0001.0.pdf",
-      "source": "U.S. Bankruptcy Court, Southern District of California (via PacerMonitor)"
     }
   ]
 }
