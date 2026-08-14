@@ -260,7 +260,7 @@
     '}';
   (document.head||document.documentElement).appendChild(earlyCss);
   var K='daily-briefing-theme';
-  var ST=['system','dark','light','night'];
+  var ST=['system','light','dark','night'];   // menu + cycle order
   var IC={dark:'\ud83c\udf19',light:'\u2600\ufe0f',system:'\ud83d\udda5\ufe0f',night:'\ud83d\udd34'};
   var LB={dark:'Dark',light:'Light',system:'System',night:'Night'};
   function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
