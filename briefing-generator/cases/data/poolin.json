@@ -14,13 +14,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
-    "date_last_filing": "2026-08-13",
-    "meta_fetched_at": "2026-08-13T21:06:52.137218+00:00",
-    "fetched_at": "2026-08-14T00:01:51.474369+00:00",
+    "date_last_filing": "2026-08-14",
+    "meta_fetched_at": "2026-08-14T05:11:02.334046+00:00",
+    "fetched_at": "2026-08-14T05:11:02.334046+00:00",
     "as_of": "Aug 14, 2026",
     "backfilled": true,
-    "new_in_72h": 8,
+    "new_in_72h": 10,
     "recent": [
+      {
+        "entry_number": 120,
+        "date_filed": "2026-08-14",
+        "time_filed": "00:14:33",
+        "date_display": "Aug 14, 2026",
+        "description": "BNC Certificate of Notice - Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 119,
+        "date_filed": "2026-08-14",
+        "time_filed": "00:14:33",
+        "date_display": "Aug 14, 2026",
+        "description": "BNC Certificate of Notice - Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 118,
         "date_filed": "2026-08-13",
@@ -30,29 +50,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
+      }
+    ],
+    "entries": [
       {
-        "entry_number": 117,
-        "date_filed": "2026-08-13",
-        "time_filed": "12:58:18",
-        "date_display": "Aug 13, 2026",
-        "description": "Transcript regarding Hearing Held 07/27/26 (related document:3 Motion for Joint Administration filed by Debtor Poolin Technology PTE. LTD, 5 Motion (Generic) filed by Debtor Poolin Technology PTE. LTD, 6 Motion (Generic) filed by Debtor Poolin Technology PTE. LTD, 7 Motion (Generic) filed by Debtor Poolin Technology PTE. LTD, 8 Motion (Generic) filed by Debtor Poolin Technology PTE. LTD, 9 Motion (Generic) filed by Debtor Poolin Technology PTE. LTD, 10 Motion (Generic) filed by Debtor Poolin Technology PTE. LTD, 11 Motion (Generic) filed by Debtor Poolin Technology PTE. LTD, 14 Application for Retention filed by Debtor Poolin Technology PTE. LTD, 15 Application for Retention filed by Debtor Poolin Technology PTE. LTD, 16 Application for Retention filed by Debtor Poolin Technology PTE. LTD, 17 Application for Retention filed by Debtor Poolin Technology PTE. LTD, 18 Application for…",
+        "entry_number": 120,
+        "date_filed": "2026-08-14",
+        "time_filed": "00:14:33",
+        "date_display": "Aug 14, 2026",
+        "description": "BNC Certificate of Notice - Order",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 116,
-        "date_filed": "2026-08-13",
-        "time_filed": "10:41:41",
-        "date_display": "Aug 13, 2026",
-        "description": "Notice of Agenda filed by Stephen M. Packman on behalf of Poolin Technology PTE. LTD. (Packman, Stephen) (Entered: 08/13/2026)",
+        "entry_number": 119,
+        "date_filed": "2026-08-14",
+        "time_filed": "00:14:33",
+        "date_display": "Aug 14, 2026",
+        "description": "BNC Certificate of Notice - Order",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.njb.1145057/gov.uscourts.njb.1145057.116.0.pdf"
-      }
-    ],
-    "entries": [
+        "doc_url": ""
+      },
       {
         "entry_number": 118,
         "date_filed": "2026-08-13",
