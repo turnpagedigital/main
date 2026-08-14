@@ -1,6 +1,192 @@
 {
-  "generated_at": "2026-08-13T21:42:44+00:00",
+  "generated_at": "2026-08-14T02:42:09+00:00",
   "items": [
+    {
+      "slug": "other-copyright-suits",
+      "case_name": "Other Copyright Suits",
+      "short_name": "Other Copyright Suits",
+      "emoji": "⚖️",
+      "is_group": true,
+      "members": [
+        "britannica-merriam-webster-v-openai",
+        "getty-images-us-v-stability-ai-nd-cal",
+        "hachette-et-al-v-google-llc-gemini",
+        "hachette-et-al-v-meta-platforms-llama",
+        "kadrey-v-meta-contributory-infringement-amendment",
+        "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153"
+      ],
+      "themes": [
+        "llm-class-action"
+      ],
+      "court": "6 related cases",
+      "status": "",
+      "signature": "04e11ff9eae6",
+      "activity": {
+        "filings": 5,
+        "articles": 0,
+        "latest": "2026-08-13"
+      },
+      "checked": "2026-08-14T02:42:09+00:00",
+      "date": "2026-08-14",
+      "updated": "2026-08-14",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "Today, Judge Vince Chhabria convened the further case management conference in Kadrey v. Meta, No. 3:23-cv-03417 (N.D. Cal.), the time having been advanced yesterday to 11:00 AM Pacific via videoconference (Dkt. 809). The conference is proceeding against the backdrop of the Joint Case Management Statement plaintiffs filed Wednesday (Dkt. 808), signed by counsel for sixteen named plaintiffs including Richard Kadrey…",
+      "body_md": "Today, Judge Vince Chhabria convened the further case management conference in *Kadrey v. Meta*, No. 3:23-cv-03417 (N.D. Cal.), the time having been advanced yesterday to 11:00 AM Pacific via videoconference (Dkt. 809). The conference is proceeding against the backdrop of the Joint Case Management Statement plaintiffs filed Wednesday (Dkt. 808), signed by counsel for sixteen named plaintiffs including Richard Kadrey, Ta-Nehisi Coates, Sarah Silverman, and Jacqueline Woodson. That statement is the operative framing document before Chhabria this morning and will govern whatever scheduling or substantive direction he sets. The conference's significance turns entirely on what Chhabria announces or orders from the bench — any resulting minute entry or text order is the next concrete milestone and should be pulled as soon as it posts. The contributory infringement amendment posture and the quash denial on August 11 (Dkt. 807, denying Meta's motion to quash in four related actions including Nos. 3:25-cv-09579, 3:26-cv-02333, 3:26-cv-03725, and 3:26-cv-04053) remain live: today's conference is where Chhabria is likely to address the downstream schedule on discovery and, potentially, class certification sequencing in light of both.\n\nIn *Getty Images (US), Inc. v. Stability AI, Inc. et al.*, No. 3:25-cv-06891 (N.D. Cal., Thompson, J.), Stability AI filed an opposition or response to motion on Wednesday (Dkt. 71), completing a sequence that opened with competing administrative motions filed by each side under Civil Local Rule 7-11 on August 6 (Dkt. 68) and August 11 (Dkt. 70), with Getty's own response at Dkt. 69 (August 10). The dueling Local Rule 7-11 motions — which concern administrative relief, typically a page-limit adjustment, filing-format exception, or scheduling variance — generated two rounds of paper within six days, suggesting a disputed procedural point with scheduling or briefing-scope implications rather than a collateral issue. The substance of what the parties are fighting over in those motions matters for the trajectory of motion practice, but the document text was not available this run; the posture is confirmed as contested. The next case management conference in this action is set for November 5, 2026 at 2:00 PM Pacific by videoconference, with the joint statement due October 29, 2026. \nGetty voluntarily dismissed the Delaware action on August 14, 2025 after Stability argued the court lacked jurisdiction over its UK parent, and refiled the same day in the Northern District of California before Judge Thompson, advancing direct copyright, DMCA §1202, and Lanham Act trademark claims.\n The UK dimension remains a pressure point: \nthe UK High Court rejected the theory that Stable Diffusion's model weights are themselves infringing copies, though it found limited trademark infringement and passing off on the watermark reproduction issue; Getty was granted leave to appeal in December 2025.\n That appeal's outcome will bear directly on the \"model weights as copies\" theory Getty is pressing in Thompson's court.\n\nIn *Encyclopaedia Britannica, Inc. and Merriam-Webster, Inc. v. OpenAI, Inc. et al.*, No. 1:26-cv-02097 (S.D.N.Y., Stein, J.), Judge Stein issued a memo endorsement on August 12 (Dkt. 59), the third scheduling-related entry in eight days following the two orders and deadline-setting entries at Dkts. 57 and 58 (August 7) that themselves resolved the parties' proposed stipulation filed at Dkt. 56 (August 5). A memo endorsement in S.D.N.Y. practice is the court's approval, with or without modification, of an underlying letter or stipulation — its substantive weight depends on what it endorsed. The docket context suggests it addressed case management logistics arising from this action's relationship to the broader OpenAI MDL (No. 1:25-md-03143, S.D.N.Y.). \nA joint stipulation in the record provides that all proceedings and deadlines in the Britannica action are stayed pending resolution of summary judgment motions in the other active MDL cases, with the parties required to file a joint status report within 30 days of those rulings to propose a case management conference and further proceedings.\n Whether Dkt. 59 touches that stay or adjusts some interim obligation within it is the open question; the document text was not available this run. The case is filed in the S.D.N.Y. and assigned to Judge Stein, confirmed by CourtListener. \nThe suit accuses OpenAI of massive copyright infringement and alleges trademark infringement when ChatGPT hallucinates false information and attributes it to Britannica or Merriam-Webster.\n\n\n*Hachette v. Google (Gemini)*, No. 1:26-cv-05870 (S.D.N.Y., Preska, J.), and *Hachette v. Meta (Llama)*, No. 1:26-cv-03689 (S.D.N.Y., Castel, J.), recorded no substantive movement. The Google transfer motion — fully briefed through Dkt. 26's reply (August 10) — awaits Preska's ruling; that ruling, whenever it comes, will either consolidate this action's home or confirm the S.D.N.Y. posture. In the Meta action, the next concrete milestone is the September 15, 2026 initial conference before Judge Castel at 3:00 PM in Courtroom 11D, where the pending transfer motion and plaintiffs' motion-to-strike letter request (Dkt. 90) are expected to be addressed. *Thomson Reuters v. Ross Intelligence*, No. 25-2153 (3d Cir.), likewise recorded no movement; the panel of Judges Restrepo, Montgomery-Reeves, and Bove has the case under submission following the June 11 oral argument, with the transcript filed June 24.\n\n---\n\n## Sources\n\n- [Getty Images (US), Inc. v. Stability AI, Ltd., 3:25-cv-06891 — AI Lawsuit Tracker](https://ailawsuittracker.com/cases/getty-v-stability-ai/) — AI Lawsuit Tracker, May 25, 2026\n- [Getty Images (US), Inc. v. Stability AI, Ltd., 3:25-cv-06891 — CourtListener](https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/) — CourtListener / RECAP, last updated June 24, 2026\n- [Encyclopaedia Britannica, Inc. v. OpenAI, Inc., 1:26-cv-02097 — CourtListener](https://www.courtlistener.com/docket/72492986/encyclopedia-britannica-inc-v-openai-inc/) — CourtListener / RECAP\n- [Britannica, Merriam-Webster Accuse OpenAI of Copying Their Works](https://news.bloomberglaw.com/ip-law/britannica-merriam-webster-accuse-openai-of-copying-their-works) — Bloomberg Law, March 16, 2026\n- [Kadrey et al. v. Meta Platforms, Inc. — GovInfo](https://www.govinfo.gov/app/details/USCOURTS-cand-3_23-cv-03417) — Administrative Office of the U.S. Courts, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Getty Images (US), Inc. v. Stability AI, Ltd., 3:25-cv-06891 — AI Lawsuit Tracker",
+          "url": "https://ailawsuittracker.com/cases/getty-v-stability-ai/",
+          "note": "AI Lawsuit Tracker, May 25, 2026"
+        },
+        {
+          "title": "Getty Images (US), Inc. v. Stability AI, Ltd., 3:25-cv-06891 — CourtListener",
+          "url": "https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/",
+          "note": "CourtListener / RECAP, last updated June 24, 2026"
+        },
+        {
+          "title": "Encyclopaedia Britannica, Inc. v. OpenAI, Inc., 1:26-cv-02097 — CourtListener",
+          "url": "https://www.courtlistener.com/docket/72492986/encyclopedia-britannica-inc-v-openai-inc/",
+          "note": "CourtListener / RECAP"
+        },
+        {
+          "title": "Britannica, Merriam-Webster Accuse OpenAI of Copying Their Works",
+          "url": "https://news.bloomberglaw.com/ip-law/britannica-merriam-webster-accuse-openai-of-copying-their-works",
+          "note": "Bloomberg Law, March 16, 2026"
+        },
+        {
+          "title": "Kadrey et al. v. Meta Platforms, Inc. — GovInfo",
+          "url": "https://www.govinfo.gov/app/details/USCOURTS-cand-3_23-cv-03417",
+          "note": "Administrative Office of the U.S. Courts, 2026"
+        }
+      ]
+    },
+    {
+      "slug": "harvest-sherwood",
+      "case_name": "Harvest Sherwood",
+      "short_name": "Harvest Sherwood",
+      "emoji": "⚖️",
+      "themes": [
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "N.D. Tex.",
+      "status": "active",
+      "signature": "d815986ddd68",
+      "activity": {
+        "filings": 8,
+        "articles": 0,
+        "latest": "2026-08-13"
+      },
+      "checked": "2026-08-14T02:42:09+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-08-13",
+      "lede": "",
+      "body_md": "",
+      "sources": []
+    },
+    {
+      "slug": "in-re-cashcall-inc",
+      "case_name": "CashCall",
+      "short_name": "CashCall",
+      "emoji": "⚖️",
+      "themes": [
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "To be confirmed (financials sector Ch. 11, filed ~July 21, 2026)",
+      "status": "active",
+      "signature": "f9112a468d57",
+      "activity": {
+        "filings": 9,
+        "articles": 0,
+        "latest": "2026-08-13"
+      },
+      "checked": "2026-08-14T02:42:09+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-08-13",
+      "lede": "",
+      "body_md": "",
+      "sources": []
+    },
+    {
+      "slug": "omnis-pleasants",
+      "case_name": "Omnis Pleasants",
+      "short_name": "Omnis Pleasants",
+      "emoji": "⚖️",
+      "themes": [
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "United States Bankruptcy Court, D. Delaware",
+      "status": "active",
+      "signature": "819712d036c4",
+      "activity": {
+        "filings": 7,
+        "articles": 0,
+        "latest": "2026-08-13"
+      },
+      "checked": "2026-08-14T02:42:09+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-08-13",
+      "lede": "",
+      "body_md": "",
+      "sources": []
+    },
+    {
+      "slug": "poolin",
+      "case_name": "Poolin",
+      "short_name": "Poolin",
+      "emoji": "⚖️",
+      "themes": [
+        "crypto-insolvency",
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "Bankr. D. N.J.",
+      "status": "active",
+      "signature": "19e97427a363",
+      "activity": {
+        "filings": 8,
+        "articles": 0,
+        "latest": "2026-08-13"
+      },
+      "checked": "2026-08-14T02:42:09+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-08-13",
+      "lede": "",
+      "body_md": "",
+      "sources": []
+    },
+    {
+      "slug": "publishers-v-google-llc-gemini-books",
+      "case_name": "Publishers v. Google",
+      "short_name": "Publishers v. Google",
+      "emoji": "⚖️",
+      "themes": [
+        "llm-class-action"
+      ],
+      "court": "District Court, N.D. California",
+      "status": "active",
+      "signature": "abe6276f1656",
+      "activity": {
+        "filings": 2,
+        "articles": 0,
+        "latest": "2026-08-13"
+      },
+      "checked": "2026-08-14T02:42:09+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-08-13",
+      "lede": "",
+      "body_md": "",
+      "sources": []
+    },
     {
       "slug": "goliath",
       "case_name": "Goliath",
@@ -15,14 +201,14 @@
       "signature": "59c596fd01db",
       "activity": {
         "filings": 0,
-        "articles": 5,
+        "articles": 3,
         "latest": "2026-08-12"
       },
-      "checked": "2026-08-13T21:42:44+00:00",
+      "checked": "2026-08-14T02:42:09+00:00",
       "date": "2026-08-13",
       "updated": "2026-08-13",
-      "moved": true,
-      "no_change_since": null,
+      "moved": false,
+      "no_change_since": "2026-08-12",
       "lede": "On August 11, the SEC and CFTC filed parallel civil complaints against Goliath Ventures Inc. and CEO Christopher Delgado in the U.S. District Court for the Middle District of Florida — SEC v. Goliath Ventures Inc. et al., No. 6:26-cv-01741, and CFTC v. Goliath Ventures Inc. et al., No. 6:26-cv-01737. Both complaints allege that Goliath and Delgado orchestrated a crypto Ponzi scheme, raising roughly $400 million by…",
       "body_md": "On August 11, the SEC and CFTC filed parallel civil complaints against Goliath Ventures Inc. and CEO Christopher Delgado in the U.S. District Court for the Middle District of Florida — *SEC v. Goliath Ventures Inc. et al.*, No. 6:26-cv-01741, and *CFTC v. Goliath Ventures Inc. et al.*, No. 6:26-cv-01737. \nBoth complaints allege that Goliath and Delgado orchestrated a crypto Ponzi scheme, raising roughly $400 million by soliciting funds purportedly for cryptocurrency liquidity pools and using investor money to pay earlier participants and fund personal spending; the SEC's complaint puts investor intake at at least $425 million from more than 1,300 investors through an unregistered securities offering.\n \nThe CFTC's complaint, drawing on a different investor universe, alleges approximately 1,600 customers contributed at least $397 million to the fraud.\n The two figures are not necessarily inconsistent — the agencies' jurisdictional theories overlap rather than co-terminate, and the pool of claimants in the Chapter 11 likely spans both populations.\n\n\nThe CFTC complaint alleges the scheme ran from at least November 2022 through February 2026, with Goliath misappropriating all customer funds while issuing account statements reflecting profits the company had not earned; Delgado, who the CFTC says was never registered with the agency, is named as a controlling person liable for Goliath's conduct.\n \nAccording to the complaint, the money moved three ways: at least approximately $87 million paid fictitious returns to existing customers, at least approximately $174 million flowed to Goliath directors and staff as recruiting commissions, and Delgado personally extracted at least approximately $48 million for luxury homes, vehicles, and jewelry.\n \nThe SEC separately alleges Delgado misappropriated $51 million for homes, cars, and a yacht.\n \nDelgado has agreed to a bifurcated settlement with the SEC\n — meaning liability is conceded but monetary relief remains to be determined by the court — while \nthe CFTC is seeking restitution, disgorgement, civil monetary penalties, trading and registration bans, and a permanent injunction against further violations of the Commodity Exchange Act.\n\n\nFor the bankruptcy estate, the civil actions are a double-edged development. On the recovery side, they put two federal regulators formally in the queue as potential claimants or co-enforcement actors, which could complicate the receiver's ability to negotiate a clean plan and will need to be weighed against the September 30 proof-of-claim bar date in Case No. 26-13174-RAM. \nThe Defiant notes the CFTC complaint expressly acknowledges the ongoing Southern District of Florida bankruptcy as the forum where customer recoveries are currently running,\n which signals the agency does not intend to pursue a competing distribution outside the estate — a meaningful concession for creditor recovery posture. On the risk side, the forfeiture obligations Delgado admitted at the time of his guilty plea, and any restitution or disgorgement ordered in these civil actions, will compete with unsecured creditors for the same depleted asset pool. \nThe allegations in both civil complaints remain unproven, and counsel for Delgado and Goliath Ventures was not identified in the CFTC's announcement.\n\n\nThe next hard deadline is September 30, 2026 — the proof-of-claim bar date in Case No. 26-13174-RAM. Creditors who have not yet filed, and any claimants newly on notice from the SEC and CFTC press releases, must file by that date or risk being barred. Delgado's criminal sentencing before the Middle District follows on October 8, 2026, at which point the court will set restitution and forfeiture amounts that directly bear on what assets remain available to the estate.\n\n## Sources\n\n- [CFTC Charges Goliath Ventures Inc. and CEO with $400 Million Fraud Scheme](https://www.cftc.gov/PressRoom/PressReleases/9280-26) — CFTC, August 11, 2026\n- [SEC, CFTC Sue Goliath Over $400M Crypto Ponzi Scheme](https://www.law360.com/articles/2512347/sec-cftc-sue-goliath-over-400m-crypto-ponzi-scheme) — Law360, August 11, 2026\n- [CFTC Sues Goliath Ventures Over Alleged $397M DeFi Liquidity Pool Ponzi](https://thedefiant.io/news/regulation/cftc-sues-goliath-ventures-over-alleged-397m-defi-liquidity-pool-ponzi) — The Defiant, August 11, 2026\n- [SEC and CFTC Hit Goliath Ventures With Parallel Crypto Fraud Complaints](https://beincrypto.com/goliath-ventures-sec-cftc-crypto-ponzi/) — BeInCrypto, August 12, 2026\n- [SEC, CFTC Sue Goliath Ventures Over $400M Crypto Ponzi](https://www.gncrypto.news/news/sec-cftc-sue-goliath-ventures-400m-crypto-ponzi/) — GNCrypto News, August 12, 2026\n- [SEC and CFTC Target Goliath Ventures in Crypto Ponzi Scheme](https://www.bestinslot.co/news/sec-and-cftc-target-goliath-ventures-in-crypto-ponzi-scheme-38637) — BestInSlot, August 12, 2026\n- [CFTC Charges Goliath Ventures With $400M Bitcoin Fraud](https://bitcoinmagazine.com/news/cftc-charges-goliath-in-bitcoin-fraud) — Bitcoin Magazine, August 11, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
@@ -64,166 +250,6 @@
       ]
     },
     {
-      "slug": "other-copyright-suits",
-      "case_name": "Other Copyright Suits",
-      "short_name": "Other Copyright Suits",
-      "emoji": "⚖️",
-      "is_group": true,
-      "members": [
-        "britannica-merriam-webster-v-openai",
-        "getty-images-us-v-stability-ai-nd-cal",
-        "hachette-et-al-v-google-llc-gemini",
-        "hachette-et-al-v-meta-platforms-llama",
-        "kadrey-v-meta-contributory-infringement-amendment",
-        "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153"
-      ],
-      "themes": [
-        "llm-class-action"
-      ],
-      "court": "6 related cases",
-      "status": "",
-      "signature": "97580825ddb1",
-      "activity": {
-        "filings": 7,
-        "articles": 0,
-        "latest": "2026-08-13"
-      },
-      "checked": "2026-08-13T21:42:44+00:00",
-      "date": "",
-      "updated": "",
-      "moved": false,
-      "no_change_since": "2026-08-13",
-      "lede": "",
-      "body_md": "",
-      "sources": []
-    },
-    {
-      "slug": "in-re-cashcall-inc",
-      "case_name": "CashCall",
-      "short_name": "CashCall",
-      "emoji": "⚖️",
-      "themes": [
-        "bankruptcy-creditor-rights"
-      ],
-      "court": "To be confirmed (financials sector Ch. 11, filed ~July 21, 2026)",
-      "status": "active",
-      "signature": "f9112a468d57",
-      "activity": {
-        "filings": 10,
-        "articles": 0,
-        "latest": "2026-08-13"
-      },
-      "checked": "2026-08-13T21:42:44+00:00",
-      "date": "",
-      "updated": "",
-      "moved": false,
-      "no_change_since": "2026-08-13",
-      "lede": "",
-      "body_md": "",
-      "sources": []
-    },
-    {
-      "slug": "omnis-pleasants",
-      "case_name": "Omnis Pleasants",
-      "short_name": "Omnis Pleasants",
-      "emoji": "⚖️",
-      "themes": [
-        "bankruptcy-creditor-rights"
-      ],
-      "court": "United States Bankruptcy Court, D. Delaware",
-      "status": "active",
-      "signature": "36e02a0822d1",
-      "activity": {
-        "filings": 6,
-        "articles": 0,
-        "latest": "2026-08-13"
-      },
-      "checked": "2026-08-13T21:42:44+00:00",
-      "date": "",
-      "updated": "",
-      "moved": false,
-      "no_change_since": "2026-08-13",
-      "lede": "",
-      "body_md": "",
-      "sources": []
-    },
-    {
-      "slug": "poolin",
-      "case_name": "Poolin",
-      "short_name": "Poolin",
-      "emoji": "⚖️",
-      "themes": [
-        "crypto-insolvency",
-        "bankruptcy-creditor-rights"
-      ],
-      "court": "Bankr. D. N.J.",
-      "status": "active",
-      "signature": "19e97427a363",
-      "activity": {
-        "filings": 11,
-        "articles": 0,
-        "latest": "2026-08-13"
-      },
-      "checked": "2026-08-13T21:42:44+00:00",
-      "date": "",
-      "updated": "",
-      "moved": false,
-      "no_change_since": "2026-08-13",
-      "lede": "",
-      "body_md": "",
-      "sources": []
-    },
-    {
-      "slug": "publishers-v-google-llc-gemini-books",
-      "case_name": "Publishers v. Google",
-      "short_name": "Publishers v. Google",
-      "emoji": "⚖️",
-      "themes": [
-        "llm-class-action"
-      ],
-      "court": "District Court, N.D. California",
-      "status": "active",
-      "signature": "abe6276f1656",
-      "activity": {
-        "filings": 2,
-        "articles": 0,
-        "latest": "2026-08-13"
-      },
-      "checked": "2026-08-13T21:42:44+00:00",
-      "date": "",
-      "updated": "",
-      "moved": false,
-      "no_change_since": "2026-08-13",
-      "lede": "",
-      "body_md": "",
-      "sources": []
-    },
-    {
-      "slug": "harvest-sherwood",
-      "case_name": "Harvest Sherwood",
-      "short_name": "Harvest Sherwood",
-      "emoji": "⚖️",
-      "themes": [
-        "bankruptcy-creditor-rights"
-      ],
-      "court": "N.D. Tex.",
-      "status": "active",
-      "signature": "b5b29f01a8f3",
-      "activity": {
-        "filings": 12,
-        "articles": 0,
-        "latest": "2026-08-12"
-      },
-      "checked": "2026-08-13T21:42:44+00:00",
-      "date": "",
-      "updated": "",
-      "moved": false,
-      "no_change_since": "2026-08-12",
-      "lede": "",
-      "body_md": "",
-      "sources": []
-    },
-    {
       "slug": "kahan",
       "case_name": "Kahan",
       "short_name": "Kahan",
@@ -236,11 +262,11 @@
       "status": "active",
       "signature": "30af60cedd29",
       "activity": {
-        "filings": 4,
+        "filings": 2,
         "articles": 0,
         "latest": "2026-08-12"
       },
-      "checked": "2026-08-13T21:42:44+00:00",
+      "checked": "2026-08-14T02:42:09+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -261,11 +287,11 @@
       "status": "active",
       "signature": "e2f9bcd581e6",
       "activity": {
-        "filings": 1,
+        "filings": 0,
         "articles": 0,
         "latest": "2026-08-11"
       },
-      "checked": "2026-08-13T21:42:44+00:00",
+      "checked": "2026-08-14T02:42:09+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -286,11 +312,11 @@
       "status": "active",
       "signature": "b16428958f2b",
       "activity": {
-        "filings": 7,
+        "filings": 0,
         "articles": 0,
         "latest": "2026-08-11"
       },
-      "checked": "2026-08-13T21:42:44+00:00",
+      "checked": "2026-08-14T02:42:09+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -321,7 +347,7 @@
         "articles": 0,
         "latest": "2026-08-10"
       },
-      "checked": "2026-08-13T21:42:44+00:00",
+      "checked": "2026-08-14T02:42:09+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -347,7 +373,7 @@
         "articles": 0,
         "latest": "2026-08-07"
       },
-      "checked": "2026-08-13T21:42:44+00:00",
+      "checked": "2026-08-14T02:42:09+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -374,7 +400,7 @@
         "articles": 0,
         "latest": "2026-08-07"
       },
-      "checked": "2026-08-13T21:42:44+00:00",
+      "checked": "2026-08-14T02:42:09+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -400,7 +426,7 @@
         "articles": 0,
         "latest": "2026-08-05"
       },
-      "checked": "2026-08-13T21:42:44+00:00",
+      "checked": "2026-08-14T02:42:09+00:00",
       "date": "",
       "updated": "",
       "moved": false,
