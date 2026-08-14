@@ -24,12 +24,115 @@ from cases_common import load_cases, DATA_DIR
 try:
     from anthropic import Anthropic, RateLimitError
 except ImportError:
-    print("ERROR: anthropic package not installed. Run: pip install -r scripts/requirements.txt", file=sys.stderr)
-    sys.exit(1)
+    Anthropic = RateLimitError = None
+    if "--cap-only" not in sys.argv:
+        print("ERROR: anthropic package not installed. Run: pip install -r scripts/requirements.txt", file=sys.stderr)
+        sys.exit(1)
 
 MODEL = "claude-sonnet-4-6"
 MAX_ARTICLES_STORED = 60
 MAX_EVENTS_STORED = 40
+
+# ── Same-day duplicate coverage cap (Andrew, Aug 2026): when several outlets
+# file basically the same story on the same day, keep at most 3 — favorite
+# outlets (Manage → Sources ★) first, then the most robust write-ups, with
+# distinct outlets preferred — and drop the rest. "Same story" = connected
+# components over token overlap of headline + summary lead.
+SAME_DAY_CLUSTER_CAP = 3
+_CAP_STOP = {"the", "a", "an", "of", "to", "in", "on", "for", "and", "or",
+             "by", "with", "at", "as", "is", "are", "its", "v", "vs", "et",
+             "al", "after", "over", "from", "gets", "says", "say", "amid"}
+
+
+def _load_favorites():
+    try:
+        from cases_common import REPO_ROOT
+        favs = json.loads((REPO_ROOT / "feed-sources.json").read_text(
+            encoding="utf-8")).get("favorites", [])
+        return {f.strip().lower() for f in favs if isinstance(f, str)}
+    except Exception:
+        return set()
+
+
+def _cap_tokens(a):
+    text = ((a.get("headline") or "") + " " + (a.get("summary") or "")[:160]).lower()
+    return {w for w in re.findall(r"[a-z0-9$€£]{3,}", text) if w not in _CAP_STOP}
+
+
+def _same_story(ta, tb):
+    if not ta or not tb:
+        return False
+    return len(ta & tb) / max(1, min(len(ta), len(tb))) >= 0.3
+
+
+def cap_same_day_articles(coverage, favorites, label="", dry=False):
+    """Within each publication day, cluster near-duplicate stories and keep at
+    most SAME_DAY_CLUSTER_CAP of each cluster. Mutates coverage (unless dry).
+    Returns the number of duplicates dropped."""
+    from collections import defaultdict
+    byday = defaultdict(list)
+    for a in coverage:
+        byday[(a.get("date") or "")[:10]].append(a)
+    drop_ids = set()
+    for day, arts in sorted(byday.items()):
+        if len(arts) <= SAME_DAY_CLUSTER_CAP:
+            continue
+        toks = [_cap_tokens(a) for a in arts]
+        parent = list(range(len(arts)))
+
+        def find(i):
+            while parent[i] != i:
+                parent[i] = parent[parent[i]]
+                i = parent[i]
+            return i
+
+        for i in range(len(arts)):
+            for j in range(i + 1, len(arts)):
+                if _same_story(toks[i], toks[j]):
+                    parent[find(i)] = find(j)
+        clusters = defaultdict(list)
+        for i, a in enumerate(arts):
+            clusters[find(i)].append(a)
+        for group in clusters.values():
+            if len(group) <= SAME_DAY_CLUSTER_CAP:
+                continue
+
+            def rank(a):
+                fav = (a.get("source") or "").strip().lower() in favorites
+                return (0 if fav else 1,
+                        -len(a.get("summary") or ""),
+                        -len(a.get("headline") or ""))
+
+            ordered = sorted(group, key=rank)
+            picked, seen_src = [], set()
+            for a in ordered:               # distinct outlets first
+                src = (a.get("source") or "").strip().lower()
+                if src in seen_src:
+                    continue
+                picked.append(a)
+                seen_src.add(src)
+                if len(picked) == SAME_DAY_CLUSTER_CAP:
+                    break
+            seen_pair = {((a.get("source") or "").strip().lower(),
+                          (a.get("headline") or "").strip().lower()) for a in picked}
+            for a in ordered:               # backfill if outlets repeated —
+                if len(picked) == SAME_DAY_CLUSTER_CAP:  # but never an exact copy
+                    break
+                pair = ((a.get("source") or "").strip().lower(),
+                        (a.get("headline") or "").strip().lower())
+                if a not in picked and pair not in seen_pair:
+                    picked.append(a)
+                    seen_pair.add(pair)
+            for a in group:
+                if a not in picked:
+                    drop_ids.add(id(a))
+                    print(f"    - dup capped ({label} {day}): "
+                          f"{(a.get('source') or '?')[:22]} — "
+                          f"{(a.get('headline') or '')[:64]}")
+    if drop_ids and not dry:
+        coverage[:] = [a for a in coverage if id(a) not in drop_ids]
+    return len(drop_ids)
+
 
 
 def _arg(name, default=None):
@@ -277,6 +380,7 @@ def scan_case(client, case):
     coverage[:] = prune_dead(coverage, "article", slug)
     ev_list[:] = prune_dead(ev_list, "event", slug)
     a_added = merge_articles(coverage, articles)
+    cap_same_day_articles(coverage, _load_favorites(), slug)
     e_added = merge_events(ev_list, events)
 
     case["data_path"].write_text(
@@ -287,6 +391,25 @@ def scan_case(client, case):
 
 
 def main():
+    if "--cap-only" in sys.argv:
+        # Retroactive pass over every case data file — no API needed.
+        favs = _load_favorites()
+        dry = "--dry-run" in sys.argv
+        total = 0
+        for case in load_cases():
+            data = case["data"]
+            if data is None:
+                continue
+            cov = data.get("coverage") or []
+            n = cap_same_day_articles(cov, favs, case["slug"], dry=dry)
+            if n and not dry:
+                data["coverage"] = cov
+                case["data_path"].write_text(
+                    json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+            total += n
+        print(f"=== Same-day cap {'(dry run) ' if dry else ''}done: "
+              f"{total} duplicate article(s) {'would be ' if dry else ''}removed ===")
+        return
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         print("ANTHROPIC_API_KEY not set — news scan skipped.")
