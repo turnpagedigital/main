@@ -15,21 +15,32 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-13",
-    "meta_fetched_at": "2026-08-13T22:07:52.520948+00:00",
-    "fetched_at": "2026-08-13T22:07:52.520948+00:00",
-    "as_of": "Aug 13, 2026",
+    "meta_fetched_at": "2026-08-14T08:46:30.791142+00:00",
+    "fetched_at": "2026-08-14T08:46:30.791142+00:00",
+    "as_of": "Aug 14, 2026",
     "backfilled": true,
-    "new_in_72h": 15,
+    "new_in_72h": 9,
     "recent": [
+      {
+        "entry_number": 1210,
+        "date_filed": "2026-08-13",
+        "time_filed": "23:25:34",
+        "date_display": "Aug 13, 2026",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1209,
         "date_filed": "2026-08-13",
         "time_filed": "15:53:56",
         "date_display": "Aug 13, 2026",
-        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "description": "I don't see any readable document text in the material provided. The filing information shows only case metadata and page indicators without the actual content of the pleading that would contain the document's formal title. Could you please provide the actual text content of the document?",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "",
+        "titled_from_upload": true
       },
       {
         "entry_number": 1208,
@@ -40,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-08-13",
-        "time_filed": "15:54:58",
-        "date_display": "Aug 13, 2026",
-        "description": "none AND none",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1210,
+        "date_filed": "2026-08-13",
+        "time_filed": "23:25:34",
+        "date_display": "Aug 13, 2026",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1209,
         "date_filed": "2026-08-13",
@@ -140,7 +151,7 @@
         "time_filed": "20:55:30",
         "date_display": "Aug 11, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -150,7 +161,7 @@
         "time_filed": "17:46:17",
         "date_display": "Aug 11, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -160,7 +171,7 @@
         "time_filed": "17:38:58",
         "date_display": "Aug 11, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -170,7 +181,7 @@
         "time_filed": "12:01:19",
         "date_display": "Aug 11, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -180,7 +191,7 @@
         "time_filed": "10:03:48",
         "date_display": "Aug 11, 2026",
         "description": "Certificate of service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -190,7 +201,7 @@
         "time_filed": "09:58:46",
         "date_display": "Aug 11, 2026",
         "description": "Certificate of service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -200,7 +211,7 @@
         "time_filed": "09:45:25",
         "date_display": "Aug 11, 2026",
         "description": "Receipt number and filing fee (generic)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
