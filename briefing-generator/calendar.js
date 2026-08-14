@@ -1455,6 +1455,13 @@
     var mergeBtn = document.getElementById("uc-merge-btn");
     var dismissBtn = document.getElementById("uc-dismiss-btn");
     var clearSel = document.getElementById("uc-clear-sel");
+    var dismissAll = document.getElementById("uc-dismiss-all");
+    if (dismissAll) {
+      dismissAll.addEventListener("click", function () {
+        if (!Object.keys(selectedKeys).length || !dismissBtn) return;
+        dismissBtn.click();
+      });
+    }
     if (mergeBtn) {
       mergeBtn.addEventListener("click", function () {
         var keys = Object.keys(selectedKeys);
