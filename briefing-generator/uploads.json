@@ -140,6 +140,16 @@
         "source": "claims-agent",
         "title": "Debtor's Application For Entry Of An Order Authorizing The Employment Of Stretto, Inc. As Administrative Advisor Effective As Of The Petition Date"
       }
+    ],
+    "harvest-sherwood|n1209": [
+      {
+        "name": "Dkt-1209.pdf",
+        "path": "briefing-generator/uploads/harvest-sherwood-n1209/Dkt-1209.pdf",
+        "size": 1168335,
+        "uploaded_at": "2026-08-14T03:03:55.897354+00:00",
+        "text": "",
+        "source": "claims-agent"
+      }
     ]
   }
 }
