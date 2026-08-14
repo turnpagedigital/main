@@ -658,7 +658,10 @@
       // Theme (System/Dark/Light) and text size live in the gear menu on every
       // viewport — the standalone toggle + A−/A+ strip are hidden for good.
       '.tn-gear-theme{display:flex;flex-direction:column;border-top:1px solid var(--line);margin-top:4px;padding-top:4px;}'+
-      '.tn-gear-theme .tn-gt-lbl{font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-40);padding:4px 10px 3px;}'+
+      // Unscoped: the Settings and Text-size headers use this too. It was
+      // scoped to .tn-gear-theme, which is why "Text size" rendered as plain
+      // body text while "Theme" got the small gray caps treatment.
+      '.tn-gt-lbl{font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-40);padding:4px 10px 3px;}'+
       '.tn-gear-theme button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;padding:8px 10px;}'+
       '.tn-gear-theme button:hover{background:var(--paper-2);}'+
       '.tn-gear-theme button .tn-gt-check{margin-left:auto;color:var(--ink-60);visibility:hidden;}'+
@@ -697,6 +700,15 @@
       _bl.href='manage.html#briefing';_bl.textContent='Briefings';
       _bl.setAttribute('data-gear-briefings','1');
       panel.appendChild(_bl);
+    }
+    // Header over the manage.html links, matching the Theme / Text size
+    // headers below. Added here rather than in each page's markup so all
+    // pages (and the generated case pages) pick it up from this one file.
+    if(panel&&!panel.querySelector('.tn-gear-settings-lbl')){
+      var _sl=document.createElement('div');
+      _sl.className='tn-gt-lbl tn-gear-settings-lbl';
+      _sl.textContent='Settings';
+      panel.insertBefore(_sl,panel.firstChild);
     }
     function markTheme(){
       if(!panel)return;
