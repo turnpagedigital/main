@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-14 02:23 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-14 03:04 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -59,6 +59,10 @@ Discovery-related.
 Current dispute regarding transfer of venue from New York to ND Cal. Social post about this? biggest copyright case yet will be tried in NY or Cal? Implications?
 
 ## Harvest Sherwood
+
+### (no docket number) — 2026-08-13
+
+> none AND none
 
 ### Dkt. 1206 — 2026-08-12
 
