@@ -55,6 +55,11 @@
     // Brand logo: use the (white) dark-mode asset, colorized to #FE0100.
     '[data-theme="night"] .tn-logo-light{display:none !important;}'+
     '[data-theme="night"] .tn-logo-dark{display:block;filter:brightness(0) saturate(100%) invert(13%) sepia(94%) saturate(7404%) hue-rotate(11deg) brightness(101%) contrast(115%);}'+
+    // apply() swaps in the pre-colored night asset; once it loads, drop the filter.
+    '[data-theme="night"] .tn-logo-dark.tn-logo-night-src{filter:none;}'+
+    // Every emoji on the page, red — wire() wraps each pictographic cluster
+    // in a .tn-emj-i span for this filter to catch.
+    '[data-theme="night"] .tn-emj-i{filter:grayscale(1) sepia(1) saturate(12) hue-rotate(-50deg) brightness(1.02);}'+
     // Everything raster (news favicons, uploaded images, charts) → red monochrome.
     '[data-theme="night"] :is(img,video,canvas):not(.tn-brand-logo){filter:grayscale(1) sepia(1) saturate(9) hue-rotate(-48deg) brightness(0.9);}'+
     // Popovers float without shadows now — a stronger red border does the lifting.
@@ -124,6 +129,25 @@
     document.documentElement.setAttribute('data-theme-pref',t);
     var b=document.getElementById('theme-toggle');
     if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
+    // Night gets its own pre-colored #FE0100 logo asset (crisper than the CSS
+    // filter, which stays on as the fallback until the swap's onload fires).
+    var night=eff(t)==='night';
+    var pref=location.pathname.indexOf('/cases/')!==-1?'../':'';
+    document.querySelectorAll('img.tn-logo-dark').forEach(function(img){
+      if(night){
+        if(!img.dataset.origSrc)img.dataset.origSrc=img.getAttribute('src');
+        var nsrc=pref+'assets/turnpage-intel-logo-night.png';
+        if(img.getAttribute('src')!==nsrc){
+          img.onload=function(){img.classList.add('tn-logo-night-src');};
+          img.onerror=function(){img.classList.remove('tn-logo-night-src');img.setAttribute('src',img.dataset.origSrc);};
+          img.setAttribute('src',nsrc);
+        }
+      }else if(img.dataset.origSrc&&img.getAttribute('src')!==img.dataset.origSrc){
+        img.classList.remove('tn-logo-night-src');
+        img.onload=img.onerror=null;
+        img.setAttribute('src',img.dataset.origSrc);
+      }
+    });
   }
   window.cycleTheme=function(){
     var c=localStorage.getItem(K)||'system';
@@ -243,6 +267,54 @@
       wrapH1Emoji(h);
       new MutationObserver(function(){wrapH1Emoji(h);}).observe(h,{childList:true});
     });
+    // ── Every OTHER emoji gets wrapped in .tn-emj-i so night mode can filter
+    // it red (chips, theme labels, calendar rows — everywhere). Spans are inert
+    // in light/dark. State-carrying glyph CONTROLS (vote/note/bookmark buttons,
+    // the ⌘ button, pin stars) are skipped — they're monochrome text glyphs
+    // whose dim/bright color IS their state; the filter would flatten it.
+    var EMO_RE=/(\p{Extended_Pictographic}(?:️|‍\p{Extended_Pictographic}️?)*|[\u{1F1E6}-\u{1F1FF}]{2})/gu;
+    var EMO_SKIP='.tn-emj,.tn-emj-i,.tn-ico,.tn-gt-ico,.tn-kbd-btn,.ud-note-btn,.ud-vote,.ud-bm-btn,.pr-ico,.ud-snz-btn,.ud-th-toggle,.mg-src-star,.ud-fm-sw,.ud-del-btn,.uc-x,.ih-pin,.ih-star,[contenteditable]';
+    function tintEmojis(root){
+      if(!root||root.nodeType!==1)return;
+      var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(tn){
+        var p=tn.parentElement;
+        if(!p)return NodeFilter.FILTER_REJECT;
+        var tg=p.tagName;
+        if(tg==='SCRIPT'||tg==='STYLE'||tg==='TEXTAREA'||tg==='NOSCRIPT')return NodeFilter.FILTER_REJECT;
+        if(p.closest(EMO_SKIP))return NodeFilter.FILTER_REJECT;
+        EMO_RE.lastIndex=0;
+        return EMO_RE.test(tn.nodeValue)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;
+      }});
+      var nodes=[],tn;
+      while((tn=w.nextNode()))nodes.push(tn);
+      nodes.forEach(function(node){
+        var s=node.nodeValue,frag=document.createDocumentFragment(),last=0,m;
+        EMO_RE.lastIndex=0;
+        while((m=EMO_RE.exec(s))){
+          if(m.index>last)frag.appendChild(document.createTextNode(s.slice(last,m.index)));
+          var sp=document.createElement('span');
+          sp.className='tn-emj-i';
+          sp.textContent=m[0];
+          frag.appendChild(sp);
+          last=m.index+m[0].length;
+        }
+        if(last<s.length)frag.appendChild(document.createTextNode(s.slice(last)));
+        node.parentNode.replaceChild(frag,node);
+      });
+    }
+    tintEmojis(document.body);
+    // Pages render rows/cards after load — wrap emoji in whatever gets added.
+    // Our own spans are skipped via EMO_SKIP, so this can't loop on itself.
+    new MutationObserver(function(muts){
+      for(var i=0;i<muts.length;i++){
+        var ad=muts[i].addedNodes;
+        for(var j=0;j<ad.length;j++){
+          var nd=ad[j];
+          if(nd.nodeType===1)tintEmojis(nd);
+          else if(nd.nodeType===3&&nd.parentElement)tintEmojis(nd.parentElement);
+        }
+      }
+    }).observe(document.body,{childList:true,subtree:true});
     // Mark the current page's nav link (black bold + full-color emoji via CSS).
     // Normalize ".html" away on BOTH sides — Cloudflare Pages serves clean
     // URLs in production (/intel/docket) while links say "docket.html".
