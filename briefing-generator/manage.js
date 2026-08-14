@@ -316,7 +316,7 @@
             SYNC_MODES.map(function (s) { return '<option value="' + s.value + '"' + (sync === s.value ? " selected" : "") + ">" + esc(s.label) + "</option>"; }).join("") +
             "</select>" +
             (c.status && c.status !== "active" ? '<div class="mg-slug">' + esc(c.status) + "</div>" : "") + "</td>" +
-          '<td title="' + esc((c.topics || []).map(themeName).join(", ")) + '">' + (c.topics || []).map(themeEmoji).join(" ") + "</td>" +
+          '<td title="' + esc((c.topics || []).map(themeName).join(", ")) + '">' + (THEMES_SHOW_EMOJIS ? (c.topics || []).map(themeEmoji).join(" ") : esc((c.topics || []).map(themeName).join(", "))) + "</td>" +
           '<td class="mg-right">' +
             (dockUrl ? '<a class="mg-btn mg-btn-ghost" href="' + esc(dockUrl) + '" target="_blank" rel="noopener">Docket ↗</a> ' : "") +
             (sync !== "archived" ? '<button type="button" class="mg-btn" data-sync="' + esc(c.slug) + '" title="Sync now — fresh docket entries + a news search; the briefing refreshes if it’s older than 12 hours">Sync now</button> ' : "") +
@@ -723,7 +723,7 @@
       }).then(function (r) { return r.json(); }).then(function (j) {
         if (!j.ok) throw new Error(j.error || "save failed");
         THEMES_SHOW_EMOJIS = want;
-        setBanner("ok", "Theme emojis " + (want ? "shown" : "hidden") + " across the site (next page load).");
+        setBanner("ok", "Theme emojis " + (want ? "shown" : "hidden") + " across the site.");
       }).catch(function (e) { emT.checked = !want; setBanner("err", String(e.message || e)); });
     });
     root.querySelectorAll("[data-edit]").forEach(function (b) {
