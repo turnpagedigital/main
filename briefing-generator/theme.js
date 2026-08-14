@@ -175,9 +175,11 @@
     '[data-theme="night"] .ih-note-link .artifact,[data-theme="night"] .ih-note-nav,[data-theme="night"] .ih-note-counter{color:rgba(254,1,0,0.62);}'+
     '[data-theme="night"] .ih-note-nav:hover:not(:disabled){color:#FE0100;}'+
     // Today's chip is neon in light/dark; night swaps it to the red palette.
-    '[data-theme="night"] .ih-wk-col.today .ih-wk-num{background:#FE0100;color:#000;}'+
+    // Upcoming days: half-strength red, weekday and date alike.
+    '[data-theme="night"] .ih-wk-dow,[data-theme="night"] .ih-wk-num{color:rgba(254,1,0,0.5);}'+
+    '[data-theme="night"] .ih-wk-col.today .ih-wk-num{background:#FE0100;color:#000;padding:1px 5px;}'+
+    '[data-theme="night"] .ih-wk-col.today .ih-wk-dow{color:#FE0100;}'+
     '[data-theme="night"] .ih-wk-col.today .ih-wk-dayhd{border-bottom-color:#FE0100;}'+
-    '[data-theme="night"] .ih-wk-col.weekend .ih-wk-dow,[data-theme="night"] .ih-wk-col.weekend .ih-wk-num{color:rgba(254,1,0,0.62);}'+
     // Layout tweaks light/dark both carry (night would otherwise fall to neither).
     '[data-theme="night"] .page-title{border-bottom:1px solid var(--line-strong);}'+
     '[data-theme="night"] .ud-day-row td{border-top:none;}'+
