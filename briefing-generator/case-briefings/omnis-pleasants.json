@@ -3,6 +3,29 @@
   "case_name": "Omnis Pleasants",
   "items": [
     {
+      "date": "2026-08-14",
+      "updated": "2026-08-14",
+      "lede": "On August 13, McDermott Will & Schulte LLP filed a notice of withdrawal from the case (Dkt. 73), ending its representation of RG Energy LLC and TRAG LLC — the two adverse parties at the center of the governance dispute that precipitated this filing. DLA Piper LLP (US) had already entered an appearance for TRAG and RG Energy on August 7 (Dkt. 68), and the interim tax order (Dkt. 49) named DLA Piper as counsel of…",
+      "body_md": "On August 13, McDermott Will & Schulte LLP filed a notice of withdrawal from the case (Dkt. 73), ending its representation of RG Energy LLC and TRAG LLC — the two adverse parties at the center of the governance dispute that precipitated this filing. DLA Piper LLP (US) had already entered an appearance for TRAG and RG Energy on August 7 (Dkt. 68), and the interim tax order (Dkt. 49) named DLA Piper as counsel of record for those parties, meaning the withdrawal formalizes a consolidation of adverse-party representation rather than any disruption in coverage. The practical effect is that Koff, Schacter, and Hurst — admitted pro hac vice August 7 — now lead the full representation of TRAG and RG Energy through DLA Piper, the same firm already carrying the load on the tax-order objection deadline and the 341(a) proceedings. For creditors, the change is neutral on its face, though the speed of consolidation suggests TRAG and RG Energy are organizing their litigation posture deliberately as the September 3 final-hearing dates approach.\n\nAlso filed August 13, the debtor moved for entry of interim compensation procedures (Dkt. 78) and applied to retain Stretto, Inc. as administrative advisor effective as of the petition date (Dkt. 79). Both are standard Chapter 11 infrastructure: interim comp procedures govern how professionals draw from the estate on a monthly basis without a full fee application at each interval, and Stretto's role as administrative advisor typically encompasses claims agent and noticing services. Neither filing is contested on the record. Dkt. 77, also filed August 13 and captioned only \"Authorize - Motion,\" cannot be further characterized from the docket line alone; its content is unverified from available record and warrants monitoring for a full-text pull. The debtor's objection deadline for final approval of the prepetition tax order (Dkt. 49) runs to August 19, 2026 — six days out — and no objection has been docketed as of this briefing.\n\nSeparately, the U.S. Trustee scheduled the § 341(a) meeting of creditors for September 2, 2026, at 1:00 p.m. ET via Zoom (Dkts. 74–76), which fixes the § 523 dischargeability objection deadline at November 2, 2026. The 341(a) itself is a mandatory procedural step, but for a case with over 600 creditors and a $50.9 million unsecured obligation to the West Virginia Economic Development Authority sitting at the top of the claims pool, the meeting will be the first formal opportunity for creditors to examine the debtor's principals under oath on financial affairs and asset condition. The next concrete milestone is the August 19 objection deadline for the prepetition tax final order, followed by the September 2 341(a) meeting and the September 3 final hearings on wages, utility payments, and critical vendor orders.\n\n## Sources\n\n- [Pleasants Power Station's Omnis firm reports 600+ creditors](https://www.wvgazettemail.com/news/legal_affairs/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_1f5045c2-ed17-4993-b2e5-8c7ede971f62.html) — Charleston Gazette-Mail, August 4, 2026\n- [McDermott Will & Schulte — Wikipedia](https://en.wikipedia.org/wiki/McDermott_Will_%26_Schulte) — Wikipedia\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Pleasants Power Station's Omnis firm reports 600+ creditors",
+          "url": "https://www.wvgazettemail.com/news/legal_affairs/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_1f5045c2-ed17-4993-b2e5-8c7ede971f62.html",
+          "note": "Charleston Gazette-Mail, August 4, 2026"
+        },
+        {
+          "title": "McDermott Will & Schulte — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/McDermott_Will_%26_Schulte",
+          "note": "Wikipedia"
+        }
+      ],
+      "activity": {
+        "filings": 7,
+        "articles": 0,
+        "latest": "2026-08-13"
+      }
+    },
+    {
       "date": "2026-08-13",
       "updated": "2026-08-13",
       "lede": "On August 12, McDermott Will & Schulte LLP filed a Notice of Withdrawal of Appearance (Dkt. 73), exiting the case entirely on behalf of TRAG LLC and RG Energy LLC — the first-lien creditors whose $87.3 million lien position defines the secured layer of this capital structure. The withdrawal is the substantive event of the past 24 hours and warrants attention.",
