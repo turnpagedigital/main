@@ -126,7 +126,6 @@
     // Checkboxes: native accent-color renders a WHITE check on red — draw our
     // own so the check is black (Andrew). Unchecked = dim red outline.
     '[data-theme="night"] input[type="checkbox"]{-webkit-appearance:none;appearance:none;width:15px;height:15px;border:1px solid rgba(254,1,0,0.55);border-radius:3px;background:transparent;position:relative;cursor:pointer;flex:0 0 auto;vertical-align:middle;}'+
-    '[data-theme="night"] .uc-x{vertical-align:middle;}'+
     '[data-theme="night"] input[type="checkbox"]:checked{background:#FE0100;border-color:#FE0100;}'+
     '[data-theme="night"] input[type="checkbox"]:checked::after{content:"";position:absolute;left:4.5px;top:1.5px;width:3.5px;height:7.5px;border:solid #000;border-width:0 2px 2px 0;transform:rotate(43deg);}'+
     // Row-action "on" states (note/vote/bookmark/snooze) — green/yellow/blue → red.
