@@ -72,7 +72,9 @@
     // on white and on near-black.
     '[data-theme-set="system"] .tn-nicon{color:#9AA0A6;}'+
     '[data-theme-set="dark"] .tn-nicon{color:#EFC01F;}'+
-    '[data-theme-set="light"] .tn-nicon{color:#F97316;}'+
+    // Light blue = the palette's blue preset (#75b8ff in intel-prefs
+    // theme_presets, the swatch paired with black text).
+    '[data-theme-set="light"] .tn-nicon{color:#75B8FF;}'+
     '[data-theme-set="night"] .tn-nicon{color:#FE0100;}'+
     // …but night mode is strictly red-on-black, so inside it the identity
     // colors give way and every mode icon renders red (shape + label still
