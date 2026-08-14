@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-14 13:45 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-14 16:34 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -171,6 +171,14 @@ hi
 > Thomson Reuters Lifts Revenue Guidance After Growth — Thomson Reuters bumped up its revenue targets for the year after logging double-digit growth across its three big business segments in the latest 
 
 ## Uncategorized
+
+### (no docket number) — 2026-08-14
+
+> Filing Alert: 84-70 165th Street Chapter 11 — 84-70 165th Street Files Chapter 11 in Eastern District of New York
+
+### (no docket number) — 2026-08-14
+
+> Filing Alert: The Rushmore Hotel Chapter 11 — The Rushmore Hotel Files Chapter 11 in Southern District of Florida
 
 ### (no docket number) — 2026-08-13
 

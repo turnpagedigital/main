@@ -93,6 +93,16 @@ a{color:var(--ink);}
   .tn{padding:8px 0;padding-top:calc(8px + env(safe-area-inset-top));}
   .tn-row{padding:0 12px;padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right));}
   .tn-left{flex-wrap:wrap;gap:8px 14px;}
+  /* Auto-hide on scroll (theme.js toggles .tn-tucked). Phones only — the bar
+     is a big slice of a short viewport, and it costs nothing to give it back
+     the moment the reader scrolls up. The element stays in flow while
+     transformed, so content never jumps. */
+  .tn{transition:transform .22s ease;}
+  .tn.tn-tucked{transform:translateY(-100%);}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .tn{transition:none;}
 }
 
 /* ═══ Shared components (R10 pass 3) — tables, menus, popovers, modals ═══ */
