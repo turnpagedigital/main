@@ -7521,6 +7521,13 @@
       "url": "https://wordsandmoney.substack.com/"
     },
     {
+      "headline": "The Bartz/Anthropic Settlement is still a hot mess but at least it is the largest known copyright recovery of all time (for piracy)?",
+      "url": "https://ipkitten.blogspot.com/2026/08/the-bartzanthropic-settlement-is-still.html",
+      "source": "IPKat",
+      "date": "2026-08-11",
+      "summary": "IPKat analyzes the July 20 final approval of the $1.5 billion settlement, noting that 440,490 of the 482,460 eligible works had claims filed and characterizing the outcome as complex and contested despite its record size. The piece situates the settlement in the broader AI copyright litigation landscape."
+    },
+    {
       "headline": "Bartz v Anthropic: When to Expect Payments, Next Steps",
       "url": "https://blog.taaonline.net/2026/08/bartz-v-anthropic-when-to-expect-payments-next-steps/",
       "source": "Textbook & Academic Authors Association (TAA)",
@@ -7561,6 +7568,13 @@
       "source": "Writer Beware (Science Fiction & Fantasy Writers Association)",
       "date": "2026-07-23",
       "summary": "Confirmed Judge Martínez-Olguín's July 20 final approval of the $1.5 billion settlement, described as the largest copyright infringement recovery ever, with the distribution process now proceeding subject to the appeal window."
+    },
+    {
+      "headline": "Bartz v Anthropic Granted Final Approval by the Court",
+      "url": "https://blog.taaonline.net/2026/07/bartz-v-anthropic-granted-final-approval-by-the-court/",
+      "source": "Textbook & Academic Authors Association (TAA)",
+      "date": "2026-07-23",
+      "summary": "TAA reported that Judge Martínez-Olguín called the settlement 'fair, reasonable, and adequate' and overruled all 53 objections, with class counsel reporting a 91.3% claims rate and only 350 valid opt-outs representing 1,802 works. The post details the court-ordered dispute resolution process going forward, including referral of unresolved claims disputes to a Special Master."
     },
     {
       "headline": "Judge approves record $1.5 billion AI copyright settlement involving Anthropic",
@@ -7619,6 +7633,13 @@
       "summary": "A California federal judge gave final approval to Anthropic's $1.5 billion copyright class action settlement with authors, setting aside roughly $101.5 million in attorney fees for class counsel. The case, Bartz v. Anthropic PBC, is described as the largest copyright class action settlement in U.S. history."
     },
     {
+      "headline": "Anthropic's landmark $1.5B copyright settlement is approved",
+      "url": "https://techcrunch.com/2026/07/20/anthropics-landmark-1-5b-copyright-settlement-is-approved/",
+      "source": "TechCrunch",
+      "date": "2026-07-20",
+      "summary": "TechCrunch reported, citing Reuters, that Judge Martínez-Olguín signed off on the settlement delivering roughly $3,000 per work across an estimated 500,000 works. The piece highlighted that many authors still view the outcome as a partial defeat because Judge Alsup's earlier fair-use ruling — that AI training on legally obtained books is fair use — remains standing precedent."
+    },
+    {
       "headline": "Anthropic Settlement Update: The Opt-Outs Strike Back",
       "url": "https://writerbeware.blog/2026/07/17/anthropic-settlement-update-the-opt-outs-strike-back/",
       "source": "Writer Beware (Science Fiction & Fantasy Writers Association)",
@@ -7626,5 +7647,22 @@
       "summary": "Pre-final-approval update noting high class participation rates and a handful of late opt-out and late objection requests still pending before Judge Martínez-Olguín, alongside unresolved attorneys'-fees disputes, ahead of the July 20 ruling."
     }
   ],
-  "events": []
+  "events": [
+    {
+      "title": "Appeal Deadline: 30-Day Window to Appeal Final Approval Order (Bartz v. Anthropic)",
+      "date": "2026-08-19",
+      "time": "",
+      "kind": "Deadline",
+      "url": "https://blog.taaonline.net/2026/08/bartz-v-anthropic-when-to-expect-payments-next-steps/",
+      "source": "TAA / Class Counsel"
+    },
+    {
+      "title": "Anthropic Settlement Fund Installment Payment Due",
+      "date": "2026-09-25",
+      "time": "",
+      "kind": "Deadline",
+      "url": "https://press.princeton.edu/news/bartz-v-anthropic",
+      "source": "Princeton University Press / Settlement Agreement"
+    }
+  ]
 }

@@ -1333,6 +1333,13 @@
       "summary": "Nature highlighted Elsevier's participation in the class-action suit as a landmark moment, marking the first time a major science publisher has sued an AI company over the alleged reproduction of copyrighted research papers used in model training."
     },
     {
+      "headline": "Publishers and Authors Sue Meta, Alleging 'Massive' Copyright Infringement Behind Its Llama AI Service",
+      "url": "https://www.wordsandmoney.com/publishers-and-authors-sue-meta-alleging-massive-copyright-infringement-behind-its-llama-ai-service/",
+      "source": "Words & Money",
+      "date": "2026-05-08",
+      "summary": "The piece highlights the coordinated litigation strategy behind the Meta suit, noting that two of the publisher plaintiffs — Cengage and Hachette — are simultaneously seeking to intervene as class representatives in In Re Google Generative AI Copyright Litigation over Google's Gemini AI. The complaint alleges Zuckerberg personally directed the decision to pirate rather than license works after licensing talks were escalated to him in April 2023."
+    },
+    {
       "headline": "Meta Hit With New AI Copyright Class Action From Publishers",
       "url": "https://news.bloomberglaw.com/ip-law/meta-faces-new-ai-copyright-class-action-from-book-publishers",
       "source": "Bloomberg Law",
@@ -1340,18 +1347,18 @@
       "summary": "Bloomberg Law reported that five major publishers and author Scott Turow filed a proposed class action against Meta in the Southern District of New York (Case No. 1:26-cv-03689), with boutique firm Oppenheim + Zebrak representing plaintiffs. Meta did not immediately respond to a request for comment."
     },
     {
-      "headline": "Scott Turow's latest real-life legal thriller: Suing Meta for copyright infringement",
-      "url": "https://www.npr.org/2026/05/05/nx-s1-5812623/scott-turow-meta-lawsuit",
-      "source": "NPR",
-      "date": "2026-05-05",
-      "summary": "NPR reported that Hachette, Macmillan, McGraw Hill, Elsevier, Cengage, and Scott Turow filed a class-action lawsuit alleging Meta knowingly copied copyrighted materials from pirate websites such as LibGen and Anna's Archive to train its Llama models, with Zuckerberg's personal authorization."
-    },
-    {
       "headline": "Publishers File Lawsuit Against Meta, Mark Zuckerberg",
       "url": "https://www.publishersweekly.com/pw/by-topic/digital/copyright/article/100329-publishers-file-infringement-lawsuit-against-meta-zuckerberg.html",
       "source": "Publishers Weekly",
       "date": "2026-05-05",
       "summary": "Publishers Weekly reported that five publishers and Scott Turow — a past Authors Guild president — filed the lawsuit, which the AAP described as the first copyright infringement litigation brought against an AI firm by publishers. The Authors Guild applauded the action and expressed gratitude to Turow for representing authors."
+    },
+    {
+      "headline": "Book Publishers, Scott Turow Sue Meta Over Llama AI Training on Pirated Works",
+      "url": "https://www.law360.com/cases/69f9ecd574ebfa91a1cfb4ef",
+      "source": "Law360",
+      "date": "2026-05-05",
+      "summary": "Law360 reported that book publishers and legal novelist Scott Turow hit Meta Platforms with a proposed class action in New York federal court, accusing it of training its Llama large language models on millions of copyrighted books and articles sourced from pirate sites rather than licensing the material. The case is assigned to Judge P. Kevin Castel in the Southern District of New York."
     }
   ],
   "events": []

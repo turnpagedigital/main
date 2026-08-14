@@ -1867,6 +1867,21 @@
     ]
   },
   "claims_administrator": null,
-  "coverage": [],
+  "coverage": [
+    {
+      "headline": "IEEPA Tariff Refund: Key FAQs for Importers",
+      "url": "https://www.bdo.com/insights/tax/ieepa-tariff-refunds-frequently-asked-questions",
+      "source": "BDO",
+      "date": "2026-08-10",
+      "summary": "BDO's FAQ guide for importers explains the current state of IEEPA tariff refund proceedings stemming from the Supreme Court's ruling in V.O.S. Selections, covering CAPE Phase 1 and 2, class certification motions in the CIT, and the likelihood of further Federal Circuit appeals. Oral arguments on class certification in V.O.S. Selections, Inc. v. United States are noted as scheduled for August 2026, with a CIT ruling expected shortly after."
+    },
+    {
+      "headline": "CIT Judge Confused By Gov't Objection To Tariff Refund Class",
+      "url": "https://www.law360.com/tax-authority/federal/articles/2510151",
+      "source": "Law360",
+      "date": "2026-08-07",
+      "summary": "A U.S. Court of International Trade judge repeatedly expressed confusion over the federal government's objection to certifying a class of importers seeking refunds of President Trump's illegal global IEEPA tariffs. The hearing centered on whether importers with finally liquidated entries should be included in a class action for refund relief in V.O.S. Selections, Inc. v. United States."
+    }
+  ],
   "events": []
 }
