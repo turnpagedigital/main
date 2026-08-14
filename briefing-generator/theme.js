@@ -62,6 +62,14 @@
     '.tn-nicon{display:none;width:1.3em;height:1.3em;vertical-align:-0.26em;}'+
     '[data-theme="night"] .tn-nicon{display:inline-block;}'+
     '[data-theme="night"] .tn-eraw{display:none;}'+
+    // The gear menu's theme icons (System/Dark/Light/Night) are drawn in EVERY
+    // theme, not just night — they inherit currentColor, so they read as ink on
+    // light and as pale ink on dark, matching the stroke gear beside them.
+    '.tn-gt-ico .tn-nicon{display:inline-block;}'+
+    '.tn-gt-ico .tn-eraw{display:none;}'+
+    // …except the Night entry, which keeps its red so the mode is identifiable
+    // from any theme (a currentColor dot would read as plain ink in light/dark).
+    '[data-theme-set="night"] .tn-nicon{color:#FE0100;}'+
     // :not([class]) — the generated case pages wrap their title emoji in a bare
     // <span>, but briefings.html's first span is the case-title PILL (classed).
     // h1>.tn-emj-i:first-child too: during streaming parse the global tint can
