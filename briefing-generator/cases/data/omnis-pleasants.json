@@ -1141,6 +1141,13 @@
   },
   "coverage": [
     {
+      "headline": "Omnis Pleasants Files Chapter 11 After $75.64M Payoff Rejected",
+      "url": "https://elevenflo.com/blog/omnis-pleasants-llc-17751",
+      "source": "ElevenFlo",
+      "date": "2026-08-13",
+      "summary": "Omnis Pleasants filed Chapter 11 after its current independent management rejected a $75.64 million payoff attempt by former ownership as lacking transparency on the source of funds, triggering a boardroom fight over control of the 1,278-MW coal-fired plant. Former ownership entities have moved to dismiss the case as bad faith, and FERC opened an investigation in October 2025 into the plant's operations that could result in disgorgement of capacity revenues."
+    },
+    {
       "headline": "Pleasants Power Station's Omnis firm reports 600+ creditors",
       "url": "https://www.herald-dispatch.com/news/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_5b21adc9-1c75-433a-be51-5ed26f74a819.html",
       "source": "Herald-Dispatch",
@@ -1234,6 +1241,14 @@
   ],
   "events": [
     {
+      "title": "Section 341 Meeting of Creditors – Omnis Pleasants, LLC (Case No. 26-11169)",
+      "date": "2026-09-02",
+      "time": "01:00 PM ET",
+      "kind": "Call",
+      "url": "https://cases.stretto.com/pleasantspowerstation/",
+      "source": "U.S. Trustee / Stretto"
+    },
+    {
       "title": "Final Hearing on First-Day Critical Operations Orders (Employee Wages, Utility Payments)",
       "date": "2026-09-03",
       "time": "",
@@ -1247,6 +1262,14 @@
       "time": "",
       "kind": "Deadline",
       "url": "https://www.wvgazettemail.com/news/legal_affairs/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_1f5045c2-ed17-4993-b2e5-8c7ede971f62.html",
+      "source": "U.S. Bankruptcy Court, D. Delaware"
+    },
+    {
+      "title": "Final Cash Collateral Approval Hearing – Omnis Pleasants, LLC (Case No. 26-11169)",
+      "date": "2026-09-03",
+      "time": "",
+      "kind": "Deadline",
+      "url": "https://elevenflo.com/cases/17751",
       "source": "U.S. Bankruptcy Court, D. Delaware"
     }
   ]

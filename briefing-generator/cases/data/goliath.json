@@ -340,13 +340,6 @@
   "claims_administrator": null,
   "coverage": [
     {
-      "headline": "SEC, CFTC charge crypto Ponzi schemer",
-      "url": "https://www.investmentexecutive.com/news/regulation/sec-cftc-charge-crypto-ponzi-schemer/",
-      "source": "Investment Executive",
-      "date": "2026-08-12",
-      "summary": "Both the SEC and CFTC filed civil complaints against Goliath Ventures and Christopher Delgado, who pleaded guilty in June to wire fraud, conspiracy, and money laundering for a scheme that took in more than $400 million and caused at least $250 million in investor losses. The SEC is seeking injunctions and disgorgement against the now-bankrupt firm."
-    },
-    {
       "headline": "Goliath Ventures hit by SEC, CFTC in $425M crypto case",
       "url": "https://crypto.news/goliath-ventures-hit-by-sec-cftc/",
       "source": "Crypto.news",
@@ -441,6 +434,14 @@
       "kind": "Deadline",
       "url": "https://crypto.news/goliath-ventures-hit-by-sec-cftc/",
       "source": "U.S. District Court for the Middle District of Florida / DOJ"
+    },
+    {
+      "title": "Sentencing Hearing — United States v. Christopher Alexander Delgado (related criminal case, M.D. Fla.)",
+      "date": "2026-10-21",
+      "time": "",
+      "kind": "Deadline",
+      "url": "https://www.justice.gov/usao-mdfl/pr/goliath-ventures-ceo-pleads-guilty-cryptocurrency-fraud-scheme-conspiracy",
+      "source": "U.S. District Court, Middle District of Florida / DOJ USAO-MDFL"
     }
   ]
 }
