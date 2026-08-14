@@ -122,7 +122,15 @@
     // Briefings/manage stragglers: yellow th-toggle, blue snooze, crimson errors,
     // neon due/note highlights, manage banner tints, white-on-danger hover text.
     '[data-theme="night"] .ud-th-toggle.ud-th-on,[data-theme="night"] .ud-snz-btn.ud-snz-on{color:#FE0100;}'+
-    '[data-theme="night"] .ud-due{background:rgba(254,1,0,0.30);}'+
+    // Snoozed-reminder stickies (docket/news) — same treatment as the
+    // dashboard note cards: dark-red paper, dimmed case stripe, red ink.
+    '[data-theme="night"] .ud-due{background:transparent;}'+
+    '[data-theme="night"] .ud-due-card{background:rgba(254,1,0,0.10);border-top-color:rgba(254,1,0,0.45) !important;}'+
+    '[data-theme="night"] .ud-due-card,[data-theme="night"] .ud-due-card strong,[data-theme="night"] .ud-due-title{color:#FE0100;}'+
+    '[data-theme="night"] .ud-due-title{border-bottom-color:rgba(254,1,0,0.20);}'+
+    '[data-theme="night"] .ud-due-artifact{color:rgba(254,1,0,0.62);}'+
+    '[data-theme="night"] .ud-due-foot button{color:rgba(254,1,0,0.62);}'+
+    '[data-theme="night"] .ud-due-foot button:hover{color:#FE0100;}'+
     '[data-theme="night"] .bf-old-note{background:rgba(254,1,0,0.14);}'+
     '[data-theme="night"] .ub-mini.ub-mini-danger,[data-theme="night"] .ce-del{color:#FE0100;border-color:rgba(254,1,0,0.55);}'+
     '[data-theme="night"] .ce-err{color:#FE0100;background:rgba(254,1,0,0.08);border-color:rgba(254,1,0,0.38);}'+
