@@ -44,8 +44,18 @@
       "id": "daily-dac-article",
       "name": "Daily DAC",
       "url": "https://www.dailydac.com/feed/",
-      "kind": "ARTICLE",
+      "kind": "Article",
       "type": "rss",
+      "show": "news",
+      "mode": "all",
+      "enabled": true
+    },
+    {
+      "id": "bitcoin-foundation",
+      "name": "Bitcoin Foundation",
+      "url": "https://bitcoinfoundation.org/news/",
+      "kind": "News",
+      "type": "search",
       "show": "news",
       "mode": "all",
       "enabled": true
