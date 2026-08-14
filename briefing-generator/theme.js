@@ -423,6 +423,16 @@
     if(b)b.addEventListener('click',window.cycleTheme);
     injectFontControl();
     applyFont();
+    // ⌘Z / Ctrl+Z — undo the last row/curation action on pages that expose
+    // window.__intelUndo (docket, news, calendar). Editable fields keep the
+    // browser's native text undo.
+    document.addEventListener('keydown',function(e){
+      if(!(e.metaKey||e.ctrlKey)||e.shiftKey||e.altKey)return;
+      if((e.key||'').toLowerCase()!=='z')return;
+      var t3=e.target||{},tg=(t3.tagName||'').toLowerCase();
+      if(tg==='input'||tg==='textarea'||tg==='select'||t3.isContentEditable)return;
+      if(typeof window.__intelUndo==='function'){e.preventDefault();e.stopPropagation();window.__intelUndo();}
+    },true);
     document.addEventListener('keydown',function(e){
       if(e.metaKey||e.ctrlKey||e.altKey)return;
       if(e.key!=='/')return;
@@ -442,6 +452,10 @@
       trow.className='tn-kbd-row tn-kbd-theme-row';
       trow.innerHTML='<span class="tn-key">D</span> · <span class="tn-key">L</span> · <span class="tn-key">S</span> · <span class="tn-key">N</span> then <span class="tn-key">M</span> Dark / Light / System / Night theme';
       kp.appendChild(trow);
+      var urow=document.createElement('div');
+      urow.className='tn-kbd-row';
+      urow.innerHTML='<span class="tn-key">\u2318Z</span> Undo last action <em>Docket \u00b7 News \u00b7 Calendar</em>';
+      kp.appendChild(urow);
     }
     wireGearMenu();
     wireColResize();

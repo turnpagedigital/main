@@ -165,6 +165,30 @@
   var mergedInto = {};      // event key → primary key
   var mergeGroups = [];     // [{keys, primary}]
   var selectedKeys = {};    // key → true (merge/dismiss selection)
+  // ── ⌘Z undo for curation (dismiss/merge/reset): snapshot both structures
+  // before each destructive change; pop restores and re-syncs. ──
+  var CUR_UNDO = [];
+  function snapCuration() {
+    CUR_UNDO.push({
+      dismissed: JSON.parse(JSON.stringify(dismissed)),
+      mergeGroups: JSON.parse(JSON.stringify(mergeGroups))
+    });
+    if (CUR_UNDO.length > 20) CUR_UNDO.shift();
+  }
+  window.__intelUndo = function () {
+    var u = CUR_UNDO.pop();
+    if (!u) return;
+    dismissed = u.dismissed;
+    mergeGroups = u.mergeGroups;
+    mergedInto = {};
+    mergeGroups.forEach(function (g) {
+      g.keys.forEach(function (k) { if (k !== g.primary) mergedInto[k] = g.primary; });
+    });
+    selectedKeys = {};
+    pushCuration();
+    render();
+    updateCurationInfo();
+  };
   var _savedState = null;
   var calMode = "list";        // "list" | "month" | "week"
   var calAnchor = null;        // ISO date inside the shown month/week (set at boot)
@@ -289,6 +313,7 @@
     var btn = document.getElementById("uc-curation-reset");
     if (btn) {
       btn.addEventListener("click", function () {
+        snapCuration();
         dismissed = {};
         mergeGroups = [];
         mergedInto = {};
@@ -1446,6 +1471,7 @@
       ucTbody.addEventListener("click", function (ev) {
         var x = ev.target.closest(".uc-x");
         if (!x) return;
+        snapCuration();
         dismissed[x.getAttribute("data-key")] = true;
         pushCuration();
         render();
@@ -1475,6 +1501,7 @@
           return sb - sa;
         });
         var primary = evs.length ? evs[0].key : keys[0];
+        snapCuration();
         mergeGroups.push({ keys: keys, primary: primary });
         mergeGroups.forEach(function (g) {
           g.keys.forEach(function (k) { if (k !== g.primary) mergedInto[k] = g.primary; });
@@ -1488,6 +1515,7 @@
     }
     if (dismissBtn) {
       dismissBtn.addEventListener("click", function () {
+        snapCuration();
         Object.keys(selectedKeys).forEach(function (k) { dismissed[k] = true; });
         selectedKeys = {};
         pushCuration();

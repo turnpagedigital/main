@@ -2476,7 +2476,32 @@
   }
 
 
+  // ── ⌘Z undo — every hide/delete/snooze/restore flows through setRowState,
+  // so undo is: snapshot the touched keys' prior values, restore on pop. ──
+  var UNDO_STACK = [];
+  window.__intelUndo = function () {
+    var u = UNDO_STACK.pop();
+    if (!u) { noteToast("Nothing to undo", true); return; }
+    var rec = NOTES[u.nk] || {};
+    Object.keys(u.prior).forEach(function (k) {
+      if (u.prior[k] === undefined) delete rec[k];
+      else rec[k] = u.prior[k];
+    });
+    if (!rec.bookmarked && !(rec.note || "").trim() && !rec.snooze_until && !rec.hidden && !rec.deleted_at) {
+      delete NOTES[u.nk];
+    } else {
+      NOTES[u.nk] = rec;
+    }
+    pushNote(u.nk);
+    render();
+    updateHiddenInfo();
+    noteToast("Undone: " + (u.label || "last action"), false);
+  };
   function setRowState(nk, changes, toast) {
+    var prior = {}, cur = NOTES[nk] || {};
+    Object.keys(changes).forEach(function (k) { prior[k] = cur[k]; });
+    UNDO_STACK.push({ nk: nk, prior: prior, label: toast ? String(toast).split("\u2014")[0].trim().toLowerCase() : "" });
+    if (UNDO_STACK.length > 20) UNDO_STACK.shift();
     var rec = NOTES[nk] || {};
     Object.keys(changes).forEach(function (k) { rec[k] = changes[k]; });
     if (!rec.bookmarked && !(rec.note || "").trim() && !rec.snooze_until && !rec.hidden && !rec.deleted_at) {
