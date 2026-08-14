@@ -692,6 +692,15 @@
     return wd + ", " + names[Number(m[2]) - 1] + " " + Number(m[3]) + ", " + m[1];
   }
 
+  // Phone rows show "Jul 29" — the weekday and year are noise on a narrow
+  // screen where the list is already ordered by date.
+  function shortDate(iso) {
+    var m = String(iso || "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!m) return iso || "";
+    var names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    return names[Number(m[2]) - 1] + " " + Number(m[3]);
+  }
+
   function agentLabel(name) {
     var n = (name || "").toLowerCase();
     if (n.indexOf("verita") !== -1) return "Verita";
@@ -1156,7 +1165,8 @@
       var rowCls = ev.date === today ? ' class="ud-row-new"' : "";
       return (
         "<tr" + rowCls + ' data-evkey="' + esc((ev.date || "") + "|" + (ev.short || "")) + '">' +
-          '<td class="ud-date">' + esc(prettyDate(ev.date)) + "</td>" +
+          '<td class="ud-date"><span class="ud-d-full">' + esc(prettyDate(ev.date)) +
+            '</span><span class="ud-d-short">' + esc(shortDate(ev.date)) + '</span></td>' +
           '<td class="uc-rel-cell">' + relHtml + "</td>" +
           '<td class="ud-case">' + pill + "</td>" +
           '<td class="ud-entry">' + kindHtml + ' <span class="ud-desc uc-snippet">' + esc(ev.snippet) + "</span></td>" +

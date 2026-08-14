@@ -493,6 +493,16 @@
   }
 
   // ── Render ─────────────────────────────────────────────────────────────────
+  // Phone rows: "Jul 30 11:24 AM" — same stamp without the year.
+  function fmtStampShort(iso) {
+    if (!iso) return "\u2014";
+    var d = new Date(iso);
+    if (isNaN(d)) return String(iso).slice(0, 10);
+    var names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    return names[d.getMonth()] + " " + d.getDate() + " " +
+      d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  }
+
   function fmtStamp(iso) {
     if (!iso) return "—";
     var d = new Date(iso);
@@ -568,7 +578,8 @@
         : '<span class="ud-party-empty">(bookmark only)</span>';
       return (
         "<tr>" +
-          '<td class="ud-date">' + esc(fmtStamp(n.updated_at)) + "</td>" +
+          '<td class="ud-date"><span class="ud-d-full">' + esc(fmtStamp(n.updated_at)) +
+            '</span><span class="ud-d-short">' + esc(fmtStampShort(n.updated_at)) + '</span></td>' +
           '<td class="ud-case">' + pill + "</td>" +
           '<td class="ud-entry">' + entryMeta + "</td>" +
           '<td class="un-note-cell">' + noteHtml + "</td>" +

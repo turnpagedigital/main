@@ -126,7 +126,6 @@
     // Checkboxes: native accent-color renders a WHITE check on red — draw our
     // own so the check is black (Andrew). Unchecked = dim red outline.
     '[data-theme="night"] input[type="checkbox"]{-webkit-appearance:none;appearance:none;width:15px;height:15px;border:1px solid rgba(254,1,0,0.55);border-radius:3px;background:transparent;position:relative;cursor:pointer;flex:0 0 auto;vertical-align:middle;}'+
-    '[data-theme="night"] .uc-x{vertical-align:middle;}'+
     '[data-theme="night"] input[type="checkbox"]:checked{background:#FE0100;border-color:#FE0100;}'+
     '[data-theme="night"] input[type="checkbox"]:checked::after{content:"";position:absolute;left:4.5px;top:1.5px;width:3.5px;height:7.5px;border:solid #000;border-width:0 2px 2px 0;transform:rotate(43deg);}'+
     // Row-action "on" states (note/vote/bookmark/snooze) — green/yellow/blue → red.
@@ -219,6 +218,10 @@
   earlyCss.textContent=
     _pb.join(',')+'{background:var(--pb);color:var(--pf);}'+
     _pb.map(function(s){return '[data-theme="dark"] '+s;}).join(',')+'{background:var(--pf);color:var(--pb);}'+
+    // Row date cells carry a full and a short form; phones show the short
+    // one (MMM D, no weekday/year — the row is already in a dated context).
+    '.ud-d-short{display:none;}'+
+    '@media (max-width:720px){.ud-d-full{display:none;}.ud-d-short{display:inline;}}'+
     '.tn-hamburger{display:none;align-items:center;justify-content:center;background:transparent;border:none;color:#fff;padding:4px 6px;font-size:15px;line-height:1;opacity:0.7;cursor:pointer;flex:0 0 auto;}'+
     '.tn-hamburger:hover{opacity:1;}'+
     '.tn.tn-compact .tn-lbl{display:none;}'+
@@ -267,6 +270,13 @@
   // Persisted per browser; applied as a body zoom, with the sticky-footer
   // 100vh min-height divided by the same factor so the page stays exactly one
   // viewport tall at any size. ────────────────────────────────────────────────
+  // Containers that carry the 1680px content cap, enumerated from the intel
+  // stylesheets. Kept here so applyFont() can rescale them with the zoom; a
+  // new full-width container added later needs adding to this list too.
+  var MAXW_SELECTORS=['.calendar-strip','.card-grid','.cards','.foot','.ih-band',
+    '.ih-band-vgrip','.ih-carousel','.ih-cases-head','.ih-controls','.market-watch',
+    '.mg-wrap','.page-title','.section-label','.seed-note','.tn-dd-inner','.tn-row',
+    '.tn-tabs-row','.ud-page','.unified-calendar','.wrap'];
   var FK='ud-font-scale';
   function fontScale(){ var n=parseInt(localStorage.getItem(FK)||'100',10); return (n>=80&&n<=150)?n:100; }
   function applyFont(){
@@ -280,8 +290,26 @@
     // phones already have OS-level text sizing.
     if(matchMedia('(pointer: coarse)').matches) z=1;
     document.body.style.zoom=(z===1?'':String(z));
-    document.body.style.width=(z===1?'':'calc(100% / '+z+')');
+    // NB: width needs no compensation. Under CSS zoom a percentage already
+    // resolves against the viewport divided by the zoom, so the old
+    // width:calc(100%/z) applied the correction twice — at 80% the body came
+    // out 3000px wide inside a 1920px window (480px of horizontal overflow),
+    // and at 125% it fell 384px short of the right edge. Viewport UNITS do not
+    // self-correct that way, so min-height still needs the divisor.
+    document.body.style.width='';
     document.body.style.minHeight=(z===1?'':'calc(100vh / '+z+')');
+    // …and scale the content column's cap by the same factor. Every page
+    // container is capped at a fixed 1680px, but the zoom compensation above
+    // changes how many CSS pixels the viewport is worth: at 125% the body is
+    // only 0.8x as wide in CSS px, so the 1680 cap stopped binding and the
+    // page margins collapsed to the bare padding; at 80% the body grew and the
+    // margins ballooned. Dividing the cap by the same z keeps the column's
+    // VISUAL width — and therefore the margins — identical at every text size,
+    // which is the point: bigger type inside the same layout.
+    var mw=document.getElementById('tn-fs-maxw');
+    if(!mw){mw=document.createElement('style');mw.id='tn-fs-maxw';document.head.appendChild(mw);}
+    mw.textContent = z===1 ? '' :
+      MAXW_SELECTORS.join(',')+'{max-width:calc(1680px / '+z+');}';
     var lab=document.getElementById('tn-fs-label');
     if(lab)lab.textContent=fontScale()+'%';
     var glab=document.getElementById('tn-gf-label');

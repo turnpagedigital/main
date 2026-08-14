@@ -290,8 +290,8 @@ UD_CSS = r"""
   .uc-gcal:hover{color:var(--ink);}
   .uc-gcal:hover{opacity:1;}
   .uc-curate-cell{text-align:center;white-space:nowrap;}
-  .uc-sel{accent-color:var(--neon);cursor:pointer;margin-right:6px;}
-  .uc-x{background:none;border:none;color:var(--ink-40);font-size:15px;cursor:pointer;padding:0 3px;line-height:1;}
+  .uc-sel{accent-color:var(--neon);cursor:pointer;margin:0 6px 0 0;vertical-align:middle;}
+  .uc-x{background:none;border:none;color:var(--ink-40);font-size:15px;cursor:pointer;padding:0 3px;line-height:1;vertical-align:middle;}
   .uc-x:hover{color:#C84141;}
   .uc-merge-bar{position:sticky;bottom:14px;z-index:800;display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 6px 24px rgba(0,0,0,0.25);padding:10px 16px;margin-bottom:12px;font-size:13px;}
   .uc-merged-chip{display:inline-block;font-size:10px;font-weight:700;color:var(--ink-60);background:var(--paper-2);border:1px solid var(--line);padding:1px 6px;margin-left:6px;vertical-align:middle;}
@@ -1349,7 +1349,7 @@ def render_unified_calendar(cases):
   .uc-week-dow{{font-size:11px;font-weight:800;letter-spacing:0.05em;color:var(--ink-60);margin-bottom:6px;}}
   .uc-week-card{{border:none;border-left:3px solid var(--line-strong);padding:6px 7px;margin-bottom:6px;background:var(--surface);cursor:pointer;}}
   .uc-week-card .ud-pill{{font-size:10px;}}
-  .uc-selall-btn{{background:none;border:none;cursor:pointer;padding:2px 4px;line-height:1;color:var(--ink-40);}}
+  .uc-selall-btn{{background:none;border:none;cursor:pointer;padding:2px 4px;line-height:1;color:var(--ink-40);vertical-align:middle;}}
   .uc-selall-btn:hover{{color:var(--ink);}}
   .uc-selall-btn.uc-selall-on{{color:var(--ink);}}
   .uc-selall-btn.uc-selall-some{{color:var(--ink-60);}}
