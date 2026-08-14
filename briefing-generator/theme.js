@@ -336,16 +336,17 @@
     var NIGHT_ICONS={
       // Dashboard — house, door in dim red
       '🏠':NI+'<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5"/><path d="M10 21v-6h4v6z" fill="currentColor" fill-opacity="0.4" stroke="none"/></svg>',
-      // Docket — scales, pans in dim red
-      '⚖':NI+'<path d="M12 4v16M8 20h8M5 7h14"/><circle cx="12" cy="4" r="1"/><path d="M5 7 2.4 13a3.1 3.1 0 0 0 5.2 0Z" fill="currentColor" fill-opacity="0.4" stroke="none"/><path d="M19 7l-2.6 6a3.1 3.1 0 0 0 5.2 0Z" fill="currentColor" fill-opacity="0.4" stroke="none"/></svg>',
+      // Docket — scales; plates outlined at full red (dim fill inside), strings dimmed
+      '⚖':NI+'<path d="M12 4v16M8 20h8M5 7h14"/><circle cx="12" cy="4" r="1"/><path d="M5 7 2.4 13M5 7l2.6 6M19 7l-2.6 6M19 7l2.6 6" opacity="0.4"/><path d="M2.4 13a3.1 3.1 0 0 0 5.2 0z" fill="currentColor" fill-opacity="0.4"/><path d="M16.4 13a3.1 3.1 0 0 0 5.2 0z" fill="currentColor" fill-opacity="0.4"/></svg>',
       // Calendar — grid frame, marked date in dim red
       '📅':NI+'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/><rect x="13" y="13" width="4.5" height="4.5" rx="1" fill="currentColor" fill-opacity="0.4" stroke="none"/></svg>',
       // Notes — pad, rule lines dimmed
       '🗒':NI+'<rect x="4" y="4.5" width="16" height="16.5" rx="2"/><path d="M8 2.5v4M12 2.5v4M16 2.5v4"/><path d="M8 11h8M8 14.5h8M8 18h5" opacity="0.4"/></svg>',
       // News — front page, photo block in dim red
       '📡':NI+'<rect x="3" y="4" width="18" height="16" rx="2"/><rect x="6" y="7" width="7" height="5" rx="1" fill="currentColor" fill-opacity="0.4" stroke="none"/><path d="M16 8h2M16 11h2M6 15h12M6 17.8h8"/></svg>',
-      // Prospects — binoculars: two dim-filled lenses, tube tops, bridge
-      '🔭':NI+'<circle cx="7.2" cy="15" r="4.2" fill="currentColor" fill-opacity="0.4"/><circle cx="16.8" cy="15" r="4.2" fill="currentColor" fill-opacity="0.4"/><path d="M5.2 12V6.9a2 2 0 0 1 4 0V11M14.8 11V6.9a2 2 0 0 1 4 0V12M9.2 8.2h5.6"/></svg>',
+      // Prospects — telescope (per Andrew\'s reference): angled barrel with a
+      // detached solid eyepiece, pivot knob, A-frame tripod
+      '🔭':NI+'<rect x="11.6" y="3.4" width="8.6" height="5.2" rx="1.2" transform="rotate(-35 15.9 6)" fill="currentColor" fill-opacity="0.4"/><rect x="4.2" y="10.6" width="3.4" height="3.8" rx="0.9" transform="rotate(-35 5.9 12.5)" fill="currentColor"/><circle cx="11.2" cy="10.8" r="1.7"/><path d="M10.6 13 7.6 21M12 13l3 8M8.8 18h5" opacity="0.75"/></svg>',
       // Cases — folder, divider dimmed (🗂️ is what the dashboard actually uses)
       '📁':NI+'<path d="M3 8V6a2 2 0 0 1 2-2h4l2.2 2.5H19a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 10.5h18" opacity="0.4"/></svg>',
       '🗂':NI+'<path d="M3 8V6a2 2 0 0 1 2-2h4l2.2 2.5H19a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 10.5h18" opacity="0.4"/></svg>',
