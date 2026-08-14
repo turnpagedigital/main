@@ -1,5 +1,5 @@
 {
-  "show_emojis": true,
+  "show_emojis": false,
   "themes": [
     {
       "slug": "rewind-tariffs",
@@ -10,7 +10,7 @@
     {
       "slug": "llm-class-action",
       "display_name": "LLM / Copyright",
-      "emoji": "🤖",
+      "emoji": "⚖️",
       "active": true
     },
     {
