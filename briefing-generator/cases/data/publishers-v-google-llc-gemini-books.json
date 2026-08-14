@@ -5221,13 +5221,6 @@
       "summary": "TechCrunch reported that Hachette, Cengage, Elsevier, Scott Turow, and S.C.R.I.B.E. sued Google for using copyrighted works to train Gemini, with the complaint also alleging Google intentionally removed or altered copyright management information to conceal that its models were trained on the disputed materials. The suit follows a failed attempt by Hachette and Cengage to intervene in a separate California class action against Google."
     },
     {
-      "headline": "Hachette, Scott Turow Sue Google for Using Books to Train Gemini AI",
-      "url": "https://www.thewrap.com/industry-news/tech/hachette-scott-turow-google-gemini-ai-copyright-lawsuit/",
-      "source": "The Wrap",
-      "date": "2026-07-14",
-      "summary": "The Wrap reported that the lawsuit alleges Google built Gemini by copying books from Google Books, online libraries, and allegedly pirated websites, and that Gemini now competes directly with those books by generating detailed summaries and textbook-style content that could reduce demand for the originals. Plaintiffs are seeking damages and a court order barring continued infringement."
-    },
-    {
       "headline": "Google Faces Another AI Copyright Suit By Publishers",
       "url": "https://www.law360.com/articles/2500754/google-faces-another-ai-copyright-suit-by-publishers",
       "source": "Law360",
@@ -5235,11 +5228,32 @@
       "summary": "Book publishers including Hachette, Cengage, and Elsevier, along with author Scott Turow, filed a copyright infringement suit alleging Google used their works to train its Gemini AI model. The suit follows an earlier action the same plaintiffs launched against Meta."
     },
     {
+      "headline": "Google Faces Fresh Copyright Lawsuit Over Gemini AI Training",
+      "url": "https://www.bwmarketingworld.com/article/google-faces-fresh-copyright-lawsuit-over-gemini-ai-training-614846",
+      "source": "BW Marketing World",
+      "date": "2026-07-14",
+      "summary": "The complaint alleges Google stripped or altered copyright management information to conceal that Gemini was trained on unauthorized material sourced from Google Books, pirate websites, and paywalled platforms. Because the case is in New York rather than Northern California, a different court will rule on fair-use questions than the one handling the consolidated In re Google Generative AI Copyright Litigation."
+    },
+    {
       "headline": "Publishers and Authors File Class Action Lawsuit Against Google for Willful Copyright Infringement to Develop Gemini AI Models",
       "url": "https://www.hachettebookgroup.com/hachette-book-group-news/publishers-and-authors-file-class-action-lawsuit-against-google-for-willful-copyright-infringement-to-develop-gemini-ai-models/",
       "source": "Hachette Book Group",
       "date": "2026-07-13",
       "summary": "Hachette Book Group, Cengage Learning, Elsevier, and author Scott Turow filed a putative class action in the S.D.N.Y. (1:26-cv-05870) alleging Google willfully infringed millions of textual works to develop its Gemini large language models. Plaintiffs bring claims on behalf of a proposed class of authors and publishers whose works were allegedly repurposed without authorization."
+    },
+    {
+      "headline": "Publishers, Authors File Class Action Lawsuit Against Google",
+      "url": "https://www.publishersweekly.com/pw/by-topic/digital/copyright/article/100820-new-lawsuit-aims-to-stop-google-from-copyright-infringement-in-creating-ai-models.html",
+      "source": "Publishers Weekly",
+      "date": "2026-07-13",
+      "summary": "Hachette Book Group, Cengage Learning, Elsevier, and Scott Turow filed suit against Google seeking to block ongoing copyright infringement in the development of Gemini AI models, alleging it displaces legitimate book sales and threatens the growing content-licensing market. The plaintiffs withdrew their earlier motion to intervene in the 2023 California case to preserve broader claims and avoid statute-of-limitations issues."
+    },
+    {
+      "headline": "Hachette Book Group Inc. et al v. Google LLC (case docket)",
+      "url": "https://www.law360.com/cases/6a51aae6a51122f11fb8a7e0?article_sidebar=1",
+      "source": "Law360",
+      "date": "2026-07-10",
+      "summary": "Law360 tracks the newly filed copyright infringement suit by book publishers and novelist Scott Turow alleging Google used their works to train its Gemini AI model, following an earlier suit the same plaintiffs launched against Meta."
     }
   ],
   "events": []
