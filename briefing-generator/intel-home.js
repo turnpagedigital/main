@@ -76,6 +76,22 @@
     "billion-dollar-class-actions": { name: "$1B+ Class Actions",         emoji: "💰", bg: "#D1FAE5", fg: "#065f46" },
     "bankruptcy-creditor-rights":   { name: "Bankruptcy Creditor Rights", emoji: "📜", bg: "#FEE2E2", fg: "#991b1b" },
   };
+  // First paint used to flash the fallback table above (old names, emojis on)
+  // for a beat until themes.json arrived — hydrate from the previous fetch so
+  // reloads paint with the admin-managed names + emoji toggle immediately.
+  try {
+    var _tc = JSON.parse(localStorage.getItem("ih-themes-cache") || "null");
+    if (_tc) {
+      SHOW_THEME_EMOJIS = _tc.show_emojis !== false;
+      (_tc.themes || []).forEach(function (t) {
+        if (!t || !t.slug) return;
+        var cur = THEMES[t.slug] || { bg: "#E0E7FF", fg: "#3730a3" };
+        cur.name = t.display_name || cur.name || t.slug;
+        cur.emoji = t.emoji || cur.emoji || "";
+        THEMES[t.slug] = cur;
+      });
+    }
+  } catch (e) {}
 
   // Order themes lead with the most active practice areas (used by the
   // "Theme" card arrangement below).
@@ -1402,6 +1418,7 @@
   // Admin-managed theme names/emojis + the global emoji toggle (slim
   // projection written by /api/admin/themes).
   fetchJson(BASE + "themes.json").then(function (d) {
+    try { localStorage.setItem("ih-themes-cache", JSON.stringify(d || {})); } catch (e) {}
     SHOW_THEME_EMOJIS = !d || d.show_emojis !== false;
     ((d && d.themes) || []).forEach(function (t) {
       if (!t || !t.slug) return;
