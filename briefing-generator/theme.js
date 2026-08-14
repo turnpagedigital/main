@@ -244,7 +244,7 @@
       '.tn-hamburger{display:inline-flex;}'+
       '.tn-left{flex-wrap:nowrap;}'+
       '.tn-back{display:none;}'+
-      '.tn{padding:6px 0;}'+
+      '.tn{padding:6px 0;padding-top:calc(6px + env(safe-area-inset-top));}'+
       '.tn-row{justify-content:flex-start;flex-wrap:nowrap;}'+
       '.tn-brand-logo{height:26px;}'+
       '.tn-gear{margin-left:auto;}'+
@@ -263,11 +263,24 @@
   var ST=['system','light','dark','night'];   // menu + cycle order
   var IC={dark:'\ud83c\udf19',light:'\u2600\ufe0f',system:'\ud83d\udda5\ufe0f',night:'\ud83d\udd34'};
   var LB={dark:'Dark',light:'Light',system:'System',night:'Night'};
+  // Browser chrome colour. Safari 15+ paints the iOS status bar and toolbar
+  // from this, Chrome the address bar \u2014 so night mode no longer sits inside a
+  // bright white frame. Set from JS rather than a static <meta media=\u2026> because
+  // the theme here is an explicit choice in localStorage, not just the OS pref.
+  var TC={light:'#F4F5F7',dark:'#0D0D0D',night:'#000000'};
   function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
+  function themeColor(e){
+    var m=document.querySelector('meta[name="theme-color"]');
+    if(!m){m=document.createElement('meta');m.setAttribute('name','theme-color');
+      (document.head||document.documentElement).appendChild(m);}
+    m.setAttribute('content',TC[e]||TC.light);
+  }
   function apply(){
     var t=localStorage.getItem(K)||'system';
-    document.documentElement.setAttribute('data-theme',eff(t));
+    var e=eff(t);
+    document.documentElement.setAttribute('data-theme',e);
     document.documentElement.setAttribute('data-theme-pref',t);
+    themeColor(e);
     var b=document.getElementById('theme-toggle');
     if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
   }

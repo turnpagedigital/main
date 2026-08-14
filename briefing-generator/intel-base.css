@@ -48,4 +48,7 @@ tr.is-new td{background:rgba(212,255,0,0.06);}
 .news-card:hover{border-color:var(--ink-40);}
 .news-card .src-line{font-size:10.5px;color:var(--ink-40);display:flex;justify-content:space-between;gap:8px;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em;}
 .news-card .h{font-size:13px;font-weight:600;color:var(--ink);line-height:1.4;}
-.foot{max-width:1680px;margin:28px auto 0;padding:24px 32px 50px;border-top:2px solid var(--ink);font-size:11px;color:var(--ink-60);line-height:1.7;}
+/* Bottom inset keeps the footer clear of the home indicator when the app runs
+   full-screen (viewport-fit=cover). Second declaration so an env()-less browser
+   falls back to the plain 50px rather than dropping the padding entirely. */
+.foot{max-width:1680px;margin:28px auto 0;padding:24px 32px 50px;border-top:2px solid var(--ink);font-size:11px;color:var(--ink-60);line-height:1.7;padding-bottom:calc(50px + env(safe-area-inset-bottom));}

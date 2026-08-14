@@ -2,8 +2,18 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
+<!-- Installable web app. Add to Home Screen opens /intel/ full-screen with no
+     browser chrome — the point being night mode, which is unreadable framed by a
+     white status bar. crossorigin=use-credentials is REQUIRED: manifests are
+     fetched without cookies by default, so functions/intel/_middleware.js would
+     answer with the sign-in page instead of the JSON and the install would
+     silently fall back to a screenshot icon. theme-color is set by theme.js,
+     which tracks the light/dark/night choice. -->
+<link rel="manifest" href="/intel/manifest.webmanifest" crossorigin="use-credentials">
+<link rel="apple-touch-icon" href="/intel/assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Dashboard — Turnpage Intelligence</title>
   <script src="theme.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
