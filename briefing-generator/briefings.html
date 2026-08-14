@@ -27,12 +27,7 @@
   .ud-date-input{padding:7px 8px;font-size:13px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;width:132px;}
   .ud-date-input:focus{border-color:var(--neon);}
   .ud-date-sep{color:var(--ink-40);font-size:14px;}
-  .ud-clear-btn:hover{border-color:var(--ink-40);color:var(--ink);}
   /* Case dropdown + filters row */
-  .ud-case-dd{position:relative;margin-right:auto;}
-  .ud-case-dd-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;}
-  .ud-dd-caret{font-size:11px;color:var(--ink-60);}
-  .ud-dd-row input{accent-color:var(--neon);cursor:pointer;flex-shrink:0;margin:0;}
   .ud-dd-spacer{flex:1;}
   .ud-dd-groups{border-top:1px solid var(--line);margin-top:6px;padding-top:6px;}
   .ud-dd-group-row{display:flex;align-items:center;gap:6px;padding:6px 8px;}
@@ -52,7 +47,6 @@
   .ud-dd-row:hover .ud-gear-btn,.ud-gear-btn:focus{opacity:1;}
   .ud-gear-btn:hover{color:var(--ink);}
   .ud-filter-right{display:flex;align-items:center;gap:12px;flex-shrink:0;flex-wrap:wrap;}
-  .ud-type-select{padding:7px 10px;font-size:14px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;outline:none;}
   .ud-type-select:focus{border-color:var(--neon);}
   .ud-new-label{display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer;white-space:nowrap;color:var(--ink);}
   .ud-new-label input{accent-color:var(--neon);cursor:pointer;}
@@ -80,7 +74,6 @@
   .ud-pop-reset:hover{border-color:var(--ink-40);color:var(--ink);}
   /* Toolbar */
   .ud-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
-  #ud-count{font-size:14px;color:var(--ink-60);flex:1;}
   #ud-sort-btn{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-size:14px;font-weight:700;padding:6px 14px;cursor:pointer;font-family:inherit;}
   #ud-sort-btn:hover{border-color:var(--ink-40);}
   /* Pills */
@@ -95,7 +88,6 @@
   .ud-table tbody tr:not(.ud-day-row) td:first-child{border-left:1px solid var(--line-strong);}
   .ud-table tbody tr:not(.ud-day-row) td:last-child{border-right:1px solid var(--line-strong);}
   .ud-table tbody tr:last-child td{border-bottom:1px solid var(--line-strong);}
-  .ud-table tr:last-child td{border-bottom:none;}
   .ud-row-new .ud-entry{font-weight:700;}  /* highlight new rows via the entry text only — dates and parties stay regular */
   .ud-table tr.ud-day-row{background:transparent;}
   .ud-row-article td{background:var(--paper-2);}
@@ -109,7 +101,6 @@
   .ud-note-btn{color:var(--ink-40);}
   .ud-note-btn.ud-note-on{color:#3FA07A;}
   .ud-note-text{width:100%;min-height:180px;resize:vertical;padding:10px 12px;font-family:inherit;font-size:14px;line-height:1.55;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;box-sizing:border-box;}
-  .ud-note-text:focus{border-color:var(--neon);}
   .ud-upload-btn{background:none;border:none;cursor:pointer;padding:1px 2px;color:var(--ink-40);vertical-align:middle;margin-left:4px;}
   .ud-upload-btn:hover{color:var(--ink);}
   .ud-file-group{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
@@ -120,13 +111,11 @@
   .ud-file-del:hover{color:var(--ink);}
   .ud-th-filter{cursor:pointer;user-select:none;}
   .ud-th-filter:hover,.ud-th-filter.ud-th-on{color:var(--ink);}
-  .ud-th-caret{font-size:9px;}
   .ud-th-toggle{cursor:pointer;user-select:none;}
   .ud-th-toggle:hover{color:var(--ink);}
   .ud-th-toggle.ud-th-on{color:#EAB308;}
   .ud-th-menu{position:absolute;z-index:950;background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 6px 24px rgba(0,0,0,0.22);min-width:180px;padding:6px;}
   .ud-mi-sub{font-size:11px;color:var(--ink-60);font-weight:400;margin-top:2px;}
-  .ud-th-menu-item.ud-th-menu-on{font-weight:800;}
   .ud-th-menu-item.ud-th-menu-on::after{content:" \2713";color:var(--ink-60);}
   .ud-sep{color:var(--ink-40);padding:0 5px;}
   .ud-vote{background:none;border:none;cursor:pointer;font-size:11px;padding:2px 3px;line-height:1;color:var(--ink-40);vertical-align:middle;}
@@ -156,9 +145,6 @@
   .ud-pal-input{width:100%;padding:13px 14px;font-size:15px;font-family:inherit;border:0;border-bottom:1px solid var(--line-strong);outline:none;background:transparent;color:var(--ink);box-sizing:border-box;}
   .ud-pal-list{list-style:none;margin:0;padding:4px 0;max-height:320px;overflow-y:auto;}
   .ud-pal-item{padding:9px 14px;font-size:13.5px;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
-  .ud-pal-item .ud-pal-slug{color:var(--ink-60);font-size:11px;font-family:monospace;}
-  .ud-pal-item:hover{background:var(--sel-bg,#0A0A0A);color:var(--sel-fg,#fff);}
-  .ud-pal-item:hover .ud-pal-slug{color:inherit;opacity:0.65;}
   .ud-pal-cur,.ud-pal-cur:hover{background:var(--sel-bg,#0A0A0A);color:var(--sel-fg,#fff);}
   .ud-pal-cur .ud-pal-slug,.ud-pal-cur:hover .ud-pal-slug{color:inherit;opacity:0.65;}
   .ud-pal-empty{padding:12px 14px;font-size:13px;color:var(--ink-60);}
@@ -217,8 +203,6 @@
     .ud-case-dd-panel{max-width:calc(100vw - 16px);min-width:240px;}
     .ud-th-menu{max-width:calc(100vw - 16px);}
     .ud-case-grid{grid-template-columns:1fr;}
-    .ud-src-add{flex-wrap:wrap;}
-    .ud-src-add input{flex:1 1 100% !important;}
     .ud-due{padding:12px;}
     .ud-due-card{flex-direction:column;gap:8px;}
     .ud-note-box{padding:16px;}
@@ -258,15 +242,12 @@
   .ub-tags{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0 2px;}
   .ub-tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:0.03em;padding:1px 7px;white-space:nowrap;border-radius:99px;background:transparent;color:#0A0A0A;border:1px dotted #0A0A0A;}
   [data-theme="dark"] .ub-tag{background:transparent;color:#FFFFFF;border-color:#FFFFFF;}
-  .ud-pill-theme{background:transparent;color:#0A0A0A;border:1px dotted #0A0A0A;border-radius:99px;}
-  [data-theme="dark"] .ud-pill-theme{background:transparent;color:#FFFFFF;border-color:#FFFFFF;}
   .ub-court{font-size:11px;color:var(--ink-40);line-height:1.35;}
   .ub-chip{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-60);border:1px solid var(--line-strong);padding:1px 7px;margin-right:7px;vertical-align:middle;white-space:nowrap;}
   .ub-chip-moved{background:var(--neon);border-color:var(--neon);color:#0A0A0A;}
   .ub-row-moved .ud-desc{font-weight:600;}
   .ub-open-cell{white-space:nowrap;text-align:right;}
   .pr-btn{font-family:inherit;font-size:11.5px;font-weight:800;letter-spacing:0.04em;padding:5px 13px;border:1px solid var(--line-strong);background:transparent;color:var(--ink);cursor:pointer;line-height:1.2;}
-  .pr-btn:hover{background:var(--paper-2);}
   .ub-detail-row td{background:var(--paper-2);padding:0;}
   .ub-body{max-width:860px;padding:22px 26px 26px;font-size:14.5px;line-height:1.75;}
   .ub-body-head{font-size:15px;font-weight:800;margin-bottom:10px;}
@@ -330,19 +311,6 @@
   /* ── Shared restyle (ported from the docket): white light canvas, white rows
      with hover, ink header with a 2px rule, darker dividers + day lines,
      auto-fitting full-width table. Applies to every page on this chassis. ── */
-  [data-theme="light"], [data-theme="light"] body { background: #FFFFFF; }
-  [data-theme="light"] .page-title { border-bottom: 1px solid var(--line-strong); }
-  [data-theme="light"] .ud-table { border-collapse: collapse; }
-  [data-theme="light"] .ud-table tbody tr { background: var(--surface); }
-  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row):hover { background: linear-gradient(rgba(10,10,10,0.03), rgba(10,10,10,0.03)), var(--surface); }
-  [data-theme="light"] .ud-table tbody tr.ud-day-row { background: transparent; }
-  [data-theme="light"] .ud-table td { border-bottom-color: var(--line); }
-  [data-theme="light"] .ud-day-row td { border-top: none; border-bottom: 1px solid var(--line-strong); }
-  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:first-child { border-left: none; }
-  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:last-child { border-right: none; }
-  [data-theme="light"] .ud-table tbody tr:last-child td { border-bottom: none; }
-  [data-theme="light"] .ud-row-article td { background: #E7E9EE; }
-  [data-theme="light"] .ud-row-article:hover td { background: #F0F1F4; }
   /* Header row: ink text (black in light, white in dark), no background bar —
      a thick ink rule under the row separates it from the entries, spanning the
      same width as the rows below. Active filters underline instead of recolor. */
@@ -351,20 +319,12 @@
      specificity than the border:none above — kill the vertical end ticks. */
   .ud-table thead th:first-child { border-left: none; }
   .ud-table thead th:last-child { border-right: none; }
-  .ud-table thead th.ud-th-on { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
   /* The table must always fill its container — saved column widths or engine
      quirks may otherwise shrink it to the sum of its columns. And auto layout
      (not the chassis's fixed) at every width: columns size to their content —
      the Dkt/agent/upload cell can never be clipped — and re-fit on resize,
      with ENTRY absorbing the remainder. */
   .ud-table { width: 100% !important; min-width: 100%; table-layout: auto; }
-  [data-theme="light"] .ud-table tbody tr:first-child td { padding-top: 20px; }
-  [data-theme="light"] .ud-search-input:focus { background: #FFFFFF; }
-  [data-theme="dark"] .page-title { border-bottom: 1px solid var(--line-strong); }
-  [data-theme="dark"] .ud-day-row td { border-top: none; }
-  [data-theme="dark"] .ud-table tbody tr:first-child td { padding-top: 20px; }
-  .ud-table tr.ud-row-daycollapsed { display: none; }
-  .ud-table tbody tr.ud-day-row td { padding-top: 30px; }
   @media (max-width: 720px) {
     .ud-table { background: transparent; border: none; }
     [data-theme="light"] .ud-table tbody tr { border-bottom-color: var(--line); }

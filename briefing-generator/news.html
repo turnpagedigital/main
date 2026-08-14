@@ -10,58 +10,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
-  .case-meta strong{color:var(--ink);font-weight:700;}
-  .status-badge{display:inline-block;margin-top:13px;font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;background:rgba(212,255,0,0.16);color:var(--ink);border:1px solid var(--neon);padding:3px 10px;}
-  .also{margin-top:13px;font-size:11.5px;color:var(--ink-60);}
-  .also a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);}
-  .seed-note{max-width:1180px;margin:16px auto 0;padding:0 32px;}
-  .seed-note .inner{border:1px dashed var(--line-strong);padding:9px 13px;font-size:11.5px;color:var(--ink-60);}
-  .seed-note strong{color:var(--ink);}
-  .wrap{max-width:1180px;margin:0 auto;padding:22px 32px 12px;display:grid;gap:24px;grid-template-columns:1fr;}
   @media(min-width:920px){.wrap{grid-template-columns:1.9fr 1fr;align-items:start;}}
-  .panel{background:var(--surface);border:1px solid var(--line-strong);}
-  .panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line-strong);}
-  .panel-head h2{margin:0;font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding-left:1.4em;position:relative;color:var(--ink);}
-  .panel-head h2::before{content:"";position:absolute;left:0;top:0.36em;width:1.1em;height:0.18em;background:var(--neon);}
-  .panel-head .meta{display:flex;align-items:center;gap:12px;}
-  .panel-head .src{font-size:11px;color:var(--ink-60);}
-  .tc-counter{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;white-space:nowrap;}
-  .tc-counter.active{background:rgba(239,68,68,0.14);color:#ef4444;}
-  .tc-counter.quiet{background:var(--paper-2);color:var(--ink-60);}
-  .tc-pip{width:7px;height:7px;border-radius:50%;background:currentColor;}
-  table{width:100%;border-collapse:collapse;}
-  th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:10px 18px;border-bottom:1px solid var(--line-strong);font-weight:700;}
-  td{padding:12px 18px;font-size:13px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink);}
-  tr:last-child td{border-bottom:none;}
-  tr.is-new td{background:rgba(212,255,0,0.06);}
-  .dkt{font-variant-numeric:tabular-nums;color:var(--ink-60);white-space:nowrap;}
-  .date{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;}
-  .new-pill{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.04em;color:#0A0A0A;background:var(--neon);padding:1px 6px;margin-left:8px;vertical-align:middle;}
-  .landmark{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.04em;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 6px;margin-left:8px;vertical-align:middle;}
-  .panel-foot{padding:12px 18px;border-top:1px solid var(--line-strong);font-size:12px;}
-  .panel-foot a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);}
-  .empty{font-size:12.5px;color:var(--ink-60);font-style:italic;padding:14px 18px;}
-  .stat{padding:16px 18px;border-bottom:1px solid var(--line-strong);}
-  .stat .big{font-size:30px;font-weight:800;line-height:1;color:var(--ink);}
-  .stat .big .accent{box-shadow:inset 0 -0.34em 0 var(--neon);}
-  [data-theme="dark"] .stat .big .accent{box-shadow:inset 0 -0.34em 0 #D4FF00;}
-  .stat .sub{font-size:12px;color:var(--ink-60);margin-top:7px;}
-  .dates{list-style:none;margin:0;padding:6px 18px;}
-  .dates li{padding:11px 0 11px 22px;border-bottom:1px solid var(--line);position:relative;font-size:12.5px;}
-  .dates li:last-child{border-bottom:none;}
-  .dates li::before{content:"";position:absolute;left:2px;top:15px;width:9px;height:9px;border-radius:50%;background:var(--line-strong);}
-  .dates li.done::before{background:var(--neon);}
-  .dates .d-date{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;}
-  .dates .d-label{color:var(--ink-60);display:block;}
-  .section-label{max-width:1180px;margin:14px auto 0;padding:0 32px;font-size:0.74rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);}
-  .cards{max-width:1180px;margin:14px auto 0;padding:0 32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
   @media(max-width:760px){.cards{grid-template-columns:1fr;}}
   @media(max-width:720px){table{table-layout:fixed;}td,th{overflow-wrap:break-word;word-break:break-word;}}
-  .news-card{background:var(--surface);border:1px solid var(--line-strong);padding:14px;text-decoration:none;display:block;}
-  .news-card:hover{border-color:var(--ink-40);}
-  .news-card .src-line{font-size:10.5px;color:var(--ink-40);display:flex;justify-content:space-between;gap:8px;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em;}
-  .news-card .h{font-size:13px;font-weight:600;color:var(--ink);line-height:1.4;}
-  .foot{max-width:1180px;margin:28px auto 0;padding:24px 32px 50px;border-top:2px solid var(--ink);font-size:11px;color:var(--ink-60);line-height:1.7;}
 </style>
 <style>
 
@@ -79,12 +30,7 @@
   .ud-date-input{padding:7px 8px;font-size:13px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;width:132px;}
   .ud-date-input:focus{border-color:var(--neon);}
   .ud-date-sep{color:var(--ink-40);font-size:14px;}
-  .ud-clear-btn:hover{border-color:var(--ink-40);color:var(--ink);}
   /* Case dropdown + filters row */
-  .ud-case-dd{position:relative;margin-right:auto;}
-  .ud-case-dd-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;}
-  .ud-dd-caret{font-size:11px;color:var(--ink-60);}
-  .ud-dd-row input{accent-color:var(--neon);cursor:pointer;flex-shrink:0;margin:0;}
   .ud-dd-spacer{flex:1;}
   .ud-dd-empty{padding:10px 12px;font-size:13px;color:var(--ink-60);}
   .ud-dd-groups{border-top:1px solid var(--line);margin-top:6px;padding-top:6px;}
@@ -114,12 +60,9 @@
   .ud-dd-row:hover .ud-gear-btn,.ud-gear-btn:focus{opacity:1;}
   .ud-gear-btn:hover{color:var(--ink);}
   .ud-filter-right{display:flex;align-items:center;gap:12px;flex-shrink:0;flex-wrap:wrap;}
-  .ud-type-select{padding:7px 10px;font-size:14px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;outline:none;}
   .ud-type-select:focus{border-color:var(--neon);}
   /* Color popover */
   .ud-pill.ud-pill-sq{border-radius:0;}
-  .ud-pill-theme{background:transparent;color:#0A0A0A;border:1px dotted #0A0A0A;border-radius:99px;}
-  [data-theme="dark"] .ud-pill-theme{background:transparent;color:#FFFFFF;border-color:#FFFFFF;}
   .ud-color-pop{position:absolute;z-index:1000;background:var(--surface);border:1px solid var(--line-strong);padding:16px;width:232px;box-shadow:0 6px 24px rgba(0,0,0,0.22);}
   .ud-pop-title{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .ud-pop-swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:14px;}
@@ -142,7 +85,6 @@
   .ud-pop-reset:hover{border-color:var(--ink-40);color:var(--ink);}
   /* Toolbar */
   .ud-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
-  #ud-count{font-size:14px;color:var(--ink-60);flex:1;}
   .ud-lookback-box{display:inline-flex;align-items:center;gap:8px;background:var(--paper-2);border:1px solid var(--line-strong);padding:3px 10px;margin-right:10px;white-space:nowrap;}
   .ud-lookback-box #ud-lookback-label{font-size:12px;font-weight:800;letter-spacing:0.03em;color:var(--ink);}
   .ud-lookback-box .ud-date-range{display:inline-flex;align-items:center;gap:6px;}
@@ -167,7 +109,6 @@
   [data-theme="dark"] .ud-table tbody tr:not(.ud-day-row) td:last-child{border-right-color:var(--bg);}
   [data-theme="dark"] .ud-table tbody tr:last-child td{border-bottom-color:var(--bg);}
   [data-theme="dark"] .ud-table td{border-bottom-color:var(--bg);}
-  .ud-table tr:last-child td{border-bottom:none;}
   .ud-row-new .ud-entry{font-weight:700;}  /* highlight new rows via the entry text only — dates and parties stay regular */
   .ud-table tr.ud-day-row{background:transparent;}
   .ud-row-article td{background:var(--paper-2);}
@@ -182,7 +123,6 @@
   .ud-note-btn{color:var(--ink-40);}
   .ud-note-btn.ud-note-on{color:#3FA07A;}
   .ud-note-text{width:100%;min-height:180px;resize:vertical;padding:10px 12px;font-family:inherit;font-size:14px;line-height:1.55;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;box-sizing:border-box;}
-  .ud-note-text:focus{border-color:var(--neon);}
   .ud-note-titlefield{width:100%;padding:9px 12px;font-family:inherit;font-size:14px;font-weight:700;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;box-sizing:border-box;}
   .ud-note-titlefield:focus{border-color:var(--neon);}
   .ud-upload-btn{background:none;border:none;cursor:pointer;padding:1px 2px;color:var(--ink-40);vertical-align:middle;margin-left:4px;}
@@ -195,13 +135,11 @@
   .ud-file-del:hover{color:var(--ink);}
   .ud-th-filter{cursor:pointer;user-select:none;}
   .ud-th-filter:hover,.ud-th-filter.ud-th-on{color:var(--ink);}
-  .ud-th-caret{font-size:9px;}
   .ud-th-toggle{cursor:pointer;user-select:none;}
   .ud-th-toggle:hover{color:var(--ink);}
   .ud-th-toggle.ud-th-on{color:#EAB308;}
   .ud-th-menu{position:absolute;z-index:950;background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 6px 24px rgba(0,0,0,0.22);min-width:180px;padding:6px;}
   .ud-mi-sub{font-size:11px;color:var(--ink-60);font-weight:400;margin-top:2px;}
-  .ud-th-menu-item.ud-th-menu-on{font-weight:800;}
   .ud-th-menu-item.ud-th-menu-on::after{content:" \2713";color:var(--ink-60);}
   .ud-sep{color:var(--ink-40);padding:0 5px;}
   .ud-vote{background:none;border:none;cursor:pointer;font-size:11px;padding:2px 3px;line-height:1;color:var(--ink-40);vertical-align:middle;}
@@ -232,9 +170,6 @@
   .ud-pal-input{width:100%;padding:13px 14px;font-size:15px;font-family:inherit;border:0;border-bottom:1px solid var(--line-strong);outline:none;background:transparent;color:var(--ink);box-sizing:border-box;}
   .ud-pal-list{list-style:none;margin:0;padding:4px 0;max-height:320px;overflow-y:auto;}
   .ud-pal-item{padding:9px 14px;font-size:13.5px;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
-  .ud-pal-item .ud-pal-slug{color:var(--ink-60);font-size:11px;font-family:monospace;}
-  .ud-pal-item:hover{background:var(--sel-bg,#0A0A0A);color:var(--sel-fg,#fff);}
-  .ud-pal-item:hover .ud-pal-slug{color:inherit;opacity:0.65;}
   .ud-pal-cur,.ud-pal-cur:hover{background:var(--sel-bg,#0A0A0A);color:var(--sel-fg,#fff);}
   .ud-pal-cur .ud-pal-slug,.ud-pal-cur:hover .ud-pal-slug{color:inherit;opacity:0.65;}
   .ud-pal-empty{padding:12px 14px;font-size:13px;color:var(--ink-60);}
@@ -359,18 +294,6 @@
   /* ── Shared restyle (ported from the docket): white light canvas, white rows
      with hover, ink header with a 2px rule, darker dividers + day lines,
      auto-fitting full-width table. Applies to every page on this chassis. ── */
-  [data-theme="light"], [data-theme="light"] body { background: #FFFFFF; }
-  [data-theme="light"] .page-title { border-bottom: 1px solid var(--line-strong); }
-  [data-theme="light"] .ud-table { border-collapse: collapse; }
-  [data-theme="light"] .ud-table tbody tr { background: var(--surface); }
-  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row):hover { background: linear-gradient(rgba(10,10,10,0.03), rgba(10,10,10,0.03)), var(--surface); }
-  [data-theme="light"] .ud-table tbody tr.ud-day-row { background: transparent; }
-  [data-theme="light"] .ud-table td { border-bottom-color: var(--line); }
-  [data-theme="light"] .ud-day-row td { border-top: none; border-bottom: 1px solid var(--line-strong); }
-  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:first-child { border-left: none; }
-  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:last-child { border-right: none; }
-  [data-theme="light"] .ud-table tbody tr:last-child td { border-bottom: none; }
-  [data-theme="light"] .ud-row-article td { background: #E7E9EE; }
   /* One opaque divider color on every row — translucent hairlines read darker
      over the gray article band than over white, which looked like mixed line
      weights. */
@@ -386,7 +309,6 @@
     .ud-table tbody tr.ud-day-row { display: none !important; }
     .ud-table td.ud-date[data-day]:not([data-day=""])::before { content: attr(data-day); margin-right: 7px; }
   }
-  [data-theme="light"] .ud-row-article:hover td { background: #F0F1F4; }
   /* Header row: ink text (black in light, white in dark), no background bar —
      a thick ink rule under the row separates it from the entries, spanning the
      same width as the rows below. Active filters underline instead of recolor. */
@@ -395,20 +317,12 @@
      specificity than the border:none above — kill the vertical end ticks. */
   .ud-table thead th:first-child { border-left: none; }
   .ud-table thead th:last-child { border-right: none; }
-  .ud-table thead th.ud-th-on { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
   /* The table must always fill its container — saved column widths or engine
      quirks may otherwise shrink it to the sum of its columns. And auto layout
      (not the chassis's fixed) at every width: columns size to their content —
      the Dkt/agent/upload cell can never be clipped — and re-fit on resize,
      with ENTRY absorbing the remainder. */
   .ud-table { width: 100% !important; min-width: 100%; table-layout: auto; }
-  [data-theme="light"] .ud-table tbody tr:first-child td { padding-top: 20px; }
-  [data-theme="light"] .ud-search-input:focus { background: #FFFFFF; }
-  [data-theme="dark"] .page-title { border-bottom: 1px solid var(--line-strong); }
-  [data-theme="dark"] .ud-day-row td { border-top: none; }
-  [data-theme="dark"] .ud-table tbody tr:first-child td { padding-top: 20px; }
-  .ud-table tr.ud-row-daycollapsed { display: none; }
-  .ud-table tbody tr.ud-day-row td { padding-top: 30px; }
   .ud-th-menu-sep { border-top: 1px solid var(--line); margin: 4px 0; }
   @media (max-width: 720px) {
     .ud-table { background: transparent; border: none; }
