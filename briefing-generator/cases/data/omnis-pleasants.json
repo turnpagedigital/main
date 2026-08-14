@@ -16,7 +16,7 @@
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-13",
     "meta_fetched_at": "2026-08-14T08:54:17.599766+00:00",
-    "fetched_at": "2026-08-14T08:54:17.599766+00:00",
+    "fetched_at": "2026-08-14T11:11:59.609666+00:00",
     "as_of": "Aug 14, 2026",
     "backfilled": true,
     "new_in_72h": 14,
@@ -26,10 +26,11 @@
         "date_filed": "2026-08-13",
         "time_filed": "23:51:02",
         "date_display": "Aug 13, 2026",
-        "description": "Sale of Property Free and Clear of Liens- Motion (FEE)",
+        "description": "V) Establishing Notice And Procedures For The Assumption And Assignment Of Contracts And Leases",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "",
+        "titled_from_upload": true
       },
       {
         "entry_number": 85,
