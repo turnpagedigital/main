@@ -67,9 +67,17 @@
     // light and as pale ink on dark, matching the stroke gear beside them.
     '.tn-gt-ico .tn-nicon{display:inline-block;}'+
     '.tn-gt-ico .tn-eraw{display:none;}'+
-    // …except the Night entry, which keeps its red so the mode is identifiable
-    // from any theme (a currentColor dot would read as plain ink in light/dark).
+    // Each mode keeps an identity color so the row is recognizable at a glance:
+    // gray monitor, yellow crescent, orange sun, red dot. Chosen to stay legible
+    // on white and on near-black.
+    '[data-theme-set="system"] .tn-nicon{color:#9AA0A6;}'+
+    '[data-theme-set="dark"] .tn-nicon{color:#EFC01F;}'+
+    '[data-theme-set="light"] .tn-nicon{color:#F97316;}'+
     '[data-theme-set="night"] .tn-nicon{color:#FE0100;}'+
+    // …but night mode is strictly red-on-black, so inside it the identity
+    // colors give way and every mode icon renders red (shape + label still
+    // distinguish them). Higher specificity, so this wins over the four above.
+    '[data-theme="night"] .tn-gt-ico .tn-nicon{color:#FE0100;}'+
     // :not([class]) — the generated case pages wrap their title emoji in a bare
     // <span>, but briefings.html's first span is the case-title PILL (classed).
     // h1>.tn-emj-i:first-child too: during streaming parse the global tint can
@@ -184,8 +192,59 @@
   // stray toggle button in the top-right on every navigation.
   var hideCss=document.createElement('style');
   hideCss.id='tn-critical-hide';
-  hideCss.textContent='.tn-gear-panel{display:none;}.tn-kbd-panel{display:none;}#theme-toggle{display:none !important;}#tn-fs{display:none !important;}';
+  // The gear BUTTON's own look ships here too, not with the rest of the gear
+  // CSS at DOMContentLoaded: every other nav control is styled by the blocking
+  // intel-chrome.css, but .tn-gear-btn was styled only by wireGearMenu(), so
+  // until that ran the browser painted it as a default <button> — a light
+  // buttonface box, glaringly obvious against the dark/night nav (the "gear
+  // flashes on refresh" report). These rules are the single source of truth;
+  // wireGearMenu() no longer repeats them.
+  hideCss.textContent='.tn-gear-panel{display:none;}.tn-kbd-panel{display:none;}#theme-toggle{display:none !important;}#tn-fs{display:none !important;}'+
+    '.tn-gear{position:relative;display:inline-flex;align-items:center;}'+
+    '.tn-gear-btn{font-size:15px;background:transparent;border:none;color:inherit;opacity:0.7;cursor:pointer;padding:4px 6px;line-height:1;}';
   (document.head||document.documentElement).appendChild(hideCss);
+
+  // ── Everything below used to be injected by wire() at DOMContentLoaded, i.e.
+  // AFTER the browser had already painted — so case pills rendered with no
+  // background and then snapped to their case color, and on phones the full
+  // nav links painted and then vanished behind the hamburger. Same class of
+  // bug as the gear button above: styling that arrives after first paint is a
+  // flash. These rules are static, so they belong here, in the parse-blocking
+  // pass. (Specificity checked against intel-chrome.css: the pill rules use
+  // attribute selectors and win regardless of sheet order; none of the mobile
+  // selectors exist there at all.) ──────────────────────────────────────────
+  var earlyCss=document.createElement('style');
+  earlyCss.id='tn-early-css';
+  var _pb=['.ud-pill','.mg-pill','.ih-pill','.uc-cal-chip'].map(function(c){return c+'[style*="--pb"]';});
+  earlyCss.textContent=
+    _pb.join(',')+'{background:var(--pb);color:var(--pf);}'+
+    _pb.map(function(s){return '[data-theme="dark"] '+s;}).join(',')+'{background:var(--pf);color:var(--pb);}'+
+    '.tn-hamburger{display:none;align-items:center;justify-content:center;background:transparent;border:none;color:#fff;padding:4px 6px;font-size:15px;line-height:1;opacity:0.7;cursor:pointer;flex:0 0 auto;}'+
+    '.tn-hamburger:hover{opacity:1;}'+
+    '.tn.tn-compact .tn-lbl{display:none;}'+
+    '.tn-menu{display:none;}'+
+    '.tn-back .tn-ico{font-size:1.2em;margin-right:3px;vertical-align:-1px;}'+
+    '[data-theme="light"] .tn-hamburger{color:#0A0A0A;}'+
+    '@media (max-width:720px){'+
+      '.tn-kbd,#tn-fs{display:none !important;}'+
+      '.tn-hamburger{display:inline-flex;}'+
+      '.tn-left{flex-wrap:nowrap;}'+
+      '.tn-back{display:none;}'+
+      '.tn{padding:6px 0;}'+
+      '.tn-row{justify-content:flex-start;flex-wrap:nowrap;}'+
+      '.tn-brand-logo{height:26px;}'+
+      '.tn-gear{margin-left:auto;}'+
+      '.tn-menu.open{display:block;position:absolute;top:100%;left:0;right:0;background:var(--bg,#000);padding:2px 20px 12px;z-index:200;border-bottom:1px solid rgba(255,255,255,0.12);}'+
+      '[data-theme="light"] .tn-menu.open{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}'+
+      '.tn-menu .tn-back{display:block;width:100%;padding:12px 0;border-left:none;border-top:1px solid rgba(255,255,255,0.12);font-size:14px;}'+
+      '[data-theme="light"] .tn-menu .tn-back{border-top-color:rgba(10,10,10,0.08);}'+
+    '}'+
+    '@media (max-height:520px) and (min-width:721px){'+
+      '.tn-back .tn-lbl{display:none;}'+
+      '.tn-back{padding:6px 5px;}'+
+      '.tn-back .tn-ico{font-size:17px;}'+
+    '}';
+  (document.head||document.documentElement).appendChild(earlyCss);
   var K='daily-briefing-theme';
   var ST=['system','dark','light','night'];
   var IC={dark:'\ud83c\udf19',light:'\u2600\ufe0f',system:'\ud83d\udda5\ufe0f',night:'\ud83d\udd34'};
@@ -494,36 +553,7 @@
   function wireMobileNav(){
     var left=document.querySelector('.tn-left');
     if(!left||document.getElementById('tn-hamburger'))return;
-    var st=document.createElement('style');
-    st.textContent=
-      '.tn-hamburger{display:none;align-items:center;justify-content:center;background:transparent;border:none;color:#fff;padding:4px 6px;font-size:15px;line-height:1;opacity:0.7;cursor:pointer;flex:0 0 auto;}'+'.tn-hamburger:hover{opacity:1;}'+
-      '.tn.tn-compact .tn-lbl{display:none;}'+
-      '.tn-menu{display:none;}'+
-      '.tn-back .tn-ico{font-size:1.2em;margin-right:3px;vertical-align:-1px;}'+
-      '[data-theme="light"] .tn-hamburger{color:#0A0A0A;}'+
-      '@media (max-width:720px){'+
-        '.tn-kbd,#tn-fs{display:none !important;}'+
-        '.tn-hamburger{display:inline-flex;}'+
-        '.tn-left{flex-wrap:nowrap;}'+
-        '.tn-back{display:none;}'+
-        '.tn{padding:6px 0;}'+
-        '.tn-row{justify-content:flex-start;flex-wrap:nowrap;}'+
-        '.tn-brand-logo{height:26px;}'+
-        '.tn-gear{margin-left:auto;}'+
-        '.tn-menu.open{display:block;position:absolute;top:100%;left:0;right:0;background:var(--bg,#000);padding:2px 20px 12px;z-index:200;border-bottom:1px solid rgba(255,255,255,0.12);}'+
-        '[data-theme="light"] .tn-menu.open{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}'+
-        '.tn-menu .tn-back{display:block;width:100%;padding:12px 0;border-left:none;border-top:1px solid rgba(255,255,255,0.12);font-size:14px;}'+
-        '[data-theme="light"] .tn-menu .tn-back{border-top-color:rgba(10,10,10,0.08);}'+
-      '}'+
-      // Landscape phones: the bar has room for the links but not icon+label —
-      // show icons only (short viewport, but wide enough the hamburger is off).
-      '@media (max-height:520px) and (min-width:721px){'+
-        '.tn-back .tn-lbl{display:none;}'+
-        '.tn-back{padding:6px 5px;}'+
-        '.tn-back .tn-ico{font-size:17px;}'+
-
-      '}';
-    document.head.appendChild(st);
+    // Mobile-nav CSS ships in tn-early-css at parse time (see above).
     var row=document.querySelector('.tn-row');
     if(row)row.style.position='relative';
     // Split "🏠 Dashboard" into icon + label spans so landscape can drop the label.
@@ -604,19 +634,9 @@
   // Pill markup sets only --pb/--pf (case bg/fg) inline; this rule maps them
   // to background/color normally, and swaps the mapping under [data-theme=dark].
   // Runs once per page load (idempotent — safe if called more than once).
-  function wirePillFlip() {
-    if (document.getElementById('tn-pill-flip')) return;
-    var st = document.createElement('style');
-    st.id = 'tn-pill-flip';
-    var sel = ['.ud-pill', '.mg-pill', '.ih-pill', '.uc-cal-chip'].map(function (c) {
-      return c + '[style*="--pb"]';
-    });
-    st.textContent =
-      sel.join(',') + '{background:var(--pb);color:var(--pf);}' +
-      sel.map(function (s) { return '[data-theme="dark"] ' + s; }).join(',') +
-      '{background:var(--pf);color:var(--pb);}';
-    document.head.appendChild(st);
-  }
+  // Pill background/color mapping now ships in tn-early-css at parse time —
+  // injecting it here flashed the pills on every page load.
+  function wirePillFlip() {}
 
   // ── Settings nav item — gear icon only, hover/click dropdown to manage.html's
   // sub-tabs. CSS injected here (same trick as wireColResize below) so every
@@ -627,8 +647,8 @@
     if(!gw||!gb)return;
     var st=document.createElement('style');
     st.textContent=
-      '.tn-gear{position:relative;display:inline-flex;align-items:center;}'+
-      '.tn-gear-btn{font-size:15px;background:transparent;border:none;color:inherit;opacity:0.7;cursor:pointer;padding:4px 6px;line-height:1;}'+
+      // .tn-gear / .tn-gear-btn base styles now live in the parse-time
+      // critical block above (they must exist before first paint).
       '.tn-gear-btn:hover{opacity:1;}'+
       '.tn-gear-panel{display:none;flex-direction:column;position:absolute;top:100%;right:0;z-index:250;background:var(--surface);border:1px solid var(--line-strong);padding:6px;min-width:150px;box-shadow:0 10px 30px rgba(0,0,0,0.14);}'+
       '.tn-gear-panel a{display:block;padding:8px 10px;font-size:12.5px;font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap;}'+
