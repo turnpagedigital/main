@@ -16,6 +16,13 @@
   Cache-Control: public, max-age=300, must-revalidate
 /intel/*.html
   Cache-Control: public, max-age=60, must-revalidate
+# Intel DATA (themes.json, prefs, notes, dockets) drives what every page
+# renders. With no rule here it fell to heuristic browser caching — hours
+# stale — which is why admin toggles looked broken while the files on the
+# server were correct (Aug 13-14 2026). no-cache = revalidate every use;
+# ETag 304s keep it cheap.
+/intel/*.json
+  Cache-Control: no-cache
 
 # Vite content-hashes every file under /assets, so the bytes at a given URL
 # never change — cache them for a year and skip revalidation entirely. This is

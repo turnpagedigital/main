@@ -9,3 +9,8 @@
 
 /*.html
   Cache-Control: public, max-age=300
+
+# Data JSON must always revalidate — heuristic caching left admin toggles
+# looking broken (stale themes.json) while the server copy was correct.
+/*.json
+  Cache-Control: no-cache
