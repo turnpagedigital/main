@@ -298,7 +298,11 @@
     .ih-wk-tgl button.on { background: var(--sel-bg, #0A0A0A); color: var(--sel-fg, #fff); border-color: var(--sel-bg, #0A0A0A); }
     .ih-mm-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; }
     .ih-wk-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
-    .ih-wk-col { min-height: 150px; }
+    /* Faint rule between days. Applied as a left border on every column and
+       removed from the first of each row, so it works for both the 5- and
+       7-day grids and for the 2-week (two-row) layout. */
+    .ih-wk-col { min-height: 150px; border-left: 1px solid var(--line); padding-left: 7px; }
+    .ih-wk-col.wk-rowstart { border-left: none; padding-left: 0; }
     /* Day header: weekday stacked over the date, rather than "T 13" inline —
        single letters were ambiguous (S/S, T/T) and a 12px number at 60% ink
        was the hardest thing on the dashboard to read at a glance. */

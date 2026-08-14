@@ -976,12 +976,16 @@
         '</span>' +
         '<button type="button" class="ih-mm-nav" data-wk="1">›</button></div>';
       h += '<div class="ih-wk-grid' + (expanded ? " ih-wk-grid-2wk" : "") + '" style="grid-template-columns:repeat(' + calDays + ',1fr)">';
-      days.forEach(function (d) {
+      days.forEach(function (d, di) {
         var iso = isoOf(d);
         var evs = byDay[iso] || [];
         var isToday = iso === today;
         var isWknd = d.getDay() === 0 || d.getDay() === 6;
-        var col = '<div class="ih-wk-col' + (isToday ? " today" : "") + (isWknd ? " weekend" : "") + '">' +
+        // First column of each row carries no divider (calDays per row, so this
+        // holds for 5d/7d and for the 2-week layout's second row).
+        var rowStart = (di % calDays) === 0;
+        var col = '<div class="ih-wk-col' + (isToday ? " today" : "") + (isWknd ? " weekend" : "") +
+          (rowStart ? " wk-rowstart" : "") + '">' +
           '<div class="ih-wk-dayhd"><span class="ih-wk-dow">' + DOWL[d.getDay()] + '</span>' +
             '<span class="ih-wk-num">' + d.getDate() + '</span></div>';
         col += evs.slice(0, 4).map(function (ev) {
