@@ -64,9 +64,15 @@ const GATE_HTML = `<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  :root{--ink:#0A0A0A;--ink60:rgba(10,10,10,0.6);--line:rgba(10,10,10,0.14);--neon:#D4FF00;}
+  /* System mode only — the gate follows the OS light/dark preference.
+     No toggle, no stored theme: it's one screen, shown before any session
+     exists. Dark palette mirrors the intel dark theme. */
+  :root{color-scheme:light dark;--bg:#fff;--ink:#0A0A0A;--ink60:rgba(10,10,10,0.6);--line:rgba(10,10,10,0.14);--neon:#D4FF00;--btn-fg:#fff;--err:#C84141;}
+  @media (prefers-color-scheme: dark){
+    :root{--bg:#0D0D0D;--ink:#E5E7EB;--ink60:rgba(229,231,235,0.62);--line:rgba(229,231,235,0.18);--btn-fg:#0A0A0A;--err:#E36A6A;}
+  }
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Archivo',sans-serif;background:#fff;color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px;}
+  body{font-family:'Archivo',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px;}
   .card{max-width:400px;width:100%;border:1px solid var(--line);padding:48px 40px;}
   .brand{font-weight:800;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink60);margin-bottom:28px;}
   h1{font-size:30px;font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:10px;}
@@ -74,11 +80,11 @@ const GATE_HTML = `<!DOCTYPE html>
   label{display:block;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink60);margin-bottom:8px;}
   input{width:100%;padding:14px 12px;border:1px solid var(--line);background:transparent;color:var(--ink);font-family:inherit;font-size:15px;outline:none;border-radius:0;}
   input:focus{border-color:var(--ink);}
-  button{width:100%;margin-top:18px;padding:14px;background:var(--ink);color:#fff;border:1px solid var(--ink);font-family:inherit;font-size:14px;font-weight:700;letter-spacing:0.04em;cursor:pointer;border-radius:0;}
-  button:hover{background:var(--neon);color:var(--ink);border-color:var(--neon);}
+  button{width:100%;margin-top:18px;padding:14px;background:var(--ink);color:var(--btn-fg);border:1px solid var(--ink);font-family:inherit;font-size:14px;font-weight:700;letter-spacing:0.04em;cursor:pointer;border-radius:0;}
+  button:hover{background:var(--neon);color:#0A0A0A;border-color:var(--neon);}
   button:disabled{opacity:0.5;cursor:not-allowed;}
   .msg{margin-top:16px;font-size:13px;line-height:1.5;}
-  .msg.error{color:#C84141;}
+  .msg.error{color:var(--err);}
   .footer{margin-top:36px;font-size:11px;color:var(--ink60);letter-spacing:0.04em;}
 </style>
 </head>
