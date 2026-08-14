@@ -112,6 +112,10 @@
     '[data-theme="night"] .ih-theme-card{border-color:rgba(254,1,0,0.20);}'+
     // Case-tinted cards set colors inline (style="border-left-color:…;background:tint(…)").
     '[data-theme="night"] .uc-week-card,[data-theme="night"] .ih-row-coded,[data-theme="night"] .ih-wk-ev{background:rgba(254,1,0,0.10) !important;border-left-color:#FE0100 !important;}'+
+    // Calendar event chips: their case-color spine is decorative, and at full
+    // red a column of them out-shouted the one thing that should lead the eye —
+    // the rule under today. Dropped to 35% so today's marker reads first.
+    '[data-theme="night"] .ih-wk-ev,[data-theme="night"] .uc-week-card{border-left-color:rgba(254,1,0,0.35) !important;}'+
     '[data-theme="night"] .ud-pill-theme,[data-theme="night"] .ih-pill-theme{color:#FE0100;border-color:#FE0100;background:transparent;}'+
     // Neon/status literals that dodge the token system.
     '[data-theme="night"] tr.is-new td{background:rgba(254,1,0,0.08);}'+
