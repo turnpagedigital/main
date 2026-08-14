@@ -1272,7 +1272,7 @@
       var pin = !!stickyThemes[s];
       html += '<button type="button" class="ih-tp-btn' + (!allOn && themeOn(s) ? " on" : "") + (pin ? " pin" : "") + '" data-tp="' + esc(s) + '"' +
         ' title="' + (pin ? "Pinned — stays selected. Click to unpin." : "Click to focus this theme · double-click to pin (multi-select)") + '">' +
-        t.emoji + " " + esc(t.name) + "</button>";
+        (SHOW_THEME_EMOJIS && t.emoji ? t.emoji + " " : "") + esc(t.name) + "</button>";
     });
     box.innerHTML = html;
     // Single vs. double click: delay the single-click action briefly so a
