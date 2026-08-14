@@ -43,8 +43,13 @@ a{color:var(--ink);}
 .case-meta{display:flex;gap:22px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-60);}
 
 /* ── Bar ────────────────────────────────────────────────────────────────── */
-.tn{background:#000;border-bottom:1px solid rgba(255,255,255,0.12);padding:10px 0;position:sticky;top:0;z-index:100;}
-.tn-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between;max-width:1680px;margin:0 auto;padding:0 32px;}
+/* Safe-area insets: with viewport-fit=cover (needed for the installed web app)
+   the page runs under the notch and home indicator, so the sticky bar absorbs
+   the top inset and the row absorbs the side insets in landscape. Each is a
+   second declaration after the shorthand — if env() is unsupported the browser
+   drops it and keeps the plain padding rather than collapsing to zero. */
+.tn{background:#000;border-bottom:1px solid rgba(255,255,255,0.12);padding:10px 0;position:sticky;top:0;z-index:100;padding-top:calc(10px + env(safe-area-inset-top));}
+.tn-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between;max-width:1680px;margin:0 auto;padding:0 32px;padding-left:max(32px,env(safe-area-inset-left));padding-right:max(32px,env(safe-area-inset-right));}
 .tn-left{display:flex;align-items:center;gap:16px;}
 [data-theme="light"] .tn{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}
 /* Dark: the bar wears the page background (a hair lighter than black),
@@ -85,8 +90,8 @@ a{color:var(--ink);}
 
 /* ── Phones: tighter bar, links wrap ────────────────────────────────────── */
 @media (max-width: 720px){
-  .tn{padding:8px 0;}
-  .tn-row{padding:0 12px;}
+  .tn{padding:8px 0;padding-top:calc(8px + env(safe-area-inset-top));}
+  .tn-row{padding:0 12px;padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right));}
   .tn-left{flex-wrap:wrap;gap:8px 14px;}
 }
 

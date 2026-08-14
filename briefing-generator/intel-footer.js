@@ -58,7 +58,11 @@
     "body{min-height:100vh;display:flex;flex-direction:column;}" +
     "#tn-content-wrap{flex:1 0 auto;min-width:0;}" +
     "#tn-site-footer{background:var(--paper-2,#F4F5F7);color:var(--ink,#0A0A0A);border-top:1px solid var(--line-strong,rgba(10,10,10,0.14));flex-shrink:0;}" +
-    "#tn-site-footer .tf-inner{max-width:1440px;margin:0 auto;padding:clamp(3rem,5vw,4.5rem) clamp(1.5rem,5vw,4rem) 2rem;}" +
+    // The trailing padding-bottom/left/right repeat the shorthand's values plus the
+    // safe-area insets: under viewport-fit=cover (installed web app) the page runs
+    // under the home indicator and the landscape notch. Declared after the shorthand
+    // so a browser without env() drops them and keeps the plain padding.
+    "#tn-site-footer .tf-inner{max-width:1440px;margin:0 auto;padding:clamp(3rem,5vw,4.5rem) clamp(1.5rem,5vw,4rem) 2rem;padding-bottom:calc(2rem + env(safe-area-inset-bottom));padding-left:max(clamp(1.5rem,5vw,4rem),env(safe-area-inset-left));padding-right:max(clamp(1.5rem,5vw,4rem),env(safe-area-inset-right));}" +
     "#tn-site-footer .tf-grid{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(var(--tf-cols,4),minmax(0,1fr));gap:clamp(2rem,4vw,3.5rem);margin-bottom:clamp(3rem,5vw,4rem);}" +
     "#tn-site-footer .tf-logo img{max-width:200px;width:100%;height:auto;display:block;}" +
     "[data-theme=dark] #tn-site-footer .tf-logo img{filter:invert(1) hue-rotate(180deg);}" +

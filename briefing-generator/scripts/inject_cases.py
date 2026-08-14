@@ -39,6 +39,22 @@ BOX_END = "<!-- TRACKED-CASES END -->"
 THEME_SCRIPT = '<script src="theme.js"></script>'          # root-level pages
 THEME_SCRIPT_SUBDIR = '<script src="../theme.js"></script>' # cases/ pages
 
+# Installable web app: Add to Home Screen opens /intel/ full-screen with no
+# browser chrome. Shared by every generated page so the tags can't drift — and
+# so a hand-edit to docket.html/news.html doesn't get wiped by the next sync.
+#
+# crossorigin=use-credentials is REQUIRED, not decorative: browsers fetch the
+# manifest WITHOUT cookies by default, so functions/intel/_middleware.js would
+# answer with the sign-in page instead of the JSON and the install would quietly
+# degrade to a screenshot icon. Paths are absolute so cases/ pages resolve them.
+# theme-color is not here — theme.js sets it at runtime from the light/dark/night
+# choice, so there is exactly one source of truth for it.
+PWA_HEAD = """<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
+<link rel="manifest" href="/intel/manifest.webmanifest" crossorigin="use-credentials">
+<link rel="apple-touch-icon" href="/intel/assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">"""
+
 # Shared stylesheet for the unified docket + unified calendar shells
 UD_CSS = r"""
   /* Main page area — no sidebar */
@@ -619,8 +635,7 @@ def render_case_page(case):
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
+{PWA_HEAD}
 <title>{name} — Case Docket | Turnpage Intelligence</title>
 {THEME_SCRIPT_SUBDIR}
 <link rel="stylesheet" href="../intel-chrome.css">
@@ -841,8 +856,7 @@ def render_unified_docket(cases):
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
+{PWA_HEAD}
 <title>Docket — Turnpage Intelligence</title>
 {THEME_SCRIPT}
 <link rel="stylesheet" href="intel-chrome.css">
@@ -1095,8 +1109,7 @@ def render_news_page(cases):
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
+{PWA_HEAD}
 <title>News — Turnpage Intelligence</title>
 {THEME_SCRIPT}
 <link rel="stylesheet" href="intel-chrome.css">
@@ -1309,8 +1322,7 @@ def render_unified_calendar(cases):
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
+{PWA_HEAD}
 <title>Calendar — Turnpage Intelligence</title>
 {THEME_SCRIPT}
 <link rel="stylesheet" href="intel-chrome.css">
@@ -1493,8 +1505,7 @@ def render_unified_notes(cases):
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
+{PWA_HEAD}
 <title>Notes — Turnpage Intelligence</title>
 {THEME_SCRIPT}
 <link rel="stylesheet" href="intel-chrome.css">
