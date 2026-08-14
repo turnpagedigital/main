@@ -1,6 +1,42 @@
 {
-  "generated_at": "2026-08-14T02:42:09+00:00",
+  "generated_at": "2026-08-14T05:15:15+00:00",
   "items": [
+    {
+      "slug": "omnis-pleasants",
+      "case_name": "Omnis Pleasants",
+      "short_name": "Omnis Pleasants",
+      "emoji": "⚖️",
+      "themes": [
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "United States Bankruptcy Court, D. Delaware",
+      "status": "active",
+      "signature": "819712d036c4",
+      "activity": {
+        "filings": 7,
+        "articles": 0,
+        "latest": "2026-08-13"
+      },
+      "checked": "2026-08-14T05:15:15+00:00",
+      "date": "2026-08-14",
+      "updated": "2026-08-14",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "On August 13, McDermott Will & Schulte LLP filed a notice of withdrawal from the case (Dkt. 73), ending its representation of RG Energy LLC and TRAG LLC — the two adverse parties at the center of the governance dispute that precipitated this filing. DLA Piper LLP (US) had already entered an appearance for TRAG and RG Energy on August 7 (Dkt. 68), and the interim tax order (Dkt. 49) named DLA Piper as counsel of…",
+      "body_md": "On August 13, McDermott Will & Schulte LLP filed a notice of withdrawal from the case (Dkt. 73), ending its representation of RG Energy LLC and TRAG LLC — the two adverse parties at the center of the governance dispute that precipitated this filing. DLA Piper LLP (US) had already entered an appearance for TRAG and RG Energy on August 7 (Dkt. 68), and the interim tax order (Dkt. 49) named DLA Piper as counsel of record for those parties, meaning the withdrawal formalizes a consolidation of adverse-party representation rather than any disruption in coverage. The practical effect is that Koff, Schacter, and Hurst — admitted pro hac vice August 7 — now lead the full representation of TRAG and RG Energy through DLA Piper, the same firm already carrying the load on the tax-order objection deadline and the 341(a) proceedings. For creditors, the change is neutral on its face, though the speed of consolidation suggests TRAG and RG Energy are organizing their litigation posture deliberately as the September 3 final-hearing dates approach.\n\nAlso filed August 13, the debtor moved for entry of interim compensation procedures (Dkt. 78) and applied to retain Stretto, Inc. as administrative advisor effective as of the petition date (Dkt. 79). Both are standard Chapter 11 infrastructure: interim comp procedures govern how professionals draw from the estate on a monthly basis without a full fee application at each interval, and Stretto's role as administrative advisor typically encompasses claims agent and noticing services. Neither filing is contested on the record. Dkt. 77, also filed August 13 and captioned only \"Authorize - Motion,\" cannot be further characterized from the docket line alone; its content is unverified from available record and warrants monitoring for a full-text pull. The debtor's objection deadline for final approval of the prepetition tax order (Dkt. 49) runs to August 19, 2026 — six days out — and no objection has been docketed as of this briefing.\n\nSeparately, the U.S. Trustee scheduled the § 341(a) meeting of creditors for September 2, 2026, at 1:00 p.m. ET via Zoom (Dkts. 74–76), which fixes the § 523 dischargeability objection deadline at November 2, 2026. The 341(a) itself is a mandatory procedural step, but for a case with over 600 creditors and a $50.9 million unsecured obligation to the West Virginia Economic Development Authority sitting at the top of the claims pool, the meeting will be the first formal opportunity for creditors to examine the debtor's principals under oath on financial affairs and asset condition. The next concrete milestone is the August 19 objection deadline for the prepetition tax final order, followed by the September 2 341(a) meeting and the September 3 final hearings on wages, utility payments, and critical vendor orders.\n\n## Sources\n\n- [Pleasants Power Station's Omnis firm reports 600+ creditors](https://www.wvgazettemail.com/news/legal_affairs/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_1f5045c2-ed17-4993-b2e5-8c7ede971f62.html) — Charleston Gazette-Mail, August 4, 2026\n- [McDermott Will & Schulte — Wikipedia](https://en.wikipedia.org/wiki/McDermott_Will_%26_Schulte) — Wikipedia\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Pleasants Power Station's Omnis firm reports 600+ creditors",
+          "url": "https://www.wvgazettemail.com/news/legal_affairs/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_1f5045c2-ed17-4993-b2e5-8c7ede971f62.html",
+          "note": "Charleston Gazette-Mail, August 4, 2026"
+        },
+        {
+          "title": "McDermott Will & Schulte — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/McDermott_Will_%26_Schulte",
+          "note": "Wikipedia"
+        }
+      ]
+    },
     {
       "slug": "other-copyright-suits",
       "case_name": "Other Copyright Suits",
@@ -26,11 +62,11 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-14T02:42:09+00:00",
+      "checked": "2026-08-14T05:15:15+00:00",
       "date": "2026-08-14",
       "updated": "2026-08-14",
-      "moved": true,
-      "no_change_since": null,
+      "moved": false,
+      "no_change_since": "2026-08-13",
       "lede": "Today, Judge Vince Chhabria convened the further case management conference in Kadrey v. Meta, No. 3:23-cv-03417 (N.D. Cal.), the time having been advanced yesterday to 11:00 AM Pacific via videoconference (Dkt. 809). The conference is proceeding against the backdrop of the Joint Case Management Statement plaintiffs filed Wednesday (Dkt. 808), signed by counsel for sixteen named plaintiffs including Richard Kadrey…",
       "body_md": "Today, Judge Vince Chhabria convened the further case management conference in *Kadrey v. Meta*, No. 3:23-cv-03417 (N.D. Cal.), the time having been advanced yesterday to 11:00 AM Pacific via videoconference (Dkt. 809). The conference is proceeding against the backdrop of the Joint Case Management Statement plaintiffs filed Wednesday (Dkt. 808), signed by counsel for sixteen named plaintiffs including Richard Kadrey, Ta-Nehisi Coates, Sarah Silverman, and Jacqueline Woodson. That statement is the operative framing document before Chhabria this morning and will govern whatever scheduling or substantive direction he sets. The conference's significance turns entirely on what Chhabria announces or orders from the bench — any resulting minute entry or text order is the next concrete milestone and should be pulled as soon as it posts. The contributory infringement amendment posture and the quash denial on August 11 (Dkt. 807, denying Meta's motion to quash in four related actions including Nos. 3:25-cv-09579, 3:26-cv-02333, 3:26-cv-03725, and 3:26-cv-04053) remain live: today's conference is where Chhabria is likely to address the downstream schedule on discovery and, potentially, class certification sequencing in light of both.\n\nIn *Getty Images (US), Inc. v. Stability AI, Inc. et al.*, No. 3:25-cv-06891 (N.D. Cal., Thompson, J.), Stability AI filed an opposition or response to motion on Wednesday (Dkt. 71), completing a sequence that opened with competing administrative motions filed by each side under Civil Local Rule 7-11 on August 6 (Dkt. 68) and August 11 (Dkt. 70), with Getty's own response at Dkt. 69 (August 10). The dueling Local Rule 7-11 motions — which concern administrative relief, typically a page-limit adjustment, filing-format exception, or scheduling variance — generated two rounds of paper within six days, suggesting a disputed procedural point with scheduling or briefing-scope implications rather than a collateral issue. The substance of what the parties are fighting over in those motions matters for the trajectory of motion practice, but the document text was not available this run; the posture is confirmed as contested. The next case management conference in this action is set for November 5, 2026 at 2:00 PM Pacific by videoconference, with the joint statement due October 29, 2026. \nGetty voluntarily dismissed the Delaware action on August 14, 2025 after Stability argued the court lacked jurisdiction over its UK parent, and refiled the same day in the Northern District of California before Judge Thompson, advancing direct copyright, DMCA §1202, and Lanham Act trademark claims.\n The UK dimension remains a pressure point: \nthe UK High Court rejected the theory that Stable Diffusion's model weights are themselves infringing copies, though it found limited trademark infringement and passing off on the watermark reproduction issue; Getty was granted leave to appeal in December 2025.\n That appeal's outcome will bear directly on the \"model weights as copies\" theory Getty is pressing in Thompson's court.\n\nIn *Encyclopaedia Britannica, Inc. and Merriam-Webster, Inc. v. OpenAI, Inc. et al.*, No. 1:26-cv-02097 (S.D.N.Y., Stein, J.), Judge Stein issued a memo endorsement on August 12 (Dkt. 59), the third scheduling-related entry in eight days following the two orders and deadline-setting entries at Dkts. 57 and 58 (August 7) that themselves resolved the parties' proposed stipulation filed at Dkt. 56 (August 5). A memo endorsement in S.D.N.Y. practice is the court's approval, with or without modification, of an underlying letter or stipulation — its substantive weight depends on what it endorsed. The docket context suggests it addressed case management logistics arising from this action's relationship to the broader OpenAI MDL (No. 1:25-md-03143, S.D.N.Y.). \nA joint stipulation in the record provides that all proceedings and deadlines in the Britannica action are stayed pending resolution of summary judgment motions in the other active MDL cases, with the parties required to file a joint status report within 30 days of those rulings to propose a case management conference and further proceedings.\n Whether Dkt. 59 touches that stay or adjusts some interim obligation within it is the open question; the document text was not available this run. The case is filed in the S.D.N.Y. and assigned to Judge Stein, confirmed by CourtListener. \nThe suit accuses OpenAI of massive copyright infringement and alleges trademark infringement when ChatGPT hallucinates false information and attributes it to Britannica or Merriam-Webster.\n\n\n*Hachette v. Google (Gemini)*, No. 1:26-cv-05870 (S.D.N.Y., Preska, J.), and *Hachette v. Meta (Llama)*, No. 1:26-cv-03689 (S.D.N.Y., Castel, J.), recorded no substantive movement. The Google transfer motion — fully briefed through Dkt. 26's reply (August 10) — awaits Preska's ruling; that ruling, whenever it comes, will either consolidate this action's home or confirm the S.D.N.Y. posture. In the Meta action, the next concrete milestone is the September 15, 2026 initial conference before Judge Castel at 3:00 PM in Courtroom 11D, where the pending transfer motion and plaintiffs' motion-to-strike letter request (Dkt. 90) are expected to be addressed. *Thomson Reuters v. Ross Intelligence*, No. 25-2153 (3d Cir.), likewise recorded no movement; the panel of Judges Restrepo, Montgomery-Reeves, and Bove has the case under submission following the June 11 oral argument, with the transcript filed June 24.\n\n---\n\n## Sources\n\n- [Getty Images (US), Inc. v. Stability AI, Ltd., 3:25-cv-06891 — AI Lawsuit Tracker](https://ailawsuittracker.com/cases/getty-v-stability-ai/) — AI Lawsuit Tracker, May 25, 2026\n- [Getty Images (US), Inc. v. Stability AI, Ltd., 3:25-cv-06891 — CourtListener](https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/) — CourtListener / RECAP, last updated June 24, 2026\n- [Encyclopaedia Britannica, Inc. v. OpenAI, Inc., 1:26-cv-02097 — CourtListener](https://www.courtlistener.com/docket/72492986/encyclopedia-britannica-inc-v-openai-inc/) — CourtListener / RECAP\n- [Britannica, Merriam-Webster Accuse OpenAI of Copying Their Works](https://news.bloomberglaw.com/ip-law/britannica-merriam-webster-accuse-openai-of-copying-their-works) — Bloomberg Law, March 16, 2026\n- [Kadrey et al. v. Meta Platforms, Inc. — GovInfo](https://www.govinfo.gov/app/details/USCOURTS-cand-3_23-cv-03417) — Administrative Office of the U.S. Courts, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
@@ -77,7 +113,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-14T02:42:09+00:00",
+      "checked": "2026-08-14T05:15:15+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -102,32 +138,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-14T02:42:09+00:00",
-      "date": "",
-      "updated": "",
-      "moved": false,
-      "no_change_since": "2026-08-13",
-      "lede": "",
-      "body_md": "",
-      "sources": []
-    },
-    {
-      "slug": "omnis-pleasants",
-      "case_name": "Omnis Pleasants",
-      "short_name": "Omnis Pleasants",
-      "emoji": "⚖️",
-      "themes": [
-        "bankruptcy-creditor-rights"
-      ],
-      "court": "United States Bankruptcy Court, D. Delaware",
-      "status": "active",
-      "signature": "819712d036c4",
-      "activity": {
-        "filings": 7,
-        "articles": 0,
-        "latest": "2026-08-13"
-      },
-      "checked": "2026-08-14T02:42:09+00:00",
+      "checked": "2026-08-14T05:15:15+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -153,7 +164,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-14T02:42:09+00:00",
+      "checked": "2026-08-14T05:15:15+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -178,7 +189,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-14T02:42:09+00:00",
+      "checked": "2026-08-14T05:15:15+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -204,7 +215,7 @@
         "articles": 3,
         "latest": "2026-08-12"
       },
-      "checked": "2026-08-14T02:42:09+00:00",
+      "checked": "2026-08-14T05:15:15+00:00",
       "date": "2026-08-13",
       "updated": "2026-08-13",
       "moved": false,
@@ -266,7 +277,7 @@
         "articles": 0,
         "latest": "2026-08-12"
       },
-      "checked": "2026-08-14T02:42:09+00:00",
+      "checked": "2026-08-14T05:15:15+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -291,7 +302,7 @@
         "articles": 0,
         "latest": "2026-08-11"
       },
-      "checked": "2026-08-14T02:42:09+00:00",
+      "checked": "2026-08-14T05:15:15+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -316,7 +327,7 @@
         "articles": 0,
         "latest": "2026-08-11"
       },
-      "checked": "2026-08-14T02:42:09+00:00",
+      "checked": "2026-08-14T05:15:15+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -347,7 +358,7 @@
         "articles": 0,
         "latest": "2026-08-10"
       },
-      "checked": "2026-08-14T02:42:09+00:00",
+      "checked": "2026-08-14T05:15:15+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -373,7 +384,7 @@
         "articles": 0,
         "latest": "2026-08-07"
       },
-      "checked": "2026-08-14T02:42:09+00:00",
+      "checked": "2026-08-14T05:15:15+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -400,7 +411,7 @@
         "articles": 0,
         "latest": "2026-08-07"
       },
-      "checked": "2026-08-14T02:42:09+00:00",
+      "checked": "2026-08-14T05:15:15+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -426,7 +437,7 @@
         "articles": 0,
         "latest": "2026-08-05"
       },
-      "checked": "2026-08-14T02:42:09+00:00",
+      "checked": "2026-08-14T05:15:15+00:00",
       "date": "",
       "updated": "",
       "moved": false,
