@@ -15,13 +15,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
-    "date_last_filing": "2026-08-07",
-    "meta_fetched_at": "2026-08-13T16:15:39.015798+00:00",
-    "fetched_at": "2026-08-14T11:12:49.712933+00:00",
+    "date_last_filing": "2026-08-14",
+    "meta_fetched_at": "2026-08-14T23:42:01.594487+00:00",
+    "fetched_at": "2026-08-14T23:42:01.594487+00:00",
     "as_of": "Aug 14, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 536,
+        "date_filed": "2026-08-14",
+        "time_filed": "17:18:07",
+        "date_display": "Aug 14, 2026",
+        "description": "Notice of Change of Address",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 535,
+        "date_filed": "2026-08-14",
+        "time_filed": "17:14:57",
+        "date_display": "Aug 14, 2026",
+        "description": "Employ Attorney (Motion)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 534,
         "date_filed": "2026-08-07",
@@ -31,29 +51,29 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
+      }
+    ],
+    "entries": [
       {
-        "entry_number": 533,
-        "date_filed": "2026-08-07",
-        "time_filed": "11:34:29",
-        "date_display": "Aug 7, 2026",
-        "description": "Notice of Rescheduled Hearing (Chambers)",
-        "is_new": false,
+        "entry_number": 536,
+        "date_filed": "2026-08-14",
+        "time_filed": "17:18:07",
+        "date_display": "Aug 14, 2026",
+        "description": "Notice of Change of Address",
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 532,
-        "date_filed": "2026-07-23",
-        "time_filed": "18:36:46",
-        "date_display": "Jul 23, 2026",
-        "description": "Complaint",
-        "is_new": false,
+        "entry_number": 535,
+        "date_filed": "2026-08-14",
+        "time_filed": "17:14:57",
+        "date_display": "Aug 14, 2026",
+        "description": "Employ Attorney (Motion)",
+        "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.532.0.pdf"
-      }
-    ],
-    "entries": [
+        "doc_url": ""
+      },
       {
         "entry_number": 534,
         "date_filed": "2026-08-07",
