@@ -1115,7 +1115,7 @@
             '<td class="ud-case">' + (e.is_bondoro && e.unassigned && e.theme_slug ? themePillHtml(e.theme_slug).replace('class="ud-pill ud-pill-sq"', 'class="ud-pill ud-pill-sq ud-pill-assign" data-bondoro="' + esc(e.bondoro_url) + '" role="button" tabindex="0" title="Click to assign"') : pill) + "</td>" +
             '<td class="ud-party">' + (e.party ? esc(e.party) : '<span class="ud-party-empty">\u2014</span>') + "</td>" +
             '<td class="ud-entry">' + descHtml + "</td>" +
-            '<td class="ud-doc">' + docCell(e, '<a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">Read</a>') + voteButtons(e) + "</td>" +
+            '<td class="ud-doc">' + docCell(e, '<a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">Read</a>', voteButtons(e)) + "</td>" +
             markCells(e) +
           "</tr>"
         );
@@ -1916,7 +1916,8 @@
 
   // The Dkt. cell: links + an upload button normally; once a document is
   // uploaded, a black file icon (open / download / remove) replaces the links.
-  function docCell(e, linksHtml) {
+  function docCell(e, linksHtml, votesHtml) {
+    var votes = votesHtml || "";
     var nk = entryNoteKey(e);
     var st = FETCH_STATE[nk];
     if (st && st.kind === "spin") {
@@ -1933,7 +1934,7 @@
             '<button type="button" class="ud-file-del" data-updel-nk="' + esc(nk) + '" data-updel-i="' + i + '" title="Remove ' + esc(d.name) + '">\u00d7</button>' +
           "</span>"
         );
-      }).join(" ");
+      }).join(" ") + votes;
     }
     // After a failed fetch: a warning badge with the reason (hover for
     // detail) next to the restored links \u2014 the links themselves now open
@@ -1941,7 +1942,7 @@
     var errBadge = (st && st.kind === "err")
       ? '<span class="ud-fetch-err" title="' + esc(st.reason) + '">\u26a0 ' + esc(st.label) + "</span> "
       : "";
-    return errBadge + linksHtml +
+    return errBadge + linksHtml + votes +
       ' <button type="button" class="ud-upload-btn" data-upload-nk="' + esc(nk) + '" title="Upload the document (PDF) \u2014 replaces these links">' + SVG_UPLOAD + "</button>";
   }
 
