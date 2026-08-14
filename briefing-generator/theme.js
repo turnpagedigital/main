@@ -1,9 +1,15 @@
 (function(){
+  // Absolute base of this script (…/intel/) — lets injected CSS reference
+  // assets with an absolute URL that works from any page depth (/cases/…).
+  var THEME_BASE=(function(){var s=(document.currentScript&&document.currentScript.src)||'';return s?s.slice(0,s.lastIndexOf('/')+1):'';})();
   // Selected-state convention: light = black box + white text, dark = neon + black,
   // night = red + black.
   var selCss=document.createElement('style');
   selCss.id='tn-sel-vars';
-  selCss.textContent=':root{--sel-bg:#0A0A0A;--sel-fg:#FFFFFF;}[data-theme="dark"]{--sel-bg:#D4FF00;--sel-fg:#0A0A0A;}[data-theme="night"]{--sel-bg:#FE0100;--sel-fg:#000000;}';
+  // Night selected-state: translucent red fill + red text (not solid red/black)
+  // — Andrew: solid boxes were too high-contrast; this reads like the dark-red
+  // complication discs on the watch face.
+  selCss.textContent=':root{--sel-bg:#0A0A0A;--sel-fg:#FFFFFF;}[data-theme="dark"]{--sel-bg:#D4FF00;--sel-fg:#0A0A0A;}[data-theme="night"]{--sel-bg:rgba(254,1,0,0.25);--sel-fg:#FE0100;}';
   (document.head||document.documentElement).appendChild(selCss);
   // ── Night mode — red-on-black, Apple Watch night-face style. Injected here
   // (not intel-chrome.css) so every page that loads theme.js gets it — including
@@ -17,7 +23,7 @@
   nightCss.textContent=
     ':root[data-theme="night"]{color-scheme:dark;'+
       '--bg:#000000;--surface:#000000;--paper-2:rgba(254,1,0,0.10);--canvas:#000000;'+
-      '--ink:#FE0100;--ink-60:rgba(254,1,0,0.72);--ink-40:rgba(254,1,0,0.55);--ink-20:rgba(254,1,0,0.30);'+
+      '--ink:#FE0100;--ink-60:rgba(254,1,0,0.80);--ink-40:rgba(254,1,0,0.62);--ink-20:rgba(254,1,0,0.30);'+
       '--line:rgba(254,1,0,0.20);--line-strong:rgba(254,1,0,0.38);'+
       '--neon:#FE0100;--neon-block:#FE0100;--neon-on-block:#000000;'+
       '--ok:#FE0100;--warn:#FE0100;--danger:#FE0100;}'+
@@ -55,8 +61,12 @@
     // Brand logo: use the (white) dark-mode asset, colorized to #FE0100.
     '[data-theme="night"] .tn-logo-light{display:none !important;}'+
     '[data-theme="night"] .tn-logo-dark{display:block;filter:brightness(0) saturate(100%) invert(13%) sepia(94%) saturate(7404%) hue-rotate(11deg) brightness(101%) contrast(115%);}'+
-    // apply() swaps in the pre-colored night asset; once it loads, drop the filter.
-    '[data-theme="night"] .tn-logo-dark.tn-logo-night-src{filter:none;}'+
+    // Swap in the pre-colored #FE0100 asset in pure CSS — a JS src swap died in
+    // production when the auth layer re-rendered the nav after apply() ran (the
+    // state class survived the re-render, the swapped src didn't → green logo).
+    // CSS re-applies to any re-created img; the filter above stays as the
+    // fallback for anything that doesn't do content:url() on <img>.
+    '@supports (content: url("data:,")) {[data-theme="night"] .tn-logo-dark{content:url("'+THEME_BASE+'assets/turnpage-intel-logo-night.png");filter:none;}}'+
     // Every emoji on the page, red — wire() wraps each pictographic cluster
     // in a .tn-emj-i span for this filter to catch.
     '[data-theme="night"] .tn-emj-i{filter:grayscale(1) sepia(1) saturate(12) hue-rotate(-50deg) brightness(1.02);}'+
@@ -65,9 +75,9 @@
     // Popovers float without shadows now — a stronger red border does the lifting.
     '[data-theme="night"] :is(.tn-kbd-panel,.tn-gear-panel,.ud-th-menu,.ud-case-dd-panel,#ud-source-dd-panel,.ud-pal-box,.ud-note-box,.pr-box){border-color:rgba(254,1,0,0.55);}'+
     '[data-theme="night"] .ud-pal-overlay{background:rgba(0,0,0,0.62);}'+
-    // Case-color pills: every case reads as the same dark-red chip (the per-case
-    // palette is meaningless when the only ink is red).
-    '[data-theme="night"] :is(.ud-pill,.mg-pill,.ih-pill,.uc-cal-chip)[style*="--pb"]{background:rgba(254,1,0,0.14);color:#FE0100;}'+
+    // Case pills: solid red, black text (Andrew's call — case identity pops;
+    // the per-case palette is meaningless when the only ink is red).
+    '[data-theme="night"] :is(.ud-pill,.mg-pill,.ih-pill,.uc-cal-chip)[style*="--pb"]{background:#FE0100;color:#000;}'+
     // Case-tinted cards set colors inline (style="border-left-color:…;background:tint(…)").
     '[data-theme="night"] .uc-week-card,[data-theme="night"] .ih-row-coded,[data-theme="night"] .ih-wk-ev{background:rgba(254,1,0,0.10) !important;border-left-color:#FE0100 !important;}'+
     '[data-theme="night"] .ud-pill-theme,[data-theme="night"] .ih-pill-theme{color:#FE0100;border-color:#FE0100;background:transparent;}'+
@@ -100,14 +110,28 @@
     '[data-theme="night"] .cal-day{background:linear-gradient(180deg,transparent 0 60%,#FE0100 60% 96%,transparent 96%) !important;color:#000 !important;}'+
     '[data-theme="night"] .tn-tabs-row:has(.tn-tab:hover) .tn-tab.active:not(:hover) .tn-pill.active{background:rgba(254,1,0,0.10) !important;color:rgba(254,1,0,0.55) !important;border:1px solid transparent !important;}'+
     // Dashboard bits with their own palette (sticky notes, calendar strip).
-    '[data-theme="night"] .ih-note-card{background:rgba(254,1,0,0.10);border-top-color:#FE0100;}'+
+    '[data-theme="night"] .ih-note-card{background:rgba(254,1,0,0.10);border-top-color:rgba(254,1,0,0.45);}'+
     '[data-theme="night"] .ih-note-card .title,[data-theme="night"] .ih-note-card strong,[data-theme="night"] .ih-note-card .body{color:#FE0100;}'+
+    '[data-theme="night"] .ih-note-card .title{border-bottom-color:rgba(254,1,0,0.20);}'+
+    // The sticky note's dark-paper literals (meta line, pager arrows, counter)
+    // are invisible on the dark-red card — dim red instead.
+    '[data-theme="night"] .ih-note-link .artifact,[data-theme="night"] .ih-note-nav,[data-theme="night"] .ih-note-counter{color:rgba(254,1,0,0.62);}'+
     '[data-theme="night"] .ih-note-nav:hover:not(:disabled){color:#FE0100;}'+
     '[data-theme="night"] .ih-wk-col.today .ih-wk-num{color:#FE0100;}'+
     // Layout tweaks light/dark both carry (night would otherwise fall to neither).
     '[data-theme="night"] .page-title{border-bottom:1px solid var(--line-strong);}'+
     '[data-theme="night"] .ud-day-row td{border-top:none;}'+
-    '[data-theme="night"] .ud-table tbody tr:first-child td{padding-top:20px;}';
+    '[data-theme="night"] .ud-table tbody tr:first-child td{padding-top:20px;}'+
+    // Selected boxes that invert via --ink/--bg (sort pills, open dropdown,
+    // filter badge) — softened like the sel vars: translucent fill, red text.
+    '[data-theme="night"] #ud-sort-btn.ud-sort-on,[data-theme="night"] #ud-sort-entry-btn.ud-sort-on,[data-theme="night"] .ih-dd-btn.open{background:rgba(254,1,0,0.25);border-color:rgba(254,1,0,0.45);color:#FE0100;}'+
+    '[data-theme="night"] #ud-filter-btn .ud-fb-badge{background:rgba(254,1,0,0.25);color:#FE0100;}'+
+    '[data-theme="night"] .ih-dd-quick-row button:hover{background:rgba(254,1,0,0.18);color:#FE0100;}'+
+    // Open sides — no vertical rails framing the tables (docket/news/notes/…).
+    '[data-theme="night"] .ud-table thead th:first-child{border-left:none;}'+
+    '[data-theme="night"] .ud-table thead th:last-child{border-right:none;}'+
+    '[data-theme="night"] .ud-table tbody tr:not(.ud-day-row) td:first-child{border-left:none;}'+
+    '[data-theme="night"] .ud-table tbody tr:not(.ud-day-row) td:last-child{border-right:none;}';
   (document.head||document.documentElement).appendChild(nightCss);
   // Critical hides, injected NOW (this script is parser-blocking in <head>)
   // rather than with the rest of the gear CSS at DOMContentLoaded: the gear
@@ -129,25 +153,6 @@
     document.documentElement.setAttribute('data-theme-pref',t);
     var b=document.getElementById('theme-toggle');
     if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
-    // Night gets its own pre-colored #FE0100 logo asset (crisper than the CSS
-    // filter, which stays on as the fallback until the swap's onload fires).
-    var night=eff(t)==='night';
-    var pref=location.pathname.indexOf('/cases/')!==-1?'../':'';
-    document.querySelectorAll('img.tn-logo-dark').forEach(function(img){
-      if(night){
-        if(!img.dataset.origSrc)img.dataset.origSrc=img.getAttribute('src');
-        var nsrc=pref+'assets/turnpage-intel-logo-night.png';
-        if(img.getAttribute('src')!==nsrc){
-          img.onload=function(){img.classList.add('tn-logo-night-src');};
-          img.onerror=function(){img.classList.remove('tn-logo-night-src');img.setAttribute('src',img.dataset.origSrc);};
-          img.setAttribute('src',nsrc);
-        }
-      }else if(img.dataset.origSrc&&img.getAttribute('src')!==img.dataset.origSrc){
-        img.classList.remove('tn-logo-night-src');
-        img.onload=img.onerror=null;
-        img.setAttribute('src',img.dataset.origSrc);
-      }
-    });
   }
   window.cycleTheme=function(){
     var c=localStorage.getItem(K)||'system';
