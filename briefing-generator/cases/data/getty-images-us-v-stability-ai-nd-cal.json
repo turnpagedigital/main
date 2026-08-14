@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/",
-    "date_last_filing": "2026-08-12",
-    "meta_fetched_at": "2026-08-13T03:02:57.282988+00:00",
-    "fetched_at": "2026-08-14T09:02:05.720713+00:00",
+    "date_last_filing": "2026-08-14",
+    "meta_fetched_at": "2026-08-14T17:15:31.260082+00:00",
+    "fetched_at": "2026-08-14T17:15:31.260082+00:00",
     "as_of": "Aug 14, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 72,
+        "date_filed": "2026-08-14",
+        "time_filed": "07:43:07",
+        "date_display": "Aug 14, 2026",
+        "description": "Proposed Order re 71 Opposition/Response to Motion, [Proposed] Order Denying Plaintiff's Administrative Motion for Leave to File Reply by Stability AI US Services Corporation, Stability AI, Inc., Stability AI, Ltd.. (Gratz, Joseph) (Filed on 8/14/2026) (Entered: 08/14/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 71,
         "date_filed": "2026-08-12",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.454636/gov.uscourts.cand.454636.70.0.pdf"
-      },
-      {
-        "entry_number": 69,
-        "date_filed": "2026-08-10",
-        "time_filed": "16:11:36",
-        "date_display": "Aug 10, 2026",
-        "description": "OPPOSITION/RESPONSE (re 68 ADMINISTRATIVE MOTION to Modify the Case Management and Scheduling Order Pursuant to Civil L.R. 7-11 and Fed. R. Civ. P. 16(b)(4) ) filed byStability AI US Services Corporation, Stability AI, Inc., Stability AI, Ltd.. (Attachments: # 1 Declaration of Joseph C. Gratz, # 2 Exhibit 1, # 3 Proposed Order)(Gratz, Joseph) (Filed on 8/10/2026) (Entered: 08/10/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 72,
+        "date_filed": "2026-08-14",
+        "time_filed": "07:43:07",
+        "date_display": "Aug 14, 2026",
+        "description": "Proposed Order re 71 Opposition/Response to Motion, [Proposed] Order Denying Plaintiff's Administrative Motion for Leave to File Reply by Stability AI US Services Corporation, Stability AI, Inc., Stability AI, Ltd.. (Gratz, Joseph) (Filed on 8/14/2026) (Entered: 08/14/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 71,
         "date_filed": "2026-08-12",
