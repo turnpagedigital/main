@@ -470,6 +470,10 @@
   }
 
   function sourceOn(name) {
+    // Deleted in Manage → Sources: the outlet's rows never show, whatever the
+    // filter says. Stored coverage is untouched — restoring the outlet there
+    // brings its rows straight back.
+    if (SRC_BLOCKED[sourceKey(name)]) return false;
     var k = isOtherSource(name) ? OTHER_SRC_KEY : sourceKey(name);
     if (!(k in activeSources)) {
       var sv = _savedState && _savedState.activeSources;
@@ -486,7 +490,7 @@
       if (!e.is_article) return;
       var name = e.party || "Unknown";
       var k = sourceKey(name);
-      if (seen[k]) return;
+      if (seen[k] || SRC_BLOCKED[k]) return;   // deleted outlets leave the filter too
       seen[k] = true;
       out.push({ key: k, name: name, feed: !!e.is_bondoro });
     });
@@ -2087,6 +2091,7 @@
   // an unassigned feed item shows on the docket at all.
   var FEED_SOURCES = [];
   var SRC_FAVORITES = {};          // lowercased outlet name → true (Manage → Sources ★)
+  var SRC_BLOCKED = {};            // deleted in Manage → Sources: hidden from rows + filter
   var OTHER_SRC_KEY = "__othersrc__";  // one toggle for every non-favorite outlet
 
   function loadFeedSourcesForRender() {
@@ -2101,6 +2106,8 @@
         if (!p) return;
         SRC_FAVORITES = {};
         (p.favorites || []).forEach(function (n) { SRC_FAVORITES[sourceKey(n)] = true; });
+        SRC_BLOCKED = {};
+        (p.blocked || []).forEach(function (n) { SRC_BLOCKED[sourceKey(n)] = true; });
         if (p.sources && p.sources.length) FEED_SOURCES = p.sources;
         render();
       });

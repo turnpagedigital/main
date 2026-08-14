@@ -58,6 +58,12 @@
   .mg-src-star { font-family: inherit; font-size: 12px; font-weight: 600; padding: 4px 10px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; }
   .mg-src-star:hover { border-color: var(--ink); color: var(--ink); }
   .mg-src-star.on { background: var(--sel-bg, #0A0A0A); border-color: var(--sel-bg, #0A0A0A); color: var(--sel-fg, #fff); }
+  /* Author chip = ★ toggle + delete, sharing one outline so they read as one control. */
+  .mg-src-au { display: inline-flex; align-items: stretch; }
+  .mg-src-au .mg-src-star { border-right: none; }
+  .mg-src-del { font-family: inherit; font-size: 13px; line-height: 1; padding: 4px 8px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-40); cursor: pointer; }
+  .mg-src-del:hover { border-color: #C84141; color: #C84141; }
+  .mg-src-au-off .mg-src-star { border-style: dashed; opacity: 0.75; }
 
   .mg-pill { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 2px 10px; border-radius: 99px; white-space: nowrap; }
   .mg-sync { font-size: 10px; font-weight: 800; letter-spacing: 0.02em; }
