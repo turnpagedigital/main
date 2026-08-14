@@ -129,6 +129,9 @@
     '[data-theme="night"] .ud-due-card,[data-theme="night"] .ud-due-card strong,[data-theme="night"] .ud-due-title{color:#FE0100;}'+
     '[data-theme="night"] .ud-due-title{border-bottom-color:rgba(254,1,0,0.20);}'+
     '[data-theme="night"] .ud-due-artifact{color:rgba(254,1,0,0.62);}'+
+    // body keeps its own 0.8 opacity — red here lands at the same 80% red
+    // as the dashboard sticky body text
+    '[data-theme="night"] .ud-due-body{color:#FE0100;}'+
     '[data-theme="night"] .ud-due-foot button{color:rgba(254,1,0,0.62);}'+
     '[data-theme="night"] .ud-due-foot button:hover{color:#FE0100;}'+
     '[data-theme="night"] .bf-old-note{background:rgba(254,1,0,0.14);}'+
