@@ -10,14 +10,49 @@
 
 import { isAuthed } from "../api/admin/_utils.js";
 
+/* Installed-web-app assets, served WITHOUT a session.
+
+   iOS fetches the home-screen icon from a system process that carries no
+   cookie, so gating it returned this file's 401 HTML instead of a PNG and the
+   install fell back to a grey letter tile. (The manifest itself survived only
+   because the <link> carries crossorigin="use-credentials" and the tab was
+   signed in — the icon fetch has no such escape hatch.)
+
+   Ungating these leaks nothing: an app name, two colours, and brand artwork.
+   The gate page below is already titled "Sign in — Turnpage Intel" and renders
+   the same logo. Case data, dockets, and notes stay behind the session. */
+const PUBLIC_MANIFEST = /^\/intel\/manifest\.webmanifest$/;
+const PUBLIC_IMAGE = /^\/intel\/assets\/[\w.-]+\.(png|jpe?g|svg|webp|ico)$/;
+
 export async function onRequest(context) {
   const { request, env, next } = context;
+  const path = new URL(request.url).pathname;
+
+  if (PUBLIC_MANIFEST.test(path)) {
+    // Short cache, not immutable: the manifest has no content hash in its URL,
+    // so a rename or colour change needs to be able to actually reach devices.
+    const res = await next();
+    const capped = new Response(res.body, res);
+    capped.headers.set("Cache-Control", "public, max-age=300, must-revalidate");
+    return capped;
+  }
+  if (PUBLIC_IMAGE.test(path)) {
+    // Matches the immutable policy the authed branch applies to images below.
+    // NB the manifest's icon URLs are not ?v=-stamped (unlike images referenced
+    // from HTML, which copy-intel.mjs stamps), so changing an app icon means
+    // shipping a NEW FILENAME and updating manifest.webmanifest — overwriting
+    // icon-192.png in place would sit behind this year-long cache.
+    const res = await next();
+    const capped = new Response(res.body, res);
+    capped.headers.set("Cache-Control", "public, max-age=31536000, immutable");
+    return capped;
+  }
+
   if (await isAuthed(request, env)) {
     const res = await next(); // valid admin session — serve the static intel asset
     // Intel app code ships fixes several times a day; Pages' default 4h
     // max-age left stale tabs running hours-old JS. _headers rules don't
     // modify function-fronted responses, so cap the cache here.
-    const path = new URL(request.url).pathname;
     if (/\.(js|css)(\?|$)/.test(path)) {
       const capped = new Response(res.body, res);
       capped.headers.set("Cache-Control", "public, max-age=300, must-revalidate");
