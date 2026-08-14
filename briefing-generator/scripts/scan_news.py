@@ -44,6 +44,18 @@ _CAP_STOP = {"the", "a", "an", "of", "to", "in", "on", "for", "and", "or",
              "al", "after", "over", "from", "gets", "says", "say", "amid"}
 
 
+def _load_blocked():
+    """Outlets deleted in Manage → Sources. Their articles are never merged in,
+    so a delete stays deleted across scans."""
+    try:
+        from cases_common import REPO_ROOT
+        blocked = json.loads((REPO_ROOT / "feed-sources.json").read_text(
+            encoding="utf-8")).get("blocked", [])
+        return {b.strip().lower() for b in blocked if isinstance(b, str) and b.strip()}
+    except Exception:
+        return set()
+
+
 def _load_favorites():
     try:
         from cases_common import REPO_ROOT
@@ -282,8 +294,11 @@ def _valid_date(s):
 
 def merge_articles(existing, fresh):
     seen = {_norm_url(a.get("url")) for a in existing if a.get("url")}
+    blocked = _load_blocked()
     added = 0
     for a in fresh:
+        if (a.get("source") or "").strip().lower() in blocked:
+            continue                      # outlet deleted in Manage → Sources
         url = (a.get("url") or "").strip()
         headline = (a.get("headline") or a.get("title") or "").strip()
         if not url or not headline or _norm_url(url) in seen:

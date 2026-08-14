@@ -1181,6 +1181,7 @@
      outlet each scan), and a `show` target (docket / news / both). ────────*/
   var SRC_LIST = [];
   var SRC_FAVS = [];        // ★ outlet names → their own row in the Author filter
+  var SRC_BLOCKED = [];     // deleted outlets — hidden everywhere, restorable below
   var SRC_AUTHORS = [];     // every outlet the scans have cited (from _summary)
   var SRC_READONLY = false;
   var SRC_TYPES = [
@@ -1262,6 +1263,7 @@
         if (!(p && p.ok)) throw new Error((p && p.error) || "load failed");
         SRC_LIST = p.sources || [];
         SRC_FAVS = p.favorites || [];
+        SRC_BLOCKED = p.blocked || [];
         SRC_READONLY = false;
         renderSourceRows();
         loadAuthors();
@@ -1305,6 +1307,10 @@
     var k = favKey(n);
     return SRC_FAVS.some(function (f) { return favKey(f) === k; });
   }
+  function isBlocked(n) {
+    var k = favKey(n);
+    return SRC_BLOCKED.some(function (b) { return favKey(b) === k; });
+  }
 
   function loadAuthors() {
     var el = $("mg-src-authors");
@@ -1326,6 +1332,12 @@
         SRC_LIST.forEach(function (s) { feedNames[favKey(s.name)] = true; });
         SRC_AUTHORS = out.filter(function (n) { return !feedNames[favKey(n)]; })
           .sort(function (a, b) { return a.localeCompare(b); });
+        // Blocked names stay listed (in their own group) even once the scans
+        // stop citing them — otherwise a delete would erase its own undo.
+        SRC_BLOCKED.forEach(function (b) {
+          if (!SRC_AUTHORS.some(function (n) { return favKey(n) === favKey(b); }) &&
+              !feedNames[favKey(b)]) SRC_AUTHORS.push(b);
+        });
         // ★ names that scans haven't cited lately still deserve a row
         SRC_FAVS.forEach(function (f) {
           if (!SRC_AUTHORS.some(function (n) { return favKey(n) === favKey(f); }) &&
@@ -1342,19 +1354,32 @@
       el.innerHTML = '<div class="mg-empty">No outlets discovered yet — they appear as the news scans cite them.</div>';
       return;
     }
-    var favs = SRC_AUTHORS.filter(isFav), rest = SRC_AUTHORS.filter(function (n) { return !isFav(n); });
+    var blocked = SRC_AUTHORS.filter(isBlocked);
+    var live = SRC_AUTHORS.filter(function (n) { return !isBlocked(n); });
+    var favs = live.filter(isFav), rest = live.filter(function (n) { return !isFav(n); });
     function row(n) {
       var on = isFav(n);
-      return '<button type="button" class="mg-src-star' + (on ? " on" : "") + '" data-fav="' + esc(n) + '" ' +
-        'title="' + (on ? "Remove from favorites — rolls back into the \u2018All other sources\u2019 toggle" :
-                          "Make a favorite — gets its own row in the Author filter") + '">' +
-        (on ? "★" : "☆") + " " + esc(n) + "</button>";
+      return '<span class="mg-src-au">' +
+        '<button type="button" class="mg-src-star' + (on ? " on" : "") + '" data-fav="' + esc(n) + '" ' +
+          'title="' + (on ? "Remove from favorites — rolls back into the \u2018All other sources\u2019 toggle" :
+                            "Make a favorite — gets its own row in the Author filter") + '">' +
+          (on ? "\u2605" : "\u2606") + " " + esc(n) + "</button>" +
+        '<button type="button" class="mg-src-del" data-del-au="' + esc(n) + '" ' +
+          'title="Delete this outlet — hides it from the Author filter and from the docket and news pages, and the scans skip it">\u00d7</button>' +
+      "</span>";
+    }
+    function blockedRow(n) {
+      return '<span class="mg-src-au mg-src-au-off">' +
+        '<button type="button" class="mg-src-star" data-restore-au="' + esc(n) + '" ' +
+          'title="Restore this outlet">\u21ba ' + esc(n) + "</button></span>";
     }
     el.innerHTML =
       (favs.length ? '<div class="mg-src-augrp">Favorites — own row in the Author filter</div>' +
         '<div class="mg-src-aulist">' + favs.map(row).join("") + "</div>" : "") +
       '<div class="mg-src-augrp">Other — covered by one \u201cAll other sources\u201d toggle</div>' +
-      '<div class="mg-src-aulist">' + rest.map(row).join("") + "</div>";
+      '<div class="mg-src-aulist">' + rest.map(row).join("") + "</div>" +
+      (blocked.length ? '<div class="mg-src-augrp">Deleted — hidden from the Author filter, the docket and news pages, and skipped by the scans</div>' +
+        '<div class="mg-src-aulist">' + blocked.map(blockedRow).join("") + "</div>" : "");
     el.querySelectorAll("[data-fav]").forEach(function (b) {
       b.addEventListener("click", function () {
         var n = b.getAttribute("data-fav");
@@ -1364,6 +1389,25 @@
         srcStatus("Favorites changed — hit Save sources to make it live.");
       });
     });
+    el.querySelectorAll("[data-del-au]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var n = b.getAttribute("data-del-au");
+        // Stored coverage is left alone: the outlet is hidden, not erased, so
+        // this is reversible from the Deleted group below.
+        SRC_BLOCKED.push(n);
+        SRC_FAVS = SRC_FAVS.filter(function (f) { return favKey(f) !== favKey(n); });
+        renderAuthors();
+        srcStatus("Deleted " + n + " — hit Save sources to make it live.");
+      });
+    });
+    el.querySelectorAll("[data-restore-au]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var n = b.getAttribute("data-restore-au");
+        SRC_BLOCKED = SRC_BLOCKED.filter(function (x) { return favKey(x) !== favKey(n); });
+        renderAuthors();
+        srcStatus("Restored " + n + " — hit Save sources to make it live.");
+      });
+    });
   }
 
   function saveSources() {
@@ -1371,11 +1415,13 @@
     apiFetch(BASE + "api/feed-sources", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sources: SRC_LIST, favorites: SRC_FAVS }),
+      body: JSON.stringify({ sources: SRC_LIST, favorites: SRC_FAVS, blocked: SRC_BLOCKED }),
     }).then(function (r) { return r.json(); }).then(function (p) {
       if (p && p.ok) {
         SRC_LIST = p.sources || SRC_LIST;
-        if (p.favorites) { SRC_FAVS = p.favorites; renderAuthors(); }
+        if (p.favorites) SRC_FAVS = p.favorites;
+        if (p.blocked) SRC_BLOCKED = p.blocked;
+        renderAuthors();
         renderSourceRows();
         srcStatus("Saved — sources pull on the next news scan (runs twice a day).");
       } else srcStatus((p && p.error) || "Save failed", true);

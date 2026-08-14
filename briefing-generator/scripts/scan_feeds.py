@@ -261,6 +261,16 @@ def _coerce_show(v):
     return v if v in ("docket", "news") else "both"
 
 
+def load_blocked():
+    """Outlets deleted in Manage → Sources — their items never enter the store."""
+    try:
+        raw = json.loads(SOURCES.read_text(encoding="utf-8")) if SOURCES.exists() else {}
+        return {b.strip().lower() for b in (raw.get("blocked") or [])
+                if isinstance(b, str) and b.strip()}
+    except Exception:
+        return set()
+
+
 def load_sources():
     try:
         data = json.loads(SOURCES.read_text(encoding="utf-8"))
@@ -439,6 +449,13 @@ def main():
     except Exception:
         data = {"items": []}
     existing = {i.get("url"): i for i in data.get("items", []) if i.get("url")}
+    blocked = load_blocked()
+    if blocked:
+        before = len(existing)
+        existing = {u: i for u, i in existing.items()
+                    if (i.get("source") or "").strip().lower() not in blocked}
+        if len(existing) != before:
+            print(f"  ✓ dropped {before - len(existing)} stored item(s) from deleted outlet(s)")
 
     added = 0
     for source in load_sources():
@@ -453,6 +470,8 @@ def main():
             print(f"  ! {label}: feed failed ({ex}) — keeping stored items", file=sys.stderr)
             continue
         for f in fresh:
+            if (f.get("source") or "").strip().lower() in blocked:
+                continue                  # outlet deleted in Manage → Sources
             cur = existing.get(f["url"])
             if cur:
                 for k in ("title", "date", "published_at", "excerpt", "kind",
