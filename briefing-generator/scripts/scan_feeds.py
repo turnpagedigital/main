@@ -26,6 +26,11 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+try:
+    import usage_log                      # API-usage telemetry; never fatal
+except Exception:
+    usage_log = None
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SOURCES = REPO_ROOT / "feed-sources.json"
 OUT = REPO_ROOT / "bondoro.json"
@@ -36,6 +41,7 @@ SAFETY_CAP = 6000    # hard ceiling so a misbehaving feed can't grow bondoro.jso
 
 MODEL = "claude-sonnet-4-6"   # search-type sources; matches scan_news.py
 SEARCH_LOOKBACK_DAYS = 3
+USAGE = None                  # usage_log.Counter for this run (set in main)
 
 ATOM = "{http://www.w3.org/2005/Atom}"
 
@@ -237,6 +243,11 @@ def search_source_items(source):
         tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 4}],
         messages=[{"role": "user", "content": prompt}],
     )
+    if USAGE is not None:
+        try:
+            USAGE.add_tokens(response)
+        except Exception:
+            pass
     text = " ".join(b.text for b in response.content if getattr(b, "type", "") == "text")
     m = re.search(r"\[[\s\S]*\]", text)
     if not m:
@@ -443,7 +454,29 @@ def apply_retention(items):
     return kept
 
 
+def _flush_usage(ok=True):
+    """Write the run's usage row exactly once (idempotent, never raises)."""
+    global USAGE
+    try:
+        if USAGE is not None:
+            if not ok:
+                try:
+                    USAGE.fail()
+                except Exception:
+                    pass
+            USAGE.flush()
+            USAGE = None
+    except Exception:
+        pass
+
+
 def main():
+    global USAGE
+    if usage_log is not None:
+        try:
+            USAGE = usage_log.Counter("feed-scan", "anthropic", model=MODEL)
+        except Exception:
+            USAGE = None
     try:
         data = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {"items": []}
     except Exception:
@@ -467,6 +500,11 @@ def main():
                 xml_text, _feed_url = resolve_feed(source["url"])
                 fresh = parse_feed(xml_text, source)
         except Exception as ex:
+            if (source.get("type") or "rss") == "search" and USAGE is not None:
+                try:
+                    USAGE.fail()
+                except Exception:
+                    pass
             print(f"  ! {label}: feed failed ({ex}) — keeping stored items", file=sys.stderr)
             continue
         for f in fresh:
@@ -497,7 +535,12 @@ def main():
     OUT.write_text(json.dumps({"items": items}, indent=2, ensure_ascii=False) + "\n",
                    encoding="utf-8")
     print(f"=== Feed scan done: +{added} new, {len(items)} stored ===")
+    _flush_usage()
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except BaseException:
+        _flush_usage(ok=False)   # no-op if main() already flushed
+        raise

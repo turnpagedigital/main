@@ -166,9 +166,9 @@
   }
 
   // ── Tab router ─────────────────────────────────────────────────────────────
-  var TABS = { cases: renderCases, themes: renderThemes, groups: renderGroups, sources: renderSources, voice: renderVoice, colors: renderColors, briefing: renderBriefingInputs };
+  var TABS = { cases: renderCases, themes: renderThemes, groups: renderGroups, sources: renderSources, voice: renderVoice, colors: renderColors, briefing: renderBriefingInputs, usage: renderUsage };
   function currentTab() {
-    var m = /#(cases|themes|groups|sources|voice|colors|briefing)/.exec(location.hash || "");
+    var m = /#(cases|themes|groups|sources|voice|colors|briefing|usage)/.exec(location.hash || "");
     return m ? m[1] : "cases";
   }
   function paintTabs() {
@@ -988,6 +988,180 @@
         renderVoice();
       }).catch(function (e) { setBanner("err", "Save failed: " + String(e.message || e)); btn.disabled = false; });
     });
+  }
+
+  /* ══ USAGE (CourtListener requests + Claude tokens) ═════════════════════ */
+  // Charts are hand-drawn SVG on purpose: /intel/* ships a strict CSP with no
+  // CDN allowance, so a charting library can't load here.
+  var USAGE = null;
+  var USAGE_BUDGET = 600;
+  var USAGE_DAYS = 30;
+
+  function usageDayKeys(n) {
+    var out = [], d = new Date();
+    for (var i = n - 1; i >= 0; i--) {
+      var x = new Date(d.getTime() - i * 86400000);
+      out.push(x.toISOString().slice(0, 10));
+    }
+    return out;
+  }
+
+  // value accessor per provider so one chart routine serves both panels
+  function usageSeries(rows, days, provider, metric) {
+    var by = {};
+    days.forEach(function (d) { by[d] = 0; });
+    rows.forEach(function (r) {
+      if (r.provider !== provider || !(r.date in by)) return;
+      by[r.date] += metric === "requests" ? (r.requests || 0)
+                                          : (r.tokens_in || 0) + (r.tokens_out || 0);
+    });
+    return days.map(function (d) { return by[d]; });
+  }
+
+  function fmtNum(n) {
+    if (n >= 1e6) return (n / 1e6).toFixed(n >= 1e7 ? 0 : 1) + "M";
+    if (n >= 1e3) return (n / 1e3).toFixed(n >= 1e4 ? 0 : 1) + "k";
+    return String(Math.round(n));
+  }
+
+  // Bar chart. Width is viewBox-relative so it scales to the container.
+  function usageChart(days, vals, opts) {
+    opts = opts || {};
+    var W = 720, H = 150, PADL = 44, PADB = 18, PADT = 8;
+    var max = Math.max.apply(null, vals.concat([1]));
+    if (opts.budget) max = Math.max(max, opts.budget);
+    var n = vals.length || 1;
+    var bw = (W - PADL - 6) / n;
+    var bars = vals.map(function (v, i) {
+      var h = v <= 0 ? 0 : Math.max(1, (v / max) * (H - PADT - PADB));
+      var x = PADL + i * bw, y = H - PADB - h;
+      var over = opts.budget && v > opts.budget;
+      return '<rect x="' + (x + 0.6).toFixed(1) + '" y="' + y.toFixed(1) +
+        '" width="' + Math.max(1, bw - 1.6).toFixed(1) + '" height="' + h.toFixed(1) +
+        '" fill="' + (over ? "#C84141" : "var(--neon-block, #D4FF00)") + '">' +
+        "<title>" + esc(days[i]) + ": " + fmtNum(v) + (opts.unit ? " " + opts.unit : "") + "</title></rect>";
+    }).join("");
+    var budgetLine = "";
+    if (opts.budget) {
+      var by = H - PADB - (opts.budget / max) * (H - PADT - PADB);
+      budgetLine =
+        '<line x1="' + PADL + '" x2="' + W + '" y1="' + by.toFixed(1) + '" y2="' + by.toFixed(1) +
+        '" stroke="#C84141" stroke-width="1" stroke-dasharray="4 3"/>' +
+        '<text x="' + (PADL + 4) + '" y="' + (by - 3).toFixed(1) + '" font-size="9" fill="#C84141">' +
+        "daily budget " + opts.budget + "</text>";
+    }
+    return '<svg viewBox="0 0 ' + W + " " + H + '" preserveAspectRatio="none" ' +
+      'style="width:100%;height:150px;display:block" role="img">' +
+      '<line x1="' + PADL + '" x2="' + W + '" y1="' + (H - PADB) + '" y2="' + (H - PADB) +
+        '" stroke="var(--line-strong)" stroke-width="1"/>' +
+      '<text x="4" y="' + (PADT + 8) + '" font-size="10" fill="var(--ink-40)">' + fmtNum(max) + "</text>" +
+      '<text x="4" y="' + (H - PADB - 2) + '" font-size="10" fill="var(--ink-40)">0</text>' +
+      bars + budgetLine + "</svg>";
+  }
+
+  function usageAxis(days) {
+    // First, middle and last day only — 30 labels would be unreadable.
+    var pick = [0, Math.floor(days.length / 2), days.length - 1];
+    return '<div class="mg-usage-axis">' + pick.map(function (i, k) {
+      return '<span style="' + (k === 1 ? "flex:1;text-align:center" : k === 2 ? "flex:0" : "flex:1") + '">' +
+        esc(days[i].slice(5)) + "</span>";
+    }).join("") + "</div>";
+  }
+
+  function usageTaskTable(rows, days) {
+    var since = days[0];
+    var agg = {};
+    rows.forEach(function (r) {
+      if ((r.date || "") < since) return;
+      var k = r.task + "|" + r.provider;
+      if (!agg[k]) agg[k] = { task: r.task, provider: r.provider, runs: 0, requests: 0, tin: 0, tout: 0, fails: 0 };
+      var a = agg[k];
+      a.runs++; a.requests += r.requests || 0; a.tin += r.tokens_in || 0; a.tout += r.tokens_out || 0;
+      if (r.ok === false) a.fails++;
+    });
+    var list = Object.keys(agg).map(function (k) { return agg[k]; });
+    if (!list.length) return "";
+    // Rank by whatever that provider actually spends.
+    list.sort(function (a, b) {
+      var av = a.provider === "courtlistener" ? a.requests : a.tin + a.tout;
+      var bv = b.provider === "courtlistener" ? b.requests : b.tin + b.tout;
+      return bv - av;
+    });
+    return '<table class="mg-usage-tbl"><thead><tr>' +
+      "<th>Task</th><th>Provider</th><th>Runs</th><th>Requests</th><th>Tokens in</th><th>Tokens out</th><th>Failed</th>" +
+      "</tr></thead><tbody>" +
+      list.map(function (a) {
+        return "<tr><td><strong>" + esc(a.task) + "</strong></td><td>" + esc(a.provider) + "</td>" +
+          "<td>" + a.runs + "</td>" +
+          "<td>" + (a.provider === "courtlistener" ? fmtNum(a.requests) : "\u2014") + "</td>" +
+          "<td>" + (a.tin ? fmtNum(a.tin) : "\u2014") + "</td>" +
+          "<td>" + (a.tout ? fmtNum(a.tout) : "\u2014") + "</td>" +
+          "<td>" + (a.fails ? '<span style="color:#C84141">' + a.fails + "</span>" : "0") + "</td></tr>";
+      }).join("") + "</tbody></table>";
+  }
+
+  function renderUsage() {
+    root.innerHTML = bannerHtml() +
+      '<div class="mg-head"><h2>API usage</h2></div>' +
+      '<p class="mg-hint">What the scans spend against <strong>CourtListener</strong> (request-capped) and ' +
+      "<strong>Claude</strong> (token-billed). Recording started when this tab shipped — earlier runs can't be " +
+      "backfilled, because nothing logged per-call counts before then. Rows are written by the scan scripts, " +
+      "so the history grows as the scheduled jobs run.</p>" +
+      '<div id="mg-usage-body"><div class="mg-empty">Loading usage…</div></div>';
+    var body = $("mg-usage-body");
+    apiFetch(BASE + "api/usage")
+      .then(function (r) { return r.json(); })
+      .catch(function () { return null; })
+      .then(function (p) {
+        if (!p || !p.ok) { body.innerHTML = '<div class="mg-empty">Usage unavailable — the API didn\'t respond.</div>'; return; }
+        USAGE = p.runs || [];
+        if (p.budget && p.budget.courtlistener_daily) USAGE_BUDGET = p.budget.courtlistener_daily;
+        paintUsage();
+      });
+  }
+
+  function paintUsage() {
+    var body = $("mg-usage-body");
+    if (!body) return;
+    var rows = USAGE || [];
+    if (!rows.length) {
+      body.innerHTML = '<div class="mg-empty">No usage recorded yet — the next scheduled scan will write the first rows.</div>';
+      return;
+    }
+    var days = usageDayKeys(USAGE_DAYS);
+    var cl = usageSeries(rows, days, "courtlistener", "requests");
+    var an = usageSeries(rows, days, "anthropic", "tokens");
+    var clToday = cl[cl.length - 1], clPeak = Math.max.apply(null, cl.concat([0]));
+    var anTotal = an.reduce(function (a, b) { return a + b; }, 0);
+    var active = cl.filter(function (v) { return v > 0; }).length ||
+                 an.filter(function (v) { return v > 0; }).length;
+    var clAvg = active ? Math.round(cl.reduce(function (a, b) { return a + b; }, 0) / active) : 0;
+
+    body.innerHTML =
+      '<div class="mg-usage-cards">' +
+        usageCard("CourtListener today", fmtNum(clToday), clToday > USAGE_BUDGET ? "over the daily budget" : "of " + USAGE_BUDGET + " budget") +
+        usageCard("CL daily average", fmtNum(clAvg), "across days with activity") +
+        usageCard("CL peak day", fmtNum(clPeak), clPeak > USAGE_BUDGET ? "exceeded the budget" : "highest in " + USAGE_DAYS + "d") +
+        usageCard("Claude tokens", fmtNum(anTotal), "total in " + USAGE_DAYS + "d") +
+      "</div>" +
+      '<div class="mg-box" style="padding:14px;margin-top:14px;">' +
+        '<div class="mg-usage-h">CourtListener requests per day</div>' +
+        usageChart(days, cl, { budget: USAGE_BUDGET, unit: "requests" }) + usageAxis(days) +
+      "</div>" +
+      '<div class="mg-box" style="padding:14px;margin-top:14px;">' +
+        '<div class="mg-usage-h">Claude tokens per day (in + out)</div>' +
+        usageChart(days, an, { unit: "tokens" }) + usageAxis(days) +
+      "</div>" +
+      '<div class="mg-box" style="padding:14px;margin-top:14px;">' +
+        '<div class="mg-usage-h">By task \u2014 last ' + USAGE_DAYS + " days, biggest spender first</div>" +
+        (usageTaskTable(rows, days) || '<div class="mg-empty">No runs in this window.</div>') +
+      "</div>";
+  }
+
+  function usageCard(label, value, sub) {
+    return '<div class="mg-usage-card"><div class="mg-usage-lbl">' + esc(label) + "</div>" +
+      '<div class="mg-usage-val">' + esc(value) + "</div>" +
+      '<div class="mg-usage-sub">' + esc(sub) + "</div></div>";
   }
 
   /* ══ COLORS (default palette) ══════════════════════════════════════════ */

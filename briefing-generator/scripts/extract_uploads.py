@@ -16,10 +16,17 @@ Safe to run repeatedly; no-ops when everything is extracted and titled.
 import json, os, re, sys
 from pathlib import Path
 
+try:
+    import usage_log                       # API-usage telemetry; never fatal
+except Exception:
+    usage_log = None
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 INDEX = REPO_ROOT / "uploads.json"
 CASES_DIR = REPO_ROOT / "cases" / "data"
 MAX_TEXT = 20000
+MODEL = "claude-haiku-4-5-20251001"
+USAGE = None                               # usage_log.Counter for this run
 
 try:
     from pypdf import PdfReader
@@ -59,7 +66,7 @@ def title_via_claude(text):
     try:
         client = Anthropic(api_key=api_key)
         resp = client.messages.create(
-            model="claude-haiku-4-5-20251001",
+            model=MODEL,
             max_tokens=200,
             messages=[{"role": "user", "content":
                 "This is the first-page text of a court filing. Reply with ONLY the "
@@ -69,9 +76,13 @@ def title_via_claude(text):
                 "Heard by District Court\". Use title case. No quotes, no commentary, "
                 "no case caption, no docket number.\n\n" + text[:4000]}],
         )
+        if USAGE is not None:
+            USAGE.add_tokens(resp)
         title = " ".join(resp.content[0].text.split()).strip().strip('"')
         return title[:300] if 10 <= len(title) <= 300 else None
     except Exception as ex:
+        if USAGE is not None:
+            USAGE.fail()
         print(f"  ! title model call failed: {ex}", file=sys.stderr)
         return None
 
@@ -130,13 +141,23 @@ def apply_title_to_entry(key, title):
 
 
 def main():
+    global USAGE
+    if usage_log is not None:
+        try:
+            USAGE = usage_log.Counter("upload-extract", "anthropic", model=MODEL)
+        except Exception:
+            USAGE = None
     if not INDEX.exists():
         print("no uploads.json — nothing to do")
+        if USAGE is not None:
+            USAGE.flush()
         return
     try:
         data = json.loads(INDEX.read_text(encoding="utf-8"))
     except Exception:
         print("uploads.json unreadable — skipping")
+        if USAGE is not None:
+            USAGE.flush()
         return
     changed = 0
     for key, docs in (data.get("docs") or {}).items():
@@ -165,7 +186,15 @@ def main():
     if changed:
         INDEX.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"=== Upload extraction done: {changed} update(s) ===")
+    if USAGE is not None:
+        USAGE.flush()
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception:
+        if USAGE is not None:   # main's own flush never ran — record the run
+            USAGE.fail()
+            USAGE.flush()
+        raise

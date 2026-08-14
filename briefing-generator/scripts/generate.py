@@ -25,6 +25,18 @@ except ImportError:
     print("ERROR: anthropic package not installed. Run: pip install -r scripts/requirements.txt", file=sys.stderr)
     sys.exit(1)
 
+try:
+    import usage_log                       # shared usage recorder (same dir)
+except Exception:                          # telemetry must never break a scan
+    usage_log = None
+
+# One usage row per run. Every call site below tolerates USAGE being None.
+try:
+    USAGE = usage_log.Counter("daily-briefing", "anthropic",
+                              model="claude-sonnet-4-6") if usage_log else None
+except Exception:
+    USAGE = None
+
 from scrape_articles import scrape_and_enrich, build_enriched_news_block
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -751,11 +763,16 @@ def main():
     def create_with_retry(**kwargs):
         for attempt in range(5):
             try:
-                return client.messages.create(**kwargs)
+                resp = client.messages.create(**kwargs)
+                if USAGE:
+                    USAGE.add_tokens(resp)
+                return resp
             except RateLimitError:
                 wait = 70
                 print(f"  rate-limited (attempt {attempt + 1}/5) — sleeping {wait}s", flush=True)
                 time.sleep(wait)
+        if USAGE:
+            USAGE.fail()
         raise RuntimeError("rate limit retries exhausted")
 
     first_topic = True
@@ -894,6 +911,14 @@ def main():
             print(f"  ! {case_script} failed: {r.stderr}", file=sys.stderr)
 
     print(f"\n=== Done. Briefing for {DATE_PRETTY}. ===", flush=True)
+    if USAGE:
+        USAGE.flush()
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except BaseException:       # incl. SystemExit — record partial usage, then re-raise
+        if USAGE:
+            USAGE.fail()
+            USAGE.flush()
+        raise

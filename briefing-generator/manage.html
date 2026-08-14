@@ -52,6 +52,18 @@
   [data-theme="dark"] .mg-table tr:hover td { background: rgba(229,231,235,0.04); }
   .mg-slug { font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: var(--ink-40); }
   .mg-right { text-align: right; white-space: nowrap; }
+  /* ── Usage dashboard ─────────────────────────────────────────────────── */
+  .mg-usage-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .mg-usage-card { background: var(--surface); border: 1px solid var(--line-strong); padding: 12px 14px; }
+  .mg-usage-lbl { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-40); }
+  .mg-usage-val { font-size: 25px; font-weight: 800; line-height: 1.15; margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .mg-usage-sub { font-size: 11px; color: var(--ink-60); margin-top: 2px; }
+  .mg-usage-h { font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-40); margin-bottom: 10px; }
+  .mg-usage-axis { display: flex; font-size: 10px; color: var(--ink-40); margin-top: 2px; }
+  .mg-usage-tbl { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .mg-usage-tbl th { text-align: left; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-40); border-bottom: 1px solid var(--line-strong); padding: 6px 8px; }
+  .mg-usage-tbl td { padding: 7px 8px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+  .mg-usage-tbl tr:last-child td { border-bottom: none; }
   .mg-empty { font-size: 15px; color: var(--ink-60); font-style: italic; padding: 28px 14px; text-align: center; }
   /* Sources → Authors (favorite outlets) */
   .mg-src-augrp { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-40); margin: 14px 0 8px; }
@@ -214,6 +226,7 @@
     <a class="mg-tab" href="#cases" data-tab="cases">Cases</a>
     <a class="mg-tab" href="#themes" data-tab="themes">Themes</a>
     <a class="mg-tab" href="#groups" data-tab="groups">Groups</a>
+    <a class="mg-tab" href="#usage" data-tab="usage">Usage</a>
     <a class="mg-tab" href="#sources" data-tab="sources">Sources</a>
     <a class="mg-tab" href="#voice" data-tab="voice">Voice</a>
     <a class="mg-tab" href="#colors" data-tab="colors">Colors</a>
