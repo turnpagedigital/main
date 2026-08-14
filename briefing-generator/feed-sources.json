@@ -36,7 +36,7 @@
       "url": "https://www.dailydac.com/chapter-11-bankruptcy-alert-system/feed/",
       "kind": "ALERT",
       "type": "rss",
-      "show": "both",
+      "show": "news",
       "mode": "all",
       "enabled": true
     },
@@ -46,7 +46,7 @@
       "url": "https://www.dailydac.com/feed/",
       "kind": "ARTICLE",
       "type": "rss",
-      "show": "both",
+      "show": "news",
       "mode": "all",
       "enabled": true
     }
