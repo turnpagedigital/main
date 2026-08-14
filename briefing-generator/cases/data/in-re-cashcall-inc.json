@@ -16,8 +16,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73643729/cashcall-inc/",
     "date_last_filing": "2026-08-13",
-    "meta_fetched_at": "2026-08-14T05:09:25.098816+00:00",
-    "fetched_at": "2026-08-14T06:47:37.716484+00:00",
+    "meta_fetched_at": "2026-08-14T08:53:48.251796+00:00",
+    "fetched_at": "2026-08-14T08:53:48.251796+00:00",
     "as_of": "Aug 14, 2026",
     "backfilled": true,
     "new_in_72h": 10,
@@ -246,10 +246,10 @@
       },
       {
         "entry_number": 41,
-        "date_filed": "2026-08-05",
-        "time_filed": "09:36:24",
-        "date_display": "Aug 5, 2026",
-        "description": "Statement",
+        "date_filed": "2026-08-04",
+        "time_filed": "13:50:29",
+        "date_display": "Aug 4, 2026",
+        "description": "Missing Schedule(s), Statement(s) and/or Plan Deadlines (Notice) (BNC)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -290,16 +290,6 @@
         "time_filed": "09:17:20",
         "date_display": "Aug 3, 2026",
         "description": "Notice of Hearing filed by Patrick L DuBois on behalf of CashCall, Inc.. HEARING Scheduled for 8/26/2026 at 11:00 AM at Courtroom 2, Room 118, Weinberger Courthouse. (related documents 5 Generic Motion, 8 Generic Motion) (DuBois, Patrick) (Entered: 08/03/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 34,
-        "date_filed": "2026-07-30",
-        "time_filed": "21:14:05",
-        "date_display": "Jul 30, 2026",
-        "description": "BNC Court Certificate of Notice",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -365,11 +355,21 @@
         "doc_url": ""
       },
       {
+        "entry_number": 34,
+        "date_filed": "2026-07-28",
+        "time_filed": "",
+        "date_display": "Jul 28, 2026",
+        "description": "BNC Court Certificate of Notice. (related documents 27 Order re: Motion to Extend Time) Notice Date 07/30/2026. (Admin.) (Entered: 07/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 30,
-        "date_filed": "2026-07-29",
-        "time_filed": "08:20:07",
-        "date_display": "Jul 29, 2026",
-        "description": "Schedule/Continue Hearing (Order)",
+        "date_filed": "2026-07-28",
+        "time_filed": "",
+        "date_display": "Jul 28, 2026",
+        "description": "Order on Debtor's First Day Motion for Interim and Final Orders (1) Authorizing Debtor to (A) Obtain Post-petition Financing and (B) Use Cash Collateral, (11) Granting Adequate Protection, and (111) Scheduling Final Hearing to S with Service by BNC HEARING Scheduled for 8/26/2026 at 11:00 AM at Courtroom 2, Room 118, Weinberger Courthouse . .. (related documents 5 Generic Motion) signed on 7/28/2026. (Lewis, L.) (Entered: 07/29/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -385,11 +385,21 @@
         "doc_url": ""
       },
       {
+        "entry_number": 28,
+        "date_filed": "2026-07-28",
+        "time_filed": "14:11:13",
+        "date_display": "Jul 28, 2026",
+        "description": "Notice of Filing of Terms of Engagement of Independent Director filed by Patrick L DuBois on behalf of CashCall, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C) (DuBois, Patrick) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 27,
         "date_filed": "2026-07-28",
         "time_filed": "09:13:51",
         "date_display": "Jul 28, 2026",
-        "description": "Extend Time (Order)",
+        "description": "Order on Debtor's First Day Motion For an Order Extending Time to file Schedules of Assets and Liabilities and of Statements of Financial Affairs; with Service by BNC (Related Doc # 9) signed on 7/28/2026. Incomplete Filings due by 8/19/2026, (Lewis, L.) (Entered: 07/28/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -399,7 +409,7 @@
         "date_filed": "2026-07-27",
         "time_filed": "11:19:01",
         "date_display": "Jul 27, 2026",
-        "description": "Appoint (Application/Motion)",
+        "description": "Debtor's Application For Entry of an Order Authorizing and Approving Motion to Appoint Kurtzman Carson Consultants LLC DBA Verita Global as Claims and Noticing Agent. filed by Patrick L DuBois on behalf of CashCall, Inc. (Attachments: # 1 Exhibit A - Proposed Order # 2 Exhibit B - Agreement # 3 Declaration of Evan Gershbein) (DuBois, Patrick) (Entered: 07/27/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -409,7 +419,7 @@
         "date_filed": "2026-07-24",
         "time_filed": "14:46:11",
         "date_display": "Jul 24, 2026",
-        "description": "Court Minutes Continued - CHAP",
+        "description": "Court Minutes Hearing Date 07/24/2026, MATTER: 1) EMERGENCY FIRST DAY MOTION FOR AN ORDER (I) AUTHORIZING (A) THE REJECTION OF AN UNEXPIRED LEASE; (B) ABANDONMENT OF PERSONAL PROPERTY, IF ANY, AND (II) GRANTING RELATED RELIEF FILED BY DEBTOR, 2) FIRST DAY MOTION FOR INTERIM AND FINAL ORDERS (I) AUTHORIZING DEBTOR TO (A) OBTAIN POSTPETITION FINANCING AND (B) USE CASH COLLATERAL, (II) GRANTING ADEQUATE PROTECTION, AND (III) SCHEDULING FINAL HEARING FILED BY DEBTOR 3) FIRST DAY MOTION FOR AN ORDER EXTENDING TIME TO FILE SCHEDULES OF ASSETS AND LIABILITIES AND STATEMENTS OF FINANCIAL AFFAIRS FILED BY DEBTOR 4) FIRST DAY MOTION FOR INTERIM AND FINAL ORDERS (I) AUTHORIZING THE DEBTOR TO (A) CONTINUE USING ITS CASH MANAGEMENT SYSTEM AND (B) MAINTAIN EXISTING BANK ACCOUNTS AND BUSINESS FORMS; (II) WAIVING CERTAIN DEPOSIT GUIDELINES; AND (III) GRANTING RELATED RELIEF FILED BY DEBTOR DISPOSITION:…",
         "is_new": false,
         "landmark": "",
         "doc_url": ""

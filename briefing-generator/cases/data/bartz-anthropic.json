@@ -2,7 +2,7 @@
   "case": {
     "slug": "bartz-anthropic",
     "display_name": "Bartz v. Anthropic",
-    "case_name": "Bartz, et al. v. Anthropic PBC",
+    "case_name": "Bartz v. Anthropic PBC",
     "court": "U.S. District Court, N.D. Cal. (San Francisco)",
     "case_number": "3:24-cv-05417",
     "judge": "Hon. Araceli Martínez-Olguín",
@@ -16,10 +16,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-07-21",
-    "meta_fetched_at": "2026-08-13T16:11:50.767551+00:00",
-    "fetched_at": "2026-08-14T00:01:29.007908+00:00",
+    "meta_fetched_at": "2026-08-14T08:52:55.872948+00:00",
+    "fetched_at": "2026-08-14T08:52:55.872948+00:00",
     "as_of": "Aug 14, 2026",
-    "backfilled": true,
+    "backfilled": false,
     "new_in_72h": 0,
     "recent": [
       {
@@ -7499,7 +7499,8 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": {
     "name": "JND Legal Administration",
