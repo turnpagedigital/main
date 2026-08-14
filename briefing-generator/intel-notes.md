@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-13 21:03 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-14 02:23 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -115,6 +115,12 @@ Ciao
 > The Preference Wave Is Coming- What Vendors Should Do Now — If you sold goods or services to a customer that filed Chapter 11 in the last two years, the window to prepare is right now. It closes the d
 
 ## Omnis Pleasants
+
+### Dkt. 79 — 2026-08-13 ★
+
+> Debtor's Application For Entry Of An Order Authorizing The Employment Of Stretto, Inc. As Administrative Advisor Effective As Of The Petition Date
+
+hi
 
 ### (no docket number) — 2026-08-05
 
