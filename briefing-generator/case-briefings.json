@@ -1,41 +1,82 @@
 {
-  "generated_at": "2026-08-14T05:15:15+00:00",
+  "generated_at": "2026-08-14T14:07:46+00:00",
   "items": [
     {
-      "slug": "omnis-pleasants",
-      "case_name": "Omnis Pleasants",
-      "short_name": "Omnis Pleasants",
+      "slug": "in-re-cashcall-inc",
+      "case_name": "CashCall",
+      "short_name": "CashCall",
       "emoji": "⚖️",
       "themes": [
         "bankruptcy-creditor-rights"
       ],
-      "court": "United States Bankruptcy Court, D. Delaware",
+      "court": "To be confirmed (financials sector Ch. 11, filed ~July 21, 2026)",
       "status": "active",
-      "signature": "819712d036c4",
+      "signature": "abdfb4c12770",
       "activity": {
-        "filings": 7,
+        "filings": 10,
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-14T05:15:15+00:00",
+      "checked": "2026-08-14T14:07:46+00:00",
       "date": "2026-08-14",
       "updated": "2026-08-14",
       "moved": true,
       "no_change_since": null,
-      "lede": "On August 13, McDermott Will & Schulte LLP filed a notice of withdrawal from the case (Dkt. 73), ending its representation of RG Energy LLC and TRAG LLC — the two adverse parties at the center of the governance dispute that precipitated this filing. DLA Piper LLP (US) had already entered an appearance for TRAG and RG Energy on August 7 (Dkt. 68), and the interim tax order (Dkt. 49) named DLA Piper as counsel of…",
-      "body_md": "On August 13, McDermott Will & Schulte LLP filed a notice of withdrawal from the case (Dkt. 73), ending its representation of RG Energy LLC and TRAG LLC — the two adverse parties at the center of the governance dispute that precipitated this filing. DLA Piper LLP (US) had already entered an appearance for TRAG and RG Energy on August 7 (Dkt. 68), and the interim tax order (Dkt. 49) named DLA Piper as counsel of record for those parties, meaning the withdrawal formalizes a consolidation of adverse-party representation rather than any disruption in coverage. The practical effect is that Koff, Schacter, and Hurst — admitted pro hac vice August 7 — now lead the full representation of TRAG and RG Energy through DLA Piper, the same firm already carrying the load on the tax-order objection deadline and the 341(a) proceedings. For creditors, the change is neutral on its face, though the speed of consolidation suggests TRAG and RG Energy are organizing their litigation posture deliberately as the September 3 final-hearing dates approach.\n\nAlso filed August 13, the debtor moved for entry of interim compensation procedures (Dkt. 78) and applied to retain Stretto, Inc. as administrative advisor effective as of the petition date (Dkt. 79). Both are standard Chapter 11 infrastructure: interim comp procedures govern how professionals draw from the estate on a monthly basis without a full fee application at each interval, and Stretto's role as administrative advisor typically encompasses claims agent and noticing services. Neither filing is contested on the record. Dkt. 77, also filed August 13 and captioned only \"Authorize - Motion,\" cannot be further characterized from the docket line alone; its content is unverified from available record and warrants monitoring for a full-text pull. The debtor's objection deadline for final approval of the prepetition tax order (Dkt. 49) runs to August 19, 2026 — six days out — and no objection has been docketed as of this briefing.\n\nSeparately, the U.S. Trustee scheduled the § 341(a) meeting of creditors for September 2, 2026, at 1:00 p.m. ET via Zoom (Dkts. 74–76), which fixes the § 523 dischargeability objection deadline at November 2, 2026. The 341(a) itself is a mandatory procedural step, but for a case with over 600 creditors and a $50.9 million unsecured obligation to the West Virginia Economic Development Authority sitting at the top of the claims pool, the meeting will be the first formal opportunity for creditors to examine the debtor's principals under oath on financial affairs and asset condition. The next concrete milestone is the August 19 objection deadline for the prepetition tax final order, followed by the September 2 341(a) meeting and the September 3 final hearings on wages, utility payments, and critical vendor orders.\n\n## Sources\n\n- [Pleasants Power Station's Omnis firm reports 600+ creditors](https://www.wvgazettemail.com/news/legal_affairs/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_1f5045c2-ed17-4993-b2e5-8c7ede971f62.html) — Charleston Gazette-Mail, August 4, 2026\n- [McDermott Will & Schulte — Wikipedia](https://en.wikipedia.org/wiki/McDermott_Will_%26_Schulte) — Wikipedia\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "lede": "On August 12, at least two parties filed oppositions (Dkts. 51 and 52) and one filed an objection (Dkt. 56) against what the docket labels confirm are distinct contested matters, accompanied by a supporting declaration (Dkt. 53) and a stipulation (Dkt. 57) — the heaviest single day of adversarial activity in this case since the first-day hearing.",
+      "body_md": "On August 12, at least two parties filed oppositions (Dkts. 51 and 52) and one filed an objection (Dkt. 56) against what the docket labels confirm are distinct contested matters, accompanied by a supporting declaration (Dkt. 53) and a stipulation (Dkt. 57) — the heaviest single day of adversarial activity in this case since the first-day hearing. The docket does not yet identify the targets of those filings by description in the materials available to this desk, but the case context narrows the candidates sharply. The CRO compensation notice (Dkt. 43, filed August 5) carried an opposition deadline of August 19 and sought court authorization for insider-adjacent compensation — the CRO, Leslie Gladstone, being named in Dkt. 43's attachments — making it a live target for the U.S. Trustee or judgment creditors. The Manatt employment application (Dkt. 42, filed August 5) is the other obvious target; contested retention applications, particularly where the estate is essentially a litigation-liability vehicle funded by a CEO-owned DIP lender, attract U.S. Trustee scrutiny on disinterestedness and connections. The employment application at Dkt. 49 (filed August 10) is too recent to have drawn a deadline-compliant response by August 12 under standard notice periods. Until the full text of Dkts. 51, 52, 53, 56, and 57 is reviewed on PACER, their precise targets remain unverified; the desk flags this and will confirm at next update. What is clear from the docket structure — two oppositions plus a supporting declaration filed the same day as a separate objection — is that at least two distinct contested matters were briefed simultaneously on August 12, a pattern inconsistent with ordinary course and consistent with coordinated creditor or U.S. Trustee opposition.\n\nThe Errors/Deficiencies notice at Dkt. 59 (BNC, August 13) and the Generic Order at Dkt. 60 (August 13) are almost certainly related: the deficiency notice identifies a filing that failed to meet local-rule requirements, and the generic order likely resolves or memorializes the correction. This is procedural and carries no independent weight on recovery, though a deficiency on a retention or compensation filing could slow the authorization clock. Dkts. 54 and 55 are certificates of service, and Dkt. 58 is a proof of service (CSD 3010); all three are filing infrastructure and are omitted. The stipulation at Dkt. 57 is substantive in classification — stipulations in contested Chapter 11 matters affect legal rights — but its substance is unverified; if it reflects an agreed resolution of one of the contested matters briefed the same day, it is material to recovery posture, and the desk will confirm.\n\nThe contested posture on these professional-retention and compensation matters matters for creditors beyond the immediate cost. \nThe two principal judgments — approximately $245 million in the De la Torre class action and approximately $157 million in the CFPB tribal-lending action — together with roughly $45 million in additional pending litigation and about $5 million in trade debt and professional fees, constitute substantially all of the debtor's prepetition obligations\n, against reported assets of $1 million to $10 million. In that context, professional fees and CRO compensation drawn from the estate — funded by a ~$4 million DIP facility \nowned by the debtor's CEO\n — are not administrative minutiae; they directly compress whatever is available to unsecured creditors. Vigorous opposition to these applications signals that at least one party is treating the fee burn as a recovery issue, not a routine creditor courtesy. The next concrete milestone is the August 19 opposition deadline on the CRO compensation notice (Dkt. 43), which will either close the briefing on that motion or extend it if further responses arrive — and, depending on the scope of Dkt. 56's objection, the court may consolidate argument on the professional matters at a single hearing.\n\n## Sources\n\n- [CashCall Gets Interim DIP Cash After Lender Eases Terms](https://www.law360.com/bankruptcy-authority/articles/2505568/cashcall-gets-interim-dip-cash-after-lender-eases-terms) — Law360, July 25, 2026\n- [Filing Alert: CashCall Chapter 11](https://bondoro.com/cashcall-filing-alert/) — Bondoro, July 2026\n- [Case Summary: CashCall Chapter 11](https://bondoro.com/cashcall/) — Bondoro, July 2026\n- [Catching Up With New Bankruptcy Case Action](https://www.law360.com/bankruptcy-authority/articles/2506655/catching-up-with-new-bankruptcy-case-action) — Law360, July 28, 2026\n- [CashCall, Inc. — Chapter 11 Voluntary Petition](https://www.pacermonitor.com/public/filings/DF6FACUA/CashCall_Inc__casbke-26-03102__0001.0.pdf) — PacerMonitor / PACER (Dkt. 1, filed July 20, 2026)\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
         {
-          "title": "Pleasants Power Station's Omnis firm reports 600+ creditors",
-          "url": "https://www.wvgazettemail.com/news/legal_affairs/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_1f5045c2-ed17-4993-b2e5-8c7ede971f62.html",
-          "note": "Charleston Gazette-Mail, August 4, 2026"
+          "title": "CashCall Gets Interim DIP Cash After Lender Eases Terms",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2505568/cashcall-gets-interim-dip-cash-after-lender-eases-terms",
+          "note": "Law360, July 25, 2026"
         },
         {
-          "title": "McDermott Will & Schulte — Wikipedia",
-          "url": "https://en.wikipedia.org/wiki/McDermott_Will_%26_Schulte",
-          "note": "Wikipedia"
+          "title": "Filing Alert: CashCall Chapter 11",
+          "url": "https://bondoro.com/cashcall-filing-alert/",
+          "note": "Bondoro, July 2026"
+        },
+        {
+          "title": "Case Summary: CashCall Chapter 11",
+          "url": "https://bondoro.com/cashcall/",
+          "note": "Bondoro, July 2026"
+        },
+        {
+          "title": "Catching Up With New Bankruptcy Case Action",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2506655/catching-up-with-new-bankruptcy-case-action",
+          "note": "Law360, July 28, 2026"
+        },
+        {
+          "title": "CashCall, Inc. — Chapter 11 Voluntary Petition",
+          "url": "https://www.pacermonitor.com/public/filings/DF6FACUA/CashCall_Inc__casbke-26-03102__0001.0.pdf",
+          "note": "PacerMonitor / PACER (Dkt. 1, filed July 20, 2026)"
         }
       ]
+    },
+    {
+      "slug": "kahan",
+      "case_name": "Kahan",
+      "short_name": "Kahan",
+      "emoji": "⚖️",
+      "themes": [
+        "bankruptcy-creditor-rights",
+        "crypto-insolvency"
+      ],
+      "court": "Bankr. D. Mass",
+      "status": "active",
+      "signature": "cecc049288aa",
+      "activity": {
+        "filings": 4,
+        "articles": 0,
+        "latest": "2026-08-14"
+      },
+      "checked": "2026-08-14T14:07:46+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-08-14",
+      "lede": "",
+      "body_md": "",
+      "sources": []
     },
     {
       "slug": "other-copyright-suits",
@@ -62,7 +103,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-14T05:15:15+00:00",
+      "checked": "2026-08-14T14:07:46+00:00",
       "date": "2026-08-14",
       "updated": "2026-08-14",
       "moved": false,
@@ -107,13 +148,13 @@
       ],
       "court": "N.D. Tex.",
       "status": "active",
-      "signature": "d815986ddd68",
+      "signature": "1e8b3fc98065",
       "activity": {
-        "filings": 8,
+        "filings": 9,
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-14T05:15:15+00:00",
+      "checked": "2026-08-14T14:07:46+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -123,29 +164,40 @@
       "sources": []
     },
     {
-      "slug": "in-re-cashcall-inc",
-      "case_name": "CashCall",
-      "short_name": "CashCall",
+      "slug": "omnis-pleasants",
+      "case_name": "Omnis Pleasants",
+      "short_name": "Omnis Pleasants",
       "emoji": "⚖️",
       "themes": [
         "bankruptcy-creditor-rights"
       ],
-      "court": "To be confirmed (financials sector Ch. 11, filed ~July 21, 2026)",
+      "court": "United States Bankruptcy Court, D. Delaware",
       "status": "active",
-      "signature": "f9112a468d57",
+      "signature": "215e9032b33d",
       "activity": {
-        "filings": 9,
+        "filings": 14,
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-14T05:15:15+00:00",
-      "date": "",
-      "updated": "",
+      "checked": "2026-08-14T14:07:46+00:00",
+      "date": "2026-08-14",
+      "updated": "2026-08-14",
       "moved": false,
       "no_change_since": "2026-08-13",
-      "lede": "",
-      "body_md": "",
-      "sources": []
+      "lede": "On August 13, McDermott Will & Schulte LLP filed a notice of withdrawal from the case (Dkt. 73), ending its representation of RG Energy LLC and TRAG LLC — the two adverse parties at the center of the governance dispute that precipitated this filing. DLA Piper LLP (US) had already entered an appearance for TRAG and RG Energy on August 7 (Dkt. 68), and the interim tax order (Dkt. 49) named DLA Piper as counsel of…",
+      "body_md": "On August 13, McDermott Will & Schulte LLP filed a notice of withdrawal from the case (Dkt. 73), ending its representation of RG Energy LLC and TRAG LLC — the two adverse parties at the center of the governance dispute that precipitated this filing. DLA Piper LLP (US) had already entered an appearance for TRAG and RG Energy on August 7 (Dkt. 68), and the interim tax order (Dkt. 49) named DLA Piper as counsel of record for those parties, meaning the withdrawal formalizes a consolidation of adverse-party representation rather than any disruption in coverage. The practical effect is that Koff, Schacter, and Hurst — admitted pro hac vice August 7 — now lead the full representation of TRAG and RG Energy through DLA Piper, the same firm already carrying the load on the tax-order objection deadline and the 341(a) proceedings. For creditors, the change is neutral on its face, though the speed of consolidation suggests TRAG and RG Energy are organizing their litigation posture deliberately as the September 3 final-hearing dates approach.\n\nAlso filed August 13, the debtor moved for entry of interim compensation procedures (Dkt. 78) and applied to retain Stretto, Inc. as administrative advisor effective as of the petition date (Dkt. 79). Both are standard Chapter 11 infrastructure: interim comp procedures govern how professionals draw from the estate on a monthly basis without a full fee application at each interval, and Stretto's role as administrative advisor typically encompasses claims agent and noticing services. Neither filing is contested on the record. Dkt. 77, also filed August 13 and captioned only \"Authorize - Motion,\" cannot be further characterized from the docket line alone; its content is unverified from available record and warrants monitoring for a full-text pull. The debtor's objection deadline for final approval of the prepetition tax order (Dkt. 49) runs to August 19, 2026 — six days out — and no objection has been docketed as of this briefing.\n\nSeparately, the U.S. Trustee scheduled the § 341(a) meeting of creditors for September 2, 2026, at 1:00 p.m. ET via Zoom (Dkts. 74–76), which fixes the § 523 dischargeability objection deadline at November 2, 2026. The 341(a) itself is a mandatory procedural step, but for a case with over 600 creditors and a $50.9 million unsecured obligation to the West Virginia Economic Development Authority sitting at the top of the claims pool, the meeting will be the first formal opportunity for creditors to examine the debtor's principals under oath on financial affairs and asset condition. The next concrete milestone is the August 19 objection deadline for the prepetition tax final order, followed by the September 2 341(a) meeting and the September 3 final hearings on wages, utility payments, and critical vendor orders.\n\n## Sources\n\n- [Pleasants Power Station's Omnis firm reports 600+ creditors](https://www.wvgazettemail.com/news/legal_affairs/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_1f5045c2-ed17-4993-b2e5-8c7ede971f62.html) — Charleston Gazette-Mail, August 4, 2026\n- [McDermott Will & Schulte — Wikipedia](https://en.wikipedia.org/wiki/McDermott_Will_%26_Schulte) — Wikipedia\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Pleasants Power Station's Omnis firm reports 600+ creditors",
+          "url": "https://www.wvgazettemail.com/news/legal_affairs/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_1f5045c2-ed17-4993-b2e5-8c7ede971f62.html",
+          "note": "Charleston Gazette-Mail, August 4, 2026"
+        },
+        {
+          "title": "McDermott Will & Schulte — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/McDermott_Will_%26_Schulte",
+          "note": "Wikipedia"
+        }
+      ]
     },
     {
       "slug": "poolin",
@@ -158,13 +210,13 @@
       ],
       "court": "Bankr. D. N.J.",
       "status": "active",
-      "signature": "19e97427a363",
+      "signature": "be47e5bc6e00",
       "activity": {
-        "filings": 8,
+        "filings": 10,
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-14T05:15:15+00:00",
+      "checked": "2026-08-14T14:07:46+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -189,7 +241,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-14T05:15:15+00:00",
+      "checked": "2026-08-14T14:07:46+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -215,7 +267,7 @@
         "articles": 3,
         "latest": "2026-08-12"
       },
-      "checked": "2026-08-14T05:15:15+00:00",
+      "checked": "2026-08-14T14:07:46+00:00",
       "date": "2026-08-13",
       "updated": "2026-08-13",
       "moved": false,
@@ -261,32 +313,6 @@
       ]
     },
     {
-      "slug": "kahan",
-      "case_name": "Kahan",
-      "short_name": "Kahan",
-      "emoji": "⚖️",
-      "themes": [
-        "bankruptcy-creditor-rights",
-        "crypto-insolvency"
-      ],
-      "court": "Bankr. D. Mass",
-      "status": "active",
-      "signature": "30af60cedd29",
-      "activity": {
-        "filings": 2,
-        "articles": 0,
-        "latest": "2026-08-12"
-      },
-      "checked": "2026-08-14T05:15:15+00:00",
-      "date": "",
-      "updated": "",
-      "moved": false,
-      "no_change_since": "2026-08-12",
-      "lede": "",
-      "body_md": "",
-      "sources": []
-    },
-    {
       "slug": "concord-anthropic",
       "case_name": "Concord v. Anthropic",
       "short_name": "Concord v. Anthropic",
@@ -302,7 +328,7 @@
         "articles": 0,
         "latest": "2026-08-11"
       },
-      "checked": "2026-08-14T05:15:15+00:00",
+      "checked": "2026-08-14T14:07:46+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -327,7 +353,7 @@
         "articles": 0,
         "latest": "2026-08-11"
       },
-      "checked": "2026-08-14T05:15:15+00:00",
+      "checked": "2026-08-14T14:07:46+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -358,7 +384,7 @@
         "articles": 0,
         "latest": "2026-08-10"
       },
-      "checked": "2026-08-14T05:15:15+00:00",
+      "checked": "2026-08-14T14:07:46+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -384,7 +410,7 @@
         "articles": 0,
         "latest": "2026-08-07"
       },
-      "checked": "2026-08-14T05:15:15+00:00",
+      "checked": "2026-08-14T14:07:46+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -411,7 +437,7 @@
         "articles": 0,
         "latest": "2026-08-07"
       },
-      "checked": "2026-08-14T05:15:15+00:00",
+      "checked": "2026-08-14T14:07:46+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -437,7 +463,7 @@
         "articles": 0,
         "latest": "2026-08-05"
       },
-      "checked": "2026-08-14T05:15:15+00:00",
+      "checked": "2026-08-14T14:07:46+00:00",
       "date": "",
       "updated": "",
       "moved": false,

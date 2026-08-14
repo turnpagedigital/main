@@ -3,6 +3,44 @@
   "case_name": "CashCall",
   "items": [
     {
+      "date": "2026-08-14",
+      "updated": "2026-08-14",
+      "lede": "On August 12, at least two parties filed oppositions (Dkts. 51 and 52) and one filed an objection (Dkt. 56) against what the docket labels confirm are distinct contested matters, accompanied by a supporting declaration (Dkt. 53) and a stipulation (Dkt. 57) — the heaviest single day of adversarial activity in this case since the first-day hearing.",
+      "body_md": "On August 12, at least two parties filed oppositions (Dkts. 51 and 52) and one filed an objection (Dkt. 56) against what the docket labels confirm are distinct contested matters, accompanied by a supporting declaration (Dkt. 53) and a stipulation (Dkt. 57) — the heaviest single day of adversarial activity in this case since the first-day hearing. The docket does not yet identify the targets of those filings by description in the materials available to this desk, but the case context narrows the candidates sharply. The CRO compensation notice (Dkt. 43, filed August 5) carried an opposition deadline of August 19 and sought court authorization for insider-adjacent compensation — the CRO, Leslie Gladstone, being named in Dkt. 43's attachments — making it a live target for the U.S. Trustee or judgment creditors. The Manatt employment application (Dkt. 42, filed August 5) is the other obvious target; contested retention applications, particularly where the estate is essentially a litigation-liability vehicle funded by a CEO-owned DIP lender, attract U.S. Trustee scrutiny on disinterestedness and connections. The employment application at Dkt. 49 (filed August 10) is too recent to have drawn a deadline-compliant response by August 12 under standard notice periods. Until the full text of Dkts. 51, 52, 53, 56, and 57 is reviewed on PACER, their precise targets remain unverified; the desk flags this and will confirm at next update. What is clear from the docket structure — two oppositions plus a supporting declaration filed the same day as a separate objection — is that at least two distinct contested matters were briefed simultaneously on August 12, a pattern inconsistent with ordinary course and consistent with coordinated creditor or U.S. Trustee opposition.\n\nThe Errors/Deficiencies notice at Dkt. 59 (BNC, August 13) and the Generic Order at Dkt. 60 (August 13) are almost certainly related: the deficiency notice identifies a filing that failed to meet local-rule requirements, and the generic order likely resolves or memorializes the correction. This is procedural and carries no independent weight on recovery, though a deficiency on a retention or compensation filing could slow the authorization clock. Dkts. 54 and 55 are certificates of service, and Dkt. 58 is a proof of service (CSD 3010); all three are filing infrastructure and are omitted. The stipulation at Dkt. 57 is substantive in classification — stipulations in contested Chapter 11 matters affect legal rights — but its substance is unverified; if it reflects an agreed resolution of one of the contested matters briefed the same day, it is material to recovery posture, and the desk will confirm.\n\nThe contested posture on these professional-retention and compensation matters matters for creditors beyond the immediate cost. \nThe two principal judgments — approximately $245 million in the De la Torre class action and approximately $157 million in the CFPB tribal-lending action — together with roughly $45 million in additional pending litigation and about $5 million in trade debt and professional fees, constitute substantially all of the debtor's prepetition obligations\n, against reported assets of $1 million to $10 million. In that context, professional fees and CRO compensation drawn from the estate — funded by a ~$4 million DIP facility \nowned by the debtor's CEO\n — are not administrative minutiae; they directly compress whatever is available to unsecured creditors. Vigorous opposition to these applications signals that at least one party is treating the fee burn as a recovery issue, not a routine creditor courtesy. The next concrete milestone is the August 19 opposition deadline on the CRO compensation notice (Dkt. 43), which will either close the briefing on that motion or extend it if further responses arrive — and, depending on the scope of Dkt. 56's objection, the court may consolidate argument on the professional matters at a single hearing.\n\n## Sources\n\n- [CashCall Gets Interim DIP Cash After Lender Eases Terms](https://www.law360.com/bankruptcy-authority/articles/2505568/cashcall-gets-interim-dip-cash-after-lender-eases-terms) — Law360, July 25, 2026\n- [Filing Alert: CashCall Chapter 11](https://bondoro.com/cashcall-filing-alert/) — Bondoro, July 2026\n- [Case Summary: CashCall Chapter 11](https://bondoro.com/cashcall/) — Bondoro, July 2026\n- [Catching Up With New Bankruptcy Case Action](https://www.law360.com/bankruptcy-authority/articles/2506655/catching-up-with-new-bankruptcy-case-action) — Law360, July 28, 2026\n- [CashCall, Inc. — Chapter 11 Voluntary Petition](https://www.pacermonitor.com/public/filings/DF6FACUA/CashCall_Inc__casbke-26-03102__0001.0.pdf) — PacerMonitor / PACER (Dkt. 1, filed July 20, 2026)\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "CashCall Gets Interim DIP Cash After Lender Eases Terms",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2505568/cashcall-gets-interim-dip-cash-after-lender-eases-terms",
+          "note": "Law360, July 25, 2026"
+        },
+        {
+          "title": "Filing Alert: CashCall Chapter 11",
+          "url": "https://bondoro.com/cashcall-filing-alert/",
+          "note": "Bondoro, July 2026"
+        },
+        {
+          "title": "Case Summary: CashCall Chapter 11",
+          "url": "https://bondoro.com/cashcall/",
+          "note": "Bondoro, July 2026"
+        },
+        {
+          "title": "Catching Up With New Bankruptcy Case Action",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2506655/catching-up-with-new-bankruptcy-case-action",
+          "note": "Law360, July 28, 2026"
+        },
+        {
+          "title": "CashCall, Inc. — Chapter 11 Voluntary Petition",
+          "url": "https://www.pacermonitor.com/public/filings/DF6FACUA/CashCall_Inc__casbke-26-03102__0001.0.pdf",
+          "note": "PacerMonitor / PACER (Dkt. 1, filed July 20, 2026)"
+        }
+      ],
+      "activity": {
+        "filings": 10,
+        "articles": 0,
+        "latest": "2026-08-13"
+      }
+    },
+    {
       "date": "2026-08-11",
       "updated": "2026-08-11",
       "lede": "On August 10, CashCall filed a further employment application, Dkt. 49, in Case No. 26-03102 before Judge Barrett Marum in the U.S. Bankruptcy Court for the Southern District of California. The docket entry is styled as an \"Employ (Application)\" — the same procedural form as the Manatt, Phelps & Phillips retention filed at Dkt. 42 on August 5 — but the specific professional or firm being retained is not identified…",
