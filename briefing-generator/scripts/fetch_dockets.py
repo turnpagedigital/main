@@ -156,6 +156,9 @@ def crawl_history(cursor_url, page_budget):
 # one. That asymmetry is deliberate: if the query silently matches nothing,
 # the worst case is that cases fall back to their cadence ladder, exactly as
 # if the sentinel did not exist. It cannot cause a missed filing.
+# Verified live 2026-08-14: q=docket_id:(A OR B ...) + entry_date_filed_after
+# both filter correctly — 5 ids/older cutoff returned all 5; same ids with a
+# recent cutoff returned only the one docket that had moved.
 SENTINEL_LOOKBACK_DAYS = 4
 
 
@@ -169,7 +172,7 @@ def activity_sentinel(docket_ids, now):
     url = (f"{API}/search/?type=r"
            f"&q={urllib.parse.quote(f'docket_id:({q})')}"
            f"&entry_date_filed_after={since}"
-           f"&fields=docket_id&page_size=100")
+           f"&page_size=100")
     try:
         resp = get_json(url, retries=1)
     except Exception as ex:
