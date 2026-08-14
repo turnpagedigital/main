@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
-    "date_last_filing": "2026-08-11",
-    "meta_fetched_at": "2026-08-14T08:54:56.525626+00:00",
-    "fetched_at": "2026-08-14T13:51:19.168800+00:00",
+    "date_last_filing": "2026-08-14",
+    "meta_fetched_at": "2026-08-14T14:44:00.387595+00:00",
+    "fetched_at": "2026-08-14T14:44:00.387595+00:00",
     "as_of": "Aug 14, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 68,
+        "date_filed": "2026-08-14",
+        "time_filed": "09:57:40",
+        "date_display": "Aug 14, 2026",
+        "description": "Notice of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 67,
         "date_filed": "2026-08-11",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.66.0.pdf"
-      },
-      {
-        "entry_number": 65,
-        "date_filed": "2026-08-11",
-        "time_filed": "08:39:24",
-        "date_display": "Aug 11, 2026",
-        "description": "Appear pro hac vice",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 68,
+        "date_filed": "2026-08-14",
+        "time_filed": "09:57:40",
+        "date_display": "Aug 14, 2026",
+        "description": "Notice of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 67,
         "date_filed": "2026-08-11",
