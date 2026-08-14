@@ -495,6 +495,46 @@
 </style>
 <style>
   /* Late overrides in their own style element so parse errors above can't swallow them. */
+  /* ── Elastic band ───────────────────────────────────────────────────────
+     --band-h (written by the grip drag in intel-home.js) is the exact height
+     of the three content boxes. Inside each, the content ABSORBS whatever is
+     left after the last whole row/week, so no box shows a blank strip: news
+     rows flex-grow, calendar week rows are 1fr, and the note card shrink-wraps
+     text whose clamp tracks the band height. Keep the 1100px breakpoint in
+     sync with bandStacked() in intel-home.js.
+     NOTE: these live in this late block on purpose — the first <style> block
+     has orphaned declarations near its end that silently swallow anything
+     appended after them. */
+  @media (min-width: 1101px) {
+    .ih-band > .ih-tile:not(.ih-tile-full) > .ih-list,
+    .ih-band > .ih-tile:not(.ih-tile-full) > .ih-dates { flex: none; height: var(--band-h, 460px); }
+    /* Measure mode: one synchronous read of the natural height. Toggled and
+       untoggled inside a single task, so it is never painted. */
+    .ih-band > .ih-tile > .ih-list.ih-measuring { height: auto; }
+    /* News rows split the leftover evenly, so growth reads as the rows
+       breathing rather than a gap opening under the last one. No shrink: an
+       over-tall stack must clip against .ih-list's overflow:hidden so the
+       measurement can still see a true overflow. */
+    #ih-unassigned > .ih-row { flex: 1 0 auto; min-height: 0; display: flex; flex-direction: column; justify-content: center; }
+    #ih-unassigned.ih-measuring > .ih-row { flex: 0 0 auto; display: block; }
+    /* Feed exhausted (or at the row cap): rows keep their natural height
+       instead of stretching to fill a box they can't honestly fill. */
+    #ih-unassigned.ih-news-full > .ih-row { flex: 0 0 auto; }
+    /* .ih-dates was display:block, so the grid sat at natural height and every
+       extra pixel became blank card beneath the columns. */
+    .ih-dates { display: flex; flex-direction: column; min-height: 0; }
+    .ih-dates > .ih-mm-head { flex: none; }
+    .ih-dates > .ih-wk-grid { flex: 1 1 auto; min-height: 0; grid-auto-rows: minmax(0, 1fr); align-content: stretch; }
+    .ih-wk-col { min-height: 0; overflow: hidden; }
+    /* #ih-notes is transparent with overflow:visible, so a stretched card was
+       a large sheet of empty paper. No shrink, so a clamp overshoot can never
+       squash the card and corrupt the next chrome measurement. */
+    .ih-note-card { flex: 0 0 auto; max-height: 100%; }
+    .ih-note-link { flex: 0 1 auto; min-height: 0; }
+    .ih-note-link .body { -webkit-line-clamp: var(--note-lines, 8); }
+  }
+  /* The grip is inert in the stacked layout (the horizontal grips already are). */
+  @media (max-width: 1100px) { .ih-band-vgrip { display: none; } }
   /* Uniform control height — emoji glyphs otherwise stretch their buttons taller */
   .ih-tp-btn, .ih-sort-btn, .ih-dd-btn { height: 30px; padding-top: 0; padding-bottom: 0; display: inline-flex; align-items: center; line-height: 1; }
   a.ih-sort-btn { text-decoration: none; }

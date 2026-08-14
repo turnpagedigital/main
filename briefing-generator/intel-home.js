@@ -843,42 +843,150 @@
   }
 
   // ── Top band: unassigned news, date strip, latest notes ───────────────────
+  // ── Top band: one authoritative pixel height, three self-filling tiles ────
+  // The grip drags ONE number, bandH, which becomes the exact height of the
+  // news list / calendar / notes boxes. Everything else derives from it:
+  //   · news renders the most rows whose NATURAL height still fits; the
+  //     remainder (always less than one row) is absorbed by flex-grow, so the
+  //     visible rows breathe open as you drag and snap back to natural size
+  //     the moment the next row earns its place.
+  //   · the calendar's week count is a closed form in bandH, and its week rows
+  //     are 1fr, so they share the height instead of leaving a blank strip.
+  //   · the note card shrink-wraps text whose line-clamp tracks bandH, so it
+  //     grows a line at a time instead of becoming a sheet of empty paper.
+  // bandLevel survives only as the persisted form of bandH — same key, same
+  // 0..1 range, so values saved by the old build still load.
   var BAND_ROWS_KEY = "ih-band-rows";
+  var BAND_MIN_H = 300, BAND_MAX_H = 900;
   var NEWS_MIN_ROWS = 4, NEWS_MAX_ROWS = 14;
+  var CAL_MIN_WEEKS = 1, CAL_MAX_WEEKS = 4;
+  var CAL_WEEK_PITCH = 215;   // one week row: day header + ~2 events + gap
+  var CAL_HEAD_H = 42;        // .ih-mm-head above the grid
+  var LIST_BORDER = 2;        // .ih-list border top + bottom
+
   var bandLevel = 0.3;
   try {
-    var savedBandLevel = Number(localStorage.getItem(BAND_ROWS_KEY));
-    if (savedBandLevel >= 0 && savedBandLevel <= 1) bandLevel = savedBandLevel;
+    // Number(null) is 0, and 0 passed the old `>= 0 && <= 1` test, so an unset
+    // key silently pinned every first-time visitor to the smallest band and
+    // made the 0.3 default dead code.
+    var _bl = localStorage.getItem(BAND_ROWS_KEY), _bn = Number(_bl);
+    if (_bl !== null && _bl !== "" && isFinite(_bn) && _bn >= 0 && _bn <= 1) bandLevel = _bn;
   } catch (e) {}
-  function newsRowsForLevel() {
-    return Math.round(NEWS_MIN_ROWS + bandLevel * (NEWS_MAX_ROWS - NEWS_MIN_ROWS));
+  var bandH = BAND_MIN_H + bandLevel * (BAND_MAX_H - BAND_MIN_H);
+
+  // Under 1100px the band stacks to one column; a fixed height per box would
+  // stretch the page, so the whole mechanic switches off there.
+  function bandStacked() { return window.matchMedia("(max-width: 1100px)").matches; }
+
+  // What is rendered now, plus the bandH window that render stays valid over.
+  // Only measureBand()/refreshWindows() touch these — never the drag loop.
+  var newsRows = NEWS_MIN_ROWS, newsAvailable = NEWS_MAX_ROWS;
+  var newsNatH = 0, newsRowMax = 78;
+  var calWeeks = 1;
+  var noteChromeH = 150, noteLineH = 20;
+  var newsLo = 0, newsHi = Infinity;
+
+  function newsMaxRows() { return Math.min(NEWS_MAX_ROWS, newsAvailable || NEWS_MAX_ROWS); }
+  // Closed form, and deliberately NOT measured from the columns: the column
+  // height depends on how many events we draw, which depends on the week
+  // count — measuring it would close a feedback loop. A fixed pitch keeps
+  // grow and shrink exactly symmetric.
+  function calWeeksForH(h) {
+    return Math.max(CAL_MIN_WEEKS,
+      Math.min(CAL_MAX_WEEKS, Math.round((h - CAL_HEAD_H) / CAL_WEEK_PITCH) || 1));
   }
-  // The band is a stretch grid: all three tiles take the height of the
-  // TALLEST (usually the calendar/notes card), so a low row level left the
-  // News tile half empty until you nudged the slider. newsFitRows is the
-  // measured floor — how many rows it takes to reach the bottom of the tile.
-  var newsFitRows = 0;
-  function newsRowCount() {
-    return Math.max(newsRowsForLevel(), newsFitRows);
+
+  // The per-frame write: two setProperty calls, no layout reads.
+  function applyBandH() {
+    var band = document.querySelector(".ih-band");
+    if (!band) return;
+    if (bandStacked()) {
+      band.style.removeProperty("--band-h");
+      band.style.removeProperty("--note-lines");
+      return;
+    }
+    band.style.setProperty("--band-h", Math.round(bandH) + "px");
+    // The note absorbs slack as text, not blank paper. Pure arithmetic off two
+    // measured constants; the -1 is a line of headroom so the clamp can never
+    // overshoot the card and corrupt the next chrome measurement.
+    band.style.setProperty("--note-lines",
+      String(Math.max(3, Math.floor((bandH - noteChromeH) / noteLineH) - 1)));
   }
-  function fillNewsToHeight(pass) {
+
+  // The only function that reads layout. `.ih-measuring` drops the list to
+  // height:auto so scrollHeight is the TRUE natural height of what is
+  // rendered (while stretched, scrollHeight can never fall below clientHeight
+  // and every comparison would be a tautology). Both class writes happen in
+  // one task, so the collapsed state is never painted.
+  function measureBand() {
     var list = document.getElementById("ih-unassigned");
-    if (!list || !list.children.length) return;
-    var last = list.children[list.children.length - 1];
-    var gap = list.getBoundingClientRect().bottom - last.getBoundingClientRect().bottom;
-    var rowH = last.getBoundingClientRect().height;
-    if (!rowH || gap < rowH) return;                       // already full
-    var want = Math.min(list.children.length + Math.floor(gap / rowH), NEWS_MAX_ROWS);
-    if (want <= list.children.length) return;              // feed exhausted
-    newsFitRows = want;
-    renderUnassigned();
-    // Rows wrap to 1-2 lines, so one measurement can undershoot; cap the
-    // passes so an exhausted feed can't spin.
-    if ((pass || 0) < 2) fillNewsToHeight((pass || 0) + 1);
+    if (list && list.children.length) {
+      list.classList.add("ih-measuring");
+      newsNatH = list.scrollHeight;
+      var mx = 0;
+      for (var i = 0; i < list.children.length; i++) {
+        var rh = list.children[i].getBoundingClientRect().height;
+        if (rh > mx) mx = rh;
+      }
+      if (mx > 0) newsRowMax = mx;
+      newsRows = list.children.length;   // feed shorter than asked → resync
+      list.classList.remove("ih-measuring");
+    }
+    var card = document.querySelector(".ih-note-card");
+    var body = card && card.querySelector(".body");
+    if (card && body) {
+      var ch = card.getBoundingClientRect().height - body.getBoundingClientRect().height;
+      if (ch > 40 && ch < 400) noteChromeH = ch;
+      var lh = parseFloat(getComputedStyle(body).lineHeight);
+      if (lh > 8) noteLineH = lh;
+    }
   }
-  function calWantsTwoWeeks() {
-    return bandLevel > 0.5;
+
+  // Cache the bandH window the current render is valid over, so a drag frame
+  // is a numeric comparison and touches no layout at all.
+  function refreshWindows() {
+    newsLo = (newsRows <= NEWS_MIN_ROWS) ? 0 : newsNatH + LIST_BORDER;
+    newsHi = (newsRows >= newsMaxRows()) ? Infinity : newsNatH + newsRowMax + LIST_BORDER;
   }
+  function bandNeedsSettle() {
+    return bandH >= newsHi || bandH < newsLo || calWeeksForH(bandH) !== calWeeks;
+  }
+
+  // Converge on the counts whose NATURAL height fits bandH. One step per tile
+  // per pass. The two news branches are mutually exclusive by construction —
+  // after an add, natH' <= natH + rowMax <= avail, so remove cannot fire next
+  // pass — which is exact hysteresis rather than a tuned pixel deadband.
+  function settleBand() {
+    if (bandStacked()) return;
+    applyBandH();
+    for (var pass = 0; pass < 4; pass++) {
+      measureBand();
+      var changed = false;
+      var avail = bandH - LIST_BORDER;
+      var list = document.getElementById("ih-unassigned");
+      if (list && newsRows < newsMaxRows() && avail - newsNatH >= newsRowMax) {
+        newsRows++; renderUnassigned(); changed = true;
+      } else if (list && newsRows > NEWS_MIN_ROWS && newsNatH > avail) {
+        newsRows--; renderUnassigned(); changed = true;
+      }
+      var wantWeeks = calWeeksForH(bandH);
+      if (wantWeeks !== calWeeks) { calWeeks = wantWeeks; renderDates(); changed = true; }
+      if (!changed) break;
+    }
+    measureBand();
+    refreshWindows();
+    // When the feed can't supply another row, stop stretching the ones we have
+    // — otherwise a two-item feed turns each row into a 200px slab. The tile
+    // then simply ends early, which reads far better than a ballooned row.
+    var l2 = document.getElementById("ih-unassigned");
+    if (l2) l2.classList.toggle("ih-news-full", newsRows >= newsMaxRows());
+  }
+  function newsRowCount() { return newsRows; }
+  // Kept under the old name: renderAll, the resize debounce and the drag's
+  // mouseup all mean "settle the band now". settleBand picks the row count by
+  // measurement, a superset of the old top-up loop, and it shrinks as well as
+  // grows.
+  function fillNewsToHeight() { settleBand(); }
 
   function renderUnassigned() {
     // Only case- or theme-related news makes the dashboard; the full feed
@@ -959,8 +1067,8 @@
       return out;
     }
 
-    function buildHtml(expanded) {
-      var days = buildDays(expanded ? calDays * 2 : calDays);
+    function buildHtml(weeks) {
+      var days = buildDays(calDays * Math.max(1, weeks));
       var a = days[0], b = days[days.length - 1];
       // Just the month name(s) — the per-day dates are shown in the grid below.
       var range = a.getMonth() === b.getMonth()
@@ -969,13 +1077,13 @@
 
       var h = '<div class="ih-mm-head">' +
         '<button type="button" class="ih-mm-nav" data-wk="-1">‹</button>' +
-        '<span class="ih-mm-label">' + range + (expanded ? ' <span class="ih-wk-2wk">2 weeks</span>' : "") + '</span>' +
+        '<span class="ih-mm-label">' + range + (weeks > 1 ? ' <span class="ih-wk-2wk">' + weeks + ' weeks</span>' : "") + '</span>' +
         '<span class="ih-wk-tgl">' +
           '<button type="button" data-days="7" class="' + (calDays === 7 ? "on" : "") + '" title="Next 7 days">7d</button>' +
           '<button type="button" data-days="5" class="' + (calDays === 5 ? "on" : "") + '" title="Next 5 business days">5d</button>' +
         '</span>' +
         '<button type="button" class="ih-mm-nav" data-wk="1">›</button></div>';
-      h += '<div class="ih-wk-grid' + (expanded ? " ih-wk-grid-2wk" : "") + '" style="grid-template-columns:repeat(' + calDays + ',1fr)">';
+      h += '<div class="ih-wk-grid' + (weeks > 1 ? " ih-wk-grid-2wk" : "") + '" style="grid-template-columns:repeat(' + calDays + ',1fr)">';
       days.forEach(function (d, di) {
         var iso = isoOf(d);
         var evs = byDay[iso] || [];
@@ -1025,17 +1133,10 @@
       });
     }
 
-    // Under-filled? Each day column has a min-height regardless of content,
-    // so a pixel-height comparison can't tell a busy week from an empty one —
-    // count days with zero events instead. Half or more empty (the "leaves
-    // half blank" case) widens to a 2-week window so the space isn't wasted.
-    // The band-density slider can also force it past the halfway point,
-    // independent of how sparse the data actually is.
-    var firstWeek = buildDays(calDays);
-    var emptyDays = firstWeek.filter(function (d) { return !(byDay[isoOf(d)] || []).length; }).length;
-    var expand = calWantsTwoWeeks() || emptyDays >= firstWeek.length / 2;
-
-    box.innerHTML = buildHtml(expand);
+    // Week count is owned by settleBand — the most weeks whose height fits the
+    // band. A sparse week now stretches its columns to fill rather than being
+    // padded out with a second week of empty days.
+    box.innerHTML = buildHtml(calWeeks);
     wireControls();
   }
 
@@ -1097,7 +1198,7 @@
         '<a class="ih-note-link" href="' + BASE + 'notes.html#e=' + encodeURIComponent(n._key || "") + '">' +
           '<span class="title">' + esc(noteTitle) + "</span>" +
           (artifact ? '<span class="artifact">' + NOTE_ARTIFACT_ICON + esc(artifact) + "</span>" : "") +
-          '<span class="body">' + (when ? "<strong>" + esc(when) + "</strong> \u2014 " : "") + esc(body.slice(0, 240)) +
+          '<span class="body">' + (when ? "<strong>" + esc(when) + "</strong> \u2014 " : "") + esc(body.slice(0, 1200)) +
           (n.bookmarked ? " \u2605" : "") + "</span>" +
         "</a>" +
         '<div class="ih-note-foot">' +
@@ -1918,40 +2019,43 @@
     });
   }
 
-  // Drag vertically to show more/less content in the News/Calendar/Notes
-  // band: News rows scale continuously, the calendar flips to a 2nd week
-  // past the midpoint (see bandLevel/newsRowsForLevel/calWantsTwoWeeks
-  // above). Same interaction shape as wireBandResize — drag delta over a
-  // fixed pixel range maps to the parameter, committed to localStorage only
-  // on release — just vertical, and driving a re-render instead of a CSS var
-  // since "more rows" is actual content, not a width.
+  // Drag vertically to resize the News/Calendar/Notes band. The grip sets one
+  // pixel height (bandH); the tiles absorb the slack and add a row/week only
+  // when a whole one fits — see applyBandH/settleBand above. Same interaction
+  // shape as wireBandResize, committed to localStorage on release.
   function wireBandRowResize() {
     var grip = document.getElementById("ih-band-vgrip");
     if (!grip) return;
-    var DRAG_RANGE = 260;   // px of vertical drag spanning the full 0..1 sweep
     grip.addEventListener("mousedown", function (e) {
+      if (bandStacked()) return;          // stacked layout: nothing to resize
       e.preventDefault();
       grip.classList.add("on");
       document.body.style.cursor = "row-resize";
-      var startY = e.clientY;
-      var startLevel = bandLevel;
+      // 1:1 with the cursor. The old sweep mapped 260px of travel onto the
+      // whole range, so the band moved ~2.7x faster than the mouse — half of
+      // why it felt jumpy.
+      var startY = e.clientY, startH = bandH, pendingH = bandH, rafId = 0;
+      function frame() {
+        rafId = 0;
+        if (pendingH === bandH) return;
+        bandH = pendingH;
+        applyBandH();                     // continuous: rows breathe open
+        if (bandNeedsSettle()) settleBand();   // discrete: a row/week lands
+      }
       function mv(ev) {
-        var next = Math.max(0, Math.min(1, startLevel + (ev.clientY - startY) / DRAG_RANGE));
-        if (next === bandLevel) return;
-        var oldRows = newsRowsForLevel();
-        var oldTwoWeeks = calWantsTwoWeeks();
-        bandLevel = next;
-        newsFitRows = 0;   // the drag is authoritative while it's happening
-        if (newsRowsForLevel() !== oldRows) renderUnassigned();
-        if (calWantsTwoWeeks() !== oldTwoWeeks) renderDates();
+        pendingH = Math.max(BAND_MIN_H, Math.min(BAND_MAX_H, startH + (ev.clientY - startY)));
+        if (!rafId) rafId = requestAnimationFrame(frame);   // 1 write per frame
       }
       function up() {
         document.removeEventListener("mousemove", mv);
         document.removeEventListener("mouseup", up);
+        if (rafId) { cancelAnimationFrame(rafId); rafId = 0; }
+        bandH = pendingH;
         grip.classList.remove("on");
         document.body.style.cursor = "";
+        bandLevel = Math.max(0, Math.min(1, (bandH - BAND_MIN_H) / (BAND_MAX_H - BAND_MIN_H)));
         try { localStorage.setItem(BAND_ROWS_KEY, String(bandLevel)); } catch (e2) {}
-        fillNewsToHeight(0);   // settle back to a full tile on release
+        settleBand();                     // final exact fit on release
       }
       document.addEventListener("mousemove", mv);
       document.addEventListener("mouseup", up);
@@ -2080,8 +2184,7 @@
       clearTimeout(_reflowTimer);
       _reflowTimer = setTimeout(function () {
         reflowThemeFilter();
-        newsFitRows = 0;
-        fillNewsToHeight(0);
+                fillNewsToHeight(0);
       }, 150);
     });
     // Re-measure once the web font has loaded and the page has fully settled —
@@ -2093,6 +2196,10 @@
     wireSortBar();
     wireBandResize();
     wireBandRowResize();
+    // Give the boxes their height on first paint. renderAll's rAF also
+    // settles, but it can run before the band is wired, so do it here too —
+    // settleBand is idempotent.
+    settleBand();
     wireViewToggle();
     wireShortcuts();
     // Briefing-groups editing moved to Settings → Briefings (manage.html#briefing).
