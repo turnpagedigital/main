@@ -944,7 +944,7 @@
     // a 2nd row for free under CSS grid's default row-first flow.
     function isoOf(d) { return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
     var MFULL = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    var DOWL = ["S", "M", "T", "W", "T", "F", "S"];
+    var DOWL = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
     function buildDays(totalDays) {
       var start = new Date();
@@ -980,7 +980,8 @@
         var iso = isoOf(d);
         var evs = byDay[iso] || [];
         var isToday = iso === today;
-        var col = '<div class="ih-wk-col' + (isToday ? " today" : "") + '">' +
+        var isWknd = d.getDay() === 0 || d.getDay() === 6;
+        var col = '<div class="ih-wk-col' + (isToday ? " today" : "") + (isWknd ? " weekend" : "") + '">' +
           '<div class="ih-wk-dayhd"><span class="ih-wk-dow">' + DOWL[d.getDay()] + '</span>' +
             '<span class="ih-wk-num">' + d.getDate() + '</span></div>';
         col += evs.slice(0, 4).map(function (ev) {

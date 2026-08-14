@@ -299,11 +299,19 @@
     .ih-mm-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; }
     .ih-wk-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
     .ih-wk-col { min-height: 150px; }
-    .ih-wk-dayhd { display: flex; align-items: baseline; gap: 4px; justify-content: center; padding-bottom: 3px; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
-    .ih-wk-dow { font-size: 9px; font-weight: 800; letter-spacing: 0.08em; color: var(--ink-40); }
-    .ih-wk-num { font-size: 12px; font-weight: 800; color: var(--ink-60); }
-    .ih-wk-col.today .ih-wk-num { color: #C84141; }
-    .ih-wk-col.today .ih-wk-dayhd { border-bottom-color: #C84141; }
+    /* Day header: weekday stacked over the date, rather than "T 13" inline —
+       single letters were ambiguous (S/S, T/T) and a 12px number at 60% ink
+       was the hardest thing on the dashboard to read at a glance. */
+    .ih-wk-dayhd { display: flex; flex-direction: column; align-items: center; gap: 2px; padding-bottom: 6px; border-bottom: 1px solid var(--line); margin-bottom: 6px; }
+    .ih-wk-dow { font-size: 9.5px; font-weight: 800; letter-spacing: 0.10em; text-transform: uppercase; color: var(--ink-40); line-height: 1; }
+    .ih-wk-num { font-size: 15px; font-weight: 800; color: var(--ink); line-height: 1.25; font-variant-numeric: tabular-nums; min-width: 25px; text-align: center; border-radius: 999px; }
+    /* Weekends recede so the working week reads first. */
+    .ih-wk-col.weekend .ih-wk-dow, .ih-wk-col.weekend .ih-wk-num { color: var(--ink-40); }
+    /* Today: the site's neon, as a filled chip with black text — legible on
+       white and on near-black, unlike neon type on either. */
+    .ih-wk-col.today .ih-wk-num { background: #D4FF00; color: #0A0A0A; padding: 1px 7px; }
+    .ih-wk-col.today .ih-wk-dow { color: var(--ink); }
+    .ih-wk-col.today .ih-wk-dayhd { border-bottom: 2px solid #D4FF00; padding-bottom: 5px; }
     .ih-wk-ev { display: block; border-left: 3px solid #888; padding: 4px 6px; margin-bottom: 4px; font-size: 11px; line-height: 1.45; color: var(--ink); text-decoration: none; }
     .ih-wk-ev-top { display: flex; align-items: baseline; gap: 5px; flex-wrap: wrap; }
     .ih-wk-ev strong { font-weight: 800; }
