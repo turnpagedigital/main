@@ -116,7 +116,7 @@ Ciao
 
 ## Omnis Pleasants
 
-### Dkt. 79 — 2026-08-13
+### Dkt. 79 — 2026-08-13 ★
 
 > Debtor's Application For Entry Of An Order Authorizing The Employment Of Stretto, Inc. As Administrative Advisor Effective As Of The Petition Date
 
