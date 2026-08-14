@@ -79,9 +79,9 @@
     // the per-case palette is meaningless when the only ink is red). 78% red —
     // full #FE0100 pills read too hot next to the dimmed chrome.
     '[data-theme="night"] :is(.ud-pill,.mg-pill,.ih-pill,.uc-cal-chip)[style*="--pb"]{background:rgba(254,1,0,0.78);color:#000;}'+
-    // Briefing cards get the same thin outline the news cards wear (an
-    // unprefixed \'border:1px solid transparent\' otherwise hides it in night).
-    '[data-theme="night"] .ih-theme-card{border-color:rgba(254,1,0,0.38);}'+
+    // Briefing cards get the same thin outline the news list + calendar wear
+    // (rgba 0.20 — an unprefixed border:transparent otherwise hides it in night).
+    '[data-theme="night"] .ih-theme-card{border-color:rgba(254,1,0,0.20);}'+
     // Case-tinted cards set colors inline (style="border-left-color:…;background:tint(…)").
     '[data-theme="night"] .uc-week-card,[data-theme="night"] .ih-row-coded,[data-theme="night"] .ih-wk-ev{background:rgba(254,1,0,0.10) !important;border-left-color:#FE0100 !important;}'+
     '[data-theme="night"] .ud-pill-theme,[data-theme="night"] .ih-pill-theme{color:#FE0100;border-color:#FE0100;background:transparent;}'+
