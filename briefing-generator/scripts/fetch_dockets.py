@@ -24,9 +24,26 @@ import urllib.error, urllib.parse, urllib.request
 
 from cases_common import load_cases, DATA_DIR, REPO_ROOT, pretty_date
 
+try:
+    import usage_log                      # API-usage telemetry; never fatal
+except Exception:
+    usage_log = None
+
 API = "https://www.courtlistener.com/api/rest/v4"
 TOKEN = os.environ.get("COURTLISTENER_TOKEN")
 WINDOW_72H = dt.timedelta(hours=72)
+USAGE = None                              # usage_log.Counter for this run
+
+
+def _flush_usage(ok=True):
+    """Write this run's one telemetry row. Safe to call more than once —
+    the counter is cleared, so the exception path can't double-record."""
+    global USAGE
+    u, USAGE = USAGE, None
+    if u is not None:
+        if not ok:
+            u.fail()
+        u.flush()
 
 
 def _arg(name, default=None):
@@ -40,6 +57,8 @@ def get_json(url, retries=5):
             "Authorization": "Token " + TOKEN,
             "User-Agent": "turnpage-daily-briefing/1.0",
         })
+        if USAGE is not None:
+            USAGE.add_request()          # retries spend budget too — count each attempt
         try:
             with urllib.request.urlopen(req, timeout=30) as r:
                 return json.loads(r.read().decode("utf-8", "replace"))
@@ -469,6 +488,9 @@ def load_priorities():
 
 
 def main():
+    global USAGE
+    if usage_log is not None:
+        USAGE = usage_log.Counter("docket-sync", "courtlistener")
     # DOCKET_ONLY_CASE (admin "Sync now" workflow dispatch) or --slug: sync
     # exactly that case regardless of its sync mode — an explicit request.
     only = _arg("slug") or os.environ.get("DOCKET_ONLY_CASE", "").strip()
@@ -484,6 +506,7 @@ def main():
         print(f"  single-case sync requested: {only}")
     if not cases:
         print("No cases found in cases/*.md" + (f" matching --slug {only}" if only else ""))
+        _flush_usage()
         return
     if not TOKEN:
         print("COURTLISTENER_TOKEN not set — running in seed-only mode "
@@ -548,9 +571,16 @@ def main():
                 # remaining cases just feeds the cool-down and wastes CI time.
                 print("  ! CourtListener fully throttled — aborting this run; "
                       "the next hourly run resumes where the cursors left off.")
+                if USAGE is not None:
+                    USAGE.fail()
                 break
+    _flush_usage()
     print("=== Docket refresh done. ===")
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception:
+        _flush_usage(ok=False)   # still record what the run spent before dying
+        raise

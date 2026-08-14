@@ -7,14 +7,55 @@ docket numbers, rulings, settlement amounts, etc.).
 This enriches the headlines discovered by fetch_news with real article
 content before handing off to Sonnet for briefing analysis.
 """
-import sys, re, urllib.request
+import sys, re, urllib.request, urllib.parse
+import atexit
 import html as _html
+
+try:                                    # telemetry must never break a scan
+    import usage_log
+except Exception:
+    usage_log = None
+
+USAGE_TASK = "article-scrape"
+_USAGE = {}                             # provider -> Counter for this process
+
+
+def _usage(provider, model=None):
+    """Lazily make this run's counter for a provider. Never raises.
+
+    scrape_and_enrich() is called once per topic, so the counters live at
+    module scope and flush once at interpreter exit — that keeps it to one
+    row per provider per run instead of one per topic.
+    """
+    if usage_log is None:
+        return None
+    u = _USAGE.get(provider)
+    if u is None:
+        try:
+            u = usage_log.Counter(USAGE_TASK, provider, model=model)
+            atexit.register(u.flush)
+            _USAGE[provider] = u
+        except Exception:
+            return None
+    return u
+
+
+def _is_courtlistener(url):
+    try:
+        host = urllib.parse.urlparse(url or "").netloc.lower().split(":")[0]
+        return host == "courtlistener.com" or host.endswith(".courtlistener.com")
+    except Exception:
+        return False
 
 
 def fetch_article_text(url, timeout=8, max_chars=25000):
     """Fetch and clean article text from URL. Returns (text, success_bool)."""
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "TurnpageBriefing/1.0"})
+        if _is_courtlistener(url):      # courtlistener.com is whitelisted in sources.md
+            cl = _usage("courtlistener")
+            if cl:
+                cl.add_request()        # counted before the GET, so failures count too
         response = urllib.request.urlopen(req, timeout=timeout)
         html = response.read().decode("utf-8", "replace")
         # Remove script/style tags
@@ -47,6 +88,7 @@ def scrape_and_enrich(news_items, client, max_articles=6):
         return []
 
     enriched = []
+    u = _usage("anthropic", model="claude-haiku-4-5")
     for item in news_items[:max_articles]:
         print(f"      scrape: {item['title'][:50]}...", flush=True)
         article_text, fetched = fetch_article_text(item['url'])
@@ -75,10 +117,23 @@ Article text:
 Output ONLY the extracted update. No preamble, no commentary."""
                 }]
             )
+            if u:
+                try:
+                    u.add_tokens(response)
+                except Exception:
+                    pass
             extracted = response.content[0].text.strip()
             item["extracted_update"] = extracted
             enriched.append(item)
         except Exception as e:
+            # Telemetry inside an except clause: any raise here would escape the
+            # handler and abort the whole briefing, so the entire block is guarded.
+            try:
+                if u:
+                    u.add_counts(requests=1)   # call was attempted; no usage to read
+                    u.fail()
+            except Exception:
+                pass
             print(f"        ! extraction failed: {e}", file=sys.stderr)
             # Fall back to headline
             enriched.append(item)

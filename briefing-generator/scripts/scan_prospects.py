@@ -43,6 +43,13 @@ except ImportError:
     print("ERROR: anthropic package not installed. Run: pip install -r scripts/requirements.txt", file=sys.stderr)
     sys.exit(1)
 
+try:
+    import usage_log            # telemetry only — never allowed to break a scan
+except Exception:
+    usage_log = None
+
+USAGE = None                    # usage_log.Counter for this run, set in main()
+
 MODEL = "claude-sonnet-4-6"
 OUT_PATH = REPO_ROOT / "prospects.json"
 THEMES_FILE = REPO_ROOT.parent / "src" / "data" / "themes.json"
@@ -51,6 +58,19 @@ TODAY = dt.date.today()
 MAX_PER_THEME = 5
 NEW_TTL_DAYS = 30        # untriaged prospects age out
 TOMBSTONE_TTL_DAYS = 120  # dismissed/tracked tombstones kept for dedupe
+
+
+def _flush_usage(ok=True):
+    """Write this run's usage row exactly once. Idempotent and never raises."""
+    global USAGE
+    u, USAGE = USAGE, None
+    try:
+        if u:
+            if not ok:
+                u.fail()
+            u.flush()
+    except Exception:
+        pass
 
 
 def _arg(name, default=None):
@@ -203,12 +223,16 @@ def scan_theme(client, theme, tracked, tracked_display, existing):
                 tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 5}],
                 messages=[{"role": "user", "content": prompt}],
             )
+            if USAGE:
+                USAGE.add_tokens(response)
             break
         except RateLimitError:
             print(f"  rate-limited (attempt {attempt + 1}/4) — sleeping 70s", flush=True)
             time.sleep(70)
     else:
         print(f"  ! {slug}: rate limit retries exhausted", file=sys.stderr)
+        if USAGE:
+            USAGE.fail()
         return []
 
     text = "\n".join(b.text for b in response.content if getattr(b, "type", "") == "text")
@@ -275,6 +299,10 @@ def main():
         if i.get("status") == "new" and matches_tracked(i.get("case_name"), tracked):
             i["status"] = "tracked"
 
+    global USAGE
+    if usage_log:
+        USAGE = usage_log.Counter("prospect-scan", "anthropic", model=MODEL)
+
     client = Anthropic(api_key=api_key)
     print(f"=== Prospect scan: {len(themes)} theme(s), {len(items)} existing prospect(s) ===")
     total = 0
@@ -287,6 +315,8 @@ def main():
             added = scan_theme(client, t, tracked, tracked_display, items)
         except Exception as ex:
             print(f"  ! {t['slug']}: scan failed ({ex})", file=sys.stderr)
+            if USAGE:
+                USAGE.fail()
             continue
         items.extend(added)
         total += len(added)
@@ -300,7 +330,12 @@ def main():
         {"updated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
          "items": items}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"=== Prospect scan done: +{total} new, {len(items)} total in prospects.json ===")
+    _flush_usage()
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception:
+        _flush_usage(ok=False)   # no-op if main() already flushed
+        raise

@@ -22,6 +22,11 @@ import urllib.error, urllib.request
 from cases_common import load_cases, DATA_DIR
 
 try:
+    import usage_log                      # API-usage telemetry; never fatal
+except Exception:
+    usage_log = None
+
+try:
     from anthropic import Anthropic, RateLimitError
 except ImportError:
     Anthropic = RateLimitError = None
@@ -30,6 +35,7 @@ except ImportError:
         sys.exit(1)
 
 MODEL = "claude-sonnet-4-6"
+USAGE = None                              # usage_log.Counter for this run
 MAX_ARTICLES_STORED = 60
 MAX_EVENTS_STORED = 40
 
@@ -373,6 +379,8 @@ def scan_case(client, case):
                 tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 5}],
                 messages=[{"role": "user", "content": prompt}],
             )
+            if USAGE is not None:
+                USAGE.add_tokens(response)
             break
         except RateLimitError:
             wait = 70
@@ -439,16 +447,31 @@ def main():
         print("No cases found in cases/*.md" + (f" matching --slug {only}" if only else ""))
         return
     client = Anthropic(api_key=api_key)
+    global USAGE
+    if usage_log is not None:
+        try:
+            USAGE = usage_log.Counter("news-scan", "anthropic", model=MODEL)
+        except Exception:
+            USAGE = None          # telemetry must never stop a scan
     print(f"=== News & events scan: {len(cases)} case(s) ===")
     first = True
-    for c in cases:
-        if not first:
-            time.sleep(20)  # pace under org input-tokens/min limits
-        first = False
-        try:
-            scan_case(client, c)
-        except Exception as ex:
-            print(f"  ! {c['slug']}: scan failed ({ex})", file=sys.stderr)
+    try:
+        for c in cases:
+            if not first:
+                time.sleep(20)  # pace under org input-tokens/min limits
+            first = False
+            try:
+                scan_case(client, c)
+            except Exception as ex:
+                if USAGE is not None:
+                    USAGE.fail()
+                print(f"  ! {c['slug']}: scan failed ({ex})", file=sys.stderr)
+    finally:
+        if USAGE is not None:
+            try:
+                USAGE.flush()
+            except Exception:
+                pass
     print("=== News scan done. ===")
 
 

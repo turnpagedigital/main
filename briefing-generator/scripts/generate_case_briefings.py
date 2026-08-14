@@ -39,6 +39,11 @@ from pathlib import Path
 
 from cases_common import load_cases, REPO_ROOT
 
+try:                       # usage telemetry — must never be able to fail a run
+    import usage_log
+except Exception:
+    usage_log = None
+
 try:
     from anthropic import Anthropic, RateLimitError
 except ImportError:
@@ -704,6 +709,7 @@ def main():
         return
 
     client = Anthropic(api_key=api_key)
+    usage = usage_log.Counter("case-briefings", "anthropic", model=MODEL) if usage_log else None
     house_voice = load_house_voice()
     now_iso = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
     since = (TODAY - dt.timedelta(days=LOOKBACK_DAYS)).isoformat()
@@ -784,7 +790,10 @@ def main():
     def create_with_retry(**kwargs):
         for attempt in range(4):
             try:
-                return client.messages.create(**kwargs)
+                resp = client.messages.create(**kwargs)
+                if usage:
+                    usage.add_tokens(resp)
+                return resp
             except RateLimitError:
                 print(f"  rate-limited (attempt {attempt + 1}/4) — sleeping 70s", flush=True)
                 time.sleep(70)
@@ -885,6 +894,8 @@ def main():
             print(f"  ✓ {slug}: briefed ({len(body)} chars, {len(sources)} source(s), "
                   f"{len(p['filings'])} filing(s), {len(p['articles'])} article(s))")
         except Exception as ex:
+            if usage:
+                usage.fail()
             print(f"  ! {slug}: generation failed ({ex}) — carrying previous briefing", file=sys.stderr)
             items.append({
                 **base,
@@ -908,6 +919,8 @@ def main():
     print(f"✓ wrote {OUT_PATH.relative_to(REPO_ROOT)} ({len(items)} case(s), "
           f"{sum(1 for i in items if i['moved'])} regenerated, history in case-briefings/)")
     update_landing_stamp()
+    if usage:
+        usage.flush()
 
 
 if __name__ == "__main__":
