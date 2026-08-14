@@ -459,8 +459,22 @@
     return String(name || "Unknown").toLowerCase();
   }
 
-  function sourceOn(name) {
+  function isFeedName(name) {
     var k = sourceKey(name);
+    for (var i = 0; i < FEED_SOURCES.length; i++) {
+      if (sourceKey(FEED_SOURCES[i].name) === k) return true;
+    }
+    return false;
+  }
+
+  // Outlets that aren't ★ favorites (Manage → Sources) share ONE filter
+  // toggle — "All other sources" — instead of a row each.
+  function isOtherSource(name) {
+    return !isFeedName(name) && !SRC_FAVORITES[sourceKey(name)];
+  }
+
+  function sourceOn(name) {
+    var k = isOtherSource(name) ? OTHER_SRC_KEY : sourceKey(name);
     if (!(k in activeSources)) {
       var sv = _savedState && _savedState.activeSources;
       // Unknown source = one that appeared since the view was saved → default ON
@@ -521,14 +535,29 @@
     }
 
     var feeds = list.filter(function (s) { return s.feed; });
-    var press = list.filter(function (s) { return !s.feed; });
+    var pressAll = list.filter(function (s) { return !s.feed; });
+    var press = pressAll.filter(function (s) { return SRC_FAVORITES[s.key]; });
+    var others = pressAll.filter(function (s) { return !SRC_FAVORITES[s.key]; });
+    var othersRow = "";
+    if (others.length) {
+      var names = others.slice(0, 14).map(function (s) { return s.name; }).join(", ") +
+        (others.length > 14 ? ", …" : "");
+      othersRow =
+        '<div class="ud-dd-groups-title">Other sources</div>' +
+        '<label class="ud-dd-row" title="' + esc(names) + '">' +
+          '<input type="checkbox" data-src="' + OTHER_SRC_KEY + '"' +
+            (sourceOn(others[0].name) ? " checked" : "") + ">" +
+          "<span>All other sources (" + others.length + ")</span>" +
+        "</label>";
+    }
     panel.innerHTML =
       '<div class="ud-dd-head">' +
         '<button type="button" class="ud-dd-quick" data-act="all">Select all</button>' +
         '<button type="button" class="ud-dd-quick" data-act="none">Deselect all</button>' +
       "</div>" +
       section("Feeds", "feed", feeds) +
-      section("News outlets", "press", press) +
+      section("Favorites", "press", press) +
+      othersRow +
       '<a href="manage.html#sources" style="display:block;padding:8px 12px;font-size:11px;font-weight:800;letter-spacing:0.02em;text-decoration:none;color:var(--ink-60,inherit);border-top:1px solid rgba(128,128,128,0.25);">\u2699 Manage sources</a>' +
       '<button type="button" class="ud-dd-save-btn ud-dd-saveview" data-close-panel>Save view</button>';
 
@@ -543,6 +572,7 @@
         list.forEach(function (s) {
           if (!grp || (grp === "feed") === s.feed) activeSources[s.key] = onAll;
         });
+        if (grp !== "feed") activeSources[OTHER_SRC_KEY] = onAll;
         saveFilterState();
         renderSourceFilter();
         render();
@@ -2030,22 +2060,23 @@
   // FEED_SOURCES still drives feedSourceMode() below, which decides whether
   // an unassigned feed item shows on the docket at all.
   var FEED_SOURCES = [];
+  var SRC_FAVORITES = {};          // lowercased outlet name → true (Manage → Sources ★)
+  var OTHER_SRC_KEY = "__othersrc__";  // one toggle for every non-favorite outlet
 
   function loadFeedSourcesForRender() {
     fetchJson("api/feed-sources")
-      .then(function (p) { return (p && p.ok && p.sources) || null; })
+      .then(function (p) { return (p && p.ok) ? p : null; })
       .catch(function () { return null; })
-      .then(function (sources) {
-        if (sources) return sources;
-        return fetchJson("feed-sources.json")
-          .then(function (f) { return (f && f.sources) || []; })
-          .catch(function () { return []; });
+      .then(function (p) {
+        if (p) return p;
+        return fetchJson("feed-sources.json").catch(function () { return null; });
       })
-      .then(function (sources) {
-        if (sources && sources.length) {
-          FEED_SOURCES = sources;
-          render();
-        }
+      .then(function (p) {
+        if (!p) return;
+        SRC_FAVORITES = {};
+        (p.favorites || []).forEach(function (n) { SRC_FAVORITES[sourceKey(n)] = true; });
+        if (p.sources && p.sources.length) FEED_SOURCES = p.sources;
+        render();
       });
   }
 

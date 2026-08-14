@@ -1180,6 +1180,8 @@
      autodiscovers the feed) or "search" (Claude + web_search sweeps the
      outlet each scan), and a `show` target (docket / news / both). ────────*/
   var SRC_LIST = [];
+  var SRC_FAVS = [];        // ★ outlet names → their own row in the Author filter
+  var SRC_AUTHORS = [];     // every outlet the scans have cited (from _summary)
   var SRC_READONLY = false;
   var SRC_TYPES = [
     { value: "rss", label: "RSS feed" },
@@ -1259,17 +1261,20 @@
       .then(function (p) {
         if (!(p && p.ok)) throw new Error((p && p.error) || "load failed");
         SRC_LIST = p.sources || [];
+        SRC_FAVS = p.favorites || [];
         SRC_READONLY = false;
         renderSourceRows();
+        loadAuthors();
       })
       .catch(function () {
         // Degrade to the static file: list still renders, saving stays off.
         fetch(BASE + "feed-sources.json").then(function (r) { return r.json(); })
-          .then(function (f) { SRC_LIST = (f && f.sources) || []; })
+          .then(function (f) { SRC_LIST = (f && f.sources) || []; SRC_FAVS = (f && f.favorites) || []; })
           .catch(function () { SRC_LIST = []; })
           .then(function () {
             SRC_READONLY = true;
             renderSourceRows();
+            loadAuthors();
             srcStatus("Read-only — the admin API isn’t reachable (sign in to edit).", true);
             var sv = $("mg-src-save");
             if (sv) sv.disabled = true;
@@ -1295,15 +1300,82 @@
     renderSourceRows();
   }
 
+  function favKey(n) { return String(n || "").toLowerCase(); }
+  function isFav(n) {
+    var k = favKey(n);
+    return SRC_FAVS.some(function (f) { return favKey(f) === k; });
+  }
+
+  function loadAuthors() {
+    var el = $("mg-src-authors");
+    if (el) el.innerHTML = '<div class="mg-empty">Loading…</div>';
+    fetch(BASE + "cases/data/_summary.json")
+      .then(function (r) { return r.json(); })
+      .catch(function () { return []; })
+      .then(function (cases) {
+        var seen = {}, out = [];
+        (cases || []).forEach(function (c) {
+          (c.coverage || []).forEach(function (a) {
+            var n = String((a && a.source) || "").trim();
+            if (!n) return;
+            var k = favKey(n);
+            if (!seen[k]) { seen[k] = true; out.push(n); }
+          });
+        });
+        var feedNames = {};
+        SRC_LIST.forEach(function (s) { feedNames[favKey(s.name)] = true; });
+        SRC_AUTHORS = out.filter(function (n) { return !feedNames[favKey(n)]; })
+          .sort(function (a, b) { return a.localeCompare(b); });
+        // ★ names that scans haven't cited lately still deserve a row
+        SRC_FAVS.forEach(function (f) {
+          if (!SRC_AUTHORS.some(function (n) { return favKey(n) === favKey(f); }) &&
+              !feedNames[favKey(f)]) SRC_AUTHORS.push(f);
+        });
+        renderAuthors();
+      });
+  }
+
+  function renderAuthors() {
+    var el = $("mg-src-authors");
+    if (!el) return;
+    if (!SRC_AUTHORS.length) {
+      el.innerHTML = '<div class="mg-empty">No outlets discovered yet — they appear as the news scans cite them.</div>';
+      return;
+    }
+    var favs = SRC_AUTHORS.filter(isFav), rest = SRC_AUTHORS.filter(function (n) { return !isFav(n); });
+    function row(n) {
+      var on = isFav(n);
+      return '<button type="button" class="mg-src-star' + (on ? " on" : "") + '" data-fav="' + esc(n) + '" ' +
+        'title="' + (on ? "Remove from favorites — rolls back into the \u2018All other sources\u2019 toggle" :
+                          "Make a favorite — gets its own row in the Author filter") + '">' +
+        (on ? "★" : "☆") + " " + esc(n) + "</button>";
+    }
+    el.innerHTML =
+      (favs.length ? '<div class="mg-src-augrp">Favorites — own row in the Author filter</div>' +
+        '<div class="mg-src-aulist">' + favs.map(row).join("") + "</div>" : "") +
+      '<div class="mg-src-augrp">Other — covered by one \u201cAll other sources\u201d toggle</div>' +
+      '<div class="mg-src-aulist">' + rest.map(row).join("") + "</div>";
+    el.querySelectorAll("[data-fav]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var n = b.getAttribute("data-fav");
+        if (isFav(n)) SRC_FAVS = SRC_FAVS.filter(function (f) { return favKey(f) !== favKey(n); });
+        else SRC_FAVS.push(n);
+        renderAuthors();
+        srcStatus("Favorites changed — hit Save sources to make it live.");
+      });
+    });
+  }
+
   function saveSources() {
     srcStatus("Saving…");
     apiFetch(BASE + "api/feed-sources", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sources: SRC_LIST }),
+      body: JSON.stringify({ sources: SRC_LIST, favorites: SRC_FAVS }),
     }).then(function (r) { return r.json(); }).then(function (p) {
       if (p && p.ok) {
         SRC_LIST = p.sources || SRC_LIST;
+        if (p.favorites) { SRC_FAVS = p.favorites; renderAuthors(); }
         renderSourceRows();
         srcStatus("Saved — sources pull on the next news scan (runs twice a day).");
       } else srcStatus((p && p.error) || "Save failed", true);
@@ -1337,7 +1409,14 @@
           '<span style="flex:1"></span>' +
           '<button type="button" class="mg-btn mg-btn-primary" id="mg-src-save">Save sources</button>' +
         "</div>" +
-      "</div>";
+      "</div>" +
+
+      '<div class="mg-head" style="margin-top:30px;"><h2>Authors</h2></div>' +
+      '<p class="mg-hint">Every outlet the news scans have cited, collected automatically. ' +
+      "\u2605 favorites get their own row in the docket/news <strong>Author</strong> filter; " +
+      "everything else is covered there by a single \u201cAll other sources\u201d toggle. " +
+      "Changes save with the <em>Save sources</em> button above.</p>" +
+      '<div class="mg-box" style="padding:14px;"><div id="mg-src-authors">Loading…</div></div>';
     loadSourcesTab();
     $("mg-src-add-btn").addEventListener("click", addSourceFromForm);
     $("mg-src-save").addEventListener("click", saveSources);
