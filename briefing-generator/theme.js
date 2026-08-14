@@ -857,8 +857,54 @@
       });
     });
   }
+  // ── Phones: tuck the sticky nav on scroll-down, return it on scroll-up ────
+  // The bar eats a real slice of a short viewport. Scrolling down hides it;
+  // the first upward movement brings it straight back, so the sections are
+  // never more than a flick away. Desktop keeps the bar pinned as before.
+  //
+  // .tn stays in flow while transformed, so nothing below it reflows or jumps.
+  // Reveal is deliberately twitchier than tuck (4px up vs 6px down): coming
+  // back late feels broken, tucking late just feels calm.
+  function wireNavAutoHide(){
+    var bar=document.querySelector('.tn');
+    if(!bar)return;
+    var mq=matchMedia('(max-width:720px)');
+    var TUCK_AFTER=6;    // px of downward travel before it hides
+    var REVEAL_AFTER=4;  // px of upward travel before it returns
+    var ARM_BELOW=64;    // stay put near the top of the page
+    var last=window.pageYOffset||0, queued=false;
+    function show(){bar.classList.remove('tn-tucked');}
+    function read(){
+      queued=false;
+      var y=window.pageYOffset||0;
+      // iOS rubber-banding reports offsets past both ends of the document;
+      // treating those as real travel makes the bar flicker at the extremes.
+      if(y<0){last=0;show();return;}
+      var dy=y-last;
+      last=y;
+      if(!mq.matches){show();return;}
+      // Both panels are absolutely positioned inside .tn, so tucking the bar
+      // would drag an open menu off-screen with it.
+      var menu=document.getElementById('tn-menu');
+      var gear=document.getElementById('tn-gear');
+      if((menu&&menu.classList.contains('open'))||(gear&&gear.classList.contains('open'))){show();return;}
+      if(y<=ARM_BELOW||dy<-REVEAL_AFTER){show();return;}
+      if(dy>TUCK_AFTER)bar.classList.add('tn-tucked');
+    }
+    addEventListener('scroll',function(){
+      if(queued)return;
+      queued=true;
+      requestAnimationFrame(read);
+    },{passive:true});
+    // Never strand keyboard focus inside a bar that is off-screen.
+    addEventListener('focusin',function(e){if(bar.contains(e.target))show();});
+    // Rotating to a wide viewport leaves the tucked class behind otherwise.
+    mq.addEventListener('change',show);
+  }
+
   apply();
-  if(document.readyState!=='loading') wire();
-  else document.addEventListener('DOMContentLoaded',wire);
+  function boot(){wire();wireNavAutoHide();}
+  if(document.readyState!=='loading') boot();
+  else document.addEventListener('DOMContentLoaded',boot);
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
 })();
