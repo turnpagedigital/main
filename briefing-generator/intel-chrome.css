@@ -47,6 +47,9 @@ a{color:var(--ink);}
 .tn-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between;max-width:1680px;margin:0 auto;padding:0 32px;}
 .tn-left{display:flex;align-items:center;gap:16px;}
 [data-theme="light"] .tn{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}
+/* Dark: the bar wears the page background (a hair lighter than black),
+   not pure #000 — one rule here covers every page. */
+[data-theme="dark"] .tn{background:var(--bg);border-bottom-color:rgba(229,231,235,0.1);}
 
 /* ── Brand ──────────────────────────────────────────────────────────────── */
 .tn-brand{display:inline-flex;align-items:center;padding:4px 0;text-decoration:none;}
@@ -147,3 +150,49 @@ a{color:var(--ink);}
 .pr-copy:hover{border-color:var(--neon);}
 .pr-copy.done{color:#1a7f37;border-color:#1a7f37;}
 @keyframes pr-social-spin{to{transform:rotate(360deg);}}
+
+/* ── Docket-family shared styling (R10 final pass) — the table/controls
+      look docket/news/calendar/notes/prospects/briefings all wear; was
+      hand-mirrored per page with a 'keep the two in sync' comment. ───── */
+#ud-count{font-size:14px;color:var(--ink-60);flex:1;}
+.pr-btn{font-family:inherit;font-size:11.5px;font-weight:800;letter-spacing:0.04em;padding:6px 14px;border:1px solid var(--line-strong);background:transparent;color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block;line-height:1.2;}
+.pr-btn-track{background:var(--neon-block);color:var(--neon-on-block);border-color:var(--neon-block);}
+.pr-btn-track:hover{filter:brightness(0.94);}
+.pr-btn:hover{background:var(--paper-2);}
+.ud-case-dd{position:relative;margin-right:auto;}
+.ud-case-dd-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;}
+.ud-clear-btn:hover{border-color:var(--ink-40);color:var(--ink);}
+.ud-dd-caret{font-size:11px;color:var(--ink-60);}
+.ud-dd-row input{accent-color:var(--neon);cursor:pointer;flex-shrink:0;margin:0;}
+.ud-note-text:focus{border-color:var(--neon);}
+.ud-pal-item .ud-pal-slug{color: var(--ink-60); font-size: 11px; font-family: monospace;}
+.ud-pal-item:hover{background: var(--sel-bg,#0A0A0A); color: var(--sel-fg,#fff);}
+.ud-pal-item:hover .ud-pal-slug{color: inherit; opacity: 0.65;}
+.ud-pill-theme{background:transparent;color:#0A0A0A;border:1px dotted #0A0A0A;border-radius:99px;}
+.ud-table tbody tr.ud-day-row td{padding-top: 30px;}
+.ud-table thead th.ud-th-on{color: var(--ink); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px;}
+.ud-table tr.ud-row-daycollapsed{display: none;}
+.ud-table tr:last-child td{border-bottom:none;}
+.ud-th-caret{font-size:9px;}
+.ud-th-filter{cursor:pointer;user-select:none;-webkit-user-select:none;}
+.ud-th-menu-item.ud-th-menu-on{font-weight:800;}
+.ud-type-select{padding:7px 10px;font-size:14px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;outline:none;}
+[data-theme="dark"] .page-title{border-bottom: 1px solid var(--line-strong);}
+[data-theme="dark"] .ud-day-row td{border-top: none;}
+[data-theme="dark"] .ud-pill-theme{background:transparent;color:#FFFFFF;border-color:#FFFFFF;}
+[data-theme="dark"] .ud-table tbody tr:first-child td{padding-top: 20px;}
+[data-theme="light"] .page-title{border-bottom: 1px solid var(--line-strong);}
+[data-theme="light"] .ud-day-row td{border-top: none; border-bottom: 1px solid var(--line-strong);}
+[data-theme="light"] .ud-row-article td{background: #E7E9EE;}
+[data-theme="light"] .ud-row-article:hover td{background: #F0F1F4;}
+[data-theme="light"] .ud-search-input:focus{background: #FFFFFF;}
+[data-theme="light"] .ud-table{border-collapse: collapse;}
+[data-theme="light"] .ud-table tbody tr{background: var(--surface);}
+[data-theme="light"] .ud-table tbody tr.ud-day-row{background: transparent;}
+[data-theme="light"] .ud-table tbody tr:first-child td{padding-top: 20px;}
+[data-theme="light"] .ud-table tbody tr:last-child td{border-bottom: none;}
+[data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:first-child{border-left: none;}
+[data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:last-child{border-right: none;}
+[data-theme="light"] .ud-table tbody tr:not(.ud-day-row):hover{background: linear-gradient(rgba(10,10,10,0.03), rgba(10,10,10,0.03)), var(--surface);}
+[data-theme="light"] .ud-table td{border-bottom-color: var(--line);}
+[data-theme="light"], [data-theme="light"] body{background: #FFFFFF;}
