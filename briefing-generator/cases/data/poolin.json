@@ -15,44 +15,84 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-14",
-    "meta_fetched_at": "2026-08-14T18:09:11.114961+00:00",
-    "fetched_at": "2026-08-14T18:09:11.114961+00:00",
+    "meta_fetched_at": "2026-08-14T20:49:04.586415+00:00",
+    "fetched_at": "2026-08-14T20:49:04.586415+00:00",
     "as_of": "Aug 14, 2026",
     "backfilled": true,
-    "new_in_72h": 14,
+    "new_in_72h": 18,
     "recent": [
       {
-        "entry_number": 123,
+        "entry_number": 128,
         "date_filed": "2026-08-14",
-        "time_filed": "12:57:41",
+        "time_filed": "15:58:42",
         "date_display": "Aug 14, 2026",
-        "description": "Appear Pro Hac Vice",
+        "description": "Retention",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 122,
+        "entry_number": 127,
         "date_filed": "2026-08-14",
-        "time_filed": "11:09:47",
+        "time_filed": "15:56:58",
         "date_display": "Aug 14, 2026",
-        "description": "Notice of Appearance and Request",
+        "description": "Amended Motion AND Retention",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 121,
+        "entry_number": 126,
         "date_filed": "2026-08-14",
-        "time_filed": "11:00:31",
+        "time_filed": "15:53:24",
         "date_display": "Aug 14, 2026",
-        "description": "Appear Pro Hac Vice",
+        "description": "Retention",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 128,
+        "date_filed": "2026-08-14",
+        "time_filed": "15:58:42",
+        "date_display": "Aug 14, 2026",
+        "description": "Retention",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 127,
+        "date_filed": "2026-08-14",
+        "time_filed": "15:56:58",
+        "date_display": "Aug 14, 2026",
+        "description": "Amended Motion AND Retention",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 126,
+        "date_filed": "2026-08-14",
+        "time_filed": "15:53:24",
+        "date_display": "Aug 14, 2026",
+        "description": "Retention",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 125,
+        "date_filed": "2026-08-14",
+        "time_filed": "15:51:45",
+        "date_display": "Aug 14, 2026",
+        "description": "Retention",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 123,
         "date_filed": "2026-08-14",
