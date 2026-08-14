@@ -1,9 +1,109 @@
 (function(){
-  // Selected-state convention: light = black box + white text, dark = neon + black.
+  // Selected-state convention: light = black box + white text, dark = neon + black,
+  // night = red + black.
   var selCss=document.createElement('style');
   selCss.id='tn-sel-vars';
-  selCss.textContent=':root{--sel-bg:#0A0A0A;--sel-fg:#FFFFFF;}[data-theme="dark"]{--sel-bg:#D4FF00;--sel-fg:#0A0A0A;}';
+  selCss.textContent=':root{--sel-bg:#0A0A0A;--sel-fg:#FFFFFF;}[data-theme="dark"]{--sel-bg:#D4FF00;--sel-fg:#0A0A0A;}[data-theme="night"]{--sel-bg:#FE0100;--sel-fg:#000000;}';
   (document.head||document.documentElement).appendChild(selCss);
+  // ── Night mode — red-on-black, Apple Watch night-face style. Injected here
+  // (not intel-chrome.css) so every page that loads theme.js gets it — including
+  // the two legacy case shells that never adopted intel-chrome.css. Palette is
+  // #000 + #FE0100 only: solid red for primary text/accents, dimmed red alphas
+  // for hierarchy, black text on solid-red fills. No shadows anywhere.
+  // :root[data-theme="night"] (0,2,0) outguns the :root token blocks pages
+  // declare locally (index --canvas, manage --bg), so one block rules them all.
+  var nightCss=document.createElement('style');
+  nightCss.id='tn-night-vars';
+  nightCss.textContent=
+    ':root[data-theme="night"]{color-scheme:dark;'+
+      '--bg:#000000;--surface:#000000;--paper-2:rgba(254,1,0,0.10);--canvas:#000000;'+
+      '--ink:#FE0100;--ink-60:rgba(254,1,0,0.72);--ink-40:rgba(254,1,0,0.55);--ink-20:rgba(254,1,0,0.30);'+
+      '--line:rgba(254,1,0,0.20);--line-strong:rgba(254,1,0,0.38);'+
+      '--neon:#FE0100;--neon-block:#FE0100;--neon-on-block:#000000;'+
+      '--ok:#FE0100;--warn:#FE0100;--danger:#FE0100;}'+
+    // No drop shadows in night — kill every box/text shadow, incl. popover floats.
+    // html[…] prefix: outguns the pages' own single-class !important shadows
+    // (e.g. the mobile bottom-sheet rule) — both important, higher specificity wins.
+    'html[data-theme="night"] *,html[data-theme="night"] *::before,html[data-theme="night"] *::after{box-shadow:none !important;text-shadow:none !important;}'+
+    '[data-theme="night"],[data-theme="night"] body{background:#000;color:#FE0100;}'+
+    '[data-theme="night"] ::selection{background:#FE0100;color:#000;}'+
+    '[data-theme="night"] :focus-visible{outline-color:#FE0100;}'+
+    '[data-theme="night"] ::-webkit-scrollbar{width:11px;height:11px;background:#000;}'+
+    '[data-theme="night"] ::-webkit-scrollbar-thumb{background:rgba(254,1,0,0.38);border-radius:99px;}'+
+    '[data-theme="night"] ::-webkit-scrollbar-thumb:hover{background:rgba(254,1,0,0.72);}'+
+    '[data-theme="night"] input,[data-theme="night"] textarea,[data-theme="night"] select,[data-theme="night"] button{accent-color:#FE0100;}'+
+    '[data-theme="night"] input::placeholder,[data-theme="night"] textarea::placeholder{color:rgba(254,1,0,0.55);}'+
+    // Nav bar: black bar, red hairline, dim-red links, solid-red active.
+    '[data-theme="night"] .tn{background:#000;border-bottom-color:rgba(254,1,0,0.38);}'+
+    '[data-theme="night"] .tn-back{color:rgba(254,1,0,0.72);border-left-color:rgba(254,1,0,0.30);filter:none;}'+
+    '[data-theme="night"] .tn-back:hover,[data-theme="night"] .tn-back.tn-on{color:#FE0100;}'+
+    '[data-theme="night"] .tn-kbd-btn{color:rgba(254,1,0,0.72);}'+
+    '[data-theme="night"] .tn-kbd-btn:hover{color:#FE0100;}'+
+    '[data-theme="night"] .tn-hamburger{color:#FE0100;}'+
+    '[data-theme="night"] .tn-menu.open{background:#000;border-bottom-color:rgba(254,1,0,0.38);}'+
+    '[data-theme="night"] .tn-menu .tn-back{border-top-color:rgba(254,1,0,0.20);}'+
+    '[data-theme="night"] .tn-gear.open .tn-gear-panel{border-bottom-color:rgba(254,1,0,0.38);}'+
+    '[data-theme="night"] .tn-gear-panel a{border-top-color:rgba(254,1,0,0.20);}'+
+    '[data-theme="night"] .tn-gear-theme,[data-theme="night"] .tn-gear-font{border-top-color:rgba(254,1,0,0.20);}'+
+    // Color emoji: nav/gear icons → red monochrome via filter; the big
+    // decorative h1 glyph can't be tinted convincingly at size, so night
+    // drops it (watch-face minimalism — the title text carries the page).
+    '[data-theme="night"] .tn-back .tn-ico,[data-theme="night"] .tn-gt-ico{filter:grayscale(1) sepia(1) saturate(12) hue-rotate(-50deg) brightness(1.05);}'+
+    // :not([class]) — the generated case pages wrap their title emoji in a bare
+    // <span>, but briefings.html's first span is the case-title PILL (classed).
+    '[data-theme="night"] h1 .tn-emj,[data-theme="night"] .page-title h1>span:first-child:not([class]){display:none;}'+
+    // Brand logo: use the (white) dark-mode asset, colorized to #FE0100.
+    '[data-theme="night"] .tn-logo-light{display:none !important;}'+
+    '[data-theme="night"] .tn-logo-dark{display:block;filter:brightness(0) saturate(100%) invert(13%) sepia(94%) saturate(7404%) hue-rotate(11deg) brightness(101%) contrast(115%);}'+
+    // Everything raster (news favicons, uploaded images, charts) → red monochrome.
+    '[data-theme="night"] :is(img,video,canvas):not(.tn-brand-logo){filter:grayscale(1) sepia(1) saturate(9) hue-rotate(-48deg) brightness(0.9);}'+
+    // Popovers float without shadows now — a stronger red border does the lifting.
+    '[data-theme="night"] :is(.tn-kbd-panel,.tn-gear-panel,.ud-th-menu,.ud-case-dd-panel,#ud-source-dd-panel,.ud-pal-box,.ud-note-box,.pr-box){border-color:rgba(254,1,0,0.55);}'+
+    '[data-theme="night"] .ud-pal-overlay{background:rgba(0,0,0,0.62);}'+
+    // Case-color pills: every case reads as the same dark-red chip (the per-case
+    // palette is meaningless when the only ink is red).
+    '[data-theme="night"] :is(.ud-pill,.mg-pill,.ih-pill,.uc-cal-chip)[style*="--pb"]{background:rgba(254,1,0,0.14);color:#FE0100;}'+
+    // Case-tinted cards set colors inline (style="border-left-color:…;background:tint(…)").
+    '[data-theme="night"] .uc-week-card,[data-theme="night"] .ih-row-coded,[data-theme="night"] .ih-wk-ev{background:rgba(254,1,0,0.10) !important;border-left-color:#FE0100 !important;}'+
+    '[data-theme="night"] .ud-pill-theme,[data-theme="night"] .ih-pill-theme{color:#FE0100;border-color:#FE0100;background:transparent;}'+
+    // Neon/status literals that dodge the token system.
+    '[data-theme="night"] tr.is-new td{background:rgba(254,1,0,0.08);}'+
+    '[data-theme="night"] .status-badge{background:rgba(254,1,0,0.14);}'+
+    '[data-theme="night"] .tc-counter.active{background:rgba(254,1,0,0.14);color:#FE0100;}'+
+    '[data-theme="night"] .new-pill{color:#000;}'+
+    '[data-theme="night"] .pr-modal-status.err,[data-theme="night"] .pr-modal-status.okk{color:#FE0100;}'+
+    '[data-theme="night"] .pr-copy.done{color:#FE0100;border-color:#FE0100;}'+
+    // Row-action "on" states (note/vote/bookmark/snooze) — green/yellow/blue → red.
+    '[data-theme="night"] :is(.ud-note-btn.ud-note-on,.ud-vote.ud-vote-up-on,.ud-vote.ud-vote-dn-on,.ud-bm-btn.ud-bm-on,.pr-ico.pr-vote-up-on,.pr-ico.pr-vote-dn-on,.pr-ico.pr-note-on,.pr-ico.pr-snz-on){color:#FE0100;}'+
+    '[data-theme="night"] .ud-fm-sw.on{background:#FE0100;}'+
+    '[data-theme="night"] .ud-fm-sw::after{background:#000;}'+
+    '[data-theme="night"] .ud-table .ud-row-bondoro td{background:rgba(254,1,0,0.08);}'+
+    '[data-theme="night"] .ih-code-filing,[data-theme="night"] .ih-code-news{border-left-color:#FE0100 !important;}'+
+    // Briefings/manage stragglers: yellow th-toggle, blue snooze, crimson errors,
+    // neon due/note highlights, manage banner tints, white-on-danger hover text.
+    '[data-theme="night"] .ud-th-toggle.ud-th-on,[data-theme="night"] .ud-snz-btn.ud-snz-on{color:#FE0100;}'+
+    '[data-theme="night"] .ud-due{background:rgba(254,1,0,0.30);}'+
+    '[data-theme="night"] .bf-old-note{background:rgba(254,1,0,0.14);}'+
+    '[data-theme="night"] .ub-mini.ub-mini-danger,[data-theme="night"] .ce-del{color:#FE0100;border-color:rgba(254,1,0,0.55);}'+
+    '[data-theme="night"] .ce-err{color:#FE0100;background:rgba(254,1,0,0.08);border-color:rgba(254,1,0,0.38);}'+
+    '[data-theme="night"] .mg-banner.err,[data-theme="night"] .mg-banner.ok,[data-theme="night"] .mg-banner.warn{background:rgba(254,1,0,0.08);}'+
+    '[data-theme="night"] .mg-btn-danger:hover{color:#000;}'+
+    // Footer logo (dark-mode invert rule never fires in night) → crisp red.
+    '[data-theme="night"] #tn-site-footer .tf-logo img{filter:brightness(0) saturate(100%) invert(13%) sepia(94%) saturate(7404%) hue-rotate(11deg) brightness(101%) contrast(115%);}'+
+    // Dashboard highlighter set (mirrors the dark-mode block in index.html).
+    '[data-theme="night"] .stat-anchor,[data-theme="night"] .anchor-stat,[data-theme="night"] .stat-callout,[data-theme="night"] .lead-headline .accent,[data-theme="night"] h1 .accent,[data-theme="night"] .accent,[data-theme="night"] .card-stat-anchor,[data-theme="night"] .stat-anchor-value{background:#FE0100 !important;color:#000 !important;}'+
+    '[data-theme="night"] .cal-day{background:linear-gradient(180deg,transparent 0 60%,#FE0100 60% 96%,transparent 96%) !important;color:#000 !important;}'+
+    '[data-theme="night"] .tn-tabs-row:has(.tn-tab:hover) .tn-tab.active:not(:hover) .tn-pill.active{background:rgba(254,1,0,0.10) !important;color:rgba(254,1,0,0.55) !important;border:1px solid transparent !important;}'+
+    // Dashboard bits with their own palette (sticky notes, calendar strip).
+    '[data-theme="night"] .ih-note-card{background:rgba(254,1,0,0.10);border-top-color:#FE0100;}'+
+    '[data-theme="night"] .ih-note-card .title,[data-theme="night"] .ih-note-card strong,[data-theme="night"] .ih-note-card .body{color:#FE0100;}'+
+    '[data-theme="night"] .ih-note-nav:hover:not(:disabled){color:#FE0100;}'+
+    '[data-theme="night"] .ih-wk-col.today .ih-wk-num{color:#FE0100;}'+
+    // Layout tweaks light/dark both carry (night would otherwise fall to neither).
+    '[data-theme="night"] .page-title{border-bottom:1px solid var(--line-strong);}'+
+    '[data-theme="night"] .ud-day-row td{border-top:none;}'+
+    '[data-theme="night"] .ud-table tbody tr:first-child td{padding-top:20px;}';
+  (document.head||document.documentElement).appendChild(nightCss);
   // Critical hides, injected NOW (this script is parser-blocking in <head>)
   // rather than with the rest of the gear CSS at DOMContentLoaded: the gear
   // panel's links and the legacy theme toggle are in every page's markup, so
@@ -14,9 +114,9 @@
   hideCss.textContent='.tn-gear-panel{display:none;}.tn-kbd-panel{display:none;}#theme-toggle{display:none !important;}#tn-fs{display:none !important;}';
   (document.head||document.documentElement).appendChild(hideCss);
   var K='daily-briefing-theme';
-  var ST=['system','dark','light'];
-  var IC={dark:'\ud83c\udf19',light:'\u2600\ufe0f',system:'\ud83d\udda5\ufe0f'};
-  var LB={dark:'Dark',light:'Light',system:'System'};
+  var ST=['system','dark','light','night'];
+  var IC={dark:'\ud83c\udf19',light:'\u2600\ufe0f',system:'\ud83d\udda5\ufe0f',night:'\ud83d\udd34'};
+  var LB={dark:'Dark',light:'Light',system:'System',night:'Night'};
   function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
   function apply(){
     var t=localStorage.getItem(K)||'system';
@@ -88,11 +188,11 @@
   // key never leaks into a page's own single-key handlers (h=hide, n=note…).
   var GOTO={h:'index.html',d:'docket.html',c:'calendar.html',p:'prospects.html',n:'notes.html',w:'news.html'};
   var gAt=0;
-  // d-then-m / l-then-m / s-then-m  →  set the theme (m = "mode"). Same
-  // capture-phase trick as the g-prefix: the first key still reaches a page's
-  // own single-key handlers (d = Download on docket), but 'm' completing the
-  // sequence flips the theme instead of leaking through to the page.
-  var THEME_SEQ={d:'dark',l:'light',s:'system'};
+  // d-then-m / l-then-m / s-then-m / n-then-m  →  set the theme (m = "mode").
+  // Same capture-phase trick as the g-prefix: the first key still reaches a
+  // page's own single-key handlers (d = Download on docket, n = Note), but 'm'
+  // completing the sequence flips the theme instead of leaking through.
+  var THEME_SEQ={d:'dark',l:'light',s:'system',n:'night'};
   var tAt=0,tMode=null;
   var markGearTheme=function(){};
   document.addEventListener('keydown',function(e){
@@ -122,6 +222,27 @@
 
   function wire(){
     apply();
+    // Wrap a leading emoji in each h1 (e.g. "🏠 Dashboard") in a span so night
+    // mode can hide/tint the glyph — CSS can't select bare text nodes. Case
+    // pages already wrap theirs in a <span>; this covers the rest. Pages that
+    // re-render their h1 after load (briefings.html swaps in the case pill)
+    // get re-wrapped via the observer.
+    function wrapH1Emoji(h){
+      var n=h.firstChild;
+      if(!n||n.nodeType!==3)return;
+      var m=(n.nodeValue||'').match(/^\s*(\p{Extended_Pictographic}(?:️|‍\p{Extended_Pictographic}️?)*)\s*/u);
+      if(!m)return;
+      var sp=document.createElement('span');
+      sp.className='tn-emj';
+      sp.textContent=m[1];
+      n.nodeValue=n.nodeValue.slice(m[0].length);
+      h.insertBefore(document.createTextNode(' '),n);
+      h.insertBefore(sp,h.firstChild);
+    }
+    document.querySelectorAll('h1').forEach(function(h){
+      wrapH1Emoji(h);
+      new MutationObserver(function(){wrapH1Emoji(h);}).observe(h,{childList:true});
+    });
     // Mark the current page's nav link (black bold + full-color emoji via CSS).
     // Normalize ".html" away on BOTH sides — Cloudflare Pages serves clean
     // URLs in production (/intel/docket) while links say "docket.html".
@@ -156,7 +277,7 @@
     if(kp&&!kp.querySelector('.tn-kbd-theme-row')){
       var trow=document.createElement('div');
       trow.className='tn-kbd-row tn-kbd-theme-row';
-      trow.innerHTML='<span class="tn-key">D</span> · <span class="tn-key">L</span> · <span class="tn-key">S</span> then <span class="tn-key">M</span> Dark / Light / System theme';
+      trow.innerHTML='<span class="tn-key">D</span> · <span class="tn-key">L</span> · <span class="tn-key">S</span> · <span class="tn-key">N</span> then <span class="tn-key">M</span> Dark / Light / System / Night theme';
       kp.appendChild(trow);
     }
     wireGearMenu();
@@ -373,7 +494,7 @@
       var wrap=document.createElement('div');
       wrap.className='tn-gear-theme';
       wrap.innerHTML='<div class="tn-gt-lbl">Theme</div>'+ST.map(function(t){
-        return '<button type="button" data-theme-set="'+t+'">'+IC[t]+' <span>'+LB[t]+'</span><span class="tn-gt-check">✓</span></button>';
+        return '<button type="button" data-theme-set="'+t+'"><span class="tn-gt-ico">'+IC[t]+'</span> <span>'+LB[t]+'</span><span class="tn-gt-check">✓</span></button>';
       }).join('');
       panel.appendChild(wrap);
       wrap.addEventListener('click',function(e){
