@@ -76,8 +76,12 @@
     '[data-theme="night"] :is(.tn-kbd-panel,.tn-gear-panel,.ud-th-menu,.ud-case-dd-panel,#ud-source-dd-panel,.ud-pal-box,.ud-note-box,.pr-box){border-color:rgba(254,1,0,0.55);}'+
     '[data-theme="night"] .ud-pal-overlay{background:rgba(0,0,0,0.62);}'+
     // Case pills: solid red, black text (Andrew's call — case identity pops;
-    // the per-case palette is meaningless when the only ink is red).
-    '[data-theme="night"] :is(.ud-pill,.mg-pill,.ih-pill,.uc-cal-chip)[style*="--pb"]{background:#FE0100;color:#000;}'+
+    // the per-case palette is meaningless when the only ink is red). 78% red —
+    // full #FE0100 pills read too hot next to the dimmed chrome.
+    '[data-theme="night"] :is(.ud-pill,.mg-pill,.ih-pill,.uc-cal-chip)[style*="--pb"]{background:rgba(254,1,0,0.78);color:#000;}'+
+    // Briefing cards get the same thin outline the news cards wear (an
+    // unprefixed \'border:1px solid transparent\' otherwise hides it in night).
+    '[data-theme="night"] .ih-theme-card{border-color:rgba(254,1,0,0.38);}'+
     // Case-tinted cards set colors inline (style="border-left-color:…;background:tint(…)").
     '[data-theme="night"] .uc-week-card,[data-theme="night"] .ih-row-coded,[data-theme="night"] .ih-wk-ev{background:rgba(254,1,0,0.10) !important;border-left-color:#FE0100 !important;}'+
     '[data-theme="night"] .ud-pill-theme,[data-theme="night"] .ih-pill-theme{color:#FE0100;border-color:#FE0100;background:transparent;}'+
