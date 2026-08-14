@@ -177,7 +177,7 @@
     // Today's chip is neon in light/dark; night swaps it to the red palette.
     // Upcoming days: half-strength red, weekday and date alike.
     '[data-theme="night"] .ih-wk-dow,[data-theme="night"] .ih-wk-num{color:rgba(254,1,0,0.5);}'+
-    '[data-theme="night"] .ih-wk-col.today .ih-wk-num{background:#FE0100;color:#000;padding:1px 5px;}'+
+    '[data-theme="night"] .ih-wk-col.today .ih-wk-num{background:transparent;color:#FE0100;padding:0;}'+
     '[data-theme="night"] .ih-wk-col.today .ih-wk-dow{color:#FE0100;}'+
     '[data-theme="night"] .ih-wk-col.today .ih-wk-dayhd{border-bottom-color:#FE0100;}'+
     // Layout tweaks light/dark both carry (night would otherwise fall to neither).
