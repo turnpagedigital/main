@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73643729/cashcall-inc/",
     "date_last_filing": "2026-08-13",
-    "meta_fetched_at": "2026-08-13T17:20:05.012229+00:00",
-    "fetched_at": "2026-08-14T00:01:35.007575+00:00",
+    "meta_fetched_at": "2026-08-14T05:09:25.098816+00:00",
+    "fetched_at": "2026-08-14T05:09:25.098816+00:00",
     "as_of": "Aug 14, 2026",
     "backfilled": true,
-    "new_in_72h": 9,
+    "new_in_72h": 10,
     "recent": [
+      {
+        "entry_number": 60,
+        "date_filed": "2026-08-13",
+        "time_filed": "16:36:21",
+        "date_display": "Aug 13, 2026",
+        "description": "~Generic~ Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 59,
         "date_filed": "2026-08-13",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 57,
-        "date_filed": "2026-08-12",
-        "time_filed": "14:00:51",
-        "date_display": "Aug 12, 2026",
-        "description": "Stipulation",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 60,
+        "date_filed": "2026-08-13",
+        "time_filed": "16:36:21",
+        "date_display": "Aug 13, 2026",
+        "description": "~Generic~ Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 59,
         "date_filed": "2026-08-13",
