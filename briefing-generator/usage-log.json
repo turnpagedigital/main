@@ -1,1 +1,25 @@
-{"runs": []}
+{
+  "runs": [
+    {
+      "ts": "2026-08-15T14:14:21Z",
+      "date": "2026-08-15",
+      "task": "docket-sync",
+      "provider": "courtlistener",
+      "requests": 17,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ok": true
+    },
+    {
+      "ts": "2026-08-15T14:20:48Z",
+      "date": "2026-08-15",
+      "task": "case-briefings",
+      "provider": "anthropic",
+      "requests": 7,
+      "tokens_in": 312597,
+      "tokens_out": 10825,
+      "ok": true,
+      "model": "claude-sonnet-4-6"
+    }
+  ]
+}
