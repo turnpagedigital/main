@@ -480,6 +480,13 @@
       "summary": "Al Jazeera covers the filing and interviews IP attorney Kirk Sigmon, who notes the fair-use defense 'would arguably be mooted' by the allegation that Google acquired the books unlawfully. The piece contextualizes the suit within Hachette and Cengage's earlier February 2026 attempt to join the pre-existing California class action."
     },
     {
+      "headline": "Hatchette and Elsevier Sue Google for Using Their Work to Train AI",
+      "url": "https://gizmodo.com/hatchette-and-elsevier-sue-google-for-using-their-work-to-train-ai-2000785480",
+      "source": "Gizmodo",
+      "date": "2026-07-15",
+      "summary": "Gizmodo covered the S.D.N.Y. class action, noting the complaint alleges Google 'reproduced millions of copyrighted works without permission' and that Gemini's outputs include verbatim copies, replacement chapters, and content that mimics specific authors' expressive styles."
+    },
+    {
       "headline": "Google Faces Another AI Copyright Suit By Publishers",
       "url": "https://www.law360.com/articles/2500754/google-faces-another-ai-copyright-suit-by-publishers",
       "source": "Law360",
@@ -494,11 +501,11 @@
       "summary": "Publishers Weekly reports that Hachette, Cengage, Elsevier, and Scott Turow filed a proposed class action seeking to block Google from alleged copyright infringement of millions of texts used to develop Gemini; the suit follows the plaintiffs' withdrawal from the 2023 In re Google Generative AI Copyright Litigation in California to preserve broader claims and avoid statute-of-limitations issues."
     },
     {
-      "headline": "Hachette, Scott Turow Sue Google for Using Books to Train Gemini AI",
-      "url": "https://www.thewrap.com/industry-news/tech/hachette-scott-turow-google-gemini-ai-copyright-lawsuit/",
-      "source": "The Wrap",
+      "headline": "Google faces another AI training lawsuit from major publishers",
+      "url": "https://techcrunch.com/2026/07/14/google-faces-another-ai-training-lawsuit-from-major-publishers/",
+      "source": "TechCrunch",
       "date": "2026-07-14",
-      "summary": "The lawsuit alleges Google built Gemini by copying books from Google Books, online libraries, and allegedly pirated websites without paying or obtaining permission. The complaint also argues Gemini now competes directly with the books it learned from by generating summaries, textbook-style explanations, and other content that could reduce demand for originals."
+      "summary": "TechCrunch reported that Hachette, Cengage, Elsevier, Scott Turow, and S.C.R.I.B.E. allege Google trained Gemini on books licensed only for limited Google Books and Play Books uses, and that an internal Google document cited in the complaint warned such conduct could expose the company to '$10Bs-$100Bs in potential fines.' Google had not issued a detailed public response."
     },
     {
       "headline": "Hachette Book Group Inc. et al v. Google LLC — Case Docket",
