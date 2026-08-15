@@ -1,1 +1,14 @@
-{"runs": []}
+{
+  "runs": [
+    {
+      "ts": "2026-08-15T01:53:30Z",
+      "date": "2026-08-15",
+      "task": "docket-sync",
+      "provider": "courtlistener",
+      "requests": 8,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ok": false
+    }
+  ]
+}
