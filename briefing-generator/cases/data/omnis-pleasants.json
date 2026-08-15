@@ -16,10 +16,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-14",
     "meta_fetched_at": "2026-08-14T22:43:40.529905+00:00",
-    "fetched_at": "2026-08-14T23:41:07.449541+00:00",
-    "as_of": "Aug 14, 2026",
+    "fetched_at": "2026-08-15T01:52:30.582310+00:00",
+    "as_of": "Aug 15, 2026",
     "backfilled": true,
-    "new_in_72h": 22,
+    "new_in_72h": 18,
     "recent": [
       {
         "entry_number": 94,
@@ -241,7 +241,7 @@
         "time_filed": "17:21:12",
         "date_display": "Aug 12, 2026",
         "description": "Notice of Meeting of Creditors/Commencement of Case Filed by Omnis Pleasants, LLC. 341(a) meeting to be held on 9/2/2026 at 01:00 PM at Virtual Hearing: Refer to Notice of Zoom Hearing. Objection 523 due by 11/2/2026. (Diver, James) (Entered: 08/12/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -251,7 +251,7 @@
         "time_filed": "13:14:37",
         "date_display": "Aug 12, 2026",
         "description": "The upcoming 341(a) meeting is scheduled to be held by Zoom. To join the meeting: Meeting ID: 160 0838 5103 ; Passcode: 4568293370 ; Phone: 1 (669) 254-5252. Filed by U.S. Trustee. (Hackman, Benjamin) (Entered: 08/12/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.75.0.pdf"
       },
@@ -261,7 +261,7 @@
         "time_filed": "13:11:25",
         "date_display": "Aug 12, 2026",
         "description": "Request of US Trustee to Schedule Section 341 Meeting of Creditors for Wednesday, September 2, 2026, at 1:00 p.m. (ET) Filed by U.S. Trustee. (Hackman, Benjamin) (Entered: 08/12/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -271,7 +271,7 @@
         "time_filed": "13:09:36",
         "date_display": "Aug 12, 2026",
         "description": "Notice of Withdrawal of Appearance. McDermott Will & Schulte LLP has withdrawn from the case. Filed by RG Energy LLC, TRAG LLC. (Hurst, David) (Entered: 08/12/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

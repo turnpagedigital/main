@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
     "date_last_filing": "2026-08-13",
     "meta_fetched_at": "2026-08-13T22:08:00.870382+00:00",
-    "fetched_at": "2026-08-14T23:41:49.439277+00:00",
-    "as_of": "Aug 14, 2026",
+    "fetched_at": "2026-08-15T01:53:01.418434+00:00",
+    "as_of": "Aug 15, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 2,
     "recent": [
       {
         "entry_number": 809,
@@ -48,7 +48,7 @@
         "time_filed": "18:06:26",
         "date_display": "Aug 12, 2026",
         "description": "JOINT CASE MANAGEMENT STATEMENT filed by BCP Literary, Inc., Ta-Nehisi Coates, Daring Greatly Corporation, Junot Diaz, Eleven Eleven O' Clock Corporation, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Pritt, Maxwell) (Filed on 8/12/2026) (Entered: 08/12/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.808.0.pdf"
       }
@@ -80,7 +80,7 @@
         "time_filed": "18:06:26",
         "date_display": "Aug 12, 2026",
         "description": "JOINT CASE MANAGEMENT STATEMENT filed by BCP Literary, Inc., Ta-Nehisi Coates, Daring Greatly Corporation, Junot Diaz, Eleven Eleven O' Clock Corporation, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Pritt, Maxwell) (Filed on 8/12/2026) (Entered: 08/12/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.808.0.pdf"
       },
