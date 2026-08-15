@@ -3,6 +3,29 @@
   "case_name": "Power Block Coin",
   "items": [
     {
+      "date": "2026-08-15",
+      "updated": "2026-08-15",
+      "lede": "On August 14, a motion to employ attorney was filed at Dkt. 535, alongside a notice of change of address at Dkt. 536. The employment motion is the only entry from the lookback period that warrants analysis — the change-of-address notice is procedural and routine.",
+      "body_md": "On August 14, a motion to employ attorney was filed at Dkt. 535, alongside a notice of change of address at Dkt. 536. The employment motion is the only entry from the lookback period that warrants analysis — the change-of-address notice is procedural and routine. The identity of the attorney sought to be employed and the proposed scope of representation are not evident from the docket entry alone; the full text of Dkt. 535 is not available from the record provided. Retention applications are ordinarily procedural and routine, but a new attorney engagement at this stage carries at least some substantive relevance: the case is deep into a contested Chapter 11 with an active adversary proceeding (Adv. No. 26-02122, filed June 24 against Coinbase Global, Coinbase Inc., Coinbase Financial Markets, Aaron Tilton, and Brad Jones, for recovery of money and property), and who is being retained — and in what capacity — determines whether Dkt. 535 is an estate-value question or administrative housekeeping. Until the application's content can be confirmed from PACER, Dkt. 535 should be treated as potentially significant and monitored for any objection or opposition, which would elevate it to substantive-and-important territory.\n\nThe broader posture gives that monitoring urgency. \nThe case carries over $192 million in total claims, including Celsius Network LLC claims exceeding $133 million.\n Earlier this month, Brian Rothschild — counsel for the debtor — was moving party on the motion to liquidate certain assets held in the debtor's B2C2 account (Dkt. 472), a hearing on which was calendared for August 11. No order resolving that motion appears on the docket record provided, meaning its disposition remains an open recovery question. Any new attorney engagement touching estate litigation — including the Coinbase adversary — would be substantive, not administrative.\n\nDkt. 536 (notice of change of address) is procedural and routine; it earns no further analysis. The next concrete milestone to track is the outcome of the B2C2 liquidation motion (Dkt. 472), for which no order has yet appeared, and the filing of any objection to the Dkt. 535 retention application, with a response deadline that will run from service of that motion.\n\n## Sources\n\n- [24-23041 Motion to Pay or for Direction or Approval Regarding Liquidation of Certain Assets in the Debtor's B2C2 Account](https://www.utb.uscourts.gov/content/24-23041-motion-pay-or-direction-or-approval-regarding-liquidation-certain-assets-debtors) — U.S. Bankruptcy Court, District of Utah\n- [Creditors' Committee Proposes Liquidation Plan for Utah Crypto Firm Power Block Coin](https://chapter11cases.com/blogs/news/creditors-committee-proposes-liquidation-plan-for-utah-crypto-firm-power-block-coin) — Chapter11Cases.com, February 2, 2025\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "24-23041 Motion to Pay or for Direction or Approval Regarding Liquidation of Certain Assets in the Debtor's B2C2 Account",
+          "url": "https://www.utb.uscourts.gov/content/24-23041-motion-pay-or-direction-or-approval-regarding-liquidation-certain-assets-debtors",
+          "note": "U.S. Bankruptcy Court, District of Utah"
+        },
+        {
+          "title": "Creditors' Committee Proposes Liquidation Plan for Utah Crypto Firm Power Block Coin",
+          "url": "https://chapter11cases.com/blogs/news/creditors-committee-proposes-liquidation-plan-for-utah-crypto-firm-power-block-coin",
+          "note": "Chapter11Cases.com, February 2, 2025"
+        }
+      ],
+      "activity": {
+        "filings": 2,
+        "articles": 0,
+        "latest": "2026-08-14"
+      }
+    },
+    {
       "date": "2026-08-10",
       "updated": "2026-08-10",
       "lede": "On August 7, Judge Cathleen D. Parker's chambers issued two Notices of Rescheduled Hearing, Dkt. 533 and Dkt. 534, in Bankr. D. Utah Case No. 24-23041. The docket does not disclose which specific matters were rescheduled or their new dates; the content of both notices is not publicly available through secondary sources reviewed this run.",

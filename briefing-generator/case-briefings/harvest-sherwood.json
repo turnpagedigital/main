@@ -3,6 +3,44 @@
   "case_name": "Harvest Sherwood",
   "items": [
     {
+      "date": "2026-08-15",
+      "updated": "2026-08-15",
+      "lede": "On August 14, the claims agent docketed two assignments of claim — Dkts. 1208 and 1212 — alongside a certificate of no objection (Dkt. 1214) and two generic notices (Dkts.",
+      "body_md": "On August 14, the claims agent docketed two assignments of claim — Dkts. 1208 and 1212 — alongside a certificate of no objection (Dkt. 1214) and two generic notices (Dkts. 1211 and 1213). Dkt. 1209, filed August 13, is a four-page document whose text was not captured in the pull; its docket-line description is unreadable, and the filing cannot be characterized further without a clean PACER retrieval. The remaining entries from the two-day run — Dkts. 1210 and 1215, both BNC certificates of mailing — are filing infrastructure and carry nothing further.\n\nThe two claim transfers are structurally identical to the series that ran through August 12 (Dkts. 1205–1206) and are consistent with the ongoing secondary-market activity in unsecured claims. The prior confirmed transfer — Dkt. 1165, filed August 7, in which CRG Financial LLC (Closter, NJ) acquired Technical Truck and Trailer's Claim No. 10057 for $5,314.76 — illustrates the pattern: \ntrade claims in this estate are estimated at $200–$400 million (midpoint $300 million)\n, and claim-trading at these dollar levels is routine secondary-market positioning rather than a signal of changed recovery expectations. The certificate of no objection (Dkt. 1214) most likely closes out a fee or retention application; without confirmed document text, it is treated as substantive-but-routine for this entry.\n\nThe case's controlling near-term event remains unchanged: \ntrial in Adv. Pro. 25-08002 is set for September 21, 2026 at 9:30 a.m. before Judge Jernigan in Dallas.\n \nThe adversary proceeding seeks $41.8 million plus punitive damages from Sprouts, asserting fraudulent transfer, breach of contract, fraud, and unjust enrichment.\n With plan confirmation already in place — \nJudge Jernigan confirmed the Chapter 11 plan after overruling the U.S. Trustee's remaining objection\n — the Sprouts trial is now the single most consequential pending event for unsecured creditor recovery. \nFollowing DIP repayment, general unsecured creditors are the primary beneficiaries of remaining litigation assets,\n which makes the September 21 trial date the next concrete milestone that warrants monitoring.\n\n## Sources\n\n- [Harvest Sherwood Wins Ch. 11 Plan Approval](https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval) — Law360, August 5, 2026\n- [Senate Seeks Expanded Sub V; Harvest Sherwood Plan OK'd](https://www.law360.com/bankruptcy-authority/articles/2511540/senate-seeks-expanded-sub-v-harvest-sherwood-plan-ok-d) — Law360, August 10, 2026\n- [Harvest Sherwood Food Distributors Adversary Proceedings](https://dm.epiq11.com/case/hvs/advproc/223?debtorId=15030) — Epiq, Case No. 25-08002\n- [Harvest Sherwood: $4B Food Distributor Pursuing $1.09B in Antitrust Claims](https://elevenflo.com/blog/harvest-sherwood-chapter-11-after-shutdown) — ElevenFlo, March 6, 2026\n- [Harvest Sherwood Declares Bankruptcy, Accuses Sprouts Farmers Market](https://www.seafoodsource.com/news/business-finance/harvest-sherwood-declares-bankruptcy-seafood-firms-among-list-of-creditors) — SeafoodSource\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Harvest Sherwood Wins Ch. 11 Plan Approval",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval",
+          "note": "Law360, August 5, 2026"
+        },
+        {
+          "title": "Senate Seeks Expanded Sub V; Harvest Sherwood Plan OK'd",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2511540/senate-seeks-expanded-sub-v-harvest-sherwood-plan-ok-d",
+          "note": "Law360, August 10, 2026"
+        },
+        {
+          "title": "Harvest Sherwood Food Distributors Adversary Proceedings",
+          "url": "https://dm.epiq11.com/case/hvs/advproc/223?debtorId=15030",
+          "note": "Epiq, Case No. 25-08002"
+        },
+        {
+          "title": "Harvest Sherwood: $4B Food Distributor Pursuing $1.09B in Antitrust Claims",
+          "url": "https://elevenflo.com/blog/harvest-sherwood-chapter-11-after-shutdown",
+          "note": "ElevenFlo, March 6, 2026"
+        },
+        {
+          "title": "Harvest Sherwood Declares Bankruptcy, Accuses Sprouts Farmers Market",
+          "url": "https://www.seafoodsource.com/news/business-finance/harvest-sherwood-declares-bankruptcy-seafood-firms-among-list-of-creditors",
+          "note": "SeafoodSource"
+        }
+      ],
+      "activity": {
+        "filings": 10,
+        "articles": 0,
+        "latest": "2026-08-14"
+      }
+    },
+    {
       "date": "2026-08-13",
       "updated": "2026-08-13",
       "lede": "On August 12, the claims agent docketed two additional assignments and transfers of claim (Dkts. 1205 and 1206), continuing the secondary-market activity that has run without interruption since plan confirmation on August 5.",
