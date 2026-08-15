@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73294740/elsevier-inc-v-meta-platforms-inc/",
-    "date_last_filing": "2026-08-07",
-    "meta_fetched_at": "2026-08-13T16:17:01.359430+00:00",
-    "fetched_at": "2026-08-14T21:44:12.254604+00:00",
-    "as_of": "Aug 14, 2026",
+    "date_last_filing": "2026-08-14",
+    "meta_fetched_at": "2026-08-15T07:01:41.276291+00:00",
+    "fetched_at": "2026-08-15T07:01:41.276291+00:00",
+    "as_of": "Aug 15, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 93,
+        "date_filed": "2026-08-14",
+        "time_filed": "19:08:43",
+        "date_display": "Aug 14, 2026",
+        "description": "Withdraw as Attorney",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 92,
         "date_filed": "2026-08-07",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 90,
-        "date_filed": "2026-08-03",
-        "time_filed": "20:18:06",
-        "date_display": "Aug 3, 2026",
-        "description": "LETTER MOTION for Leave to File Motion to Strike addressed to Judge P. Kevin Castel from Derek Loeser dated August 3, 2026. Document filed by Cengage Learning, Inc., Elsevier Inc., Hachette Book Group, Inc., Macmillan Publishing Group, LLC d/b/a Macmillan Publishers, McGraw Hill LLC, S.C.R.I.B.E., Inc., Scott Turow..(Loeser, Derek) (Entered: 08/03/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.663308/gov.uscourts.nysd.663308.90.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 93,
+        "date_filed": "2026-08-14",
+        "time_filed": "19:08:43",
+        "date_display": "Aug 14, 2026",
+        "description": "Withdraw as Attorney",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 92,
         "date_filed": "2026-08-07",
