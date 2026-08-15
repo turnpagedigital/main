@@ -1,1 +1,26 @@
-{"runs": []}
+{
+  "runs": [
+    {
+      "ts": "2026-08-15T13:16:13Z",
+      "date": "2026-08-15",
+      "task": "feed-scan",
+      "provider": "anthropic",
+      "requests": 1,
+      "tokens_in": 36512,
+      "tokens_out": 196,
+      "ok": true,
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "ts": "2026-08-15T13:32:51Z",
+      "date": "2026-08-15",
+      "task": "news-scan",
+      "provider": "anthropic",
+      "requests": 20,
+      "tokens_in": 1092733,
+      "tokens_out": 23215,
+      "ok": true,
+      "model": "claude-sonnet-4-6"
+    }
+  ]
+}
