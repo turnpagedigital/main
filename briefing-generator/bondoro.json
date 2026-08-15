@@ -1,6 +1,36 @@
 {
   "items": [
     {
+      "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
+      "kind": "Asset Sale",
+      "source": "Daily DAC",
+      "source_id": "daily-dac-article",
+      "show": "news",
+      "title": "PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Fulton SCG Member LLC",
+      "url": "https://www.dailydac.com/public-notice-of-ucc-article-9-sale-adjournment-fulton-scg-member-llc/?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-adjournment-fulton-scg-member-llc",
+      "date": "2026-08-15",
+      "published_at": "2026-08-15T04:49:44+00:00",
+      "excerpt": "UCC Public Sale Notice – Adjournment Please take notice that Newmark, on behalf of FULTON SCG II DEBT FUND, LLC, a Delaware limited liability company (the “Secured Party”), will offer for sale at public auction on August 26, 2026 at 3:00 p.m. EDT in connection with a Uniform Commercial Code sale, 10",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
+      "kind": "Asset Sale",
+      "source": "Daily DAC",
+      "source_id": "daily-dac-article",
+      "show": "news",
+      "title": "PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Art Finance Funding (IX), LLC",
+      "url": "https://www.dailydac.com/public-notice-of-ucc-article-9-sale-art-finance-funding-ix-llc/?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-art-finance-funding-ix-llc",
+      "date": "2026-08-15",
+      "published_at": "2026-08-15T04:46:08+00:00",
+      "excerpt": "NOTICE OF PUBLIC SALE OF COLLATERAL UNDER DELAWARE UNIFORM COMMERCIAL CODE PLEASE TAKE NOTICE that, in accordance with applicable provisions of the Uniform Commercial Code as enacted in Delaware (“Delaware UCC”), notice is hereby given that a public sale shall be conducted of the secured grid promis",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
       "id": "the-rushmore-hotel-filing-alert",
       "kind": "alert",
       "source": "Bondoro",
@@ -4761,7 +4791,8 @@
       "excerpt": "Another Brazilian megacorp &#8212; and a US subsidiary! &#8212; seek chapter 15 relief",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "serta-simmons-another-failed-liability",
@@ -4776,7 +4807,8 @@
       "excerpt": "Judge Lopez finally rendered his opinion after Fifth Circuit remand and dropped a bomb.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "the-dish-prepack-aint-prepacking",
