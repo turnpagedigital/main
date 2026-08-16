@@ -3,6 +3,29 @@
   "case_name": "Poolin",
   "items": [
     {
+      "date": "2026-08-16",
+      "updated": "2026-08-16",
+      "lede": "On August 16, the Poolin docket recorded one entry — Dkt. 131, a BNC Certificate of Notice — with no bearing on recovery or timing.",
+      "body_md": "On August 16, the Poolin docket recorded one entry — Dkt. 131, a BNC Certificate of Notice — with no bearing on recovery or timing.\n\nThe only open substantive item that has not been resolved or scheduled since yesterday's briefing is the 9019 settlement motion (Dkt. 129) and its companion motion to shorten time (Dkt. 130), both filed August 14. The hearing date on that motion has not been publicly calendared on the available docket record. \nJudge O'Hagan cleared Poolin to pursue the September asset sale on August 14, giving stalking-horse bidder Thor CALAP LLC additional time to pursue a neighboring Texas property for an AI data center\n — so the sale rail itself is clear — but the 9019 motion represents a discrete contested matter being pressed on a compressed timeline, and its resolution will need to land before the September 8 qualified bid deadline to avoid any residual cloud on the auction. Until the court enters an order on Dkt. 130, the hearing date and briefing schedule on the 9019 motion remain unknown; confirmation requires either a docket order or a chambers scheduling notice.\n\nThe trustee motion (Dkt. 103, filed by creditor Lin Liang) also remains unresolved. Nothing filed since August 14 has advanced or mooted it. For the 11,700 wallet-holder creditors owed \n$163,723,500 in unsecured IOUs\n, the practical question remains whether any overbid materializes at the September 10 auction: \nThor CALAP LLC's stalking-horse agreements — $15 million for Pyote and $37 million for Tarbush-related assets — establish $52 million in aggregate opening consideration for substantially all covered Texas mining assets\n, a floor that covers roughly 31.8% of the IOU liability before estate costs and liens. The next concrete milestone is September 8, the qualified bid deadline for the West Texas assets, followed by the auction on September 10.\n\n## Sources\n\n- [Poolin Cleared To Pursue Asset Sale Amid Trustee Fight](https://www.law360.com/bankruptcy/articles/2513768) — Law360, August 14, 2026\n- [Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million](https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/) — CryptoSlate, July 24, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Poolin Cleared To Pursue Asset Sale Amid Trustee Fight",
+          "url": "https://www.law360.com/bankruptcy/articles/2513768",
+          "note": "Law360, August 14, 2026"
+        },
+        {
+          "title": "Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million",
+          "url": "https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/",
+          "note": "CryptoSlate, July 24, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 11,
+        "articles": 1,
+        "latest": "2026-08-16"
+      }
+    },
+    {
       "date": "2026-08-15",
       "updated": "2026-08-15",
       "lede": "On August 14, Judge O'Hagan cleared Poolin Technology to proceed with the September asset sale and approved terms giving stalking-horse bidder Thor CALAP LLC additional time to pursue a neighboring Texas property for an AI data center — removing the most immediate structural threat to the sale timeline. The New Jersey bankruptcy court confirmed that Poolin Technology can pursue the planned next-month sale, with the…",
