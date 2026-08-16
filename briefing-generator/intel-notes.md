@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-16 01:54 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-16 01:55 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -191,6 +191,10 @@ hi
 ### (no docket number) — 2026-08-14
 
 > Filing Alert: The Rushmore Hotel Chapter 11 — The Rushmore Hotel Files Chapter 11 in Southern District of Florida
+
+### (no docket number) — 2026-08-14
+
+> Filing Alert: Yareton Investment & Management (Washington) Chapter 11 — Yareton Investment & Management (Washington) Files Chapter 11 in Eastern District of Washington
 
 ### (no docket number) — 2026-08-13
 
