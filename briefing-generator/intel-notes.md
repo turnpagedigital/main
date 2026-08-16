@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-14 19:38 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-16 01:54 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -175,6 +175,10 @@ hi
 > Thomson Reuters Lifts Revenue Guidance After Growth — Thomson Reuters bumped up its revenue targets for the year after logging double-digit growth across its three big business segments in the latest 
 
 ## Uncategorized
+
+### (no docket number) — 2026-08-15
+
+> Filing Alert: FK Construction Funding Chapter 11 — FK Construction Funding Files Chapter 11 in Southern District of Florida
 
 ### (no docket number) — 2026-08-14
 
