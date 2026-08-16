@@ -16,10 +16,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-14",
     "meta_fetched_at": "2026-08-14T22:43:51.686029+00:00",
-    "fetched_at": "2026-08-15T14:12:24.472534+00:00",
-    "as_of": "Aug 15, 2026",
+    "fetched_at": "2026-08-16T02:00:06.100578+00:00",
+    "as_of": "Aug 16, 2026",
     "backfilled": true,
-    "new_in_72h": 16,
+    "new_in_72h": 10,
     "recent": [
       {
         "entry_number": 130,
@@ -159,7 +159,7 @@
         "time_filed": "",
         "date_display": "Aug 13, 2026",
         "description": "BNC Certificate of Notice - Order No. of Notices: 1. Notice Date 08/13/2026. (Admin.)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -169,7 +169,7 @@
         "time_filed": "",
         "date_display": "Aug 13, 2026",
         "description": "BNC Certificate of Notice - Order No. of Notices: 1. Notice Date 08/13/2026. (Admin.)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -179,7 +179,7 @@
         "time_filed": "16:38:29",
         "date_display": "Aug 13, 2026",
         "description": "Document re: Declaration of Michael DuFrayne in Support of Stipulation and Agreed Order Resolving Objection to Bidding Procedures Motion (related document:30 Amended Motion filed by Debtor Poolin Technology PTE. LTD) filed by Stephen M. Packman on behalf of Poolin Technology PTE. LTD. (Attachments: # 1 Exhibit DBR Original Petition) (Packman, Stephen)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -189,7 +189,7 @@
         "time_filed": "12:58:18",
         "date_display": "Aug 13, 2026",
         "description": "Transcript regarding Hearing Held 07/27/26 (related document:3 Motion for Joint Administration filed by Debtor Poolin Technology PTE. LTD, 5 Motion (Generic) filed by Debtor Poolin Technology PTE. LTD, 6 Motion (Generic) filed by Debtor Poolin Technology PTE. LTD, 7 Motion (Generic) filed by Debtor Poolin Technology PTE. LTD, 8 Motion (Generic) filed by Debtor Poolin Technology PTE. LTD, 9 Motion (Generic) filed by Debtor Poolin Technology PTE. LTD, 10 Motion (Generic) filed by Debtor Poolin Technology PTE. LTD, 11 Motion (Generic) filed by Debtor Poolin Technology PTE. LTD, 14 Application for Retention filed by Debtor Poolin Technology PTE. LTD, 15 Application for Retention filed by Debtor Poolin Technology PTE. LTD, 16 Application for Retention filed by Debtor Poolin Technology PTE. LTD, 17 Application for Retention filed by Debtor Poolin Technology PTE. LTD, 18 Application for…",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -199,7 +199,7 @@
         "time_filed": "10:41:41",
         "date_display": "Aug 13, 2026",
         "description": "Notice of Agenda filed by Stephen M. Packman on behalf of Poolin Technology PTE. LTD. (Packman, Stephen)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.njb.1145057/gov.uscourts.njb.1145057.116.0.pdf"
       },
@@ -209,7 +209,7 @@
         "time_filed": "12:58:18",
         "date_display": "Aug 13, 2026",
         "description": "Transcript",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
