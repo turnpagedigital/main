@@ -3,6 +3,54 @@
   "case_name": "Goliath",
   "items": [
     {
+      "date": "2026-08-16",
+      "updated": "2026-08-16",
+      "lede": "On August 14, InvestmentNews published additional detail from the SEC complaint that adds a discrete fraud-on-investors allegation not foregrounded in the August 11 agency press releases. After distributions halted in November 2025, Delgado emailed investors blaming a \"third-party audit\" and \"additional compliance and forensic accounting requirements\" for the delays; the SEC alleges those explanations were false and…",
+      "body_md": "On August 14, InvestmentNews published additional detail from the SEC complaint that adds a discrete fraud-on-investors allegation not foregrounded in the August 11 agency press releases. \nAfter distributions halted in November 2025, Delgado emailed investors blaming a \"third-party audit\" and \"additional compliance and forensic accounting requirements\" for the delays; the SEC alleges those explanations were false and designed \"to lull investors and conceal Defendants' fraud.\"\n That allegation matters for recovery posture because it extends the actionable misconduct timeline beyond the operational scheme itself into the wind-down period — potential fodder for a separate fraudulent-concealment or equitable-tolling argument by claimants whose limitations clock might otherwise start running earlier. \nA court-appointed receiver later steered Goliath into the bankruptcy now pending before Judge Mark.\n The InvestmentNews piece adds no new primary-source filings; it is secondary reporting drawing on the face of the SEC complaint.\n\nThe InvestmentNews piece also surfaces one granular allegation from the SEC complaint that rounds out the misappropriation picture: \nthe SEC alleges Delgado personally misappropriated at least $51 million and that defendants misused roughly $281 million more to sustain promised distributions flowing to earlier investors.\n That $281 million figure — the Ponzi-payment tranche — is distinct from both the sales-commission flows alleged in the CFTC complaint and from Delgado's personal extraction, and it represents the largest single category of alleged misuse. For unsecured creditors, the practical implication is that the recoverable asset pool is bounded not by the gross intake but by what remains after those three drains; the DOJ's civil forfeiture complaint, which targets seven real properties and eleven vehicles, represents one concrete slice of the personal-extraction tranche. \nThe United States filed a civil forfeiture complaint against seven real properties and eleven vehicles allegedly purchased with fraud proceeds, alleging approximately $17 million in victim funds went to homes and office space and more than $2.5 million to purchase, lease, or pay off loans on the vehicles.\n\n\nNo new docket entries have been identified in Case No. 26-13174-RAM since the August 13 briefing. The materiality picture is unchanged: the September 30, 2026 proof-of-claim bar date in Case No. 26-13174-RAM remains the most immediate hard deadline for claimants on notice from the SEC and CFTC enforcement releases. \nThe DOJ's case page lists Delgado's criminal sentencing for October 21, 2026, with the criminal investigation described as still ongoing\n — that date, rather than the October 8 entry in the docket record, is what the DOJ's own page reflects; the discrepancy between the two dates should be tracked, as the sentencing hearing is the event at which restitution and forfeiture amounts will be set and which will directly shape the asset pool available to the estate.\n\n## Sources\n\n- [SEC sues Goliath Ventures over alleged $425M crypto Ponzi scheme](https://www.investmentnews.com/regulation-legal-compliance/sec-accuses-crypto-firm-founder-of-running-425-million-ponzi-scheme/267814) — InvestmentNews, August 14, 2026\n- [SEC.gov Litigation Release — Goliath Ventures, Inc.; Christopher A. Delgado](https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26608) — SEC, August 11, 2026\n- [SEC Charges Goliath Ventures, CEO Over Alleged $425M Crypto Ponzi](https://altswire.com/sec-charges-goliath-ventures-ceo-over-alleged-425m-crypto-ponzi/) — AltsWire, August 12, 2026\n- [Christopher Delgado Faces Dual Lawsuits Over $400M Goliath Ventures Crypto Fraud](https://blockonomi.com/christopher-delgado-faces-dual-lawsuits-over-400m-goliath-ventures-crypto-fraud) — Blockonomi, August 12, 2026\n- [SEC, CFTC Sue Goliath Ventures Over Alleged $425M Crypto Ponzi Scheme](https://coinpaper.com/34167/sec-cftc-sue-goliath-ventures-over-alleged-425m-crypto-ponzi-scheme) — CoinPaper, August 12, 2026\n- [United States v. Christopher Alexander Delgado — Case Page](https://www.justice.gov/usao-mdfl/goliath_ventures) — DOJ / U.S. Attorney's Office, M.D. Fla.\n- [CFTC Charges Goliath Ventures Inc. and CEO with $400 Million Fraud Scheme](https://www.cftc.gov/PressRoom/PressReleases/9280-26) — CFTC, August 11, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "SEC sues Goliath Ventures over alleged $425M crypto Ponzi scheme",
+          "url": "https://www.investmentnews.com/regulation-legal-compliance/sec-accuses-crypto-firm-founder-of-running-425-million-ponzi-scheme/267814",
+          "note": "InvestmentNews, August 14, 2026"
+        },
+        {
+          "title": "SEC.gov Litigation Release — Goliath Ventures, Inc.; Christopher A. Delgado",
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26608",
+          "note": "SEC, August 11, 2026"
+        },
+        {
+          "title": "SEC Charges Goliath Ventures, CEO Over Alleged $425M Crypto Ponzi",
+          "url": "https://altswire.com/sec-charges-goliath-ventures-ceo-over-alleged-425m-crypto-ponzi/",
+          "note": "AltsWire, August 12, 2026"
+        },
+        {
+          "title": "Christopher Delgado Faces Dual Lawsuits Over $400M Goliath Ventures Crypto Fraud",
+          "url": "https://blockonomi.com/christopher-delgado-faces-dual-lawsuits-over-400m-goliath-ventures-crypto-fraud",
+          "note": "Blockonomi, August 12, 2026"
+        },
+        {
+          "title": "SEC, CFTC Sue Goliath Ventures Over Alleged $425M Crypto Ponzi Scheme",
+          "url": "https://coinpaper.com/34167/sec-cftc-sue-goliath-ventures-over-alleged-425m-crypto-ponzi-scheme",
+          "note": "CoinPaper, August 12, 2026"
+        },
+        {
+          "title": "United States v. Christopher Alexander Delgado — Case Page",
+          "url": "https://www.justice.gov/usao-mdfl/goliath_ventures",
+          "note": "DOJ / U.S. Attorney's Office, M.D. Fla."
+        },
+        {
+          "title": "CFTC Charges Goliath Ventures Inc. and CEO with $400 Million Fraud Scheme",
+          "url": "https://www.cftc.gov/PressRoom/PressReleases/9280-26",
+          "note": "CFTC, August 11, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 0,
+        "articles": 1,
+        "latest": "2026-08-14"
+      }
+    },
+    {
       "date": "2026-08-13",
       "updated": "2026-08-13",
       "lede": "On August 11, the SEC and CFTC filed parallel civil complaints against Goliath Ventures Inc. and CEO Christopher Delgado in the U.S. District Court for the Middle District of Florida — SEC v. Goliath Ventures Inc. et al., No. 6:26-cv-01741, and CFTC v. Goliath Ventures Inc. et al., No. 6:26-cv-01737. Both complaints allege that Goliath and Delgado orchestrated a crypto Ponzi scheme, raising roughly $400 million by…",

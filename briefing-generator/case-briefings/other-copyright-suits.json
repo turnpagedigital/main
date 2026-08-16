@@ -3,6 +3,34 @@
   "case_name": "Other Copyright Suits",
   "items": [
     {
+      "date": "2026-08-16",
+      "updated": "2026-08-16",
+      "lede": "On August 14, Judge Thompson's chambers received the completed paper record on the dueling Local Rule 7-11 dispute in Getty Images (US), Inc. v. Stability AI, Inc. et al., No. 3:25-cv-06891 (N.D. Cal.), when Stability AI filed its proposed order (Dkt. 72) formally requesting denial of Getty's administrative motion for leave to file a reply (Dkt. 70). That proposed order — submitted by Joseph Gratz — is the…",
+      "body_md": "On August 14, Judge Thompson's chambers received the completed paper record on the dueling Local Rule 7-11 dispute in *Getty Images (US), Inc. v. Stability AI, Inc. et al.*, No. 3:25-cv-06891 (N.D. Cal.), when Stability AI filed its proposed order (Dkt. 72) formally requesting denial of Getty's administrative motion for leave to file a reply (Dkt. 70). That proposed order — submitted by Joseph Gratz — is the procedural capstone to a sequence running from Getty's August 6 motion to modify the case management and scheduling order (Dkt. 68) through Stability's August 10 opposition (Dkt. 69), Getty's August 11 leave motion (Dkt. 70), and Stability's August 12 opposition to that leave request (Dkt. 71). The responses-due deadline of August 17 has now passed without further filing, so the matter is fully submitted. Judge Thompson may rule without a hearing. The practical stakes remain those covered yesterday: \ndispositive motions are due March 12, 2027, with jury trial set for January 18 through February 9, 2028\n under the current scheduling order, and \nprivate mediation must be completed by October 19, 2026\n. Any extension Getty obtains on the schedule expands the window to develop its direct copyright, DMCA §1202, and Lanham Act claims — the core surviving theories after the April 2026 motion-to-dismiss ruling. The weights-as-infringing-copies theory that \nthe UK High Court rejected in November 2025, with Getty granted leave to appeal in December 2025\n, remains live before Thompson as well, giving the scheduling outcome downstream significance beyond a simple calendar adjustment. A ruling from Thompson — granting or denying both the leave motion and the underlying schedule-modification request — is the next concrete milestone in this action.\n\nIn *Hachette Book Group, Inc. et al. v. Meta Platforms, Inc.*, No. 1:26-cv-03689 (S.D.N.Y., Castel, J.), nothing new has docketed since the attorney withdrawal at Dkt. 93 on August 14, covered yesterday. The September 15, 2026 initial conference before Judge Castel remains the next fixed milestone (Courtroom 11D, 3:00 PM), where the transfer motion and the motion-to-strike dispute previewed in Dkts. 90 and 92 will receive direction.\n\nIn *Kadrey v. Meta Platforms, Inc.*, No. 3:23-cv-03417 (N.D. Cal., Chhabria, J.), \nCourtListener's docket reflects a last-updated timestamp of August 14, 2026, at 11:21 AM, with the date of last known filing listed as August 13, 2026\n — consistent with the Zoom case management conference having concluded but no minute entry yet appearing in the publicly accessible RECAP record. That minute entry, once posted, governs whatever Chhabria directed on the contributory infringement amendment posture and the coordinated discovery schedule across the related actions. The August 26 deadline for calendaring Mark Zuckerberg's deposition — ordered in *Entrepreneur Media, LLC v. Meta Platforms, Inc.*, No. 3:25-cv-09579 — remains the most time-sensitive near-term marker across the Chhabria cluster and should be confirmed against the docket in the related actions before that date passes.\n\n*Encyclopaedia Britannica, Inc. and Merriam-Webster, Inc. v. OpenAI, Inc. et al.*, No. 1:26-cv-02097 (S.D.N.Y., Stein, J.), *Hachette v. Google (Gemini)*, No. 1:26-cv-05870 (S.D.N.Y., Preska, J.), and *Thomson Reuters v. Ross Intelligence*, No. 25-2153 (3d Cir.), recorded no movement. The Google transfer motion remains under submission before Judge Preska; the Third Circuit panel of Judges Restrepo, Montgomery-Reeves, and Bove continues to deliberate following the June 11 oral argument.\n\n## Sources\n\n- [Getty Images (US), Inc. v. Stability AI, Ltd., 3:25-cv-06891 — CourtListener](https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/) — CourtListener / RECAP, last updated June 24, 2026\n- [Getty Images v. Stability AI: Case Status — AI Lawsuit Tracker](https://ailawsuittracker.com/cases/getty-v-stability-ai/) — AI Lawsuit Tracker, last updated May 25, 2026\n- [Kadrey v. Meta Platforms, Inc., 3:23-cv-03417 — CourtListener](https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/) — CourtListener / RECAP, last updated August 14, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Getty Images (US), Inc. v. Stability AI, Ltd., 3:25-cv-06891 — CourtListener",
+          "url": "https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/",
+          "note": "CourtListener / RECAP, last updated June 24, 2026"
+        },
+        {
+          "title": "Getty Images v. Stability AI: Case Status — AI Lawsuit Tracker",
+          "url": "https://ailawsuittracker.com/cases/getty-v-stability-ai/",
+          "note": "AI Lawsuit Tracker, last updated May 25, 2026"
+        },
+        {
+          "title": "Kadrey v. Meta Platforms, Inc., 3:23-cv-03417 — CourtListener",
+          "url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
+          "note": "CourtListener / RECAP, last updated August 14, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 2,
+        "articles": 0,
+        "latest": "2026-08-14"
+      }
+    },
+    {
       "date": "2026-08-15",
       "updated": "2026-08-15",
       "lede": "On August 14, counsel for Stability AI US Services Corporation, Stability AI, Inc., and Stability AI, Ltd. filed a proposed order (Dkt. 72) asking Judge Thompson to deny Getty's administrative motion for leave to file a reply — the formal capstone to the dueling Local Rule 7-11 motion sequence that began when Getty moved to modify the case management and scheduling order on August 6 (Dkt. 68). The proposed order…",
