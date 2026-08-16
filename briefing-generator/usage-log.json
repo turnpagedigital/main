@@ -1,1 +1,25 @@
-{"runs": []}
+{
+  "runs": [
+    {
+      "ts": "2026-08-16T17:38:17Z",
+      "date": "2026-08-16",
+      "task": "docket-sync",
+      "provider": "courtlistener",
+      "requests": 8,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ok": false
+    },
+    {
+      "ts": "2026-08-16T17:38:19Z",
+      "date": "2026-08-16",
+      "task": "upload-extract",
+      "provider": "anthropic",
+      "requests": 1,
+      "tokens_in": 618,
+      "tokens_out": 14,
+      "ok": true,
+      "model": "claude-haiku-4-5-20251001"
+    }
+  ]
+}
