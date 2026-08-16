@@ -14,13 +14,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
-    "date_last_filing": "2026-08-14",
-    "meta_fetched_at": "2026-08-14T22:43:51.686029+00:00",
-    "fetched_at": "2026-08-16T02:00:06.100578+00:00",
+    "date_last_filing": "2026-08-16",
+    "meta_fetched_at": "2026-08-16T04:52:09.294995+00:00",
+    "fetched_at": "2026-08-16T04:52:09.294995+00:00",
     "as_of": "Aug 16, 2026",
     "backfilled": true,
-    "new_in_72h": 10,
+    "new_in_72h": 11,
     "recent": [
+      {
+        "entry_number": 131,
+        "date_filed": "2026-08-16",
+        "time_filed": "00:17:39",
+        "date_display": "Aug 16, 2026",
+        "description": "BNC Certificate of Notice (generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 130,
         "date_filed": "2026-08-14",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 128,
-        "date_filed": "2026-08-14",
-        "time_filed": "15:58:42",
-        "date_display": "Aug 14, 2026",
-        "description": "Retention",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 131,
+        "date_filed": "2026-08-16",
+        "time_filed": "00:17:39",
+        "date_display": "Aug 16, 2026",
+        "description": "BNC Certificate of Notice (generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 130,
         "date_filed": "2026-08-14",
