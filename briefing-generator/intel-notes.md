@@ -180,6 +180,10 @@ hi
 
 > Filing Alert: Phillips Cattle Company Chapter 11 — Phillips Cattle Company Files Chapter 11 in Central District of California
 
+### (no docket number) — 2026-08-15
+
+> Filing Alert: Rebel Creamery Chapter 11 — Rebel Creamery Files Chapter 11 in District of Utah
+
 ### (no docket number) — 2026-08-14
 
 > Filing Alert: 84-70 165th Street Chapter 11 — 84-70 165th Street Files Chapter 11 in Eastern District of New York
