@@ -80,9 +80,10 @@
       "source_name": "Law360 Bankruptcy Authority",
       "date": "2026-08-05",
       "first_seen": "2026-08-07",
-      "status": "new",
+      "status": "dismissed",
       "vote": 1,
-      "snooze_until": "2026-08-14T13:00:00.000Z"
+      "snooze_until": "2026-08-14T13:00:00.000Z",
+      "triaged_at": "2026-08-16T15:57:39.471Z"
     },
     {
       "id": "097c24e458",
