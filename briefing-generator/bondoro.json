@@ -1,6 +1,21 @@
 {
   "items": [
     {
+      "id": "trinseo-trainwreck",
+      "kind": "news",
+      "source": "Petition",
+      "source_id": "petition",
+      "show": "both",
+      "title": "💥Trinseo Trainwreck💥",
+      "url": "https://www.petition11.com/p/trinseo-trainwreck",
+      "date": "2026-08-16",
+      "published_at": "2026-08-16T15:16:25+00:00",
+      "excerpt": "Plus: Earnings from Perella Weinberg Partners ($PWP) + Moelis & Company ($MC) + Evercore Inc. ($EVR) & FTI Consulting, Inc. ($FCN).",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
       "kind": "Asset Sale",
       "source": "Daily DAC",

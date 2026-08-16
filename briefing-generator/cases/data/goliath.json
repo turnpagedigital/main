@@ -368,13 +368,6 @@
       "summary": "Both the SEC and CFTC filed separate civil complaints on August 11 against Goliath Ventures and founder Christopher Delgado, with the SEC alleging an unregistered securities offering and the CFTC alleging commodity fraud. The two agencies' differing dollar figures—$425 million (SEC) and $397 million (CFTC)—reflect their distinct regulatory perspectives on the same alleged scheme."
     },
     {
-      "headline": "SEC and CFTC Hit Goliath Ventures With Parallel Crypto Fraud Complaints",
-      "url": "https://beincrypto.com/goliath-ventures-sec-cftc-crypto-ponzi/",
-      "source": "BeInCrypto",
-      "date": "2026-08-11",
-      "summary": "The SEC alleges Goliath raised at least $425 million from more than 1,300 investors, while the CFTC cites $397 million from roughly 1,600 customers; Delgado agreed to a bifurcated settlement with the SEC and faces sentencing in the criminal case on October 8. The CFTC seeks restitution, disgorgement, civil penalties, and permanent trading and registration bans."
-    },
-    {
       "headline": "Goliath Ventures Faces SEC, CFTC Suits Over $400M Ponzi",
       "url": "https://cointelegraph.com/news/sec-cftc-sue-goliath-ventures-400m-crypto-ponzi",
       "source": "CoinTelegraph",
@@ -387,6 +380,13 @@
       "source": "Law360",
       "date": "2026-08-11",
       "summary": "The SEC and CFTC filed parallel civil complaints against bankrupt Goliath Ventures Inc. and founder Christopher Delgado, alleging they orchestrated a $400 million cryptocurrency Ponzi scheme. The SEC accused Goliath of raising at least $425 million from over 1,300 investors through fraudulent promises of returns from crypto liquidity pools."
+    },
+    {
+      "headline": "Crypto Firm, CEO Accused of Running $400 Million Ponzi Scheme",
+      "url": "https://news.bloomberglaw.com/litigation/crypto-firm-ceo-accused-of-running-400-million-ponzi-scheme",
+      "source": "Bloomberg Law",
+      "date": "2026-08-11",
+      "summary": "The SEC and CFTC filed separate civil suits against Goliath Ventures Inc. and CEO Christopher Delgado, alleging they ran a roughly $400 million cryptocurrency Ponzi scheme in which investors were promised returns from crypto liquidity pools that never received any funds. Delgado had previously pleaded guilty to related criminal charges in June 2026."
     },
     {
       "headline": "Goliath Ventures CEO Pleads Guilty To Crypto Ponzi Scheme",
@@ -418,6 +418,14 @@
     }
   ],
   "events": [
+    {
+      "title": "Proof of Claim Deadline for Governmental Units — Goliath Ventures Inc. Chapter 11 (Case No. 26-13174-RAM)",
+      "date": "2026-09-14",
+      "time": "",
+      "kind": "Deadline",
+      "url": "https://www.dehek.com/wp-content/uploads/2026/03/Goliath_Ventures_Inc__flsbke-26-13174__0010.0.pdf",
+      "source": "U.S. Bankruptcy Court, S.D. Florida"
+    },
     {
       "title": "Proof of Claim Bar Date — Goliath Ventures Inc. Ch. 11 (Case No. 26-13174-RAM)",
       "date": "2026-09-30",
