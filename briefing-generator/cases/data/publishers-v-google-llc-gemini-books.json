@@ -5193,6 +5193,13 @@
       "summary": "This piece emphasized the suit's allegation that an internal Google document warned the company that using copyrighted books for AI training could expose it to potential fines estimated in the tens to hundreds of billions of dollars. It also noted that two earlier California court decisions in the Anthropic and Meta cases found training on copyrighted books was likely fair use, setting up a critical circuit-level tension."
     },
     {
+      "headline": "The Copyright Info Google Allegedly Erased to Hide Gemini's Training",
+      "url": "https://blog.pebblous.ai/blog/gemini-training-cmi-removal-lawsuit/en/",
+      "source": "Pebblous AI Blog",
+      "date": "2026-07-21",
+      "summary": "Analysis of the publishers' July 10 complaint focuses on the DMCA copyright-management-information removal claim — that Google stripped authorship and ownership data from ingested books to conceal training sources — and contextualizes it against the 2025 Kadrey v. Meta ruling dismissing a similar claim."
+    },
+    {
       "headline": "Authors, Publishers Sue Google Over Alleged AI Copyright Infringement",
       "url": "https://www.aljazeera.com/economy/2026/7/15/authors-publishers-sue-google-over-alleged-ai-copyright-infringement",
       "source": "Al Jazeera",
