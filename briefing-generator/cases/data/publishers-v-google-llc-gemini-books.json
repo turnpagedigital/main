@@ -5200,13 +5200,6 @@
       "summary": "Analysis of the publishers' July 10 complaint focuses on the DMCA copyright-management-information removal claim — that Google stripped authorship and ownership data from ingested books to conceal training sources — and contextualizes it against the 2025 Kadrey v. Meta ruling dismissing a similar claim."
     },
     {
-      "headline": "Authors, Publishers Sue Google Over Alleged AI Copyright Infringement",
-      "url": "https://www.aljazeera.com/economy/2026/7/15/authors-publishers-sue-google-over-alleged-ai-copyright-infringement",
-      "source": "Al Jazeera",
-      "date": "2026-07-15",
-      "summary": "Al Jazeera reported that Hachette, Cengage, Elsevier, and Scott Turow sued Google in federal court in New York, alleging copyright infringement in Gemini's training. A legal expert quoted in the piece noted that the unlawful-acquisition theory could undercut any fair-use defense Google might raise, though proving what was in a training corpus remains factually complex."
-    },
-    {
       "headline": "Publishers Sue Google Over Copyrighted Books Allegedly Used to Train Gemini",
       "url": "https://betanews.com/article/publishers-sue-google-gemini-book-training/",
       "source": "BetaNews",
@@ -5219,6 +5212,13 @@
       "source": "Slashdot",
       "date": "2026-07-15",
       "summary": "Slashdot aggregated Guardian reporting that publishers argue Google repurposed books supplied for limited services—such as displaying searchable snippets or selling ebooks via Google Play—not for copying into commercial AI training. The complaint illustrates market-harm claims by noting Gemini can generate a 100-page novel in 20 minutes for 39 cents, directly substituting for original works."
+    },
+    {
+      "headline": "Publishers sue Google over alleged use of books to train AI models",
+      "url": "https://www.france24.com/en/technology/20260715-publishers-sue-google-over-alleged-use-of-books-to-train-ai-models",
+      "source": "France 24",
+      "date": "2026-07-15",
+      "summary": "Multiple book publishers sued Google in U.S. federal court in New York for allegedly copying copyrighted works to train Gemini and then generating content that directly competes with human authors. The plaintiffs requested an injunction and unspecified damages, with the complaint arguing Gemini can produce a 100-page book in 20 minutes for $0.39, a scale no publisher or author can match."
     },
     {
       "headline": "Google Faces Another AI Training Lawsuit From Major Publishers",
