@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T14:14:26+00:00",
+  "generated_at": "2026-08-17T14:19:18+00:00",
   "items": [
     {
       "slug": "poolin",
@@ -12,29 +12,24 @@
       ],
       "court": "Bankr. D. N.J.",
       "status": "active",
-      "signature": "86c0a71c7025",
+      "signature": "0267e120ab48",
       "activity": {
-        "filings": 11,
+        "filings": 16,
         "articles": 1,
-        "latest": "2026-08-16"
+        "latest": "2026-08-17"
       },
-      "checked": "2026-08-16T14:14:26+00:00",
-      "date": "2026-08-16",
-      "updated": "2026-08-16",
+      "checked": "2026-08-17T14:19:18+00:00",
+      "date": "2026-08-17",
+      "updated": "2026-08-17",
       "moved": true,
       "no_change_since": null,
-      "lede": "On August 16, the Poolin docket recorded one entry — Dkt. 131, a BNC Certificate of Notice — with no bearing on recovery or timing.",
-      "body_md": "On August 16, the Poolin docket recorded one entry — Dkt. 131, a BNC Certificate of Notice — with no bearing on recovery or timing.\n\nThe only open substantive item that has not been resolved or scheduled since yesterday's briefing is the 9019 settlement motion (Dkt. 129) and its companion motion to shorten time (Dkt. 130), both filed August 14. The hearing date on that motion has not been publicly calendared on the available docket record. \nJudge O'Hagan cleared Poolin to pursue the September asset sale on August 14, giving stalking-horse bidder Thor CALAP LLC additional time to pursue a neighboring Texas property for an AI data center\n — so the sale rail itself is clear — but the 9019 motion represents a discrete contested matter being pressed on a compressed timeline, and its resolution will need to land before the September 8 qualified bid deadline to avoid any residual cloud on the auction. Until the court enters an order on Dkt. 130, the hearing date and briefing schedule on the 9019 motion remain unknown; confirmation requires either a docket order or a chambers scheduling notice.\n\nThe trustee motion (Dkt. 103, filed by creditor Lin Liang) also remains unresolved. Nothing filed since August 14 has advanced or mooted it. For the 11,700 wallet-holder creditors owed \n$163,723,500 in unsecured IOUs\n, the practical question remains whether any overbid materializes at the September 10 auction: \nThor CALAP LLC's stalking-horse agreements — $15 million for Pyote and $37 million for Tarbush-related assets — establish $52 million in aggregate opening consideration for substantially all covered Texas mining assets\n, a floor that covers roughly 31.8% of the IOU liability before estate costs and liens. The next concrete milestone is September 8, the qualified bid deadline for the West Texas assets, followed by the auction on September 10.\n\n## Sources\n\n- [Poolin Cleared To Pursue Asset Sale Amid Trustee Fight](https://www.law360.com/bankruptcy/articles/2513768) — Law360, August 14, 2026\n- [Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million](https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/) — CryptoSlate, July 24, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "lede": "On August 17, Poolin's docket recorded five BNC Certificates of Notice (Dkts. 132–136), all administrative and carrying no bearing on recovery or timing.",
+      "body_md": "On August 17, Poolin's docket recorded five BNC Certificates of Notice (Dkts. 132–136), all administrative and carrying no bearing on recovery or timing.\n\nThe substantive movement in the 72-hour window came on August 14, with four filings that have not yet been addressed in a prior briefing at this level of detail. Dkt. 129 is a motion under Fed. R. Bankr. P. 9019 seeking court approval of a compromise or settlement; Dkt. 130 is the companion motion to shorten time, asking Judge O'Hagan to schedule the 9019 hearing on a compressed timeline. The identity of the counterparty and the settlement amount are not disclosed on the face of the docket entries, and no secondary reporting has supplied those terms — they remain unverified pending either a docketed supporting brief or a chambers scheduling order that triggers a public notice. What is confirmed: the debtors filed the shorten-time motion the same day as the 9019 itself, signaling urgency, and the practical pressure is plain — any settlement that affects asset title, lien status, or creditor priority needs to be resolved before the September 8 qualified bid deadline to avoid clouding the auction. Until Judge O'Hagan rules on Dkt. 130, neither the hearing date nor the briefing schedule on Dkt. 129 is publicly known. Also filed August 14 were three retention applications (Dkts. 125, 126, and 128) and an amended motion combined with a retention application (Dkt. 127). Retention filings are procedural and routine absent a contested objection; they carry no independent weight on recovery unless a creditor body or the U.S. Trustee challenges them on conduct or fee grounds. Dkts. 122 and 123 (notice of appearance and pro hac vice) and Dkt. 121 (pro hac vice) are omitted as procedural and routine.\n\nThe trustee motion (Dkt. 103, filed by creditor Lin Liang) remains pending and unresolved. \nJudge O'Hagan cleared Poolin to pursue the September asset sale on August 14, giving stalking-horse bidder Thor CALAP LLC additional time to pursue a neighboring Texas property for an AI data center.\n That clears the sale rail but does not moot the trustee motion, which turns on whether the debtors' principal misappropriated customer funds — a question with independent bearing on estate administration even in a liquidating case. No response, briefing schedule, or hearing date on Dkt. 103 has appeared on the docket since it was filed. The next concrete milestones are September 8 (qualified bid deadline for the West Texas assets) and September 10 (auction for the Pyote and Tarbush mining sites).\n\n## Sources\n\n- [Poolin Cleared To Pursue Asset Sale Amid Trustee Fight](https://www.law360.com/bankruptcy/articles/2513768) — Law360, August 14, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
         {
           "title": "Poolin Cleared To Pursue Asset Sale Amid Trustee Fight",
           "url": "https://www.law360.com/bankruptcy/articles/2513768",
           "note": "Law360, August 14, 2026"
-        },
-        {
-          "title": "Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million",
-          "url": "https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/",
-          "note": "CryptoSlate, July 24, 2026"
         }
       ]
     },
@@ -63,11 +58,11 @@
         "articles": 0,
         "latest": "2026-08-14"
       },
-      "checked": "2026-08-16T14:14:26+00:00",
+      "checked": "2026-08-17T14:19:18+00:00",
       "date": "2026-08-16",
       "updated": "2026-08-16",
-      "moved": true,
-      "no_change_since": null,
+      "moved": false,
+      "no_change_since": "2026-08-14",
       "lede": "On August 14, Judge Thompson's chambers received the completed paper record on the dueling Local Rule 7-11 dispute in Getty Images (US), Inc. v. Stability AI, Inc. et al., No. 3:25-cv-06891 (N.D. Cal.), when Stability AI filed its proposed order (Dkt. 72) formally requesting denial of Getty's administrative motion for leave to file a reply (Dkt. 70). That proposed order — submitted by Joseph Gratz — is the…",
       "body_md": "On August 14, Judge Thompson's chambers received the completed paper record on the dueling Local Rule 7-11 dispute in *Getty Images (US), Inc. v. Stability AI, Inc. et al.*, No. 3:25-cv-06891 (N.D. Cal.), when Stability AI filed its proposed order (Dkt. 72) formally requesting denial of Getty's administrative motion for leave to file a reply (Dkt. 70). That proposed order — submitted by Joseph Gratz — is the procedural capstone to a sequence running from Getty's August 6 motion to modify the case management and scheduling order (Dkt. 68) through Stability's August 10 opposition (Dkt. 69), Getty's August 11 leave motion (Dkt. 70), and Stability's August 12 opposition to that leave request (Dkt. 71). The responses-due deadline of August 17 has now passed without further filing, so the matter is fully submitted. Judge Thompson may rule without a hearing. The practical stakes remain those covered yesterday: \ndispositive motions are due March 12, 2027, with jury trial set for January 18 through February 9, 2028\n under the current scheduling order, and \nprivate mediation must be completed by October 19, 2026\n. Any extension Getty obtains on the schedule expands the window to develop its direct copyright, DMCA §1202, and Lanham Act claims — the core surviving theories after the April 2026 motion-to-dismiss ruling. The weights-as-infringing-copies theory that \nthe UK High Court rejected in November 2025, with Getty granted leave to appeal in December 2025\n, remains live before Thompson as well, giving the scheduling outcome downstream significance beyond a simple calendar adjustment. A ruling from Thompson — granting or denying both the leave motion and the underlying schedule-modification request — is the next concrete milestone in this action.\n\nIn *Hachette Book Group, Inc. et al. v. Meta Platforms, Inc.*, No. 1:26-cv-03689 (S.D.N.Y., Castel, J.), nothing new has docketed since the attorney withdrawal at Dkt. 93 on August 14, covered yesterday. The September 15, 2026 initial conference before Judge Castel remains the next fixed milestone (Courtroom 11D, 3:00 PM), where the transfer motion and the motion-to-strike dispute previewed in Dkts. 90 and 92 will receive direction.\n\nIn *Kadrey v. Meta Platforms, Inc.*, No. 3:23-cv-03417 (N.D. Cal., Chhabria, J.), \nCourtListener's docket reflects a last-updated timestamp of August 14, 2026, at 11:21 AM, with the date of last known filing listed as August 13, 2026\n — consistent with the Zoom case management conference having concluded but no minute entry yet appearing in the publicly accessible RECAP record. That minute entry, once posted, governs whatever Chhabria directed on the contributory infringement amendment posture and the coordinated discovery schedule across the related actions. The August 26 deadline for calendaring Mark Zuckerberg's deposition — ordered in *Entrepreneur Media, LLC v. Meta Platforms, Inc.*, No. 3:25-cv-09579 — remains the most time-sensitive near-term marker across the Chhabria cluster and should be confirmed against the docket in the related actions before that date passes.\n\n*Encyclopaedia Britannica, Inc. and Merriam-Webster, Inc. v. OpenAI, Inc. et al.*, No. 1:26-cv-02097 (S.D.N.Y., Stein, J.), *Hachette v. Google (Gemini)*, No. 1:26-cv-05870 (S.D.N.Y., Preska, J.), and *Thomson Reuters v. Ross Intelligence*, No. 25-2153 (3d Cir.), recorded no movement. The Google transfer motion remains under submission before Judge Preska; the Third Circuit panel of Judges Restrepo, Montgomery-Reeves, and Bove continues to deliberate following the June 11 oral argument.\n\n## Sources\n\n- [Getty Images (US), Inc. v. Stability AI, Ltd., 3:25-cv-06891 — CourtListener](https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/) — CourtListener / RECAP, last updated June 24, 2026\n- [Getty Images v. Stability AI: Case Status — AI Lawsuit Tracker](https://ailawsuittracker.com/cases/getty-v-stability-ai/) — AI Lawsuit Tracker, last updated May 25, 2026\n- [Kadrey v. Meta Platforms, Inc., 3:23-cv-03417 — CourtListener](https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/) — CourtListener / RECAP, last updated August 14, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
@@ -105,11 +100,11 @@
         "articles": 1,
         "latest": "2026-08-14"
       },
-      "checked": "2026-08-16T14:14:26+00:00",
+      "checked": "2026-08-17T14:19:18+00:00",
       "date": "2026-08-16",
       "updated": "2026-08-16",
-      "moved": true,
-      "no_change_since": null,
+      "moved": false,
+      "no_change_since": "2026-08-14",
       "lede": "On August 14, InvestmentNews published additional detail from the SEC complaint that adds a discrete fraud-on-investors allegation not foregrounded in the August 11 agency press releases. After distributions halted in November 2025, Delgado emailed investors blaming a \"third-party audit\" and \"additional compliance and forensic accounting requirements\" for the delays; the SEC alleges those explanations were false and…",
       "body_md": "On August 14, InvestmentNews published additional detail from the SEC complaint that adds a discrete fraud-on-investors allegation not foregrounded in the August 11 agency press releases. \nAfter distributions halted in November 2025, Delgado emailed investors blaming a \"third-party audit\" and \"additional compliance and forensic accounting requirements\" for the delays; the SEC alleges those explanations were false and designed \"to lull investors and conceal Defendants' fraud.\"\n That allegation matters for recovery posture because it extends the actionable misconduct timeline beyond the operational scheme itself into the wind-down period — potential fodder for a separate fraudulent-concealment or equitable-tolling argument by claimants whose limitations clock might otherwise start running earlier. \nA court-appointed receiver later steered Goliath into the bankruptcy now pending before Judge Mark.\n The InvestmentNews piece adds no new primary-source filings; it is secondary reporting drawing on the face of the SEC complaint.\n\nThe InvestmentNews piece also surfaces one granular allegation from the SEC complaint that rounds out the misappropriation picture: \nthe SEC alleges Delgado personally misappropriated at least $51 million and that defendants misused roughly $281 million more to sustain promised distributions flowing to earlier investors.\n That $281 million figure — the Ponzi-payment tranche — is distinct from both the sales-commission flows alleged in the CFTC complaint and from Delgado's personal extraction, and it represents the largest single category of alleged misuse. For unsecured creditors, the practical implication is that the recoverable asset pool is bounded not by the gross intake but by what remains after those three drains; the DOJ's civil forfeiture complaint, which targets seven real properties and eleven vehicles, represents one concrete slice of the personal-extraction tranche. \nThe United States filed a civil forfeiture complaint against seven real properties and eleven vehicles allegedly purchased with fraud proceeds, alleging approximately $17 million in victim funds went to homes and office space and more than $2.5 million to purchase, lease, or pay off loans on the vehicles.\n\n\nNo new docket entries have been identified in Case No. 26-13174-RAM since the August 13 briefing. The materiality picture is unchanged: the September 30, 2026 proof-of-claim bar date in Case No. 26-13174-RAM remains the most immediate hard deadline for claimants on notice from the SEC and CFTC enforcement releases. \nThe DOJ's case page lists Delgado's criminal sentencing for October 21, 2026, with the criminal investigation described as still ongoing\n — that date, rather than the October 8 entry in the docket record, is what the DOJ's own page reflects; the discrepancy between the two dates should be tracked, as the sentencing hearing is the event at which restitution and forfeiture amounts will be set and which will directly shape the asset pool available to the estate.\n\n## Sources\n\n- [SEC sues Goliath Ventures over alleged $425M crypto Ponzi scheme](https://www.investmentnews.com/regulation-legal-compliance/sec-accuses-crypto-firm-founder-of-running-425-million-ponzi-scheme/267814) — InvestmentNews, August 14, 2026\n- [SEC.gov Litigation Release — Goliath Ventures, Inc.; Christopher A. Delgado](https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26608) — SEC, August 11, 2026\n- [SEC Charges Goliath Ventures, CEO Over Alleged $425M Crypto Ponzi](https://altswire.com/sec-charges-goliath-ventures-ceo-over-alleged-425m-crypto-ponzi/) — AltsWire, August 12, 2026\n- [Christopher Delgado Faces Dual Lawsuits Over $400M Goliath Ventures Crypto Fraud](https://blockonomi.com/christopher-delgado-faces-dual-lawsuits-over-400m-goliath-ventures-crypto-fraud) — Blockonomi, August 12, 2026\n- [SEC, CFTC Sue Goliath Ventures Over Alleged $425M Crypto Ponzi Scheme](https://coinpaper.com/34167/sec-cftc-sue-goliath-ventures-over-alleged-425m-crypto-ponzi-scheme) — CoinPaper, August 12, 2026\n- [United States v. Christopher Alexander Delgado — Case Page](https://www.justice.gov/usao-mdfl/goliath_ventures) — DOJ / U.S. Attorney's Office, M.D. Fla.\n- [CFTC Charges Goliath Ventures Inc. and CEO with $400 Million Fraud Scheme](https://www.cftc.gov/PressRoom/PressReleases/9280-26) — CFTC, August 11, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
@@ -166,7 +161,7 @@
         "articles": 0,
         "latest": "2026-08-14"
       },
-      "checked": "2026-08-16T14:14:26+00:00",
+      "checked": "2026-08-17T14:19:18+00:00",
       "date": "2026-08-15",
       "updated": "2026-08-15",
       "moved": false,
@@ -218,7 +213,7 @@
         "articles": 0,
         "latest": "2026-08-14"
       },
-      "checked": "2026-08-16T14:14:26+00:00",
+      "checked": "2026-08-17T14:19:18+00:00",
       "date": "2026-08-15",
       "updated": "2026-08-15",
       "moved": false,
@@ -243,7 +238,7 @@
         "articles": 0,
         "latest": "2026-08-14"
       },
-      "checked": "2026-08-16T14:14:26+00:00",
+      "checked": "2026-08-17T14:19:18+00:00",
       "date": "2026-08-15",
       "updated": "2026-08-15",
       "moved": false,
@@ -294,7 +289,7 @@
         "articles": 0,
         "latest": "2026-08-14"
       },
-      "checked": "2026-08-16T14:14:26+00:00",
+      "checked": "2026-08-17T14:19:18+00:00",
       "date": "2026-08-14",
       "updated": "2026-08-14",
       "moved": false,
@@ -332,7 +327,7 @@
         "articles": 0,
         "latest": "2026-08-14"
       },
-      "checked": "2026-08-16T14:14:26+00:00",
+      "checked": "2026-08-17T14:19:18+00:00",
       "date": "2026-08-15",
       "updated": "2026-08-15",
       "moved": false,
@@ -374,7 +369,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-16T14:14:26+00:00",
+      "checked": "2026-08-17T14:19:18+00:00",
       "date": "2026-08-15",
       "updated": "2026-08-15",
       "moved": false,
@@ -425,7 +420,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-16T14:14:26+00:00",
+      "checked": "2026-08-17T14:19:18+00:00",
       "date": "2026-08-14",
       "updated": "2026-08-14",
       "moved": false,
@@ -476,7 +471,7 @@
         "articles": 0,
         "latest": "2026-08-13"
       },
-      "checked": "2026-08-16T14:14:26+00:00",
+      "checked": "2026-08-17T14:19:18+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -502,7 +497,7 @@
         "articles": 0,
         "latest": "2026-08-11"
       },
-      "checked": "2026-08-16T14:14:26+00:00",
+      "checked": "2026-08-17T14:19:18+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -527,7 +522,7 @@
         "articles": 0,
         "latest": "2026-08-11"
       },
-      "checked": "2026-08-16T14:14:26+00:00",
+      "checked": "2026-08-17T14:19:18+00:00",
       "date": "",
       "updated": "",
       "moved": false,
@@ -553,7 +548,7 @@
         "articles": 0,
         "latest": "2026-08-05"
       },
-      "checked": "2026-08-16T14:14:26+00:00",
+      "checked": "2026-08-17T14:19:18+00:00",
       "date": "",
       "updated": "",
       "moved": false,
