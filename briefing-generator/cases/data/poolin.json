@@ -15,44 +15,74 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-17",
-    "meta_fetched_at": "2026-08-17T05:01:11.479585+00:00",
-    "fetched_at": "2026-08-17T14:17:28.310211+00:00",
+    "meta_fetched_at": "2026-08-17T14:47:50.707661+00:00",
+    "fetched_at": "2026-08-17T14:47:50.707661+00:00",
     "as_of": "Aug 17, 2026",
     "backfilled": true,
-    "new_in_72h": 6,
+    "new_in_72h": 9,
     "recent": [
       {
-        "entry_number": 136,
+        "entry_number": 139,
         "date_filed": "2026-08-17",
-        "time_filed": "00:18:46",
+        "time_filed": "10:22:12",
         "date_display": "Aug 17, 2026",
-        "description": "BNC Certificate of Notice - Order",
+        "description": "Motion (Generic)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 135,
+        "entry_number": 138,
         "date_filed": "2026-08-17",
-        "time_filed": "00:18:46",
+        "time_filed": "10:19:17",
         "date_display": "Aug 17, 2026",
-        "description": "BNC Certificate of Notice - Order",
+        "description": "Interim Order - Final Hearing",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 134,
+        "entry_number": 137,
         "date_filed": "2026-08-17",
-        "time_filed": "00:18:46",
+        "time_filed": "10:03:06",
         "date_display": "Aug 17, 2026",
-        "description": "BNC Certificate of Notice - Order",
+        "description": "Shorten Time",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 139,
+        "date_filed": "2026-08-17",
+        "time_filed": "10:22:12",
+        "date_display": "Aug 17, 2026",
+        "description": "Motion (Generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 138,
+        "date_filed": "2026-08-17",
+        "time_filed": "10:19:17",
+        "date_display": "Aug 17, 2026",
+        "description": "Interim Order - Final Hearing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 137,
+        "date_filed": "2026-08-17",
+        "time_filed": "10:03:06",
+        "date_display": "Aug 17, 2026",
+        "description": "Shorten Time",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 136,
         "date_filed": "2026-08-17",
