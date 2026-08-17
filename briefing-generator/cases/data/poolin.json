@@ -15,12 +15,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-17",
-    "meta_fetched_at": "2026-08-17T14:47:50.707661+00:00",
-    "fetched_at": "2026-08-17T15:43:44.035124+00:00",
+    "meta_fetched_at": "2026-08-17T17:48:00.154619+00:00",
+    "fetched_at": "2026-08-17T17:48:00.154619+00:00",
     "as_of": "Aug 17, 2026",
     "backfilled": true,
-    "new_in_72h": 9,
+    "new_in_72h": 10,
     "recent": [
+      {
+        "entry_number": 140,
+        "date_filed": "2026-08-17",
+        "time_filed": "13:29:17",
+        "date_display": "Aug 17, 2026",
+        "description": "Amended Motion AND Retention",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 139,
         "date_filed": "2026-08-17",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 137,
-        "date_filed": "2026-08-17",
-        "time_filed": "10:03:06",
-        "date_display": "Aug 17, 2026",
-        "description": "Shorten Time",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 140,
+        "date_filed": "2026-08-17",
+        "time_filed": "13:29:17",
+        "date_display": "Aug 17, 2026",
+        "description": "Amended Motion AND Retention",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 139,
         "date_filed": "2026-08-17",
