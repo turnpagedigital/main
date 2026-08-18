@@ -208,8 +208,8 @@ export default function Partners() {
                 error={data.peopleError}
               >
                 <LeadsTable
-                  columns={["Date", "Name", "Email", "Source"]}
-                  rows={(data.people || []).map((p) => [fmtDate(p.date), p.name || "—", p.email || "—", p.source || "—"])}
+                  columns={["Date", "Name", "Email", "Source", "Status"]}
+                  rows={(data.people || []).map((p) => [fmtDate(p.date), p.name || "—", p.email || "—", p.source || "—", p.comment || "—"])}
                   empty="No referred contacts yet — leads appear here as soon as someone uses your link."
                 />
               </Section>

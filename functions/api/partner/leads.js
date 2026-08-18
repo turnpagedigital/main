@@ -31,6 +31,9 @@ export async function onRequestGet({ request, env }) {
         name: (Array.isArray(nameVal) && nameVal[0] && nameVal[0].full_name) || "",
         email: (Array.isArray(emailVal) && emailVal[0] && emailVal[0].email_address) || "",
         source: attioTextValue(r, "submission_source"),
+        // "Referral comment" on People — Attio-AI-generated (and Andrew-
+        // editable) partner-facing status line. Missing attribute → "".
+        comment: attioTextValue(r, "referral_comment"),
       };
     });
   } catch (err) {
