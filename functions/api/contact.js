@@ -55,6 +55,7 @@ const FIELD_LIMITS = {
   subject: 200, message: 5000, source: 80,
   utm_source: 200, utm_medium: 200, utm_campaign: 200,
   utm_term: 200, utm_content: 200, gclid: 200,
+  ref: 200,
   website: 200,
 };
 
@@ -62,7 +63,7 @@ const FIELD_LIMITS = {
    visit landed with utm or gclid params — see src/lib/analytics.js). */
 const ATTRIBUTION_FIELDS = [
   "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
-  "gclid",
+  "gclid", "ref",
 ];
 
 export async function onRequestPost(context) {

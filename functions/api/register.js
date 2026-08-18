@@ -59,7 +59,7 @@ const MAX_FILE_BYTES = 8 * 1024 * 1024;
 const FILE_TYPES = new Set(["application/pdf", "image/png", "image/jpeg"]);
 const ATTRIBUTION_FIELDS = [
   "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
-  "gclid",
+  "gclid", "ref",
 ];
 
 /* Mirror of the client's branching rule — answers on hidden steps are not
