@@ -25,7 +25,7 @@ import pricing from "./_pricing-config.json";
 import { formatOffer, computeOfferBreakdown } from "../../src/lib/flow-compute.js";
 import { classifyWork, summarizeWorks, amazonSearchUrl, settlementLookupUrl } from "./_claim-links.js";
 import { checkClaimPdf } from "./_pdf-checks.js";
-import { findPartnerByCode, partnerReference, setReferredBy, DEAL_REFERRED_BY_SLUG } from "./_attio.js";
+import { findPartnerByCode, partnerReference, stampLeadPerson, DEAL_REFERRED_BY_SLUG } from "./_attio.js";
 
 const ALLOWED_ORIGINS = [
   "https://turnpagedigital.com",
@@ -408,10 +408,14 @@ async function pushToAttio(env, { flow, answers, email, fullName, pageKey, attri
   const recordId = person?.data?.id?.record_id;
   if (!recordId) throw new Error("person assert returned no record id");
 
-  // Referral partner: link the lead to the partner record (portal queries
-  // this). Logs-and-continues internally if the schema attribute is missing.
+  // Referral partner link + submission tracking (source, first/last
+  // submission timestamps). Logs-and-continues on any schema gap.
   const partner = findPartnerByCode(attribution.ref);
-  if (partner) await setReferredBy(env, recordId, partner);
+  await stampLeadPerson(env, recordId, {
+    partner,
+    source: `Registration — ${flow.attioLabel || flow.name || flow.id}`,
+    existingValues: person?.data?.values,
+  });
 
   const lines = steps.flatMap((s) => s.fields || [])
     .filter((f) => f.type !== "file" && answers[f.id])
