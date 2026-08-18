@@ -14,13 +14,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
-    "date_last_filing": "2026-08-17",
-    "meta_fetched_at": "2026-08-17T21:44:08.661458+00:00",
-    "fetched_at": "2026-08-18T15:49:17.440411+00:00",
+    "date_last_filing": "2026-08-18",
+    "meta_fetched_at": "2026-08-18T17:47:15.419777+00:00",
+    "fetched_at": "2026-08-18T17:47:15.419777+00:00",
     "as_of": "Aug 18, 2026",
     "backfilled": true,
-    "new_in_72h": 12,
+    "new_in_72h": 13,
     "recent": [
+      {
+        "entry_number": 143,
+        "date_filed": "2026-08-18",
+        "time_filed": "13:29:32",
+        "date_display": "Aug 18, 2026",
+        "description": "Support",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 142,
         "date_filed": "2026-08-17",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 139,
-        "date_filed": "2026-08-17",
-        "time_filed": "10:22:12",
-        "date_display": "Aug 17, 2026",
-        "description": "Motion (Generic)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 143,
+        "date_filed": "2026-08-18",
+        "time_filed": "13:29:32",
+        "date_display": "Aug 18, 2026",
+        "description": "Support",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 142,
         "date_filed": "2026-08-17",
