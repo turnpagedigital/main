@@ -3,9 +3,9 @@ import { NEON, FONT, INK, INK_60 } from "../data/tokens.js";
 import { sectionBackground } from "../lib/section-background.js";
 
 /* Referral partner portal (/partners). Unlisted page — partners get the URL
-   directly. Login is a single access key (no username); sessions are
-   HMAC cookies scoped to /api/partner. English-only by design, like the
-   admin panel.
+   directly. Sign-in is an emailed magic link (only addresses on a partner's
+   allowlist receive one); sessions are HMAC cookies scoped to /api/partner.
+   English-only by design, like the admin panel.
 
    Visual language mirrors the home "Our Services" section: the Czerwinski
    ripple background with a light overlay, uppercase eyebrow, big title with
@@ -75,7 +75,8 @@ export default function Partners() {
   const [msgLead, setMsgLead] = useState(null); // lead being messaged, or null
   const [partner, setPartner] = useState(null);
   const [data, setData] = useState(null);
-  const [key, setKey] = useState("");
+  const [email, setEmail] = useState("");
+  const [linkSent, setLinkSent] = useState(false);
   const [error, setError] = useState("");
 
   async function loadLeads() {
@@ -95,27 +96,26 @@ export default function Partners() {
   }
 
   useEffect(() => {
-    /* Magic-link sign-in: the partner's key may arrive in the URL fragment
-       (#k=…). Fragments never reach servers or logs; we scrub it from the
-       address bar immediately, then exchange it for a session cookie. An
-       existing valid session wins — a stale link can't kick out a fresher
-       login. */
-    const m = window.location.hash.match(/^#k=([A-Za-z0-9]+)$/);
-    const linkKey = m ? m[1] : "";
-    if (m) history.replaceState(null, "", window.location.pathname + window.location.search);
+    /* Magic-link redemption: the emailed sign-in link carries a 15-minute
+       token in the URL fragment (#t=…). Fragments never reach servers or
+       logs; scrub immediately, then exchange for a session cookie. An
+       existing valid session wins. */
+    const m = window.location.hash.match(/^#t=([A-Za-z0-9._-]+)$/);
+    const linkToken = m ? m[1] : "";
+    if (window.location.hash) history.replaceState(null, "", window.location.pathname + window.location.search);
 
     fetch("/api/partner/session")
       .then(async (res) => {
         if (res.ok) return loadLeads();
-        if (linkKey) {
+        if (linkToken) {
           const login = await fetch("/api/partner/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ key: linkKey }),
+            body: JSON.stringify({ token: linkToken }),
           });
           if (login.ok) return loadLeads();
           const body = await login.json().catch(() => ({}));
-          setError(body.error || "This sign-in link is no longer valid — it may have been reset.");
+          setError(body.error || "This sign-in link is invalid or has expired — request a new one.");
         }
         setPhase("login");
       })
@@ -126,15 +126,14 @@ export default function Partners() {
     e.preventDefault();
     setError("");
     try {
-      const res = await fetch("/api/partner/login", {
+      const res = await fetch("/api/partner/request-link", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ key: key.trim() }),
+        body: JSON.stringify({ email: email.trim() }),
       });
       const body = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(body.error || "Sign-in failed.");
-      setKey("");
-      await loadLeads();
+      if (!res.ok) throw new Error(body.error || "Could not send the sign-in link.");
+      setLinkSent(true);
     } catch (err) {
       setError(err.message);
     }
@@ -185,25 +184,43 @@ export default function Partners() {
         )}
 
         {phase === "login" && (
+          linkSent ? (
+            <div style={{ ...frostedCard, maxWidth: 460 }}>
+              <h2 style={cardTitle}>Check your email</h2>
+              <div style={divider} />
+              <p style={{ fontFamily: FONT, fontSize: "0.97rem", color: INK_60, lineHeight: 1.65, margin: 0 }}>
+                If <b style={{ color: INK }}>{email.trim()}</b> is authorized for a partner account,
+                a sign-in link is on its way. It works for 15 minutes — check spam if it doesn't
+                arrive within a couple of minutes.
+              </p>
+              <button
+                onClick={() => { setLinkSent(false); setError(""); }}
+                style={{ fontFamily: FONT, fontSize: "0.85rem", fontWeight: 700, background: "none", border: "none", color: INK_60, cursor: "pointer", textDecoration: "underline", padding: 0, marginTop: "1.1rem" }}
+              >
+                Use a different email
+              </button>
+            </div>
+          ) : (
           <form onSubmit={handleLogin} style={{ ...frostedCard, maxWidth: 460 }} className="field-light">
             <h2 style={cardTitle}>Partner sign-in</h2>
             <div style={divider} />
             <p style={{ fontFamily: FONT, fontSize: "0.97rem", color: INK_60, lineHeight: 1.65, margin: "0 0 1.2rem" }}>
-              Enter the access key Turnpage provided. Lost it? Email{" "}
+              Enter your authorized email and we'll send you a sign-in link. Need access? Email{" "}
               <a href="mailto:info@turnpagedigital.com" style={{ color: INK }}>info@turnpagedigital.com</a>.
             </p>
-            <label htmlFor="partner-key" style={{ fontFamily: FONT }}>Access key</label>
+            <label htmlFor="partner-email" style={{ fontFamily: FONT }}>Email</label>
             <input
-              id="partner-key" type="password" value={key} autoComplete="off"
-              onChange={(e) => setKey(e.target.value)} required
+              id="partner-email" type="email" value={email} autoComplete="email" required
+              onChange={(e) => setEmail(e.target.value)}
             />
             {error && (
               <p role="alert" style={{ fontFamily: FONT, fontSize: "0.88rem", color: "#C03030", margin: "0.6rem 0 0" }}>{error}</p>
             )}
             <button type="submit" className="btn-neon" style={{ display: "block", width: "100%", marginTop: "1.2rem" }}>
-              Sign in
+              Email me a sign-in link
             </button>
           </form>
+          )
         )}
 
         {phase === "loading" && (

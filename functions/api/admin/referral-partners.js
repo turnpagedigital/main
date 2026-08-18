@@ -15,11 +15,12 @@ const RESERVED = new Set(
 );
 
 const CODE_RE = /^[a-z0-9][a-z0-9-]{1,59}$/;
-const HASH_RE = /^[a-f0-9]{64}$/;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 function validatePartners(partners) {
   const seen = new Set();
+  const seenEmails = new Map();
   for (const [i, p] of partners.entries()) {
     const label = p && p.name ? `"${p.name}"` : `#${i + 1}`;
     if (!p || typeof p !== "object") return `Partner ${label} is invalid`;
@@ -34,7 +35,15 @@ function validatePartners(partners) {
       if (seen.has(token)) return `Duplicate code/alias "${token}" — codes and aliases must be unique across all partners`;
       seen.add(token);
     }
-    if (p.portalKeyHash && !HASH_RE.test(p.portalKeyHash)) return `Partner ${label}: portal key hash is malformed`;
+    const emails = Array.isArray(p.authorizedEmails) ? p.authorizedEmails : [];
+    for (const e of emails) {
+      if (!EMAIL_RE.test(e || "")) return `Partner ${label}: "${e}" is not a valid email`;
+      const norm = e.trim().toLowerCase();
+      if (seenEmails.has(norm) && seenEmails.get(norm) !== i) {
+        return `"${norm}" is authorized for two partners — an email can only belong to one (sign-in binds to whichever comes first)`;
+      }
+      seenEmails.set(norm, i);
+    }
     if (!p.attio || p.attio.object !== "companies" && p.attio.object !== "people") {
       return `Partner ${label}: Attio record type must be "companies" or "people"`;
     }
@@ -48,7 +57,9 @@ function normalizePartner(p) {
     code: p.code.trim(),
     name: p.name.trim(),
     attio: { object: p.attio.object, record_id: p.attio.record_id.trim().toLowerCase() },
-    portalKeyHash: typeof p.portalKeyHash === "string" ? p.portalKeyHash : "",
+    authorizedEmails: Array.isArray(p.authorizedEmails)
+      ? [...new Set(p.authorizedEmails.map((e) => e.trim().toLowerCase()))]
+      : [],
     active: p.active !== false,
     ...(Array.isArray(p.aliases) && p.aliases.length ? { aliases: p.aliases } : {}),
   };
