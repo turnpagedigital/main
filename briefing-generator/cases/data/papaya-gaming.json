@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
-    "date_last_filing": "2026-08-17",
-    "meta_fetched_at": "2026-08-18T08:05:42.839670+00:00",
-    "fetched_at": "2026-08-18T14:23:40.452442+00:00",
+    "date_last_filing": "2026-08-18",
+    "meta_fetched_at": "2026-08-18T15:49:11.883781+00:00",
+    "fetched_at": "2026-08-18T15:49:11.883781+00:00",
     "as_of": "Aug 18, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 70,
+        "date_filed": "2026-08-18",
+        "time_filed": "10:32:31",
+        "date_display": "Aug 18, 2026",
+        "description": "Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 69,
         "date_filed": "2026-08-17",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 67,
-        "date_filed": "2026-08-11",
-        "time_filed": "16:50:24",
-        "date_display": "Aug 11, 2026",
-        "description": "Affidavit",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.67.0_1.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 70,
+        "date_filed": "2026-08-18",
+        "time_filed": "10:32:31",
+        "date_display": "Aug 18, 2026",
+        "description": "Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 69,
         "date_filed": "2026-08-17",
