@@ -43,6 +43,16 @@ Attio is the system of record for referral reporting. The per-partner
 Google-Sheet/Apps-Script route described in git history was superseded
 before it was ever set up.
 
+### Managing partners (Admin → Content → Partners)
+
+The admin tab at `/admin/content/partners` manages everything below:
+add/deactivate partners, edit codes/aliases/Attio record, and
+generate/reset portal access keys. Keys are generated in the browser
+(24 random bytes, hex) and only the SHA-256 fingerprint is saved —
+the plaintext shows once with a copy button. NOTE: the registry is
+read at build time, so admin changes (including key resets) take
+effect on the next production deploy.
+
 ### How a partner is defined
 
 `src/data/referral-partners.json` — one entry per partner:
