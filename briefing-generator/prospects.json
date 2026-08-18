@@ -62,8 +62,9 @@
       "source_name": "Claims Journal / Bloomberg",
       "date": "2026-08-07",
       "first_seen": "2026-08-17",
-      "status": "new",
-      "vote": 1
+      "status": "dismissed",
+      "vote": 1,
+      "triaged_at": "2026-08-18T23:18:27.788Z"
     },
     {
       "id": "759b381bd2",
