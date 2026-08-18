@@ -162,21 +162,13 @@ export default function Partners() {
     }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
 
-        {/* Header — mirrors the Services section */}
-        <div style={{ marginBottom: "clamp(2.5rem, 5vw, 4rem)" }}>
+        {/* Header — eyebrow only (mirrors the Services section eyebrow) */}
+        <div style={{ marginBottom: "clamp(1.8rem, 3.5vw, 2.8rem)" }}>
           <p style={{
             fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
             letterSpacing: "0.22em", textTransform: "uppercase",
-            color: INK_60, marginBottom: "1.1rem",
-          }}>Partner Program</p>
-          <h1 style={{
-            fontFamily: FONT, fontWeight: 800,
-            fontSize: "clamp(1.8rem, 3.8vw, 3.4rem)",
-            lineHeight: 1.02, letterSpacing: "-0.035em",
-            color: INK, margin: 0,
-          }}>
-            Referral <span className="accent-light">Portal.</span>
-          </h1>
+            color: INK_60, margin: 0,
+          }}>Referral Program</p>
         </div>
 
         {phase === "checking" && (
