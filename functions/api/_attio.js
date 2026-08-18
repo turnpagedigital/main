@@ -25,6 +25,17 @@ import partnersData from "../../src/data/referral-partners.json";
 export const PERSON_REFERRED_BY_SLUG = "referred_by";
 export const DEAL_REFERRED_BY_SLUG = "referred_by";
 
+/* All Attio calls get a 10s timeout (same pattern as admin/_github.js):
+ * a slow-but-connected Attio must degrade into the callers' catch paths,
+ * never hang a user-facing request. */
+export function attioFetch(env, url, options = {}) {
+  return fetch(url, {
+    ...options,
+    headers: options.headers || attioHeaders(env),
+    signal: AbortSignal.timeout(10_000),
+  });
+}
+
 export function attioHeaders(env) {
   return {
     Authorization: `Bearer ${env.ATTIO_API_KEY}`,
@@ -139,7 +150,7 @@ export async function queryReferredRecords(env, object, slug, partner, max = 500
   const out = [];
   const pageSize = 100;
   for (let offset = 0; offset < max; offset += pageSize) {
-    const res = await fetch(`https://api.attio.com/v2/objects/${object}/records/query`, {
+    const res = await attioFetch(env, `https://api.attio.com/v2/objects/${object}/records/query`, {
       method: "POST",
       headers: attioHeaders(env),
       body: JSON.stringify({
