@@ -111,10 +111,17 @@ export async function onRequest(context) {
    * response, it never intercepts serving (the earlier interception attempt
    * 404'd every asset and IS the incident it was meant to prevent). */
   if (url.pathname.startsWith("/assets/")) {
-    if (response.status === 404) {
-      const headers = new Headers(response.headers);
-      headers.set("Cache-Control", "no-store");
-      return new Response(response.body, { status: 404, headers });
+    const assetType = response.headers.get("content-type") || "";
+    /* A miss surfaces either as a 404 OR as the SPA fallback: 200 text/html
+     * that Pages stamps with the /assets/ path's year-long immutable
+     * cache-control — the header that made the Aug 18 2026 outage sticky.
+     * Either way: uncacheable plain 404, so nothing can pin it. Real assets
+     * (js/css/img content-types) pass through untouched. */
+    if (response.status === 404 || assetType.includes("text/html")) {
+      return new Response("Not found", {
+        status: 404,
+        headers: { "Cache-Control": "no-store", "Content-Type": "text/plain" },
+      });
     }
     return response;
   }
