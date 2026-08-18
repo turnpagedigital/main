@@ -1,17 +1,34 @@
 import React, { useEffect, useState } from "react";
-import { NEON, FONT, INK, INK_60, PAPER } from "../data/tokens.js";
-import Hero from "../components/Hero.jsx";
+import { NEON, FONT, INK, INK_60 } from "../data/tokens.js";
+import { sectionBackground } from "../lib/section-background.js";
 
 /* Referral partner portal (/partners). Unlisted page — partners get the URL
    directly. Login is a single access key (no username); sessions are
    HMAC cookies scoped to /api/partner. English-only by design, like the
-   admin panel. */
+   admin panel.
 
-const wrap = { maxWidth: 900, margin: "0 auto", padding: "3rem 1.5rem 5rem" };
-const card = {
-  background: "#fff", border: "1px solid rgba(10,10,10,0.12)",
-  borderRadius: 10, padding: "2rem",
+   Visual language mirrors the home "Our Services" section: the Czerwinski
+   ripple background with a light overlay, uppercase eyebrow, big title with
+   the neon accent-light highlight, and frosted white cards. */
+
+const BG_IMAGE = "/pawel-czerwinski-T5VUBvCYqKk-unsplash.jpg";
+
+const frostedCard = {
+  background: "rgba(255,255,255,0.88)",
+  backdropFilter: "blur(10px)",
+  WebkitBackdropFilter: "blur(10px)",
+  border: "1px solid rgba(10,10,10,0.08)",
+  borderRadius: 12,
+  boxShadow: "0 8px 30px rgba(10,10,10,0.06)",
+  padding: "clamp(1.5rem, 2.5vw, 2.2rem)",
 };
+const cardTitle = {
+  fontFamily: FONT, fontWeight: 800,
+  fontSize: "clamp(1.3rem, 2vw, 1.7rem)",
+  letterSpacing: "-0.015em", lineHeight: 1.1,
+  color: INK, margin: 0,
+};
+const divider = { height: 1, background: "rgba(0,0,0,0.18)", margin: "1.1rem 0" };
 const th = {
   fontFamily: FONT, fontSize: "0.68rem", fontWeight: 800, color: INK_60,
   letterSpacing: "0.14em", textTransform: "uppercase",
@@ -21,6 +38,11 @@ const td = {
   fontFamily: FONT, fontSize: "0.9rem", color: INK,
   padding: "0.55rem 0.75rem", borderBottom: "1px solid rgba(10,10,10,0.1)",
   verticalAlign: "top",
+};
+const linkBtn = {
+  fontFamily: FONT, fontSize: "0.8rem", fontWeight: 700,
+  background: "none", border: "none", color: INK_60,
+  cursor: "pointer", textDecoration: "underline", padding: 0,
 };
 
 function fmtDate(iso) {
@@ -98,24 +120,39 @@ export default function Partners() {
   }
 
   return (
-    <div style={{ background: PAPER, minHeight: "60vh" }}>
-      <Hero
-        eyebrow="Turnpage Digital Markets"
-        title="Referral Partner"
-        accentTitle="Portal"
-        subtitle="A live view of every lead your referral link has sent us."
-      />
-      <div style={wrap}>
+    <section style={{
+      background: sectionBackground(BG_IMAGE, "light", 15),
+      minHeight: "100vh",
+      padding: "clamp(7.5rem, 14vw, 10rem) clamp(1.5rem, 5vw, 4rem) clamp(3.5rem, 8vw, 8rem)",
+    }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+
+        {/* Header — mirrors the Services section */}
+        <div style={{ marginBottom: "clamp(2.5rem, 5vw, 4rem)" }}>
+          <p style={{
+            fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
+            letterSpacing: "0.22em", textTransform: "uppercase",
+            color: INK_60, marginBottom: "1.1rem",
+          }}>Partner Program</p>
+          <h1 style={{
+            fontFamily: FONT, fontWeight: 800,
+            fontSize: "clamp(1.8rem, 3.8vw, 3.4rem)",
+            lineHeight: 1.02, letterSpacing: "-0.035em",
+            color: INK, margin: 0,
+          }}>
+            Referral <span className="accent-light">Portal.</span>
+          </h1>
+        </div>
+
         {phase === "checking" && (
-          <p style={{ fontFamily: FONT, color: INK_60, textAlign: "center" }}>Checking session…</p>
+          <p style={{ fontFamily: FONT, color: INK_60 }}>Checking session…</p>
         )}
 
         {phase === "login" && (
-          <form onSubmit={handleLogin} style={{ ...card, maxWidth: 440, margin: "0 auto" }} className="field-light">
-            <h2 style={{ fontFamily: FONT, fontWeight: 800, fontSize: "1.2rem", color: INK, marginBottom: "0.4rem" }}>
-              Partner sign-in
-            </h2>
-            <p style={{ fontFamily: FONT, fontSize: "0.88rem", color: INK_60, marginBottom: "1.2rem" }}>
+          <form onSubmit={handleLogin} style={{ ...frostedCard, maxWidth: 460 }} className="field-light">
+            <h2 style={cardTitle}>Partner sign-in</h2>
+            <div style={divider} />
+            <p style={{ fontFamily: FONT, fontSize: "0.97rem", color: INK_60, lineHeight: 1.65, margin: "0 0 1.2rem" }}>
               Enter the access key Turnpage provided. Lost it? Email{" "}
               <a href="mailto:info@turnpagedigital.com" style={{ color: INK }}>info@turnpagedigital.com</a>.
             </p>
@@ -134,63 +171,75 @@ export default function Partners() {
         )}
 
         {phase === "loading" && (
-          <p style={{ fontFamily: FONT, color: INK_60, textAlign: "center" }}>Loading your report…</p>
+          <p style={{ fontFamily: FONT, color: INK_60 }}>Loading your report…</p>
         )}
 
         {phase === "ready" && data && (
           <div>
             <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", flexWrap: "wrap", gap: "0.6rem", marginBottom: "1.4rem" }}>
-              <h2 style={{ fontFamily: FONT, fontWeight: 800, fontSize: "1.35rem", color: INK }}>
+              <h2 style={{ fontFamily: FONT, fontWeight: 800, fontSize: "1.35rem", color: INK, margin: 0 }}>
                 {partner?.name}
                 <span style={{ background: NEON, color: INK, fontSize: "0.64rem", fontWeight: 800, letterSpacing: "0.14em", textTransform: "uppercase", padding: "0.25rem 0.6rem", borderRadius: 3, marginLeft: "0.7rem", verticalAlign: "middle" }}>
                   Partner
                 </span>
               </h2>
               <div style={{ display: "flex", gap: "1rem" }}>
-                <button onClick={loadLeads} style={{ fontFamily: FONT, fontSize: "0.8rem", fontWeight: 700, background: "none", border: "none", color: INK_60, cursor: "pointer", textDecoration: "underline" }}>
-                  Refresh
-                </button>
-                <button onClick={handleLogout} style={{ fontFamily: FONT, fontSize: "0.8rem", fontWeight: 700, background: "none", border: "none", color: INK_60, cursor: "pointer", textDecoration: "underline" }}>
-                  Sign out
-                </button>
+                <button onClick={loadLeads} style={linkBtn}>Refresh</button>
+                <button onClick={handleLogout} style={linkBtn}>Sign out</button>
               </div>
             </div>
 
-            <Section title={`Registrations (${(data.deals || []).length})`} error={data.dealsError}>
-              <LeadsTable
-                columns={["Date", "Registration", "Status"]}
-                rows={(data.deals || []).map((d) => [fmtDate(d.date), d.name || "—", STAGE_LABELS[d.stage] || d.stage || "—"])}
-                empty="No registrations yet."
-              />
-            </Section>
+            <div style={{ display: "grid", gap: "clamp(1rem, 2vw, 1.5rem)" }}>
+              <Section
+                title="Registrations"
+                subtitle={`${(data.deals || []).length} to date`}
+                error={data.dealsError}
+              >
+                <LeadsTable
+                  columns={["Date", "Registration", "Status"]}
+                  rows={(data.deals || []).map((d) => [fmtDate(d.date), d.name || "—", STAGE_LABELS[d.stage] || d.stage || "—"])}
+                  empty="No registrations yet."
+                />
+              </Section>
 
-            <Section title={`Referred contacts (${(data.people || []).length})`} error={data.peopleError}>
-              <LeadsTable
-                columns={["Date", "Name", "Email", "Source"]}
-                rows={(data.people || []).map((p) => [fmtDate(p.date), p.name || "—", p.email || "—", p.source || "—"])}
-                empty="No referred contacts yet — leads appear here as soon as someone uses your link."
-              />
-            </Section>
+              <Section
+                title="Referred contacts"
+                subtitle={`${(data.people || []).length} to date`}
+                error={data.peopleError}
+              >
+                <LeadsTable
+                  columns={["Date", "Name", "Email", "Source"]}
+                  rows={(data.people || []).map((p) => [fmtDate(p.date), p.name || "—", p.email || "—", p.source || "—"])}
+                  empty="No referred contacts yet — leads appear here as soon as someone uses your link."
+                />
+              </Section>
+            </div>
 
             <p style={{ fontFamily: FONT, fontSize: "0.75rem", color: INK_60, marginTop: "1.5rem" }}>
               Live from our CRM · generated {new Date(data.generatedAt).toLocaleString()} · your referral link:{" "}
-              <code style={{ background: "#fff", padding: "0.1rem 0.4rem", borderRadius: 3 }}>
-                https://turnpagedigital.com/?ref={partner?.code}
+              <code style={{ background: "rgba(255,255,255,0.85)", padding: "0.1rem 0.4rem", borderRadius: 3 }}>
+                https://turnpagedigital.com/{partner?.code}
               </code>
             </p>
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 }
 
-function Section({ title, error, children }) {
+function Section({ title, subtitle, error, children }) {
   return (
-    <div style={{ ...card, marginBottom: "1.5rem", padding: "1.5rem" }}>
-      <h3 style={{ fontFamily: FONT, fontWeight: 800, fontSize: "1rem", color: INK, marginBottom: "0.9rem" }}>{title}</h3>
+    <div style={frostedCard}>
+      <h3 style={cardTitle}>{title}</h3>
+      <div style={divider} />
+      {subtitle && (
+        <p style={{ fontFamily: FONT, fontWeight: 700, fontSize: "1.08rem", color: INK, lineHeight: 1.4, margin: "0 0 1.1rem" }}>
+          {subtitle}
+        </p>
+      )}
       {error
-        ? <p style={{ fontFamily: FONT, fontSize: "0.88rem", color: "#C03030" }}>{error}</p>
+        ? <p style={{ fontFamily: FONT, fontSize: "0.88rem", color: "#C03030", margin: 0 }}>{error}</p>
         : children}
     </div>
   );
@@ -198,7 +247,7 @@ function Section({ title, error, children }) {
 
 function LeadsTable({ columns, rows, empty }) {
   if (!rows.length) {
-    return <p style={{ fontFamily: FONT, fontSize: "0.88rem", color: INK_60 }}>{empty}</p>;
+    return <p style={{ fontFamily: FONT, fontSize: "0.97rem", color: INK_60, lineHeight: 1.65, margin: 0 }}>{empty}</p>;
   }
   return (
     <div style={{ overflowX: "auto" }}>
