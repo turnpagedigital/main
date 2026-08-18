@@ -1,7 +1,35 @@
 {
   "slug": "concord-anthropic",
-  "case_name": "Concord Music Group v. Anthropic",
+  "case_name": "Concord v. Anthropic",
   "items": [
+    {
+      "date": "2026-08-18",
+      "updated": "2026-08-18",
+      "lede": "On August 17, the publishers filed their Responsive Separate Statement (Dkt. 756) together with a supporting declaration (Dkt. 757), a notice (Dkt. 758), and two documents under seal (Dkts. 759–760), completing the publishers' opposition-side factual record on the cross-motions for summary judgment before Judge Eumi K. Lee in No. 5:24-cv-03811.",
+      "body_md": "On August 17, the publishers filed their Responsive Separate Statement (Dkt. 756) together with a supporting declaration (Dkt. 757), a notice (Dkt. 758), and two documents under seal (Dkts. 759–760), completing the publishers' opposition-side factual record on the cross-motions for summary judgment before Judge Eumi K. Lee in No. 5:24-cv-03811. The Responsive Separate Statement is the publishers' point-by-point answer to Anthropic's separate statement of undisputed facts — the document that locks in which material facts the publishers dispute, on what evidentiary basis, and where genuine issues of fact exist that the court must resolve before it can grant or deny either side's motion. Because the summary judgment hearing is set for October 21, this filing completes the factual-dispute record that Judge Lee will have in front of her; it is not a preliminary skirmish.\n\nThe sealed companion filings (Dkts. 759–760) almost certainly carry the underlying exhibits the declaration references — consistent with the pattern set by the July 27 round of sealed Daubert oppositions (Dkts. 745–753), where substantive evidence was filed under the standing sealing order (Dkt. 590). The content is not publicly available, but the structure of the filing cluster mirrors prior sealed merits submissions in this case. What matters for recovery posture is the scope of what the publishers chose to contest: a narrow responsive statement, accepting most of Anthropic's facts, would signal confidence that disputed facts alone carry their partial summary judgment motion on direct infringement; a broad one, contesting the bulk of Anthropic's statement, signals that the publishers view the factual record as genuinely contested on fair use and may be laying the foundation for a trial rather than a clean pre-trial adjudication. That distinction cannot be assessed until the sealed exhibits surface or the court rules.\n\n\nThe publishers have narrowed Concord I to direct infringement and alleged removal of copyright management information, having dropped earlier contributory and vicarious infringement claims.\n The summary judgment motion accordingly turns on whether Anthropic's training use was fair use — \nAnthropic argues the use was \"transformative\" fair use analogous to how humans learn from reading, while the publishers counter that Anthropic used the lyrics to build a competing commercial product and fair use does not apply.\n Running in parallel, \nAnthropic and Dario Amodei have each filed dismissal motions in Concord II targeting the case covering more than 20,000 songs, with Anthropic seeking to strike the output-reproduction claim and a DMCA count.\n The November 4 hearing on those partial motions to dismiss in No. 5:26-cv-00880 is the next inflection point for the broader multi-suit exposure picture. The next concrete milestone in Concord I is the September 2 Case Management Conference before Judge Lee, followed by the October 21 summary judgment hearing.\n\n## Sources\n\n- [Anthropic seeks partial dismissal in music publishers' $3B lyrics suit – as CEO moves to drop the direct-infringement claim against him](https://www.musicbusinessworldwide.com/anthropic-seeks-partial-dismissal-in-music-publishers-3b-lyrics-suit-as-ceo-moves-to-drop-the-direct-infringement-claim-against-him/) — Music Business Worldwide, August 6, 2026\n- [Music publishers file amended lyrics lawsuit against Anthropic – just as AI firm's separate $1.5B piracy settlement with authors wins court approval](https://www.musicbusinessworldwide.com/music-publishers-file-amended-lyrics-lawsuit-against-anthropic-just-as-ai-firms-separate-1-5b-piracy-settlement-with-authors-wins-court-approval/) — Music Business Worldwide, July 22, 2026\n- [Concord Music Group, Inc. et al v. Anthropic PBC — Case Coverage](https://www.law360.com/cases/66c67e7efda84001199de4bb/articles) — Law360 (multiple dates)\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Anthropic seeks partial dismissal in music publishers' $3B lyrics suit – as CEO moves to drop the direct-infringement claim against him",
+          "url": "https://www.musicbusinessworldwide.com/anthropic-seeks-partial-dismissal-in-music-publishers-3b-lyrics-suit-as-ceo-moves-to-drop-the-direct-infringement-claim-against-him/",
+          "note": "Music Business Worldwide, August 6, 2026"
+        },
+        {
+          "title": "Music publishers file amended lyrics lawsuit against Anthropic – just as AI firm's separate $1.5B piracy settlement with authors wins court approval",
+          "url": "https://www.musicbusinessworldwide.com/music-publishers-file-amended-lyrics-lawsuit-against-anthropic-just-as-ai-firms-separate-1-5b-piracy-settlement-with-authors-wins-court-approval/",
+          "note": "Music Business Worldwide, July 22, 2026"
+        },
+        {
+          "title": "Concord Music Group, Inc. et al v. Anthropic PBC — Case Coverage",
+          "url": "https://www.law360.com/cases/66c67e7efda84001199de4bb/articles",
+          "note": "Law360 (multiple dates)"
+        }
+      ],
+      "activity": {
+        "filings": 5,
+        "articles": 0,
+        "latest": "2026-08-17"
+      }
+    },
     {
       "date": "2026-08-07",
       "updated": "2026-08-07",
