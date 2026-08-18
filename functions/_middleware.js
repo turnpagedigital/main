@@ -80,19 +80,6 @@ export async function onRequest(context) {
     return Response.redirect(url.toString(), 301);
   }
 
-  /* Asset requests only reach the middleware when the file doesn't exist
-   * in the current deployment (static hits bypass functions entirely).
-   * Serving the SPA HTML fallback for those — with an edge-cacheable 404 —
-   * is how a deploy-skew 404 for a hashed chunk got cached at a Cloudflare
-   * colo on Aug 18 2026 and blanked the site for every visitor it routed.
-   * Return an uncacheable plain 404 instead so a miss can never stick. */
-  if (url.pathname.startsWith("/assets/")) {
-    return new Response("Not found", {
-      status: 404,
-      headers: { "Cache-Control": "no-store", "Content-Type": "text/plain" },
-    });
-  }
-
   /* Vanity referral link → homepage with the ref code as a query param,
    * where the SPA's attribution capture picks it up. 302 (not 301) so the
    * mapping stays revocable and uncached. */
