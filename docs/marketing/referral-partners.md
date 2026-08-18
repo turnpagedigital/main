@@ -117,5 +117,8 @@ deliberately never exposed to partners.
 
 ## Sharing with a partner
 
-Send them their link (`https://turnpagedigital.com/?ref=their-code`), the
-portal URL (`https://turnpagedigital.com/partners`), and their access key.
+Send them their referral link (`turnpagedigital.com/<code>`) and their
+private portal sign-in link (`https://turnpagedigital.com/partners#k=<key>`
+— shown alongside the raw key in the admin key popup). The sign-in link
+logs them in automatically; the raw key works for manual entry. Both stop
+working when the key is reset in Admin → Content → Partners.
