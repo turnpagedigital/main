@@ -14,13 +14,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
-    "date_last_filing": "2026-08-17",
-    "meta_fetched_at": "2026-08-18T08:05:00.433425+00:00",
-    "fetched_at": "2026-08-18T14:23:34.188038+00:00",
+    "date_last_filing": "2026-08-18",
+    "meta_fetched_at": "2026-08-18T15:49:04.207210+00:00",
+    "fetched_at": "2026-08-18T15:49:04.207210+00:00",
     "as_of": "Aug 18, 2026",
     "backfilled": true,
-    "new_in_72h": 5,
+    "new_in_72h": 6,
     "recent": [
+      {
+        "entry_number": 100,
+        "date_filed": "2026-08-18",
+        "time_filed": "11:23:26",
+        "date_display": "Aug 18, 2026",
+        "description": "Exhibit",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 99,
         "date_filed": "2026-08-17",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 97,
-        "date_filed": "2026-08-17",
-        "time_filed": "16:19:38",
-        "date_display": "Aug 17, 2026",
-        "description": "Order Granting Motion for Admission pro hac vice of Rebecca J. Ryan, Esquire (Related Doc # 95) Order Signed on 8/17/2026. (CEB) (Entered: 08/17/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 100,
+        "date_filed": "2026-08-18",
+        "time_filed": "11:23:26",
+        "date_display": "Aug 18, 2026",
+        "description": "Exhibit",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 99,
         "date_filed": "2026-08-17",
