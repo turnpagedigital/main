@@ -73,8 +73,9 @@ Both `/api/contact` and `/api/register` (see `functions/api/_attio.js`):
 2. Set the person's **"Referred by"** attribute (slug `referred_by`) to the
    partner's record.
 3. `/api/register` also sets **Deals → "Referred by"** (slug
-   `referral_fee`) on the deal it creates — retrying without the link if
-   Attio rejects it, so a schema gap never loses a deal.
+   `referred_by`; the legacy locked attribute at slug `referral_fee` was
+   migrated and archived Aug 2026) on the deal it creates — retrying
+   without the link if Attio rejects it, so a schema gap never loses a deal.
 4. `/api/contact` additionally attaches the message as a note on the person.
 
 All Attio pushes are best-effort: failures log and never block the
@@ -90,7 +91,7 @@ rotating a key logs that partner out). Endpoints under
 
 `/api/partner/leads` queries Attio live: people whose `referred_by` points
 at the partner (contact inquiries + registrants) and deals whose
-`referral_fee` points at them (with pipeline stage, translated to
+`referred_by` points at them (with pipeline stage, translated to
 partner-friendly labels in `src/pages/Partners.jsx`). Deal amounts are
 deliberately never exposed to partners.
 
@@ -99,8 +100,10 @@ deliberately never exposed to partners.
 1. "Referral link" text attribute on People + Companies — DONE Aug 2026.
 2. **"Referred by"** record-reference attribute (allowed: Companies +
    People) on the **People** object — slug must be `referred_by`.
-3. Deals already had "Referred by" (slug `referral_fee`), but it only
-   allowed People — edit its allowed record types to include Companies.
+3. "Referred by" on Deals (slug `referred_by`, Companies + People) — the
+   original locked attribute (slug `referral_fee`) couldn't be widened, so
+   a replacement was created and all 27 historical values migrated
+   (Aug 2026); the old attribute is archived.
 
 ## Sharing with a partner
 

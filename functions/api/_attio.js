@@ -11,9 +11,10 @@
  *  - people.referred_by   (record-reference → Companies/People) — set on every
  *    referred lead; the partner portal queries it. Created manually in the
  *    Attio UI; until it exists, setReferredBy logs and moves on.
- *  - deals.referral_fee   ("Referred by" on Deals, display name differs from
- *    slug) — set on registration deals when the partner record type is
- *    allowed; creation retries without it if Attio rejects.
+ *  - deals.referred_by    ("Referred by" on Deals, created Aug 2026 to
+ *    replace the legacy locked attribute at slug referral_fee; historical
+ *    values were migrated) — set on registration deals; creation retries
+ *    without it if Attio rejects.
  *  - companies/people.referral_link — the partner's public ?ref= code,
  *    cosmetic in the CRM; the source of truth for code→record mapping is
  *    src/data/referral-partners.json.
@@ -22,7 +23,7 @@
 import partnersData from "../../src/data/referral-partners.json";
 
 export const PERSON_REFERRED_BY_SLUG = "referred_by";
-export const DEAL_REFERRED_BY_SLUG = "referral_fee";
+export const DEAL_REFERRED_BY_SLUG = "referred_by";
 
 export function attioHeaders(env) {
   return {
