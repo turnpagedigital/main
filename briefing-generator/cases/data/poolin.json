@@ -15,12 +15,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-18",
-    "meta_fetched_at": "2026-08-18T19:00:02.659904+00:00",
-    "fetched_at": "2026-08-18T19:43:26.908473+00:00",
+    "meta_fetched_at": "2026-08-18T20:42:58.640383+00:00",
+    "fetched_at": "2026-08-18T20:42:58.640383+00:00",
     "as_of": "Aug 18, 2026",
     "backfilled": true,
-    "new_in_72h": 14,
+    "new_in_72h": 15,
     "recent": [
+      {
+        "entry_number": 145,
+        "date_filed": "2026-08-18",
+        "time_filed": "16:00:06",
+        "date_display": "Aug 18, 2026",
+        "description": "Monthly Fee Statement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 144,
         "date_filed": "2026-08-18",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 142,
-        "date_filed": "2026-08-17",
-        "time_filed": "16:37:02",
-        "date_display": "Aug 17, 2026",
-        "description": "Hearing Scheduled (Document)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 145,
+        "date_filed": "2026-08-18",
+        "time_filed": "16:00:06",
+        "date_display": "Aug 18, 2026",
+        "description": "Monthly Fee Statement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 144,
         "date_filed": "2026-08-18",
