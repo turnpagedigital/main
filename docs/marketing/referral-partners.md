@@ -30,75 +30,72 @@ When a visitor arrives through such a link:
 A referral click and an ad click can coexist — `ref` and `gclid`/`utm_*`
 are stored side by side; a newer link only overwrites the keys it carries.
 
-## Google Apps Script setup (one-time, ~5 minutes)
+## Partner reporting: Attio + the partner portal (chosen approach, Aug 2026)
 
-The Sheet logging runs through the Apps Script web app behind
-`GOOGLE_SHEET_URL`. Add this function to that script, then call it from
-`doPost` (steps below).
+Attio is the system of record for referral reporting. The per-partner
+Google-Sheet/Apps-Script route described in git history was superseded
+before it was ever set up.
 
-```javascript
-/* ── Referral partner routing ────────────────────────────────────────
- * When a submission carries a ref code, also append it to a per-partner
- * spreadsheet in the "TPDM Referral Partners" Drive folder. The
- * spreadsheet is auto-created on the partner's first lead — share it
- * view-only with the partner. */
-var REFERRAL_FOLDER_NAME = "TPDM Referral Partners";
+### How a partner is defined
 
-function logReferral(data) {
-  if (!data || !data.ref) return;
-  // Sanitize the code so a hostile ?ref= value can't produce a weird filename
-  var code = String(data.ref).replace(/[^a-zA-Z0-9 _.-]/g, "").slice(0, 60).trim();
-  if (!code) return;
+`src/data/referral-partners.json` — one entry per partner:
 
-  // Find or create the partners folder
-  var folders = DriveApp.getFoldersByName(REFERRAL_FOLDER_NAME);
-  var folder = folders.hasNext() ? folders.next() : DriveApp.createFolder(REFERRAL_FOLDER_NAME);
-
-  // Find or create this partner's spreadsheet inside it
-  var name = "Referrals — " + code;
-  var files = folder.getFilesByName(name);
-  var ss;
-  if (files.hasNext()) {
-    ss = SpreadsheetApp.open(files.next());
-  } else {
-    ss = SpreadsheetApp.create(name);
-    DriveApp.getFileById(ss.getId()).moveTo(folder);
-    ss.getSheets()[0].appendRow(["Date", "Type", "First name", "Last name", "Email", "Subject / flow"]);
-    ss.getSheets()[0].getRange("A1:F1").setFontWeight("bold");
-  }
-
-  var isRegistration = String(data.subject || "").indexOf("Registration:") === 0;
-  ss.getSheets()[0].appendRow([
-    new Date(),
-    isRegistration ? "Registration" : "Contact form",
-    data.firstName || "",
-    data.lastName || "",
-    data.email || "",
-    data.subject || "",
-  ]);
+```json
+{
+  "code": "pari-passu",
+  "name": "Pari Passu",
+  "attio": { "object": "companies", "record_id": "..." },
+  "portalKeyHash": "<sha256 hex of their portal access key>",
+  "active": true
 }
 ```
 
-Wire-up inside the existing `doPost(e)`: right after the line that parses
-the payload (it looks like `var data = JSON.parse(e.postData.contents);`),
-add:
+- `code` is the public `?ref=` code. The matching Attio record also carries
+  it in its cosmetic "Referral link" attribute, but the JSON is the source
+  of truth for code → record resolution.
+- `portalKeyHash` — generate a key (`openssl rand -hex 24`), give the
+  plaintext to the partner ONCE, store only `printf '<key>' | shasum -a 256`.
+- `active: false` disables the code, the CRM linking, and the partner's
+  portal sessions in one move.
 
-```javascript
-try { logReferral(data); } catch (err) { /* never block the main log */ }
-```
+### What happens on a referred submission
 
-(If the parsed variable has a different name, pass that name instead of
-`data`.)
+Both `/api/contact` and `/api/register` (see `functions/api/_attio.js`):
 
-Then **Deploy → Manage deployments → Edit (pencil) → Version: New version →
-Deploy**. The web app URL does not change, so no Cloudflare env var update
-is needed.
+1. Assert the Person in Attio by email.
+2. Set the person's **"Referred by"** attribute (slug `referred_by`) to the
+   partner's record.
+3. `/api/register` also sets **Deals → "Referred by"** (slug
+   `referral_fee`) on the deal it creates — retrying without the link if
+   Attio rejects it, so a schema gap never loses a deal.
+4. `/api/contact` additionally attaches the message as a note on the person.
 
-Deliberate scope of the partner sheet: date, type, name, email, and
-subject/flow — NOT the message body or any claim details, so sharing the
-sheet with a partner never exposes what the lead actually wrote.
+All Attio pushes are best-effort: failures log and never block the
+email/Sheet delivery.
+
+### The partner portal (/partners)
+
+Unlisted page (not in nav). Partner signs in with just their access key;
+the key hash identifies the partner. Sessions are HMAC cookies scoped to
+`/api/partner` (signed with ADMIN_SECRET + the partner's key hash, so
+rotating a key logs that partner out). Endpoints under
+`functions/api/partner/`: `login`, `logout`, `session`, `leads`.
+
+`/api/partner/leads` queries Attio live: people whose `referred_by` points
+at the partner (contact inquiries + registrants) and deals whose
+`referral_fee` points at them (with pipeline stage, translated to
+partner-friendly labels in `src/pages/Partners.jsx`). Deal amounts are
+deliberately never exposed to partners.
+
+### Attio schema prerequisites (one-time, Attio UI)
+
+1. "Referral link" text attribute on People + Companies — DONE Aug 2026.
+2. **"Referred by"** record-reference attribute (allowed: Companies +
+   People) on the **People** object — slug must be `referred_by`.
+3. Deals already had "Referred by" (slug `referral_fee`), but it only
+   allowed People — edit its allowed record types to include Companies.
 
 ## Sharing with a partner
 
-Open Drive → "TPDM Referral Partners" → the partner's spreadsheet →
-Share → partner's email → **Viewer**. New leads append automatically.
+Send them their link (`https://turnpagedigital.com/?ref=their-code`), the
+portal URL (`https://turnpagedigital.com/partners`), and their access key.

@@ -23,6 +23,7 @@ const Contact          = React.lazy(() => import("./pages/Contact.jsx"));
 const Legal            = React.lazy(() => import("./pages/Legal.jsx"));
 const FAQ              = React.lazy(() => import("./pages/FAQ.jsx"));
 const NotFound         = React.lazy(() => import("./pages/NotFound.jsx"));
+const Partners         = React.lazy(() => import("./pages/Partners.jsx"));
 const Admin            = React.lazy(() => import("./pages/Admin.jsx"));
 const Press            = React.lazy(() => import("./pages/Press.jsx"));
 const LitigationFunding = React.lazy(() => import("./pages/LitigationFunding.jsx"));
@@ -204,6 +205,7 @@ const COMPONENT_MAP = {
   "Legal":              Legal,
   "FAQ":                FAQ,
   "NotFound":           NotFound,
+  "Partners":           Partners,
   "Admin":              Admin,
   "Press":              Press,
   "LitigationFunding":  LitigationFunding,
