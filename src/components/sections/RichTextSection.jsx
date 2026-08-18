@@ -124,3 +124,5 @@ export default function RichTextSection({ sectionConfig }) {
     </section>
   );
 }
+
+/* cache-bust 2026-08-18: renames this chunk after an edge colo cached a 404 for the previous sections-*.js URL, blanking the site for affected visitors */
