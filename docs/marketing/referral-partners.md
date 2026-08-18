@@ -6,9 +6,16 @@ Give each referral partner a unique link by adding `?ref=their-code` to any
 page of the site:
 
 ```
+https://turnpagedigital.com/smith-agency          ← vanity form (preferred)
 https://turnpagedigital.com/?ref=smith-agency
 https://turnpagedigital.com/ai-copyright?ref=smith-agency
 ```
+
+The vanity form works automatically for every active partner in the
+registry: `functions/_middleware.js` 302-redirects `/<code>` to
+`/?ref=<code>`. Because of this, never pick a code that matches a real
+page path (`/crypto`, `/press`, …) — such a code is ignored as a vanity
+URL (the page wins), though the `?ref=` form still works.
 
 Codes are free-form — pick something short and readable (lowercase letters,
 numbers, hyphens). The code IS the partner: there is no list to maintain.
