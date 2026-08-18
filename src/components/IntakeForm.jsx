@@ -97,13 +97,15 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
       source: fd.get("source") || "",
       website: fd.get("website") || "",   // honeypot — server silently drops if filled
       turnstileToken,
-      // Ad-click attribution captured from the landing URL (hidden fields)
+      // Ad-click + referral-partner attribution captured from the landing
+      // URL (hidden fields)
       utm_source: fd.get("utm_source") || "",
       utm_medium: fd.get("utm_medium") || "",
       utm_campaign: fd.get("utm_campaign") || "",
       utm_term: fd.get("utm_term") || "",
       utm_content: fd.get("utm_content") || "",
       gclid: fd.get("gclid") || "",
+      ref: fd.get("ref") || "",
     };
     try {
       const res = await fetch("/api/contact", {
