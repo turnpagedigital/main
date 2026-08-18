@@ -20,6 +20,7 @@ import pageMeta from "../src/data/page-meta.json";
 import briefingsIndex from "../public/briefings/index.json";
 import faqs from "../src/data/faqs.json";
 import routesData from "../src/data/routes.json";
+import partnersData from "../src/data/referral-partners.json";
 import {
   resolveMeta,
   jsonLdScript,
@@ -38,6 +39,17 @@ const CANONICAL_ORIGIN = "https://turnpagedigital.com";
 const STATIC_PATHS = routesData.routes
   .filter((r) => !r.dynamic && !r.path.includes(":"))
   .map((r) => r.path);
+
+/* Vanity referral links: /<code> 302-redirects to /?ref=<code>, so partners
+ * can hand out turnpagedigital.com/pari-passu instead of a query-string URL.
+ * Codes come from the partner registry; a code that would shadow a real page
+ * path is ignored (never pick such a code — see docs/marketing/referral-partners.md). */
+const PARTNER_CODES = new Set(
+  (partnersData.partners || [])
+    .filter((p) => p.active !== false && p.code)
+    .map((p) => p.code)
+    .filter((code) => !STATIC_PATHS.includes(`/${code}`)),
+);
 
 const SITE_NAME = pageMeta.site.name;
 /* Optional "@handle" in page-meta.json's site block; empty → tag not emitted. */
@@ -66,6 +78,17 @@ export async function onRequest(context) {
   if (url.hostname === "www.turnpagedigital.com") {
     url.hostname = "turnpagedigital.com";
     return Response.redirect(url.toString(), 301);
+  }
+
+  /* Vanity referral link → homepage with the ref code as a query param,
+   * where the SPA's attribution capture picks it up. 302 (not 301) so the
+   * mapping stays revocable and uncached. */
+  const vanity = url.pathname.replace(/\/+$/, "").slice(1).toLowerCase();
+  if (vanity && PARTNER_CODES.has(vanity)) {
+    const dest = new URL(url);
+    dest.pathname = "/";
+    dest.searchParams.set("ref", vanity);
+    return Response.redirect(dest.toString(), 302);
   }
 
   /* The /intel mount (briefing dashboards + their login gate) carries its
