@@ -44,12 +44,16 @@ const STATIC_PATHS = routesData.routes
  * can hand out turnpagedigital.com/pari-passu instead of a query-string URL.
  * Codes come from the partner registry; a code that would shadow a real page
  * path is ignored (never pick such a code — see docs/marketing/referral-partners.md). */
-const PARTNER_CODES = new Set(
-  (partnersData.partners || [])
-    .filter((p) => p.active !== false && p.code)
-    .map((p) => p.code)
-    .filter((code) => !STATIC_PATHS.includes(`/${code}`)),
-);
+/* Every vanity token (canonical code + optional aliases) → canonical code,
+ * so /paripassu and /pari-passu both redirect as ?ref=pari-passu and all
+ * reporting stays unified under the canonical code. */
+const VANITY_TO_CODE = new Map();
+for (const p of partnersData.partners || []) {
+  if (p.active === false || !p.code) continue;
+  for (const token of [p.code, ...(p.aliases || [])]) {
+    if (!STATIC_PATHS.includes(`/${token}`)) VANITY_TO_CODE.set(token, p.code);
+  }
+}
 
 const SITE_NAME = pageMeta.site.name;
 /* Optional "@handle" in page-meta.json's site block; empty → tag not emitted. */
@@ -84,10 +88,11 @@ export async function onRequest(context) {
    * where the SPA's attribution capture picks it up. 302 (not 301) so the
    * mapping stays revocable and uncached. */
   const vanity = url.pathname.replace(/\/+$/, "").slice(1).toLowerCase();
-  if (vanity && PARTNER_CODES.has(vanity)) {
+  const canonicalCode = vanity && VANITY_TO_CODE.get(vanity);
+  if (canonicalCode) {
     const dest = new URL(url);
     dest.pathname = "/";
-    dest.searchParams.set("ref", vanity);
+    dest.searchParams.set("ref", canonicalCode);
     return Response.redirect(dest.toString(), 302);
   }
 

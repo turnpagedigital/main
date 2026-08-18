@@ -38,7 +38,9 @@ export function findPartnerByCode(code) {
   const norm = code.trim().toLowerCase();
   return (
     (partnersData.partners || []).find(
-      (p) => p.active !== false && p.code === norm && p.attio && p.attio.record_id,
+      (p) =>
+        p.active !== false && p.attio && p.attio.record_id &&
+        (p.code === norm || (p.aliases || []).includes(norm)),
     ) || null
   );
 }
