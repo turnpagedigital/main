@@ -15,44 +15,94 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-17",
-    "meta_fetched_at": "2026-08-17T17:48:16.861674+00:00",
-    "fetched_at": "2026-08-17T19:02:58.815191+00:00",
-    "as_of": "Aug 17, 2026",
+    "meta_fetched_at": "2026-08-18T01:54:21.529964+00:00",
+    "fetched_at": "2026-08-18T01:54:21.529964+00:00",
+    "as_of": "Aug 18, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 10,
     "recent": [
       {
-        "entry_number": 1218,
+        "entry_number": 1223,
         "date_filed": "2026-08-17",
-        "time_filed": "12:11:23",
+        "time_filed": "20:16:35",
         "date_display": "Aug 17, 2026",
-        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "description": "Notice (generic)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1217,
+        "entry_number": 1222,
         "date_filed": "2026-08-17",
-        "time_filed": "12:05:54",
+        "time_filed": "14:59:07",
         "date_display": "Aug 17, 2026",
-        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": null,
+        "entry_number": 1221,
         "date_filed": "2026-08-17",
-        "time_filed": "09:49:51",
+        "time_filed": "14:58:11",
         "date_display": "Aug 17, 2026",
-        "description": "Transcript",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1223,
+        "date_filed": "2026-08-17",
+        "time_filed": "20:16:35",
+        "date_display": "Aug 17, 2026",
+        "description": "Notice (generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1222,
+        "date_filed": "2026-08-17",
+        "time_filed": "14:59:07",
+        "date_display": "Aug 17, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1221,
+        "date_filed": "2026-08-17",
+        "time_filed": "14:58:11",
+        "date_display": "Aug 17, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1220,
+        "date_filed": "2026-08-17",
+        "time_filed": "14:57:20",
+        "date_display": "Aug 17, 2026",
+        "description": "Compensation AND Compensation",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1219,
+        "date_filed": "2026-08-17",
+        "time_filed": "14:56:52",
+        "date_display": "Aug 17, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1218,
         "date_filed": "2026-08-17",
@@ -89,6 +139,16 @@
         "time_filed": "12:07:02",
         "date_display": "Aug 17, 2026",
         "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-17",
+        "time_filed": "15:00:18",
+        "date_display": "Aug 17, 2026",
+        "description": "none AND none AND none",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
