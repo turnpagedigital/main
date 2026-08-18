@@ -27,9 +27,10 @@ export async function onRequestGet({ request, env }) {
       const nameVal = r?.values?.name;
       const emailVal = r?.values?.email_addresses;
       return {
-        date: attioCreatedAt(r),
+        date: attioTextValue(r, "first_submission") || attioCreatedAt(r),
         name: (Array.isArray(nameVal) && nameVal[0] && nameVal[0].full_name) || "",
         email: (Array.isArray(emailVal) && emailVal[0] && emailVal[0].email_address) || "",
+        source: attioTextValue(r, "submission_source"),
       };
     });
   } catch (err) {

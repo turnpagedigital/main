@@ -50,7 +50,9 @@ export function partnerReference(partner) {
   };
 }
 
-/* Assert (find-or-create by email) a Person record. Returns record_id. */
+/* Assert (find-or-create by email) a Person record.
+ * Returns { recordId, values } — values is the record's full current value
+ * set, used e.g. to check whether first_submission is already stamped. */
 export async function assertPerson(env, { email, firstName, lastName, phone }) {
   const values = { email_addresses: [{ email_address: email }] };
   if (firstName || lastName) {
@@ -72,7 +74,7 @@ export async function assertPerson(env, { email, firstName, lastName, phone }) {
   const person = await res.json();
   const recordId = person?.data?.id?.record_id;
   if (!recordId) throw new Error("person assert returned no record id");
-  return recordId;
+  return { recordId, values: person?.data?.values || {} };
 }
 
 /* Attach a plaintext note to a record. */
@@ -95,25 +97,36 @@ export async function createNote(env, parentObject, parentRecordId, title, conte
   }
 }
 
-/* Link a lead person to the referring partner. Best-effort internally: if
- * the referred_by attribute doesn't exist yet (schema pending), Attio
- * returns 400 — we log and continue rather than failing the submission. */
-export async function setReferredBy(env, personRecordId, partner) {
-  const res = await fetch(
-    `https://api.attio.com/v2/objects/people/records/${personRecordId}`,
-    {
+/* Stamp lead-tracking attributes on a person after a submission:
+ *  - referred_by       → the referring partner (only when a ref code matched)
+ *  - submission_source → which form this (most recent) submission came from
+ *  - last_submission   → now, every submission
+ *  - first_submission  → now, ONLY if not already set (set-once)
+ * Best-effort: a schema gap 400s — we retry with just the referral link
+ * (the business-critical part), then log and continue rather than failing
+ * the submission. `existingValues` is the value set returned by assertPerson. */
+export async function stampLeadPerson(env, personRecordId, { partner, source, existingValues }) {
+  const patch = async (values) =>
+    fetch(`https://api.attio.com/v2/objects/people/records/${personRecordId}`, {
       method: "PATCH",
       headers: attioHeaders(env),
-      body: JSON.stringify({
-        data: { values: { [PERSON_REFERRED_BY_SLUG]: [partnerReference(partner)] } },
-      }),
-    },
-  );
+      body: JSON.stringify({ data: { values } }),
+    });
+
+  const now = new Date().toISOString();
+  const values = { last_submission: now };
+  if (source) values.submission_source = String(source).slice(0, 200);
+  const first = existingValues?.first_submission;
+  if (!Array.isArray(first) || first.length === 0) values.first_submission = now;
+  if (partner) values[PERSON_REFERRED_BY_SLUG] = [partnerReference(partner)];
+
+  let res = await patch(values);
+  if (!res.ok && partner) {
+    console.error(`Attio lead stamp failed (${res.status}), retrying with referral only:`, (await res.text()).slice(0, 200));
+    res = await patch({ [PERSON_REFERRED_BY_SLUG]: [partnerReference(partner)] });
+  }
   if (!res.ok) {
-    console.error(
-      `Attio referred_by set failed (${res.status}) — is the "Referred by" attribute on People created?`,
-      (await res.text()).slice(0, 200),
-    );
+    console.error(`Attio lead stamp failed (${res.status}):`, (await res.text()).slice(0, 200));
   }
 }
 

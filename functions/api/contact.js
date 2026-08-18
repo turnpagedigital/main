@@ -11,7 +11,7 @@
  *   GOOGLE_SHEET_URL — your Google Apps Script web app URL
  */
 
-import { findPartnerByCode, setReferredBy, assertPerson, createNote } from "./_attio.js";
+import { findPartnerByCode, stampLeadPerson, assertPerson, createNote } from "./_attio.js";
 
 /* ── CORS allowlist ─────────────────────────────────────────────────────────
    Echo the request Origin back only if it matches an approved value.
@@ -260,12 +260,15 @@ export async function onRequestPost(context) {
     if (env.ATTIO_API_KEY) {
       try {
         const isPhoneLike = contactMethod === "phone" || contactMethod === "whatsapp";
-        const personId = await assertPerson(env, {
+        const { recordId: personId, values: existingValues } = await assertPerson(env, {
           email, firstName, lastName,
           phone: isPhoneLike && contactHandle ? contactHandle : "",
         });
-        const partner = findPartnerByCode(attribution.ref);
-        if (partner) await setReferredBy(env, personId, partner);
+        await stampLeadPerson(env, personId, {
+          partner: findPartnerByCode(attribution.ref),
+          source: `Contact form — ${subjectFriendly}${sourceLabel ? ` (${sourceLabel})` : ""}`,
+          existingValues,
+        });
         const noteLines = [
           `Subject: ${subjectFriendly}`,
           ...(sourceLabel ? [`Source: ${sourceLabel}`] : []),
