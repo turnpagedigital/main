@@ -3,6 +3,34 @@
   "case_name": "Other Copyright Suits",
   "items": [
     {
+      "date": "2026-08-18",
+      "updated": "2026-08-18",
+      "lede": "On August 17, Judge P. Kevin Castel signed the memo endorsement at Dkt. 94 in Hachette Book Group, Inc. et al. v. Meta Platforms, Inc., No. 1:26-cv-03689 (S.D.N.Y.), terminating Samuel Rubinstein as counsel of record for all plaintiffs.",
+      "body_md": "On August 17, Judge P. Kevin Castel signed the memo endorsement at Dkt. 94 in *Hachette Book Group, Inc. et al. v. Meta Platforms, Inc.*, No. 1:26-cv-03689 (S.D.N.Y.), terminating Samuel Rubinstein as counsel of record for all plaintiffs. The withdrawal is procedural and, on its face, routine — Rubinstein's motion (Dkt. 93, filed August 14) was unopposed and the memo endorsement disposed of it the same day it was entered on the docket. The client roster and the substantive posture are unchanged. What the withdrawal does not resolve, and what continues to ripen toward the September 15 initial conference before Judge Castel (Courtroom 11D, 3:00 PM), is the live dispute over plaintiffs' letter motion for leave to file a motion to strike (Dkt. 90, August 3) and Meta's responsive letter (Dkt. 92, August 7). Judge Castel has not yet authorized briefing on the motion-to-strike question; the September 15 conference is the next event where that authorization — and any direction on Google's transfer motion analogue in the related Gemini action — may materially advance both dockets simultaneously.\n\nAlso on August 17, Meta filed exhibits at Dkt. 810 in *Kadrey v. Meta Platforms, Inc.*, No. 3:23-cv-03417 (N.D. Cal., Chhabria, J.), in compliance with the sealing order at Dkt. 805 governing materials submitted in connection with Dkt. 781. Six exhibit attachments were filed — Exhibits B, D, E, F, G, and H — by Phillip Morton. The filing is substantive in classification (it executes a court order on the scope of sealed materials related to prior merits briefing), but routine in the sense that it resolves no independently contested issue; it completes the public-record compliance exercise Chhabria directed and has no independent bearing on the contributory infringement amendment posture or the coordinated deposition schedule. The further case management conference docketed August 17 — listed without an attached minute entry in the RECAP record, consistent with \nCourtListener's last-updated timestamp of August 14, 2026, at 11:21 AM and last known filing date of August 13, 2026\n — means the August 17 CMC entry itself has not yet generated a public minute entry confirming what Chhabria directed. That minute entry, once posted, governs the deposition-sequencing and class certification / summary judgment coordination that the August 14 conference addressed, including the confirmed 4-hour cap on Mark Zuckerberg's deposition and the extension of the Rule 30(b)(6) deposition from 14 to 21 hours. The contributory infringement amendment — \ngrounded in the allegation that when Meta downloaded copyrighted works from shadow libraries using BitTorrent, it simultaneously uploaded those works onto the torrenting network, enabling other network members to infringe plaintiffs' rights\n — remains the live pleading question pending further direction from Chhabria; the August 26 deadline for calendaring Zuckerberg's deposition in the related *Entrepreneur Media, LLC v. Meta Platforms, Inc.*, No. 3:25-cv-09579 (N.D. Cal.), is the nearest time-sensitive marker across the Chhabria cluster.\n\n*Getty Images (US), Inc. v. Stability AI, Inc. et al.*, No. 3:25-cv-06891 (N.D. Cal., Thompson, J.), *Encyclopaedia Britannica, Inc. and Merriam-Webster, Inc. v. OpenAI, Inc. et al.*, No. 1:26-cv-02097 (S.D.N.Y., Stein, J.), *Hachette v. Google (Gemini)*, No. 1:26-cv-05870 (S.D.N.Y., Preska, J.), and *Thomson Reuters Enterprise Centre GmbH et al. v. Ross Intelligence, Inc.*, No. 25-2153 (3d Cir.), recorded no docket movement. In the Getty action, the scheduling-modification dispute is fully submitted before Judge Thompson following the August 17 responses-due deadline; a ruling — granting or denying both Getty's leave motion (Dkt. 70) and the underlying request to modify the scheduling order (Dkt. 68) — remains the next concrete milestone there. In the Google Gemini action, the transfer motion remains under submission before Judge Preska. In the Third Circuit, the panel of Judges Restrepo, Montgomery-Reeves, and Bove continues to deliberate following the June 11 oral argument.\n\n## Sources\n\n- [Kadrey v. Meta Platforms, Inc., 3:23-cv-03417 — CourtListener](https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/) — CourtListener / RECAP, last updated August 14, 2026\n- [Kadrey v. Meta — Order Granting Motion for Leave, March 25, 2026](https://cdn.arstechnica.net/wp-content/uploads/2026/03/Kadrey-v-Meta-Order-Granting-Motion-for-Leave-3-25-26.pdf) — Ars Technica / Court Document, March 25, 2026\n- [Entrepreneur Media, LLC v. Meta Platforms, Inc., 3:25-cv-09579 — CourtListener](https://www.courtlistener.com/docket/71883091/entrepreneur-media-llc-v-meta-platforms-inc/) — CourtListener / RECAP\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Kadrey v. Meta Platforms, Inc., 3:23-cv-03417 — CourtListener",
+          "url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
+          "note": "CourtListener / RECAP, last updated August 14, 2026"
+        },
+        {
+          "title": "Kadrey v. Meta — Order Granting Motion for Leave, March 25, 2026",
+          "url": "https://cdn.arstechnica.net/wp-content/uploads/2026/03/Kadrey-v-Meta-Order-Granting-Motion-for-Leave-3-25-26.pdf",
+          "note": "Ars Technica / Court Document, March 25, 2026"
+        },
+        {
+          "title": "Entrepreneur Media, LLC v. Meta Platforms, Inc., 3:25-cv-09579 — CourtListener",
+          "url": "https://www.courtlistener.com/docket/71883091/entrepreneur-media-llc-v-meta-platforms-inc/",
+          "note": "CourtListener / RECAP"
+        }
+      ],
+      "activity": {
+        "filings": 3,
+        "articles": 0,
+        "latest": "2026-08-17"
+      }
+    },
+    {
       "date": "2026-08-16",
       "updated": "2026-08-16",
       "lede": "On August 14, Judge Thompson's chambers received the completed paper record on the dueling Local Rule 7-11 dispute in Getty Images (US), Inc. v. Stability AI, Inc. et al., No. 3:25-cv-06891 (N.D. Cal.), when Stability AI filed its proposed order (Dkt. 72) formally requesting denial of Getty's administrative motion for leave to file a reply (Dkt. 70). That proposed order — submitted by Joseph Gratz — is the…",
