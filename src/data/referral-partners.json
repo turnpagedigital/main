@@ -1,12 +1,18 @@
 {
-  "_comment": "Referral partner registry. `code` is the public ?ref= code in the partner's link. `attio` maps the code to the partner's CRM record (Companies or People) so submissions link to it. `portalKeyHash` is the SHA-256 hex of the partner's portal access key — the plaintext key is given to the partner once and never stored. Set active:false to shut a partner off (revokes portal sessions too).",
+  "_comment": "Referral partner registry. `code` is the public ?ref= code in the partner's link. `attio` maps the code to the partner's CRM record (Companies or People) so submissions link to it. `portalKeyHash` is the SHA-256 hex of the partner's portal access key \u2014 the plaintext key is given to the partner once and never stored. Set active:false to shut a partner off (revokes portal sessions too). `aliases` (optional) lists extra vanity spellings \u2014 /<alias> redirects with the canonical code, and ?ref=<alias> resolves to the same partner.",
   "partners": [
     {
       "code": "pari-passu",
       "name": "Pari Passu",
-      "attio": { "object": "companies", "record_id": "8dcefad1-08e1-499a-85d9-68dff9ab9cce" },
+      "attio": {
+        "object": "companies",
+        "record_id": "8dcefad1-08e1-499a-85d9-68dff9ab9cce"
+      },
       "portalKeyHash": "c6a5ef709cfae508cda9d6ae6db772a98c8d0ec66fcf84be01173ce93cc32dca",
-      "active": true
+      "active": true,
+      "aliases": [
+        "paripassu"
+      ]
     }
   ]
 }
