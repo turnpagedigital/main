@@ -2,21 +2,20 @@ import React, { useState } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import {
   inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle,
-  formatTime, CenteredMessage, ErrorBanner, Modal, ConfirmDialog,
+  formatTime, CenteredMessage, ErrorBanner, ConfirmDialog,
   cardStyle, labelStyle,
 } from "./shared.jsx";
 import { useTabData } from "./useTabData.js";
 
-/* ReferralPartnersTab — manage referral partners + their portal access keys.
+/* ReferralPartnersTab — manage referral partners + the email allowlists
+   that gate the partner portal.
 
-   Keys are generated HERE in the browser: 24 random bytes → hex plaintext,
-   SHA-256 hex stored as portalKeyHash. The plaintext is shown exactly once
-   (copy it into the partner's hands); only the hash is ever saved. Resetting
-   a key replaces the hash, which also invalidates the partner's existing
-   portal sessions (the session signature binds to the hash).
+   Sign-in is an emailed magic link: only addresses listed under a partner's
+   "Authorized emails" can receive one, and removing an address revokes both
+   future sign-ins and existing sessions. No keys or passwords exist.
 
    IMPORTANT operational note surfaced in the UI: this file is read at BUILD
-   time by the site + functions, so changes (including key resets) take
+   time by the site + functions, so changes (including email removals) take
    effect on the next production deploy, not instantly. */
 
 function sanitizePartner(p) {
@@ -27,7 +26,7 @@ function sanitizePartner(p) {
       object: p.attio && p.attio.object === "people" ? "people" : "companies",
       record_id: (p.attio && p.attio.record_id) || "",
     },
-    portalKeyHash: typeof p.portalKeyHash === "string" ? p.portalKeyHash : "",
+    authorizedEmails: Array.isArray(p.authorizedEmails) ? p.authorizedEmails : [],
     active: p.active !== false,
     aliases: Array.isArray(p.aliases) ? p.aliases : [],
   };
@@ -35,17 +34,6 @@ function sanitizePartner(p) {
 
 function blankPartner() {
   return sanitizePartner({ active: true });
-}
-
-function randomHex(bytes) {
-  const buf = new Uint8Array(bytes);
-  crypto.getRandomValues(buf);
-  return [...buf].map((b) => b.toString(16).padStart(2, "0")).join("");
-}
-
-async function sha256Hex(text) {
-  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
-  return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
 export default function ReferralPartnersTab({ onDirtyChange }) {
@@ -59,14 +47,12 @@ export default function ReferralPartnersTab({ onDirtyChange }) {
       partners: items.map((p) => ({
         ...p,
         aliases: p.aliases.filter(Boolean),
+        authorizedEmails: p.authorizedEmails.filter(Boolean),
       })),
     }),
     onDirtyChange,
   });
 
-  const [newKey, setNewKey] = useState(null); // { name, plaintext } — shown once
-  const [copiedWhat, setCopiedWhat] = useState("");
-  const [confirmReset, setConfirmReset] = useState(null); // index pending reset
   const [confirmDelete, setConfirmDelete] = useState(null);
 
   if (phase === "loading") return <CenteredMessage>Loading partners…</CenteredMessage>;
@@ -84,20 +70,12 @@ export default function ReferralPartnersTab({ onDirtyChange }) {
     setPartners(next);
   }
 
-  async function generateKey(i) {
-    const plaintext = randomHex(24);
-    const hash = await sha256Hex(plaintext);
-    update(i, { portalKeyHash: hash });
-    setCopiedWhat("");
-    setNewKey({ name: partners[i].name || partners[i].code || "partner", plaintext });
-  }
-
   return (
     <div>
       <p style={{ fontFamily: FONT, fontSize: "0.85rem", color: INK_60, margin: "0 0 1.2rem", lineHeight: 1.6 }}>
         Referral partners get a vanity link (turnpagedigital.com/<b>code</b>) and portal access at /partners.
-        Keys are shown <b>once</b> when generated — only a fingerprint is stored.{" "}
-        <b>Changes here (including key resets) go live on the next production deploy.</b>
+        Sign-in is by emailed magic link — only the authorized addresses below can get one.{" "}
+        <b>Changes here (including removing an email) go live on the next production deploy.</b>
       </p>
 
       {partners.map((p, i) => (
@@ -142,18 +120,22 @@ export default function ReferralPartnersTab({ onDirtyChange }) {
             </label>
           </div>
 
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem", alignItems: "center", marginTop: "1rem", paddingTop: "0.9rem", borderTop: `1px solid ${LINE}` }}>
-            <span style={{ fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700, color: p.portalKeyHash ? INK : "#c44" }}>
-              {p.portalKeyHash ? "✓ Portal key set" : "✕ No portal key — partner can't sign in"}
-            </span>
-            <button
-              style={btnStyle}
-              onClick={() => (p.portalKeyHash ? setConfirmReset(i) : generateKey(i))}
-            >
-              {p.portalKeyHash ? "Reset key…" : "Generate key"}
-            </button>
-            <span style={{ flex: 1 }} />
-            <button style={{ ...iconBtnStyle, color: "#c44" }} title="Remove partner" onClick={() => setConfirmDelete(i)}>✕ Remove</button>
+          <div style={{ marginTop: "1rem", paddingTop: "0.9rem", borderTop: `1px solid ${LINE}` }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem", alignItems: "flex-end" }}>
+              <div style={{ flex: "1 1 320px" }}>
+                <label style={labelStyle}>Authorized emails (comma-separated) — the only addresses that can sign in to the portal</label>
+                <input style={inputStyle} value={p.authorizedEmails.join(", ")}
+                  onChange={(e) => update(i, { authorizedEmails: e.target.value.split(",").map((a) => a.trim().toLowerCase()) })}
+                  placeholder="partner@example.com, second@example.com" />
+              </div>
+              <span style={{ fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700, marginBottom: "0.55rem", color: p.authorizedEmails.filter(Boolean).length ? INK : "#c44" }}>
+                {p.authorizedEmails.filter(Boolean).length
+                  ? `${p.authorizedEmails.filter(Boolean).length} authorized`
+                  : "No emails — partner can't sign in"}
+              </span>
+              <span style={{ flex: 1 }} />
+              <button style={{ ...iconBtnStyle, color: "#c44", marginBottom: "0.4rem" }} title="Remove partner" onClick={() => setConfirmDelete(i)}>✕ Remove</button>
+            </div>
           </div>
         </div>
       ))}
@@ -172,49 +154,6 @@ export default function ReferralPartnersTab({ onDirtyChange }) {
       </div>
       {error && partners !== null && <ErrorBanner message={error} />}
 
-      {newKey && (
-        <Modal onClose={() => setNewKey(null)}>
-          <h3 style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.8rem", color: INK }}>
-            New access key for {newKey.name}
-          </h3>
-          <p style={{ fontFamily: FONT, fontSize: "0.85rem", color: INK_60, lineHeight: 1.6, marginBottom: "0.8rem" }}>
-            Copy now and send to the partner — <b>neither will be shown again</b> (only a
-            fingerprint is stored). Works after the next production deploy. The sign-in link
-            logs them straight in; the key is for typing into the portal manually.
-          </p>
-          {[
-            { label: "Sign-in link (recommended)", value: `https://turnpagedigital.com/partners#k=${newKey.plaintext}` },
-            { label: "Access key", value: newKey.plaintext },
-          ].map(({ label, value }) => (
-            <div key={label} style={{ marginBottom: "0.7rem" }}>
-              <div style={{ fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700, color: INK_60, marginBottom: "0.25rem" }}>{label}</div>
-              <div style={{ display: "flex", gap: "0.6rem", alignItems: "center" }}>
-                <code style={{ background: "#f4f4f4", border: `1px solid ${LINE}`, borderRadius: 4, padding: "0.55rem 0.7rem", fontSize: "0.74rem", wordBreak: "break-all", flex: 1 }}>
-                  {value}
-                </code>
-                <button
-                  style={btnPrimaryStyle}
-                  onClick={() => { navigator.clipboard.writeText(value).then(() => setCopiedWhat(label)).catch(() => {}); }}
-                >
-                  {copiedWhat === label ? "Copied ✓" : "Copy"}
-                </button>
-              </div>
-            </div>
-          ))}
-          <div style={{ marginTop: "1rem", textAlign: "right" }}>
-            <button style={btnStyle} onClick={() => setNewKey(null)}>Done</button>
-          </div>
-        </Modal>
-      )}
-
-      <ConfirmDialog
-        open={confirmReset !== null}
-        title="Reset this partner's key?"
-        message="Their current key stops working on the next production deploy and any signed-in portal sessions end. You'll get a new key to send them."
-        confirmLabel="Reset key"
-        onConfirm={() => { const i = confirmReset; setConfirmReset(null); generateKey(i); }}
-        onCancel={() => setConfirmReset(null)}
-      />
       <ConfirmDialog
         open={confirmDelete !== null}
         title="Remove this partner?"

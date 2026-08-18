@@ -46,11 +46,9 @@ before it was ever set up.
 ### Managing partners (Admin → Content → Partners)
 
 The admin tab at `/admin/content/partners` manages everything below:
-add/deactivate partners, edit codes/aliases/Attio record, and
-generate/reset portal access keys. Keys are generated in the browser
-(24 random bytes, hex) and only the SHA-256 fingerprint is saved —
-the plaintext shows once with a copy button. NOTE: the registry is
-read at build time, so admin changes (including key resets) take
+add/deactivate partners, edit codes/aliases/Attio record, and the
+authorized-email allowlist that gates portal sign-in. NOTE: the registry
+is read at build time, so admin changes (including email removals) take
 effect on the next production deploy.
 
 ### How a partner is defined
@@ -62,7 +60,7 @@ effect on the next production deploy.
   "code": "pari-passu",
   "name": "Pari Passu",
   "attio": { "object": "companies", "record_id": "..." },
-  "portalKeyHash": "<sha256 hex of their portal access key>",
+  "authorizedEmails": ["partner@example.com"],
   "active": true
 }
 ```
@@ -70,8 +68,8 @@ effect on the next production deploy.
 - `code` is the public `?ref=` code. The matching Attio record also carries
   it in its cosmetic "Referral link" attribute, but the JSON is the source
   of truth for code → record resolution.
-- `portalKeyHash` — generate a key (`openssl rand -hex 24`), give the
-  plaintext to the partner ONCE, store only `printf '<key>' | shasum -a 256`.
+- `authorizedEmails` — the only addresses that can request a portal
+  sign-in link. An email may appear on ONE partner's list only.
 - `active: false` disables the code, the CRM linking, and the partner's
   portal sessions in one move.
 
@@ -93,17 +91,18 @@ email/Sheet delivery.
 
 ### The partner portal (/partners)
 
-Unlisted page (not in nav). Partner signs in with just their access key;
-the key hash identifies the partner. Sessions are HMAC cookies scoped to
-`/api/partner` (signed with ADMIN_SECRET + the partner's key hash, so
-rotating a key logs that partner out). Endpoints under
-`functions/api/partner/`: `login`, `logout`, `session`, `leads`.
-
-`/api/partner/leads` queries Attio live: people whose `referred_by` points
-at the partner (contact inquiries + registrants) and deals whose
-`referred_by` points at them (with pipeline stage, translated to
-partner-friendly labels in `src/pages/Partners.jsx`). Deal amounts are
-deliberately never exposed to partners.
+Unlisted page (not in nav). Sign-in is an emailed magic link: the partner
+enters their address, and if it's on their `authorizedEmails` list in the
+registry they receive a 15-minute sign-in link (`/partners#t=<token>` —
+HMAC-signed, stateless, multi-use within its window by design). Sessions
+are 12h HMAC cookies bound to partner + email; both tokens and sessions
+re-verify the email against the CURRENT allowlist, so removing an address
+in Admin → Content → Partners revokes access on the next production
+deploy (there is no instant kill switch — for an emergency, deploy
+immediately after the edit). Unknown addresses get the identical response
+(no enumeration), and link-sending is rate-limited per IP and address.
+Endpoints under `functions/api/partner/`: `request-link`, `login`
+(token redemption), `logout`, `session`, `leads`, `message`.
 
 ### Attio schema prerequisites (one-time, Attio UI)
 
@@ -117,8 +116,7 @@ deliberately never exposed to partners.
 
 ## Sharing with a partner
 
-Send them their referral link (`turnpagedigital.com/<code>`) and their
-private portal sign-in link (`https://turnpagedigital.com/partners#k=<key>`
-— shown alongside the raw key in the admin key popup). The sign-in link
-logs them in automatically; the raw key works for manual entry. Both stop
-working when the key is reset in Admin → Content → Partners.
+Send them their referral link (`turnpagedigital.com/<code>`) and the
+portal address (`turnpagedigital.com/partners`) — nothing secret to
+transmit. They sign in with their authorized email; manage the allowlist
+in Admin → Content → Partners.
