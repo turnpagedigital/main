@@ -15,12 +15,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-18",
-    "meta_fetched_at": "2026-08-18T17:47:15.419777+00:00",
-    "fetched_at": "2026-08-18T17:47:15.419777+00:00",
+    "meta_fetched_at": "2026-08-18T19:00:02.659904+00:00",
+    "fetched_at": "2026-08-18T19:00:02.659904+00:00",
     "as_of": "Aug 18, 2026",
     "backfilled": true,
-    "new_in_72h": 13,
+    "new_in_72h": 14,
     "recent": [
+      {
+        "entry_number": 144,
+        "date_filed": "2026-08-18",
+        "time_filed": "13:47:25",
+        "date_display": "Aug 18, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 143,
         "date_filed": "2026-08-18",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 140,
-        "date_filed": "2026-08-17",
-        "time_filed": "13:29:17",
-        "date_display": "Aug 17, 2026",
-        "description": "Amended Motion AND Retention",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 144,
+        "date_filed": "2026-08-18",
+        "time_filed": "13:47:25",
+        "date_display": "Aug 18, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 143,
         "date_filed": "2026-08-18",
