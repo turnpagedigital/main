@@ -72,6 +72,7 @@ export default function Partners() {
   const [query, setQuery] = useState("");
   const [typeFilter, setTypeFilter] = useState("all"); // all | claims | inquiries
   const [sort, setSort] = useState({ key: "date", dir: "desc" });
+  const [msgLead, setMsgLead] = useState(null); // lead being messaged, or null
   const [partner, setPartner] = useState(null);
   const [data, setData] = useState(null);
   const [key, setKey] = useState("");
@@ -187,6 +188,8 @@ export default function Partners() {
           <p style={{ fontFamily: FONT, color: INK_60 }}>Loading your report…</p>
         )}
 
+        {msgLead && <MessageModal lead={msgLead} onClose={() => setMsgLead(null)} />}
+
         {phase === "ready" && data && (
           <div>
             <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", flexWrap: "wrap", gap: "0.6rem", marginBottom: "1.4rem" }}>
@@ -223,8 +226,8 @@ export default function Partners() {
                   ? "No leads match your search."
                   : "No referred leads yet — they appear here as soon as someone uses your link.";
                 return view === "people"
-                  ? <FlatLeadsTable leads={shown} sort={sort} onSort={setSort} empty={empty} />
-                  : <OrgGroupedTable leads={shown} sort={sort} onSort={setSort} empty={empty} />;
+                  ? <FlatLeadsTable leads={shown} sort={sort} onSort={setSort} empty={empty} onMessage={setMsgLead} />
+                  : <OrgGroupedTable leads={shown} sort={sort} onSort={setSort} empty={empty} onMessage={setMsgLead} />;
               })()}
             </Section>
 
@@ -392,7 +395,25 @@ const FLAT_COLUMNS = [
   { label: "Status", key: "comment" },
 ];
 
-function FlatLeadsTable({ leads, sort, onSort, empty }) {
+function SendButton({ lead, onMessage }) {
+  return (
+    <button
+      onClick={() => onMessage(lead)}
+      aria-label={`Message Turnpage about ${lead.name || lead.email || "this lead"}`}
+      title="Message Turnpage about this lead"
+      style={{
+        background: "none", border: "1px solid rgba(10,10,10,0.2)", borderRadius: 6,
+        padding: "0.3rem 0.45rem", cursor: "pointer", lineHeight: 0, color: INK,
+      }}
+    >
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M2 21l21-9L2 3v7l15 2-15 2z" />
+      </svg>
+    </button>
+  );
+}
+
+function FlatLeadsTable({ leads, sort, onSort, empty, onMessage }) {
   if (!leads.length) {
     return <p style={{ fontFamily: FONT, fontSize: "0.97rem", color: INK_60, lineHeight: 1.65, margin: 0 }}>{empty}</p>;
   }
@@ -400,7 +421,10 @@ function FlatLeadsTable({ leads, sort, onSort, empty }) {
     <div style={{ overflowX: "auto" }}>
       <table style={{ width: "100%", borderCollapse: "collapse" }}>
         <thead>
-          <tr>{FLAT_COLUMNS.map((c) => <SortableTh key={c.key} label={c.label} sortKey={c.key} sort={sort} onSort={onSort} />)}</tr>
+          <tr>
+            {FLAT_COLUMNS.map((c) => <SortableTh key={c.key} label={c.label} sortKey={c.key} sort={sort} onSort={onSort} />)}
+            <th style={th} aria-label="Message" />
+          </tr>
         </thead>
         <tbody>
           {leads.map((l, i) => (
@@ -411,6 +435,7 @@ function FlatLeadsTable({ leads, sort, onSort, empty }) {
               <td style={td}>{l.company || "—"}</td>
               <td style={td}><TypeCell lead={l} /></td>
               <td style={td}>{l.comment || "—"}</td>
+              <td style={{ ...td, textAlign: "right" }}><SendButton lead={l} onMessage={onMessage} /></td>
             </tr>
           ))}
         </tbody>
@@ -441,7 +466,7 @@ function groupByCompany(leads) {
   });
 }
 
-function OrgGroupedTable({ leads, sort, onSort, empty }) {
+function OrgGroupedTable({ leads, sort, onSort, empty, onMessage }) {
   if (!leads.length) {
     return <p style={{ fontFamily: FONT, fontSize: "0.97rem", color: INK_60, lineHeight: 1.65, margin: 0 }}>{empty}</p>;
   }
@@ -457,13 +482,16 @@ function OrgGroupedTable({ leads, sort, onSort, empty }) {
     <div style={{ overflowX: "auto" }}>
       <table style={{ width: "100%", borderCollapse: "collapse" }}>
         <thead>
-          <tr>{columns.map((c) => <SortableTh key={c.key} label={c.label} sortKey={c.key} sort={sort} onSort={onSort} />)}</tr>
+          <tr>
+            {columns.map((c) => <SortableTh key={c.key} label={c.label} sortKey={c.key} sort={sort} onSort={onSort} />)}
+            <th style={th} aria-label="Message" />
+          </tr>
         </thead>
         <tbody>
           {groups.map(({ label, isOrg, members }) => (
             <React.Fragment key={(isOrg ? "org:" : "none:") + label}>
               <tr>
-                <td colSpan={columns.length} style={{
+                <td colSpan={columns.length + 1} style={{
                   fontFamily: FONT, fontWeight: 800, fontSize: "0.85rem", color: INK,
                   letterSpacing: "0.04em", padding: "0.9rem 0.75rem 0.4rem",
                   borderBottom: "1px solid rgba(10,10,10,0.18)",
@@ -481,6 +509,7 @@ function OrgGroupedTable({ leads, sort, onSort, empty }) {
                   <td style={td}>{p.email || "—"}</td>
                   <td style={td}><TypeCell lead={p} /></td>
                   <td style={td}>{p.comment || "—"}</td>
+                  <td style={{ ...td, textAlign: "right" }}><SendButton lead={p} onMessage={onMessage} /></td>
                 </tr>
               ))}
             </React.Fragment>
@@ -505,6 +534,129 @@ function LeadsTable({ columns, rows, empty }) {
           ))}
         </tbody>
       </table>
+    </div>
+  );
+}
+
+
+/* Per-lead message modal: editable pre-filled subject, message, up to 3
+   attachments (8 MB each), POSTs to /api/partner/message. */
+const MSG_MAX_FILES = 3;
+const MSG_MAX_FILE_BYTES = 8 * 1024 * 1024;
+const MSG_ACCEPT = ".pdf,.png,.jpg,.jpeg,.txt,.docx,.xlsx";
+
+function readFileBase64(file) {
+  return new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = () => resolve(String(r.result).split(",")[1] || "");
+    r.onerror = () => reject(new Error(`Could not read ${file.name}`));
+    r.readAsDataURL(file);
+  });
+}
+
+function MessageModal({ lead, onClose }) {
+  const [subject, setSubject] = useState(`Question about ${lead.name || lead.email || "a referred lead"}`);
+  const [messageText, setMessageText] = useState("");
+  const [files, setFiles] = useState([]);
+  const [status, setStatus] = useState("idle"); // idle | sending | sent
+  const [error, setError] = useState("");
+
+  function pickFiles(e) {
+    setError("");
+    const chosen = [...(e.target.files || [])];
+    const next = [...files, ...chosen].slice(0, MSG_MAX_FILES);
+    const tooBig = next.find((f) => f.size > MSG_MAX_FILE_BYTES);
+    if (tooBig) { setError(`"${tooBig.name}" is over 8 MB.`); return; }
+    if (files.length + chosen.length > MSG_MAX_FILES) setError(`At most ${MSG_MAX_FILES} attachments.`);
+    setFiles(next);
+    e.target.value = "";
+  }
+
+  async function handleSend(e) {
+    e.preventDefault();
+    setError("");
+    setStatus("sending");
+    try {
+      const encoded = await Promise.all(files.map(async (f) => ({
+        name: f.name, type: f.type, dataBase64: await readFileBase64(f),
+      })));
+      const res = await fetch("/api/partner/message", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject, message: messageText,
+          lead: { name: lead.name || "", email: lead.email || "" },
+          files: encoded,
+        }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(body.error || "Could not send the message.");
+      setStatus("sent");
+    } catch (err) {
+      setError(err.message);
+      setStatus("idle");
+    }
+  }
+
+  const busy = status === "sending";
+  return (
+    <div
+      onClick={() => !busy && onClose()}
+      role="dialog" aria-modal="true" aria-label="Message Turnpage"
+      style={{
+        position: "fixed", inset: 0, zIndex: 1000, background: "rgba(10,10,10,0.45)",
+        display: "flex", alignItems: "center", justifyContent: "center", padding: "1rem",
+      }}
+    >
+      <div onClick={(e) => e.stopPropagation()} style={{ ...frostedCard, background: "#fff", width: "100%", maxWidth: 480 }} className="field-light">
+        {status === "sent" ? (
+          <div style={{ textAlign: "center", padding: "1rem 0" }}>
+            <div aria-hidden="true" style={{ width: 48, height: 48, borderRadius: 50, background: NEON, color: INK, fontWeight: 900, fontSize: "1.3rem", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1rem" }}>✓</div>
+            <h3 style={{ ...cardTitle, fontSize: "1.15rem", marginBottom: "0.5rem" }}>Message sent</h3>
+            <p style={{ fontFamily: FONT, fontSize: "0.9rem", color: INK_60, margin: "0 0 1.2rem" }}>Turnpage will get back to you by email.</p>
+            <button onClick={onClose} className="btn-neon" style={{ padding: "0.6rem 2rem" }}>Close</button>
+          </div>
+        ) : (
+          <form onSubmit={handleSend}>
+            <h3 style={{ ...cardTitle, fontSize: "1.15rem" }}>
+              Message Turnpage{lead.name ? ` about ${lead.name}` : ""}
+            </h3>
+            <div style={divider} />
+            <label htmlFor="msg-subject" style={{ fontFamily: FONT }}>Subject</label>
+            <input id="msg-subject" type="text" value={subject} maxLength={200} required disabled={busy}
+              onChange={(e) => setSubject(e.target.value)} />
+            <label htmlFor="msg-body" style={{ fontFamily: FONT, display: "block", marginTop: "0.9rem" }}>Message</label>
+            <textarea id="msg-body" rows={5} value={messageText} maxLength={5000} required disabled={busy}
+              onChange={(e) => setMessageText(e.target.value)} />
+            <div style={{ marginTop: "0.9rem" }}>
+              <label htmlFor="msg-files" style={{ fontFamily: FONT }}>
+                Attachments <span style={{ fontWeight: 400, color: INK_60 }}>(optional, up to {MSG_MAX_FILES}, 8 MB each)</span>
+              </label>
+              <input id="msg-files" type="file" accept={MSG_ACCEPT} multiple disabled={busy || files.length >= MSG_MAX_FILES}
+                onChange={pickFiles} style={{ fontFamily: FONT, fontSize: "0.85rem" }} />
+              {files.map((f, i) => (
+                <div key={i} style={{ fontFamily: FONT, fontSize: "0.82rem", color: INK, display: "flex", alignItems: "center", gap: "0.5rem", marginTop: "0.35rem" }}>
+                  <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: 300 }}>{f.name}</span>
+                  <button type="button" disabled={busy} onClick={() => setFiles(files.filter((_, j) => j !== i))}
+                    aria-label={`Remove ${f.name}`}
+                    style={{ background: "none", border: "none", color: INK_60, cursor: "pointer", fontWeight: 800 }}>×</button>
+                </div>
+              ))}
+            </div>
+            {error && <p role="alert" style={{ fontFamily: FONT, fontSize: "0.85rem", color: "#C03030", margin: "0.7rem 0 0" }}>{error}</p>}
+            <div style={{ display: "flex", gap: "0.8rem", marginTop: "1.2rem", justifyContent: "flex-end" }}>
+              <button type="button" onClick={onClose} disabled={busy}
+                style={{ fontFamily: FONT, fontSize: "0.85rem", fontWeight: 700, background: "none", border: "1px solid rgba(10,10,10,0.25)", borderRadius: 6, padding: "0.55rem 1.1rem", cursor: "pointer", color: INK }}>
+                Cancel
+              </button>
+              <button type="submit" disabled={busy} className="btn-neon" aria-busy={busy}
+                style={{ padding: "0.55rem 1.6rem", opacity: busy ? 0.65 : 1, cursor: busy ? "wait" : "pointer" }}>
+                {busy ? "Sending…" : "Send"}
+              </button>
+            </div>
+          </form>
+        )}
+      </div>
     </div>
   );
 }
