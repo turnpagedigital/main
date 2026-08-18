@@ -104,6 +104,21 @@ export async function onRequest(context) {
 
   const response = await context.next();
 
+  /* Hashed-asset 404s (deploy-transition windows) must never be cached:
+   * Cloudflare's default ~5-min 404 caching once pinned a missing chunk at
+   * a colo and blanked the site for its visitors (Aug 18 2026). Assets are
+   * otherwise passed through untouched — this only post-processes the
+   * response, it never intercepts serving (the earlier interception attempt
+   * 404'd every asset and IS the incident it was meant to prevent). */
+  if (url.pathname.startsWith("/assets/")) {
+    if (response.status === 404) {
+      const headers = new Headers(response.headers);
+      headers.set("Cache-Control", "no-store");
+      return new Response(response.body, { status: 404, headers });
+    }
+    return response;
+  }
+
   const contentType = response.headers.get("content-type") || "";
   if (!contentType.includes("text/html")) return response;
 
