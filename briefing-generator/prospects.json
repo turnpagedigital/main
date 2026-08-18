@@ -14,7 +14,8 @@
       "source_name": "StockTitan / SEC 8-K (Cumulus Media)",
       "date": "2026-08-14",
       "first_seen": "2026-08-17",
-      "status": "new"
+      "status": "dismissed",
+      "triaged_at": "2026-08-18T23:11:00.406Z"
     },
     {
       "id": "1bff6a9587",
@@ -29,7 +30,8 @@
       "source_name": "BDO USA",
       "date": "2026-08-10",
       "first_seen": "2026-08-17",
-      "status": "new"
+      "status": "new",
+      "vote": 1
     },
     {
       "id": "206c1cca21",
@@ -44,7 +46,8 @@
       "source_name": "PwC Canada",
       "date": "2026-08-07",
       "first_seen": "2026-08-17",
-      "status": "new"
+      "status": "new",
+      "vote": 1
     },
     {
       "id": "4b21ad7cbb",
@@ -59,7 +62,9 @@
       "source_name": "Claims Journal / Bloomberg",
       "date": "2026-08-07",
       "first_seen": "2026-08-17",
-      "status": "new"
+      "status": "dismissed",
+      "vote": 1,
+      "triaged_at": "2026-08-18T23:18:27.788Z"
     },
     {
       "id": "759b381bd2",
@@ -90,7 +95,8 @@
       "source_name": "Forensis Group / CourtListener",
       "date": "2026-08-05",
       "first_seen": "2026-08-17",
-      "status": "new"
+      "status": "new",
+      "vote": 1
     },
     {
       "id": "b520713baa",
@@ -105,7 +111,8 @@
       "source_name": "BDO USA",
       "date": "2026-08-04",
       "first_seen": "2026-08-17",
-      "status": "new"
+      "status": "dismissed",
+      "triaged_at": "2026-08-18T23:19:52.421Z"
     },
     {
       "id": "6c443a2faf",
@@ -165,7 +172,8 @@
       "source_name": "SEC EDGAR (Oppenheimer 10-Q)",
       "date": "2026-08-01",
       "first_seen": "2026-08-17",
-      "status": "new"
+      "status": "dismissed",
+      "triaged_at": "2026-08-18T23:20:03.192Z"
     },
     {
       "id": "9986814893",
