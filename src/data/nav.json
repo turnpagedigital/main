@@ -52,7 +52,7 @@
       "id": "crypto",
       "label": "Locked Crypto",
       "href": "/crypto",
-      "active": false,
+      "active": true,
       "labelKey": "nav.crypto",
       "dropdown": {
         "title": "Locked Crypto",
