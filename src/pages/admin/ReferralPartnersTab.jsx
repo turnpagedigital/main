@@ -65,9 +65,9 @@ export default function ReferralPartnersTab({ onDirtyChange }) {
   });
 
   const [newKey, setNewKey] = useState(null); // { name, plaintext } — shown once
+  const [copiedWhat, setCopiedWhat] = useState("");
   const [confirmReset, setConfirmReset] = useState(null); // index pending reset
   const [confirmDelete, setConfirmDelete] = useState(null);
-  const [copied, setCopied] = useState(false);
 
   if (phase === "loading") return <CenteredMessage>Loading partners…</CenteredMessage>;
   if (phase === "error" && partners === null) return (
@@ -88,7 +88,7 @@ export default function ReferralPartnersTab({ onDirtyChange }) {
     const plaintext = randomHex(24);
     const hash = await sha256Hex(plaintext);
     update(i, { portalKeyHash: hash });
-    setCopied(false);
+    setCopiedWhat("");
     setNewKey({ name: partners[i].name || partners[i].code || "partner", plaintext });
   }
 
@@ -178,20 +178,29 @@ export default function ReferralPartnersTab({ onDirtyChange }) {
             New access key for {newKey.name}
           </h3>
           <p style={{ fontFamily: FONT, fontSize: "0.85rem", color: INK_60, lineHeight: 1.6, marginBottom: "0.8rem" }}>
-            Copy this now and send it to the partner — <b>it will not be shown again</b> (only a
-            fingerprint is stored). It starts working after the next production deploy.
+            Copy now and send to the partner — <b>neither will be shown again</b> (only a
+            fingerprint is stored). Works after the next production deploy. The sign-in link
+            logs them straight in; the key is for typing into the portal manually.
           </p>
-          <div style={{ display: "flex", gap: "0.6rem", alignItems: "center" }}>
-            <code style={{ background: "#f4f4f4", border: `1px solid ${LINE}`, borderRadius: 4, padding: "0.55rem 0.7rem", fontSize: "0.78rem", wordBreak: "break-all", flex: 1 }}>
-              {newKey.plaintext}
-            </code>
-            <button
-              style={btnPrimaryStyle}
-              onClick={() => { navigator.clipboard.writeText(newKey.plaintext).then(() => setCopied(true)).catch(() => {}); }}
-            >
-              {copied ? "Copied ✓" : "Copy"}
-            </button>
-          </div>
+          {[
+            { label: "Sign-in link (recommended)", value: `https://turnpagedigital.com/partners#k=${newKey.plaintext}` },
+            { label: "Access key", value: newKey.plaintext },
+          ].map(({ label, value }) => (
+            <div key={label} style={{ marginBottom: "0.7rem" }}>
+              <div style={{ fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700, color: INK_60, marginBottom: "0.25rem" }}>{label}</div>
+              <div style={{ display: "flex", gap: "0.6rem", alignItems: "center" }}>
+                <code style={{ background: "#f4f4f4", border: `1px solid ${LINE}`, borderRadius: 4, padding: "0.55rem 0.7rem", fontSize: "0.74rem", wordBreak: "break-all", flex: 1 }}>
+                  {value}
+                </code>
+                <button
+                  style={btnPrimaryStyle}
+                  onClick={() => { navigator.clipboard.writeText(value).then(() => setCopiedWhat(label)).catch(() => {}); }}
+                >
+                  {copiedWhat === label ? "Copied ✓" : "Copy"}
+                </button>
+              </div>
+            </div>
+          ))}
           <div style={{ marginTop: "1rem", textAlign: "right" }}>
             <button style={btnStyle} onClick={() => setNewKey(null)}>Done</button>
           </div>

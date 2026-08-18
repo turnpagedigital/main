@@ -95,8 +95,30 @@ export default function Partners() {
   }
 
   useEffect(() => {
+    /* Magic-link sign-in: the partner's key may arrive in the URL fragment
+       (#k=…). Fragments never reach servers or logs; we scrub it from the
+       address bar immediately, then exchange it for a session cookie. An
+       existing valid session wins — a stale link can't kick out a fresher
+       login. */
+    const m = window.location.hash.match(/^#k=([A-Za-z0-9]+)$/);
+    const linkKey = m ? m[1] : "";
+    if (m) history.replaceState(null, "", window.location.pathname + window.location.search);
+
     fetch("/api/partner/session")
-      .then((res) => (res.ok ? loadLeads() : setPhase("login")))
+      .then(async (res) => {
+        if (res.ok) return loadLeads();
+        if (linkKey) {
+          const login = await fetch("/api/partner/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ key: linkKey }),
+          });
+          if (login.ok) return loadLeads();
+          const body = await login.json().catch(() => ({}));
+          setError(body.error || "This sign-in link is no longer valid — it may have been reset.");
+        }
+        setPhase("login");
+      })
       .catch(() => setPhase("login"));
   }, []);
 
