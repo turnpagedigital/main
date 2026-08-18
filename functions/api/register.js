@@ -25,6 +25,7 @@ import pricing from "./_pricing-config.json";
 import { formatOffer, computeOfferBreakdown } from "../../src/lib/flow-compute.js";
 import { classifyWork, summarizeWorks, amazonSearchUrl, settlementLookupUrl } from "./_claim-links.js";
 import { checkClaimPdf } from "./_pdf-checks.js";
+import { findPartnerByCode, partnerReference, setReferredBy, DEAL_REFERRED_BY_SLUG } from "./_attio.js";
 
 const ALLOWED_ORIGINS = [
   "https://turnpagedigital.com",
@@ -407,6 +408,11 @@ async function pushToAttio(env, { flow, answers, email, fullName, pageKey, attri
   const recordId = person?.data?.id?.record_id;
   if (!recordId) throw new Error("person assert returned no record id");
 
+  // Referral partner: link the lead to the partner record (portal queries
+  // this). Logs-and-continues internally if the schema attribute is missing.
+  const partner = findPartnerByCode(attribution.ref);
+  if (partner) await setReferredBy(env, recordId, partner);
+
   const lines = steps.flatMap((s) => s.fields || [])
     .filter((f) => f.type !== "file" && answers[f.id])
     .map((f) => `${f.label}: ${answers[f.id]}`);
@@ -476,11 +482,21 @@ async function pushToAttio(env, { flow, answers, email, fullName, pageKey, attri
     dealValues.value = offerBreakdown.offer;              // what we'd pay now
     dealValues.purchase_rate = offerBreakdown.pct;        // payout %
   }
-  const dealRes = await fetch("https://api.attio.com/v2/objects/deals/records", {
+  if (partner) dealValues[DEAL_REFERRED_BY_SLUG] = [partnerReference(partner)];
+  const createDeal = () => fetch("https://api.attio.com/v2/objects/deals/records", {
     method: "POST",
     headers,
     body: JSON.stringify({ data: { values: dealValues } }),
   });
+  let dealRes = await createDeal();
+  if (!dealRes.ok && partner && dealValues[DEAL_REFERRED_BY_SLUG]) {
+    // The Deals "Referred by" attribute may not accept this record type
+    // (e.g. company partners before the allowed-objects edit) — retry the
+    // deal without the link rather than losing the deal entirely.
+    console.error(`Attio deal with referral link failed (${dealRes.status}), retrying without:`, (await dealRes.text()).slice(0, 200));
+    delete dealValues[DEAL_REFERRED_BY_SLUG];
+    dealRes = await createDeal();
+  }
   if (!dealRes.ok) {
     throw new Error(`deal ${dealRes.status}: ${(await dealRes.text()).slice(0, 200)}`);
   }

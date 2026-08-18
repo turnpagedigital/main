@@ -1,5 +1,5 @@
 {
-  "_comment": "Route definitions — path (URL slug) → component mapping. Managed via /admin/routes. All paths must be unique. Dynamic routes use :slug pattern exactly once.",
+  "_comment": "Route definitions \u2014 path (URL slug) \u2192 component mapping. Managed via /admin/routes. All paths must be unique. Dynamic routes use :slug pattern exactly once.",
   "routes": [
     {
       "path": "/",
@@ -107,6 +107,13 @@
       "component": "DynamicPage",
       "dynamic": false,
       "title": "Bartz Registration"
+    },
+    {
+      "path": "/partners",
+      "key": "partners",
+      "component": "Partners",
+      "dynamic": false,
+      "title": "Partner Portal"
     }
   ]
 }

@@ -11,6 +11,8 @@
  *   GOOGLE_SHEET_URL — your Google Apps Script web app URL
  */
 
+import { findPartnerByCode, setReferredBy, assertPerson, createNote } from "./_attio.js";
+
 /* ── CORS allowlist ─────────────────────────────────────────────────────────
    Echo the request Origin back only if it matches an approved value.
    Anything else gets the canonical production URL, which causes the browser
@@ -248,6 +250,35 @@ export async function onRequestPost(context) {
         }
       } catch (err) {
         console.error("Google Sheet error:", err.message);
+      }
+    }
+
+    // Attio CRM (best-effort, only when configured): assert the person,
+    // attach the message as a note, and link the referring partner so the
+    // partner portal can report contact-form inquiries — mirrors the
+    // registration flow's Attio push.
+    if (env.ATTIO_API_KEY) {
+      try {
+        const isPhoneLike = contactMethod === "phone" || contactMethod === "whatsapp";
+        const personId = await assertPerson(env, {
+          email, firstName, lastName,
+          phone: isPhoneLike && contactHandle ? contactHandle : "",
+        });
+        const partner = findPartnerByCode(attribution.ref);
+        if (partner) await setReferredBy(env, personId, partner);
+        const noteLines = [
+          `Subject: ${subjectFriendly}`,
+          ...(sourceLabel ? [`Source: ${sourceLabel}`] : []),
+          ...(contactMethodFriendly && contactHandle ? [`${contactMethodFriendly}: ${contactHandle}`] : []),
+          "",
+          message,
+          ...(Object.keys(attribution).length
+            ? ["", ...Object.entries(attribution).map(([k, v]) => `${k}: ${v}`)]
+            : []),
+        ];
+        await createNote(env, "people", personId, `Contact form — ${subjectFriendly}`, noteLines.join("\n"));
+      } catch (err) {
+        console.error("Attio error:", err.message);
       }
     }
 
