@@ -1,6 +1,31 @@
 {
   "items": [
     {
+      "slug": "2026-08-03-anthropic-settlement-appeal-risk",
+      "date": "2026-08-19",
+      "title": "An Appeal Has Been Filed in Bartz v. Anthropic: What It Means for Your Payment",
+      "summary": "A notice of appeal to the Ninth Circuit was filed August 18, one day before the window closed. The settlement stands, but the payment milestones are now uncertain. What was filed, what pauses, and what to watch.",
+      "tags": [
+        "Bartz",
+        "Anthropic",
+        "Appeal",
+        "Ninth Circuit"
+      ],
+      "author": "Turnpage Intelligence",
+      "active": false,
+      "type": "briefing"
+    },
+    {
+      "slug": "2026-08-19-bartz-v-anthropic-the-interloper-lawyers-appealed",
+      "date": "2026-08-19",
+      "type": "briefing",
+      "title": "📚 Bartz v. Anthropic — The \"interloper\" lawyers appealed",
+      "summary": "On August 18, one day before the appeal window closed, Edelson PC and Oppenheim + Zebrak — the settlement's \"Publishers' Coordination Counsel\" — filed a notice of appeal to the Ninth Circuit, objecting to the settlement",
+      "tags": [
+        "Copyright Claims"
+      ]
+    },
+    {
       "slug": "2026-08-08-bartz-anthropic-briefing",
       "date": "2026-08-08",
       "type": "briefing",
@@ -79,21 +104,6 @@
         "Bartz",
         "Anthropic",
         "Settlement"
-      ],
-      "author": "Turnpage Intelligence",
-      "active": false,
-      "type": "briefing"
-    },
-    {
-      "slug": "2026-08-03-anthropic-settlement-appeal-risk",
-      "date": "2026-08-19",
-      "title": "An Appeal Has Been Filed in Bartz v. Anthropic: What It Means for Your Payment",
-      "summary": "A notice of appeal to the Ninth Circuit was filed August 18, one day before the window closed. The settlement stands, but the payment milestones are now uncertain. What was filed, what pauses, and what to watch.",
-      "tags": [
-        "Bartz",
-        "Anthropic",
-        "Appeal",
-        "Ninth Circuit"
       ],
       "author": "Turnpage Intelligence",
       "active": false,
