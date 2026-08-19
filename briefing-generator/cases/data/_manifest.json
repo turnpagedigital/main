@@ -306,5 +306,19 @@
     "court": "C.I.T.",
     "sync": "active",
     "docket_history": "full"
+  },
+  {
+    "slug": "hendrix-roberson-v-apple-inc-ai-book-training-class-action",
+    "display_name": "Hendrix & Roberson v. Apple Inc. (AI Book-Training Class Action)",
+    "short_name": "Hendrix & Roberson v. Apple Inc. (AI Book-Training Class Action)",
+    "docket_url": "https://www.courtlistener.com/docket/71279155/hendrix-v-apple-inc/",
+    "court": "U.S. District Court, N.D. Cal.",
+    "topics": [
+      "llm-class-action"
+    ],
+    "sync": "active",
+    "docket_history": "full",
+    "added": "2026-08-19",
+    "default_color": "#B3A8F0"
   }
 ]
