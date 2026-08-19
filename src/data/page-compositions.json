@@ -577,10 +577,10 @@
             "accent": "claim details",
             "colorScheme": "light-gray",
             "cardRadius": 5,
-            "cardStyle": "float",
-            "align": "left",
+            "cardStyle": "card",
+            "align": "center",
             "_bookmark": "sell",
-            "cardColor": "light-gray",
+            "cardColor": "white",
             "formScale": 100,
             "layout": "wide"
           }
