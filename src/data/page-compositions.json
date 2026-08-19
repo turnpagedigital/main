@@ -1357,7 +1357,7 @@
                 "when": "Now · July 2026",
                 "heading": "Final approval granted",
                 "body": "Judge Martínez-Olguín approved the $1.5 billion settlement on July 20, 2026 and cut class counsel’s fees to $101.6 million from the $187.5 million sought. No payments until the Effective Date.",
-                "state": "here",
+                "state": "done",
                 "pillLabel": "",
                 "pillStyle": "neon"
               },
@@ -1366,7 +1366,7 @@
                 "when": "August 2026",
                 "heading": "Appeal window",
                 "body": "Objectors have 30 days from judgment to notice an appeal to the Ninth Circuit — closing on or about August 19, 2026. Most fairness-hearing objections came from non-class members, who lack standing. Class-member objectors do not.",
-                "state": "",
+                "state": "done",
                 "pillLabel": "Appeal filed August 19",
                 "pillStyle": "light-gray"
               },
@@ -1375,7 +1375,7 @@
                 "when": "Late 2026 – 2027",
                 "heading": "Appeal freezes the payout",
                 "body": "One notice of appeal suspends the Effective Date. Ninth Circuit briefing, argument, and decision typically run 12–18 months — while Anthropic’s installments keep filling the fund: $450 million by September 25, 2026, the final $450 million by September 25, 2027.",
-                "state": "",
+                "state": "here",
                 "pillLabel": "We are here",
                 "pillStyle": "neon"
               },
