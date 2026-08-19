@@ -870,6 +870,33 @@
             "_bookmark": "Our-edge",
             "colorScheme": "white"
           }
+        },
+        {
+          "id": "sec-1787168620545-xgw7",
+          "type": "cta",
+          "visible": true,
+          "layout": "layout-3-bottomcta",
+          "colorScheme": "dark",
+          "content": {
+            "layout": "layout-3-bottomcta",
+            "colorScheme": "dark",
+            "eyebrow": "WHY WAIT TO GET PAID?",
+            "title": "Get started",
+            "accent": "today.",
+            "kicker": "",
+            "primary": {
+              "label": "Sell my claim",
+              "href": "#sell"
+            },
+            "secondary": null,
+            "titleAccent": "Talk to us.",
+            "body": "Contact us for a quote today. Private, fast and secure.",
+            "cta": {
+              "label": "Get a Quote",
+              "href": "/contact?source=locked-crypto"
+            },
+            "_bookmark": "CTA"
+          }
         }
       ],
       "status": "active"
