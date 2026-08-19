@@ -331,14 +331,76 @@ export default function SectionEditorFields({ typeId, form, set }) {
       {typeId === "rich-text" && (
         <>
           <VisualLayoutColorPicker typeId="rich-text" form={form} set={set} />
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
+            <div>
+              <label style={labelStyle}>Text alignment</label>
+              <select style={{ ...selectStyle, marginTop: 4 }} value={form.align || "left"} onChange={e => set("align", e.target.value)}>
+                <option value="left">Left</option>
+                <option value="center">Center</option>
+              </select>
+            </div>
+            <div>
+              <label style={labelStyle}>Height</label>
+              <select style={{ ...selectStyle, marginTop: 4 }} value={form.height || "auto"} onChange={e => set("height", e.target.value)}>
+                <option value="auto">Auto (fits content)</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="full">Full screen</option>
+              </select>
+            </div>
+          </div>
           <div style={fieldGroup}><label style={labelStyle}>Eyebrow (optional)</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} placeholder="Small uppercase kicker above the text" /></div>
+
+          <div style={{ marginBottom: "0.9rem", padding: "0.6rem 0.7rem", border: `1px solid ${LINE}`, background: "#F9FAFB" }}>
+            <div style={{ fontSize: "0.7rem", fontWeight: 700, color: INK_60, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 5 }}>
+              Heading (H1, optional)
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 6 }}>
+              <div>
+                <label style={{ fontSize: "0.7rem", color: INK_60 }}>Before</label>
+                <input style={{ ...inputStyle, marginTop: 2 }} value={form.heading1 || ""} onChange={e => set("heading1", e.target.value)} placeholder="A $1.5 billion" />
+              </div>
+              <div>
+                <label style={{ fontSize: "0.7rem", color: INK_60 }}>Highlight</label>
+                <input style={{ ...inputStyle, marginTop: 2 }} value={form.heading1Accent || ""} onChange={e => set("heading1Accent", e.target.value)} placeholder="win" />
+              </div>
+              <div>
+                <label style={{ fontSize: "0.7rem", color: INK_60 }}>After</label>
+                <input style={{ ...inputStyle, marginTop: 2 }} value={form.heading1After || ""} onChange={e => set("heading1After", e.target.value)} placeholder="for authors and publishers" />
+              </div>
+            </div>
+            <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 6, marginBottom: 0, lineHeight: 1.5 }}>
+              "Highlight" gets the neon underline (light schemes) or neon italic (dark scheme). Separate from any <code># </code>heading typed in the markdown below — use one or the other, not both.
+            </p>
+          </div>
+
+          <div style={{ marginBottom: "0.9rem", padding: "0.6rem 0.7rem", border: `1px solid ${LINE}`, background: "#F9FAFB" }}>
+            <div style={{ fontSize: "0.7rem", fontWeight: 700, color: INK_60, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 5 }}>
+              Background photo (optional)
+            </div>
+            <ImageField label="Image, shown behind the text" value={form.backgroundImage || ""} onChange={v => set("backgroundImage", v)} placeholder="https://…" />
+            {form.backgroundImage && (
+              <>
+                <div style={{ marginBottom: "0.7rem" }}>
+                  <label style={labelStyle}>Opacity — {form.imageOpacity ?? 35}%</label>
+                  <input type="range" min={0} max={100} step={5} value={form.imageOpacity ?? 35} style={{ width: "100%", accentColor: NEON }} onChange={e => set("imageOpacity", Number(e.target.value))} />
+                </div>
+                <div>
+                  <label style={labelStyle}>Blur — {form.imageBlur ?? 0}px</label>
+                  <input type="range" min={0} max={40} step={1} value={form.imageBlur ?? 0} style={{ width: "100%", accentColor: NEON }} onChange={e => set("imageBlur", Number(e.target.value))} />
+                </div>
+              </>
+            )}
+          </div>
+
           <div style={fieldGroup}>
             <label style={labelStyle}>Text (Markdown)</label>
             <textarea
               style={{ ...inputStyle, minHeight: 280, fontFamily: "monospace", fontSize: "0.82rem", lineHeight: 1.55 }}
               value={form.markdown || ""}
               onChange={e => set("markdown", e.target.value)}
-              placeholder={"# Big heading\n\nA paragraph of text…\n\n## Section heading\n\n- Bullet one\n- Bullet two"}
+              placeholder={"A paragraph of text…\n\n## Section heading\n\n- Bullet one\n- Bullet two"}
             />
             <p style={{ fontSize: "0.72rem", color: INK_60, marginTop: 5, lineHeight: 1.6 }}>
               <code># </code>H1 &nbsp;·&nbsp; <code>## </code>H2 &nbsp;·&nbsp; <code>### </code>H3 &nbsp;·&nbsp;

@@ -16,9 +16,22 @@ import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
      layout-3-two-col — text flows across two columns on desktop
 
    Schema:
-     eyebrow      — optional small uppercase kicker above the text
-     markdown     — the body (Markdown)
-     colorScheme  — "white" (default) | "light-gray" | "dark"
+     eyebrow          — optional small uppercase kicker above the text
+     heading1/
+     heading1Accent/
+     heading1After    — an optional standalone H1, split into three parts so
+                        the middle part can get the neon highlight/italic
+                        treatment without typing markdown. Independent of any
+                        "# " heading inside `markdown` below — use one or the
+                        other for the page's main heading, not both.
+     markdown         — the body (Markdown)
+     colorScheme      — "white" (default) | "light-gray" | "dark"
+     align            — "left" (default) | "center"
+     height           — "auto" (default) | "small" | "medium" | "large" | "full"
+     backgroundImage  — optional photo shown behind the text, on top of the
+                        colorScheme background
+     imageOpacity     — 0-100, how visible the photo is (default 35)
+     imageBlur        — 0-40 (px) blur applied to the photo (default 0)
 */
 
 const SCHEMES = {
@@ -27,15 +40,37 @@ const SCHEMES = {
   "dark":       { bg: "#0A0A0A", heading: "#fff", body: "rgba(255,255,255,0.68)", eyebrow: NEON,   link: "#fff", border: "none" },
 };
 
+const HEIGHT_VALUES = {
+  auto:   null,
+  small:  "clamp(280px, 36vh, 440px)",
+  medium: "clamp(420px, 56vh, 640px)",
+  large:  "clamp(560px, 78vh, 820px)",
+  full:   "calc(100vh - 88px)",
+};
+
 export default function RichTextSection({ sectionConfig }) {
   const sc = sectionConfig || {};
   const c = sc.content || {};
   const layout      = sc.layout || c.layout || "layout-1-narrow";
   const colorScheme = sc.colorScheme || c.colorScheme || "white";
   const theme = SCHEMES[colorScheme] || SCHEMES.white;
+  const isDark = colorScheme === "dark";
 
   const eyebrow  = c.eyebrow || "";
   const markdown = c.markdown || "";
+  const align = c.align === "center" ? "center" : "left";
+  const minHeight = Object.prototype.hasOwnProperty.call(HEIGHT_VALUES, c.height)
+    ? HEIGHT_VALUES[c.height]
+    : null;
+
+  const heading1       = c.heading1 || "";
+  const heading1Accent = c.heading1Accent || "";
+  const heading1After  = c.heading1After || "";
+  const hasHeading1 = !!(heading1 || heading1Accent || heading1After);
+
+  const backgroundImage = c.backgroundImage || "";
+  const imageOpacity = c.imageOpacity ?? 35;
+  const imageBlur = c.imageBlur ?? 0;
 
   const html = useMemo(() => {
     if (!markdown.trim()) return "";
@@ -49,13 +84,38 @@ export default function RichTextSection({ sectionConfig }) {
 
   return (
     <section style={{
+      position: "relative", overflow: "hidden",
       background: theme.bg,
+      minHeight: minHeight || undefined,
+      display: minHeight ? "flex" : undefined,
+      alignItems: minHeight ? "center" : undefined,
       padding: "clamp(3rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem)",
       borderTop: theme.border === "none" ? "none" : `1px solid ${theme.border}`,
     }}>
+      {backgroundImage && (
+        <img
+          src={backgroundImage}
+          alt=""
+          loading="lazy"
+          style={{
+            position: "absolute", inset: 0, zIndex: 0,
+            width: "100%", height: "100%", objectFit: "cover",
+            opacity: imageOpacity / 100,
+            // Scaled up so the blurred edges (which sample transparent space
+            // beyond the image box) never show inside the section's bounds.
+            filter: imageBlur > 0 ? `blur(${imageBlur}px)` : undefined,
+            transform: imageBlur > 0 ? `scale(${1 + imageBlur / 150})` : undefined,
+            pointerEvents: "none",
+          }}
+          onError={(e) => { e.currentTarget.style.display = "none"; }}
+        />
+      )}
       <div style={{
+        position: "relative", zIndex: 1,
+        width: "100%",
         maxWidth: isNarrow ? 760 : 1280,
         margin: "0 auto",
+        textAlign: align === "center" ? "center" : undefined,
       }}>
         {eyebrow && (
           <p style={{
@@ -65,6 +125,25 @@ export default function RichTextSection({ sectionConfig }) {
           }}>
             {eyebrow}
           </p>
+        )}
+        {hasHeading1 && (
+          <h1 style={{
+            fontFamily: FONT, fontWeight: 800,
+            fontSize: "clamp(2rem, 4vw, 3.2rem)",
+            lineHeight: 1.05, letterSpacing: "-0.03em",
+            color: theme.heading, margin: "0 0 1.2rem",
+          }}>
+            {heading1}
+            {heading1Accent && (
+              <>
+                {heading1 ? " " : ""}
+                {isDark
+                  ? <span style={{ fontStyle: "italic", color: NEON }}>{heading1Accent}</span>
+                  : <span className="accent-light">{heading1Accent}</span>}
+              </>
+            )}
+            {heading1After && `${(heading1 || heading1Accent) ? " " : ""}${heading1After}`}
+          </h1>
         )}
         <div
           className={`richtext-body ${schemeClass} ${isTwoCol ? "rt-two-col" : ""}`}

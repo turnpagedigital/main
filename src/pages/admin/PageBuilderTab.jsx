@@ -66,6 +66,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
   const [addPickerOpen, setAddPickerOpen]   = useState(false);
   const [newPageForm, setNewPageForm]       = useState(null);   // null | { title, pageKey, path }
   const [deleteConfirm, setDeleteConfirm]   = useState(null);   // pageKey to delete
+  const [copyTarget, setCopyTarget]         = useState(null);   // { index, section } — "Copy to page…" picker
   const [previewOpen, setPreviewOpen]       = useState(false);  // live preview overlay
   const [conflict, setConflict]             = useState(false);  // save refused: newer layout on server
 
@@ -246,6 +247,40 @@ export default function PageBuilderTab({ onDirtyChange }) {
     setSelectedSectionId(copy.id); // jump straight into editing the copy
   }
 
+  // Copy one section (with its current content) to the bottom of another
+  // page. Writes directly to that page via the API — it isn't the page
+  // currently open for editing, so there's nothing to "Save layout" on.
+  // Updates local `pages` state only (no load()) so any unsaved edits on
+  // the page currently being edited are left untouched.
+  async function copySectionToPage(index, targetPageKey) {
+    const section = sections[index];
+    const targetPage = pages.find(p => p.pageKey === targetPageKey);
+    if (!section || !targetPage) return;
+
+    const copy = JSON.parse(JSON.stringify(section));
+    copy.id = `sec-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
+    const updatedSections = [...(targetPage.sections || []), copy];
+
+    setSaving(true); setError("");
+    try {
+      const res = await fetch("/api/admin/page-compositions", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ pageKey: targetPageKey, sections: updatedSections, status: targetPage.status || "active" }),
+      });
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error || `Failed to copy to ${targetPage.title}`);
+      setPages(prev => prev.map(p => p.pageKey === targetPageKey ? { ...p, sections: updatedSections } : p));
+      setToast(`Copied "${sectionTypeLabel(section.type)}" to ${targetPage.title}`);
+      setCopyTarget(null);
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setSaving(false);
+    }
+  }
+
   function addSection(typeId, layoutId) {
     const st = sectionTypes.find(t => t.id === typeId);
     // Determine layout/colorScheme defaults when a specific layout was picked
@@ -396,6 +431,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
       case "our-edge":    return [c.title, c.titleAccent].filter(Boolean).join(" ");
       case "photo-break": return c.overlayText || c.imageUrl || "";
       case "media-banner": return [c.title, c.subtitle].filter(Boolean).join(" — ");
+      case "rich-text":    return [c.heading1, c.heading1Accent].filter(Boolean).join(" ") || c.eyebrow || "";
       case "cta-banner":  return c.title || c.cta || "";
       case "bottom-cta":  return [c.title, c.accent].filter(Boolean).join(" ");
       case "get-quote":   return [c.title, c.titleAccent].filter(Boolean).join(" ");
@@ -609,6 +645,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
                     <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => moveUp(idx)} disabled={idx === 0} aria-label="Move up" title="Move up">▲ Up</button>
                     <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => moveDown(idx)} disabled={idx === sections.length - 1} aria-label="Move down" title="Move down">▼ Down</button>
                     <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => duplicateSection(idx)} title="Duplicate this section (copy appears below)">⧉ Duplicate</button>
+                    <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26, width: "auto", padding: "0 0.55rem" }} onClick={() => setCopyTarget({ index: idx, section: s })} title="Copy this section (with its content) to another page">⇥ Copy to page…</button>
                     <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => toggleVisible(idx)} title={s.visible ? "Hide" : "Show"}>
                       {s.visible ? "Hide" : "Show"}
                     </button>
@@ -769,6 +806,46 @@ export default function PageBuilderTab({ onDirtyChange }) {
                 {saving ? "Deleting…" : "Delete permanently"}
               </button>
               <button style={btnStyle} onClick={() => setDeleteConfirm(null)} disabled={saving}>Cancel</button>
+            </div>
+          </Modal>
+        );
+      })()}
+
+      {/* Copy Section to Page */}
+      {copyTarget && (() => {
+        const st = sectionTypes.find(t => t.id === copyTarget.section.type);
+        const eligiblePages = pages.filter(p => {
+          if (p.pageKey === selectedKey) return false;
+          if (st && Array.isArray(st.availableOn) && !st.availableOn.includes(p.pageKey)) return false;
+          return true;
+        });
+        return (
+          <Modal onClose={() => setCopyTarget(null)}>
+            <h3 style={{ fontWeight: 800, marginBottom: "0.5rem" }}>
+              Copy "{sectionTypeLabel(copyTarget.section.type)}" to…
+            </h3>
+            <p style={{ fontSize: "0.82rem", color: INK_60, marginBottom: "1rem" }}>
+              Adds this section — with its current content — to the bottom of the page you pick. That page saves immediately; your edits here are untouched.
+            </p>
+            {eligiblePages.length === 0 ? (
+              <p style={{ fontSize: "0.85rem", color: INK_60 }}>No other eligible pages.</p>
+            ) : (
+              <div style={{ display: "flex", flexDirection: "column", gap: 4, maxHeight: 320, overflowY: "auto" }}>
+                {eligiblePages.map(p => (
+                  <button
+                    key={p.pageKey}
+                    style={{ ...btnStyle, textAlign: "left", justifyContent: "flex-start", fontSize: "0.85rem" }}
+                    onClick={() => copySectionToPage(copyTarget.index, p.pageKey)}
+                    disabled={saving}
+                  >
+                    {p.title}
+                    <span style={{ color: INK_60, fontFamily: "monospace", fontSize: "0.72rem", marginLeft: 8 }}>{p.path}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+            <div style={{ marginTop: "1rem" }}>
+              <button style={btnStyle} onClick={() => setCopyTarget(null)} disabled={saving}>Cancel</button>
             </div>
           </Modal>
         );
