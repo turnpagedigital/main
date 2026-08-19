@@ -653,11 +653,11 @@
         {
           "id": "sec-aic-faq",
           "type": "faq",
-          "visible": false,
+          "visible": true,
           "layout": "layout-2-sidebar",
           "colorScheme": "light-gray",
           "content": {
-            "title": "Copyright claims,",
+            "title": "Your questions,",
             "accent": "answered.",
             "ctaLabel": "Ask our team",
             "ctaHref": "/contact?source=ai-copyright",
