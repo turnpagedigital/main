@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-19 01:23 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-19 13:47 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -29,6 +29,12 @@ Need to research fair use question and write a long-form article about this
 > Order on Administrative Motion per Civil Local Rule 7-11
 
 hi
+
+## Concord v. Anthropic
+
+### Dkt. 773 — 2026-08-18
+
+> Reply to Opposition/Response
 
 ## Crypto Distress
 
