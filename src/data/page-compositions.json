@@ -1319,11 +1319,11 @@
             "image": "/library/data-center-2.jpg",
             "ctaPrimary": {
               "label": "Sell my claim",
-              "href": "/contact"
+              "href": "#sell"
             },
             "ctaSecondary": {
               "label": "How it works",
-              "href": ""
+              "href": "#how-it-works"
             },
             "titleSize": "large"
           }
