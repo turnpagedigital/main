@@ -3788,5 +3788,35 @@
     "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69879510&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=21"
   },
   "claims_administrator": null,
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "OpenAI Says NY Times Seeks Sanctions Due to Lack of Evidence",
+      "url": "https://news.bloomberglaw.com/ip-law/openai-says-ny-times-seeks-sanctions-due-to-lack-of-evidence",
+      "source": "Bloomberg Law",
+      "date": "2026-08-14",
+      "summary": "OpenAI filed its opposition brief on August 14, telling Judge Stein that publishers have 'no evidence whatsoever' that ChatGPT systematically regurgitates their articles and that its claim of hiding search capabilities is an attempt 'to rewrite history.' OpenAI maintained it followed court orders to preserve ChatGPT conversations 'to the letter' and made 'herculean efforts' to produce training data and tens of millions of outputs."
+    },
+    {
+      "headline": "New York Times and Other News Outlets Accuse OpenAI of Lying in Discovery, Demand Legal Sanctions Against AI Giant",
+      "url": "https://variety.com/2026/digital/news/new-york-times-news-outlets-accuse-openai-of-lying-lawsuit-1236805648/",
+      "source": "Variety",
+      "date": "2026-07-10",
+      "summary": "Variety reported on the sanctions motion, noting the Times has spent more than $28 million in total litigation costs against AI companies, with $4.2 million incurred in the first quarter of 2026 alone. The Daily News, Center for Investigative Reporting, and Ziff Davis are among the co-plaintiffs in the consolidated MDL."
+    },
+    {
+      "headline": "New York Times Seeks Sanctions Against OpenAI in Copyright Case",
+      "url": "https://news.bloomberglaw.com/ip-law/new-york-times-seeks-sanctions-against-openai-in-copyright-case",
+      "source": "Bloomberg Law",
+      "date": "2026-07-09",
+      "summary": "Bloomberg Law reported on the publishers' motion accusing OpenAI of a 'deliberate and systemic effort to obstruct discovery,' alleging a two-year concealment of its ability to search ChatGPT training data and output logs for copyrighted works. The motion argues the deception prevented publishers from establishing the foundation of their copyright case."
+    },
+    {
+      "headline": "News Outlets Seek Sanctions on OpenAI in US Copyright Litigation",
+      "url": "https://www.mlex.com/mlex/articles/2499095/news-outlets-seek-sanctions-on-openai-in-us-copyright-litigation",
+      "source": "MLex",
+      "date": "2026-07-09",
+      "summary": "MLex reported on the sanctions motion filed in the S.D.N.Y., quoting the publishers' filing that OpenAI's concealment 'withheld highly relevant evidence, prolonged discovery, inflated expenses, and burdened the court.' The motion directly challenges OpenAI's representations about its technical search capabilities."
+    }
+  ],
+  "events": []
 }

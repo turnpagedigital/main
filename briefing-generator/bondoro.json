@@ -1,6 +1,36 @@
 {
   "items": [
     {
+      "id": "dish-to-trinseo-hold-my-beer",
+      "kind": "news",
+      "source": "Petition",
+      "source_id": "petition",
+      "show": "both",
+      "title": "💥DISH to Trinseo, “Hold My Beer”💥",
+      "url": "https://www.petition11.com/p/dish-to-trinseo-hold-my-beer",
+      "date": "2026-08-19",
+      "published_at": "2026-08-19T12:03:43+00:00",
+      "excerpt": "Plus: a JELD-WEN Holding, Inc. ($JELD) update.",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "?utm_source=rss&utm_medium=rss&utm_campaign=dailydacs-market-summary-explainer-f",
+      "kind": "article",
+      "source": "Daily DAC",
+      "source_id": "daily-dac-article",
+      "show": "news",
+      "title": "DailyDAC’s Market Summary/Explainer for Seven Day Period Ending August 17, 2026",
+      "url": "https://www.dailydac.com/dailydacs-market-summary-explainer-for-seven-day-period-ending-august-17-2026/?utm_source=rss&utm_medium=rss&utm_campaign=dailydacs-market-summary-explainer-for-seven-day-period-ending-august-17-2026",
+      "date": "2026-08-19",
+      "published_at": "2026-08-19T05:44:14+00:00",
+      "excerpt": "Market Watch: Week of August 11, 2026 – August 17, 2026 DailyDAC’s Sentiment Score: 4.3/10 On the surface, this was a slow week in the bankruptcy courts. But beneath the surface, the underlying economic signals were anything but calm. The big-picture economic data came in roughly where investors exp",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
       "id": "777-partners",
       "kind": "summaries",
       "source": "Bondoro",
@@ -41,6 +71,21 @@
       "date": "2026-08-18",
       "published_at": "2026-08-18T17:07:42+00:00",
       "excerpt": "Alt Meds Files Chapter 11 in District of Colorado",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "hook-mill-estates-filing-alert",
+      "kind": "alert",
+      "source": "Bondoro",
+      "source_id": "bondoro-alert",
+      "show": "both",
+      "title": "Filing Alert: Hook Mill Estates Chapter 11",
+      "url": "https://bondoro.com/hook-mill-estates-filing-alert/",
+      "date": "2026-08-18",
+      "published_at": "2026-08-18T22:07:25+00:00",
+      "excerpt": "Hook Mill Estates Files Chapter 11 in Eastern District of New York",
       "case_slug": null,
       "group_name": null,
       "theme_slug": null
@@ -4926,7 +4971,8 @@
       "excerpt": "Verra Mobility Corp. ($VRRM), Sweetgreen Inc. ($SG), Serta Simmons Bedding LLC, Trinseo PLC & Johnny's Links #16",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "new-chapter-15-filing-braskem-sa",
