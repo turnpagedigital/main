@@ -76,7 +76,7 @@
       ],
       "author": "Turnpage Intelligence",
       "type": "briefing",
-      "active": false
+      "active": true
     },
     {
       "slug": "2026-08-03-anthropic-settlement-payment-timeline",
@@ -90,7 +90,7 @@
         "Payments"
       ],
       "author": "Turnpage Intelligence",
-      "active": false,
+      "active": true,
       "type": "briefing"
     },
     {
@@ -116,7 +116,7 @@
         "Claims Trading"
       ],
       "author": "Turnpage Intelligence",
-      "active": false,
+      "active": true,
       "type": "briefing"
     },
     {
@@ -130,7 +130,7 @@
         "Claims Trading"
       ],
       "author": "Turnpage Intelligence",
-      "active": false,
+      "active": true,
       "type": "briefing"
     },
     {
@@ -144,7 +144,7 @@
         "Settlement"
       ],
       "author": "Turnpage Intelligence",
-      "active": false,
+      "active": true,
       "type": "briefing"
     },
     {
@@ -158,7 +158,7 @@
         "Music"
       ],
       "author": "Turnpage Intelligence",
-      "active": false,
+      "active": true,
       "type": "briefing"
     },
     {
@@ -172,7 +172,7 @@
         "Music"
       ],
       "author": "Turnpage Intelligence",
-      "active": false,
+      "active": true,
       "type": "briefing"
     },
     {
@@ -187,7 +187,7 @@
         "MDL"
       ],
       "author": "Turnpage Intelligence",
-      "active": false,
+      "active": true,
       "type": "briefing"
     },
     {
