@@ -1419,7 +1419,7 @@
                 "id": "step-1",
                 "n": "01",
                 "title": "Upload your claim form »",
-                "body": "Submit your PDF claim form and we'll automatically confirm your claim details and expected recovery. "
+                "body": "Submit your PDF claim form and we'll automatically confirm your claim details. "
               },
               {
                 "id": "step-2",
@@ -1431,7 +1431,7 @@
                 "id": "step-3",
                 "n": "03",
                 "title": "Confirm payment details »",
-                "body": "Provide your bank account details for ACH payment, or select USDC."
+                "body": "Confirm your bank account details for ACH payment."
               },
               {
                 "id": "step-1784772902396",
@@ -1443,7 +1443,7 @@
                 "id": "step-1784772930126",
                 "n": "05",
                 "title": "Book closing call »",
-                "body": "We'll confirm everything you need to close over zoom and issue payment within 48 hours. "
+                "body": "We'll confirm everything you need to close over zoom and issue payment within 48 hours after signing"
               }
             ],
             "cardStyle": "standard",
@@ -1477,6 +1477,7 @@
           "id": "sec-1781266002956-uqo2",
           "type": "our-edge",
           "visible": true,
+          "colorScheme": "white",
           "content": {
             "eyebrow": "Our Edge",
             "title": "Built to move fast",
@@ -1499,7 +1500,8 @@
                 "b": "Our collaborative, relationship-focused approach delivers superior outcomes. We structure transactions to not only meet your needs now, but to properly align party incentives for the long haul.  "
               }
             ],
-            "_bookmark": "Our-edge"
+            "_bookmark": "Our-edge",
+            "colorScheme": "white"
           }
         },
         {
