@@ -747,7 +747,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
                   padding: "0.6rem 1.05rem", cursor: "pointer",
                   border: `1px solid ${selected ? INK : LINE_STRONG}`,
                   background: selected ? INK : SURFACE,
-                  color: selected ? NEON : INK,
+                  color: selected ? TEXT : INK,
                   transition: "all 0.15s",
                 }}>
                 {opt}

@@ -110,6 +110,7 @@ function validateFlows(flows) {
 
     const fieldIds = new Set();
     const fieldTypes = {}; // id -> type, for validating computed-field references
+    const fieldChoices = {}; // id -> valid values, for choice/select/yesno fields — catches a showIf left pointing at a renamed/removed option
     for (let j = 0; j < f.steps.length; j++) {
       const s = f.steps[j];
       if (!s || typeof s !== "object") return `flows[${i}].steps[${j}] is not an object`;
@@ -124,6 +125,9 @@ function validateFlows(flows) {
         if (!fieldIds.has(s.showIf.fieldId)) {
           return `flows[${i}].steps[${j}].showIf references "${s.showIf.fieldId}" which is not a field on an EARLIER step`;
         }
+        if (fieldChoices[s.showIf.fieldId] && !fieldChoices[s.showIf.fieldId].includes(s.showIf.equals)) {
+          return `flows[${i}].steps[${j}].showIf: "${s.showIf.equals}" is not a current option of "${s.showIf.fieldId}" (options are: ${fieldChoices[s.showIf.fieldId].join(", ")}) — this step would never show. Update the condition or the field's options together.`;
+        }
       }
       for (let k = 0; k < s.fields.length; k++) {
         const fld = s.fields[k];
@@ -132,6 +136,11 @@ function validateFlows(flows) {
         if (fieldIds.has(fld.id)) return `duplicate field id "${fld.id}" in flow "${f.id}"`;
         if (typeof fld.label !== "string" || !fld.label.trim()) return `field "${fld.id}" needs a label`;
         if (!FIELD_TYPES.has(fld.type)) return `field "${fld.id}": unknown type "${fld.type}"`;
+        if ((fld.type === "select" || fld.type === "choice")) {
+          if (!Array.isArray(fld.options) || fld.options.length < 2) return `field "${fld.id}" needs at least 2 options`;
+          if (fld.options.length > MAX_OPTIONS) return `field "${fld.id}": at most ${MAX_OPTIONS} options`;
+          if (!fld.options.every(o => typeof o === "string" && o.trim())) return `field "${fld.id}": options must be non-empty strings`;
+        }
         if (fld.showIf !== undefined && fld.showIf !== null) {
           if (typeof fld.showIf !== "object" || !fld.showIf.fieldId || typeof fld.showIf.equals !== "string") {
             return `field "${fld.id}".showIf needs fieldId + equals`;
@@ -139,11 +148,9 @@ function validateFlows(flows) {
           if (!fieldIds.has(fld.showIf.fieldId)) {
             return `field "${fld.id}".showIf references "${fld.showIf.fieldId}" which is not an earlier field`;
           }
-        }
-        if ((fld.type === "select" || fld.type === "choice")) {
-          if (!Array.isArray(fld.options) || fld.options.length < 2) return `field "${fld.id}" needs at least 2 options`;
-          if (fld.options.length > MAX_OPTIONS) return `field "${fld.id}": at most ${MAX_OPTIONS} options`;
-          if (!fld.options.every(o => typeof o === "string" && o.trim())) return `field "${fld.id}": options must be non-empty strings`;
+          if (fieldChoices[fld.showIf.fieldId] && !fieldChoices[fld.showIf.fieldId].includes(fld.showIf.equals)) {
+            return `field "${fld.id}".showIf: "${fld.showIf.equals}" is not a current option of "${fld.showIf.fieldId}" (options are: ${fieldChoices[fld.showIf.fieldId].join(", ")}) — this field would never show. Update the condition or the field's options together.`;
+          }
         }
         if (fld.type === "file" && fld.accept !== undefined) {
           if (!Array.isArray(fld.accept) || !fld.accept.every(a => FILE_ACCEPT.has(a))) {
@@ -184,6 +191,8 @@ function validateFlows(flows) {
         }
         fieldIds.add(fld.id);
         fieldTypes[fld.id] = fld.type;
+        if (fld.type === "select" || fld.type === "choice") fieldChoices[fld.id] = fld.options;
+        if (fld.type === "yesno") fieldChoices[fld.id] = ["Yes", "No"];
       }
     }
   }

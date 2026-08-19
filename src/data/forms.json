@@ -33,7 +33,7 @@
               "required": false,
               "showIf": {
                 "fieldId": "role",
-                "equals": "Authored"
+                "equals": "Author"
               },
               "accept": [
                 "pdf",
@@ -61,7 +61,7 @@
               "required": true,
               "showIf": {
                 "fieldId": "role",
-                "equals": "Published"
+                "equals": "Publisher"
               }
             },
             {
@@ -71,7 +71,7 @@
               "required": false,
               "showIf": {
                 "fieldId": "role",
-                "equals": "Published"
+                "equals": "Publisher"
               },
               "placeholder": "Enter number of works",
               "help": "Provide an estimate if unknown"
@@ -107,7 +107,7 @@
           "title": "Your Offer",
           "showIf": {
             "fieldId": "role",
-            "equals": "Authored"
+            "equals": "Author"
           },
           "fields": [
             {
@@ -152,7 +152,7 @@
           "title": "Identity Verification",
           "showIf": {
             "fieldId": "role",
-            "equals": "Authored"
+            "equals": "Author"
           },
           "fields": [
             {
