@@ -34,11 +34,18 @@ import QRCode from "qrcode";
  *   cardColor       — "white" (default) | "light-gray" | "paper" | "neon"
  *     background of the form card (card style only)
  *   disclosure      — small-print paragraph rendered below the form
- *   align           — "left" (default) | "center": centers the heading-style
- *     chrome (outer title, intro, step title, step counter, disclosure).
- *     The fields themselves — labels, inputs, choice buttons — always stay
- *     left-aligned, since the input boxes are always full-width/left-text
- *     regardless of this setting; centering only the chrome around them
+ *   align           — "left" (default) | "center": the OUTER heading —
+ *     eyebrow + title/accent — and the disclosure below the form. On the
+ *     split layout this also covers the intro (it sits in the same left
+ *     column as the heading there, not inside the card).
+ *   cardAlign       — "left" (default) | "center": chrome INSIDE the card —
+ *     the step title and step counter, plus the intro on every layout
+ *     EXCEPT split (there it follows `align` instead — see above). Set
+ *     independently of `align` so, e.g., a centered hero heading can sit
+ *     above a left-aligned, easy-to-scan form, or vice versa. Either way,
+ *     the fields themselves — labels, inputs, choice buttons — always stay
+ *     left-aligned regardless of both settings, since the input boxes are
+ *     always full-width/left-text; centering only the surrounding chrome
  *     avoids a half-centered, half-left look.
  *   formScale       — form zoom in % (100–150, default 100) for a bigger,
  *     easier-to-read form
@@ -70,6 +77,7 @@ export default function RegistrationFlowSection({ sectionConfig, pageKey }) {
       formScale={c.formScale}
       disclosure={c.disclosure}
       align={c.align}
+      cardAlign={c.cardAlign}
     />
   );
 }
@@ -81,7 +89,7 @@ export default function RegistrationFlowSection({ sectionConfig, pageKey }) {
    The FIRST paragraph renders as the lead line (bigger, bold) and any
    further paragraphs render smaller and muted — same lead/secondary look
    as before, just driven by real paragraphs instead of every newline. */
-function IntroText({ text, dark = false, style = {} }) {
+function IntroText({ text, dark = false, style = {}, scopeClass }) {
   const html = useMemo(() => {
     const t = String(text || "").trim();
     if (!t) return "";
@@ -106,7 +114,7 @@ function IntroText({ text, dark = false, style = {} }) {
       `}</style>
       <div
         style={style}
-        className={`regflow-heading-text regflow-intro${dark ? " regflow-intro-dark" : ""}`}
+        className={`${scopeClass || ""} regflow-intro${dark ? " regflow-intro-dark" : ""}`}
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </>
@@ -129,7 +137,7 @@ function defaultAnswers(flow) {
   return defaults;
 }
 
-function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle, cardColor, formScale, disclosure, align }) {
+function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle, cardColor, formScale, disclosure, align, cardAlign }) {
   const [answers, setAnswers] = useState(() => defaultAnswers(flow));
   const [files, setFiles] = useState({});
   const [stepIndex, setStepIndex] = useState(0);
@@ -256,7 +264,8 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
       const empty = v === undefined || v === null || String(v).trim() === "";
       if (f.required) {
         if (f.type === "file") {
-          if (!files[f.id]) return `Please attach: ${f.label}`;
+          const skipped = f.skipLabel && answers[skipAnswerKey(f)] === "Yes";
+          if (!files[f.id] && !skipped) return `Please attach: ${f.label}`;
         } else if (empty) {
           return `Please answer: ${f.label}`;
         }
@@ -364,7 +373,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
       {/* Split layout already shows the intro under the left-column heading —
           don't repeat it inside the form card. */}
       {flow.intro && stepIndex === 0 && layout !== "split" && (
-        <IntroText text={flow.intro} style={{ marginBottom: "2rem" }} />
+        <IntroText text={flow.intro} style={{ marginBottom: "2rem" }} scopeClass="regflow-card-text" />
       )}
       {stepCountKnown && (
         <>
@@ -378,7 +387,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
               }} />
             ))}
           </div>
-          <p className="regflow-heading-text" style={{ fontFamily: FONT, fontSize: "0.8rem", fontWeight: 500, color: INK_40, marginBottom: "1rem" }}>
+          <p className="regflow-card-text" style={{ fontFamily: FONT, fontSize: "0.8rem", fontWeight: 500, color: INK_40, marginBottom: "1rem" }}>
             Step {stepIndex + 1} of {visibleSteps.length}
           </p>
         </>
@@ -391,7 +400,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
           <FieldControl key={f.id} field={f} value={answers[f.id]} file={files[f.id]}
             answers={answers} quote={quotes[f.id]}
             extraction={extraction} extracting={extracting} extractError={extractError}
-            onChange={v => setAnswer(f.id, v)} onFile={fl => setFile(f, fl)} />
+            onChange={v => setAnswer(f.id, v)} onFile={fl => setFile(f, fl)} onAnswer={setAnswer} />
         ))}
       </div>
       {(stepError || formState === "error") && (
@@ -441,6 +450,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
       formScale={formScale}
       disclosure={disclosure}
       align={align}
+      cardAlign={cardAlign}
       flowIntro={flow.intro}
     >
       {formState === "success" ? successNode : formNode}
@@ -459,6 +469,16 @@ function stepVisible(step, answers) {
 function fieldVisible(field, answers) {
   if (!field.showIf || !field.showIf.fieldId) return true;
   return answers[field.showIf.fieldId] === field.showIf.equals;
+}
+
+// A required file field with `skipLabel` set can also be satisfied by
+// checking "I don't have it" instead of attaching a file — e.g. not every
+// claimant has their claim form handy. The checkbox's answer is stored
+// under this synthetic key; it's UI-only bookkeeping (not a real field id
+// in the flow) so it's dropped automatically wherever answers are filtered
+// down to known field ids (submit, /api/register), same as any other stray key.
+function skipAnswerKey(field) {
+  return `${field.id}__skip`;
 }
 
 /* Read "counts.self" style dot-paths out of an extraction result. */
@@ -529,7 +549,7 @@ const SHELL_SCHEMES = {
   dark:         { bg: DARK,         dark: true },
 };
 
-function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle: cardStyleOpt, cardColor, formScale, disclosure, align, flowIntro, children }) {
+function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle: cardStyleOpt, cardColor, formScale, disclosure, align, cardAlign, flowIntro, children }) {
   // layout "dark" predates colorScheme and acts as its alias
   const scheme  = SHELL_SCHEMES[colorScheme] || (layout === "dark" ? SHELL_SCHEMES.dark : SHELL_SCHEMES.paper);
   // On a photo background, a darkening filter implies white outer text
@@ -566,20 +586,36 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
         ...(scale !== 100 ? { zoom: scale / 100 } : {}),
       };
 
-  // "Centered" only ever applies to heading-style chrome (the outer title,
-  // the step title, the intro blurb, the step counter, the disclosure) — the
-  // actual fields (labels, inputs, choice buttons, help text) always stay
-  // left-aligned. Centering form controls themselves reads as inconsistent
-  // once the input boxes — which are always full-width/left-text regardless
-  // of this setting — sit under a centered label or button row; keeping the
-  // fields uniformly left avoids that half-centered, half-left mismatch.
-  const centered = align === "center";
-  const centerCss = centered ? (
+  // "Centered" only ever applies to heading-style chrome, never the actual
+  // fields (labels, inputs, choice buttons, help text) — those always stay
+  // left-aligned, since the input boxes are always full-width/left-text
+  // regardless of either setting below; centering fields themselves would
+  // read as inconsistent sitting under a centered label or button row.
+  //
+  // The chrome splits into two independently controllable groups:
+  //   align     — the OUTER heading (eyebrow + h2) and the disclosure below
+  //               the form; on the split layout this also covers the intro
+  //               (it sits in the heading's left column there, not the card)
+  //   cardAlign — chrome INSIDE the card: the step title (h3) and step
+  //               counter, plus the intro on every OTHER layout (there it's
+  //               the first thing inside the card)
+  // scoped via regflow-outer-text / regflow-card-text on the elements that
+  // need it (h2/h3 are targeted directly since they're unambiguous).
+  const outerCentered = align === "center";
+  const cardCentered = cardAlign === "center";
+  const centerCss = (outerCentered || cardCentered) ? (
     <style>{`
-      .regflow-centered h2, .regflow-centered h3, .regflow-centered .regflow-heading-text { text-align: center; }
-      .regflow-centered .regflow-disclosure { margin-left: auto; margin-right: auto; }
+      ${outerCentered ? `
+      .regflow-outer-centered h2, .regflow-outer-centered .regflow-outer-text, .regflow-outer-centered .regflow-disclosure { text-align: center; }
+      .regflow-outer-centered .regflow-disclosure { margin-left: auto; margin-right: auto; }
+      ` : ""}
+      ${cardCentered ? `
+      .regflow-card-centered h3, .regflow-card-centered .regflow-card-text { text-align: center; }
+      ` : ""}
     `}</style>
   ) : null;
+  const alignClasses = [outerCentered && "regflow-outer-centered", cardCentered && "regflow-card-centered"]
+    .filter(Boolean).join(" ");
   // The disclosure sits directly on the section background (outside the
   // card), so on neon it needs much darker text than 45% ink gives — that
   // opacity was tuned for white/paper/light-gray, where it still clears
@@ -626,7 +662,7 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
   /* ── Split layout ─────────────────────────────────────────────── */
   if (isSplit) {
     return (
-      <section className={centered ? `${surfaceClass} regflow-centered` : surfaceClass} style={{ ...sectionStyle, padding: sectionPad }}>
+      <section className={[surfaceClass, alignClasses].filter(Boolean).join(" ")} style={{ ...sectionStyle, padding: sectionPad }}>
         {centerCss}
         <div
           className="reg-split-grid"
@@ -642,7 +678,7 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
           <div style={{ position: "sticky", top: 110 }}>
             {headingBlock}
             {flowIntro && (
-              <IntroText text={flowIntro} dark={isDark} style={{ marginTop: "1.2rem" }} />
+              <IntroText text={flowIntro} dark={isDark} style={{ marginTop: "1.2rem" }} scopeClass="regflow-outer-text" />
             )}
           </div>
           {/* Right: form card */}
@@ -664,7 +700,7 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
   /* ── Center (default) + Wide (+ legacy "dark" = center on dark bg) ── */
   const maxWidth = isWide ? 880 : 660;
   return (
-    <section className={centered ? `${surfaceClass} regflow-centered` : surfaceClass} style={{ ...sectionStyle, padding: sectionPad }}>
+    <section className={[surfaceClass, alignClasses].filter(Boolean).join(" ")} style={{ ...sectionStyle, padding: sectionPad }}>
       {centerCss}
       <div className="container" style={{ maxWidth, margin: "0 auto" }}>
         {headingBlock && (
@@ -688,11 +724,22 @@ const FIELD_LABEL_STYLE = {
 // Bigger type + more generous padding on every text-style input, so the
 // fields themselves — not the labels around them — are what the eye lands on.
 const FIELD_INPUT_STYLE = { fontSize: "1.02rem", padding: "1.05rem 1.15rem" };
+// Standard "visually hidden" technique: the label stays in the DOM (so
+// screen readers still get it, and a radiogroup's aria-label still resolves)
+// but takes up no visual space — for when the step title already asks the
+// question in a way the label would just repeat (e.g. step title "I am an"
+// directly above Author/Publisher buttons; a "Select one" label between
+// them reads as a second, disconnected caption instead of completing the
+// sentence the title started).
+const VISUALLY_HIDDEN_STYLE = {
+  position: "absolute", width: 1, height: 1, padding: 0, margin: -1,
+  overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0,
+};
 
-function FieldControl({ field, value, file, answers = {}, quote, extraction = null, extracting = false, extractError = "", onChange, onFile }) {
+function FieldControl({ field, value, file, answers = {}, quote, extraction = null, extracting = false, extractError = "", onChange, onFile, onAnswer }) {
   const id = React.useId();
   const label = (
-    <label htmlFor={id} style={FIELD_LABEL_STYLE}>
+    <label htmlFor={id} style={field.hideLabel ? VISUALLY_HIDDEN_STYLE : FIELD_LABEL_STYLE}>
       {field.label}
       {field.required && <span aria-hidden="true" style={{ color: ERROR, marginLeft: 4, fontWeight: 700 }}>*</span>}
     </label>
@@ -840,7 +887,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
         <input id={id} type="file"
           accept={(field.accept || ["pdf", "png", "jpg"]).map(a => "." + a).join(",")}
           onChange={e => onFile(e.target.files && e.target.files[0])}
-          aria-required={field.required || undefined}
+          aria-required={(field.required && !field.skipLabel) || undefined}
           style={{ fontFamily: FONT, fontSize: "0.95rem", padding: "0.9rem 0" }} />
         {file && (
           <p style={{ fontFamily: FONT, fontSize: "0.8rem", color: INK_60, marginTop: "0.3rem" }}>
@@ -850,6 +897,14 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
               remove
             </button>
           </p>
+        )}
+        {field.skipLabel && (
+          <label style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginTop: "0.8rem", cursor: "pointer", fontFamily: FONT, fontSize: "0.9rem", color: INK }}>
+            <input type="checkbox" checked={answers[skipAnswerKey(field)] === "Yes"}
+              onChange={e => onAnswer(skipAnswerKey(field), e.target.checked ? "Yes" : "")}
+              style={{ accentColor: NEON, width: 18, height: 18, flexShrink: 0 }} />
+            {field.skipLabel}
+          </label>
         )}
         {field.extract && extracting && (
           <p role="status" style={{ fontFamily: FONT, fontSize: "0.85rem", color: INK, marginTop: "0.5rem", fontWeight: 600 }}>

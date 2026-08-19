@@ -71,6 +71,7 @@ function sanitizeFlow(f) {
       fields: Array.isArray(s.fields) ? s.fields.map(fl => ({
         id: fl.id || "", type: fl.type || "text", label: fl.label || "",
         required: Boolean(fl.required),
+        ...(fl.hideLabel ? { hideLabel: true } : {}),
         ...(fl.showIf && fl.showIf.fieldId ? { showIf: { fieldId: fl.showIf.fieldId, equals: fl.showIf.equals ?? "" } } : {}),
         ...(fl.options ? { options: fl.options } : {}),
         ...(fl.accept ? { accept: fl.accept } : {}),
@@ -83,6 +84,7 @@ function sanitizeFlow(f) {
         } : {}),
         ...(fl.type === "file" && fl.extract ? { extract: fl.extract } : {}),
         ...(fl.type === "file" && fl.extractMap && typeof fl.extractMap === "object" ? { extractMap: fl.extractMap } : {}),
+        ...(fl.type === "file" && fl.skipLabel ? { skipLabel: fl.skipLabel } : {}),
         ...(fl.type === "number" && fl.placeholder ? { placeholder: fl.placeholder } : {}),
         ...(fl.type === "computed" ? {
           ...(fl.priced ? { priced: true } : {}),
@@ -503,7 +505,7 @@ function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, o
 
   return (
     <div style={{ border: `1px solid ${LINE}`, borderRadius: 5, padding: "0.6rem", marginBottom: "0.55rem", background: "#fff" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr auto auto auto auto", gap: 8, alignItems: "center" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr auto auto auto auto auto", gap: 8, alignItems: "center" }}>
         <input style={inputStyle} placeholder="Question / label" value={field.label}
           onChange={e => onChange({ label: e.target.value })}
           onBlur={e => { if (!field.id) onChange({ id: slugify(e.target.value).replace(/-/g, "_") }); }} />
@@ -513,6 +515,11 @@ function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, o
         <label style={{ display: "flex", alignItems: "center", gap: 5, fontSize: "0.78rem", color: INK_60, cursor: isComputed ? "not-allowed" : "pointer", whiteSpace: "nowrap", opacity: isComputed ? 0.4 : 1 }}>
           <input type="checkbox" checked={field.required} disabled={isComputed} onChange={e => onChange({ required: e.target.checked })} />
           Req
+        </label>
+        <label style={{ display: "flex", alignItems: "center", gap: 5, fontSize: "0.78rem", color: INK_60, cursor: "pointer", whiteSpace: "nowrap" }}
+          title="Keeps the label for screen readers, just hides it visually — use when the step title already asks the question (e.g. a step titled 'I am an' directly above an Author/Publisher choice)">
+          <input type="checkbox" checked={Boolean(field.hideLabel)} onChange={e => onChange({ hideLabel: e.target.checked })} />
+          Hide label
         </label>
         <button style={iconBtnStyle(index === 0)} title="Move up" disabled={index === 0} onClick={() => onMove(-1)}>↑</button>
         <button style={iconBtnStyle(index === total - 1)} title="Move down" disabled={index === total - 1} onClick={() => onMove(1)}>↓</button>
@@ -575,6 +582,15 @@ function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, o
             <p style={{ fontSize: "0.72rem", color: INK_60, margin: "4px 0 0", lineHeight: 1.5 }}>
               On upload, this file is read by the <strong>{field.extract}</strong> reader and auto-fills{" "}
               {field.extractMap ? Object.keys(field.extractMap).join(", ") : "no fields yet"}.
+            </p>
+          )}
+          <input style={{ ...inputStyle, fontSize: "0.82rem", marginTop: 6 }}
+            placeholder="Can't-upload checkbox text (e.g. I don't have my claim form) — leave blank to require the file with no alternative"
+            value={field.skipLabel || ""}
+            onChange={e => onChange({ skipLabel: e.target.value })} />
+          {field.skipLabel && !field.required && (
+            <p style={{ fontSize: "0.72rem", color: "#B4700F", margin: "4px 0 0" }}>
+              This checkbox only blocks Next when the field is also marked <strong>Req</strong> above — check that too, or the file stays fully optional.
             </p>
           )}
           <input style={{ ...inputStyle, fontSize: "0.82rem", marginTop: 6 }}
