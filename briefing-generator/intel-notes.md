@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-19 13:47 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-19 13:48 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -35,6 +35,10 @@ hi
 ### Dkt. 773 — 2026-08-18
 
 > Reply to Opposition/Response
+
+### Dkt. 771 — 2026-08-18
+
+> Declaration in Support
 
 ## Crypto Distress
 
