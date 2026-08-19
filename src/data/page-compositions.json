@@ -767,6 +767,60 @@
             "kicker": "Scenario",
             "footnote": "*Per-work amounts are gross figures before deduction of court-approved fees ($101.6M), costs, and administration. Default split for trade and university-press titles is 50/50 between the author side and the publisher side; self-published and rights-reverted authors who are sole copyright owners keep the full award. Sources: final approval order of July 20, 2026 (Dkt., N.D. Cal. 3:24-cv-05417); Authors Guild and Authors Alliance settlement guidance; settlement administrator claims data."
           }
+        },
+        {
+          "id": "sec-1787168607409-wqj8",
+          "type": "how-it-works",
+          "visible": true,
+          "colorScheme": "white",
+          "content": {
+            "eyebrow": "HOW IT WORKS",
+            "title": "Get paid without the wait.",
+            "accent": "",
+            "kicker": "We take care of everything in just a few steps so you can collect your cash and move on to creating your next great work of art.",
+            "colorScheme": "white",
+            "steps": [
+              {
+                "id": "step-1",
+                "n": "01",
+                "title": "Upload your claim form »",
+                "body": "Submit your PDF claim form and we'll automatically confirm your claim details. "
+              },
+              {
+                "id": "step-2",
+                "n": "02",
+                "title": "Submit your information »",
+                "body": "Provide your basic personal information and complete KYC so we know that you're really you.\n"
+              },
+              {
+                "id": "step-3",
+                "n": "03",
+                "title": "Confirm payment details »",
+                "body": "Confirm your bank account details for ACH payment."
+              },
+              {
+                "id": "step-1784772902396",
+                "n": "04",
+                "title": "Sign sale agreement »",
+                "body": "Review and sign our standard agreement to transfer your claim."
+              },
+              {
+                "id": "step-1784772930126",
+                "n": "05",
+                "title": "Book closing call »",
+                "body": "We'll confirm everything you need to close over zoom and issue payment within 48 hours after signing"
+              }
+            ],
+            "cardStyle": "black",
+            "cardRadius": "square",
+            "_bookmark": "how-it-works",
+            "backgroundImage": "/pawel-czerwinski-T5VUBvCYqKk-unsplash.jpg",
+            "imageFilterStrength": 50,
+            "imageFilter": "light",
+            "cardBrightness": 100,
+            "cardBlur": 12,
+            "stepsLayout": "5"
+          }
         }
       ],
       "status": "active"
