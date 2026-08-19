@@ -1228,6 +1228,9 @@
   }
 
   // ── Prospects tile — candidate cases from the theme scans ─────────────────
+  // Same icon set as the prospects.html triage toolkit, for visual consistency.
+  var SVG_SNZ = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+  var SVG_TRASH = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m3-3h8a1 1 0 0 1 1 1v2H7V4a1 1 0 0 1 1-1z"/></svg>';
   function prospectSnoozeOptions() {
     var now = new Date();
     function at(d, h) { var x = new Date(d); x.setHours(h, 0, 0, 0); return x; }
@@ -1306,8 +1309,8 @@
           "</div>" +
           '<div class="ih-prospect-actions">' +
             '<a class="ih-pr-btn ih-pr-track" href="' + BASE + 'prospects.html#track=' + encodeURIComponent(p.id) + '">Track</a>' +
-            '<button type="button" class="ih-pr-btn ih-pr-snooze" data-snooze="' + esc(p.id) + '" title="Snooze — resurface later">Snooze</button>' +
-            '<button type="button" class="ih-pr-btn ih-pr-dismiss" data-dismiss="' + esc(p.id) + '">Dismiss</button>' +
+            '<button type="button" class="ih-pr-ico" data-snooze="' + esc(p.id) + '" title="Snooze — resurface later">' + SVG_SNZ + "</button>" +
+            '<button type="button" class="ih-pr-ico" data-dismiss="' + esc(p.id) + '" title="Dismiss — buries for good">' + SVG_TRASH + "</button>" +
           "</div>" +
         "</div>"
       );
@@ -1322,7 +1325,6 @@
       b.addEventListener("click", function () {
         var id = b.getAttribute("data-dismiss");
         b.disabled = true;
-        b.textContent = "…";
         fetch(BASE + "api/prospects", {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -1333,7 +1335,6 @@
           renderProspects();
         }).catch(function () {
           b.disabled = false;
-          b.textContent = "Dismiss";
         });
       });
     });
