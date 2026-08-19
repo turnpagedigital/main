@@ -688,6 +688,23 @@
             },
             "titleSize": "large"
           }
+        },
+        {
+          "id": "sec-1787168600136-5286",
+          "type": "rich-text",
+          "visible": true,
+          "layout": "layout-2-wide",
+          "colorScheme": "white",
+          "content": {
+            "eyebrow": "",
+            "markdown": "Approximately **500,000** covered works are entitled to **$3,000** in settlement proceeds with a default 50/50 split for a single author, single publisher work. Rights holders with works on the covered works list and that timely filed a claim form are entitled to payouts from the settlement, but **funds won't start flowing until all appeals have been resolved, *which can take many months or years*.**",
+            "layout": "layout-2-wide",
+            "colorScheme": "white",
+            "align": "center",
+            "heading1": "A",
+            "heading1Accent": "$1.5 billion win",
+            "heading1After": "for authors and publishers"
+          }
         }
       ],
       "status": "active"
