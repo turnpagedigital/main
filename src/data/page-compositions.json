@@ -1555,10 +1555,10 @@
           "id": "sec-1787156403826-vueb",
           "type": "cta",
           "visible": true,
-          "layout": "layout-1-getquote",
+          "layout": "layout-3-bottomcta",
           "colorScheme": "dark",
           "content": {
-            "layout": "layout-1-getquote",
+            "layout": "layout-3-bottomcta",
             "colorScheme": "dark",
             "eyebrow": "WHY WAIT TO GET PAID?",
             "title": "Ready to learn more?",
