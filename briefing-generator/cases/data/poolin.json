@@ -14,13 +14,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
-    "date_last_filing": "2026-08-18",
-    "meta_fetched_at": "2026-08-18T20:42:58.640383+00:00",
-    "fetched_at": "2026-08-19T14:23:40.366808+00:00",
+    "date_last_filing": "2026-08-19",
+    "meta_fetched_at": "2026-08-19T14:55:41.134074+00:00",
+    "fetched_at": "2026-08-19T14:55:41.134074+00:00",
     "as_of": "Aug 19, 2026",
     "backfilled": true,
-    "new_in_72h": 14,
+    "new_in_72h": 15,
     "recent": [
+      {
+        "entry_number": 146,
+        "date_filed": "2026-08-19",
+        "time_filed": "10:20:30",
+        "date_display": "Aug 19, 2026",
+        "description": "Monthly Fee Statement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 145,
         "date_filed": "2026-08-18",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 143,
-        "date_filed": "2026-08-18",
-        "time_filed": "13:29:32",
-        "date_display": "Aug 18, 2026",
-        "description": "Support",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 146,
+        "date_filed": "2026-08-19",
+        "time_filed": "10:20:30",
+        "date_display": "Aug 19, 2026",
+        "description": "Monthly Fee Statement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 145,
         "date_filed": "2026-08-18",
