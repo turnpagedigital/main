@@ -41,7 +41,7 @@
                 "png",
                 "jpg"
               ],
-              "help": "Upload your Bartz settlement claim form and we'll auto-calculate your estimated allocation.",
+              "help": "Upload your Bartz settlement claim form and we'll auto-calculate your estimated allocation. If your form is not available, you may still proceed, but we can cannot provide a firm offer.",
               "skipLabel": "I don't have my claim form",
               "extract": "bartz-claim",
               "extractMap": {
