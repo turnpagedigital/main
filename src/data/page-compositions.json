@@ -246,7 +246,7 @@
         {
           "id": "sec-aic-hero",
           "type": "hero",
-          "visible": true,
+          "visible": false,
           "content": {
             "eyebrow": "AUTHORS & PUBLISHERS",
             "title": "Turn your Anthropic settlement claim into",
@@ -269,7 +269,7 @@
         {
           "id": "sec-1784779074962-jtdv",
           "type": "stats-band",
-          "visible": true,
+          "visible": false,
           "layout": "minimal",
           "colorScheme": "dark",
           "content": {
@@ -301,7 +301,7 @@
         {
           "id": "sec-1784774482623-y9al",
           "type": "image-text",
-          "visible": true,
+          "visible": false,
           "layout": "layout-2-image-left",
           "colorScheme": "light-gray",
           "content": {
@@ -325,7 +325,7 @@
         {
           "id": "sec-1787152455039-lmrg",
           "type": "timeline",
-          "visible": true,
+          "visible": false,
           "colorScheme": "white",
           "content": {
             "eyebrow": "Hey Shakespeare",
@@ -387,7 +387,7 @@
         {
           "id": "sec-1784772646246-qv8s",
           "type": "how-it-works",
-          "visible": true,
+          "visible": false,
           "colorScheme": "dark",
           "content": {
             "eyebrow": "HOW IT WORKS",
@@ -441,7 +441,7 @@
         {
           "id": "sec-1781587444053-lcuz",
           "type": "registration-flow",
-          "visible": true,
+          "visible": false,
           "layout": "wide",
           "colorScheme": "white",
           "content": {
@@ -626,7 +626,7 @@
         {
           "id": "sec-1780972607455-de6l",
           "type": "cta",
-          "visible": true,
+          "visible": false,
           "layout": "layout-1-getquote",
           "colorScheme": "dark",
           "content": {
