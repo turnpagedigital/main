@@ -18,8 +18,8 @@
     {
       "id": "ai-copyright",
       "label": "Copyright Claims",
-      "href": "/copyright",
-      "active": false,
+      "href": "/bartz-v-anthropic",
+      "active": true,
       "labelKey": "nav.copyright",
       "dropdown": {
         "title": "Copyright Claims",
@@ -218,7 +218,7 @@
     "ai-copyright": {
       "brand": {
         "label": "Copyright Claims",
-        "href": "/copyright"
+        "href": "/bartz-v-anthropic"
       },
       "items": [
         {
