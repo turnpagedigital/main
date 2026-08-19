@@ -40,4 +40,4 @@ Every figure above is an estimate until the administrator cuts your check. Claim
 
 ---
 
-*Turnpage Digital Markets is an independent claims buyer. We are not the court, class counsel, or the settlement administrator, and figures above are estimates drawn from public court filings — your actual distribution is determined solely by the Plan of Allocation. This briefing is market intelligence, not legal or financial advice.*
+*Turnpage Digital Markets is not the court, class counsel, or the settlement administrator, and figures above are estimates drawn from public court filings — your actual distribution is determined solely by the Plan of Allocation. This briefing is market intelligence, not legal or financial advice.*
