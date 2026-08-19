@@ -191,16 +191,7 @@
       "id": "item-1781198101329",
       "label": "Leadership",
       "href": "/#leadership",
-      "active": true,
-      "dropdown": {
-        "title": "",
-        "body": "",
-        "links": [],
-        "cta": {
-          "label": "",
-          "href": "/"
-        }
-      }
+      "active": true
     },
     {
       "id": "item-1781204786861",
