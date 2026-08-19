@@ -1334,7 +1334,7 @@
             "eyebrow": "",
             "title": "Anthropic trained its models",
             "accentTitle": "on your IP.",
-            "subtitle": "We help authors and publishers with rights to payment from the Bartz v. Anthropic settlement and other AI copyright cases get compensated faster and easier.",
+            "subtitle": "We help authors and publishers with rights to payment from the Bartz v. Anthropic settlement and other AI copyright cases get compensated faster and easier — Turnpage helps you convert your claim to cash today.",
             "size": "short",
             "mediaType": "image",
             "video": null,
@@ -1351,22 +1351,16 @@
           }
         },
         {
-          "id": "sec-1787150847946-ltnp",
-          "type": "media-banner",
+          "id": "sec-1787150948787-vy89",
+          "type": "rich-text",
           "visible": true,
+          "layout": "layout-2-wide",
           "colorScheme": "light-gray",
           "content": {
-            "backgroundType": "color",
-            "colorScheme": "light-gray",
-            "backgroundImage": "/bg-paper.jpg",
-            "imageFilter": "dark",
-            "imageFilterStrength": 40,
-            "align": "center",
-            "height": "auto",
-            "title": "Settlement doesn't mean paid.",
-            "subtitle": "",
-            "ctaPrimary": null,
-            "ctaSecondary": null
+            "eyebrow": "",
+            "markdown": "# A $1.5 billion win for authors and publishers\n\nApproximately **500,000** covered works are entitled to **$3,000** in settlement proceeds with a default 50/50 split for a single author, single publisher work. Rights holders with works on the covered works list and that timely filed a claim form are entitled to payouts from the settlement, but **funds won't start flowing until all appeals have been resolved, *which can take many months or years*.**\n\n### Why wait when you can cash out now?",
+            "layout": "layout-2-wide",
+            "colorScheme": "light-gray"
           }
         },
         {
@@ -1432,18 +1426,53 @@
           }
         },
         {
+          "id": "sec-1784768815347-f1cd",
+          "type": "how-it-works",
+          "visible": true,
+          "colorScheme": "dark",
+          "content": {
+            "eyebrow": "How we help",
+            "title": "From Quote to close.",
+            "accent": "",
+            "kicker": "",
+            "colorScheme": "dark",
+            "steps": [
+              {
+                "id": "step-1",
+                "n": "01",
+                "title": "Step one",
+                "body": "Describe this step."
+              },
+              {
+                "id": "step-2",
+                "n": "02",
+                "title": "Step two",
+                "body": "Describe this step."
+              },
+              {
+                "id": "step-3",
+                "n": "03",
+                "title": "Step three",
+                "body": "Describe this step."
+              }
+            ],
+            "backgroundImage": "/library/data-center-2.jpg"
+          }
+        },
+        {
           "id": "sec-bartz-flow",
           "type": "registration-flow",
           "visible": true,
           "colorScheme": "light-gray",
           "content": {
             "flowId": "bartz-registration",
-            "eyebrow": "Register to sell your claim",
-            "title": "Rapid review",
-            "accent": "rapid review",
+            "eyebrow": "Ready to sell your claim?",
+            "title": "Submit your details for an",
+            "accent": "instant quote.",
             "colorScheme": "light-gray",
             "cardRadius": 5,
-            "cardStyle": "float"
+            "cardStyle": "float",
+            "align": "left"
           }
         },
         {
@@ -1471,40 +1500,6 @@
             "eyebrow": "Register",
             "title": "Start your registration",
             "accent": ""
-          }
-        },
-        {
-          "id": "sec-1784768815347-f1cd",
-          "type": "how-it-works",
-          "visible": true,
-          "colorScheme": "dark",
-          "content": {
-            "eyebrow": "How It Works",
-            "title": "Three steps to close.",
-            "accent": "",
-            "kicker": "",
-            "colorScheme": "dark",
-            "steps": [
-              {
-                "id": "step-1",
-                "n": "01",
-                "title": "Step one",
-                "body": "Describe this step."
-              },
-              {
-                "id": "step-2",
-                "n": "02",
-                "title": "Step two",
-                "body": "Describe this step."
-              },
-              {
-                "id": "step-3",
-                "n": "03",
-                "title": "Step three",
-                "body": "Describe this step."
-              }
-            ],
-            "backgroundImage": "/library/data-center-2.jpg"
           }
         },
         {
