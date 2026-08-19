@@ -375,7 +375,7 @@
             "cards": [
               {
                 "id": "sc-mt0ili75",
-                "tag": "Good News",
+                "tag": "The good news?",
                 "figure": "You don't have to wait.",
                 "title": "We help authors and publishers recover faster. See how it works below.",
                 "note": "",
@@ -387,7 +387,7 @@
             "kicker": "Scenario",
             "footnote": "",
             "cardRadius": 14,
-            "cardAlign": "left",
+            "cardAlign": "center",
             "cardMaxWidth": 900
           }
         },
