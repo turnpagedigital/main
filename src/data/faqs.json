@@ -8,15 +8,7 @@
       "pages": [
         "home"
       ],
-      "featured": true,
-      "translations": {
-        "es": { "q": "¿Qué tipos de reclamaciones cubren?", "a": "Reclamaciones de quiebra, reclamaciones de litigios, reclamaciones de demandas colectivas, cuentas por cobrar comerciales, sentencias, activos digitales bloqueados, cuentas congeladas, reembolsos gubernamentales incluyendo reembolsos arancelarios, y otros activos ilíquidos y en dificultades." },
-        "fr": { "q": "Quels types de créances couvrez-vous ?", "a": "Créances de faillite, créances de contentieux, créances d'actions collectives, créances commerciales, jugements, actifs numériques bloqués, comptes gelés, remboursements gouvernementaux y compris les remboursements tarifaires, et autres actifs illiquides et en difficulté." },
-        "de": { "q": "Welche Arten von Forderungen decken Sie ab?", "a": "Insolvenzforderungen, Prozessforderungen, Sammelklagenforderungen, Handelsforderungen, Urteile, gesperrte digitale Vermögenswerte, eingefrorene Konten, staatliche Rückerstattungen einschließlich Zollrückerstattungen und andere illiquide und notleidende Vermögenswerte." },
-        "it": { "q": "Che tipi di crediti coprite?", "a": "Crediti da fallimento, crediti da contenzioso, crediti da class action, crediti commerciali, sentenze, asset digitali bloccati, conti congelati, rimborsi governativi inclusi i rimborsi doganali e altri asset illiquidi e in difficoltà." },
-        "ko": { "q": "어떤 유형의 청구를 취급하나요?", "a": "파산 청구, 소송 청구, 집단소송 청구, 매출채권, 판결, 잠긴 디지털 자산, 동결 계좌, 관세 환급을 포함한 정부 환급금, 기타 비유동성 및 부실 자산." },
-        "zh": { "q": "你们涵盖哪些类型的索赔？", "a": "破产索赔、诉讼索赔、集体诉讼索赔、贸易应收账款、判决、锁定数字资产、冻结账户、包括关税退款在内的政府退款，以及其他非流动性和困境资产。" }
-      }
+      "featured": true
     },
     {
       "active": true,
@@ -25,15 +17,7 @@
       "pages": [
         "home"
       ],
-      "featured": true,
-      "translations": {
-        "es": { "q": "¿Qué servicios ofrecen?", "a": "Soluciones de capital (cesiones, participaciones, financiación de litigios, adelantos, acuerdos contingentes), estrategias de negociación (corretaje OTC, subastas, grupos privados, carteras estructuradas) y asesoría (análisis de reclamaciones, descubrimiento de precios, estrategias complejas de recuperación, testimonio pericial)." },
-        "fr": { "q": "Quels services proposez-vous ?", "a": "Solutions en capital (cessions, participations, financement de contentieux, avances, arrangements conditionnels), stratégies de trading (courtage OTC, enchères, pools privés, portefeuilles structurés) et conseil (analyse de créances, découverte de prix, stratégies de recouvrement complexes, témoignage d'expert)." },
-        "de": { "q": "Welche Dienstleistungen bieten Sie an?", "a": "Kapitallösungen (Abtretungen, Beteiligungen, Prozessfinanzierung, Vorschüsse, Eventualvereinbarungen), Handelsstrategien (OTC-Maklergeschäfte, Auktionen, private Pools, strukturierte Portfolios) und Beratung (Forderungsanalyse, Preisfindung, komplexe Einziehungsstrategien, Sachverständigenaussagen)." },
-        "it": { "q": "Quali servizi offrite?", "a": "Soluzioni di capitale (cessioni, partecipazioni, finanziamento del contenzioso, anticipi, accordi contingenti), strategie di trading (brokeraggio OTC, aste, pool privati, portafogli strutturati) e consulenza (analisi dei crediti, price discovery, strategie di recupero complesse, testimonianza peritale)." },
-        "ko": { "q": "어떤 서비스를 제공하나요?", "a": "자본 솔루션(양도, 참여, 소송 금융, 선급금, 성공 보수 약정), 거래 전략(OTC 중개, 경매, 비공개 풀, 구조화 포트폴리오), 자문(청구 분석, 가격 발견, 복잡한 회수 전략, 전문가 증언)." },
-        "zh": { "q": "你们提供哪些服务？", "a": "资本解决方案（转让、参与、诉讼融资、预付款、或有安排）、交易策略（OTC经纪、拍卖、私人池、结构化投资组合）和咨询（索赔分析、价格发现、复杂回收策略、专家证词）。" }
-      }
+      "featured": true
     },
     {
       "active": false,
@@ -307,6 +291,96 @@
         "briefings"
       ],
       "featured": false
+    },
+    {
+      "active": true,
+      "q": "How does pricing work?",
+      "a": "We set pricing based on the expected recovery and time to payment, as well as other factors unique to each claim. For a specific quote, register your claim or contact our team.",
+      "pages": [
+        "ai-copyright",
+        "bartz-registration"
+      ]
+    },
+    {
+      "active": true,
+      "q": "Who is eligible to sell?",
+      "a": "Any holder of a valid claim in Bartz, et al. v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal.) who timely submitted a Claim Form by the March 30, 2026 deadline and has not already sold or assigned that claim. Both authors and publishers are eligible. Because a single book often has more than one rightsholder, you may hold a partial interest in a work alongside a co-author, an estate, or your publisher, and you can sell your share of that work. If you excluded yourself from the class, you are not a class member and have nothing to sell in this settlement. If you never filed a Claim Form, the claim window has closed and cannot be reopened.",
+      "pages": [
+        "ai-copyright",
+        "bartz-registration"
+      ]
+    },
+    {
+      "active": true,
+      "q": "What am I actually selling? Do I lose my copyright?",
+      "a": "No. You keep your copyright. You are selling one thing only: the right to receive the money the Settlement Administrator will distribute on your allowed claim. You are also not selling any claim the settlement did not release. The Bartz release covers Anthropic's past acquisition and copying of your works, the input side, through August 25, 2025. Claims based on AI outputs were not released, and neither were your claims against any other AI developer. If you are watching the cases against OpenAI, Meta, Microsoft, or Google, selling your Anthropic distribution does not touch those.",
+      "pages": [
+        "bartz-registration",
+        "ai-copyright"
+      ]
+    },
+    {
+      "active": true,
+      "q": "Why would I sell now instead of waiting for the check?",
+      "a": "The court granted final approval and entered judgment on July 20, 2026. Under the Settlement Agreement, distributions begin one business day after the Effective Date, which is keyed to the expiration of the time to appeal the final judgment. On August 18, 2026, a notice of appeal to the Ninth Circuit was filed. Class counsel had already told class members that payments would not begin before the end of 2026 even in a no-appeal scenario, and that a notice of appeal would pause the distribution process. A federal appeal typically runs 12 to 24 months. Even once payment starts, class counsel has described distribution in two tranches, roughly 70 percent first and 30 percent later, with Anthropic funding the settlement in installments running into September 2027. Selling converts an uncertain multi-year wait into cash now.",
+      "pages": [
+        "ai-copyright",
+        "bartz-registration"
+      ]
+    },
+    {
+      "active": true,
+      "q": "What is my claim worth, and how do buyers price it?",
+      "a": "Class counsel has estimated a gross allocation of roughly $3,100 per eligible claimed work, before attorneys' fees (the court awarded approximately $101.6 million), expenses, service awards, and administration costs are deducted, and before any split with a co-rightsholder. Under the settlement's default allocation for trade and university press books, an author and publisher each take half of the per-work award, so a single-title author's realistic gross is often closer to half the headline number (~$1,500). We price against that figure and then discount for time value, appeal risk, whether your claimed percentage is agreed or contested, documentation quality, the size of your portfolio, and your jurisdiction. One factor cuts against a large surprise upside on recoveries: about 92.77 percent of the 482,460 works on the Works List were claimed, against a typical class action claim rate near 10 percent, so there is very little unclaimed money left to redistribute.",
+      "pages": [
+        "ai-copyright",
+        "bartz-registration"
+      ]
+    },
+    {
+      "active": true,
+      "q": "Who bears the risk if the appeal drags on, or results in a reduced per-work settlement?",
+      "a": "In an outright sale, the buyer bears the risk. Once the purchase price is paid and the assignment is complete, the buyer owns the payment stream and absorbs the delay, the discount, and the outcome.",
+      "pages": [
+        "ai-copyright",
+        "bartz-registration"
+      ]
+    },
+    {
+      "active": true,
+      "q": "I share a work with my publisher or a co-author. Can I still sell?",
+      "a": "Yes, but you can only sell your own share. Class counsel has said it will launch  a claimant portal that will show, for each work, the title, its copyright registration number, the names of the other claimants, and the percentage each has claimed. Where every claimant's percentage lines up, the administrator can pay out. Where the percentages conflict, the dispute goes to the Special Master appointed by the court; those submissions are confidential and under seal, and the Special Master's decisions are final. An unresolved split will either reduce your price or delay the trade. For this reason we are only purchasing self-published works, works for hire and single author/single publisher works.",
+      "pages": [
+        "ai-copyright",
+        "bartz-registration"
+      ]
+    },
+    {
+      "active": true,
+      "q": "Is selling my claim legal?",
+      "a": "In nearly all states, yes. Selling a claim or an interest in a judgment or settlement is a well-established transaction, and institutional buyers have purchased billions of dollars of bankruptcy, class action, and litigation claims for decades. A few caveats are worth naming plainly. A small number of states have champerty, maintenance, or assignment doctrines that could be read to restrict or invalidate a sale. We are not active in those states.",
+      "pages": [
+        "bartz-registration",
+        "ai-copyright"
+      ]
+    },
+    {
+      "active": true,
+      "q": "What are the tax consequences?",
+      "a": "We do not provide tax guidance. For tax questions, you should speak with a competent advisor of your choosing. THE TAX CONSEQUENCES OF ANY AGREEMENT YOU SIGN REGARDING YOUR CLAIM MAY VARY DEPENDING ON THE SPECIFIC TERMS OF THAT AGREEMENT. UNDER CERTAIN TRANSACTION STRUCTURES, YOU MAY BE REQUIRED TO PAY INCOME TAX ON THE FULL AMOUNT OF THE PAYMENTS YOU WOULD HAVE BEEN ENTITLED TO RECEIVE UNDER THE SETTLEMENT, EVEN IF THE RESULTING TAX LIABILITY EXCEEDS WHAT YOU ACTUALLY RECEIVED. A TRANSACTION STRUCTURED AS AN OUTRIGHT OR TRUE SALE MAY INSTEAD REMOVE THE FUTURE SETTLEMENT PAYMENTS FROM YOUR GROSS INCOME, IN WHICH CASE YOU WOULD LIKELY BE TAXED ON THE PURCHASE PRICE YOU RECEIVE. AS A RESULT OF A SALE, YOU WOULD ALSO FORFEIT ANY AND ALL RIGHT TO ADDITIONAL OR FUTURE PAYMENTS UNDER THE SETTLEMENT. Also worth raising with your advisor: whether the proceeds are ordinary income or capital gain in your circumstances, how the payment is reported to you and to the IRS, and, if you are a non-U.S. author or publisher, withholding and treaty questions.",
+      "pages": [
+        "ai-copyright",
+        "bartz-registration"
+      ]
+    },
+    {
+      "active": true,
+      "q": "What do I need, and how does the process work?",
+      "a": "Have ready your claim confirmation or claimant ID from JND Legal Administration; the titles at issue and, where available, copyright registration numbers; government-issued photo ID (two forms preferred) and two recent proofs of address; a completed W-9, or W-8BEN or W-8BEN-E if you are outside the United States; formation documents and evidence of signing authority if you are a publisher or other entity; and documentation of your authority over the work if you are an estate, trust, or agent. The process runs in five steps: we verify your claim and your claimed percentage; you receive an offer with no obligation to accept; you review the purchase agreement and assignment; the assignment and payment direction are executed and recorded with the Settlement Administrator; and the purchase price is wired to you.",
+      "pages": [
+        "ai-copyright",
+        "bartz-registration"
+      ]
     }
   ]
 }
