@@ -31,8 +31,7 @@
       "date": "2026-08-10",
       "first_seen": "2026-08-17",
       "status": "new",
-      "vote": 1,
-      "snooze_until": "2026-08-20T13:00:00.000Z"
+      "vote": 1
     },
     {
       "id": "206c1cca21",
@@ -48,7 +47,8 @@
       "date": "2026-08-07",
       "first_seen": "2026-08-17",
       "status": "new",
-      "vote": 1
+      "vote": 1,
+      "snooze_until": "2026-08-20T13:00:00.000Z"
     },
     {
       "id": "4b21ad7cbb",
@@ -97,7 +97,8 @@
       "date": "2026-08-05",
       "first_seen": "2026-08-17",
       "status": "new",
-      "vote": 1
+      "vote": 1,
+      "snooze_until": "2026-08-20T13:00:00.000Z"
     },
     {
       "id": "b520713baa",
@@ -128,8 +129,7 @@
       "source_name": "Law360 Bankruptcy Authority",
       "date": "2026-08-04",
       "first_seen": "2026-08-17",
-      "status": "new",
-      "snooze_until": "2026-08-20T13:00:00.000Z"
+      "status": "new"
     },
     {
       "id": "18f4672eec",
@@ -190,8 +190,7 @@
       "source_name": "Bird & Bird",
       "date": "2026-07-31",
       "first_seen": "2026-08-17",
-      "status": "new",
-      "snooze_until": "2026-08-20T13:00:00.000Z"
+      "status": "new"
     },
     {
       "id": "9bc5ac3d53",
@@ -236,7 +235,8 @@
       "source_name": "CoinDesk",
       "date": "2026-07-27",
       "first_seen": "2026-08-17",
-      "status": "new"
+      "status": "new",
+      "snooze_until": "2026-08-20T13:00:00.000Z"
     },
     {
       "id": "0745daa7a6",
