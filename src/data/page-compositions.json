@@ -271,7 +271,7 @@
           "type": "stats-band",
           "visible": true,
           "layout": "minimal",
-          "colorScheme": "dark",
+          "colorScheme": "neon",
           "content": {
             "stats": [
               {
@@ -292,7 +292,7 @@
             ],
             "footnoteKey": "stats.footnote",
             "footnote": " ",
-            "colorScheme": "dark",
+            "colorScheme": "neon",
             "layout": "minimal",
             "align": "center",
             "valueColor": "auto"
@@ -376,7 +376,7 @@
               {
                 "id": "sc-mt0ili75",
                 "tag": "NOW TRADING",
-                "figure": "You don't have to wait",
+                "figure": "You don't have to wait.",
                 "title": "We help authors and publishers recover faster. See how it works below.",
                 "note": "",
                 "highlight": false,
@@ -566,18 +566,19 @@
           "id": "sec-1787168611604-swsc",
           "type": "registration-flow",
           "visible": true,
-          "colorScheme": "neon",
+          "colorScheme": "light-gray",
           "content": {
             "flowId": "bartz-registration",
-            "eyebrow": "Ready to sell your claim?",
-            "title": "Submit your claim details",
-            "accent": "",
-            "colorScheme": "neon",
+            "eyebrow": "Ready to sell?",
+            "title": "Submit your",
+            "accent": "claim details",
+            "colorScheme": "light-gray",
             "cardRadius": 5,
             "cardStyle": "float",
-            "align": "left",
+            "align": "center",
             "_bookmark": "sell",
-            "cardColor": "light-gray"
+            "cardColor": "light-gray",
+            "formScale": 110
           }
         },
         {
