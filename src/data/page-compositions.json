@@ -1450,14 +1450,14 @@
                 "body": "We'll confirm everything you need to close over zoom and issue payment within 48 hours after signing"
               }
             ],
-            "cardStyle": "black",
-            "cardRadius": "square",
+            "cardStyle": "light-glass",
+            "cardRadius": "rounded",
             "_bookmark": "how-it-works",
             "backgroundImage": "/pawel-czerwinski-T5VUBvCYqKk-unsplash.jpg",
             "imageFilterStrength": 50,
-            "imageFilter": "light",
-            "cardBrightness": 100,
-            "cardBlur": 19,
+            "imageFilter": "none",
+            "cardBrightness": 120,
+            "cardBlur": 12,
             "stepsLayout": "5"
           }
         },
@@ -1562,12 +1562,12 @@
             "layout": "layout-3-bottomcta",
             "colorScheme": "dark",
             "eyebrow": "WHY WAIT TO GET PAID?",
-            "title": "Ready to learn more?",
-            "accent": "Talk to us.",
-            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "title": "Get started",
+            "accent": "today.",
+            "kicker": "",
             "primary": {
-              "label": "Get in Touch",
-              "href": "/contact"
+              "label": "Sell my claim",
+              "href": "#sell"
             },
             "secondary": null,
             "titleAccent": "Talk to us.",
