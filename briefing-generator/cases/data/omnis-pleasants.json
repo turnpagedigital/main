@@ -15,12 +15,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-19",
-    "meta_fetched_at": "2026-08-19T14:00:46.481197+00:00",
-    "fetched_at": "2026-08-19T15:49:31.264419+00:00",
+    "meta_fetched_at": "2026-08-19T17:44:14.142536+00:00",
+    "fetched_at": "2026-08-19T17:44:14.142536+00:00",
     "as_of": "Aug 19, 2026",
     "backfilled": true,
-    "new_in_72h": 7,
+    "new_in_72h": 8,
     "recent": [
+      {
+        "entry_number": 101,
+        "date_filed": "2026-08-19",
+        "time_filed": "",
+        "date_display": "Aug 19, 2026",
+        "description": "Receipt of filing fee for Motion to Sale of Property Free and Clear of Liens( 26-11169-KBO) [motion,msell] ( 199.00). Receipt Number A12787407, amount $ 199.00. (U.S. Treasury) (Entered: 08/19/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": null,
         "date_filed": "2026-08-19",
@@ -36,17 +46,7 @@
         "date_filed": "2026-08-18",
         "time_filed": "11:23:26",
         "date_display": "Aug 18, 2026",
-        "description": "Exhibit",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 99,
-        "date_filed": "2026-08-17",
-        "time_filed": "16:36:34",
-        "date_display": "Aug 17, 2026",
-        "description": "Notice of Service of First Set of Requests for Production to Debtor Omnis Pleasants, LLC Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 08/17/2026)",
+        "description": "Exhibit(s) // Notice of Extension of Objection Deadline for Debtor's Motion for Entry of Interim and Final Orders (I) Authorizing Postpetition Use of Prepetition Collateral, Including Cash Collateral, (II) Granting Adequate Protection to the Prepetition Secured Parties, (III) Modifying the Automatic Stay, (IV) Scheduling a Final Hearing, and (V) Granting Related Relief (related document(s)17, 50) Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 08/18/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -54,6 +54,16 @@
     ],
     "entries": [
       {
+        "entry_number": 101,
+        "date_filed": "2026-08-19",
+        "time_filed": "",
+        "date_display": "Aug 19, 2026",
+        "description": "Receipt of filing fee for Motion to Sale of Property Free and Clear of Liens( 26-11169-KBO) [motion,msell] ( 199.00). Receipt Number A12787407, amount $ 199.00. (U.S. Treasury) (Entered: 08/19/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": null,
         "date_filed": "2026-08-19",
         "time_filed": "09:08:26",
@@ -68,7 +78,7 @@
         "date_filed": "2026-08-18",
         "time_filed": "11:23:26",
         "date_display": "Aug 18, 2026",
-        "description": "Exhibit",
+        "description": "Exhibit(s) // Notice of Extension of Objection Deadline for Debtor's Motion for Entry of Interim and Final Orders (I) Authorizing Postpetition Use of Prepetition Collateral, Including Cash Collateral, (II) Granting Adequate Protection to the Prepetition Secured Parties, (III) Modifying the Automatic Stay, (IV) Scheduling a Final Hearing, and (V) Granting Related Relief (related document(s)17, 50) Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 08/18/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
