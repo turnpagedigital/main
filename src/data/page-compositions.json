@@ -619,7 +619,7 @@
             "eyebrow": "",
             "title": "Anthropic trained its models",
             "accentTitle": "on your work.",
-            "subtitle": "We help authors and publishers of works in the Bartz v. Anthropic settlement and other AI copyright cases get compensated faster — convert your claim to cash today.",
+            "subtitle": "Authors and publishers are getting paid faster with Turnpage. Ready to convert your claim to cash today?",
             "size": "medium",
             "mediaType": "image",
             "video": "/robottypes1.mp4",
@@ -629,8 +629,8 @@
               "href": "#sell"
             },
             "ctaSecondary": {
-              "label": "How it works",
-              "href": "#how-it-works"
+              "label": "Talk to our team",
+              "href": "/contact"
             },
             "titleSize": "large"
           }
@@ -638,7 +638,7 @@
         {
           "id": "sec-1787168620545-xgw7",
           "type": "cta",
-          "visible": true,
+          "visible": false,
           "layout": "layout-1-getquote",
           "colorScheme": "dark",
           "content": {
