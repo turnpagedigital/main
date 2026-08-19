@@ -407,13 +407,13 @@
                 "id": "step-1",
                 "n": "01",
                 "title": "Upload your claim form »",
-                "body": "Submit your PDF claim form and we'll automatically confirm your claim details."
+                "body": "Submit your PDF claim form and we'll automatically validate your claim."
               },
               {
                 "id": "step-2",
                 "n": "02",
                 "title": "Submit your information »",
-                "body": "Provide your basic personal information and complete KYC so we know that you're really you.\n"
+                "body": "Complete KYC so we know that you're really you.\n"
               },
               {
                 "id": "step-3",
@@ -431,7 +431,7 @@
                 "id": "step-1784772930126",
                 "n": "05",
                 "title": "Book closing call »",
-                "body": "We'll confirm everything you need to close over zoom and issue payment within 48 hours of signing. "
+                "body": "Join a 15 minute video closing call; you get paid within 48 hours after signing. "
               }
             ],
             "cardStyle": "standard",
@@ -454,115 +454,11 @@
           }
         },
         {
-          "id": "sec-aic-damages",
-          "type": "damages",
-          "visible": false,
-          "content": {
-            "_spacingTop": "small"
-          }
-        },
-        {
           "id": "sec-aic-testimonials",
           "type": "testimonials",
           "visible": true,
           "layout": "layout-1-grid3col",
           "colorScheme": "light"
-        },
-        {
-          "id": "sec-1780973311793-kxeo",
-          "type": "cta",
-          "visible": false,
-          "layout": "layout-2-banner",
-          "colorScheme": "photo",
-          "content": {
-            "layout": "layout-2-banner",
-            "colorScheme": "photo",
-            "eyebrow": "Get in Touch",
-            "title": "Follow along as we track the latest developments.",
-            "accent": "Talk to us.",
-            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
-            "primary": {
-              "label": "Get in Touch",
-              "href": "/contact"
-            },
-            "secondary": null,
-            "cta": "Read our briefings",
-            "href": "/press?topic=copyright&type=briefings",
-            "image": "/pawel-czerwinski-T5VUBvCYqKk-unsplash.jpg",
-            "_bookmark": "briefings"
-          }
-        },
-        {
-          "id": "sec-aic-audience",
-          "type": "audience-cards",
-          "visible": false,
-          "layout": "grid-2col",
-          "colorScheme": "light-gray",
-          "content": {
-            "eyebrow": "Who We Help",
-            "title": "Writers. Publishers.",
-            "accent": "Artists.",
-            "colorScheme": "light-gray",
-            "layout": "grid-2col",
-            "cards": [
-              {
-                "id": "authors-writers",
-                "title": "Authors & Publishers",
-                "body": "With claims in cases including: Bartz v. Anthropic | OpenAI MDL | Kadrey v. Meta",
-                "priority": false
-              },
-              {
-                "id": "music-publishers",
-                "title": "Musicians, Labels & Catalogues",
-                "body": "With claims in cases including: Concord v. Anthropic | RIAA-coordinated claimants | UMG v. Suno/Udio",
-                "priority": false
-              },
-              {
-                "id": "visual-artists",
-                "title": "Visual Artists & Image Libraries",
-                "body": "With claims in cases including: Andersen v. Stability | Getty v. Stability (US and UK).",
-                "priority": false
-              },
-              {
-                "id": "news-organizations",
-                "title": "News Media Organizations",
-                "body": "With claims in cases including: NYT v. OpenAI | Advance Local v. Cohere",
-                "priority": false
-              }
-            ],
-            "_bookmark": "who-we-help",
-            "backgroundImage": "/pawel-czerwinski-T5VUBvCYqKk-unsplash.jpg",
-            "cardStyle": "standard",
-            "imageFilter": "light",
-            "imageFilterStrength": 50
-          }
-        },
-        {
-          "id": "sec-1780972607455-de6l",
-          "type": "cta",
-          "visible": false,
-          "layout": "layout-1-getquote",
-          "colorScheme": "dark",
-          "content": {
-            "layout": "layout-1-getquote",
-            "colorScheme": "dark",
-            "eyebrow": "Questions",
-            "title": "Ask our team",
-            "accent": "Talk to us.",
-            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
-            "primary": {
-              "label": "Get in Touch",
-              "href": "/contact"
-            },
-            "secondary": null,
-            "titleAccent": "for help.",
-            "body": "Contact us to discuss your rights. Private, fast and secure.",
-            "cta": {
-              "label": "Get in Touch",
-              "href": "/contact"
-            },
-            "_bookmark": "cta"
-          }
         },
         {
           "id": "sec-1787168611604-swsc",
@@ -641,33 +537,6 @@
           }
         },
         {
-          "id": "sec-1787168620545-xgw7",
-          "type": "cta",
-          "visible": false,
-          "layout": "layout-1-getquote",
-          "colorScheme": "dark",
-          "content": {
-            "layout": "layout-1-getquote",
-            "colorScheme": "dark",
-            "eyebrow": "WHY WAIT TO GET PAID?",
-            "title": "Get started",
-            "accent": "today.",
-            "kicker": "",
-            "primary": {
-              "label": "Sell my claim",
-              "href": "#sell"
-            },
-            "secondary": null,
-            "titleAccent": "Talk to us.",
-            "body": "Contact us for a quote today. Private, fast and secure.",
-            "cta": {
-              "label": "Get a Quote",
-              "href": "/contact?source=locked-crypto"
-            },
-            "_bookmark": "CTA"
-          }
-        },
-        {
           "id": "sec-aic-faq",
           "type": "faq",
           "visible": true,
@@ -701,6 +570,137 @@
             "markdown": "Turnpage Digital Markets LLC is not affiliated with the court, the claims administrator, class counsel or any other party in the Bartz v. Anthropic litigation. We do not offer legal or financial advice and submitting your claim information or an inquiry through this site does not give rise to any client or other relationship. All materials submitted will be kept confidential pursuant to our policies. ",
             "layout": "layout-1-narrow",
             "colorScheme": "light-gray"
+          }
+        },
+        {
+          "id": "sec-1787168620545-xgw7",
+          "type": "cta",
+          "visible": false,
+          "layout": "layout-1-getquote",
+          "colorScheme": "dark",
+          "content": {
+            "layout": "layout-1-getquote",
+            "colorScheme": "dark",
+            "eyebrow": "WHY WAIT TO GET PAID?",
+            "title": "Get started",
+            "accent": "today.",
+            "kicker": "",
+            "primary": {
+              "label": "Sell my claim",
+              "href": "#sell"
+            },
+            "secondary": null,
+            "titleAccent": "Talk to us.",
+            "body": "Contact us for a quote today. Private, fast and secure.",
+            "cta": {
+              "label": "Get a Quote",
+              "href": "/contact?source=locked-crypto"
+            },
+            "_bookmark": "CTA"
+          }
+        },
+        {
+          "id": "sec-1780972607455-de6l",
+          "type": "cta",
+          "visible": false,
+          "layout": "layout-1-getquote",
+          "colorScheme": "dark",
+          "content": {
+            "layout": "layout-1-getquote",
+            "colorScheme": "dark",
+            "eyebrow": "Questions",
+            "title": "Ask our team",
+            "accent": "Talk to us.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null,
+            "titleAccent": "for help.",
+            "body": "Contact us to discuss your rights. Private, fast and secure.",
+            "cta": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "_bookmark": "cta"
+          }
+        },
+        {
+          "id": "sec-1780973311793-kxeo",
+          "type": "cta",
+          "visible": false,
+          "layout": "layout-2-banner",
+          "colorScheme": "photo",
+          "content": {
+            "layout": "layout-2-banner",
+            "colorScheme": "photo",
+            "eyebrow": "Get in Touch",
+            "title": "Follow along as we track the latest developments.",
+            "accent": "Talk to us.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null,
+            "cta": "Read our briefings",
+            "href": "/press?topic=copyright&type=briefings",
+            "image": "/pawel-czerwinski-T5VUBvCYqKk-unsplash.jpg",
+            "_bookmark": "briefings"
+          }
+        },
+        {
+          "id": "sec-aic-audience",
+          "type": "audience-cards",
+          "visible": false,
+          "layout": "grid-2col",
+          "colorScheme": "light-gray",
+          "content": {
+            "eyebrow": "Who We Help",
+            "title": "Writers. Publishers.",
+            "accent": "Artists.",
+            "colorScheme": "light-gray",
+            "layout": "grid-2col",
+            "cards": [
+              {
+                "id": "authors-writers",
+                "title": "Authors & Publishers",
+                "body": "With claims in cases including: Bartz v. Anthropic | OpenAI MDL | Kadrey v. Meta",
+                "priority": false
+              },
+              {
+                "id": "music-publishers",
+                "title": "Musicians, Labels & Catalogues",
+                "body": "With claims in cases including: Concord v. Anthropic | RIAA-coordinated claimants | UMG v. Suno/Udio",
+                "priority": false
+              },
+              {
+                "id": "visual-artists",
+                "title": "Visual Artists & Image Libraries",
+                "body": "With claims in cases including: Andersen v. Stability | Getty v. Stability (US and UK).",
+                "priority": false
+              },
+              {
+                "id": "news-organizations",
+                "title": "News Media Organizations",
+                "body": "With claims in cases including: NYT v. OpenAI | Advance Local v. Cohere",
+                "priority": false
+              }
+            ],
+            "_bookmark": "who-we-help",
+            "backgroundImage": "/pawel-czerwinski-T5VUBvCYqKk-unsplash.jpg",
+            "cardStyle": "standard",
+            "imageFilter": "light",
+            "imageFilterStrength": 50
+          }
+        },
+        {
+          "id": "sec-aic-damages",
+          "type": "damages",
+          "visible": false,
+          "content": {
+            "_spacingTop": "small"
           }
         }
       ],
