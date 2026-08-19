@@ -95,8 +95,24 @@ function IntroText({ text, dark = false, style = {} }) {
   );
 }
 
+// A required "choice" (button-group) field with no answer yet defaults to its
+// first option, so a branch driver like Authored/Published starts pre-picked
+// and its branch-specific fields (see field-level showIf) are visible on load
+// instead of the page opening on an empty, undecided question.
+function defaultAnswers(flow) {
+  const defaults = {};
+  for (const s of flow.steps || []) {
+    for (const f of s.fields || []) {
+      if (f.type === "choice" && f.required && Array.isArray(f.options) && f.options.length) {
+        defaults[f.id] = f.options[0];
+      }
+    }
+  }
+  return defaults;
+}
+
 function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle, cardColor, formScale, disclosure, align }) {
-  const [answers, setAnswers] = useState({});
+  const [answers, setAnswers] = useState(() => defaultAnswers(flow));
   const [files, setFiles] = useState({});
   const [stepIndex, setStepIndex] = useState(0);
   const [stepError, setStepError] = useState("");
@@ -216,6 +232,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
 
   function validateStep() {
     for (const f of step.fields || []) {
+      if (!fieldVisible(f, answers)) continue;
       if (f.type === "computed") continue; // display-only, never blocks
       const v = answers[f.id];
       const empty = v === undefined || v === null || String(v).trim() === "";
@@ -253,7 +270,9 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
   async function submit() {
     setFormState("submitting");
     setErrorMsg("");
-    const visibleFieldIds = new Set(visibleSteps.flatMap(s => (s.fields || []).map(f => f.id)));
+    const visibleFieldIds = new Set(
+      visibleSteps.flatMap(s => (s.fields || []).filter(f => fieldVisible(f, answers)).map(f => f.id)),
+    );
     const cleanAnswers = Object.fromEntries(
       Object.entries(answers).filter(([k]) => visibleFieldIds.has(k)),
     );
@@ -343,7 +362,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
         {step.title}
       </h3>
       <div className="field-light">
-        {(step.fields || []).map(f => (
+        {(step.fields || []).filter(f => fieldVisible(f, answers)).map(f => (
           <FieldControl key={f.id} field={f} value={answers[f.id]} file={files[f.id]}
             answers={answers} quote={quotes[f.id]}
             extraction={extraction} extracting={extracting} extractError={extractError}
@@ -363,7 +382,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
         )}
         {/* On steps driven by a required choice (e.g. Author/Publisher), the
             Continue bar stays hidden until an option is picked. */}
-        {!(step.fields || []).some(f => (f.type === "choice" || f.type === "yesno") && f.required && !answers[f.id]) && (
+        {!(step.fields || []).some(f => fieldVisible(f, answers) && (f.type === "choice" || f.type === "yesno") && f.required && !answers[f.id]) && (
         <button
           type="button"
           onClick={next}
@@ -410,6 +429,14 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
 function stepVisible(step, answers) {
   if (!step.showIf || !step.showIf.fieldId) return true;
   return answers[step.showIf.fieldId] === step.showIf.equals;
+}
+
+// Same {fieldId, equals} shape as stepVisible, but scoped to one field inside
+// a step — lets a branch driver (e.g. role) and its branch-specific fields
+// share a single step/page instead of each branch needing its own step.
+function fieldVisible(field, answers) {
+  if (!field.showIf || !field.showIf.fieldId) return true;
+  return answers[field.showIf.fieldId] === field.showIf.equals;
 }
 
 /* Read "counts.self" style dot-paths out of an extraction result. */

@@ -1,5 +1,5 @@
 {
-  "_comment": "Multi-step registration flows. Edited via /admin/registration/flows; rendered on landing pages by the 'registration-flow' section (pick a flow in the Page Builder). Field types: text, email, phone, number, textarea, select, choice (button group), yesno, file, computed (a live display-only price. When 'priced': true it is calculated SERVER-SIDE from the private pricing config (functions/api/_pricing-config.json, edited in the admin Pricing tab): names a 'selfField' and 'publisherField' number field, and offer = (payoutRatePct/100) × (selfRecovery × self + publisherRecovery × publisher). Supports prefix/suffix and gateOn to hide until a field is filled), works-summary (display-only list of works read from an uploaded claim form). A file field may carry 'extract' (a server extractor name, e.g. 'bartz-claim') plus 'extractMap' ({ flowFieldId: 'path.into.result' }) — on upload the file is POSTed to /api/extract-claim and the named fields auto-fill. A step with showIf only appears when the named earlier field equals the given value. Submissions POST to /api/register → notification email (+ Google Sheet, + Attio when ATTIO_API_KEY is configured, labeled with attioLabel).",
+  "_comment": "Multi-step registration flows. Edited via /admin/registration/flows; rendered on landing pages by the 'registration-flow' section (pick a flow in the Page Builder). Field types: text, email, phone, number, textarea, select, choice (button group), yesno, file, computed (a live display-only price. When 'priced': true it is calculated SERVER-SIDE from the private pricing config (functions/api/_pricing-config.json, edited in the admin Pricing tab): names a 'selfField' and 'publisherField' number field, and offer = (payoutRatePct/100) × (selfRecovery × self + publisherRecovery × publisher). Supports prefix/suffix and gateOn to hide until a field is filled), works-summary (display-only list of works read from an uploaded claim form). A file field may carry 'extract' (a server extractor name, e.g. 'bartz-claim') plus 'extractMap' ({ flowFieldId: 'path.into.result' }) — on upload the file is POSTed to /api/extract-claim and the named fields auto-fill. A step with showIf only appears when the named earlier field equals the given value; a FIELD may also carry showIf (same {fieldId, equals} shape) to conditionally show/hide within the same step — used to keep a branch driver (like Authored/Published) and its branch-specific fields together on one page. A required 'choice' field with no answer yet auto-defaults to its first option. Submissions POST to /api/register → notification email (+ Google Sheet, + Attio when ATTIO_API_KEY is configured, labeled with attioLabel).",
   "flows": [
     {
       "id": "bartz-registration",
@@ -25,22 +25,16 @@
                 "Authored",
                 "Published"
               ]
-            }
-          ]
-        },
-        {
-          "id": "author-upload",
-          "title": "Claim Form",
-          "showIf": {
-            "fieldId": "role",
-            "equals": "Author"
-          },
-          "fields": [
+            },
             {
               "id": "claim_form",
               "type": "file",
               "label": "Upload your claim form",
               "required": false,
+              "showIf": {
+                "fieldId": "role",
+                "equals": "Authored"
+              },
               "accept": [
                 "pdf",
                 "png",
@@ -58,6 +52,28 @@
               "moreInfo": {
                 "label": "Where do I find my claim form?",
                 "body": "The plan administrator will have emailed this to you. If you don't have it handy, you may request it by emailing info@AnthropicCopyrightSettlement.com or calling 1 877-206-2314. Click \"Continue\" to enter your details manually."
+              }
+            },
+            {
+              "id": "p",
+              "type": "text",
+              "label": "Publisher name",
+              "required": true,
+              "showIf": {
+                "fieldId": "role",
+                "equals": "Published"
+              }
+            },
+            {
+              "id": "e",
+              "type": "number",
+              "label": "Covered works",
+              "required": false,
+              "placeholder": "Enter number of works",
+              "help": "Provide an estimate if unknown",
+              "showIf": {
+                "fieldId": "role",
+                "equals": "Published"
               }
             }
           ]
@@ -87,35 +103,11 @@
           ]
         },
         {
-          "id": "step-5",
-          "title": "Your Details",
-          "showIf": {
-            "fieldId": "role",
-            "equals": "Published"
-          },
-          "fields": [
-            {
-              "id": "p",
-              "type": "text",
-              "label": "Publisher name",
-              "required": true
-            },
-            {
-              "id": "e",
-              "type": "number",
-              "label": "Covered works",
-              "required": false,
-              "placeholder": "Enter number of works",
-              "help": "Provide an estimate if unknown"
-            }
-          ]
-        },
-        {
           "id": "author-confirm",
           "title": "Your Offer",
           "showIf": {
             "fieldId": "role",
-            "equals": "Author"
+            "equals": "Authored"
           },
           "fields": [
             {
@@ -160,7 +152,7 @@
           "title": "Identity Verification",
           "showIf": {
             "fieldId": "role",
-            "equals": "Author"
+            "equals": "Authored"
           },
           "fields": [
             {

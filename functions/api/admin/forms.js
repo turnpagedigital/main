@@ -132,6 +132,14 @@ function validateFlows(flows) {
         if (fieldIds.has(fld.id)) return `duplicate field id "${fld.id}" in flow "${f.id}"`;
         if (typeof fld.label !== "string" || !fld.label.trim()) return `field "${fld.id}" needs a label`;
         if (!FIELD_TYPES.has(fld.type)) return `field "${fld.id}": unknown type "${fld.type}"`;
+        if (fld.showIf !== undefined && fld.showIf !== null) {
+          if (typeof fld.showIf !== "object" || !fld.showIf.fieldId || typeof fld.showIf.equals !== "string") {
+            return `field "${fld.id}".showIf needs fieldId + equals`;
+          }
+          if (!fieldIds.has(fld.showIf.fieldId)) {
+            return `field "${fld.id}".showIf references "${fld.showIf.fieldId}" which is not an earlier field`;
+          }
+        }
         if ((fld.type === "select" || fld.type === "choice")) {
           if (!Array.isArray(fld.options) || fld.options.length < 2) return `field "${fld.id}" needs at least 2 options`;
           if (fld.options.length > MAX_OPTIONS) return `field "${fld.id}": at most ${MAX_OPTIONS} options`;
@@ -211,6 +219,9 @@ function normalizeField(fld) {
     label: String(fld.label).trim().slice(0, SHORT),
     required: Boolean(fld.required),
   };
+  if (fld.showIf && fld.showIf.fieldId) {
+    out.showIf = { fieldId: String(fld.showIf.fieldId), equals: String(fld.showIf.equals) };
+  }
   if (fld.type === "select" || fld.type === "choice") {
     out.options = fld.options.map(o => String(o).trim().slice(0, SHORT));
   }
