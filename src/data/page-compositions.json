@@ -271,7 +271,7 @@
           "type": "stats-band",
           "visible": true,
           "layout": "minimal",
-          "colorScheme": "light-gray",
+          "colorScheme": "dark",
           "content": {
             "stats": [
               {
@@ -292,7 +292,7 @@
             ],
             "footnoteKey": "stats.footnote",
             "footnote": " ",
-            "colorScheme": "light-gray",
+            "colorScheme": "dark",
             "layout": "minimal",
             "align": "center",
             "valueColor": "auto"
@@ -303,7 +303,7 @@
           "type": "image-text",
           "visible": true,
           "layout": "layout-2-image-left",
-          "colorScheme": "white",
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "",
             "title": "Anthropic trained its models on",
@@ -316,94 +316,72 @@
               "href": "#register"
             },
             "layout": "layout-2-image-left",
-            "colorScheme": "white",
+            "colorScheme": "light-gray",
             "imageTone": "none",
             "imageOverlay": "light",
             "imageOverlayStrength": 10
           }
         },
         {
-          "id": "sec-aic-payout-timeline",
+          "id": "sec-1787152455039-lmrg",
           "type": "timeline",
           "visible": true,
-          "colorScheme": "light-gray",
+          "colorScheme": "white",
           "content": {
-            "eyebrow": "HEY SHAKESPEARE—",
-            "title": "$3K sounds great, but ",
+            "eyebrow": "Hey Shakespeare",
+            "title": "$3K sounds great, but",
             "accent": "when do I get the check?",
-            "colorScheme": "light-gray",
+            "colorScheme": "white",
             "steps": [
               {
                 "id": "tl-1",
-                "when": "July 20, 2026",
+                "when": "Now · July 2026",
                 "heading": "Final approval granted",
-                "body": "Judge Martínez-Olguín approved the $1.5 billion settlement on July 20, 2026 and cut class counsel’s fees to $101.6 million from the $187.5 million sought. Payments don't start until the Effective Date.",
+                "body": "Judge Martínez-Olguín approved the $1.5 billion settlement on July 20, 2026 and cut class counsel’s fees to $101.6 million from the $187.5 million sought. No payments until the Effective Date.",
                 "state": "here",
-                "pillLabel": "Today",
+                "pillLabel": "",
                 "pillStyle": "neon"
               },
               {
                 "id": "tl-2",
-                "when": "August 19, 2026",
-                "heading": "Appeal window runs",
-                "body": "Class members that objected to the settlement have 30 days from judgment to notice an appeal to the Ninth Circuit — closing on or about August 19, 2026.",
+                "when": "August 2026",
+                "heading": "Appeal window",
+                "body": "Objectors have 30 days from judgment to notice an appeal to the Ninth Circuit — closing on or about August 19, 2026. Most fairness-hearing objections came from non-class members, who lack standing. Class-member objectors do not.",
                 "state": "",
-                "pillLabel": "",
-                "pillStyle": "neon"
-              },
-              {
-                "id": "tl-3",
-                "when": "Fall 2026",
-                "heading": "If no appeal, funds flow",
-                "body": "If no appeal is filed, the settlement becomes effective and payments start one business day later — across more than 447,000 claimed works, a 92.8% claims rate on the 482,460-title Works List.",
-                "state": "",
-                "pillLabel": "",
-                "pillStyle": "ink"
+                "pillLabel": "Appeal filed August 19",
+                "pillStyle": "light-gray"
               },
               {
                 "id": "tl-4",
-                "when": "Late 2027",
+                "when": "Late 2026 – 2027",
                 "heading": "Appeal freezes the payout",
-                "body": "Even a single notice of appeal suspends the Effective Date. Ninth Circuit briefing, argument, and decision typically run 12–18 months minimum.",
+                "body": "One notice of appeal suspends the Effective Date. Ninth Circuit briefing, argument, and decision typically run 12–18 months — while Anthropic’s installments keep filling the fund: $450 million by September 25, 2026, the final $450 million by September 25, 2027.",
                 "state": "",
-                "pillLabel": "Best case",
-                "pillStyle": "ink"
+                "pillLabel": "We are here",
+                "pillStyle": "neon"
               },
               {
                 "id": "tl-5",
-                "when": "2028+",
-                "heading": "First payment arrives",
-                "body": "After affirmance and the mandate, distribution begins: $3,000 gross per claimed work before fees and costs, split 50/50 between author and publisher on most trade titles, paid in up to three installments.",
-                "state": "done",
-                "pillLabel": "Most Realistic",
+                "when": "2027 – 2028",
+                "heading": "Distributions begin",
+                "body": "Approval order affirmed on appeal; first payments arrive: $3,000 gross per claimed work before fees and costs, split 50/50 between author and publisher on most trade titles, paid in up to three installments.",
+                "state": "",
+                "pillLabel": "Best case seneario",
                 "pillStyle": "ink"
-              }
-            ],
-            "cards": [
-              {
-                "id": "sc-2",
-                "tag": "",
-                "figure": "2027",
-                "title": "Class-member objector appeals to the Ninth Circuit, freezing the Effective Date until affirmance",
-                "note": "Fund is fully funded by September 25, 2027 — first checks follow the mandate",
-                "highlight": false,
-                "cardStyle": "white",
-                "kicker": " Best Case"
               },
               {
-                "id": "sc-3",
-                "tag": "Most Realistic",
-                "figure": "2028+",
-                "title": "Extended review: en banc rehearing or a Supreme Court cert petition after the panel rules",
-                "note": "Each layer of further review adds months to a year before distribution",
-                "highlight": true,
-                "cardStyle": "dark",
-                "kicker": ""
+                "id": "tl-mt06q3yl",
+                "when": "2028+",
+                "heading": "Distributions delayed",
+                "body": "En banc rehearing or Supreme Court cert petition extends review after the appellate panel rules. Each layer of review ads months to years before any distribution. ",
+                "state": "",
+                "pillLabel": "Worst case scenario",
+                "pillStyle": "light-gray"
               }
             ],
-            "kicker": "",
-            "cardRadius": 0,
-            "footnote": "These estimates are based on experience from other class action cases and are not intended to be relied upon exclusively by claim holders. You are encouraged to conduct your own analysis and/or discuss with competent counsel if you have questions about the timeline. "
+            "cards": [],
+            "kicker": "Scenario",
+            "footnote": "*Per-work amounts are gross figures before deduction of court-approved fees ($101.6M), costs, and administration. Default split for trade and university-press titles is 50/50 between the author side and the publisher side; self-published and rights-reverted authors who are sole copyright owners keep the full award. Sources: final approval order of July 20, 2026 (Dkt., N.D. Cal. 3:24-cv-05417); Authors Guild and Authors Alliance settlement guidance; settlement administrator claims data."
           }
         },
         {
@@ -477,11 +455,11 @@
             "backgroundImage": "",
             "_bookmark": "register",
             "formScale": 130,
-            "cardStyle": "card",
+            "cardStyle": "float",
             "_spacingTop": "large",
             "_spacingBottom": "large",
             "disclosure": "Turnpage is not affiliated with, sponsored or endorsed by or partners with Anthropic, JND (the claims administrator), class counsel or the District Court for the Northern District of California. Turnpage does not provide legal or financial advice and does not undertake to represent claimholders in any way. The information you submit will only be used to calculate your expected payout and provide a buyout offer. Currently Serving all U.S. states and territories other than Georgia, Maine, Nevada and Vermont.",
-            "align": "center",
+            "align": "left",
             "cardColor": "white"
           }
         },
@@ -685,68 +663,6 @@
             "ctaHref": "/contact?source=ai-copyright",
             "colorScheme": "light-gray",
             "_bookmark": "faq"
-          }
-        },
-        {
-          "id": "sec-1787152455039-lmrg",
-          "type": "timeline",
-          "visible": true,
-          "colorScheme": "white",
-          "content": {
-            "eyebrow": "The road to distributions.",
-            "title": "Five steps between the order",
-            "accent": "and your check.",
-            "colorScheme": "white",
-            "steps": [
-              {
-                "id": "tl-1",
-                "when": "Now · July 2026",
-                "heading": "Final approval granted",
-                "body": "Judge Martínez-Olguín approved the $1.5 billion settlement on July 20, 2026 and cut class counsel’s fees to $101.6 million from the $187.5 million sought. No payments until the Effective Date.",
-                "state": "here",
-                "pillLabel": "",
-                "pillStyle": "neon"
-              },
-              {
-                "id": "tl-2",
-                "when": "August 2026",
-                "heading": "Appeal window",
-                "body": "Objectors have 30 days from judgment to notice an appeal to the Ninth Circuit — closing on or about August 19, 2026. Most fairness-hearing objections came from non-class members, who lack standing. Class-member objectors do not.",
-                "state": "",
-                "pillLabel": "Appeal filed August 19",
-                "pillStyle": "light-gray"
-              },
-              {
-                "id": "tl-4",
-                "when": "Late 2026 – 2027",
-                "heading": "Appeal freezes the payout",
-                "body": "One notice of appeal suspends the Effective Date. Ninth Circuit briefing, argument, and decision typically run 12–18 months — while Anthropic’s installments keep filling the fund: $450 million by September 25, 2026, the final $450 million by September 25, 2027.",
-                "state": "",
-                "pillLabel": "We are here",
-                "pillStyle": "neon"
-              },
-              {
-                "id": "tl-5",
-                "when": "2027 – 2028",
-                "heading": "Distributions begin",
-                "body": "Approval order affirmed on appeal; first payments arrive: $3,000 gross per claimed work before fees and costs, split 50/50 between author and publisher on most trade titles, paid in up to three installments.",
-                "state": "",
-                "pillLabel": "Best case seneario",
-                "pillStyle": "ink"
-              },
-              {
-                "id": "tl-mt06q3yl",
-                "when": "2028+",
-                "heading": "Distributions delayed",
-                "body": "En banc rehearing or Supreme Court cert petition extends review after the appellate panel rules. Each layer of review ads months to years before any distribution. ",
-                "state": "",
-                "pillLabel": "Worst case scenario",
-                "pillStyle": "light-gray"
-              }
-            ],
-            "cards": [],
-            "kicker": "Scenario",
-            "footnote": "*Per-work amounts are gross figures before deduction of court-approved fees ($101.6M), costs, and administration. Default split for trade and university-press titles is 50/50 between the author side and the publisher side; self-published and rights-reverted authors who are sole copyright owners keep the full award. Sources: final approval order of July 20, 2026 (Dkt., N.D. Cal. 3:24-cv-05417); Authors Guild and Authors Alliance settlement guidance; settlement administrator claims data."
           }
         }
       ],
