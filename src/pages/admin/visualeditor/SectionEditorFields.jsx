@@ -799,6 +799,21 @@ export default function SectionEditorFields({ typeId, form, set }) {
               <button type="button" style={{ fontSize: "0.72rem", color: INK_60, background: "none", border: `1px solid ${INK_60}`, borderRadius: 4, padding: "0.15rem 0.5rem", cursor: "pointer", whiteSpace: "nowrap" }} onClick={() => set("cardRadius", "")}>Reset</button>
             </div>
           </div>
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Card text alignment</label>
+            <select style={selectStyle} value={form.cardAlign || "left"} onChange={e => set("cardAlign", e.target.value)}>
+              <option value="left">Left</option>
+              <option value="center">Centered — tag, figure, title, note</option>
+            </select>
+          </div>
+          <div style={{ marginBottom: "0.9rem" }}>
+            <label style={labelStyle}>Card max width — {hasValue(form.cardMaxWidth) ? `${form.cardMaxWidth}px` : "fills column"}</label>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <input type="range" min={200} max={900} step={10} value={hasValue(form.cardMaxWidth) ? form.cardMaxWidth : 900} style={{ flex: 1, accentColor: NEON }} onChange={e => set("cardMaxWidth", Number(e.target.value))} />
+              <button type="button" style={{ fontSize: "0.72rem", color: INK_60, background: "none", border: `1px solid ${INK_60}`, borderRadius: 4, padding: "0.15rem 0.5rem", cursor: "pointer", whiteSpace: "nowrap" }} onClick={() => set("cardMaxWidth", "")}>Reset</button>
+            </div>
+            <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 3 }}>Shrinks and centers each card within its column. Leave at full to fill the column width.</p>
+          </div>
           <ScenarioCardsEditor cards={form.cards || []} onChange={v => set("cards", v)} />
           <div style={fieldGroup}><label style={labelStyle}>Footnote (small print under the cards)</label><textarea style={{ ...inputStyle, minHeight: 80 }} value={form.footnote || ""} onChange={e => set("footnote", e.target.value)} /></div>
         </>
@@ -831,6 +846,21 @@ export default function SectionEditorFields({ typeId, form, set }) {
               <button type="button" style={{ fontSize: "0.72rem", color: INK_60, background: "none", border: `1px solid ${INK_60}`, borderRadius: 4, padding: "0.15rem 0.5rem", cursor: "pointer", whiteSpace: "nowrap" }} onClick={() => set("cardRadius", "")}>Reset</button>
             </div>
             <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 3 }}>0 = square corners. Default 14.</p>
+          </div>
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Card text alignment</label>
+            <select style={selectStyle} value={form.cardAlign || "left"} onChange={e => set("cardAlign", e.target.value)}>
+              <option value="left">Left</option>
+              <option value="center">Centered — tag, figure, title, note</option>
+            </select>
+          </div>
+          <div style={{ marginBottom: "0.9rem" }}>
+            <label style={labelStyle}>Card max width — {hasValue(form.cardMaxWidth) ? `${form.cardMaxWidth}px` : "fills column"}</label>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <input type="range" min={200} max={900} step={10} value={hasValue(form.cardMaxWidth) ? form.cardMaxWidth : 900} style={{ flex: 1, accentColor: NEON }} onChange={e => set("cardMaxWidth", Number(e.target.value))} />
+              <button type="button" style={{ fontSize: "0.72rem", color: INK_60, background: "none", border: `1px solid ${INK_60}`, borderRadius: 4, padding: "0.15rem 0.5rem", cursor: "pointer", whiteSpace: "nowrap" }} onClick={() => set("cardMaxWidth", "")}>Reset</button>
+            </div>
+            <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 3 }}>Shrinks and centers each card within its column. Leave at full to fill the column width.</p>
           </div>
           <ScenarioCardsEditor cards={form.cards || []} onChange={v => set("cards", v)} />
           <div style={fieldGroup}><label style={labelStyle}>Footnote (small print under the cards)</label><textarea style={{ ...inputStyle, minHeight: 80 }} value={form.footnote || ""} onChange={e => set("footnote", e.target.value)} /></div>
