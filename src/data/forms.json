@@ -18,7 +18,7 @@
           "fields": [
             {
               "id": "role",
-              "type": "choice",
+              "type": "select",
               "label": "Select one",
               "required": true,
               "hideLabel": true,
