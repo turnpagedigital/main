@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-08-19",
-    "meta_fetched_at": "2026-08-19T20:48:20.664405+00:00",
-    "fetched_at": "2026-08-19T22:44:53.955265+00:00",
+    "meta_fetched_at": "2026-08-19T23:41:00.221830+00:00",
+    "fetched_at": "2026-08-19T23:41:00.221830+00:00",
     "as_of": "Aug 19, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 4,
     "recent": [
+      {
+        "entry_number": 72,
+        "date_filed": "2026-08-19",
+        "time_filed": "18:55:25",
+        "date_display": "Aug 19, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 71,
         "date_filed": "2026-08-19",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 69,
-        "date_filed": "2026-08-17",
-        "time_filed": "21:07:34",
-        "date_display": "Aug 17, 2026",
-        "description": "Certification of Counsel(Aty)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 72,
+        "date_filed": "2026-08-19",
+        "time_filed": "18:55:25",
+        "date_display": "Aug 19, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 71,
         "date_filed": "2026-08-19",
