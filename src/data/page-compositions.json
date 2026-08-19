@@ -557,7 +557,7 @@
         {
           "id": "sec-1780973311793-kxeo",
           "type": "cta",
-          "visible": true,
+          "visible": false,
           "layout": "layout-2-banner",
           "colorScheme": "photo",
           "content": {
@@ -1527,6 +1527,21 @@
             "eyebrow": "Register",
             "title": "Start your registration",
             "accent": ""
+          }
+        },
+        {
+          "id": "sec-1787152948127-hg8j",
+          "type": "faq",
+          "visible": false,
+          "layout": "layout-2-sidebar",
+          "colorScheme": "light-gray",
+          "content": {
+            "title": "Your questions,",
+            "accent": "answered.",
+            "ctaLabel": "Ask our team",
+            "ctaHref": "/contact?source=ai-copyright",
+            "colorScheme": "light-gray",
+            "_bookmark": "faq"
           }
         }
       ]
