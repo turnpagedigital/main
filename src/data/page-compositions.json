@@ -1313,7 +1313,7 @@
             "title": "Anthropic trained its models",
             "accentTitle": "on your IP.",
             "subtitle": "We help authors and publishers with rights to payment from the Bartz v. Anthropic settlement and other AI copyright cases get compensated faster and easier — Turnpage helps you convert your claim to cash today.",
-            "size": "short",
+            "size": "tall",
             "mediaType": "image",
             "video": null,
             "image": "/library/data-center-2.jpg",
@@ -1490,13 +1490,13 @@
           "id": "sec-bartz-flow",
           "type": "registration-flow",
           "visible": true,
-          "colorScheme": "light-gray",
+          "colorScheme": "neon",
           "content": {
             "flowId": "bartz-registration",
             "eyebrow": "Ready to sell your claim?",
             "title": "Submit your details for an",
             "accent": "instant quote.",
-            "colorScheme": "light-gray",
+            "colorScheme": "neon",
             "cardRadius": 5,
             "cardStyle": "float",
             "align": "left"
@@ -1534,13 +1534,13 @@
           "type": "faq",
           "visible": true,
           "layout": "layout-2-sidebar",
-          "colorScheme": "light-gray",
+          "colorScheme": "light-card",
           "content": {
             "title": "Your questions,",
             "accent": "answered.",
             "ctaLabel": "Ask our team",
             "ctaHref": "/contact?source=ai-copyright",
-            "colorScheme": "light-gray",
+            "colorScheme": "light-card",
             "_bookmark": "faq"
           }
         }
