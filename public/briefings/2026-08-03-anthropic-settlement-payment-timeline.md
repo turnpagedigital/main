@@ -1,6 +1,6 @@
 # Anthropic Settlement Payment Timeline: When Will You Actually Get Paid?
 
-**The short answer:** the Bartz v. Anthropic settlement received final approval on July 20, 2026, and the money now moves on a fixed schedule. The next administrator milestone is **August 21, 2026**, Anthropic's first **$450 million installment is due September 25, 2026**, a second wave of checks is scheduled for **October 9, 2026**, and the final $450 million installment lands **September 25, 2027**. No first-wave distribution date has been formally announced yet — which is why this page exists; we update it as each milestone passes.
+**The short answer:** the Bartz v. Anthropic settlement received final approval on July 20, 2026, and the money was set to move on a fixed schedule — **but on August 18, 2026, a notice of appeal was filed** ([what the appeal means for your payment](/briefings/2026-08-03-anthropic-settlement-appeal-risk)), and the milestones below should be treated as **uncertain until the administrator or court says otherwise**. The schedule as written: administrator mailing August 21, 2026; Anthropic's first **$450 million installment September 25, 2026**; a second wave of checks **October 9, 2026**; final $450 million installment **September 25, 2027**. We update this page as each development lands.
 
 ## The verified schedule, in order
 
@@ -8,8 +8,8 @@
 |---|---|
 | October 2025 – July 2026 | Anthropic's first two $300 million tranches went into the fund — one last October, one due within a week of final approval (per the Authors Guild's settlement guide) |
 | July 20, 2026 | Judge Araceli Martínez-Olguín granted final approval of the $1.5 billion settlement and entered judgment |
-| ~August 19, 2026 | The window to appeal the judgment (30 days) closes — [what an appeal would mean for your payment](/briefings/2026-08-03-anthropic-settlement-appeal-risk) |
-| August 21, 2026 | The Settlement Administrator sends additional checks to non-filing claimants under the Plan of Allocation |
+| **August 18, 2026** | **A notice of appeal to the Ninth Circuit was filed (Dkt. 682)** — [what the appeal means for your payment](/briefings/2026-08-03-anthropic-settlement-appeal-risk). Milestones below are now subject to the appeal |
+| August 21, 2026 | The Settlement Administrator sends additional checks to non-filing claimants under the Plan of Allocation *(status uncertain pending the appeal — watch the administrator's site)* |
 | September 25, 2026 | Anthropic pays the first scheduled $450 million installment into the fund (12 months after preliminary approval) |
 | October 9, 2026 | Second wave of claimant checks scheduled |
 | September 25, 2027 | Anthropic's second $450 million installment — the final scheduled payment into the fund |
