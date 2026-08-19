@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-16 01:55 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-19 01:22 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -175,6 +175,10 @@ hi
 > Thomson Reuters Lifts Revenue Guidance After Growth — Thomson Reuters bumped up its revenue targets for the year after logging double-digit growth across its three big business segments in the latest 
 
 ## Uncategorized
+
+### (no docket number) — 2026-08-17
+
+> PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Healthcare data analytics & integration business — Rock Creek Advisors announces a UCC Article 9 sale of substantially all assets of Debtor, a healthcare data anal
 
 ### (no docket number) — 2026-08-15
 
