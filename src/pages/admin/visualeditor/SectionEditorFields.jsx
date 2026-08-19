@@ -137,11 +137,21 @@ export default function SectionEditorFields({ typeId, form, set }) {
             </div>
           )}
           <div style={fieldGroup}>
-            <label style={labelStyle}>Text alignment</label>
+            <label style={labelStyle}>Heading text alignment</label>
             <select style={selectStyle} value={form.align || "left"} onChange={e => set("align", e.target.value)}>
               <option value="left">Left</option>
-              <option value="center">Centered — heading, intro, step titles, choices, disclosure</option>
+              <option value="center">Centered — the eyebrow, title, and disclosure below the form</option>
             </select>
+          </div>
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Card text alignment</label>
+            <select style={selectStyle} value={form.cardAlign || "left"} onChange={e => set("cardAlign", e.target.value)}>
+              <option value="left">Left</option>
+              <option value="center">Centered — the step title and step counter inside the card</option>
+            </select>
+            <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 3 }}>
+              Set independently from heading alignment above — e.g. a centered title can sit over a left-aligned, easy-to-scan form. The fields themselves (labels, inputs, choice buttons) always stay left either way.
+            </p>
           </div>
           <div style={fieldGroup}>
             <label style={labelStyle}>Disclosure (small print below the form)</label>
