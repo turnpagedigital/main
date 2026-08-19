@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-19 01:22 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-19 01:23 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -191,6 +191,10 @@ hi
 ### (no docket number) — 2026-08-15
 
 > Filing Alert: Rebel Creamery Chapter 11 — Rebel Creamery Files Chapter 11 in District of Utah
+
+### (no docket number) — 2026-08-15
+
+> PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Art Finance Funding (IX), LLC — NOTICE OF PUBLIC SALE OF COLLATERAL UNDER DELAWARE UNIFORM COMMERCIAL CODE PLEASE TAKE NOTICE that, in accordance with applicable p
 
 ### (no docket number) — 2026-08-14
 
