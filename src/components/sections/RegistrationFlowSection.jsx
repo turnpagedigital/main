@@ -107,9 +107,14 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
   const [extractError, setExtractError] = useState("");
   const [quotes, setQuotes] = useState({});             // fieldId -> /api/quote payload { display, recoveryDisplay, pct }
 
-  // On a neon card, neon-on-neon elements (progress bar, Continue button,
-  // success check) flip to ink so everything stays visible.
-  const onNeonCard = (cardStyle || "card") === "card" && cardColor === "neon";
+  // Neon-on-neon elements (progress bar, Continue button, success check,
+  // disclosure text) flip to ink so everything stays visible — whether the
+  // neon comes from the card itself, or (for a floating card with no card
+  // surface underneath) from the section background directly.
+  const floatsOnSection = (cardStyle || "card") === "float";
+  const onNeonCard = floatsOnSection
+    ? !backgroundImage && colorScheme === "neon"
+    : cardColor === "neon";
 
   const visibleSteps = useMemo(
     () => (flow.steps || []).filter(s => stepVisible(s, answers)),
@@ -323,7 +328,9 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
             {visibleSteps.map((s, i) => (
               <div key={s.id} style={{
                 flex: 1, height: 4,
-                background: i <= stepIndex ? NEON : LINE,
+                background: i <= stepIndex
+                  ? (onNeonCard ? INK : NEON)
+                  : (onNeonCard ? "rgba(10,10,10,0.2)" : LINE),
               }} />
             ))}
           </div>
@@ -519,10 +526,15 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
       .regflow-centered .regflow-disclosure { margin-left: auto; margin-right: auto; }
     `}</style>
   ) : null;
+  // The disclosure sits directly on the section background (outside the
+  // card), so on neon it needs much darker text than 45% ink gives — that
+  // opacity was tuned for white/paper/light-gray, where it still clears
+  // AA; on neon's high luminance it doesn't.
+  const onNeonSection = !backgroundImage && colorScheme === "neon";
   const disclosureNode = disclosure ? (
     <p className="regflow-disclosure" style={{
       fontFamily: FONT, fontSize: "0.74rem", lineHeight: 1.6,
-      color: isDark ? "rgba(255,255,255,0.45)" : "rgba(10,10,10,0.45)",
+      color: isDark ? "rgba(255,255,255,0.45)" : onNeonSection ? "rgba(10,10,10,0.65)" : "rgba(10,10,10,0.45)",
       marginTop: "1.4rem", maxWidth: 860,
     }}>
       {disclosure}

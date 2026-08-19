@@ -82,6 +82,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
               <label style={labelStyle}>Height</label>
               <select style={{ ...selectStyle, marginTop: 4 }} value={form.size || "tall"} onChange={e => set("size", e.target.value)}>
                 <option value="short">Short (half-height)</option>
+                <option value="medium">Medium</option>
                 <option value="tall">Tall (default)</option>
                 <option value="full">Full viewport</option>
               </select>
@@ -110,7 +111,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
           <div style={fieldGroup}>
             <label style={labelStyle}>Form card</label>
             <select style={selectStyle} value={form.cardStyle || "card"} onChange={e => set("cardStyle", e.target.value)}>
-              <option value="card">White card</option>
+              <option value="card">Boxed card — pick its color below</option>
               <option value="float">No card — form floats on the section background</option>
             </select>
           </div>

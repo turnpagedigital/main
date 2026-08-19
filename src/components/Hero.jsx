@@ -9,20 +9,21 @@ export default function Hero({
   subtitle,
   accentTitle,
   children,
-  size = "default", // "default" | "short" | "tall" | "full"
+  size = "default", // "default" | "short" | "medium" | "tall" | "full"
   titleSize = "xl", // "xl" (home-scale) | "large" | "standard"
   video = null,
   image = null, // custom photo background — gets the video layer's treatment, not the crushed paper-base filter
 }) {
   const isShort = size === "short";
+  const isMedium = size === "medium";
   const isTall = size === "tall";
   const isFull = size === "full";
   return (
     <section style={{
       position: "relative", overflow: "hidden",
-      minHeight: isFull ? "calc(100vh - 88px)" : isTall ? "clamp(520px, 70vh, 900px)" : isShort ? "clamp(260px, 35vh, 450px)" : undefined,
+      minHeight: isFull ? "calc(100vh - 88px)" : isTall ? "clamp(520px, 70vh, 900px)" : isMedium ? "clamp(400px, 52vh, 650px)" : isShort ? "clamp(260px, 35vh, 450px)" : undefined,
       display: "flex", flexDirection: "column", justifyContent: "flex-end",
-      padding: isTall || isFull
+      padding: isTall || isFull || isMedium
         ? "clamp(3rem,7.5vw,6.5rem) clamp(1.5rem,5vw,4rem) clamp(3.5rem,7vw,6.5rem)"
         : isShort
         ? "clamp(1.5rem,3.5vw,3rem) clamp(1.5rem,5vw,4rem) clamp(1.75rem,3.5vw,3rem)"
