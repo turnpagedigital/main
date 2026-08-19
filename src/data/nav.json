@@ -1,6 +1,35 @@
 {
   "items": [
     {
+      "id": "item-1787163340637",
+      "label": "Actively Funding",
+      "href": "/",
+      "active": true,
+      "dropdown": {
+        "title": "Actively Funding",
+        "body": "",
+        "links": [
+          {
+            "label": "Bartz v. Anthropic",
+            "href": "/bartz-v-anthropic"
+          },
+          {
+            "label": "Tariff Refunds",
+            "href": "https://rewindtariffs.com",
+            "external": true
+          },
+          {
+            "label": "Locked Crypto",
+            "href": "/crypto"
+          }
+        ],
+        "cta": {
+          "label": "",
+          "href": "/"
+        }
+      }
+    },
+    {
       "id": "item-1780886683141",
       "label": "Bankruptcy Claims",
       "href": "/bankruptcy-claims",
@@ -19,7 +48,7 @@
       "id": "ai-copyright",
       "label": "Copyright Claims",
       "href": "/bartz-v-anthropic",
-      "active": true,
+      "active": false,
       "labelKey": "nav.copyright",
       "dropdown": {
         "title": "Copyright Claims",
@@ -156,7 +185,16 @@
       "id": "item-1781198075347",
       "label": "Capabilities",
       "href": "/#what-we-cover",
-      "active": true
+      "active": true,
+      "dropdown": {
+        "title": "",
+        "body": "",
+        "links": [],
+        "cta": {
+          "label": "",
+          "href": "/"
+        }
+      }
     },
     {
       "id": "item-1781198101329",
