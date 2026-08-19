@@ -54,6 +54,7 @@
     {
       "slug": "2026-08-03-anthropic-settlement-author-guide",
       "date": "2026-08-03",
+      "type": "article",
       "title": "The Anthropic Settlement: A Plain-English Guide for Authors",
       "summary": "Who's in the class, how much each book pays and how it's split, when checks arrive, what an appeal would change, and what rights authors kept — in plain language, updated as the settlement moves.",
       "tags": [
@@ -62,9 +63,7 @@
         "Settlement",
         "Guide"
       ],
-      "author": "Turnpage Intelligence",
-      "active": false,
-      "type": "article"
+      "active": false
     },
     {
       "slug": "2026-08-03-ai-copyright-lawsuit-tracker",
