@@ -63,6 +63,7 @@ function sanitizeFlow(f) {
       fields: Array.isArray(s.fields) ? s.fields.map(fl => ({
         id: fl.id || "", type: fl.type || "text", label: fl.label || "",
         required: Boolean(fl.required),
+        ...(fl.showIf && fl.showIf.fieldId ? { showIf: { fieldId: fl.showIf.fieldId, equals: fl.showIf.equals ?? "" } } : {}),
         ...(fl.options ? { options: fl.options } : {}),
         ...(fl.accept ? { accept: fl.accept } : {}),
         ...(fl.help ? { help: fl.help } : {}),

@@ -71,6 +71,13 @@ function visibleSteps(flow, answers) {
   );
 }
 
+/* Same shape, but for a field-level showIf — lets a branch driver (e.g. role)
+   and its branch-specific fields share one step, so a field can be hidden
+   even on a step that's otherwise visible. */
+function isFieldVisible(field, answers) {
+  return !field.showIf || !field.showIf.fieldId || answers[field.showIf.fieldId] === field.showIf.equals;
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
   const corsHeaders = corsHeadersFor(request);
@@ -111,12 +118,16 @@ export async function onRequestPost(context) {
       answers[k] = v.trim();
     }
 
-    // Enforce required fields on the steps actually visible for these answers
+    // Enforce required fields on the steps (and, within a step, the fields)
+    // actually visible for these answers
     const steps = visibleSteps(flow, answers);
-    const visibleFieldIds = new Set(steps.flatMap((s) => (s.fields || []).map((f) => f.id)));
+    const visibleFieldIds = new Set(
+      steps.flatMap((s) => (s.fields || []).filter((f) => isFieldVisible(f, answers)).map((f) => f.id)),
+    );
     const files = Array.isArray(body.files) ? body.files.slice(0, MAX_FILES) : [];
     for (const step of steps) {
       for (const f of step.fields || []) {
+        if (!isFieldVisible(f, answers)) continue;
         if (!f.required) continue;
         if (f.type === "file") {
           if (!files.some((x) => x && x.fieldId === f.id)) return fail(`Missing required file: ${f.label}`);
