@@ -566,6 +566,7 @@
           "id": "sec-1787168611604-swsc",
           "type": "registration-flow",
           "visible": true,
+          "layout": "wide",
           "colorScheme": "light-gray",
           "content": {
             "flowId": "bartz-registration",
@@ -575,10 +576,11 @@
             "colorScheme": "light-gray",
             "cardRadius": 5,
             "cardStyle": "float",
-            "align": "center",
+            "align": "left",
             "_bookmark": "sell",
             "cardColor": "light-gray",
-            "formScale": 110
+            "formScale": 100,
+            "layout": "wide"
           }
         },
         {
