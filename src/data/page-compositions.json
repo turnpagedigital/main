@@ -839,6 +839,37 @@
             "_bookmark": "sell",
             "cardColor": "light-gray"
           }
+        },
+        {
+          "id": "sec-1787168615766-a0me",
+          "type": "our-edge",
+          "visible": true,
+          "colorScheme": "white",
+          "content": {
+            "eyebrow": "Our Edge",
+            "title": "Built to move fast",
+            "titleAccent": "when it counts.",
+            "intro": "Automated diligence and deep integration with our capital sources means rapid onboarding, highly competitive pricing and a streamlined and efficient closing process.  ",
+            "points": [
+              {
+                "id": "edge-1",
+                "h": "Lightning Fast",
+                "b": "If our dedicated capital partners can't fund it, we'll quickly pair you with the right counterparty that can. With 500+ institutions on speed dial, our capital partner network ensures broad coverage across claim sizes, geographies and asset types. "
+              },
+              {
+                "id": "edge-2",
+                "h": "Always Confidential",
+                "b": "We take your privacy seriously and protect your data as if it were our own. We only ask for the information we absolutely need to provide an accurate assessment of your rights and their fair market value. "
+              },
+              {
+                "id": "edge-3",
+                "h": "Relationships First",
+                "b": "Our collaborative, relationship-focused approach delivers superior outcomes. We structure transactions to not only meet your needs now, but to properly align party incentives for the long haul.  "
+              }
+            ],
+            "_bookmark": "Our-edge",
+            "colorScheme": "white"
+          }
         }
       ],
       "status": "active"
