@@ -12,7 +12,8 @@
         "Ninth Circuit"
       ],
       "author": "Turnpage Intelligence",
-      "type": "briefing"
+      "type": "briefing",
+      "active": false
     },
     {
       "slug": "2026-08-19-bartz-v-anthropic-the-interloper-lawyers-appealed",
