@@ -8,9 +8,17 @@ import { sectionsFingerprint } from "../../lib/section-fingerprint.js";
  *
  * A flow = ordered steps, each step = fields. Steps may carry a showIf
  * condition on a choice/select/yesno field from an EARLIER step, which makes
- * the public wizard branch. Drop the "Registration Flow" section onto any
- * Page Builder page and pick a flow to put it live. Submissions land in the
- * notification inbox (and Attio once ATTIO_API_KEY is configured).
+ * the public wizard branch. A FIELD may also carry its own showIf, targeting
+ * an earlier choice/select/yesno field on the same step (or an earlier step)
+ * — this is what lets a branch driver (e.g. Author/Publisher) and its
+ * branch-specific fields render together on one page instead of each branch
+ * needing its own step. Renaming a choice/select field's options does NOT
+ * update any showIf that pointed at the old option text — the server
+ * rejects a save that would leave a condition stale (see forms.js), and the
+ * "Only show this X when…" controls flag it inline so it's fixable in place.
+ * Drop the "Registration Flow" section onto any Page Builder page and pick a
+ * flow to put it live. Submissions land in the notification inbox (and
+ * Attio once ATTIO_API_KEY is configured).
  *
  * Includes an AI flow generator (POST /api/admin/flow-generator) that
  * creates a complete flow from a plain-English description. Requires
@@ -390,6 +398,7 @@ function StepCard({ step, index, total, conditionTargets, priorStepFields = [], 
   const targetOptions = target
     ? (target.type === "yesno" ? ["Yes", "No"] : target.options || [])
     : [];
+  const staleCondition = conditioned && target && !targetOptions.includes(step.showIf.equals);
 
   const setField = (k, patch) =>
     onChange({ fields: step.fields.map((f, idx) => idx === k ? { ...f, ...patch } : f) });
@@ -427,7 +436,7 @@ function StepCard({ step, index, total, conditionTargets, priorStepFields = [], 
           {!conditionTargets.length && <em style={{ color: INK_60 }}>(needs a choice/dropdown/yes-no field on an earlier step)</em>}
         </label>
         {conditioned && (
-          <div style={{ display: "flex", gap: 8, marginTop: 6 }}>
+          <div style={{ display: "flex", gap: 8, marginTop: 6, alignItems: "center", flexWrap: "wrap" }}>
             <select style={selectStyle} value={step.showIf.fieldId}
               onChange={e => {
                 const t = conditionTargets.find(f => f.id === e.target.value);
@@ -435,11 +444,17 @@ function StepCard({ step, index, total, conditionTargets, priorStepFields = [], 
               }}>
               {conditionTargets.map(f => <option key={f.id} value={f.id}>{f.label || f.id}</option>)}
             </select>
-            <span style={{ alignSelf: "center", fontSize: "0.82rem", color: INK_60 }}>equals</span>
-            <select style={selectStyle} value={step.showIf.equals}
+            <span style={{ fontSize: "0.82rem", color: INK_60 }}>equals</span>
+            <select style={selectStyle} value={staleCondition ? "" : step.showIf.equals}
               onChange={e => onChange({ showIf: { ...step.showIf, equals: e.target.value } })}>
+              {staleCondition && <option value="" disabled>{step.showIf.equals} (no longer an option)</option>}
               {targetOptions.map(o => <option key={o} value={o}>{o}</option>)}
             </select>
+            {staleCondition && (
+              <span style={{ fontSize: "0.72rem", color: "#C03030" }}>
+                ⚠ Points at an option that was renamed or removed — pick the current one.
+              </span>
+            )}
           </div>
         )}
       </div>
@@ -470,6 +485,19 @@ function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, o
   // Number fields the server-priced offer can use as its work counts.
   const numberFields = priorFields.filter(f => f.type === "number" && f.id);
 
+  // Fields this field can branch on — any earlier choice/select/yes-no field,
+  // whether on a prior step or earlier in this same step (the latter is what
+  // lets a branch driver like Author/Publisher and its branch-specific fields
+  // share one step/page instead of each needing its own step).
+  const conditionTargets = priorFields.filter(f => f.type === "choice" || f.type === "select" || f.type === "yesno");
+  const conditioned = Boolean(field.showIf && field.showIf.fieldId);
+  const target = conditioned ? conditionTargets.find(f => f.id === field.showIf.fieldId) : null;
+  const targetOptions = target ? (target.type === "yesno" ? ["Yes", "No"] : target.options || []) : [];
+  // A showIf left pointing at an option that no longer exists (e.g. someone
+  // renamed "Authored" to "Author" without updating this) — the server
+  // rejects saves like that, but flag it inline too so it's obvious why.
+  const staleCondition = conditioned && target && !targetOptions.includes(field.showIf.equals);
+
   return (
     <div style={{ border: `1px solid ${LINE}`, borderRadius: 5, padding: "0.6rem", marginBottom: "0.55rem", background: "#fff" }}>
       <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr auto auto auto auto", gap: 8, alignItems: "center" }}>
@@ -487,6 +515,38 @@ function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, o
         <button style={iconBtnStyle(index === total - 1)} title="Move down" disabled={index === total - 1} onClick={() => onMove(1)}>↓</button>
         <button style={{ ...iconBtnStyle(false), color: "#C03030", visibility: removable ? "visible" : "hidden" }} title="Delete field" onClick={onRemove}>✕</button>
       </div>
+
+      {conditionTargets.length > 0 && (
+        <div style={{ marginTop: 6 }}>
+          <label style={{ display: "flex", alignItems: "center", gap: 7, fontSize: "0.78rem", color: INK, cursor: "pointer" }}>
+            <input type="checkbox" checked={conditioned}
+              onChange={e => onChange({ showIf: e.target.checked ? { fieldId: conditionTargets[0].id, equals: (conditionTargets[0].type === "yesno" ? "Yes" : (conditionTargets[0].options || [""])[0]) } : undefined })} />
+            Only show this field when…
+          </label>
+          {conditioned && (
+            <div style={{ display: "flex", gap: 8, marginTop: 6, alignItems: "center", flexWrap: "wrap" }}>
+              <select style={selectStyle} value={field.showIf.fieldId}
+                onChange={e => {
+                  const t = conditionTargets.find(f => f.id === e.target.value);
+                  onChange({ showIf: { fieldId: e.target.value, equals: t ? (t.type === "yesno" ? "Yes" : (t.options || [""])[0]) : "" } });
+                }}>
+                {conditionTargets.map(f => <option key={f.id} value={f.id}>{f.label || f.id}</option>)}
+              </select>
+              <span style={{ fontSize: "0.78rem", color: INK_60 }}>equals</span>
+              <select style={selectStyle} value={staleCondition ? "" : field.showIf.equals}
+                onChange={e => onChange({ showIf: { ...field.showIf, equals: e.target.value } })}>
+                {staleCondition && <option value="" disabled>{field.showIf.equals} (no longer an option)</option>}
+                {targetOptions.map(o => <option key={o} value={o}>{o}</option>)}
+              </select>
+              {staleCondition && (
+                <span style={{ fontSize: "0.72rem", color: "#C03030" }}>
+                  ⚠ Points at an option that was renamed or removed — pick the current one.
+                </span>
+              )}
+            </div>
+          )}
+        </div>
+      )}
 
       {hasOptions && (
         <textarea style={{ ...inputStyle, minHeight: 56, marginTop: 6, fontSize: "0.82rem" }}
