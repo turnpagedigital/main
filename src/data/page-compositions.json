@@ -821,6 +821,24 @@
             "cardBlur": 12,
             "stepsLayout": "5"
           }
+        },
+        {
+          "id": "sec-1787168611604-swsc",
+          "type": "registration-flow",
+          "visible": true,
+          "colorScheme": "neon",
+          "content": {
+            "flowId": "bartz-registration",
+            "eyebrow": "Ready to sell your claim?",
+            "title": "Submit your claim details",
+            "accent": "",
+            "colorScheme": "neon",
+            "cardRadius": 5,
+            "cardStyle": "card",
+            "align": "left",
+            "_bookmark": "sell",
+            "cardColor": "light-gray"
+          }
         }
       ],
       "status": "active"
