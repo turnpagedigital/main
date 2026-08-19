@@ -5,6 +5,43 @@ import Card from "../Card.jsx";
 import { sectionBackground } from "../../lib/section-background.js";
 import LiquidGlassCard from "../LiquidGlassCard.jsx";
 
+// Card styles whose surface reads as light — neon-on-neon (the "neon"/
+// "neon-glass" styles) or neon-on-white/gray/glass are both too low-contrast
+// to read as a number, so these flip the numeral to ink. Mirrors Card.jsx's
+// own light/dark split (its inverse of needsLightText).
+const LIGHT_CARD_STYLES = ["white", "light-gray", "light-glass", "clear-glass", "neon", "neon-glass"];
+
+// Step numeral — neon on a dark surface (unchanged), ink with a bold neon
+// chevron accent on a light surface, so the brand color stays present even
+// though the number itself needs to flip for contrast. The chevron sits
+// behind the number (number wins the overlap) but straddles its right edge —
+// half tucked behind the second digit, half poking out to the right.
+function StepNumber({ n, light, fontSize }) {
+  // fontSize lives on the wrapper (not just the number span) so the
+  // chevron's em-based size/position resolve against the same font-size —
+  // otherwise the svg inherits whatever ambient size sits above this
+  // component instead of the number's actual rendered size.
+  return (
+    <span style={{ position: "relative", display: "inline-block", fontSize, lineHeight: 1 }}>
+      <span style={{
+        position: "relative", zIndex: 1,
+        fontFamily: FONT, fontWeight: 800, letterSpacing: "-0.04em",
+        color: light ? INK : NEON,
+      }}>
+        {n}
+      </span>
+      {light && (
+        <svg viewBox="0 0 46 46" aria-hidden="true" focusable="false" style={{
+          position: "absolute", right: "-0.5em", top: 0,
+          width: "1em", height: "1em", zIndex: 0, pointerEvents: "none",
+        }}>
+          <path d="M8 4 L36 23 L8 42" stroke={NEON} strokeWidth="14" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        </svg>
+      )}
+    </span>
+  );
+}
+
 /* HowItWorksSection — numbered step sequence.
    Inline section: content lives in page-compositions.json sectionConfig.content.
    Schema:
@@ -111,14 +148,7 @@ export default function HowItWorksSection({ sectionConfig }) {
                 description={step.body}
                 blurAmount={cardBlur}
                 brightness={cardBrightness}
-                icon={(
-                  <span style={{
-                    fontFamily: FONT, fontWeight: 800, letterSpacing: "-0.04em",
-                    color: NEON, fontSize: "clamp(2rem, 3.5vw, 3rem)", lineHeight: 1,
-                  }}>
-                    {step.n}
-                  </span>
-                )}
+                icon={<StepNumber n={step.n} light={!isDark} fontSize="clamp(2rem, 3.5vw, 3rem)" />}
                 radius={step.cardRadius || cardRadius}
                 variant={isDark ? "dark" : "light"}
               />
@@ -133,16 +163,12 @@ export default function HowItWorksSection({ sectionConfig }) {
             {steps.map(step => (
               <Card key={step.n || step.id} style={step.cardStyle || cardStyle} radius={step.cardRadius || cardRadius} blurAmount={cardBlur} brightness={cardBrightness}>
                 <div style={isVertical ? { display: "flex", gap: "clamp(1.2rem,2.5vw,2rem)", alignItems: "flex-start" } : undefined}>
-                  <p style={{
-                    fontFamily: FONT,
-                    fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
-                    fontWeight: 800, letterSpacing: "-0.04em",
-                    color: NEON, lineHeight: 1,
+                  <div style={{
                     margin: isVertical ? 0 : "0 0 1.2rem",
                     ...(isVertical ? { minWidth: "4.5rem" } : {}),
                   }}>
-                    {step.n}
-                  </p>
+                    <StepNumber n={step.n} light={LIGHT_CARD_STYLES.includes(step.cardStyle || cardStyle)} fontSize="clamp(2rem, 3.5vw, 3.5rem)" />
+                  </div>
                   <div>
                     <h3 style={{
                       fontFamily: FONT, fontWeight: 800,
@@ -178,16 +204,12 @@ export default function HowItWorksSection({ sectionConfig }) {
                 background: isDark ? "rgba(255,255,255,0.02)" : "#fff",
                 ...(isVertical ? { display: "flex", gap: "clamp(1.2rem,2.5vw,2rem)", alignItems: "flex-start" } : {}),
               }}>
-                <p style={{
-                  fontFamily: FONT,
-                  fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
-                  fontWeight: 800, letterSpacing: "-0.04em",
-                  color: NEON, lineHeight: 1,
+                <div style={{
                   marginBottom: isVertical ? 0 : "1.2rem",
                   ...(isVertical ? { minWidth: "4.5rem" } : {}),
                 }}>
-                  {step.n}
-                </p>
+                  <StepNumber n={step.n} light={!isDark} fontSize="clamp(2rem, 3.5vw, 3.5rem)" />
+                </div>
                 <div>
                   <h3 style={{
                     fontFamily: FONT, fontWeight: 800,
