@@ -1539,6 +1539,21 @@
             "layout": "layout-2-sidebar",
             "colorScheme": "light-gray"
           }
+        },
+        {
+          "id": "sec-1787152948127-hg8j",
+          "type": "faq",
+          "visible": false,
+          "layout": "layout-2-sidebar",
+          "colorScheme": "light-gray",
+          "content": {
+            "title": "Copyright claims,",
+            "accent": "answered.",
+            "ctaLabel": "Ask our team",
+            "ctaHref": "/contact?source=ai-copyright",
+            "colorScheme": "light-gray",
+            "_bookmark": "faq"
+          }
         }
       ]
     },
