@@ -7,7 +7,7 @@
       "active": true,
       "attioLabel": "bartz-landing",
       "attioProject": "Bartz",
-      "intro": "Submit your claim details to see what your claim is worth.\n\nNo obligation and 100% confidential.\n\nTo sell, you will need a valid form of ID (driver's license, passport or permanent residency card), proof of address and the unique identification number assigned to you by the Settlement Administrator (JND). Have your claim form ready to speed up your offer and payment.",
+      "intro": "Submit your claim details to see what your claim is worth.\n\nNo obligation to sell. 100% confidential.\n\nHave your claim form ready to speed up your offer and payment. To transact, you will need (i) your claim form, (ii) a valid form of ID (driver's license, passport or permanent residency card) and (iii) proof of address.",
       "submitLabel": "Submit",
       "successTitle": "Got it!",
       "successBody": "We've received your details and will be in touch within 48 hours with your offer and next steps.",
@@ -32,7 +32,6 @@
               "type": "file",
               "label": "Upload your claim form",
               "required": true,
-              "skipLabel": "I don't have my claim form",
               "showIf": {
                 "fieldId": "role",
                 "equals": "Author"
@@ -43,6 +42,7 @@
                 "jpg"
               ],
               "help": "Upload your Bartz settlement claim form and we'll auto-calculate your estimated allocation.",
+              "skipLabel": "I don't have my claim form",
               "extract": "bartz-claim",
               "extractMap": {
                 "firstName": "contact.firstName",
