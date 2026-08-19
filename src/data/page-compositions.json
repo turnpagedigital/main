@@ -819,7 +819,7 @@
             "accent": "",
             "colorScheme": "neon",
             "cardRadius": 5,
-            "cardStyle": "card",
+            "cardStyle": "float",
             "align": "left",
             "_bookmark": "sell",
             "cardColor": "light-gray"
