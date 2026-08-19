@@ -252,7 +252,7 @@
             "title": "Turn your Anthropic settlement claim into",
             "accentTitle": "instant cash.",
             "subtitle": "                                                                                                                     \n                                                                                                                     \n\n                                                                                                                     \n",
-            "size": "tall",
+            "size": "medium",
             "video": "/robottypes1.mp4",
             "ctaPrimary": {
               "label": "Sell My Claim",
@@ -299,64 +299,57 @@
           }
         },
         {
-          "id": "sec-1784774482623-y9al",
-          "type": "image-text",
+          "id": "sec-1787168600136-5286",
+          "type": "rich-text",
           "visible": true,
-          "layout": "layout-2-image-left",
-          "colorScheme": "light-gray",
+          "layout": "layout-2-wide",
+          "colorScheme": "white",
           "content": {
             "eyebrow": "",
-            "title": "Anthropic trained its models on",
-            "accent": "your IP.",
-            "body": "We help authors and publishers with rights to payment from the Bartz v. Anthropic class action settlement get compensated faster and easier.",
-            "image": "/library/scanning-books.jpg",
-            "imageAlt": "",
-            "cta": {
-              "label": "Get an Instant Quote",
-              "href": "#register"
-            },
-            "layout": "layout-2-image-left",
-            "colorScheme": "light-gray",
-            "imageTone": "none",
-            "imageOverlay": "light",
-            "imageOverlayStrength": 10
+            "markdown": "Approximately **500,000** covered works are entitled to **$3,000** in settlement proceeds with a default 50/50 split for a single author, single publisher work. Rights holders with works on the covered works list and that timely filed a claim form are entitled to payouts from the settlement, but **funds won't start flowing until all appeals have been resolved, *which can take many months or years*.**",
+            "layout": "layout-2-wide",
+            "colorScheme": "white",
+            "align": "left",
+            "heading1": "A",
+            "heading1Accent": "$1.5 billion win",
+            "heading1After": "for authors and publishers"
           }
         },
         {
-          "id": "sec-1787152455039-lmrg",
+          "id": "sec-1787168603480-ayrw",
           "type": "timeline",
           "visible": true,
-          "colorScheme": "white",
+          "colorScheme": "light-gray",
           "content": {
-            "eyebrow": "Hey Shakespeare",
-            "title": "$3K sounds great, but",
-            "accent": "when do I get the check?",
-            "colorScheme": "white",
+            "eyebrow": "The road to distributions.",
+            "title": "So when do I ",
+            "accent": "get my check?",
+            "colorScheme": "light-gray",
             "steps": [
               {
                 "id": "tl-1",
-                "when": "Now · July 2026",
+                "when": "July 2026",
                 "heading": "Final approval granted",
                 "body": "Judge Martínez-Olguín approved the $1.5 billion settlement on July 20, 2026 and cut class counsel’s fees to $101.6 million from the $187.5 million sought. No payments until the Effective Date.",
-                "state": "here",
-                "pillLabel": "",
-                "pillStyle": "neon"
+                "state": "done",
+                "pillLabel": "APPEAL CLOCK STARTS",
+                "pillStyle": "light-gray"
               },
               {
                 "id": "tl-2",
                 "when": "August 2026",
                 "heading": "Appeal window",
                 "body": "Objectors have 30 days from judgment to notice an appeal to the Ninth Circuit — closing on or about August 19, 2026. Most fairness-hearing objections came from non-class members, who lack standing. Class-member objectors do not.",
-                "state": "",
+                "state": "done",
                 "pillLabel": "Appeal filed August 19",
                 "pillStyle": "light-gray"
               },
               {
                 "id": "tl-4",
-                "when": "Late 2026 – 2027",
+                "when": "August 2026 – 2027",
                 "heading": "Appeal freezes the payout",
                 "body": "One notice of appeal suspends the Effective Date. Ninth Circuit briefing, argument, and decision typically run 12–18 months — while Anthropic’s installments keep filling the fund: $450 million by September 25, 2026, the final $450 million by September 25, 2027.",
-                "state": "",
+                "state": "here",
                 "pillLabel": "We are here",
                 "pillStyle": "neon"
               },
@@ -379,9 +372,21 @@
                 "pillStyle": "light-gray"
               }
             ],
-            "cards": [],
+            "cards": [
+              {
+                "id": "sc-mt0ili75",
+                "tag": "NOW TRADING",
+                "figure": "You don't have to wait",
+                "title": "We help authors and publishers recover faster. See how it works below.",
+                "note": "",
+                "highlight": false,
+                "kicker": " ",
+                "cardStyle": "light-gray"
+              }
+            ],
             "kicker": "Scenario",
-            "footnote": "*Per-work amounts are gross figures before deduction of court-approved fees ($101.6M), costs, and administration. Default split for trade and university-press titles is 50/50 between the author side and the publisher side; self-published and rights-reverted authors who are sole copyright owners keep the full award. Sources: final approval order of July 20, 2026 (Dkt., N.D. Cal. 3:24-cv-05417); Authors Guild and Authors Alliance settlement guidance; settlement administrator claims data."
+            "footnote": "",
+            "cardRadius": 14
           }
         },
         {
@@ -400,7 +405,7 @@
                 "id": "step-1",
                 "n": "01",
                 "title": "Upload your claim form »",
-                "body": "Submit your PDF claim form and we'll automatically confirm your claim details and expected recovery. "
+                "body": "Submit your PDF claim form and we'll automatically confirm your claim details."
               },
               {
                 "id": "step-2",
@@ -412,7 +417,7 @@
                 "id": "step-3",
                 "n": "03",
                 "title": "Confirm payment details »",
-                "body": "Provide your bank account details for ACH payment, or select USDC."
+                "body": "Provide your bank account details for ACH payment."
               },
               {
                 "id": "step-1784772902396",
@@ -424,81 +429,18 @@
                 "id": "step-1784772930126",
                 "n": "05",
                 "title": "Book closing call »",
-                "body": "We'll confirm everything you need to close over zoom and issue payment within 48 hours. "
+                "body": "We'll confirm everything you need to close over zoom and issue payment within 48 hours of signing. "
               }
             ],
             "cardStyle": "standard",
             "cardRadius": "square",
             "_bookmark": "how-it-works",
-            "backgroundImage": "/bg-paper.jpg",
-            "imageFilterStrength": 50,
+            "backgroundImage": "/library/scanning-books.jpg",
+            "imageFilterStrength": 80,
             "imageFilter": "dark",
             "cardBrightness": 100,
             "cardBlur": 43,
             "stepsLayout": "5"
-          }
-        },
-        {
-          "id": "sec-1781587444053-lcuz",
-          "type": "registration-flow",
-          "visible": true,
-          "layout": "wide",
-          "colorScheme": "white",
-          "content": {
-            "flowId": "bartz-registration",
-            "eyebrow": "GET A QUOTE",
-            "title": "Register ",
-            "accent": "your claim.",
-            "layout": "wide",
-            "cardRadius": 0,
-            "colorScheme": "white",
-            "backgroundImage": "",
-            "_bookmark": "register",
-            "formScale": 130,
-            "cardStyle": "float",
-            "_spacingTop": "large",
-            "_spacingBottom": "large",
-            "disclosure": "Turnpage is not affiliated with, sponsored or endorsed by or partners with Anthropic, JND (the claims administrator), class counsel or the District Court for the Northern District of California. Turnpage does not provide legal or financial advice and does not undertake to represent claimholders in any way. The information you submit will only be used to calculate your expected payout and provide a buyout offer. Currently Serving all U.S. states and territories other than Georgia, Maine, Nevada and Vermont.",
-            "align": "left",
-            "cardColor": "white"
-          }
-        },
-        {
-          "id": "sec-1780975716723-79i5",
-          "type": "how-it-works",
-          "visible": false,
-          "colorScheme": "dark",
-          "content": {
-            "eyebrow": "How We Help",
-            "title": "You own your output. Take home what's yours.",
-            "accent": "",
-            "kicker": "You worked hard to create something original, but you don't need to create more work for yourself just to get paid. With dozens of active copyright cases, we help you stay on top of compensation opportunities, gather documents and meet filing deadlines. ",
-            "colorScheme": "dark",
-            "steps": [
-              {
-                "id": "step-1",
-                "n": "01",
-                "title": "Track open settlements »",
-                "body": "Did you know you might be eligible to file a claim in one of 60+ cases that are currently on the docket against Generative AI Companies? Subscribe to alerts about claim filing opportunities in the cases that matter to you so you never miss a deadline."
-              },
-              {
-                "id": "step-2",
-                "n": "02",
-                "title": "File your claims »",
-                "body": "Who needs all that paperwork? Let our experts help you file your claim to ensure you don't miss a cent. We can help you identify the materials you need to prove what you're owed and reduce the error rate by over 95%. \n\n"
-              },
-              {
-                "id": "step-3",
-                "n": "03",
-                "title": "Get paid without the hassle »",
-                "body": "Filing your claim is just the start. Working through procedural delays, appeals, claim reconciliation and distribution can be painful. We're here to manage it all for you, or buy your claim outright so you can get cash today."
-              }
-            ],
-            "cardStyle": "standard",
-            "cardRadius": "square",
-            "_bookmark": "how-we-help",
-            "backgroundImage": "/library/data-center-2.jpg",
-            "imageFilterStrength": 30
           }
         },
         {
@@ -507,36 +449,6 @@
           "visible": true,
           "content": {
             "_bookmark": "experience"
-          }
-        },
-        {
-          "id": "sec-1780698362997-64wf",
-          "type": "our-edge",
-          "visible": false,
-          "colorScheme": "white",
-          "content": {
-            "eyebrow": "Our Edge",
-            "title": "Built to move fast",
-            "titleAccent": "when it counts.",
-            "intro": "Automated diligence and deep integration with our capital sources means rapid onboarding, highly competitive pricing and a streamlined and efficient closing process.  ",
-            "points": [
-              {
-                "id": "edge-1",
-                "h": "Lightning Fast",
-                "b": "If our dedicated capital partners can't fund it, we'll quickly pair you with the right counterparty that can. With 500+ institutions on speed dial, our capital partner network ensures broad coverage across claim sizes, geographies and asset types. "
-              },
-              {
-                "id": "edge-2",
-                "h": "Always Confidential",
-                "b": "We take your privacy seriously and protect your data as if it were our own. We only ask for the information we absolutely need to provide an accurate assessment of your rights and their fair market value. "
-              },
-              {
-                "id": "edge-3",
-                "h": "Relationships First",
-                "b": "Our collaborative, relationship-focused approach delivers superior outcomes. We structure transactions to not only meet your needs now, but to properly align party incentives for the long haul.  "
-              }
-            ],
-            "_bookmark": "Our-edge"
           }
         },
         {
@@ -626,7 +538,7 @@
         {
           "id": "sec-1780972607455-de6l",
           "type": "cta",
-          "visible": true,
+          "visible": false,
           "layout": "layout-1-getquote",
           "colorScheme": "dark",
           "content": {
@@ -651,6 +563,106 @@
           }
         },
         {
+          "id": "sec-1787168611604-swsc",
+          "type": "registration-flow",
+          "visible": true,
+          "colorScheme": "neon",
+          "content": {
+            "flowId": "bartz-registration",
+            "eyebrow": "Ready to sell your claim?",
+            "title": "Submit your claim details",
+            "accent": "",
+            "colorScheme": "neon",
+            "cardRadius": 5,
+            "cardStyle": "float",
+            "align": "left",
+            "_bookmark": "sell",
+            "cardColor": "light-gray"
+          }
+        },
+        {
+          "id": "sec-1787168615766-a0me",
+          "type": "our-edge",
+          "visible": true,
+          "colorScheme": "white",
+          "content": {
+            "eyebrow": "Our Edge",
+            "title": "Built to move fast",
+            "titleAccent": "when it counts.",
+            "intro": "Automated diligence and deep integration with our capital sources means rapid onboarding, highly competitive pricing and a streamlined and efficient closing process.  ",
+            "points": [
+              {
+                "id": "edge-1",
+                "h": "Lightning Fast",
+                "b": "If our dedicated capital partners can't fund it, we'll quickly pair you with the right counterparty that can. With 500+ institutions on speed dial, our capital partner network ensures broad coverage across claim sizes, geographies and asset types. "
+              },
+              {
+                "id": "edge-2",
+                "h": "Always Confidential",
+                "b": "We take your privacy seriously and protect your data as if it were our own. We only ask for the information we absolutely need to provide an accurate assessment of your rights and their fair market value. "
+              },
+              {
+                "id": "edge-3",
+                "h": "Relationships First",
+                "b": "Our collaborative, relationship-focused approach delivers superior outcomes. We structure transactions to not only meet your needs now, but to properly align party incentives for the long haul.  "
+              }
+            ],
+            "_bookmark": "Our-edge",
+            "colorScheme": "white"
+          }
+        },
+        {
+          "id": "sec-1787168594287-bq0l",
+          "type": "hero",
+          "visible": true,
+          "content": {
+            "eyebrow": "",
+            "title": "Anthropic trained its models",
+            "accentTitle": "on your work.",
+            "subtitle": "Authors and publishers are getting paid faster with Turnpage. Ready to convert your claim to cash today?",
+            "size": "medium",
+            "mediaType": "image",
+            "video": "/robottypes1.mp4",
+            "image": "/library/data-center-2.jpg",
+            "ctaPrimary": {
+              "label": "Sell my claim",
+              "href": "#sell"
+            },
+            "ctaSecondary": {
+              "label": "Talk to our team",
+              "href": "/contact"
+            },
+            "titleSize": "large"
+          }
+        },
+        {
+          "id": "sec-1787168620545-xgw7",
+          "type": "cta",
+          "visible": false,
+          "layout": "layout-1-getquote",
+          "colorScheme": "dark",
+          "content": {
+            "layout": "layout-1-getquote",
+            "colorScheme": "dark",
+            "eyebrow": "WHY WAIT TO GET PAID?",
+            "title": "Get started",
+            "accent": "today.",
+            "kicker": "",
+            "primary": {
+              "label": "Sell my claim",
+              "href": "#sell"
+            },
+            "secondary": null,
+            "titleAccent": "Talk to us.",
+            "body": "Contact us for a quote today. Private, fast and secure.",
+            "cta": {
+              "label": "Get a Quote",
+              "href": "/contact?source=locked-crypto"
+            },
+            "_bookmark": "CTA"
+          }
+        },
+        {
           "id": "sec-aic-faq",
           "type": "faq",
           "visible": true,
@@ -663,6 +675,27 @@
             "ctaHref": "/contact?source=ai-copyright",
             "colorScheme": "light-gray",
             "_bookmark": "faq"
+          }
+        },
+        {
+          "id": "sec-1787168624162-oh6p",
+          "type": "rich-text",
+          "visible": true,
+          "layout": "layout-1-narrow",
+          "colorScheme": "light-gray",
+          "content": {
+            "eyebrow": "",
+            "align": "center",
+            "height": "auto",
+            "heading1": "",
+            "heading1Accent": "",
+            "heading1After": "",
+            "backgroundImage": "",
+            "imageOpacity": 35,
+            "imageBlur": 0,
+            "markdown": "Turnpage Digital Markets LLC is not affiliated with the court, the claims administrator, class counsel or any other party in the Bartz v. Anthropic litigation. We do not offer legal or financial advice and submitting your claim information or an inquiry through this site does not give rise to any client or other relationship. All materials submitted will be kept confidential pursuant to our policies. ",
+            "layout": "layout-1-narrow",
+            "colorScheme": "light-gray"
           }
         }
       ],
