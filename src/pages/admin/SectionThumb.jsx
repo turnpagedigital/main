@@ -283,6 +283,26 @@ function PhotoBreakThumb() {
   );
 }
 
+function MediaBannerThumb() {
+  return (
+    <div style={{ width: W, height: H, background: "#000", position: "relative", overflow: "hidden",
+      display: "flex", alignItems: "center", padding: "0 80px" }}>
+      <div style={{ position: "relative", zIndex: 1, maxWidth: 560 }}>
+        <div style={{ fontFamily: FONT, fontSize: 64, fontWeight: 900, color: "#fff", lineHeight: 1.05, letterSpacing: "-0.03em", marginBottom: 16 }}>
+          Headline goes here
+        </div>
+        <div style={{ fontFamily: FONT, fontSize: 22, color: "rgba(255,255,255,0.75)", marginBottom: 32, lineHeight: 1.5 }}>
+          Optional subheading text sits below.
+        </div>
+        <div style={{ display: "flex", gap: 18 }}>
+          <Btn>Get in Touch</Btn>
+          <GhostBtn dark>Learn More</GhostBtn>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Testimonials ─────────────────────────────────────────────────────────────
 
 function Testimonials3ColThumb() {
@@ -829,6 +849,7 @@ const THUMBS = {
   "our-edge":                        OurEdgeThumb,
   "damages":                         DamagesThumb,
   "photo-break":                     PhotoBreakThumb,
+  "media-banner":                    MediaBannerThumb,
   "testimonials/layout-1-grid3col":  Testimonials3ColThumb,
   "testimonials/layout-2-singlecol": TestimonialsSingleColThumb,
   "testimonials/layout-3-featured":  TestimonialsFeaturedThumb,

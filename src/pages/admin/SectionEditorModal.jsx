@@ -26,7 +26,7 @@ const MarketingPagesTab = lazy(() => import("./MarketingPagesTab.jsx"));
 // gets the raw-JSON fallback below (SectionEditorFields still contributes
 // its universal Spacing & Height block for those).
 const FIELD_EDITOR_TYPES = new Set([
-  "hero", "home-hero", "stats-band", "our-edge", "photo-break",
+  "hero", "home-hero", "stats-band", "our-edge", "photo-break", "media-banner",
   "cta-banner", "bottom-cta", "get-quote", "cta", "faq", "testimonials",
   "audience-cards", "service-cards", "comparison", "how-it-works",
   "experience", "image-text", "process-flow", "bullet-columns",

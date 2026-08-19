@@ -160,6 +160,26 @@
       }
     },
     {
+      "id": "media-banner",
+      "displayName": "Media Banner",
+      "description": "Left/center/right-justified H1 + H2 over a solid color or photo, with up to two CTA buttons and an adjustable height.",
+      "dataSource": "inline",
+      "allowMultiple": true,
+      "defaultContent": {
+        "backgroundType": "color",
+        "colorScheme": "dark",
+        "backgroundImage": "/bg-paper.jpg",
+        "imageFilter": "dark",
+        "imageFilterStrength": 40,
+        "align": "left",
+        "height": "medium",
+        "title": "Headline goes here",
+        "subtitle": "",
+        "ctaPrimary": null,
+        "ctaSecondary": null
+      }
+    },
+    {
       "id": "experience",
       "displayName": "Relevant Experience",
       "description": "Deal cards filtered for the current page. Content managed in Content → Deals.",

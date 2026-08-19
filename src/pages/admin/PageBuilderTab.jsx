@@ -395,6 +395,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
       case "stats-band":  return (c.stats || []).map(x => x.value).filter(Boolean).join("  ·  ");
       case "our-edge":    return [c.title, c.titleAccent].filter(Boolean).join(" ");
       case "photo-break": return c.overlayText || c.imageUrl || "";
+      case "media-banner": return [c.title, c.subtitle].filter(Boolean).join(" — ");
       case "cta-banner":  return c.title || c.cta || "";
       case "bottom-cta":  return [c.title, c.accent].filter(Boolean).join(" ");
       case "get-quote":   return [c.title, c.titleAccent].filter(Boolean).join(" ");
