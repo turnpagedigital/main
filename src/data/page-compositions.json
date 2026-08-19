@@ -490,7 +490,7 @@
         {
           "id": "sec-1784772646246-qv8s",
           "type": "how-it-works",
-          "visible": false,
+          "visible": true,
           "colorScheme": "dark",
           "content": {
             "eyebrow": "HOW IT WORKS",
