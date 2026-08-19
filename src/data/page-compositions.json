@@ -223,7 +223,7 @@
         {
           "id": "sec-home-faq",
           "type": "faq",
-          "visible": false,
+          "visible": true,
           "layout": "layout-1-fullwidth",
           "colorScheme": "light-gray",
           "content": {
