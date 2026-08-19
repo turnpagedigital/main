@@ -102,13 +102,6 @@
       "title": "Bankruptcy Claims"
     },
     {
-      "path": "/bartz-v-anthropic",
-      "key": "bartz-registration",
-      "component": "DynamicPage",
-      "dynamic": false,
-      "title": "Bartz Registration"
-    },
-    {
       "path": "/partners",
       "key": "partners",
       "component": "Partners",
