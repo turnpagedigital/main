@@ -3,6 +3,39 @@
   "case_name": "Omnis Pleasants",
   "items": [
     {
+      "date": "2026-08-19",
+      "updated": "2026-08-19",
+      "lede": "Today, the 4:00 p.m. Eastern objection deadline on Dkt. 49 — the interim order authorizing prepetition tax and fee payments capped at $775,000 — passed with no objections appearing on the docket. That clears the path for Judge Owens to enter a final order on taxes and fees without further hearing, consistent with the interim order's own terms.",
+      "body_md": "Today, the 4:00 p.m. Eastern objection deadline on Dkt. 49 — the interim order authorizing prepetition tax and fee payments capped at $775,000 — passed with no objections appearing on the docket. That clears the path for Judge Owens to enter a final order on taxes and fees without further hearing, consistent with the interim order's own terms. The practical effect is modest but tidy: one discrete first-day item moves toward closure, and the September 3 final hearing agenda loses a contested line item it never had. Dkt. 100, filed August 18 as an exhibit, carries no standalone docket description identifying the underlying motion or adversary proceeding it supports; its materiality depends on that attachment context, which the docket entry alone does not resolve.\n\nThe more consequential frame for today remains the dismissal motion (Dkt. 93) and the discovery posture built around it. \nOmnis Fuel Technologies and Quantum Pleasants filed their dismissal motion on August 14, supported by the Gassenheimer declaration (Dkt. 94), asking the court in the alternative to appoint a Chapter 11 trustee and to vacate the Interim Cash Collateral Order.\n \nThe motion asserts that Pleasants had approximately $13 million in liquidity when the petition was filed and was cash-flow positive\n — the factual predicate the First Set of Requests for Production (Dkt. 99) is plainly designed to test or reinforce from the debtor's own documents. The debtor's objection deadline on the dismissal motion is August 28, and the RFP issued by Lowenstein Sandler on August 17 runs concurrently, meaning the debtor is simultaneously preparing an opposition brief and managing a document production obligation under the same ten-day compression. A motion for protective order, if the debtor elects to resist discovery, would itself consume time and judge's attention in advance of the September 3 cluster.\n\n\nThe debtor is operating under interim cash-collateral authority conditioned on continuing the sale process; the interim order requires that any plan absent secured-party consent pay TRAG LLC and RG Energy LLC in full in cash.\n Dismissal or trustee appointment would disrupt that sale track entirely, which is the central recovery risk for unsecured creditors — including the West Virginia Economic Development Authority's approximately $50.9 million unsecured claim. The next hard milestone is August 27 (objection deadline on the five professional retention applications, including Sidley Austin as special regulatory counsel, Dkt. 85), followed by August 28 (objection deadline on the dismissal/trustee motion, Dkt. 93), and then the September 2 Section 341 meeting and the September 3 final hearings on cash collateral, first-day operational orders, and professional retentions.\n\n## Sources\n\n- [Fight for Control of Profitable West Virginia Power Plant Escalates With Motion to Dismiss Bankruptcy](https://www.prnewswire.com/news-releases/fight-for-control-of-profitable-west-virginia-power-plant-escalates-with-motion-to-dismiss-bankruptcy-302853407.html) — PR Newswire, August 17, 2026\n- [Ch. 11 Dismissal Bid Fans Flames In Power Plant Control Fight](https://www.law360.com/bankruptcy-authority/mid-cap/articles/2513898) — Law360, August 17, 2026\n- [Omnis Pleasants Files Chapter 11 After $75.64M Payoff Rejected](https://elevenflo.com/blog/omnis-pleasants-llc-17751) — ElevenFlo, August 13, 2026\n- [Omnis Pleasants, LLC Bankruptcy Case](https://elevenflo.com/cases/17751) — ElevenFlo\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Fight for Control of Profitable West Virginia Power Plant Escalates With Motion to Dismiss Bankruptcy",
+          "url": "https://www.prnewswire.com/news-releases/fight-for-control-of-profitable-west-virginia-power-plant-escalates-with-motion-to-dismiss-bankruptcy-302853407.html",
+          "note": "PR Newswire, August 17, 2026"
+        },
+        {
+          "title": "Ch. 11 Dismissal Bid Fans Flames In Power Plant Control Fight",
+          "url": "https://www.law360.com/bankruptcy-authority/mid-cap/articles/2513898",
+          "note": "Law360, August 17, 2026"
+        },
+        {
+          "title": "Omnis Pleasants Files Chapter 11 After $75.64M Payoff Rejected",
+          "url": "https://elevenflo.com/blog/omnis-pleasants-llc-17751",
+          "note": "ElevenFlo, August 13, 2026"
+        },
+        {
+          "title": "Omnis Pleasants, LLC Bankruptcy Case",
+          "url": "https://elevenflo.com/cases/17751",
+          "note": "ElevenFlo"
+        }
+      ],
+      "activity": {
+        "filings": 7,
+        "articles": 2,
+        "latest": "2026-08-19"
+      }
+    },
+    {
       "date": "2026-08-18",
       "updated": "2026-08-18",
       "lede": "On August 17, Omnis Fuel Technologies, LLC and Quantum Pleasants, LLC served the debtor with a First Set of Requests for Production (Dkt. 99), filed by Christopher Ward of Lowenstein Sandler LLP — the same firm that secured pro hac vice admission for Michael A. Kaplan and Rebecca J. Ryan on the same date (Dkts. 95–98).",

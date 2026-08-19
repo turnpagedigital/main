@@ -122,6 +122,21 @@
     "docket_history": "full"
   },
   {
+    "slug": "hendrix-roberson-v-apple-inc-ai-book-training-class-action",
+    "added": "2026-08-19",
+    "display_name": "Hendrix & Roberson v. Apple Inc. (AI Book-Training Class Action)",
+    "short_name": "Hendrix & Roberson v. Apple Inc. (AI Book-Training Class Action)",
+    "docket_url": "https://www.courtlistener.com/docket/71279155/hendrix-v-apple-inc/",
+    "default_color": "#B3A8F0",
+    "category": "class-action",
+    "topics": [
+      "llm-class-action"
+    ],
+    "court": "U.S. District Court, N.D. Cal.",
+    "sync": "active",
+    "docket_history": "full"
+  },
+  {
     "slug": "in-re-cashcall-inc",
     "added": "2026-08-07",
     "display_name": "CashCall",
@@ -164,6 +179,21 @@
       "crypto-insolvency"
     ],
     "court": "Bankr. D. Mass",
+    "sync": "active",
+    "docket_history": "full"
+  },
+  {
+    "slug": "nyt-v-openai-mdl-no-3143-sanctions-motion",
+    "added": "2026-08-19",
+    "display_name": "NYT v. OpenAI (MDL No. 3143) — Sanctions Motion",
+    "short_name": "NYT v. OpenAI (MDL No. 3143) — Sanctions Motion",
+    "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
+    "default_color": "#7EF4C2",
+    "category": "class-action",
+    "topics": [
+      "llm-class-action"
+    ],
+    "court": "S.D.N.Y.",
     "sync": "active",
     "docket_history": "full"
   },
@@ -306,33 +336,5 @@
     "court": "C.I.T.",
     "sync": "active",
     "docket_history": "full"
-  },
-  {
-    "slug": "hendrix-roberson-v-apple-inc-ai-book-training-class-action",
-    "display_name": "Hendrix & Roberson v. Apple Inc. (AI Book-Training Class Action)",
-    "short_name": "Hendrix & Roberson v. Apple Inc. (AI Book-Training Class Action)",
-    "docket_url": "https://www.courtlistener.com/docket/71279155/hendrix-v-apple-inc/",
-    "court": "U.S. District Court, N.D. Cal.",
-    "topics": [
-      "llm-class-action"
-    ],
-    "sync": "active",
-    "docket_history": "full",
-    "added": "2026-08-19",
-    "default_color": "#B3A8F0"
-  },
-  {
-    "slug": "nyt-v-openai-mdl-no-3143-sanctions-motion",
-    "display_name": "NYT v. OpenAI (MDL No. 3143) — Sanctions Motion",
-    "short_name": "NYT v. OpenAI (MDL No. 3143) — Sanctions Motion",
-    "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
-    "court": "S.D.N.Y.",
-    "topics": [
-      "llm-class-action"
-    ],
-    "sync": "active",
-    "docket_history": "full",
-    "added": "2026-08-19",
-    "default_color": "#7EF4C2"
   }
 ]

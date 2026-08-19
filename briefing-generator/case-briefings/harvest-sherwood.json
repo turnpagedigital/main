@@ -3,6 +3,44 @@
   "case_name": "Harvest Sherwood",
   "items": [
     {
+      "date": "2026-08-19",
+      "updated": "2026-08-19",
+      "lede": "On August 18, the Harvest Sherwood docket recorded six generic notices (Dkts. 1226–1231) and two certificates of service (Dkts.",
+      "body_md": "On August 18, the Harvest Sherwood docket recorded six generic notices (Dkts. 1226–1231) and two certificates of service (Dkts. 1224–1225) — procedural and routine, with no bearing on recovery or timing. Dkts. 1217–1218, filed August 17, are a further pair of claim assignments processed through the claims agent, consistent with the secondary-market trading pattern running since at least early August and documented most recently in Dkt. 1165 (Technical Truck and Trailer / CRG Financial, $5,314.76). At the scale of this estate — trade claims estimated at $200–$400 million — individual spot transfers of this kind are substantive but routine; they shift who collects, not how much is collected or when. Dkt. 1220, also August 17 and styled \"Compensation AND Compensation,\" remains unverified as to its precise content but most likely reflects an interim fee application or compensation order; it is treated as substantive-but-routine accordingly.\n\nNothing in today's docket alters the recovery posture analyzed in yesterday's briefing. The controlling post-confirmation dynamic is the antitrust litigation prosecuted through plan funder Atlas Grove, against an estimated $1.09 billion in claims across 28-plus defendants in pork, chicken, beef, and turkey categories, with \ntwo settlements totaling $44.6 million already achieved — $13.3 million with JBS and $31.3 million with Pilgrim's Pride\n — and additional defendants still outstanding. \nActive claims remain against Tyson Foods, Wayne-Sanderson Farms, Agri Stats, and other defendants across chicken, pork, beef, and turkey categories.\n \nCadwalader, Wickersham & Taft LLP serves as special counsel on contingency fee arrangements, and settlement proceeds flow first to repay the DIP facility before benefiting unsecured creditors.\n The Sprouts adversary proceeding (Adv. Pro. 25-08002) was resolved by settlement approved by the Bankruptcy Court on July 27, 2026, as disclosed in Sprouts' Q2 2026 Form 10-Q filed July 29 — that development was covered in yesterday's briefing and has not moved further on the record available here. The September 21, 2026 trial date and deadline still appearing in the case management system for Adv. Pro. 25-08002 are stale entries predating the settlement order; \nthe Epiq adversary proceeding page continues to reflect the amended notice of trial hearing setting a September 21, 2026 trial date,\n which should be treated as superseded absent a formal order of dismissal or closing of that docket — confirmation of which requires a PACER pull of the adversary proceeding docket directly.\n\nThe next concrete milestone with bearing on unsecured creditor recoveries is resolution of the remaining antitrust defendants. No hearing date, objection deadline, or distribution event has been announced on the main docket as presented. Monitoring priority should sit on the adversary proceeding docket for Adv. Pro. 25-08002 (to confirm the Sprouts settlement order is final and the appeal window has closed) and on any further antitrust settlement filings — each of which, once filed for court approval under Rule 9019, would be substantive-and-important.\n\n## Sources\n\n- [Sprouts Farmers Market Form 10-Q (Q1 2026)](https://www.sec.gov/Archives/edgar/data/0001575515/000157551526000022/sfm-20260329.htm) — SEC EDGAR, April 29, 2026\n- [Harvest Sherwood: $4B Food Distributor Pursuing $1.09B in Antitrust Claims](https://elevenflo.com/blog/harvest-sherwood-chapter-11-after-shutdown) — ElevenFlo, June 17, 2026\n- [Harvest Sherwood Food Distributors Adversary Proceedings — Case 25-08002](https://dm.epiq11.com/case/hvs/advproc/223?debtorId=15030) — Epiq\n- [Harvest Sherwood Wins Ch. 11 Plan Approval](https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval) — Law360, August 5, 2026\n- [Senate Seeks Expanded Sub V; Harvest Sherwood Plan OK'd](https://www.law360.com/bankruptcy-authority/articles/2511540/senate-seeks-expanded-sub-v-harvest-sherwood-plan-ok-d) — Law360, August 10, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Sprouts Farmers Market Form 10-Q (Q1 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001575515/000157551526000022/sfm-20260329.htm",
+          "note": "SEC EDGAR, April 29, 2026"
+        },
+        {
+          "title": "Harvest Sherwood: $4B Food Distributor Pursuing $1.09B in Antitrust Claims",
+          "url": "https://elevenflo.com/blog/harvest-sherwood-chapter-11-after-shutdown",
+          "note": "ElevenFlo, June 17, 2026"
+        },
+        {
+          "title": "Harvest Sherwood Food Distributors Adversary Proceedings — Case 25-08002",
+          "url": "https://dm.epiq11.com/case/hvs/advproc/223?debtorId=15030",
+          "note": "Epiq"
+        },
+        {
+          "title": "Harvest Sherwood Wins Ch. 11 Plan Approval",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval",
+          "note": "Law360, August 5, 2026"
+        },
+        {
+          "title": "Senate Seeks Expanded Sub V; Harvest Sherwood Plan OK'd",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2511540/senate-seeks-expanded-sub-v-harvest-sherwood-plan-ok-d",
+          "note": "Law360, August 10, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 18,
+        "articles": 0,
+        "latest": "2026-08-18"
+      }
+    },
+    {
       "date": "2026-08-18",
       "updated": "2026-08-18",
       "lede": "On August 17, the Harvest Sherwood docket recorded two claim assignments (Dkts. 1217–1218), a compensation filing (Dkt. 1220), a generic notice (Dkt. 1223), and three pro hac vice admissions (Dkts.",

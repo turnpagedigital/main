@@ -15,39 +15,39 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
-    "date_last_filing": "2026-08-17",
-    "meta_fetched_at": "2026-08-18T01:53:54.266340+00:00",
-    "fetched_at": "2026-08-18T14:24:03.888435+00:00",
-    "as_of": "Aug 18, 2026",
+    "date_last_filing": "2026-08-18",
+    "meta_fetched_at": "2026-08-19T01:57:07.298958+00:00",
+    "fetched_at": "2026-08-19T10:50:20.256924+00:00",
+    "as_of": "Aug 19, 2026",
     "backfilled": true,
-    "new_in_72h": 5,
+    "new_in_72h": 25,
     "recent": [
       {
-        "entry_number": 760,
-        "date_filed": "2026-08-17",
-        "time_filed": "15:55:41",
-        "date_display": "Aug 17, 2026",
+        "entry_number": 781,
+        "date_filed": "2026-08-18",
+        "time_filed": "17:29:24",
+        "date_display": "Aug 18, 2026",
+        "description": "Reply to Opposition/Response",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 780,
+        "date_filed": "2026-08-18",
+        "time_filed": "17:24:39",
+        "date_display": "Aug 18, 2026",
         "description": "Document E-Filed Under Seal",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 759,
-        "date_filed": "2026-08-17",
-        "time_filed": "15:34:18",
-        "date_display": "Aug 17, 2026",
+        "entry_number": 778,
+        "date_filed": "2026-08-18",
+        "time_filed": "14:35:37",
+        "date_display": "Aug 18, 2026",
         "description": "Document E-Filed Under Seal",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 758,
-        "date_filed": "2026-08-17",
-        "time_filed": "15:18:00",
-        "date_display": "Aug 17, 2026",
-        "description": "Notice (Other)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -55,11 +55,211 @@
     ],
     "entries": [
       {
+        "entry_number": 781,
+        "date_filed": "2026-08-18",
+        "time_filed": "17:29:24",
+        "date_display": "Aug 18, 2026",
+        "description": "Reply to Opposition/Response",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 780,
+        "date_filed": "2026-08-18",
+        "time_filed": "17:24:39",
+        "date_display": "Aug 18, 2026",
+        "description": "Document E-Filed Under Seal",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 778,
+        "date_filed": "2026-08-18",
+        "time_filed": "14:35:37",
+        "date_display": "Aug 18, 2026",
+        "description": "Document E-Filed Under Seal",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 777,
+        "date_filed": "2026-08-18",
+        "time_filed": "14:33:51",
+        "date_display": "Aug 18, 2026",
+        "description": "Declaration in Support",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 776,
+        "date_filed": "2026-08-18",
+        "time_filed": "14:31:32",
+        "date_display": "Aug 18, 2026",
+        "description": "Reply to Opposition/Response",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 775,
+        "date_filed": "2026-08-18",
+        "time_filed": "14:29:53",
+        "date_display": "Aug 18, 2026",
+        "description": "Document E-Filed Under Seal",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 774,
+        "date_filed": "2026-08-18",
+        "time_filed": "14:26:45",
+        "date_display": "Aug 18, 2026",
+        "description": "Declaration in Support",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 773,
+        "date_filed": "2026-08-18",
+        "time_filed": "14:21:57",
+        "date_display": "Aug 18, 2026",
+        "description": "Reply to Opposition/Response",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.773.0.pdf"
+      },
+      {
+        "entry_number": 772,
+        "date_filed": "2026-08-18",
+        "time_filed": "14:18:49",
+        "date_display": "Aug 18, 2026",
+        "description": "Document E-Filed Under Seal",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 771,
+        "date_filed": "2026-08-18",
+        "time_filed": "14:15:09",
+        "date_display": "Aug 18, 2026",
+        "description": "Declaration in Support",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 770,
+        "date_filed": "2026-08-18",
+        "time_filed": "14:11:48",
+        "date_display": "Aug 18, 2026",
+        "description": "Reply to Opposition/Response",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.770.0.pdf"
+      },
+      {
+        "entry_number": 769,
+        "date_filed": "2026-08-18",
+        "time_filed": "14:08:40",
+        "date_display": "Aug 18, 2026",
+        "description": "Document E-Filed Under Seal",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 768,
+        "date_filed": "2026-08-18",
+        "time_filed": "14:06:40",
+        "date_display": "Aug 18, 2026",
+        "description": "Reply to Opposition/Response",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.768.0.pdf"
+      },
+      {
+        "entry_number": 767,
+        "date_filed": "2026-08-18",
+        "time_filed": "14:02:26",
+        "date_display": "Aug 18, 2026",
+        "description": "Document E-Filed Under Seal",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 766,
+        "date_filed": "2026-08-18",
+        "time_filed": "13:58:35",
+        "date_display": "Aug 18, 2026",
+        "description": "REPLY (re 650 MOTION in Limine to Partially Exclude the Opinions of Dr. Abhishek Nagaraj ) filed byAbkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Matera, Bret) (Filed on 8/18/2026) (Entered: 08/18/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 765,
+        "date_filed": "2026-08-18",
+        "time_filed": "13:55:20",
+        "date_display": "Aug 18, 2026",
+        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal Pls' Reply ISO Mot. to Exclude Davis by Abkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Matera, Bret) (Filed on 8/18/2026) (Entered: 08/18/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 764,
+        "date_filed": "2026-08-18",
+        "time_filed": "13:53:19",
+        "date_display": "Aug 18, 2026",
+        "description": "REPLY (re 646 MOTION in Limine to Partially Exclude the Opinions of Julie Davis ) filed byAbkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Matera, Bret) (Filed on 8/18/2026) (Entered: 08/18/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 763,
+        "date_filed": "2026-08-18",
+        "time_filed": "13:46:29",
+        "date_display": "Aug 18, 2026",
+        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal Pls' Reply ISO Mot. to Exclude Altman by Abkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Miller, Corey) (Filed on 8/18/2026) (Entered: 08/18/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 762,
+        "date_filed": "2026-08-18",
+        "time_filed": "13:44:01",
+        "date_display": "Aug 18, 2026",
+        "description": "Declaration of Corey Miller in Support of 761 Reply to Opposition/Response, filed byAbkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Attachments: # 1 Exhibit H)(Related document(s) 761 ) (Miller, Corey) (Filed on 8/18/2026) (Entered: 08/18/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 761,
+        "date_filed": "2026-08-18",
+        "time_filed": "13:40:52",
+        "date_display": "Aug 18, 2026",
+        "description": "REPLY (re 640 MOTION in Limine to Exclude the Opinions of Dr. Russ Altman ) filed byAbkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Miller, Corey) (Filed on 8/18/2026) (Entered: 08/18/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 760,
         "date_filed": "2026-08-17",
         "time_filed": "15:55:41",
         "date_display": "Aug 17, 2026",
-        "description": "Document E-Filed Under Seal",
+        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal Exhibits to Declaration of Timothy Chung by Abkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Attachments: # 1 Exhibit 124, # 2 Exhibit 125, # 3 Exhibit 126, # 4 Exhibit 127, # 5 Exhibit 128, # 6 Exhibit 129, # 7 Exhibit 130, # 8 Exhibit 131, # 9 Exhibit 132, # 10 Exhibit 133, # 11 Exhibit 134, # 12 Exhibit 135, # 13 Exhibit 136, # 14 Exhibit 137, # 15 Errata 138, # 16 Exhibit 140, # 17 Exhibit 141, # 18 Exhibit 142, # 19 Exhibit 143, # 20 Exhibit 144, # 21 Exhibit 145, # 22 Exhibit 146, # 23 Exhibit 147, # 24 Exhibit 148, # 25 Exhibit 149, # 26 Exhibit 150, # 27 Exhibit 151, # 28 Exhibit 152, # 29 Exhibit 153, # 30 Exhibit 154, # 31 Exhibit 155, # 32 Exhibit 156,…",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -69,7 +269,7 @@
         "date_filed": "2026-08-17",
         "time_filed": "15:34:18",
         "date_display": "Aug 17, 2026",
-        "description": "Document E-Filed Under Seal",
+        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal by Abkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Attachments: # 1 Publishers' Responsive Separate Statement, # 2 Publishers' Reply Separate Statement)(Chung, Timothy) (Filed on 8/17/2026) (Entered: 08/17/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -79,7 +279,7 @@
         "date_filed": "2026-08-17",
         "time_filed": "15:18:00",
         "date_display": "Aug 17, 2026",
-        "description": "Notice (Other)",
+        "description": "NOTICE by Abkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp. re 757 Declaration in Support,,,,,, re Manual Filing of Exhibits (Chung, Timothy) (Filed on 8/17/2026) (Entered: 08/17/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -89,7 +289,7 @@
         "date_filed": "2026-08-17",
         "time_filed": "15:08:24",
         "date_display": "Aug 17, 2026",
-        "description": "Declaration in Support",
+        "description": "Declaration of Timothy Chung in Support of 756 Opposition/Response to Motion,, filed byAbkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Attachments: # 1 Exhibit 124, # 2 Exhibit 125, # 3 Exhibit 126, # 4 Exhibit 127, # 5 Exhibit 128, # 6 Exhibit 129, # 7 Exhibit 130, # 8 Exhibit 131, # 9 Exhibit 132, # 10 Exhibit 133, # 11 Exhibit 134, # 12 Exhibit 135, # 13 Exhibit 136, # 14 Exhibit 137, # 15 Exhibit 138, # 16 Exhibit 139, # 17 Exhibit 140, # 18 Exhibit 141, # 19 Exhibit 142, # 20 Exhibit 143, # 21 Exhibit 144, # 22 Exhibit 145, # 23 Exhibit 146, # 24 Exhibit 147, # 25 Exhibit 148, # 26 Exhibit 149, # 27 Exhibit 150, # 28 Exhibit 151, # 29 Exhibit 152, # 30 Exhibit 153, # 31 Exhibit 154, # 32 Exhibit 155, # 33 Exhibit 156, # 34 Exhibit…",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -99,8 +299,18 @@
         "date_filed": "2026-08-17",
         "time_filed": "14:26:34",
         "date_display": "Aug 17, 2026",
-        "description": "Publishers' Responsive Separate Statement",
+        "description": "OPPOSITION/RESPONSE (re 693 MOTION for Summary Judgment and Opposition to Publishers' Motion for Partial Summary Judgment (CORRECTION OF DOCKET # 686 ) ) filed byAbkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Attachments: # 1 Publishers' Responsive Separate Statement, # 2 Publishers' Reply Separate Statement)(Hailey, Nicholas) (Filed on 8/17/2026) (Entered: 08/17/2026)",
         "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.756.0.pdf"
+      },
+      {
+        "entry_number": 755,
+        "date_filed": "2026-08-11",
+        "time_filed": "",
+        "date_display": "Aug 11, 2026",
+        "description": "CLERK'S NOTICE RESETTING ZOOM HEARING (Time Change Only). Case Management Conference reset for 9/2/2026 at 04:00 PM in San Jose, - Videoconference Only before Judge Eumi K. Lee. This proceeding will be held via a Zoom meeting.Court Appearances: Advanced notice is required of counsel or parties who will be present at the hearing. A list of names and emails must be sent to the CRD at eklcrd@cand.uscourts.gov no later than 8/31/2026 at 5:00 PM.Civ LR 77-3(d). Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited. (This is a text-only entry generated by the court. There is no document associated with this entry.)(lrt, COURT STAFF) (Filed on 8/11/2026) (Entered: 08/11/2026)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -119,7 +329,7 @@
         "date_filed": "2026-07-29",
         "time_filed": "",
         "date_display": "Jul 29, 2026",
-        "description": "Order on Administrative Motion per Civil Local Rule 7-11",
+        "description": "ORDER: Having reviewed Publishers' 731 Administrative Motion and Anthropic's 732 Response, the Court GRANTS each side an additional three pages for the remaining summary judgment briefs. Entered by Judge Eumi K. Lee on 7/29/2026. (This is a text-only entry generated by the court. There is no document associated with this entry.) (ekllc2, COURT STAFF) (Filed on 7/29/2026) (Entered: 07/29/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -173,6 +383,16 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.750.0.pdf"
+      },
+      {
+        "entry_number": 749,
+        "date_filed": "2026-07-27",
+        "time_filed": "16:14:06",
+        "date_display": "Jul 27, 2026",
+        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal Opposition to Plaintiffs' Motion to Partially Exclude the Opinions of Dr. Jeffrey Bilmes by Anthropic PBC. (Attachments: # 1 Exhibit 2, # 2 Exhibit 4, # 3 Exhibit 5, # 4 Exhibit 6, # 5 Exhibit 7, # 6 Exhibit 8, # 7 Exhibit 9, # 8 Exhibit 10, # 9 Exhibit 11)(Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       },
       {
         "entry_number": 747,

@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
-    "date_last_filing": "2026-07-21",
-    "meta_fetched_at": "2026-08-18T08:04:08.755184+00:00",
-    "fetched_at": "2026-08-18T08:04:08.755184+00:00",
-    "as_of": "Aug 18, 2026",
-    "backfilled": false,
-    "new_in_72h": 0,
+    "date_last_filing": "2026-08-18",
+    "meta_fetched_at": "2026-08-19T14:00:00.622409+00:00",
+    "fetched_at": "2026-08-19T14:23:18.754950+00:00",
+    "as_of": "Aug 19, 2026",
+    "backfilled": true,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 682,
+        "date_filed": "2026-08-18",
+        "time_filed": "16:34:43",
+        "date_display": "Aug 18, 2026",
+        "description": "NOTICE OF APPEAL to the 9th Circuit Court of Appeals filed by Edelson PC, Oppenheim + Zebrak. (Appeal fee of $605 receipt number ACANDC-22353084 paid.) (Silverkorn, Brandt) (Filed on 8/18/2026) (Entered: 08/18/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.682.0.pdf"
+      },
       {
         "entry_number": 681,
         "date_filed": "2026-07-21",
@@ -37,24 +47,24 @@
         "date_filed": "2026-07-20",
         "time_filed": "13:27:21",
         "date_display": "Jul 20, 2026",
-        "description": "ORDER GRANTING FINAL APPROVAL OF CLASS ACTION SETTLEMENT; GRANTING IN PART MOTION FOR ATTORNEY'S FEES, REIMBURSEMENT OF EXPENSES, AND PLAINTIFF SERVICE AWARDS; JUDGMENT. Signed by Judge Araceli Martinez-Olguin on July 20, 2026. (amolc1, COURTSTAFF) (Filed on 7/20/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice of Electronic Filing (NEF)",
+        "description": "ORDER GRANTING FINAL APPROVAL OF CLASS ACTION SETTLEMENT; GRANTING IN PART MOTION FOR ATTORNEY'S FEES, REIMBURSEMENT OF EXPENSES, AND PLAINTIFF SERVICE AWARDS; JUDGMENT. Signed by Judge Araceli Martinez-Olguin on July 20, 2026. (amolc1, COURTSTAFF) (Filed on 7/20/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice of Electronic Filing (NEF) (Entered: 07/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.680.0_5.pdf"
-      },
-      {
-        "entry_number": 679,
-        "date_filed": "2026-07-13",
-        "time_filed": "17:06:46",
-        "date_display": "Jul 13, 2026",
-        "description": "Brief re 676 Objection,, -DEFENDANT ANTHROPIC PBCS OPPOSITION TO APPLICATION OF CLASS MEMBER DONALD S. PASSMAN FOR LEAVE TO SUBMIT LATE REQUEST FOR EXCLUSION FROM CLASS ACTION SETTLEMENT filed byAnthropic PBC. (Related document(s) 676 ) (Winthrop, Douglas) (Filed on 7/13/2026) (Entered: 07/13/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.679.0.pdf"
       }
     ],
     "entries": [
       {
+        "entry_number": 682,
+        "date_filed": "2026-08-18",
+        "time_filed": "16:34:43",
+        "date_display": "Aug 18, 2026",
+        "description": "NOTICE OF APPEAL to the 9th Circuit Court of Appeals filed by Edelson PC, Oppenheim + Zebrak. (Appeal fee of $605 receipt number ACANDC-22353084 paid.) (Silverkorn, Brandt) (Filed on 8/18/2026) (Entered: 08/18/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.682.0.pdf"
+      },
+      {
         "entry_number": 681,
         "date_filed": "2026-07-21",
         "time_filed": "13:31:49",
@@ -69,7 +79,7 @@
         "date_filed": "2026-07-20",
         "time_filed": "13:27:21",
         "date_display": "Jul 20, 2026",
-        "description": "ORDER GRANTING FINAL APPROVAL OF CLASS ACTION SETTLEMENT; GRANTING IN PART MOTION FOR ATTORNEY'S FEES, REIMBURSEMENT OF EXPENSES, AND PLAINTIFF SERVICE AWARDS; JUDGMENT. Signed by Judge Araceli Martinez-Olguin on July 20, 2026. (amolc1, COURTSTAFF) (Filed on 7/20/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice of Electronic Filing (NEF)",
+        "description": "ORDER GRANTING FINAL APPROVAL OF CLASS ACTION SETTLEMENT; GRANTING IN PART MOTION FOR ATTORNEY'S FEES, REIMBURSEMENT OF EXPENSES, AND PLAINTIFF SERVICE AWARDS; JUDGMENT. Signed by Judge Araceli Martinez-Olguin on July 20, 2026. (amolc1, COURTSTAFF) (Filed on 7/20/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice of Electronic Filing (NEF) (Entered: 07/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.680.0_5.pdf"
@@ -7499,8 +7509,7 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
+    ]
   },
   "claims_administrator": {
     "name": "JND Legal Administration",
@@ -7610,6 +7619,13 @@
       "source": "Authors Alliance",
       "date": "2026-07-21",
       "summary": "Authors Alliance reported that Judge Martínez-Olguín's 23-page final approval order closes the case and establishes that payments begin one business day after the 'Effective Date'—defined as expiration of the 30-day Ninth Circuit appeal window. The court reminded non-class objectors they remain free to bring independent claims."
+    },
+    {
+      "headline": "Bartz v. Anthropic Settlement Receives Final Approval",
+      "url": "https://www.authorsalliance.org/2026/07/21/bartz-v-anthropic-settlement-receives-final-approval/",
+      "source": "Authors Alliance",
+      "date": "2026-07-21",
+      "summary": "Authors Alliance reports that Judge Martínez-Olguín closed the case with a 23-page final approval order covering settlement administration details and attorneys' fees, noting the court declined to entertain objections from non-class members while reminding them they remain free to bring their own claims."
     },
     {
       "headline": "Bartz et al v. Anthropic PBC – Final Approval Coverage",

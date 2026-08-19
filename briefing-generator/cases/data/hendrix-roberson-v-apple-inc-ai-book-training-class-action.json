@@ -2,22 +2,1284 @@
   "case": {
     "slug": "hendrix-roberson-v-apple-inc-ai-book-training-class-action",
     "display_name": "Hendrix & Roberson v. Apple Inc. (AI Book-Training Class Action)",
-    "case_name": "Grady Hendrix and Jennifer Roberson, individually and on behalf of all others similarly situated v. Apple Inc.",
+    "case_name": "Hendrix v. Apple Inc",
     "court": "U.S. District Court, N.D. Cal.",
     "case_number": "4:25-cv-07558",
     "judge": "Yvonne Gonzalez Rogers",
     "docket_id": "71279155",
     "status": "active",
-    "sync": "active"
+    "sync": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/71279155/hendrix-v-apple-inc/",
+    "date_last_filing": "2026-08-14",
+    "meta_fetched_at": "2026-08-19T07:10:55.771257+00:00",
+    "fetched_at": "2026-08-19T07:10:55.771257+00:00",
+    "as_of": "Aug 19, 2026",
+    "backfilled": false,
     "new_in_72h": 0,
-    "recent": [],
-    "entries": []
+    "recent": [
+      {
+        "entry_number": 121,
+        "date_filed": "2026-08-14",
+        "time_filed": "11:16:41",
+        "date_display": "Aug 14, 2026",
+        "description": "Order on Motion for Pro Hac Vice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-14",
+        "time_filed": "14:44:36",
+        "date_display": "Aug 14, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 120,
+        "date_filed": "2026-08-11",
+        "time_filed": "16:13:08",
+        "date_display": "Aug 11, 2026",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-22326063.) filed by Grady Hendrix, Jennifer Roberson. (Lecavalier, Daniel) (Filed on 8/11/2026) (Entered: 08/11/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 121,
+        "date_filed": "2026-08-14",
+        "time_filed": "11:16:41",
+        "date_display": "Aug 14, 2026",
+        "description": "Order on Motion for Pro Hac Vice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-14",
+        "time_filed": "14:44:36",
+        "date_display": "Aug 14, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 120,
+        "date_filed": "2026-08-11",
+        "time_filed": "16:13:08",
+        "date_display": "Aug 11, 2026",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-22326063.) filed by Grady Hendrix, Jennifer Roberson. (Lecavalier, Daniel) (Filed on 8/11/2026) (Entered: 08/11/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 119,
+        "date_filed": "2026-07-30",
+        "time_filed": "10:52:06",
+        "date_display": "Jul 30, 2026",
+        "description": "Joint Discovery Letter Brief re Training Data filed by Grady Hendrix, John Hornor Jacobs, Eboni McKinnon, Jennifer Roberson. (Dreher, William) (Filed on 7/30/2026) (Entered: 07/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 118,
+        "date_filed": "2026-07-20",
+        "time_filed": "10:52:32",
+        "date_display": "Jul 20, 2026",
+        "description": "ORDER RE: JOINT DISCOVERY LETTER BRIEF (Dkt 117 ). Signed by Magistrate Judge Ajay Krishnan on 7/20/2026.(kmm2, COURT STAFF) (Filed on 7/20/2026) (Entered: 07/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 117,
+        "date_filed": "2026-07-17",
+        "time_filed": "08:26:23",
+        "date_display": "Jul 17, 2026",
+        "description": "Joint Discovery Letter Briefre Substantial Completion Deadline filed by Grady Hendrix, John Hornor Jacobs, Eboni McKinnon, Jennifer Roberson. (Dreher, William) (Filed on 7/17/2026) (Entered: 07/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.117.0.pdf"
+      },
+      {
+        "entry_number": 116,
+        "date_filed": "2026-07-07",
+        "time_filed": "13:56:24",
+        "date_display": "Jul 7, 2026",
+        "description": "STIPULATED PROTECTIVE ORDER. Signed by Magistrate Judge Ajay Krishnan on 7/7/2026.(kmm2, COURT STAFF) (Filed on 7/7/2026) (Entered: 07/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.116.0.pdf"
+      },
+      {
+        "entry_number": 115,
+        "date_filed": "2026-07-02",
+        "time_filed": "15:02:34",
+        "date_display": "Jul 2, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER (Joint Statement Regarding Stipulated Protective Order) filed by Grady Hendrix, John Hornor Jacobs, Eboni McKinnon, Jennifer Roberson. (Attachments: # 1 Exhibit 1: Proposed Order, # 2 Exhibit 2: Redlined Proposed Order)(Nath, Rohit) (Filed on 7/2/2026) (Entered: 07/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 114,
+        "date_filed": "2026-06-29",
+        "time_filed": "12:54:55",
+        "date_display": "Jun 29, 2026",
+        "description": "CASE MANAGEMENT AND PRETRIAL ORDER: Further Case Management Conference will be held via Zoom Webinar. Joint Case Management Conference Statement due by 7/19/2027. Further Case Management Conference set for 7/26/2027, at 02:00 PM in Oakland, - Videoconference Only. Webinar Access: All counsel, members of the public, and media may access the webinar information at https://www.cand.uscourts.gov/ygr Court Appearances: Advanced notice is required of counsel or parties who wish to be identified by the court as making an appearance or will be participating in the argument at the hearing. A list of names and emails must be sent to the CRD at ygrcrd@cand.uscourts.gov no later than July 23, 2027, at 12:00 PM PST. Civ LR 77-3(d). Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.114.0.pdf"
+      },
+      {
+        "entry_number": 113,
+        "date_filed": "2026-06-22",
+        "time_filed": "",
+        "date_display": "Jun 22, 2026",
+        "description": "Statement (Joint) regarding Updated Proposed Case Schedule by Apple Inc. (Nightingale Dawson, Elana) (Filed on 6/22/2026) (Entered: 06/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.113.0.pdf"
+      },
+      {
+        "entry_number": 112,
+        "date_filed": "2026-06-16",
+        "time_filed": "",
+        "date_display": "Jun 16, 2026",
+        "description": "NOTICE of Withdrawal filed by Elizabeth W. Tarbell, no longer appearing on behalf of Grady Hendrix, Jennifer Roberson in this case (Tarbell, Elizabeth) (Filed on 6/16/2026) (Entered: 06/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-16",
+        "time_filed": "14:44:46",
+        "date_display": "Jun 16, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 111,
+        "date_filed": "2026-06-10",
+        "time_filed": "17:23:26",
+        "date_display": "Jun 10, 2026",
+        "description": "Proposed Order PROPOSED STIPULATED ORDER RE: DISCOVERY OF ELECTRONICALLY STORED INFORMATION FOR STANDARD LITIGATION by Grady Hendrix, John Hornor Jacobs, Eboni McKinnon, Jennifer Roberson. (Nath, Rohit) (Filed on 6/10/2026) (Entered: 06/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 110,
+        "date_filed": "2026-06-10",
+        "time_filed": "",
+        "date_display": "Jun 10, 2026",
+        "description": "NOTICE of Appearance filed by Eliza Rosa Finley on behalf of Grady Hendrix, John Hornor Jacobs, Eboni McKinnon, Jennifer Roberson (Finley, Eliza) (Filed on 6/10/2026) (Entered: 06/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-10",
+        "time_filed": "11:50:07",
+        "date_display": "Jun 10, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 109,
+        "date_filed": "2026-06-09",
+        "time_filed": "14:57:22",
+        "date_display": "Jun 9, 2026",
+        "description": "Transcript of Proceedings held on 06/05/26, before Judge Ajay S. Krishman. Court Reporter/Transcriber Echo Reporting, Inc., telephone number echoreporting@yahoo.com. Tape Number: 2:00 - 3:49. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 107 Transcript Order, 106 Transcript Order ) Redaction Request due 6/30/2026. Redacted Transcript Deadline set for 7/10/2026. Release of Transcript Restriction set for 9/8/2026. (Related documents(s) 107, 106 ) (Jauregui, Tara) (Filed on 6/9/2026) (Entered: 06/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 108,
+        "date_filed": "2026-06-05",
+        "time_filed": "",
+        "date_display": "Jun 5, 2026",
+        "description": "Minute Entry for proceedings held before Magistrate Judge Ajay S. Krishnan: Status Conference Re: Discovery Brief held on 6/5/2026 Terminating 98 Discovery Letter Brief. Oral argument heard on the record; matter submitted. Parties will meet and confer with their clients and the opposing party to resolve disputed issues on the joint discovery letter brief. Zoom Recording Time: 2:00 PM - 3:49 PM. Plaintiff Attorney: Rohit Nath, Alejandra Salinas, Benjamin Gould, Chris Ryder, Eleanor Runde, Matthew Butterick, Samuel Rubinstein and William Dreher. Defendant Attorney: Nicole Charlene Valco, Elana Nightingale Dawson and Melanie Marilyn Blunschi. (This is a text-only entry generated by the court. There is no document associated with this entry.) (eac, COURT STAFF) (Date Filed: 6/5/2026) Modified on 6/8/2026 to assign to transcriber Tara Jauregui of echoreporting@yahoo.com. (ccf, COURT STAFF).…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 107,
+        "date_filed": "2026-06-05",
+        "time_filed": "18:32:01",
+        "date_display": "Jun 5, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 06/05/2026 before Magistrate Judge Ajay S. Krishnan by Apple Inc, for Recorded Proceeding - Oakland. (Valco, Nicole) (Filed on 6/5/2026) (Entered: 06/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 106,
+        "date_filed": "2026-06-05",
+        "time_filed": "17:09:15",
+        "date_display": "Jun 5, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 06/05/2026 before Magistrate Judge Ajay S. Krishnan by Grady Hendrix, John Hornor Jacobs, Eboni McKinnon, Jennifer Roberson, for Recorded Proceeding - Oakland. (Rubinstein, Samuel) (Filed on 6/5/2026) (Entered: 06/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-05",
+        "time_filed": "22:55:47",
+        "date_display": "Jun 5, 2026",
+        "description": "Order on Discovery Letter Brief AND Status Conference",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 105,
+        "date_filed": "2026-06-04",
+        "time_filed": "",
+        "date_display": "Jun 4, 2026",
+        "description": "CLERK'S NOTICE SETTING DISCOVERY MOTION HEARING: Notice is hereby given that a hearing on 98 Joint Discovery Letter Brief has been set for 6/5/2026 at 2:00 PM, Oakland via Zoom webinar before Magistrate Judge Ajay Krishnan. *** All attorneys and pro se litigants appearing for the hearing are required to join Zoom at least 15 minutes before the hearing to check in with the Courtroom Deputy.Webinar Access: All counsel, members of the public, and media may access the webinar information at https://cand.uscourts.gov/judges/ask/krishnan-ajay-sCiv LR 77-3(d). Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited.Zoom Guidance and Setup: https://cand.uscourts.gov/zoom. (This is a text-only entry…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-04",
+        "time_filed": "10:31:09",
+        "date_display": "Jun 4, 2026",
+        "description": "Clerk's Notice AND ~Util - Set Motion and Deadlines/Hearings AND ~Util - Teleconference Zoom",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 104,
+        "date_filed": "2026-06-03",
+        "time_filed": "08:15:35",
+        "date_display": "Jun 3, 2026",
+        "description": "CASE MANAGEMENT ORDER PLAINTIFFS' LEADERSHIP RESPONSIBILITIES. Signed by Judge Yvonne Gonzalez Rogers on 6/3/2026. (eac, COURT STAFF) (Filed on 6/3/2026) (Entered: 06/03/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.104.0.pdf"
+      },
+      {
+        "entry_number": 103,
+        "date_filed": "2026-06-03",
+        "time_filed": "08:11:57",
+        "date_display": "Jun 3, 2026",
+        "description": "COMMON BENEFIT ORDER. Signed by Judge Yvonne Gonzalez Rogers on 6/3/2026. (eac, COURT STAFF) (Filed on 6/3/2026) (Entered: 06/03/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.103.0.pdf"
+      },
+      {
+        "entry_number": 102,
+        "date_filed": "2026-06-03",
+        "time_filed": "08:08:04",
+        "date_display": "Jun 3, 2026",
+        "description": "ORDER RE TIMING AND STAGING OF MOTIONS FOR SUMMARY JUDGMENT AND CLASS CERTIFICATION Re: 88 Joint Case Management Statement; 85 Statement. Joint Proposed Case Schedule due by 6/22/2026. Signed by Judge Yvonne Gonzalez Rogers on 6/3/2026. (eac, COURT STAFF) (Filed on 6/3/2026) (Entered: 06/03/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.102.0.pdf"
+      },
+      {
+        "entry_number": 101,
+        "date_filed": "2026-06-02",
+        "time_filed": "",
+        "date_display": "Jun 2, 2026",
+        "description": "APPLICATION FOR ADMISSION OF ATTORNEY PRO HAC VICE; ORDER by Judge Yvonne Gonzalez Rogers. Denying as Moot 91 Motion for Pro Hac Vice; Granting 95 Motion for Pro Hac Vice (Nicandro Iannacci). (eac, COURT STAFF) (Filed on 6/2/2026) (Entered: 06/03/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 100,
+        "date_filed": "2026-06-02",
+        "time_filed": "21:12:26",
+        "date_display": "Jun 2, 2026",
+        "description": "STATUS REPORT Regarding ESI Protocol by Apple Inc. (Nightingale Dawson, Elana) (Filed on 6/2/2026) (Entered: 06/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 99,
+        "date_filed": "2026-05-27",
+        "time_filed": "21:28:23",
+        "date_display": "May 27, 2026",
+        "description": "Letter from Plaintiffs re Overlength Letter Brief. (Dreher, William) (Filed on 5/27/2026) (Entered: 05/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 98,
+        "date_filed": "2026-05-21",
+        "time_filed": "23:59:10",
+        "date_display": "May 21, 2026",
+        "description": "Joint Discovery Letter Brief(Joint Statement Regarding Protective Order Dispute) filed by Apple Inc. (Attachments: # 1 Exhibit 1: Apple's Proposed PO, # 2 Exhibit 2: Redline of Apple's Proposed PO, # 3 Exhibit 3: Plaintiffs' Proposed PO, # 4 Exhibit 4: Redline of Plaintiffs' Proposed PO)(Valco, Nicole) (Filed on 5/21/2026) (Entered: 05/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.98.0.pdf"
+      },
+      {
+        "entry_number": 97,
+        "date_filed": "2026-05-19",
+        "time_filed": "12:04:26",
+        "date_display": "May 19, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on May 11, 2026 before Judge Yvonne Gonzalez Rogers by Grady Hendrix, Jennifer Roberson, for Court Reporter Kendra Steppler. (Nath, Rohit) (Filed on 5/19/2026) (Entered: 05/19/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 96,
+        "date_filed": "2026-05-13",
+        "time_filed": "13:22:15",
+        "date_display": "May 13, 2026",
+        "description": "Transcript of Proceedings held on May 11, 2026, before Judge Yvonne Gonzalez Rogers. Court Reporter Kendra Steppler, email at kendra_steppler@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter until the deadline for the Release of Transcript Restriction. After that date, it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 93 Transcript Order ) Release of Transcript Restriction set for 8/11/2026. (Related documents(s) 93 ) (Steppler, Kendra) (Filed on 5/13/2026) (Entered: 05/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 95,
+        "date_filed": "2026-05-13",
+        "time_filed": "10:26:37",
+        "date_display": "May 13, 2026",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21967971.) Filing fee previously paid on 5/12/2026 filed by Grady Hendrix, John Hornor Jacobs, Eboni McKinnon, Jennifer Roberson. (Iannacci, Nicandro) (Filed on 5/13/2026) (Entered: 05/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 93,
+        "date_filed": "2026-05-12",
+        "time_filed": "20:51:54",
+        "date_display": "May 12, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 5/11/2026 before Judge Yvonne Gonzalez Rogers by Apple Inc, for Court Reporter Kendra Steppler. (Nightingale Dawson, Elana) (Filed on 5/12/2026) (Entered: 05/12/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-12",
+        "time_filed": "",
+        "date_display": "May 12, 2026",
+        "description": "Electronic filing error. This filing will not be processed by the clerks office. Please re-file in its entirety. Re: 91 MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21967971.) filed by John Hornor Jacobs, Jennifer Roberson, Grady Hendrix, Eboni McKinnon Local Co-Counsel should be physically present/holding office in the Northern District of California. Please review Civil Local Rule 11-3. (eac, COURT STAFF) (Filed on 5/12/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-12",
+        "time_filed": "15:50:43",
+        "date_display": "May 12, 2026",
+        "description": "Case Referred to Magistrate Judge for Discovery",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-12",
+        "time_filed": "10:43:59",
+        "date_display": "May 12, 2026",
+        "description": "Electronic Filing Error",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-12",
+        "time_filed": "",
+        "date_display": "May 12, 2026",
+        "description": "CASE REFERRED to Magistrate Judge Ajay S. Krishnan for Discovery. (shy, COURT STAFF) (Filed on 5/12/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 94,
+        "date_filed": "2026-05-11",
+        "time_filed": "",
+        "date_display": "May 11, 2026",
+        "description": "Minute Entry for proceedings held before Judge Yvonne Gonzalez Rogers: Further Case Management Conference held on 5/11/2026. Motions due by 5/21/2026. Total Time in Court: 23 minutes. Court Reporter: Kendra Steppler; via Zoom. (eac, COURT STAFF) (Date Filed: 5/11/2026) (Entered: 05/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 92,
+        "date_filed": "2026-05-11",
+        "time_filed": "22:37:11",
+        "date_display": "May 11, 2026",
+        "description": "ORDER OF REFERENCE TO MAGISTRATE JUDGE FOR DISCOVERY. Case is referred to Magistrate Judge Ajay S. Krishnan for all discovery matters. Signed by Judge Yvonne Gonzalez Rogers on 5/11/2026. (eac, COURT STAFF) (Filed on 5/11/2026) (Entered: 05/11/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.92.0.pdf"
+      },
+      {
+        "entry_number": 91,
+        "date_filed": "2026-05-11",
+        "time_filed": "10:39:37",
+        "date_display": "May 11, 2026",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21967971.) filed by Grady Hendrix, John Hornor Jacobs, Eboni McKinnon, Jennifer Roberson. (Iannacci, Nicandro) (Filed on 5/11/2026) (Entered: 05/11/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90,
+        "date_filed": "2026-05-08",
+        "time_filed": "19:17:12",
+        "date_display": "May 8, 2026",
+        "description": "Proposed Order Case Management - Plaintiffs' Leadership Responsibility by Grady Hendrix, John Hornor Jacobs, Eboni McKinnon, Jennifer Roberson. (Dreher, William) (Filed on 5/8/2026) (Entered: 05/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 89,
+        "date_filed": "2026-05-08",
+        "time_filed": "19:13:00",
+        "date_display": "May 8, 2026",
+        "description": "Proposed Order Common Benefit by Grady Hendrix, John Hornor Jacobs, Eboni McKinnon, Jennifer Roberson. (Attachments: # 1 Exhibit A)(Dreher, William) (Filed on 5/8/2026) (Entered: 05/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.89.0.pdf"
+      },
+      {
+        "entry_number": 88,
+        "date_filed": "2026-05-04",
+        "time_filed": "22:47:57",
+        "date_display": "May 4, 2026",
+        "description": "JOINT CASE MANAGEMENT STATEMENT filed by Grady Hendrix, John Hornor Jacobs, Eboni McKinnon, Jennifer Roberson. (Dreher, William) (Filed on 5/4/2026) (Entered: 05/04/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.88.0.pdf"
+      },
+      {
+        "entry_number": 87,
+        "date_filed": "2026-04-24",
+        "time_filed": "09:05:35",
+        "date_display": "Apr 24, 2026",
+        "description": "ADR Certification (ADR L.R. 3-5 b) of discussion of ADR options (Rubinstein, Samuel) (Filed on 4/24/2026) (Entered: 04/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 86,
+        "date_filed": "2026-04-24",
+        "time_filed": "09:04:38",
+        "date_display": "Apr 24, 2026",
+        "description": "ADR Certification (ADR L.R. 3-5 b) of discussion of ADR options (Rubinstein, Samuel) (Filed on 4/24/2026) (Entered: 04/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 85,
+        "date_filed": "2026-04-17",
+        "time_filed": "23:20:07",
+        "date_display": "Apr 17, 2026",
+        "description": "Statement JOINT STATEMENT REGARDING PROPOSED CASE SCHEDULE7 by Grady Hendrix, John Hornor Jacobs, Eboni McKinnon, Jennifer Roberson. (Nath, Rohit) (Filed on 4/17/2026) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.85.0.pdf"
+      },
+      {
+        "entry_number": 84,
+        "date_filed": "2026-04-15",
+        "time_filed": "",
+        "date_display": "Apr 15, 2026",
+        "description": "CLERK'S NOTICE SETTING CASE MANAGEMENT CONFERENCE. You are hereby notified that the Further Case Management Conference will be held by Zoom Webinar. Joint Case Management Statement is due by 5/4/2026. Further Case Management Conference set for 5/11/2026, at 02:00 PM in Oakland, - Videoconference Only. This proceeding will be held via a Zoom webinar.Webinar Access: All counsel, members of the public, and media may access the webinar information at https://www.cand.uscourts.gov/ygr Civ LR 77-3(d). Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited.Zoom Guidance and Setup: https://cand.uscourts.gov/judges/remote-access-court-proceedings/participating-court-proceedings-zoo. (This is a text-only…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-15",
+        "time_filed": "11:25:20",
+        "date_display": "Apr 15, 2026",
+        "description": "Clerk's Notice AND ~Util - Teleconference Zoom",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 83,
+        "date_filed": "2026-03-30",
+        "time_filed": "18:42:54",
+        "date_display": "Mar 30, 2026",
+        "description": "Answer to Consolidated Complaint; Jury Trial Demanded 81 Consolidated Class Action Complaint) by Apple Inc. (Gass, Andrew) (Filed on 3/30/2026) (Entered: 03/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.83.0.pdf"
+      },
+      {
+        "entry_number": 82,
+        "date_filed": "2026-03-12",
+        "time_filed": "18:50:44",
+        "date_display": "Mar 12, 2026",
+        "description": "NOTICE of Change of Address by Christopher K.L. Young (Young, Christopher) (Filed on 3/12/2026) (Entered: 03/12/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 81,
+        "date_filed": "2026-02-13",
+        "time_filed": "18:26:44",
+        "date_display": "Feb 13, 2026",
+        "description": "CONSOLIDATED CLASS ACTION COMPLAINT; Jury Trial Demanded against Apple Inc. Filed by Jennifer Roberson, Grady Hendrix, John Hornor Jacobs, Eboni McKinnon. (Attachments: # 1 Exhibit A)(Dreher, William) (Filed on 2/13/2026) (Entered: 02/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.81.0.pdf"
+      },
+      {
+        "entry_number": 80,
+        "date_filed": "2026-02-04",
+        "time_filed": "07:36:50",
+        "date_display": "Feb 4, 2026",
+        "description": "Transcript of Proceedings held on 1-27-26, before Judge Yvonne Gonzalez Rogers. Court Reporter Lee-Anne Shortridge, telephone number 510-896-9660 email: lee-anne_shortridge@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re (75 in 4:25-cv-07558-YGR) Transcript Order ) Release of Transcript Restriction set for 5/5/2026. (las, COURT STAFF) (Filed on 2/4/2026) (Entered: 02/04/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 79,
+        "date_filed": "2026-01-30",
+        "time_filed": "23:18:59",
+        "date_display": "Jan 30, 2026",
+        "description": "ORDER APPOINTING INTERIM CO-LEAD COUNSEL by Judge Yvonne Gonzalez Rogers Granting 57 Motion to Appoint Lead Plaintiff and Lead Counsel; Terminating 59 Motion to Appoint Lead Plaintiff and Lead Counsel; Terminating 60 Motion to Appoint Lead Plaintiff and Lead Counsel. (eac, COURT STAFF) (Filed on 1/30/2026) (Entered: 01/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.79.0.pdf"
+      },
+      {
+        "entry_number": 78,
+        "date_filed": "2026-01-30",
+        "time_filed": "11:59:50",
+        "date_display": "Jan 30, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 01/27/2026 before Judge Yvonne Gonzalez Rogers by Tasha Alexander, for Court Reporter Lee-Anne Shortridge. (Swope, Karin) (Filed on 1/30/2026) (Entered: 01/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 77,
+        "date_filed": "2026-01-30",
+        "time_filed": "10:07:19",
+        "date_display": "Jan 30, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on January 27, 2026 before Judge Yvonne Gonzalez Rogers by Grady Hendrix, Jennifer Roberson, for Court Reporter Lee-Anne Shortridge. (Nath, Rohit) (Filed on 1/30/2026) (Entered: 01/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 76,
+        "date_filed": "2026-01-29",
+        "time_filed": "10:30:21",
+        "date_display": "Jan 29, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 1/27/2026 before Judge Yvonne Gonzalez Rogers by Stephen L. Macknik, Susana Martinez-Conde, for Court Reporter Lee-Anne Shortridge. (Young, Christopher) (Filed on 1/29/2026) (Entered: 01/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 75,
+        "date_filed": "2026-01-28",
+        "time_filed": "17:48:00",
+        "date_display": "Jan 28, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 1/27/26 before Judge Yvonne Gonzalez Rogers by Apple Inc, for Court Reporter Lee-Anne Shortridge. (Nightingale Dawson, Elana) (Filed on 1/28/2026) (Entered: 01/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 74,
+        "date_filed": "2026-01-27",
+        "time_filed": "",
+        "date_display": "Jan 27, 2026",
+        "description": "Minute Entry for proceedings held before Judge Yvonne Gonzalez Rogers: Motion Hearing held on 1/27/2026. Total Time in Court: 1:29. Court Reporter: Lee-Anne Shortridge. (eac, COURT STAFF) (Date Filed: 1/27/2026) (Entered: 01/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.74.0.pdf"
+      },
+      {
+        "entry_number": 73,
+        "date_filed": "2026-01-26",
+        "time_filed": "13:11:36",
+        "date_display": "Jan 26, 2026",
+        "description": "ORDER GRANTING PLAINTIFF TASHA ALEXANDER'S ADMINISTRATIVE MOTION FOR LEAVE TO FILE SUPPLEMENTAL SUBMISSION IN SUPPORT OF MOTION FOR APPOINTMENT OF INTERIM LEAD COUNSEL by Judge Yvonne Gonzalez Rogers Granting 71 Administrative Motion. (eac, COURT STAFF) (Filed on 1/26/2026) (Entered: 01/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.73.0.pdf"
+      },
+      {
+        "entry_number": 72,
+        "date_filed": "2026-01-26",
+        "time_filed": "12:03:10",
+        "date_display": "Jan 26, 2026",
+        "description": "APPLICATION FOR ADMISSION OF ATTORNEY PRO HAC VICE; ORDER by Judge Yvonne Gonzalez Rogers Granting 69 Motion for Pro Hac Vice (Avery M. Wolff). (eac, COURT STAFF) (Filed on 1/26/2026) (Entered: 01/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 71,
+        "date_filed": "2026-01-23",
+        "time_filed": "16:45:32",
+        "date_display": "Jan 23, 2026",
+        "description": "ADMINISTRATIVE MOTION for Leave to File Supplemental Submission in Support of Motion for Appointment of Interim Lead Counsel filed by Tasha Alexander. Responses due by 1/27/2026. (Attachments: # 1 Declaration of Anne K. Davis, # 2 Exhibit 1 - Plaintiff's [Proposed] Supplemental Submisssion, # 3 Proposed Order)(Davis, Anne) (Filed on 1/23/2026) (Entered: 01/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 70,
+        "date_filed": "2026-01-23",
+        "time_filed": "",
+        "date_display": "Jan 23, 2026",
+        "description": "NOTICE of Appearance filed by Diane Sue Rice on behalf of Stephen L. Macknik, Susana Martinez-Conde (Rice, Diane) (Filed on 1/23/2026) (Entered: 01/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 69,
+        "date_filed": "2026-01-23",
+        "time_filed": "11:01:48",
+        "date_display": "Jan 23, 2026",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21575672.) filed by Stephen L. Macknik, Susana Martinez-Conde. (Wolff, Avery) (Filed on 1/23/2026) (Entered: 01/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-23",
+        "time_filed": "15:16:36",
+        "date_display": "Jan 23, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 68,
+        "date_filed": "2026-01-20",
+        "time_filed": "15:01:23",
+        "date_display": "Jan 20, 2026",
+        "description": "NOTICE by Tasha Alexander of Change of Firm Affiliation (Davis, Anne) (Filed on 1/20/2026) (Entered: 01/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 67,
+        "date_filed": "2025-12-16",
+        "time_filed": "11:58:21",
+        "date_display": "Dec 16, 2025",
+        "description": "APPLICATION FOR ADMISSION OF ATTORNEY PRO HAC VICE; ORDER by Judge Yvonne Gonzalez Rogers Finding as Moot 58 Motion for Pro Hac Vice; Granting 66 Motion for Pro Hac Vice (Cari Laufenberg). (eac, COURT STAFF) (Filed on 12/16/2025) (Entered: 12/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 66,
+        "date_filed": "2025-12-12",
+        "time_filed": "14:24:21",
+        "date_display": "Dec 12, 2025",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21380984.) Filing fee previously paid on 11/21/2025 filed by Grady Hendrix, Jennifer Roberson. (Laufenberg, Cari) (Filed on 12/12/2025) (Entered: 12/12/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 65,
+        "date_filed": "2025-12-10",
+        "time_filed": "15:42:07",
+        "date_display": "Dec 10, 2025",
+        "description": "Order by Judge Yvonne Gonzalez Rogers Granting 64 Stipulation to Continue Hearing on Motions for Leadership from December 30, 2025 to January 27, 2026. (eac, COURT STAFF) (Filed on 12/10/2025) (Entered: 12/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.65.0.pdf"
+      },
+      {
+        "entry_number": 64,
+        "date_filed": "2025-12-10",
+        "time_filed": "11:12:50",
+        "date_display": "Dec 10, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER to Continue Hearing filed by Tasha Alexander. (Swope, Karin) (Filed on 12/10/2025) (Entered: 12/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-10",
+        "time_filed": "15:43:47",
+        "date_display": "Dec 10, 2025",
+        "description": "Set Motion and Deadlines/Hearings",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-10",
+        "time_filed": "16:01:33",
+        "date_display": "Dec 10, 2025",
+        "description": "Electronic Filing Error",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-10",
+        "time_filed": "",
+        "date_display": "Dec 10, 2025",
+        "description": "Electronic filing error. This filing will not be processed by the clerks office. Re: 58 MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21380984.) filed by Jennifer Roberson, Grady Hendrix. Please review Civil Local Rule 11-3 paragraph (3). Local co-counsel should maintain an office within the State of California. (eac, COURT STAFF) (Filed on 12/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-10",
+        "time_filed": "",
+        "date_display": "Dec 10, 2025",
+        "description": "Reset Deadlines as to 60 MOTION to Appoint Lead Plaintiff and Lead Counsel, 57 MOTION to Appoint Lead Plaintiff and Lead Counsel, 59 MOTION to Appoint Lead Plaintiff and Lead Counsel. Motion Hearing set for 1/27/2026, at 02:00 PM in Oakland, Courtroom 1, 4th Floor before Judge Yvonne Gonzalez Rogers. (eac, COURT STAFF) (Filed on 12/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 63,
+        "date_filed": "2025-12-05",
+        "time_filed": "22:16:04",
+        "date_display": "Dec 5, 2025",
+        "description": "OPPOSITION/RESPONSE (re 60 MOTION to Appoint Lead Plaintiff and Lead Counsel ) filed byStephen L. Macknik, Susana Martinez-Conde. (Young, Christopher) (Filed on 12/5/2025) (Entered: 12/05/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.63.0.pdf"
+      },
+      {
+        "entry_number": 62,
+        "date_filed": "2025-12-05",
+        "time_filed": "21:34:29",
+        "date_display": "Dec 5, 2025",
+        "description": "OPPOSITION/RESPONSE (re 60 MOTION to Appoint Lead Plaintiff and Lead Counsel, 57 MOTION to Appoint Lead Plaintiff and Lead Counsel ) filed byTasha Alexander. (Davis, Anne) (Filed on 12/5/2025) (Entered: 12/05/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.62.0.pdf"
+      },
+      {
+        "entry_number": 61,
+        "date_filed": "2025-12-05",
+        "time_filed": "18:58:35",
+        "date_display": "Dec 5, 2025",
+        "description": "OPPOSITION/RESPONSE (re 60 MOTION to Appoint Lead Plaintiff and Lead Counsel, 59 MOTION to Appoint Lead Plaintiff and Lead Counsel ) filed byGrady Hendrix, Jennifer Roberson. (Attachments: # 1 Declaration)(Dreher, William) (Filed on 12/5/2025) (Entered: 12/05/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.61.0.pdf"
+      },
+      {
+        "entry_number": 60,
+        "date_filed": "2025-11-21",
+        "time_filed": "23:44:01",
+        "date_display": "Nov 21, 2025",
+        "description": "MOTION to Appoint Lead Plaintiff and Lead Counsel filed by Stephen L. Macknik, Susana Martinez-Conde. Motion Hearing set for 12/30/2025 02:00 PM in Oakland, Courtroom 1, 4th Floor before Judge Yvonne Gonzalez Rogers. Responses due by 12/5/2025. Replies due by 12/12/2025. (Attachments: # 1 Declaration Of Christopher K. L. Young, # 2 Exhibit A, # 3 Exhibit B, # 4 Exhibit C, # 5 Proposed Order)(Young, Christopher) (Filed on 11/21/2025) Modified on 11/24/2025 (hdj, COURT STAFF). (Entered: 11/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.60.0.pdf"
+      },
+      {
+        "entry_number": 59,
+        "date_filed": "2025-11-21",
+        "time_filed": "22:01:08",
+        "date_display": "Nov 21, 2025",
+        "description": "MOTION to Appoint Lead Plaintiff and Lead Counsel filed by Tasha Alexander. Motion Hearing set for 12/30/2025 02:00 PM in Oakland, Courtroom 1, 4th Floor before Judge Yvonne Gonzalez Rogers. Responses due by 12/5/2025. Replies due by 12/12/2025. (Attachments: # 1 Joint Declaration of Karin B. Swope and Anne K. Davis, # 2 Exhibit A - CPM Firm Resume, # 3 Exhibit B - BFA Firm Resume, # 4 Proposed Order)(Davis, Anne) (Filed on 11/21/2025) (Entered: 11/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.59.0.pdf"
+      },
+      {
+        "entry_number": 58,
+        "date_filed": "2025-11-21",
+        "time_filed": "21:31:16",
+        "date_display": "Nov 21, 2025",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21380984.) filed by Grady Hendrix, Jennifer Roberson. (Attachments: # 1 Exhibit Certificate of Good Standing)(Laufenberg, Cari) (Filed on 11/21/2025) (Entered: 11/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 57,
+        "date_filed": "2025-11-21",
+        "time_filed": "21:05:25",
+        "date_display": "Nov 21, 2025",
+        "description": "MOTION to Appoint Lead Plaintiff and Lead Counsel filed by Grady Hendrix, Jennifer Roberson. Motion Hearing set for 12/30/2025 02:00 PM in Oakland, Courtroom 1, 4th Floor before Judge Yvonne Gonzalez Rogers. Responses due by 12/5/2025. Replies due by 12/12/2025. (Attachments: # 1 Proposed Order, # 2 Declaration Dreher Declaration, # 3 Exhibit Exhibit A, # 4 Exhibit Exhibit B, # 5 Declaration Nath Declaration, # 6 Exhibit Exhibit C, # 7 Exhibit Exhibit D, # 8 Exhibit Exhibit E)(Dreher, William) (Filed on 11/21/2025) (Entered: 11/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.57.0.pdf"
+      },
+      {
+        "entry_number": 56,
+        "date_filed": "2025-11-21",
+        "time_filed": "18:13:51",
+        "date_display": "Nov 21, 2025",
+        "description": "APPLICATION FOR ADMISSION OF ATTORNEY PRO HAC VICE; ORDER by Judge Yvonne Gonzalez Rogers Granting 52 Motion for Pro Hac Vice (Eleanor Runde). (eac, COURT STAFF) (Filed on 11/21/2025) (Entered: 11/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 55,
+        "date_filed": "2025-11-21",
+        "time_filed": "18:10:07",
+        "date_display": "Nov 21, 2025",
+        "description": "APPLICATION FOR ADMISSION OF ATTORNEY PRO HAC VICE; ORDER by Judge Yvonne Gonzalez Rogers Granting 51 Motion for Pro Hac Vice (Alejandra Salinas). (eac, COURT STAFF) (Filed on 11/21/2025) (Entered: 11/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 54,
+        "date_filed": "2025-11-21",
+        "time_filed": "18:05:46",
+        "date_display": "Nov 21, 2025",
+        "description": "APPLICATION FOR ADMISSION OF ATTORNEY PRO HAC VICE; ORDER by Judge Yvonne Gonzalez Rogers Granting 50 Motion for Pro Hac Vice (Justin Nelson). (eac, COURT STAFF) (Filed on 11/21/2025) (Entered: 11/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 53,
+        "date_filed": "2025-11-21",
+        "time_filed": "18:00:57",
+        "date_display": "Nov 21, 2025",
+        "description": "APPLICATION FOR ADMISSION OF ATTORNEY PRO HAC VICE; ORDER by Judge Yvonne Gonzalez Rogers Granting 48 Motion for Pro Hac Vice (Jordan Connors). (eac, COURT STAFF) (Filed on 11/21/2025) (Entered: 11/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 52,
+        "date_filed": "2025-11-21",
+        "time_filed": "09:09:47",
+        "date_display": "Nov 21, 2025",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21375802.) filed by Grady Hendrix, Jennifer Roberson. (Runde, Eleanor) (Filed on 11/21/2025) (Entered: 11/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 51,
+        "date_filed": "2025-11-20",
+        "time_filed": "19:40:26",
+        "date_display": "Nov 20, 2025",
+        "description": "MOTION for leave to appear in Pro Hac Vice Alejandra C. Salinas ( Filing fee $ 328, receipt number ACANDC-21374725.) filed by Grady Hendrix, Jennifer Roberson. (Salinas, Alejandra) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 50,
+        "date_filed": "2025-11-20",
+        "time_filed": "17:38:19",
+        "date_display": "Nov 20, 2025",
+        "description": "MOTION for leave to appear in Pro Hac Vice Justin A. Nelson ( Filing fee $ 328, receipt number ACANDC-21374174.) Filing fee previously paid on November 20, 2025 filed by Grady Hendrix, Jennifer Roberson. (Nelson, Justin) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 49,
+        "date_filed": "2025-11-20",
+        "time_filed": "",
+        "date_display": "Nov 20, 2025",
+        "description": "NOTICE of Appearance filed by Rohit Dwarka Nath on behalf of Grady Hendrix, Jennifer Roberson (Nath, Rohit) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 48,
+        "date_filed": "2025-11-20",
+        "time_filed": "16:55:36",
+        "date_display": "Nov 20, 2025",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21374212.) filed by Grady Hendrix, Jennifer Roberson. (Attachments: # 1 Certificate of Good Standing)(Connors, Jordan) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 47,
+        "date_filed": "2025-11-20",
+        "time_filed": "",
+        "date_display": "Nov 20, 2025",
+        "description": "NOTICE of Appearance filed by Alexandra Fernandez on behalf of Stephen L. Macknik, Susana Martinez-Conde (Fernandez, Alexandra) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-20",
+        "time_filed": "17:11:55",
+        "date_display": "Nov 20, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 46,
+        "date_filed": "2025-11-17",
+        "time_filed": "16:32:46",
+        "date_display": "Nov 17, 2025",
+        "description": "ADR Certification (ADR L.R. 3-5 b) of discussion of ADR options Grady Hendrix (Rubinstein, Samuel) (Filed on 11/17/2025) (Entered: 11/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 45,
+        "date_filed": "2025-11-17",
+        "time_filed": "16:32:05",
+        "date_display": "Nov 17, 2025",
+        "description": "ADR Certification (ADR L.R. 3-5 b) of discussion of ADR options Jennifer Roberson (Rubinstein, Samuel) (Filed on 11/17/2025) (Entered: 11/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 44,
+        "date_filed": "2025-11-17",
+        "time_filed": "15:21:05",
+        "date_display": "Nov 17, 2025",
+        "description": "ADR Certification (ADR L.R. 3-5 b) of discussion of ADR options (Valco, Nicole) (Filed on 11/17/2025) (Entered: 11/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 43,
+        "date_filed": "2025-11-17",
+        "time_filed": "",
+        "date_display": "Nov 17, 2025",
+        "description": "NOTICE of Appearance filed by Nicole Charlene Valco on behalf of Apple Inc (Valco, Nicole) (Filed on 11/17/2025) (Entered: 11/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-17",
+        "time_filed": "15:11:51",
+        "date_display": "Nov 17, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 42,
+        "date_filed": "2025-11-14",
+        "time_filed": "16:01:39",
+        "date_display": "Nov 14, 2025",
+        "description": "STIPULATION TO CONSOLIDATE CASES AND SET BRIEFING SCHEDULE AND ORDER; AS AMENDED BY THE COURT by Judge Yvonne Gonzalez Rogers Granting 41 Stipulation. Parties' Applications for Leadership due by 11/21/2025. Responses due by 12/5/2025. (eac, COURT STAFF) (Filed on 11/14/2025) (Entered: 11/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.42.0.pdf"
+      },
+      {
+        "entry_number": 41,
+        "date_filed": "2025-11-13",
+        "time_filed": "13:45:29",
+        "date_display": "Nov 13, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER to Consolidate Cases and Set Briefing Schedule filed by Tasha Alexander. (Davis, Anne) (Filed on 11/13/2025) (Entered: 11/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.41.0.pdf"
+      },
+      {
+        "entry_number": 40,
+        "date_filed": "2025-11-05",
+        "time_filed": "09:24:19",
+        "date_display": "Nov 5, 2025",
+        "description": "RELATED CASE ORDER by Judge Yvonne Gonzalez Rogers Granting 39 Motion to Relate Case. 25-cv-7558-YGR is related to 25-cv-9090-EKL. (eac, COURT STAFF) (Filed on 11/5/2025) (Entered: 11/05/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.40.0.pdf"
+      },
+      {
+        "entry_number": 39,
+        "date_filed": "2025-10-30",
+        "time_filed": "10:58:19",
+        "date_display": "Oct 30, 2025",
+        "description": "MOTION to Relate Case Under Civil Local Rule 3-12 filed by Tasha Alexander. (Attachments: # 1 Joint Stipulation in Support of Administrative Motion to Relate Cases Under Civil Local Rule 3-12)(Davis, Anne) (Filed on 10/30/2025) (Entered: 10/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.39.0.pdf"
+      },
+      {
+        "entry_number": 38,
+        "date_filed": "2025-10-30",
+        "time_filed": "08:06:50",
+        "date_display": "Oct 30, 2025",
+        "description": "Judicial Referral for Purpose of Determining Relationship of Cases re this case and 25-cv-9090-EKL. Signed by Judge Eumi K. Lee on 10/30/2025. (lrt, COURT STAFF) (Filed on 10/30/2025) (Entered: 10/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.38.0.pdf"
+      },
+      {
+        "entry_number": 37,
+        "date_filed": "2025-10-21",
+        "time_filed": "19:45:16",
+        "date_display": "Oct 21, 2025",
+        "description": "RELATED CASE ORDER by Judge Yvonne Gonzalez Rogers Granting 33 Motion to Relate Case. 25-cv-7558-YGR is related to 25-cv-8695-PHK. (eac, COURT STAFF) (Filed on 10/21/2025) (Entered: 10/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.37.0.pdf"
+      },
+      {
+        "entry_number": 36,
+        "date_filed": "2025-10-20",
+        "time_filed": "18:27:55",
+        "date_display": "Oct 20, 2025",
+        "description": "STIPULATION (Joint Stipulation to Extend Defendant Apple Inc.'s Time to Respond to Complaint) filed by Apple Inc. (Gass, Andrew) (Filed on 10/20/2025) (Entered: 10/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.36.0.pdf"
+      },
+      {
+        "entry_number": 35,
+        "date_filed": "2025-10-17",
+        "time_filed": "11:26:46",
+        "date_display": "Oct 17, 2025",
+        "description": "Statement re 33 MOTION to Relate Case No. 3:25-cv-08695 (Martinez-Conde v. Apple Inc) Statement of Plaintiffs Hendrix and Roberson In Support of Administrative Motion by Grady Hendrix, Jennifer Roberson. (Gould, Benjamin) (Filed on 10/17/2025) (Entered: 10/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 34,
+        "date_filed": "2025-10-16",
+        "time_filed": "18:45:16",
+        "date_display": "Oct 16, 2025",
+        "description": "Statement re 33 MOTION to Relate Case No. 3:25-cv-08695 (Martinez-Conde v. Apple Inc) by Apple Inc. (Gass, Andrew) (Filed on 10/16/2025) (Entered: 10/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.34.0.pdf"
+      },
+      {
+        "entry_number": 33,
+        "date_filed": "2025-10-14",
+        "time_filed": "11:07:18",
+        "date_display": "Oct 14, 2025",
+        "description": "MOTION to Relate Case No. 3:25-cv-08695 (Martinez-Conde v. Apple Inc) filed by Susana Martinez-Conde, Stephen L. Macknik. (Attachments: # 1 Declaration of Joseph R. Saveri, # 2 Exhibit A - Martinez-Conde Action Complaint, # 3 Proposed Order)(Saveri, Joseph) (Filed on 10/14/2025) (Entered: 10/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.33.0.pdf"
+      },
+      {
+        "entry_number": 32,
+        "date_filed": "2025-10-06",
+        "time_filed": "09:00:11",
+        "date_display": "Oct 6, 2025",
+        "description": "APPLICATION FOR ADMISSION OF ATTORNEY PRO HAC VICE; ORDER by Judge Yvonne Gonzalez Rogers Granting 15 Motion for Pro Hac Vice (Samuel Lev Rubinstein). (eac, COURT STAFF) (Filed on 10/6/2025) (Entered: 10/06/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 31,
+        "date_filed": "2025-10-06",
+        "time_filed": "08:56:25",
+        "date_display": "Oct 6, 2025",
+        "description": "APPLICATION FOR ADMISSION OF ATTORNEY PRO HAC VICE; ORDER by Judge Yvonne Gonzalez Rogers Granting 14 Motion for Pro Hac Vice (Elizabeth Tarbell). (eac, COURT STAFF) (Filed on 10/6/2025) (Entered: 10/06/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 30,
+        "date_filed": "2025-10-06",
+        "time_filed": "08:53:16",
+        "date_display": "Oct 6, 2025",
+        "description": "APPLICATION FOR ADMISSION OF ATTORNEY PRO HAC VICE; ORDER by Judge Yvonne Gonzalez Rogers Granting 13 Motion for Pro Hac Vice (Derek Loeser). (eac, COURT STAFF) (Filed on 10/6/2025) (Entered: 10/06/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 29,
+        "date_filed": "2025-10-06",
+        "time_filed": "08:49:02",
+        "date_display": "Oct 6, 2025",
+        "description": "APPLICATION FOR ADMISSION OF ATTORNEY PRO HAC VICE; ORDER by Judge Yvonne Gonzalez Rogers Granting 11 Motion for Pro Hac Vice (William Dreher). (eac, COURT STAFF) (Filed on 10/6/2025) (Entered: 10/06/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 28,
+        "date_filed": "2025-10-03",
+        "time_filed": "14:50:22",
+        "date_display": "Oct 3, 2025",
+        "description": "CLERK'S NOTICE SETTING CASE MANAGEMENT CONFERENCE. You are hereby notified that the Initial Case Management Conference will be held by Zoom Webinar. Joint Case Management Statement is due by 12/8/2025. Initial Case Management Conference set for 12/15/2025, at 02:00 PM in Oakland, - Videoconference Only. Webinar Access: All counsel, members of the public, and media may access the webinar information at https://www.cand.uscourts.gov/ygr Court Appearances: Advanced notice is required of counsel or parties who wish to be identified by the court as making an appearance or will be participating in the argument at the hearing. A list of names and emails must be sent to the CRD at YGRCRD@cand.uscourts.gov no later than December 12, 2025, at 12:00 PM PST. Civ LR 77-3(d). Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 27,
+        "date_filed": "2025-10-01",
+        "time_filed": "18:50:08",
+        "date_display": "Oct 1, 2025",
+        "description": "APPLICATION FOR ADMISSION OF ATTORNEY PRO HAC VICE; ORDER by Judge Yvonne Gonzalez Rogers Granting 24 Motion for Pro Hac Vice (Elana Nightingale Dawson). (eac, COURT STAFF) (Filed on 10/1/2025) (Entered: 10/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 26,
+        "date_filed": "2025-09-23",
+        "time_filed": "17:46:48",
+        "date_display": "Sep 23, 2025",
+        "description": "Certificate of Interested Entities by Apple Inc (Gass, Andrew) (Filed on 9/23/2025) (Entered: 09/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 25,
+        "date_filed": "2025-09-23",
+        "time_filed": "17:45:21",
+        "date_display": "Sep 23, 2025",
+        "description": "Corporate Disclosure Statement by Apple Inc (Gass, Andrew) (Filed on 9/23/2025) (Entered: 09/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 24,
+        "date_filed": "2025-09-23",
+        "time_filed": "17:43:09",
+        "date_display": "Sep 23, 2025",
+        "description": "MOTION for leave to appear in Pro Hac Vice for Elana Nightingale Dawson ( Filing fee $ 328, receipt number ACANDC-21163525.) filed by Apple Inc. (Attachments: # 1 Certificate of Good Standing)(Nightingale Dawson, Elana) (Filed on 9/23/2025) (Entered: 09/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 23,
+        "date_filed": "2025-09-23",
+        "time_filed": "",
+        "date_display": "Sep 23, 2025",
+        "description": "NOTICE of Appearance filed by Melanie Marilyn Blunschi on behalf of Apple Inc (Blunschi, Melanie) (Filed on 9/23/2025) (Entered: 09/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 22,
+        "date_filed": "2025-09-23",
+        "time_filed": "",
+        "date_display": "Sep 23, 2025",
+        "description": "NOTICE of Appearance filed by Joseph Richard Wetzel on behalf of Apple Inc (Wetzel, Joseph) (Filed on 9/23/2025) (Entered: 09/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 21,
+        "date_filed": "2025-09-23",
+        "time_filed": "",
+        "date_display": "Sep 23, 2025",
+        "description": "NOTICE of Appearance filed by Andrew Michael Gass on behalf of Apple Inc (Gass, Andrew) (Filed on 9/23/2025) (Entered: 09/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-23",
+        "time_filed": "17:30:52",
+        "date_display": "Sep 23, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 20,
+        "date_filed": "2025-09-22",
+        "time_filed": "16:46:32",
+        "date_display": "Sep 22, 2025",
+        "description": "CERTIFICATE OF SERVICE by Grady Hendrix, Jennifer Roberson Service of Standing Orders (Gould, Benjamin) (Filed on 9/22/2025) (Entered: 09/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=71279155&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": null,
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "Judge Picks Co-Lead Counsel in Apple AI Copyright Class Action",
+      "url": "https://news.bloomberglaw.com/ip-law/judge-picks-co-lead-counsel-in-apple-ai-copyright-class-action",
+      "source": "Bloomberg Law",
+      "date": "2026-02-02",
+      "summary": "Judge Yvonne Gonzalez Rogers appointed William Dreher of Keller Rohrback and Rohit Nath of Susman Godfrey as interim co-lead counsel for the consolidated plaintiff class, per a January 30 order. The court evaluated all competing firm applications before selecting the two-firm leadership team."
+    },
+    {
+      "headline": "Apple AI Copyright Case Has Firms Vying to Lead Class Counsel",
+      "url": "https://news.bloomberglaw.com/ip-law/apple-ai-copyright-case-has-firms-vying-to-lead-class-counsel",
+      "source": "Bloomberg Law",
+      "date": "2025-12-08",
+      "summary": "Three competing groups of law firms filed responses seeking interim lead counsel status in the consolidated Apple AI copyright class action, with Susman Godfrey citing its Anthropic $1.5B settlement track record and Cotchett/Bleichmar championing the Alexander complaint as the stronger pleading."
+    },
+    {
+      "headline": "Apple Hit With Copyright Class Action Over Pirated Books Dataset",
+      "url": "https://news.bloomberglaw.com/ip-law/apple-hit-with-copyright-class-action-over-pirated-books-dataset",
+      "source": "Bloomberg Law",
+      "date": "2025-09-08",
+      "summary": "Authors Grady Hendrix and Jennifer Roberson filed suit in N.D. Cal. alleging Apple trained Apple Intelligence on the Books3 pirated dataset, accessed via the RedPajama training corpus hosted by Hugging Face. The complaint targets both Apple's OpenELM and Foundation Language Models."
+    }
+  ],
+  "events": []
 }
