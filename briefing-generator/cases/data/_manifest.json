@@ -320,5 +320,19 @@
     "docket_history": "full",
     "added": "2026-08-19",
     "default_color": "#B3A8F0"
+  },
+  {
+    "slug": "nyt-v-openai-mdl-no-3143-sanctions-motion",
+    "display_name": "NYT v. OpenAI (MDL No. 3143) — Sanctions Motion",
+    "short_name": "NYT v. OpenAI (MDL No. 3143) — Sanctions Motion",
+    "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
+    "court": "S.D.N.Y.",
+    "topics": [
+      "llm-class-action"
+    ],
+    "sync": "active",
+    "docket_history": "full",
+    "added": "2026-08-19",
+    "default_color": "#7EF4C2"
   }
 ]
