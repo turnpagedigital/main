@@ -855,9 +855,9 @@
           "type": "testimonials",
           "visible": true,
           "layout": "layout-1-grid3col",
-          "colorScheme": "dark",
+          "colorScheme": "light-gray",
           "content": {
-            "colorScheme": "dark"
+            "colorScheme": "light-gray"
           }
         },
         {
