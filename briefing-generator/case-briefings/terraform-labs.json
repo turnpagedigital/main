@@ -3,6 +3,34 @@
   "case_name": "Terraform Labs",
   "items": [
     {
+      "date": "2026-08-19",
+      "updated": "2026-08-19",
+      "lede": "On August 18, a withdrawal notice (Dkt. 1320) was filed in Case No. 24-10070-BLS before Judge Brendan Linehan Shannon, Bankr. D. Del. The docket line identifies the entry as \"Withdrawal - Notice\"; the full text of the filing was not pulled, so the specific pleading being withdrawn cannot be confirmed from this record alone.",
+      "body_md": "On August 18, a withdrawal notice (Dkt. 1320) was filed in Case No. 24-10070-BLS before Judge Brendan Linehan Shannon, Bankr. D. Del. The docket line identifies the entry as \"Withdrawal - Notice\"; the full text of the filing was not pulled, so the specific pleading being withdrawn cannot be confirmed from this record alone. The most likely candidate, given recent docket sequencing, is the objection at Dkt. 1319 (filed August 5), which sits in close proximity and is the only contested filing since the cluster of claim-transfer notices filed August 3 (Dkts. 1309–1313). If Dkt. 1320 withdraws Dkt. 1319, the practical consequence is that whatever challenge was lodged — most plausibly an objection to the Serrur Investment Partners transfer of a $3,454,036.42 Class 5 Crypto Loss Claim (Dkt. 1312) — is now off the table without court resolution, leaving the transfer undisturbed. That outcome is substantive in the narrow sense that a live objection to a claim transfer determines who holds the claim and therefore who receives any distribution, but withdrawal of an unresolved objection is routine on a docket at this scale: it does not change the estate's aggregate liability or the overall distribution pool.\n\nThe Serrur transfer itself, docketed July 27 and noticed August 3, transferred a single $3,454,036.42 Class 5 Crypto Loss Claim from an undisclosed transferor to Serrur Investment Partners, LP (37 Greenpoint Avenue, Suite 416, Brooklyn, NY 11222) under Bankruptcy Rule 3001(e)(2). The transferor's identity is withheld from the public record; Serrur represented it holds a signed Evidence of Transfer and will produce it to the court, the debtors, or the claims agent on written request. The claim is one among the more than 16,000 Crypto Loss Claims \nthe Wind Down Trust continues reconciling\n, and secondary-market transfers of this type signal that at least some claim holders are monetizing positions rather than waiting on distributions — a rational trade given \ndistributions have been delayed and the wind-down phase is now officially extended through December 31, 2026.\n\n\nThe broader distribution posture is unchanged. \nAs of the post-confirmation report for the quarter ending March 31, 2026, the Wind Down Trust had distributed nothing to plan creditors, even as the plan administrator continued reconciling more than 16,000 crypto loss claims and pressing a $4 billion lawsuit against Jump Trading as the estate's largest affirmative recovery effort.\n The pending adversary proceeding — *Chang v. Terraform Labs PTE. Ltd. Wind Down Trust* — is still before Judge Shannon following the plan administrator's July motion to dismiss, __[Law360, July 20, 2026](https://www.law360.com/bankruptcy-authority/mid-cap/articles/2504885)__. The next concrete milestone on the recovery timeline is December 31, 2026, the court-extended deadline for the wind-down phase; any material movement in the Jump Trading litigation or the Chang adversary ahead of that date would be the more significant trigger for distribution timing.\n\n## Sources\n\n- [Terraform Distributions: Wait For 2027?](https://reclaim-capital.com/news_eu/terraform-labs-distributions/) — Reclaim Capital, July 12, 2026\n- [Terraform Labs: $4.47B SEC Settlement Shapes Liquidating Plan](https://elevenflo.com/blog/terraform-labs-bankruptcy) — ElevenFlo, June 17, 2026\n- [Under The Radar: Bankruptcy News You May Have Missed](https://www.law360.com/bankruptcy-authority/mid-cap/articles/2504885) — Law360, July 20, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Terraform Distributions: Wait For 2027?",
+          "url": "https://reclaim-capital.com/news_eu/terraform-labs-distributions/",
+          "note": "Reclaim Capital, July 12, 2026"
+        },
+        {
+          "title": "Terraform Labs: $4.47B SEC Settlement Shapes Liquidating Plan",
+          "url": "https://elevenflo.com/blog/terraform-labs-bankruptcy",
+          "note": "ElevenFlo, June 17, 2026"
+        },
+        {
+          "title": "Under The Radar: Bankruptcy News You May Have Missed",
+          "url": "https://www.law360.com/bankruptcy-authority/mid-cap/articles/2504885",
+          "note": "Law360, July 20, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-08-18"
+      }
+    },
+    {
       "date": "2026-08-07",
       "updated": "2026-08-07",
       "lede": "In re Terraform Labs Pte. Ltd., Bankr. D. Del., Case No. 24-10070-BLS, Judge Brendan Linehan Shannon",

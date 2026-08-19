@@ -3,6 +3,34 @@
   "case_name": "Poolin",
   "items": [
     {
+      "date": "2026-08-19",
+      "updated": "2026-08-19",
+      "lede": "On August 18, an unnamed professional filed a monthly fee statement (Dkt. 145) and a support document (Dkt. 143), and August 17 produced the substantive cluster that warrants attention today: an amended motion combined with a retention application (Dkt. 140), a generic motion of unverified subject matter (Dkt. 139), and — carrying the most analytical weight — an interim order on a final hearing (Dkt. 138), entered…",
+      "body_md": "On August 18, an unnamed professional filed a monthly fee statement (Dkt. 145) and a support document (Dkt. 143), and August 17 produced the substantive cluster that warrants attention today: an amended motion combined with a retention application (Dkt. 140), a generic motion of unverified subject matter (Dkt. 139), and — carrying the most analytical weight — an interim order on a final hearing (Dkt. 138), entered alongside a new shorten-time motion (Dkt. 137) and confirmed by a Hearing Scheduled entry (Dkt. 142).\n\nYesterday's briefing flagged that Dkt. 138's subject matter remained unverified from the docket labels alone and that the most plausible candidates were the August 14 Rule 9019 settlement motion (Dkt. 129) and its companion shorten-time motion (Dkt. 130). That uncertainty has not resolved: no secondary reporting has confirmed which pending matter Dkt. 138 addresses, and the docket labels do not specify. What the August 17 cluster confirms structurally is that Judge O'Hagan is running at least one matter on an expedited, interim-then-final track, with a final hearing now calendared (Dkt. 142). If Dkt. 138 provides interim relief on the 9019 settlement, the content of that relief — whether it touches lien priority, claim allowance, or asset title on the Texas properties — is material to creditor recovery ahead of the September 8 qualified bid deadline. Dkt. 139, the generic motion, remains unverified as to subject matter; classify up until the document is accessible. Dkt. 140 mirrors the form of the August 14 amended retention motion (Dkt. 127); absent evidence of a contested objection, it is procedural and routine.\n\nThe trustee motion filed by creditor Lin Liang (Dkt. 103) continues to sit unresolved on the public record alongside the 9019 settlement (Dkt. 129). Both need resolution before the auction: the trustee motion, if granted, displaces the CRO entirely and changes the investigative posture of the estate; the 9019 settlement, if it touches the Elektron Energy billing dispute — which, per the first-day declaration, left a balance of $1,344,788.13 — determines whether that liability encumbers the Texas assets going into the sale. Dkts. 132–136 are BNC certificates of notice, and Dkt. 144 is a certificate of service — filing infrastructure, omitted. The next concrete milestone is September 8, the qualified bid deadline for the West Texas auction, followed by the September 10 auction for the Pyote and Tarbush sites.\n\n## Sources\n\n- [Poolin Cleared To Pursue Asset Sale Amid Trustee Fight](https://www.law360.com/bankruptcy/articles/2513768) — Law360, August 14, 2026\n- [Poolin Creditor Seeks Ch. 11 Trustee To Probe Transfers](https://www.law360.com/bankruptcy-authority/mid-cap/articles/2511097) — Law360, August 10, 2026\n- [Poolin Chapter 11 Bankruptcy Puts $52M Texas Auction in Play](https://www.cryptonexa.com/poolin-chapter-11-bankruptcy-puts-52m-texas-auction-in-play) — CryptoNexa (sourcing first-day declaration)\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Poolin Cleared To Pursue Asset Sale Amid Trustee Fight",
+          "url": "https://www.law360.com/bankruptcy/articles/2513768",
+          "note": "Law360, August 14, 2026"
+        },
+        {
+          "title": "Poolin Creditor Seeks Ch. 11 Trustee To Probe Transfers",
+          "url": "https://www.law360.com/bankruptcy-authority/mid-cap/articles/2511097",
+          "note": "Law360, August 10, 2026"
+        },
+        {
+          "title": "Poolin Chapter 11 Bankruptcy Puts $52M Texas Auction in Play",
+          "url": "https://www.cryptonexa.com/poolin-chapter-11-bankruptcy-puts-52m-texas-auction-in-play",
+          "note": "CryptoNexa (sourcing first-day declaration)"
+        }
+      ],
+      "activity": {
+        "filings": 14,
+        "articles": 0,
+        "latest": "2026-08-18"
+      }
+    },
+    {
       "date": "2026-08-18",
       "updated": "2026-08-18",
       "lede": "On August 17, Judge O'Hagan entered an interim order and set a final hearing (Dkt. 138), filed in conjunction with a new motion to shorten time (Dkt. 137) and a Text Order — the trio signaling that at least one pending matter was resolved on an interim basis and placed on an accelerated final-hearing track.",
