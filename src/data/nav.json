@@ -10,8 +10,8 @@
         "body": "We are currently active in multiple situations.",
         "links": [
           {
-            "label": "Bartz v. Anthropic",
-            "href": "/bartz-v-anthropic"
+            "label": "Copyright Claims (Bartz v. Anthropic)",
+            "href": "/copyright"
           },
           {
             "label": "Tariff Refunds",
@@ -252,7 +252,7 @@
       "items": [
         {
           "label": "Sell Anthropic Claim",
-          "href": "/copyright#register"
+          "href": "/copyright#sell"
         },
         {
           "label": "How it Works",
