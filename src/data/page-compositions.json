@@ -379,15 +379,15 @@
                 "figure": "You don't have to wait.",
                 "title": "We help authors and publishers recover faster. See how it works below.",
                 "note": "",
-                "highlight": true,
+                "highlight": false,
                 "kicker": " ",
-                "cardStyle": "dark"
+                "cardStyle": "white"
               }
             ],
             "kicker": "Scenario",
             "footnote": "",
             "cardRadius": 14,
-            "cardAlign": "center",
+            "cardAlign": "left",
             "cardMaxWidth": 900
           }
         },
