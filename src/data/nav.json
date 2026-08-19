@@ -81,7 +81,7 @@
       "id": "crypto",
       "label": "Locked Crypto",
       "href": "/crypto",
-      "active": true,
+      "active": false,
       "labelKey": "nav.crypto",
       "dropdown": {
         "title": "Locked Crypto",
@@ -147,7 +147,7 @@
       "id": "tariff-refunds",
       "label": "Tariff Refunds",
       "href": "https://www.rewindtariffs.com",
-      "active": true,
+      "active": false,
       "labelKey": "nav.tariff",
       "external": true,
       "dropdown": {
