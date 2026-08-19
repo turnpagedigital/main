@@ -375,20 +375,20 @@
             "cards": [
               {
                 "id": "sc-mt0ili75",
-                "tag": "NOW TRADING",
+                "tag": "Good News",
                 "figure": "You don't have to wait.",
                 "title": "We help authors and publishers recover faster. See how it works below.",
                 "note": "",
                 "highlight": false,
                 "kicker": " ",
-                "cardStyle": "light-gray"
+                "cardStyle": "white"
               }
             ],
             "kicker": "Scenario",
             "footnote": "",
             "cardRadius": 14,
-            "cardAlign": "center",
-            "cardMaxWidth": 830
+            "cardAlign": "left",
+            "cardMaxWidth": 900
           }
         },
         {
