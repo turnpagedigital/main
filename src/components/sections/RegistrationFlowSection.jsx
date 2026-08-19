@@ -32,8 +32,12 @@ import QRCode from "qrcode";
  *   cardColor       — "white" (default) | "light-gray" | "paper" | "neon"
  *     background of the form card (card style only)
  *   disclosure      — small-print paragraph rendered below the form
- *   align           — "left" (default) | "center": centers the heading,
- *     intro, step titles, choice buttons, and disclosure
+ *   align           — "left" (default) | "center": centers the heading-style
+ *     chrome (outer title, intro, step title, step counter, disclosure).
+ *     The fields themselves — labels, inputs, choice buttons — always stay
+ *     left-aligned, since the input boxes are always full-width/left-text
+ *     regardless of this setting; centering only the chrome around them
+ *     avoids a half-centered, half-left look.
  *   formScale       — form zoom in % (100–150, default 100) for a bigger,
  *     easier-to-read form
  */
@@ -76,7 +80,7 @@ function IntroText({ text, dark = false, style = {} }) {
   if (!lines.length) return null;
   const [lead, ...rest] = lines;
   return (
-    <div style={style}>
+    <div style={style} className="regflow-heading-text">
       <p style={{
         fontFamily: FONT, fontSize: "clamp(1.05rem, 1.5vw, 1.2rem)", fontWeight: 700,
         color: dark ? "#fff" : INK, lineHeight: 1.5, margin: 0,
@@ -334,6 +338,13 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
   // of dereferencing an undefined `step` below (which would blank the section).
   if (!step) return null;
 
+  // Live completeness of the CURRENT step, recomputed on every change — drives
+  // the Next/Submit button's grayed-out state so it's obvious at a glance
+  // whether there's anything left to fill in, instead of only finding out
+  // after clicking.
+  const stepReady = !validateStep();
+  const busy = formState === "submitting" || extracting;
+
   const formNode = (
     <>
       {/* Split layout already shows the intro under the left-column heading —
@@ -343,7 +354,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
       )}
       {stepCountKnown && (
         <>
-          <div aria-hidden="true" style={{ display: "flex", gap: 6, marginBottom: "1.1rem" }}>
+          <div aria-hidden="true" style={{ display: "flex", gap: 6, marginBottom: "0.6rem" }}>
             {visibleSteps.map((s, i) => (
               <div key={s.id} style={{
                 flex: 1, height: 4,
@@ -353,12 +364,12 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
               }} />
             ))}
           </div>
-          <p style={{ fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: INK_60, marginBottom: "0.8rem" }}>
+          <p className="regflow-heading-text" style={{ fontFamily: FONT, fontSize: "0.8rem", fontWeight: 500, color: INK_40, marginBottom: "1rem" }}>
             Step {stepIndex + 1} of {visibleSteps.length}
           </p>
         </>
       )}
-      <h3 style={{ fontFamily: FONT, fontWeight: 800, fontSize: "1.35rem", color: INK, marginBottom: "1.9rem", letterSpacing: "-0.01em" }}>
+      <h3 style={{ fontFamily: FONT, fontWeight: 800, fontSize: "clamp(1.5rem, 3vw, 1.75rem)", color: INK, marginBottom: "2.1rem", letterSpacing: "-0.01em" }}>
         {step.title}
       </h3>
       <div className="field-light">
@@ -380,25 +391,22 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
             ← Back
           </button>
         )}
-        {/* On steps driven by a required choice (e.g. Author/Publisher), the
-            Continue bar stays hidden until an option is picked. */}
-        {!(step.fields || []).some(f => fieldVisible(f, answers) && (f.type === "choice" || f.type === "yesno") && f.required && !answers[f.id]) && (
         <button
           type="button"
           onClick={next}
-          disabled={formState === "submitting" || extracting}
-          aria-busy={formState === "submitting" || extracting}
+          disabled={busy || !stepReady}
+          aria-busy={busy}
+          aria-disabled={!stepReady || undefined}
           className="btn-neon"
           style={{
             flex: 1,
-            opacity: (formState === "submitting" || extracting) ? 0.65 : 1,
-            cursor: (formState === "submitting" || extracting) ? "wait" : "pointer",
+            opacity: busy ? 0.65 : (!stepReady ? 0.35 : 1),
+            cursor: busy ? "wait" : (!stepReady ? "not-allowed" : "pointer"),
             ...(onNeonCard ? { background: INK, color: NEON } : {}),
           }}
         >
-          {extracting ? "Reading your claim form…" : formState === "submitting" ? "Sending..." : isLast ? (flow.submitLabel || "Submit") : "Continue →"}
+          {extracting ? "Reading your claim form…" : formState === "submitting" ? "Sending..." : isLast ? (flow.submitLabel || "Submit") : "Next →"}
         </button>
-        )}
       </div>
     </>
   );
@@ -539,17 +547,22 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
           : SURFACE,
         border: `1px solid ${LINE}`,
         borderRadius: radius,
-        padding: "clamp(1.5rem,3.5vw,2.5rem)",
+        padding: "clamp(2.25rem,5vw,3.5rem)",
         boxShadow: "0 2px 16px rgba(0,0,0,0.07)", // matches the contact form card
         ...(scale !== 100 ? { zoom: scale / 100 } : {}),
       };
 
+  // "Centered" only ever applies to heading-style chrome (the outer title,
+  // the step title, the intro blurb, the step counter, the disclosure) — the
+  // actual fields (labels, inputs, choice buttons, help text) always stay
+  // left-aligned. Centering form controls themselves reads as inconsistent
+  // once the input boxes — which are always full-width/left-text regardless
+  // of this setting — sit under a centered label or button row; keeping the
+  // fields uniformly left avoids that half-centered, half-left mismatch.
   const centered = align === "center";
   const centerCss = centered ? (
     <style>{`
-      .regflow-centered h2, .regflow-centered h3, .regflow-centered p { text-align: center; }
-      .regflow-centered .field-light label { text-align: center; }
-      .regflow-centered .regflow-choices { justify-content: center; }
+      .regflow-centered h2, .regflow-centered h3, .regflow-centered .regflow-heading-text { text-align: center; }
       .regflow-centered .regflow-disclosure { margin-left: auto; margin-right: auto; }
     `}</style>
   ) : null;
@@ -650,17 +663,29 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
   );
 }
 
+// A field's question label is secondary to the field itself — keep it quiet
+// (regular case, muted color) so attention lands on the input/button, not the
+// caption above it. The required asterisk stays in the error color so
+// required-ness is still legible at a glance despite the label being muted.
+const FIELD_LABEL_STYLE = {
+  display: "block", fontFamily: FONT, fontSize: "0.95rem", fontWeight: 600,
+  letterSpacing: "normal", textTransform: "none", color: INK_60, marginBottom: "0.55rem",
+};
+// Bigger type + more generous padding on every text-style input, so the
+// fields themselves — not the labels around them — are what the eye lands on.
+const FIELD_INPUT_STYLE = { fontSize: "1.02rem", padding: "1.05rem 1.15rem" };
+
 function FieldControl({ field, value, file, answers = {}, quote, extraction = null, extracting = false, extractError = "", onChange, onFile }) {
   const id = React.useId();
   const label = (
-    <label htmlFor={id} style={{ display: "block" }}>
+    <label htmlFor={id} style={FIELD_LABEL_STYLE}>
       {field.label}
-      {field.required && <span aria-hidden="true" style={{ color: INK, marginLeft: 4, fontWeight: 800 }}>*</span>}
+      {field.required && <span aria-hidden="true" style={{ color: ERROR, marginLeft: 4, fontWeight: 700 }}>*</span>}
     </label>
   );
-  const wrap = { marginBottom: "1.7rem" };
+  const wrap = { marginBottom: "2.1rem" };
   const helpText = (field.help
-    ? <p style={{ fontFamily: FONT, fontSize: "0.78rem", color: INK_60, margin: "0.4rem 0 0.7rem", lineHeight: 1.6 }}>{field.help}</p>
+    ? <p style={{ fontFamily: FONT, fontSize: "0.82rem", color: INK_60, margin: "0.4rem 0 0.7rem", lineHeight: 1.6 }}>{field.help}</p>
     : null);
 
   if (field.type === "number") {
@@ -669,6 +694,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
         {label}
         {helpText}
         <input id={id} type="number" inputMode="numeric" min="0" step="1"
+          style={FIELD_INPUT_STYLE}
           value={value ?? ""} placeholder={field.placeholder || ""}
           onChange={e => onChange(e.target.value)}
           aria-required={field.required || undefined} />
@@ -736,16 +762,16 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
     return (
       <div style={wrap} role="radiogroup" aria-label={field.label}>
         {label}
-        <div className="regflow-choices" style={{ display: "flex", flexWrap: "wrap", gap: "0.55rem", marginTop: "0.45rem" }}>
+        <div className="regflow-choices" style={{ display: "flex", flexWrap: "wrap", gap: "0.7rem", marginTop: "0.5rem" }}>
           {options.map(opt => {
             const selected = value === opt;
             return (
               <button key={opt} type="button" role="radio" aria-checked={selected}
                 onClick={() => onChange(opt)}
                 style={{
-                  fontFamily: FONT, fontSize: "0.88rem", fontWeight: 600,
-                  padding: "0.6rem 1.05rem", cursor: "pointer",
-                  border: `1px solid ${selected ? INK : LINE_STRONG}`,
+                  fontFamily: FONT, fontSize: "1rem", fontWeight: 700,
+                  padding: "0.95rem 1.6rem", cursor: "pointer",
+                  border: `1.5px solid ${selected ? INK : LINE_STRONG}`,
                   background: selected ? INK : SURFACE,
                   color: selected ? TEXT : INK,
                   transition: "all 0.15s",
@@ -765,7 +791,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
         {label}
         <select id={id} value={value || ""} onChange={e => onChange(e.target.value)}
           aria-required={field.required || undefined}
-          style={{ appearance: "none", cursor: "pointer", paddingRight: "2.4rem" }}>
+          style={{ ...FIELD_INPUT_STYLE, appearance: "none", cursor: "pointer", paddingRight: "2.4rem" }}>
           <option value="" disabled>Select…</option>
           {(field.options || []).map(opt => (
             <option key={opt} value={opt} style={{ background: SURFACE, color: INK }}>{opt}</option>
@@ -801,7 +827,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
           accept={(field.accept || ["pdf", "png", "jpg"]).map(a => "." + a).join(",")}
           onChange={e => onFile(e.target.files && e.target.files[0])}
           aria-required={field.required || undefined}
-          style={{ fontFamily: FONT, fontSize: "0.88rem", padding: "0.8rem 0" }} />
+          style={{ fontFamily: FONT, fontSize: "0.95rem", padding: "0.9rem 0" }} />
         {file && (
           <p style={{ fontFamily: FONT, fontSize: "0.8rem", color: INK_60, marginTop: "0.3rem" }}>
             Attached: {file.name}{" "}
@@ -871,6 +897,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
       <div style={wrap}>
         {label}
         <textarea id={id} value={value || ""} onChange={e => onChange(e.target.value)}
+          style={FIELD_INPUT_STYLE}
           aria-required={field.required || undefined} />
       </div>
     );
@@ -881,6 +908,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
     <div style={wrap}>
       {label}
       <input id={id} type={inputType} value={value || ""} onChange={e => onChange(e.target.value)}
+        style={FIELD_INPUT_STYLE}
         aria-required={field.required || undefined} />
     </div>
   );
