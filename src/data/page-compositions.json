@@ -1528,6 +1528,17 @@
             "title": "Start your registration",
             "accent": ""
           }
+        },
+        {
+          "id": "sec-1787152902289-4ujk",
+          "type": "faq",
+          "visible": true,
+          "layout": "layout-2-sidebar",
+          "colorScheme": "light-gray",
+          "content": {
+            "layout": "layout-2-sidebar",
+            "colorScheme": "light-gray"
+          }
         }
       ]
     },
