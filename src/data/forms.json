@@ -7,14 +7,14 @@
       "active": true,
       "attioLabel": "bartz-landing",
       "attioProject": "Bartz",
-      "intro": "Enter your claim information to get an instant quote.\nPlease make sure you have a valid form of ID (driver's license, passport or permanent residency card), proof of address and the unique identification number assigned to you by the Settlement Administrator (JND). If your claim form is available that will speed up your offer and payment.",
+      "intro": "Submit your claim details for a free claim assessment. It's confidential, fast, and you have no-obligation to sell.\nYou will need a valid form of ID (driver's license, passport or permanent residency card), proof of address and the unique identification number assigned to you by the Settlement Administrator (JND). If you have your claim form that will speed up your offer and payment.",
       "submitLabel": "Submit",
       "successTitle": "Got it!",
       "successBody": "We've received your details and will be in touch within 48 hours with your offer and next steps.",
       "steps": [
         {
           "id": "role",
-          "title": "I have a claim based on works that I —",
+          "title": "I am an",
           "fields": [
             {
               "id": "role",
@@ -22,8 +22,8 @@
               "label": "Select one",
               "required": true,
               "options": [
-                "Authored",
-                "Published"
+                "Author",
+                "Publisher"
               ]
             },
             {
