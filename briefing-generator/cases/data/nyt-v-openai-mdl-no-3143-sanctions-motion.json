@@ -1,0 +1,23 @@
+{
+  "case": {
+    "slug": "nyt-v-openai-mdl-no-3143-sanctions-motion",
+    "display_name": "NYT v. OpenAI (MDL No. 3143) — Sanctions Motion",
+    "case_name": "The New York Times Co. et al. (17-publisher coalition) v. OpenAI, Inc.; Microsoft Corporation — In re OpenAI, Inc. Copyright Infringement Litigation, MDL No. 1:25-md-03143",
+    "court": "S.D.N.Y.",
+    "case_number": "1:25-md-03143",
+    "judge": "Sidney H. Stein",
+    "docket_id": "69879510",
+    "status": "active",
+    "sync": "active"
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": []
+}
