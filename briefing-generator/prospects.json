@@ -97,7 +97,8 @@
       "date": "2026-08-05",
       "first_seen": "2026-08-17",
       "status": "new",
-      "vote": 1
+      "vote": 1,
+      "snooze_until": "2026-08-20T13:00:00.000Z"
     },
     {
       "id": "b520713baa",
@@ -143,8 +144,7 @@
       "source_name": "JPML (uscourts.gov)",
       "date": "2026-08-03",
       "first_seen": "2026-08-17",
-      "status": "new",
-      "snooze_until": "2026-08-20T13:00:00.000Z"
+      "status": "new"
     },
     {
       "id": "e068f41370",
