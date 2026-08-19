@@ -24,9 +24,9 @@ Payments follow the installment schedule — next milestones August 21 and Octob
 
 ## If you'd rather have a fixed number than an estimate
 
-Every figure above is an estimate until the administrator cuts your check. Claimants who prefer a known amount now can sell a claim or take an advance against it — [how that works, including what it costs](/briefings/2026-08-03-sell-your-anthropic-settlement-claim). Disclosed plainly: Turnpage buys these claims, and quotes are [free and non-binding](/copyright).
+Every figure above is an estimate until the administrator cuts your check. Claimants who prefer a known amount now can sell their claim with Turnpage.
 
-## Sources
+Sources
 
 - [What Authors Need to Know About the Anthropic Settlement](https://authorsguild.org/advocacy/artificial-intelligence/what-authors-need-to-know-about-the-anthropic-settlement/) — Authors Guild (allocation splits, payment mechanics)
 
