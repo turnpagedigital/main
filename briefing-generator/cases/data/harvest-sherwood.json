@@ -14,13 +14,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
-    "date_last_filing": "2026-08-18",
-    "meta_fetched_at": "2026-08-19T07:10:31.878735+00:00",
-    "fetched_at": "2026-08-19T15:50:09.067361+00:00",
+    "date_last_filing": "2026-08-19",
+    "meta_fetched_at": "2026-08-19T18:58:31.577074+00:00",
+    "fetched_at": "2026-08-19T18:58:31.577074+00:00",
     "as_of": "Aug 19, 2026",
     "backfilled": true,
-    "new_in_72h": 18,
+    "new_in_72h": 20,
     "recent": [
+      {
+        "entry_number": 1233,
+        "date_filed": "2026-08-19",
+        "time_filed": "11:52:31",
+        "date_display": "Aug 19, 2026",
+        "description": "Certificate of service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1232,
+        "date_filed": "2026-08-19",
+        "time_filed": "10:55:24",
+        "date_display": "Aug 19, 2026",
+        "description": "Request for transcript/audio",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1231,
         "date_filed": "2026-08-18",
@@ -30,29 +50,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 1230,
-        "date_filed": "2026-08-18",
-        "time_filed": "15:45:19",
-        "date_display": "Aug 18, 2026",
-        "description": "Notice (generic)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 1229,
-        "date_filed": "2026-08-18",
-        "time_filed": "15:41:52",
-        "date_display": "Aug 18, 2026",
-        "description": "Notice (generic)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1233,
+        "date_filed": "2026-08-19",
+        "time_filed": "11:52:31",
+        "date_display": "Aug 19, 2026",
+        "description": "Certificate of service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1232,
+        "date_filed": "2026-08-19",
+        "time_filed": "10:55:24",
+        "date_display": "Aug 19, 2026",
+        "description": "Request for transcript/audio",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1231,
         "date_filed": "2026-08-18",
