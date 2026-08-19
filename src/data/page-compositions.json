@@ -1407,13 +1407,13 @@
           "id": "sec-1787152662030-drfx",
           "type": "how-it-works",
           "visible": true,
-          "colorScheme": "dark",
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "HOW IT WORKS",
             "title": "Get paid without the wait.",
             "accent": "",
             "kicker": "We take care of everything in just a few steps so you can collect your cash and move on to creating your next great work of art.",
-            "colorScheme": "dark",
+            "colorScheme": "light-gray",
             "steps": [
               {
                 "id": "step-1",
@@ -1436,7 +1436,7 @@
               {
                 "id": "step-1784772902396",
                 "n": "04",
-                "title": "Sign transfer agreement »",
+                "title": "Sign sale agreement »",
                 "body": "Review and sign our standard agreement to transfer your claim."
               },
               {
@@ -1446,14 +1446,14 @@
                 "body": "We'll confirm everything you need to close over zoom and issue payment within 48 hours after signing"
               }
             ],
-            "cardStyle": "standard",
+            "cardStyle": "black",
             "cardRadius": "square",
             "_bookmark": "how-it-works",
-            "backgroundImage": "/lorem-5D6iogbblho-unsplash.jpg",
-            "imageFilterStrength": 75,
-            "imageFilter": "dark",
-            "cardBrightness": 75,
-            "cardBlur": 43,
+            "backgroundImage": "/luis-de-leon-ZRw1-O_RZ9g-unsplash.jpg",
+            "imageFilterStrength": 50,
+            "imageFilter": "light",
+            "cardBrightness": 100,
+            "cardBlur": 19,
             "stepsLayout": "5"
           }
         },
@@ -1470,7 +1470,8 @@
             "colorScheme": "neon",
             "cardRadius": 5,
             "cardStyle": "float",
-            "align": "left"
+            "align": "left",
+            "_bookmark": "sell"
           }
         },
         {
