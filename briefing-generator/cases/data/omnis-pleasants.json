@@ -14,13 +14,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
-    "date_last_filing": "2026-08-18",
-    "meta_fetched_at": "2026-08-19T08:05:47.145191+00:00",
-    "fetched_at": "2026-08-19T13:13:52.772740+00:00",
+    "date_last_filing": "2026-08-19",
+    "meta_fetched_at": "2026-08-19T14:00:46.481197+00:00",
+    "fetched_at": "2026-08-19T14:00:46.481197+00:00",
     "as_of": "Aug 19, 2026",
     "backfilled": true,
-    "new_in_72h": 6,
+    "new_in_72h": 7,
     "recent": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-19",
+        "time_filed": "09:08:26",
+        "date_display": "Aug 19, 2026",
+        "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 100,
         "date_filed": "2026-08-18",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 98,
-        "date_filed": "2026-08-17",
-        "time_filed": "16:20:46",
-        "date_display": "Aug 17, 2026",
-        "description": "Order Granting Motion for Admission pro hac vice of Michael A. Kaplan, Esquire (Related Doc # 96) Order Signed on 8/17/2026. (CEB) (Entered: 08/17/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-19",
+        "time_filed": "09:08:26",
+        "date_display": "Aug 19, 2026",
+        "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 100,
         "date_filed": "2026-08-18",
