@@ -1562,12 +1562,12 @@
             "layout": "layout-3-bottomcta",
             "colorScheme": "dark",
             "eyebrow": "WHY WAIT TO GET PAID?",
-            "title": "Ready to learn more?",
-            "accent": "Talk to us.",
-            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "title": "Get started",
+            "accent": "today.",
+            "kicker": "",
             "primary": {
-              "label": "Get in Touch",
-              "href": "/contact"
+              "label": "Sell my claim",
+              "href": "#sell"
             },
             "secondary": null,
             "titleAccent": "Talk to us.",
