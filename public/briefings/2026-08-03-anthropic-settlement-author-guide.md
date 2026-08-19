@@ -32,14 +32,7 @@ The Authors Guild's guide to the settlement covers the split mechanics in more d
 
 The honest answer: in stages, starting soon, finishing in 2027 — and no first-check date has been formally announced yet. What the schedule actually says:
 
-| Date | What happens |
-|---|---|
-| October 2025 – July 2026 | Anthropic's first payments into the fund (two $300 million tranches: one last October, one due within a week of final approval) |
-| ~August 19, 2026 | The 30-day window to appeal the judgment closes |
-| August 21, 2026 | The administrator sends checks to class members who did not file claims |
-| September 25, 2026 | Anthropic's next $450 million installment is due into the fund |
-| October 9, 2026 | A second wave of claimant checks is scheduled |
-| September 25, 2027 | The final $450 million installment — the fund is complete |
+DateWhat happensOctober 2025 – July 2026Anthropic's first payments into the fund (two $300 million tranches: one last October, one due within a week of final approval)\~August 19, 2026The 30-day window to appeal the judgment closesAugust 21, 2026The administrator sends checks to class members who did not file claimsSeptember 25, 2026Anthropic's next $450 million installment is due into the fundOctober 9, 2026A second wave of claimant checks is scheduledSeptember 25, 2027The final $450 million installment — the fund is complete
 
 Because the fund itself fills in installments, claimant payments are also expected in waves rather than a single check. If you filed a claim, watch for administrator mail and keep your contact details current with them.
 
@@ -81,4 +74,4 @@ Plainly disclosed: buying claims is Turnpage's business. If you want to know wha
 
 ---
 
-*Turnpage Digital Markets is an independent claims buyer. We are not the court, class counsel, or the settlement administrator, and we are not affiliated with the Authors Guild or any party to Bartz v. Anthropic. Verify anything that affects your claim against the administrator's official materials. This guide is general information, not legal, tax, or financial advice.*
+*Turnpage Digital Markets is not the court, class counsel, or the settlement administrator, and we are not affiliated with any party to Bartz v. Anthropic. Verify anything that affects your claim against the administrator's official materials. This guide is general information, not legal, tax, or financial advice.*

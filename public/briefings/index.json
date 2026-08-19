@@ -12,8 +12,8 @@
         "Ninth Circuit"
       ],
       "author": "Turnpage Intelligence",
-      "active": false,
-      "type": "briefing"
+      "type": "briefing",
+      "active": false
     },
     {
       "slug": "2026-08-19-bartz-v-anthropic-the-interloper-lawyers-appealed",
@@ -54,6 +54,7 @@
     {
       "slug": "2026-08-03-anthropic-settlement-author-guide",
       "date": "2026-08-03",
+      "type": "article",
       "title": "The Anthropic Settlement: A Plain-English Guide for Authors",
       "summary": "Who's in the class, how much each book pays and how it's split, when checks arrive, what an appeal would change, and what rights authors kept — in plain language, updated as the settlement moves.",
       "tags": [
@@ -61,10 +62,7 @@
         "Anthropic",
         "Settlement",
         "Guide"
-      ],
-      "author": "Turnpage Intelligence",
-      "active": false,
-      "type": "article"
+      ]
     },
     {
       "slug": "2026-08-03-ai-copyright-lawsuit-tracker",
@@ -98,16 +96,14 @@
     {
       "slug": "2026-08-03-anthropic-settlement-how-much-per-book",
       "date": "2026-08-03",
+      "type": "briefing",
       "title": "How Much Is the Anthropic Settlement Per Book?",
       "summary": "The court's estimate is ~$3,000 per work — four times the statutory minimum. What comes out before you're paid, what makes your number bigger, and when the money actually arrives.",
       "tags": [
         "Bartz",
         "Anthropic",
         "Settlement"
-      ],
-      "author": "Turnpage Intelligence",
-      "active": false,
-      "type": "briefing"
+      ]
     },
     {
       "slug": "2026-08-03-sell-your-anthropic-settlement-claim",
