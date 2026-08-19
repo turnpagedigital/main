@@ -1,4 +1,6 @@
 import React, { useMemo, useState, useEffect } from "react";
+import { marked } from "marked";
+import DOMPurify from "dompurify";
 import { NEON, FONT, INK, INK_40, INK_60, LINE, LINE_STRONG, PAPER, SURFACE, DARK, TEXT, SECONDARY_BG, MUTED, ERROR, SUCCESS, SUCCESS_BG, WARNING, WARNING_BG } from "../../data/tokens.js";
 import { sectionBackground } from "../../lib/section-background.js";
 import formsData from "../../data/forms.json";
@@ -72,30 +74,42 @@ export default function RegistrationFlowSection({ sectionConfig, pageKey }) {
   );
 }
 
-/* Flow intro with a lead/secondary split: the FIRST line renders large and
-   bold, any following lines render as smaller muted text. Line breaks come
-   straight from the Intro textarea in Registration -> Flows. */
+/* Flow intro — written as Markdown in Registration → Flows → Intro (same
+   renderer the rich-text section uses: `marked` + DOMPurify). A blank line
+   starts a new paragraph; a single line break stays a soft break within the
+   same paragraph (so it doesn't change size/weight); **bold** works too.
+   The FIRST paragraph renders as the lead line (bigger, bold) and any
+   further paragraphs render smaller and muted — same lead/secondary look
+   as before, just driven by real paragraphs instead of every newline. */
 function IntroText({ text, dark = false, style = {} }) {
-  const lines = String(text).split("\n").map(l => l.trim()).filter(Boolean);
-  if (!lines.length) return null;
-  const [lead, ...rest] = lines;
+  const html = useMemo(() => {
+    const t = String(text || "").trim();
+    if (!t) return "";
+    return DOMPurify.sanitize(marked.parse(t, { mangle: false, headerIds: false, breaks: true }));
+  }, [text]);
+  if (!html) return null;
   return (
-    <div style={style} className="regflow-heading-text">
-      <p style={{
-        fontFamily: FONT, fontSize: "clamp(1.05rem, 1.5vw, 1.2rem)", fontWeight: 700,
-        color: dark ? "#fff" : INK, lineHeight: 1.5, margin: 0,
-      }}>
-        {lead}
-      </p>
-      {rest.map((line, i) => (
-        <p key={i} style={{
-          fontFamily: FONT, fontSize: "0.92rem",
-          color: dark ? MUTED : INK_60, lineHeight: 1.65, margin: "0.7rem 0 0",
-        }}>
-          {line}
-        </p>
-      ))}
-    </div>
+    <>
+      <style>{`
+        .regflow-intro p {
+          font-family: ${FONT}; font-size: 0.92rem; color: ${INK_60};
+          line-height: 1.65; margin: 0.7rem 0 0;
+        }
+        .regflow-intro p:first-child {
+          font-size: clamp(1.05rem, 1.5vw, 1.2rem); font-weight: 700; color: ${INK};
+          line-height: 1.5; margin-top: 0;
+        }
+        .regflow-intro strong { font-weight: 800; }
+        .regflow-intro a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+        .regflow-intro-dark p:first-child { color: #fff; }
+        .regflow-intro-dark p:not(:first-child) { color: ${MUTED}; }
+      `}</style>
+      <div
+        style={style}
+        className={`regflow-heading-text regflow-intro${dark ? " regflow-intro-dark" : ""}`}
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    </>
   );
 }
 
