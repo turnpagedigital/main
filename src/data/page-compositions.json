@@ -1477,6 +1477,7 @@
           "id": "sec-1781266002956-uqo2",
           "type": "our-edge",
           "visible": true,
+          "colorScheme": "white",
           "content": {
             "eyebrow": "Our Edge",
             "title": "Built to move fast",
@@ -1499,7 +1500,8 @@
                 "b": "Our collaborative, relationship-focused approach delivers superior outcomes. We structure transactions to not only meet your needs now, but to properly align party incentives for the long haul.  "
               }
             ],
-            "_bookmark": "Our-edge"
+            "_bookmark": "Our-edge",
+            "colorScheme": "white"
           }
         },
         {
