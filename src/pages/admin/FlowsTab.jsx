@@ -351,6 +351,9 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
           <div style={group}>
             <label style={label}>Intro (shown above step 1)</label>
             <textarea style={{ ...inputStyle, minHeight: 50 }} value={flow.intro} onChange={e => onChange({ intro: e.target.value })} />
+            <p style={{ fontSize: "0.72rem", color: INK_60, marginTop: 3 }}>
+              Markdown — press Enter once for a line break within the same line, leave a blank line to start a new (smaller, muted) paragraph, **bold** works. The first paragraph is the bold lead line.
+            </p>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
             <div style={group}>
