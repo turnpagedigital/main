@@ -822,7 +822,15 @@
       "defaultColorScheme": "white",
       "defaultContent": {
         "eyebrow": "",
-        "markdown": "# Heading goes here\n\nWrite your text in Markdown — a blank line starts a new paragraph.\n\n## Subheading\n\n- Bullet point one\n- Bullet point two\n\n**Bold**, *italic*, and [links](/contact) are supported."
+        "align": "left",
+        "height": "auto",
+        "heading1": "Heading",
+        "heading1Accent": "goes here",
+        "heading1After": "",
+        "backgroundImage": "",
+        "imageOpacity": 35,
+        "imageBlur": 0,
+        "markdown": "Write your text in Markdown — a blank line starts a new paragraph.\n\n## Subheading\n\n- Bullet point one\n- Bullet point two\n\n**Bold**, *italic*, and [links](/contact) are supported."
       }
     },
     {

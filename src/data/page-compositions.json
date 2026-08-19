@@ -1351,25 +1351,34 @@
           }
         },
         {
-          "id": "sec-1787150028289-008f",
-          "type": "photo-break",
+          "id": "sec-1787150847946-ltnp",
+          "type": "media-banner",
           "visible": true,
+          "colorScheme": "light-gray",
           "content": {
-            "imageUrl": "/library/grok-image-01858434-d282-4e23-8638-9d2c5f74d6b9.jpg",
-            "overlayText": "",
-            "overlayAccent": ""
+            "backgroundType": "color",
+            "colorScheme": "light-gray",
+            "backgroundImage": "/bg-paper.jpg",
+            "imageFilter": "dark",
+            "imageFilterStrength": 40,
+            "align": "center",
+            "height": "auto",
+            "title": "Settlement doesn't mean paid.",
+            "subtitle": "",
+            "ctaPrimary": null,
+            "ctaSecondary": null
           }
         },
         {
           "id": "sec-bartz-payout-timeline",
           "type": "timeline",
           "visible": true,
-          "colorScheme": "paper",
+          "colorScheme": "white",
           "content": {
             "eyebrow": "The road to distributions.",
             "title": "Five steps between the order",
             "accent": "and your check.",
-            "colorScheme": "paper",
+            "colorScheme": "white",
             "steps": [
               {
                 "id": "tl-1",
@@ -1387,7 +1396,7 @@
                 "body": "Objectors have 30 days from judgment to notice an appeal to the Ninth Circuit — closing on or about August 19, 2026. Most fairness-hearing objections came from non-class members, who lack standing. Class-member objectors do not.",
                 "state": "",
                 "pillLabel": "Appeal filed August 19",
-                "pillStyle": "white"
+                "pillStyle": "light-gray"
               },
               {
                 "id": "tl-4",
@@ -1414,7 +1423,7 @@
                 "body": "En banc rehearing or Supreme Court cert petition extends review after the appellate panel rules. Each layer of review ads months to years before any distribution. ",
                 "state": "",
                 "pillLabel": "Worst case scenario",
-                "pillStyle": "white"
+                "pillStyle": "light-gray"
               }
             ],
             "cards": [],
@@ -1426,13 +1435,15 @@
           "id": "sec-bartz-flow",
           "type": "registration-flow",
           "visible": true,
-          "colorScheme": "white",
+          "colorScheme": "light-gray",
           "content": {
             "flowId": "bartz-registration",
-            "eyebrow": "Register",
-            "title": "Two minutes,",
-            "accent": "four steps.",
-            "colorScheme": "white"
+            "eyebrow": "Register to sell your claim",
+            "title": "Rapid review",
+            "accent": "rapid review",
+            "colorScheme": "light-gray",
+            "cardRadius": 5,
+            "cardStyle": "float"
           }
         },
         {
