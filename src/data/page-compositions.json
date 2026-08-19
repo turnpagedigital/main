@@ -1508,6 +1508,60 @@
             "title": "Start your registration",
             "accent": ""
           }
+        },
+        {
+          "id": "sec-1787152662030-drfx",
+          "type": "how-it-works",
+          "visible": true,
+          "colorScheme": "dark",
+          "content": {
+            "eyebrow": "HOW IT WORKS",
+            "title": "Five Simple Steps to Payment",
+            "accent": "",
+            "kicker": "We take care of everything in just a few steps so you can collect your cash and move on to creating the next bestseller.",
+            "colorScheme": "dark",
+            "steps": [
+              {
+                "id": "step-1",
+                "n": "01",
+                "title": "Upload your claim form »",
+                "body": "Submit your PDF claim form and we'll automatically confirm your claim details and expected recovery. "
+              },
+              {
+                "id": "step-2",
+                "n": "02",
+                "title": "Submit your information »",
+                "body": "Provide your basic personal information and complete KYC so we know that you're really you.\n"
+              },
+              {
+                "id": "step-3",
+                "n": "03",
+                "title": "Confirm payment details »",
+                "body": "Provide your bank account details for ACH payment, or select USDC."
+              },
+              {
+                "id": "step-1784772902396",
+                "n": "04",
+                "title": "Sign transfer agreement »",
+                "body": "Review and sign our standard agreement to transfer your claim."
+              },
+              {
+                "id": "step-1784772930126",
+                "n": "05",
+                "title": "Book closing call »",
+                "body": "We'll confirm everything you need to close over zoom and issue payment within 48 hours. "
+              }
+            ],
+            "cardStyle": "standard",
+            "cardRadius": "square",
+            "_bookmark": "how-it-works",
+            "backgroundImage": "/bg-paper.jpg",
+            "imageFilterStrength": 50,
+            "imageFilter": "dark",
+            "cardBrightness": 100,
+            "cardBlur": 43,
+            "stepsLayout": "5"
+          }
         }
       ]
     },
