@@ -1458,6 +1458,22 @@
           }
         },
         {
+          "id": "sec-bartz-flow",
+          "type": "registration-flow",
+          "visible": true,
+          "colorScheme": "neon",
+          "content": {
+            "flowId": "bartz-registration",
+            "eyebrow": "Ready to sell your claim?",
+            "title": "Submit your details for an",
+            "accent": "instant quote.",
+            "colorScheme": "neon",
+            "cardRadius": 5,
+            "cardStyle": "float",
+            "align": "left"
+          }
+        },
+        {
           "id": "sec-1781266002956-uqo2",
           "type": "our-edge",
           "visible": true,
@@ -1484,22 +1500,6 @@
               }
             ],
             "_bookmark": "Our-edge"
-          }
-        },
-        {
-          "id": "sec-bartz-flow",
-          "type": "registration-flow",
-          "visible": true,
-          "colorScheme": "neon",
-          "content": {
-            "flowId": "bartz-registration",
-            "eyebrow": "Ready to sell your claim?",
-            "title": "Submit your details for an",
-            "accent": "instant quote.",
-            "colorScheme": "neon",
-            "cardRadius": 5,
-            "cardStyle": "float",
-            "align": "left"
           }
         },
         {
@@ -1534,13 +1534,13 @@
           "type": "faq",
           "visible": true,
           "layout": "layout-2-sidebar",
-          "colorScheme": "light-card",
+          "colorScheme": "light-gray",
           "content": {
             "title": "Your questions,",
             "accent": "answered.",
             "ctaLabel": "Ask our team",
             "ctaHref": "/contact?source=ai-copyright",
-            "colorScheme": "light-card",
+            "colorScheme": "light-gray",
             "_bookmark": "faq"
           }
         }
