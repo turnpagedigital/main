@@ -772,7 +772,7 @@
           "colorScheme": "light-gray",
           "content": {
             "eyebrow": "How We Help",
-            "title": "Fair pricing. Real",
+            "title": "Competitive pricing. Real",
             "accent": "resolutions.",
             "colorScheme": "light-gray",
             "layout": "grid-3col",
@@ -855,9 +855,9 @@
           "type": "testimonials",
           "visible": true,
           "layout": "layout-1-grid3col",
-          "colorScheme": "dark",
+          "colorScheme": "light-gray",
           "content": {
-            "colorScheme": "dark"
+            "colorScheme": "light-gray"
           }
         },
         {
