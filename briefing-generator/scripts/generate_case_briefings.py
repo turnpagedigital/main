@@ -55,6 +55,7 @@ OUT_PATH = REPO_ROOT / "case-briefings.json"
 ARCHIVE_DIR = REPO_ROOT / "case-briefings"   # per-case history: <slug>.json
 ARCHIVE_CAP = 120                            # briefings kept per case
 GROUPS_PATH = REPO_ROOT / "briefing-groups.json"
+PREFS_PATH = REPO_ROOT / "intel-prefs.json"   # the ⭐ toggle on index.html writes here via api/prefs
 
 
 def load_groups():
@@ -66,6 +67,18 @@ def load_groups():
                 if g.get("id") and g.get("name") and len(g.get("members") or []) >= 2]
     except Exception:
         return []
+
+
+def load_priorities():
+    """Slugs starred ⭐ high-priority on index.html (roams via api/prefs into
+    intel-prefs.json). Gates which cases an UNSCOPED run auto-briefs — a
+    scoped rerun (`only`, from the admin Run Now / Brief now button) still
+    works for any case regardless of this."""
+    try:
+        data = json.loads(PREFS_PATH.read_text(encoding="utf-8"))
+        return {slug for slug, on in (data.get("priorities") or {}).items() if on}
+    except Exception:
+        return set()
 INDEX_HTML = REPO_ROOT / "index.html"
 SITE_ROOT = REPO_ROOT.parent
 INTELLIGENCE_FILE = SITE_ROOT / "src" / "data" / "intelligence-settings.json"
@@ -430,17 +443,24 @@ def build_uploads_block(slug, entries=None):
         budget -= len(block)
     return "\n".join(lines) + "\n\n"
 
-def build_prompt(case, prev_item, filings, articles, house_voice):
+def build_static_block(house_voice):
+    """The part of every case/group prompt that's byte-identical for the whole
+    run — house voice + style spec + today's date. Sent as its own cached
+    content block so a run of N cases pays the cache-write premium once and
+    reads (~0.1x cost) on every call after the first."""
+    voice_block = ""
+    if house_voice:
+        voice_block = ("# House voice (admin-managed — authoritative for tone; "
+                       "follow it exactly)\n\n" + house_voice[:9000] + "\n\n")
+    return f"TODAY: {DATE_PRETTY}\n\n{voice_block}{STYLE_SPEC}"
+
+
+def build_prompt(case, prev_item, filings, articles):
     cfg = case["config"]
     data = case["data"] or {}
     c = cfg.get("case", {}) or {}
     short = (cfg.get("short_name") or "").strip() or cfg.get("display_name") or case["slug"]
     emoji = cfg.get("emoji", "⚖️")
-
-    voice_block = ""
-    if house_voice:
-        voice_block = ("# House voice (admin-managed — authoritative for tone; "
-                       "follow it exactly)\n\n" + house_voice[:9000] + "\n\n")
 
     # Ground truth: config + status + claims stats + upcoming events
     gt = [f"Case: {cfg.get('display_name', case['slug'])}",
@@ -487,10 +507,6 @@ def build_prompt(case, prev_item, filings, articles, house_voice):
 
     return f"""You are the case desk covering {cfg.get('display_name', case['slug'])} for Andrew at Turnpage Digital Markets, writing today's per-case briefing at the standard of a specialist firm writing to sophisticated clients who pay for judgment rather than summary.
 
-TODAY: {DATE_PRETTY}
-
-{voice_block}{STYLE_SPEC}
-
 # Case docket record (AUTHORITATIVE — overrides anything you believe from memory)
 
 {chr(10).join(gt)}
@@ -532,15 +548,10 @@ No prose outside the markdown. Start with `# {emoji}`.
 """
 
 
-def build_group_prompt(group, member_plans, prev_item, house_voice):
+def build_group_prompt(group, member_plans, prev_item):
     """One consolidated briefing across the group's member cases, led by
     whichever members actually moved. member_plans: [{case, filings, articles,
     moved}] in member order."""
-    voice_block = ""
-    if house_voice:
-        voice_block = ("# House voice (admin-managed — authoritative for tone; "
-                       "follow it exactly)\n\n" + house_voice[:9000] + "\n\n")
-
     sections = []
     for mp in member_plans:
         case, cfg = mp["case"], mp["case"]["config"]
@@ -577,10 +588,6 @@ def build_group_prompt(group, member_plans, prev_item, house_voice):
             + prev_item["body_md"][:6000] + "\n\n")
 
     return f"""You are the case desk covering the "{group['name']}" matters for Andrew at Turnpage Digital Markets — a GROUP of related cases briefed together. Write at the standard of a specialist firm writing to sophisticated clients who pay for judgment rather than summary.
-
-TODAY: {DATE_PRETTY}
-
-{voice_block}{STYLE_SPEC}
 
 # The group's cases (each section flags whether it moved in the window)
 
@@ -698,19 +705,26 @@ def main():
     prev_by_slug = {i.get("slug"): i for i in prev.get("items", [])}
 
     cases = load_cases()
+    priorities = load_priorities()
     # A manual/scoped rerun (`only`) targets a specific case by explicit
     # request — same "ignores sync mode" rule as the docket Sync-now button —
     # so it isn't silently dropped just because the case is on manual sync.
+    # An UNSCOPED run (the weekday 10am ET schedule) only auto-briefs
+    # ⭐ high-priority cases; everything else needs a scoped rerun (the
+    # admin's Run Now / Brief now button, which sets `only` and bypasses this).
     active = [c for c in cases
               if c["data"] is not None
-              and (c["config"].get("sync", "active") == "active" or c["slug"] in only)]
+              and (c["slug"] in only
+                   or (c["config"].get("sync", "active") == "active" and c["slug"] in priorities))]
+    if not only:
+        print(f"  scheduled run — {len(priorities)} ⭐ priority case(s) in scope: {', '.join(sorted(priorities)) or '(none)'}")
     if not active:
         print("No active cases with data files found.")
         return
 
     client = Anthropic(api_key=api_key)
     usage = usage_log.Counter("case-briefings", "anthropic", model=MODEL) if usage_log else None
-    house_voice = load_house_voice()
+    static_block = build_static_block(load_house_voice())
     now_iso = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
     since = (TODAY - dt.timedelta(days=LOOKBACK_DAYS)).isoformat()
 
@@ -864,14 +878,26 @@ def main():
         print(f"=== Generating {slug} ===", flush=True)
         try:
             if p["kind"] == "group":
-                prompt = build_group_prompt(p["group"], p["members"], prev_item, house_voice)
+                prompt = build_group_prompt(p["group"], p["members"], prev_item)
             else:
-                prompt = build_prompt(p["case"], prev_item, p["filings"], p["articles"], house_voice)
+                prompt = build_prompt(p["case"], prev_item, p["filings"], p["articles"])
             response = create_with_retry(
                 model=MODEL,
                 max_tokens=3000,
                 tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 3}],
-                messages=[{"role": "user", "content": prompt}],
+                messages=[{
+                    "role": "user",
+                    "content": [
+                        # Identical for every case/group this run (house voice +
+                        # style spec + today's date) — cache once, read (~0.1x)
+                        # on every later call. 1h TTL: a run of several cases
+                        # with 20s+ pacing between them can outlast the 5-min
+                        # default before the last one starts.
+                        {"type": "text", "text": static_block,
+                         "cache_control": {"type": "ephemeral", "ttl": "1h"}},
+                        {"type": "text", "text": prompt},
+                    ],
+                }],
             )
             text = "\n".join(b.text for b in response.content
                              if getattr(b, "type", "") == "text").strip()

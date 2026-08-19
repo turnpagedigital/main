@@ -309,6 +309,7 @@
 
   document.addEventListener("click", function (ev) {
     if (popEl && !popEl.contains(ev.target) && !ev.target.closest("[data-gear],[data-case-gear]")) closePop();
+    if (snoozeMenuEl && !snoozeMenuEl.contains(ev.target) && !ev.target.closest("[data-snooze]")) closeSnoozeMenu();
   });
 
   // ── Show/hide preferences (persisted as this browser's default) ───────────
@@ -350,6 +351,7 @@
   var CASE_DATA = [];       // [{m, c}]
   var BRIEFING_ITEMS = [];   // per-case briefings (case-briefings.json items)
   var PROSPECT_ITEMS = [];   // candidate cases (api/prospects → prospects.json)
+  var snoozeMenuEl = null;   // floating menu for the dashboard prospect tile's Snooze button
   var BRIEFING_GROUPS = [];  // [{id, name, members}] — consolidated briefing units
 
   function groupOfCase(slug) {
@@ -1226,6 +1228,55 @@
   }
 
   // ── Prospects tile — candidate cases from the theme scans ─────────────────
+  function prospectSnoozeOptions() {
+    var now = new Date();
+    function at(d, h) { var x = new Date(d); x.setHours(h, 0, 0, 0); return x; }
+    return [
+      { label: "Tomorrow morning (9 AM)", when: at(new Date(now.getTime() + 86400e3), 9) },
+      { label: "In 3 days (9 AM)", when: at(new Date(now.getTime() + 3 * 86400e3), 9) },
+      { label: "Next week (9 AM)", when: at(new Date(now.getTime() + 7 * 86400e3), 9) },
+      { label: "In 2 weeks (9 AM)", when: at(new Date(now.getTime() + 14 * 86400e3), 9) },
+    ];
+  }
+  function closeSnoozeMenu() {
+    if (snoozeMenuEl && snoozeMenuEl.parentNode) snoozeMenuEl.parentNode.removeChild(snoozeMenuEl);
+    snoozeMenuEl = null;
+  }
+  function saveProspectSnooze(id, iso) {
+    return fetch(BASE + "api/prospects", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: id, snooze_until: iso }),
+    }).then(function (r) { return r.json(); }).then(function (j) {
+      if (!j || !j.ok) throw new Error((j && j.error) || "failed");
+      PROSPECT_ITEMS.forEach(function (p) { if (p.id === id) { if (iso) p.snooze_until = iso; else delete p.snooze_until; } });
+      renderProspects();
+    });
+  }
+  function openSnoozeMenu(id, anchor) {
+    closeSnoozeMenu();
+    // Rows in this tile are always unsnoozed (the `fresh` filter below hides
+    // snoozed ones), so there's no "wake now" case to offer here — that lives
+    // on the full triage page (prospects.html) alongside the Snoozed tab.
+    var menu = document.createElement("div");
+    menu.className = "ud-th-menu";
+    prospectSnoozeOptions().forEach(function (o) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "ud-th-menu-item";
+      b.textContent = o.label;
+      b.addEventListener("click", function () {
+        closeSnoozeMenu();
+        saveProspectSnooze(id, o.when.toISOString()).catch(function (e) { alert("Snooze failed: " + e.message); });
+      });
+      menu.appendChild(b);
+    });
+    document.body.appendChild(menu);
+    var r = anchor.getBoundingClientRect();
+    menu.style.top = (r.bottom + window.scrollY + 4) + "px";
+    menu.style.left = Math.max(8, Math.min(r.left + window.scrollX - 80, window.innerWidth - 210)) + "px";
+    snoozeMenuEl = menu;
+  }
   function renderProspects() {
     var box = document.getElementById("ih-prospects");
     if (!box) return;
@@ -1255,11 +1306,18 @@
           "</div>" +
           '<div class="ih-prospect-actions">' +
             '<a class="ih-pr-btn ih-pr-track" href="' + BASE + 'prospects.html#track=' + encodeURIComponent(p.id) + '">Track</a>' +
+            '<button type="button" class="ih-pr-btn ih-pr-snooze" data-snooze="' + esc(p.id) + '" title="Snooze — resurface later">Snooze</button>' +
             '<button type="button" class="ih-pr-btn ih-pr-dismiss" data-dismiss="' + esc(p.id) + '">Dismiss</button>' +
           "</div>" +
         "</div>"
       );
     }).join("");
+    box.querySelectorAll("[data-snooze]").forEach(function (b) {
+      b.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        openSnoozeMenu(b.getAttribute("data-snooze"), b);
+      });
+    });
     box.querySelectorAll("[data-dismiss]").forEach(function (b) {
       b.addEventListener("click", function () {
         var id = b.getAttribute("data-dismiss");
