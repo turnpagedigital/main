@@ -386,7 +386,9 @@
             ],
             "kicker": "Scenario",
             "footnote": "",
-            "cardRadius": 14
+            "cardRadius": 14,
+            "cardAlign": "center",
+            "cardMaxWidth": 830
           }
         },
         {
