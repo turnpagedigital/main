@@ -1449,10 +1449,10 @@
             "cardStyle": "standard",
             "cardRadius": "square",
             "_bookmark": "how-it-works",
-            "backgroundImage": "/library/grok-image-01858434-d282-4e23-8638-9d2c5f74d6b9-cd83a6.jpg",
-            "imageFilterStrength": 50,
+            "backgroundImage": "/lorem-5D6iogbblho-unsplash.jpg",
+            "imageFilterStrength": 75,
             "imageFilter": "dark",
-            "cardBrightness": 100,
+            "cardBrightness": 75,
             "cardBlur": 43,
             "stepsLayout": "5"
           }
