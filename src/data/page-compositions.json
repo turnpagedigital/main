@@ -1351,6 +1351,25 @@
           }
         },
         {
+          "id": "sec-1787150847946-ltnp",
+          "type": "media-banner",
+          "visible": true,
+          "colorScheme": "light-gray",
+          "content": {
+            "backgroundType": "color",
+            "colorScheme": "light-gray",
+            "backgroundImage": "/bg-paper.jpg",
+            "imageFilter": "dark",
+            "imageFilterStrength": 40,
+            "align": "center",
+            "height": "auto",
+            "title": "Settlement doesn't mean paid.",
+            "subtitle": "",
+            "ctaPrimary": null,
+            "ctaSecondary": null
+          }
+        },
+        {
           "id": "sec-bartz-payout-timeline",
           "type": "timeline",
           "visible": true,
