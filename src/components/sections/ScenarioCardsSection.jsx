@@ -17,6 +17,9 @@ import { NEON, FONT, PAPER, PAPER_2, SURFACE, INK, INK_60, INK_40, LINE, DARK_CA
                                highlight: true is the legacy alias for it)
                               kicker: per-card override of the default kicker
      cardRadius             — card corner radius in px (0–40, default 14; 0 = square)
+     cardAlign              — "left" (default) | "center" — text alignment inside each card
+     cardMaxWidth           — card width cap in px (default "" = fills its grid column);
+                              the card centers within its column once capped
      footnote               — small print under the cards
      colorScheme            — "paper-2" (default) | "paper" | "white" | "light-gray" | "dark"
 */
@@ -32,10 +35,14 @@ const SCHEMES = {
 /* Shared renderer for the cards grid + footnote — also used by the timeline
    section when its content includes cards, so one section can carry the full
    header → timeline → scenarios → footnote flow. */
-export function ScenarioCardsGrid({ cards, kicker = "Scenario", showKicker = true, cardRadius = 14, footnote = "", darkSection = false }) {
+export function ScenarioCardsGrid({ cards, kicker = "Scenario", showKicker = true, cardRadius = 14, cardAlign = "left", cardMaxWidth = "", footnote = "", darkSection = false }) {
   const radius = Number.isFinite(Number(cardRadius)) && cardRadius !== "" && cardRadius !== null
     ? Math.max(0, Math.min(40, Number(cardRadius)))
     : 14;
+  const centered = cardAlign === "center";
+  const maxW = Number.isFinite(Number(cardMaxWidth)) && cardMaxWidth !== "" && cardMaxWidth !== null
+    ? Math.max(0, Number(cardMaxWidth))
+    : null;
   return (
     <>
       <div className="sccards-grid" style={{
@@ -55,7 +62,10 @@ export function ScenarioCardsGrid({ cards, kicker = "Scenario", showKicker = tru
               border: `1px solid ${featured ? DARK_BORDER : LINE}`,
               borderRadius: radius, padding: "1.9rem 1.7rem",
               display: "flex", flexDirection: "column",
+              alignItems: centered ? "center" : "stretch",
+              textAlign: centered ? "center" : "left",
               position: "relative", overflow: "hidden",
+              ...(maxW != null ? { maxWidth: maxW, marginLeft: "auto", marginRight: "auto" } : {}),
             }}>
               {featured && (
                 <span aria-hidden="true" style={{
@@ -65,7 +75,7 @@ export function ScenarioCardsGrid({ cards, kicker = "Scenario", showKicker = tru
               )}
               {card.tag && (
                 <span style={{
-                  position: "relative", alignSelf: "flex-start",
+                  position: "relative", alignSelf: centered ? "center" : "flex-start",
                   fontSize: "0.66rem", fontWeight: 800, letterSpacing: "0.18em",
                   textTransform: "uppercase", padding: "0.25rem 0.6rem",
                   borderRadius: 4, marginBottom: "0.9rem",
@@ -135,6 +145,8 @@ export default function ScenarioCardsSection({ sectionConfig }) {
   const cardRadius = Number.isFinite(Number(c.cardRadius)) && c.cardRadius !== "" && c.cardRadius !== null
     ? Math.max(0, Math.min(40, Number(c.cardRadius)))
     : 14;
+  const cardAlign = c.cardAlign === "center" ? "center" : "left";
+  const cardMaxWidth = c.cardMaxWidth ?? "";
 
   return (
     <section style={{
@@ -175,6 +187,8 @@ export default function ScenarioCardsSection({ sectionConfig }) {
             kicker={kicker}
             showKicker={showKicker}
             cardRadius={cardRadius}
+            cardAlign={cardAlign}
+            cardMaxWidth={cardMaxWidth}
             footnote={footnote}
             darkSection={s.dark}
           />

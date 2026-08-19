@@ -16,7 +16,7 @@ import { ScenarioCardsGrid } from "./ScenarioCardsSection.jsx";
                                      light-gray on the white scheme; ink flips
                                      to a white pill on the dark scheme)
      colorScheme                  — "paper" (default) | "paper-2" | "white" | "light-gray" | "dark"
-     cards[] + kicker + showKicker + cardRadius + footnote
+     cards[] + kicker + showKicker + cardRadius + cardAlign + cardMaxWidth + footnote
                                   — optional scenario cards rendered below the
                                     timeline (same schema as the scenario-cards
                                     section), so one section carries the full
@@ -145,6 +145,8 @@ export default function TimelineSection({ sectionConfig }) {
               kicker={c.kicker ?? "Scenario"}
               showKicker={c.showKicker !== false}
               cardRadius={c.cardRadius}
+              cardAlign={c.cardAlign === "center" ? "center" : "left"}
+              cardMaxWidth={c.cardMaxWidth ?? ""}
               footnote={c.footnote || ""}
               darkSection={s.dark}
             />
