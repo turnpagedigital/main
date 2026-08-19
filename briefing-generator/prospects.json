@@ -602,9 +602,11 @@
       "source_name": "TechTimes / Reuters wire",
       "date": "2026-07-10",
       "first_seen": "2026-08-07",
-      "status": "new",
+      "status": "tracked",
       "vote": 1,
-      "snooze_until": "2026-08-14T13:00:00.000Z"
+      "snooze_until": "2026-08-14T13:00:00.000Z",
+      "triaged_at": "2026-08-19T01:21:16.221Z",
+      "tracked_slug": "nyt-v-openai-mdl-no-3143-sanctions-motion"
     },
     {
       "id": "908ad26544",
