@@ -1450,14 +1450,14 @@
                 "body": "We'll confirm everything you need to close over zoom and issue payment within 48 hours after signing"
               }
             ],
-            "cardStyle": "black",
-            "cardRadius": "square",
+            "cardStyle": "light-glass",
+            "cardRadius": "rounded",
             "_bookmark": "how-it-works",
             "backgroundImage": "/pawel-czerwinski-T5VUBvCYqKk-unsplash.jpg",
             "imageFilterStrength": 50,
-            "imageFilter": "light",
-            "cardBrightness": 100,
-            "cardBlur": 19,
+            "imageFilter": "none",
+            "cardBrightness": 120,
+            "cardBlur": 12,
             "stepsLayout": "5"
           }
         },
