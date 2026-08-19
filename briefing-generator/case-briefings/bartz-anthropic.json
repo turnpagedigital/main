@@ -3,6 +3,44 @@
   "case_name": "Bartz v. Anthropic",
   "items": [
     {
+      "date": "2026-08-19",
+      "updated": "2026-08-19",
+      "lede": "On August 18, Edelson PC and Oppenheim + Zebrak filed a notice of appeal to the Ninth Circuit (Dkt. 682), taking the final approval order entered July 20 up on appeal and triggering the precise scenario that has held class member payments in abeyance since that order issued.",
+      "body_md": "On August 18, Edelson PC and Oppenheim + Zebrak filed a notice of appeal to the Ninth Circuit (Dkt. 682), taking the final approval order entered July 20 up on appeal and triggering the precise scenario that has held class member payments in abeyance since that order issued.\n\nThe filing's immediate consequence is concrete: \nunder the settlement agreement, payments begin one business day after the \"Effective Date,\" defined as the date on which the time to file or notice an appeal of the final judgment expires\n — a date that was today, August 19. That condition is no longer satisfied. \nIf an appeal is filed, according to class counsel, the claims process will be on pause temporarily until they can determine how to proceed.\n The end-of-August launch of the online disbursement portal \nthat was contingent on no appeals being filed\n does not follow. \nPayments were to be made in two stages, roughly 70% in the first stage and 30% in the second, as Anthropic will be making settlement payments in installments through September 2027\n — a disbursement timeline that now runs on an uncertain clock pending the Ninth Circuit's disposition.\n\nThe identity of the appellants is material context. Edelson PC and Oppenheim + Zebrak were not class counsel; they served as coordinating counsel and were the center of a sustained fee dispute throughout the proceedings. \nThe firms — along with Cowan DeBaets Abrahams & Sheppard — had jointly sought roughly $75 million in fees, and Anthropic urged the court to deny that request, arguing there was \"scant justification or substantiation\" for the request.\n \nJudge Martínez-Olguín granted final approval on July 20 and set aside roughly $101.5 million in attorney fees for class counsel\n — well below the aggregate originally sought across all firms. The appeal, filed by counsel who contested the fee outcome, almost certainly targets that fee award, though the notice of appeal (Dkt. 682) does not specify grounds on its face. The filing of a standard notice — rather than a Rule 23(f) petition for permission to appeal — is consistent with an appeal of right from a final judgment, which the July 20 order constitutes. \nJudge Martínez-Olguín overruled all 53 objections filed with the court opposing the settlement on various grounds\n, so class members who objected to settlement terms also had standing to appeal; the notice, however, identifies only Edelson and Oppenheim + Zebrak as appellants, pointing toward the fee dispute rather than the merits of the settlement itself.\n\nFor class members, the practical import is a delay of indeterminate length. Ninth Circuit appeals of class action final approval orders regularly take 12 to 24 months to resolve absent a settlement of the appeal or a motion to dismiss. The first Anthropic installment payment of $450 million remains calendared for September 25, 2026 — Anthropic's payment obligation under the settlement agreement is not suspended by the appeal absent a stay, and no stay motion appears on the docket as of this briefing. Whether the appeal extends to the settlement itself or is cabined to fees will be the threshold question once the opening brief is filed; that distinction drives whether class members face a full stay of disbursements or merely a hold on funds attributable to counsel fees. The next concrete docket event to watch is the Ninth Circuit's docketing of the appeal and any emergency motion practice around a stay.\n\n## Sources\n\n- [Bartz v. Anthropic Settlement Receives Final Approval](https://www.authorsalliance.org/2026/07/21/bartz-v-anthropic-settlement-receives-final-approval/) — Authors Alliance, July 21, 2026\n- [Bartz v Anthropic: When to Expect Payments, Next Steps](https://blog.taaonline.net/2026/08/bartz-v-anthropic-when-to-expect-payments-next-steps/) — Textbook & Academic Authors Association, August 7, 2026\n- [Bartz v Anthropic Granted Final Approval by the Court](https://blog.taaonline.net/2026/07/bartz-v-anthropic-granted-final-approval-by-the-court/) — Textbook & Academic Authors Association, July 2026\n- [Bartz et al v. Anthropic PBC — Case Articles](https://www.law360.com/cases/66c42a501562e5852bfc1794/articles) — Law360\n- [Anthropic Blasts Add-On Firms' Bid for $75 Million of IP Deal](https://news.bloomberglaw.com/ip-law/anthropic-blasts-add-on-firms-bid-for-75-million-of-ip-deal-39) — Bloomberg Law, December 18, 2025\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Bartz v. Anthropic Settlement Receives Final Approval",
+          "url": "https://www.authorsalliance.org/2026/07/21/bartz-v-anthropic-settlement-receives-final-approval/",
+          "note": "Authors Alliance, July 21, 2026"
+        },
+        {
+          "title": "Bartz v Anthropic: When to Expect Payments, Next Steps",
+          "url": "https://blog.taaonline.net/2026/08/bartz-v-anthropic-when-to-expect-payments-next-steps/",
+          "note": "Textbook & Academic Authors Association, August 7, 2026"
+        },
+        {
+          "title": "Bartz v Anthropic Granted Final Approval by the Court",
+          "url": "https://blog.taaonline.net/2026/07/bartz-v-anthropic-granted-final-approval-by-the-court/",
+          "note": "Textbook & Academic Authors Association, July 2026"
+        },
+        {
+          "title": "Bartz et al v. Anthropic PBC — Case Articles",
+          "url": "https://www.law360.com/cases/66c42a501562e5852bfc1794/articles",
+          "note": "Law360"
+        },
+        {
+          "title": "Anthropic Blasts Add-On Firms' Bid for $75 Million of IP Deal",
+          "url": "https://news.bloomberglaw.com/ip-law/anthropic-blasts-add-on-firms-bid-for-75-million-of-ip-deal-39",
+          "note": "Bloomberg Law, December 18, 2025"
+        }
+      ],
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-08-18"
+      }
+    },
+    {
       "date": "2026-08-10",
       "updated": "2026-08-10",
       "lede": "On August 7, the Textbook & Academic Authors Association published a summary of class counsel's confirmed guidance on payment timing, the first direct statement from counsel on the post-final-approval distribution timeline. Class counsel confirmed that class members will not begin receiving payments until at least the end of 2026.",

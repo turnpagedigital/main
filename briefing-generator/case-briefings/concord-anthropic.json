@@ -3,6 +3,29 @@
   "case_name": "Concord v. Anthropic",
   "items": [
     {
+      "date": "2026-08-19",
+      "updated": "2026-08-19",
+      "lede": "On August 18, the publishers filed five reply briefs in support of their motions to exclude Anthropic's expert witnesses, completing the Daubert briefing cycle in No. 5:24-cv-03811 ahead of the October 21 summary judgment hearing before Judge Eumi K. Lee.",
+      "body_md": "On August 18, the publishers filed five reply briefs in support of their motions to exclude Anthropic's expert witnesses, completing the Daubert briefing cycle in No. 5:24-cv-03811 ahead of the October 21 summary judgment hearing before Judge Eumi K. Lee.\n\nDkt. 766 is the only publicly captioned entry in yesterday's cluster: the publishers' reply in support of their motion to partially exclude Dr. Abhishek Nagaraj (Dkt. 650), filed by counsel Bret Matera on behalf of all plaintiff entities — Concord Music Group, ABKCO Music, Capitol CMG, Polygram Publishing, Songs of Universal, Universal Music Corp., Universal Music-MGB NA, and Universal Music-Z Tunes. The remaining four replies (Dkts. 768, 770, 773, 776), each accompanied by a supporting declaration and one or more sealed exhibits (Dkts. 767, 769, 771-772, 774-775, 778, 780), mirror the same filing architecture and almost certainly carry the publishers' final words on the motions to exclude Anthropic's other disclosed experts — Dr. Andrew Bray, Dr. Jeffrey Bilmes, and Dr. Russ Altman — whose motions in limine were filed March 31 and opposed by Anthropic on July 27 (Dkts. 748, 750, 752). A fifth reply (Dkt. 781) and its sealed companion (Dkt. 780) follow the same pattern; the Colin E. Stokes motion in limine filed in the same March 31 tranche is the likeliest candidate for that slot, though the public docket caption is sealed. With yesterday's filings, every Daubert motion is now fully briefed on both sides.\n\nThe strategic weight here is straightforward: the publishers are asking Judge Lee to exclude the expert testimony Anthropic intends to rely on at the summary judgment hearing and, if the case reaches trial, before a jury. Dr. Nagaraj is understood to be Anthropic's damages or market-harm expert; Dr. Bilmes and Dr. Altman bear on technical AI questions central to the fair use analysis; Dr. Bray addresses statistical or quantitative issues in the publishers' evidence. Successful exclusion of any of these witnesses would narrow what Anthropic can argue on fair use — particularly the \"transformative use\" and market-harm factors that are the center of gravity on both summary judgment motions. The sealed exhibits across Dkts. 767-780 are almost certainly the deposition excerpts and technical materials the publishers marshaled in their reply; their content is not publicly available. The next concrete event is the September 2 Case Management Conference before Judge Lee (videoconference, 4:00 PM PT), where the court will likely address any remaining scheduling or sequencing questions ahead of October 21.\n\n## Sources\n\n- [Concord Music Group, Inc. v. Anthropic PBC — Docket, 5:24-cv-03811](https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/) — CourtListener\n- [Concord Music Group, Inc. et al v. Anthropic PBC — Case Coverage](https://www.law360.com/cases/66c67e7efda84001199de4bb/articles) — Law360 (multiple dates)\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Concord Music Group, Inc. v. Anthropic PBC — Docket, 5:24-cv-03811",
+          "url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
+          "note": "CourtListener"
+        },
+        {
+          "title": "Concord Music Group, Inc. et al v. Anthropic PBC — Case Coverage",
+          "url": "https://www.law360.com/cases/66c67e7efda84001199de4bb/articles",
+          "note": "Law360 (multiple dates)"
+        }
+      ],
+      "activity": {
+        "filings": 25,
+        "articles": 0,
+        "latest": "2026-08-18"
+      }
+    },
+    {
       "date": "2026-08-18",
       "updated": "2026-08-18",
       "lede": "On August 17, the publishers filed their Responsive Separate Statement (Dkt. 756) together with a supporting declaration (Dkt. 757), a notice (Dkt. 758), and two documents under seal (Dkts. 759–760), completing the publishers' opposition-side factual record on the cross-motions for summary judgment before Judge Eumi K. Lee in No. 5:24-cv-03811.",
