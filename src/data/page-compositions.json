@@ -271,7 +271,7 @@
           "type": "stats-band",
           "visible": true,
           "layout": "minimal",
-          "colorScheme": "dark",
+          "colorScheme": "neon",
           "content": {
             "stats": [
               {
@@ -292,7 +292,7 @@
             ],
             "footnoteKey": "stats.footnote",
             "footnote": " ",
-            "colorScheme": "dark",
+            "colorScheme": "neon",
             "layout": "minimal",
             "align": "center",
             "valueColor": "auto"
@@ -376,7 +376,7 @@
               {
                 "id": "sc-mt0ili75",
                 "tag": "NOW TRADING",
-                "figure": "You don't have to wait",
+                "figure": "You don't have to wait.",
                 "title": "We help authors and publishers recover faster. See how it works below.",
                 "note": "",
                 "highlight": false,
@@ -566,18 +566,21 @@
           "id": "sec-1787168611604-swsc",
           "type": "registration-flow",
           "visible": true,
-          "colorScheme": "neon",
+          "layout": "wide",
+          "colorScheme": "light-gray",
           "content": {
             "flowId": "bartz-registration",
-            "eyebrow": "Ready to sell your claim?",
-            "title": "Submit your claim details",
-            "accent": "",
-            "colorScheme": "neon",
+            "eyebrow": "Ready to sell?",
+            "title": "Submit your",
+            "accent": "claim details",
+            "colorScheme": "light-gray",
             "cardRadius": 5,
             "cardStyle": "float",
             "align": "left",
             "_bookmark": "sell",
-            "cardColor": "light-gray"
+            "cardColor": "light-gray",
+            "formScale": 100,
+            "layout": "wide"
           }
         },
         {
@@ -617,9 +620,9 @@
           "visible": true,
           "content": {
             "eyebrow": "",
-            "title": "Anthropic trained its models",
-            "accentTitle": "on your work.",
-            "subtitle": "Authors and publishers are getting paid faster with Turnpage. Ready to convert your claim to cash today?",
+            "title": "Anthropic trained its models on your work.",
+            "accentTitle": "Why wait to get paid?",
+            "subtitle": "Authors and publishers are getting paid faster with Turnpage. Ready to convert your claim to cash?",
             "size": "medium",
             "mediaType": "image",
             "video": "/robottypes1.mp4",
@@ -632,7 +635,7 @@
               "label": "Talk to our team",
               "href": "/contact"
             },
-            "titleSize": "large"
+            "titleSize": "medium"
           }
         },
         {
