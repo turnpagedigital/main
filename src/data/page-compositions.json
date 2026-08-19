@@ -557,7 +557,7 @@
         {
           "id": "sec-1780973311793-kxeo",
           "type": "cta",
-          "visible": true,
+          "visible": false,
           "layout": "layout-2-banner",
           "colorScheme": "photo",
           "content": {
