@@ -6,7 +6,6 @@ import LanguageSelector from "./LanguageSelector.jsx";
 import SocialLinks from "./SocialLinks.jsx";
 import footerData from "../data/footer.json";
 import pageMeta from "../data/page-meta.json";
-import navData from "../data/nav.json";
 import contactData from "../data/contact-form.json";
 
 // Build a Set of paths that are explicitly marked inactive (draft).
@@ -14,12 +13,6 @@ import contactData from "../data/contact-form.json";
 // everything else (including pages not listed there) shows normally.
 const DRAFT_PATHS = new Set(
   (pageMeta.pages || []).filter(p => p.active === false).map(p => p.path)
-);
-
-// Nav items with active:false are hidden from the nav bar — suppress them in
-// the footer too so the two stay in sync automatically after each rebuild.
-const INACTIVE_NAV_IDS = new Set(
-  (navData.items || []).filter(item => item.active === false).map(item => item.id)
 );
 
 /* Polestar-style simple footer.
@@ -74,7 +67,7 @@ export default function Footer() {
               key={col.id}
               title={tx(col.titleKey, col.title)}
               items={col.links
-                .filter(link => !link.hidden && !INACTIVE_NAV_IDS.has(link.id) && (link.external || !DRAFT_PATHS.has(link.href)))
+                .filter(link => !link.hidden && (link.external || !DRAFT_PATHS.has(link.href)))
                 .map(link => ({
                   key:      link.id,
                   label:    tx(link.labelKey, link.label),
