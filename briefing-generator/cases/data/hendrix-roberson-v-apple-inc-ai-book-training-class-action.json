@@ -1258,5 +1258,28 @@
     "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=71279155&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": null,
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "Judge Picks Co-Lead Counsel in Apple AI Copyright Class Action",
+      "url": "https://news.bloomberglaw.com/ip-law/judge-picks-co-lead-counsel-in-apple-ai-copyright-class-action",
+      "source": "Bloomberg Law",
+      "date": "2026-02-02",
+      "summary": "Judge Yvonne Gonzalez Rogers appointed William Dreher of Keller Rohrback and Rohit Nath of Susman Godfrey as interim co-lead counsel for the consolidated plaintiff class, per a January 30 order. The court evaluated all competing firm applications before selecting the two-firm leadership team."
+    },
+    {
+      "headline": "Apple AI Copyright Case Has Firms Vying to Lead Class Counsel",
+      "url": "https://news.bloomberglaw.com/ip-law/apple-ai-copyright-case-has-firms-vying-to-lead-class-counsel",
+      "source": "Bloomberg Law",
+      "date": "2025-12-08",
+      "summary": "Three competing groups of law firms filed responses seeking interim lead counsel status in the consolidated Apple AI copyright class action, with Susman Godfrey citing its Anthropic $1.5B settlement track record and Cotchett/Bleichmar championing the Alexander complaint as the stronger pleading."
+    },
+    {
+      "headline": "Apple Hit With Copyright Class Action Over Pirated Books Dataset",
+      "url": "https://news.bloomberglaw.com/ip-law/apple-hit-with-copyright-class-action-over-pirated-books-dataset",
+      "source": "Bloomberg Law",
+      "date": "2025-09-08",
+      "summary": "Authors Grady Hendrix and Jennifer Roberson filed suit in N.D. Cal. alleging Apple trained Apple Intelligence on the Books3 pirated dataset, accessed via the RedPajama training corpus hosted by Hugging Face. The complaint targets both Apple's OpenELM and Foundation Language Models."
+    }
+  ],
+  "events": []
 }

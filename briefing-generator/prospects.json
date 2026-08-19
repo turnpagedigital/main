@@ -47,8 +47,7 @@
       "date": "2026-08-07",
       "first_seen": "2026-08-17",
       "status": "new",
-      "vote": 1,
-      "snooze_until": "2026-08-20T13:00:00.000Z"
+      "vote": 1
     },
     {
       "id": "4b21ad7cbb",
@@ -143,8 +142,7 @@
       "source_name": "JPML (uscourts.gov)",
       "date": "2026-08-03",
       "first_seen": "2026-08-17",
-      "status": "new",
-      "snooze_until": "2026-08-20T13:00:00.000Z"
+      "status": "new"
     },
     {
       "id": "e068f41370",
@@ -235,8 +233,7 @@
       "source_name": "CoinDesk",
       "date": "2026-07-27",
       "first_seen": "2026-08-17",
-      "status": "new",
-      "snooze_until": "2026-08-20T13:00:00.000Z"
+      "status": "new"
     },
     {
       "id": "0745daa7a6",
@@ -326,8 +323,7 @@
       "source_name": "Bondoro (BlockFills Case Summary)",
       "date": "2026-03-15",
       "first_seen": "2026-08-17",
-      "status": "dismissed",
-      "triaged_at": "2026-08-19T13:42:33.962Z"
+      "status": "new"
     },
     {
       "id": "e640f32845",
