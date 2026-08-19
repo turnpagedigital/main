@@ -617,9 +617,9 @@
           "visible": true,
           "content": {
             "eyebrow": "",
-            "title": "Anthropic trained its models",
-            "accentTitle": "on your work.",
-            "subtitle": "Authors and publishers are getting paid faster with Turnpage. Ready to convert your claim to cash today?",
+            "title": "Anthropic trained its models on your work.",
+            "accentTitle": "Why wait to get paid?",
+            "subtitle": "Authors and publishers are getting paid faster with Turnpage. Ready to convert your claim to cash?",
             "size": "medium",
             "mediaType": "image",
             "video": "/robottypes1.mp4",
@@ -632,7 +632,7 @@
               "label": "Talk to our team",
               "href": "/contact"
             },
-            "titleSize": "large"
+            "titleSize": "medium"
           }
         },
         {
