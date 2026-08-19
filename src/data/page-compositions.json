@@ -1570,6 +1570,33 @@
             },
             "secondary": null
           }
+        },
+        {
+          "id": "sec-1787156403826-vueb",
+          "type": "cta",
+          "visible": true,
+          "layout": "layout-1-getquote",
+          "colorScheme": "dark",
+          "content": {
+            "layout": "layout-1-getquote",
+            "colorScheme": "dark",
+            "eyebrow": "GET YOUR CRYPTO BACK",
+            "title": "Ready to learn more?",
+            "accent": "Talk to us.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null,
+            "titleAccent": "Talk to us.",
+            "body": "Contact us for a quote today. Private, fast and secure.",
+            "cta": {
+              "label": "Get a Quote",
+              "href": "/contact?source=locked-crypto"
+            },
+            "_bookmark": "CTA"
+          }
         }
       ]
     },
