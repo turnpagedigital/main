@@ -1319,11 +1319,11 @@
             "image": "/library/data-center-2.jpg",
             "ctaPrimary": {
               "label": "Sell my claim",
-              "href": "/contact"
+              "href": "#sell"
             },
             "ctaSecondary": {
               "label": "How it works",
-              "href": ""
+              "href": "#how-it-works"
             },
             "titleSize": "large"
           }
@@ -1453,7 +1453,7 @@
             "cardStyle": "black",
             "cardRadius": "square",
             "_bookmark": "how-it-works",
-            "backgroundImage": "/library/grok-image-01858434-d282-4e23-8638-9d2c5f74d6b9-cd83a6.jpg",
+            "backgroundImage": "/pawel-czerwinski-T5VUBvCYqKk-unsplash.jpg",
             "imageFilterStrength": 50,
             "imageFilter": "light",
             "cardBrightness": 100,
