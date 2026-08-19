@@ -1473,10 +1473,10 @@
             "accent": "",
             "colorScheme": "neon",
             "cardRadius": 5,
-            "cardStyle": "float",
+            "cardStyle": "card",
             "align": "left",
             "_bookmark": "sell",
-            "cardColor": "white"
+            "cardColor": "light-gray"
           }
         },
         {
