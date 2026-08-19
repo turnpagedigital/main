@@ -13,6 +13,7 @@ import SituationsSection   from "./SituationsSection.jsx";
 import BioSection          from "./BioSection.jsx";
 import TestimonialsSection from "./TestimonialsSection.jsx";
 import PhotoBreakSection   from "./PhotoBreakSection.jsx";
+import MediaBannerSection  from "./MediaBannerSection.jsx";
 import ExperienceSection   from "./ExperienceSection.jsx";
 import OurEdgeSection      from "./OurEdgeSection.jsx";
 import FAQSection          from "./FAQSection.jsx";
@@ -43,6 +44,7 @@ export const SECTION_MAP = {
   "bio":            BioSection,
   "testimonials":   TestimonialsSection,
   "photo-break":    PhotoBreakSection,
+  "media-banner":   MediaBannerSection,
   "experience":     ExperienceSection,
   "our-edge":       OurEdgeSection,
   "faq":            FAQSection,

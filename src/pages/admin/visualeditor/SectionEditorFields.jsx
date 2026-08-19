@@ -358,6 +358,47 @@ export default function SectionEditorFields({ typeId, form, set }) {
         </>
       )}
 
+      {/* ── Media Banner ── */}
+      {typeId === "media-banner" && (
+        <>
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Background</label>
+            <select style={selectStyle} value={form.backgroundType || "color"} onChange={e => set("backgroundType", e.target.value)}>
+              <option value="color">Solid color</option>
+              <option value="image">Photo</option>
+            </select>
+          </div>
+          {(form.backgroundType || "color") === "color" && (
+            <ColorSchemePicker typeId="media-banner" value={form.colorScheme} onChange={v => set("colorScheme", v)} schemes={["dark", "light", "light-gray"]} />
+          )}
+          {form.backgroundType === "image" && (
+            <BackgroundImageFields form={form} set={set} />
+          )}
+          <div style={fieldGroup}><label style={labelStyle}>H1 heading</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>H2 subheading (optional)</label><textarea style={{ ...inputStyle, minHeight: 70 }} value={form.subtitle || ""} onChange={e => set("subtitle", e.target.value)} /></div>
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Text alignment</label>
+            <select style={selectStyle} value={form.align || "left"} onChange={e => set("align", e.target.value)}>
+              <option value="left">Left</option>
+              <option value="center">Center</option>
+              <option value="right">Right</option>
+            </select>
+          </div>
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Height</label>
+            <select style={selectStyle} value={form.height || "medium"} onChange={e => set("height", e.target.value)}>
+              <option value="auto">Auto (fits content)</option>
+              <option value="small">Small</option>
+              <option value="medium">Medium (default)</option>
+              <option value="large">Large</option>
+              <option value="full">Full screen</option>
+            </select>
+          </div>
+          <CTAField label="Primary button (optional)" value={form.ctaPrimary} onChange={v => set("ctaPrimary", v || null)} nullable />
+          <CTAField label="Secondary button (optional)" value={form.ctaSecondary} onChange={v => set("ctaSecondary", v || null)} nullable />
+        </>
+      )}
+
       {/* ── CTA Banner ── */}
       {typeId === "cta-banner" && (
         <>

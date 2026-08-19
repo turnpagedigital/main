@@ -23,6 +23,7 @@ const TEMPLATE_GROUPS = [
     items: [
       "home-hero",
       "hero",
+      "media-banner",
     ],
   },
   {
