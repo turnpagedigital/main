@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { marked } from "marked";
 import DOMPurify from "dompurify";
-import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
+import { NEON, FONT, INK, INK_60, LINE, PAPER_2 } from "../../data/tokens.js";
 
 /* RichTextSection — standalone formatted text with real heading structure.
    Inline section: content lives in page-compositions.json sectionConfig.content.
@@ -25,7 +25,7 @@ import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
                         "# " heading inside `markdown` below — use one or the
                         other for the page's main heading, not both.
      markdown         — the body (Markdown)
-     colorScheme      — "white" (default) | "light-gray" | "dark"
+     colorScheme      — "white" (default) | "light-gray" | "paper-2" | "charcoal" | "dark"
      align            — "left" (default) | "center"
      height           — "auto" (default) | "small" | "medium" | "large" | "full"
      backgroundImage  — optional photo shown behind the text, on top of the
@@ -37,6 +37,8 @@ import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 const SCHEMES = {
   "white":      { bg: "#FFFFFF", heading: INK,    body: INK_60,                    eyebrow: INK_60, link: INK,    border: LINE },
   "light-gray": { bg: "#F4F5F7", heading: INK,    body: INK_60,                    eyebrow: INK_60, link: INK,    border: LINE },
+  "paper-2":    { bg: PAPER_2,   heading: INK,    body: INK_60,                    eyebrow: INK_60, link: INK,    border: LINE },
+  "charcoal":   { bg: "#242528", heading: "#fff", body: "rgba(255,255,255,0.68)", eyebrow: NEON,   link: "#fff", border: "none" },
   "dark":       { bg: "#0A0A0A", heading: "#fff", body: "rgba(255,255,255,0.68)", eyebrow: NEON,   link: "#fff", border: "none" },
 };
 
@@ -54,7 +56,7 @@ export default function RichTextSection({ sectionConfig }) {
   const layout      = sc.layout || c.layout || "layout-1-narrow";
   const colorScheme = sc.colorScheme || c.colorScheme || "white";
   const theme = SCHEMES[colorScheme] || SCHEMES.white;
-  const isDark = colorScheme === "dark";
+  const isDark = colorScheme === "dark" || colorScheme === "charcoal";
 
   const eyebrow  = c.eyebrow || "";
   const markdown = c.markdown || "";
@@ -183,15 +185,17 @@ export default function RichTextSection({ sectionConfig }) {
 
         /* Scheme colors */
         .rt-white h1, .rt-white h2, .rt-white h3, .rt-white strong,
-        .rt-light-gray h1, .rt-light-gray h2, .rt-light-gray h3, .rt-light-gray strong { color: ${INK}; }
-        .rt-white p, .rt-white li, .rt-light-gray p, .rt-light-gray li { color: ${INK_60}; }
-        .rt-white a, .rt-light-gray a { color: ${INK}; }
-        .rt-white hr, .rt-light-gray hr { background: ${LINE}; }
+        .rt-light-gray h1, .rt-light-gray h2, .rt-light-gray h3, .rt-light-gray strong,
+        .rt-paper-2 h1, .rt-paper-2 h2, .rt-paper-2 h3, .rt-paper-2 strong { color: ${INK}; }
+        .rt-white p, .rt-white li, .rt-light-gray p, .rt-light-gray li, .rt-paper-2 p, .rt-paper-2 li { color: ${INK_60}; }
+        .rt-white a, .rt-light-gray a, .rt-paper-2 a { color: ${INK}; }
+        .rt-white hr, .rt-light-gray hr, .rt-paper-2 hr { background: ${LINE}; }
 
-        .rt-dark h1, .rt-dark h2, .rt-dark h3, .rt-dark strong { color: #fff; }
-        .rt-dark p, .rt-dark li { color: rgba(255,255,255,0.68); }
-        .rt-dark a { color: #fff; }
-        .rt-dark hr { background: rgba(255,255,255,0.15); }
+        .rt-dark h1, .rt-dark h2, .rt-dark h3, .rt-dark strong,
+        .rt-charcoal h1, .rt-charcoal h2, .rt-charcoal h3, .rt-charcoal strong { color: #fff; }
+        .rt-dark p, .rt-dark li, .rt-charcoal p, .rt-charcoal li { color: rgba(255,255,255,0.68); }
+        .rt-dark a, .rt-charcoal a { color: #fff; }
+        .rt-dark hr, .rt-charcoal hr { background: rgba(255,255,255,0.15); }
 
         /* Two-column flow (desktop only) */
         @media (min-width: 881px) {

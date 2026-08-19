@@ -16,6 +16,7 @@ const STATIC_VISUALS = {
   "white":       { label: "White",      swatch: "#FFFFFF", border: "#E0E0E0" },
   "paper":       { label: "Paper",      swatch: "#E5E7EB", border: "#C9CDD3" },
   "paper-2":     { label: "Deep Paper", swatch: "#D5D9DF", border: "#B8BDC5" },
+  "charcoal":    { label: "Dark Gray",  swatch: "#242528", border: "#333"    },
   "dark":        { label: "Dark",       swatch: "#0A0A0A", border: "#333"    },
   "neon":        { label: "Neon",       swatch: "#D4FF00", border: "#9DBD00" },
   "photo":       { label: "Photo",      swatch: "linear-gradient(135deg,#6b7280 0%,#374151 100%)", border: "#555" },
