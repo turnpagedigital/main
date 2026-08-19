@@ -15,37 +15,37 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-18",
-    "meta_fetched_at": "2026-08-18T19:00:27.560062+00:00",
-    "fetched_at": "2026-08-18T19:43:46.131679+00:00",
-    "as_of": "Aug 18, 2026",
+    "meta_fetched_at": "2026-08-19T01:57:43.688602+00:00",
+    "fetched_at": "2026-08-19T01:57:43.688602+00:00",
+    "as_of": "Aug 19, 2026",
     "backfilled": true,
-    "new_in_72h": 12,
+    "new_in_72h": 17,
     "recent": [
       {
-        "entry_number": 1225,
+        "entry_number": 1230,
         "date_filed": "2026-08-18",
-        "time_filed": "10:38:23",
+        "time_filed": "15:45:19",
         "date_display": "Aug 18, 2026",
-        "description": "Certificate of service",
+        "description": "Notice (generic)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1224,
+        "entry_number": 1229,
         "date_filed": "2026-08-18",
-        "time_filed": "10:19:59",
+        "time_filed": "15:41:52",
         "date_display": "Aug 18, 2026",
-        "description": "Certificate of service",
+        "description": "Notice (generic)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1223,
-        "date_filed": "2026-08-17",
-        "time_filed": "20:16:35",
-        "date_display": "Aug 17, 2026",
+        "entry_number": 1228,
+        "date_filed": "2026-08-18",
+        "time_filed": "15:17:15",
+        "date_display": "Aug 18, 2026",
         "description": "Notice (generic)",
         "is_new": true,
         "landmark": "",
@@ -53,6 +53,56 @@
       }
     ],
     "entries": [
+      {
+        "entry_number": 1230,
+        "date_filed": "2026-08-18",
+        "time_filed": "15:45:19",
+        "date_display": "Aug 18, 2026",
+        "description": "Notice (generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1229,
+        "date_filed": "2026-08-18",
+        "time_filed": "15:41:52",
+        "date_display": "Aug 18, 2026",
+        "description": "Notice (generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1228,
+        "date_filed": "2026-08-18",
+        "time_filed": "15:17:15",
+        "date_display": "Aug 18, 2026",
+        "description": "Notice (generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1227,
+        "date_filed": "2026-08-18",
+        "time_filed": "15:13:35",
+        "date_display": "Aug 18, 2026",
+        "description": "Notice (generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1226,
+        "date_filed": "2026-08-18",
+        "time_filed": "15:07:36",
+        "date_display": "Aug 18, 2026",
+        "description": "Notice (generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1225,
         "date_filed": "2026-08-18",
