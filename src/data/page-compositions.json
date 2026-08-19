@@ -252,7 +252,7 @@
             "title": "Turn your Anthropic settlement claim into",
             "accentTitle": "instant cash.",
             "subtitle": "                                                                                                                     \n                                                                                                                     \n\n                                                                                                                     \n",
-            "size": "tall",
+            "size": "medium",
             "video": "/robottypes1.mp4",
             "ctaPrimary": {
               "label": "Sell My Claim",
@@ -503,7 +503,7 @@
                 "id": "step-1",
                 "n": "01",
                 "title": "Upload your claim form »",
-                "body": "Submit your PDF claim form and we'll automatically confirm your claim details and expected recovery. "
+                "body": "Submit your PDF claim form and we'll automatically confirm your claim details."
               },
               {
                 "id": "step-2",
@@ -515,7 +515,7 @@
                 "id": "step-3",
                 "n": "03",
                 "title": "Confirm payment details »",
-                "body": "Provide your bank account details for ACH payment, or select USDC."
+                "body": "Provide your bank account details for ACH payment."
               },
               {
                 "id": "step-1784772902396",
@@ -527,14 +527,14 @@
                 "id": "step-1784772930126",
                 "n": "05",
                 "title": "Book closing call »",
-                "body": "We'll confirm everything you need to close over zoom and issue payment within 48 hours. "
+                "body": "We'll confirm everything you need to close over zoom and issue payment within 48 hours of signing. "
               }
             ],
             "cardStyle": "standard",
             "cardRadius": "square",
             "_bookmark": "how-it-works",
-            "backgroundImage": "/bg-paper.jpg",
-            "imageFilterStrength": 50,
+            "backgroundImage": "/library/scanning-books.jpg",
+            "imageFilterStrength": 80,
             "imageFilter": "dark",
             "cardBrightness": 100,
             "cardBlur": 43,
