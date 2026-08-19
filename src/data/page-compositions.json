@@ -1552,26 +1552,6 @@
           }
         },
         {
-          "id": "sec-1787156352227-047u",
-          "type": "cta",
-          "visible": true,
-          "layout": "layout-1-getquote",
-          "colorScheme": "dark",
-          "content": {
-            "layout": "layout-1-getquote",
-            "colorScheme": "dark",
-            "eyebrow": "Get in Touch",
-            "title": "Hold a claim?",
-            "accent": "Talk to us.",
-            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
-            "primary": {
-              "label": "Get in Touch",
-              "href": "/contact"
-            },
-            "secondary": null
-          }
-        },
-        {
           "id": "sec-1787156403826-vueb",
           "type": "cta",
           "visible": true,
@@ -1580,7 +1560,7 @@
           "content": {
             "layout": "layout-1-getquote",
             "colorScheme": "dark",
-            "eyebrow": "GET YOUR CRYPTO BACK",
+            "eyebrow": "WHY WAIT TO GET PAID?",
             "title": "Ready to learn more?",
             "accent": "Talk to us.",
             "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
