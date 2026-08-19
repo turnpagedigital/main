@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-16 01:55 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-19 01:23 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -176,6 +176,14 @@ hi
 
 ## Uncategorized
 
+### (no docket number) — 2026-08-17
+
+> PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Healthcare data analytics & integration business — Rock Creek Advisors announces a UCC Article 9 sale of substantially all assets of Debtor, a healthcare data anal
+
+### (no docket number) — 2026-08-17
+
+> Filing Alert: 109 Jerome Ave Chapter 11 — 109 Jerome Ave Files Chapter 11 in Southern District of New York
+
 ### (no docket number) — 2026-08-15
 
 > Filing Alert: Phillips Cattle Company Chapter 11 — Phillips Cattle Company Files Chapter 11 in Central District of California
@@ -183,6 +191,14 @@ hi
 ### (no docket number) — 2026-08-15
 
 > Filing Alert: Rebel Creamery Chapter 11 — Rebel Creamery Files Chapter 11 in District of Utah
+
+### (no docket number) — 2026-08-15
+
+> PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Art Finance Funding (IX), LLC — NOTICE OF PUBLIC SALE OF COLLATERAL UNDER DELAWARE UNIFORM COMMERCIAL CODE PLEASE TAKE NOTICE that, in accordance with applicable p
+
+### (no docket number) — 2026-08-15
+
+> PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Fulton SCG Member LLC — UCC Public Sale Notice – Adjournment Please take notice that Newmark, on behalf of FULTON SCG II DEBT FUND, LLC, a Delaware limited liabili
 
 ### (no docket number) — 2026-08-14
 

@@ -353,7 +353,9 @@
       "source_name": "JD Supra / Carr Maloney P.C.",
       "date": "2025-09-05",
       "first_seen": "2026-08-17",
-      "status": "new"
+      "status": "tracked",
+      "triaged_at": "2026-08-19T01:20:06.817Z",
+      "tracked_slug": "hendrix-roberson-v-apple-inc-ai-book-training-class-action"
     },
     {
       "id": "b86336dcbd",
@@ -600,9 +602,11 @@
       "source_name": "TechTimes / Reuters wire",
       "date": "2026-07-10",
       "first_seen": "2026-08-07",
-      "status": "new",
+      "status": "tracked",
       "vote": 1,
-      "snooze_until": "2026-08-14T13:00:00.000Z"
+      "snooze_until": "2026-08-14T13:00:00.000Z",
+      "triaged_at": "2026-08-19T01:21:16.221Z",
+      "tracked_slug": "nyt-v-openai-mdl-no-3143-sanctions-motion"
     },
     {
       "id": "908ad26544",

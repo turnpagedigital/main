@@ -1,0 +1,23 @@
+{
+  "case": {
+    "slug": "hendrix-roberson-v-apple-inc-ai-book-training-class-action",
+    "display_name": "Hendrix & Roberson v. Apple Inc. (AI Book-Training Class Action)",
+    "case_name": "Grady Hendrix and Jennifer Roberson, individually and on behalf of all others similarly situated v. Apple Inc.",
+    "court": "U.S. District Court, N.D. Cal.",
+    "case_number": "4:25-cv-07558",
+    "judge": "Yvonne Gonzalez Rogers",
+    "docket_id": "71279155",
+    "status": "active",
+    "sync": "active"
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/71279155/hendrix-v-apple-inc/",
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": []
+}
