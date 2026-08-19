@@ -97,6 +97,7 @@
   var CASES = [];        // /api/admin/cases
   var CASES_ERR = "";    // load failure surfaced in the Cases tab (page still works)
   var CASES_LITE = false; // true = roster built from the static manifest (read-only editing)
+  var PRIORITIES = {};   // slug -> true, roams via api/prefs (same ⭐ flag as the dashboard star)
   var THEMES_SHOW_EMOJIS = true;  // /api/admin/themes show_emojis flag
   var THEMES = [          // /api/admin/themes overwrites; fallback keeps editors usable
     { slug: "rewind-tariffs", display_name: "Tariffs / Trade", emoji: "⚖️" },
@@ -211,6 +212,30 @@
             presets: (p && p.presets) || [],
             theme_presets: (p && p.theme_presets) || [],
             priorities: (p && p.priorities) || {},
+          }),
+        });
+      }).catch(function () {});
+  }
+  function loadPriorities() {
+    return fetch(BASE + "api/prefs").then(function (r) { return r.json(); })
+      .then(function (p) { PRIORITIES = (p && p.priorities) || {}; })
+      .catch(function () {});
+  }
+  function pushPriorityToPrefs(slug, on) {
+    return fetch(BASE + "api/prefs").then(function (r) { return r.json(); }).catch(function () { return {}; })
+      .then(function (p) {
+        var priorities = (p && p.priorities) || {};
+        if (on) priorities[slug] = true; else delete priorities[slug];
+        PRIORITIES = priorities;
+        return fetch(BASE + "api/prefs", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            colors: (p && p.colors) || {},
+            groups: (p && p.groups) || [],
+            presets: (p && p.presets) || [],
+            theme_presets: (p && p.theme_presets) || [],
+            priorities: priorities,
           }),
         });
       }).catch(function () {});
@@ -479,6 +504,8 @@
         '<div class="mg-field" style="max-width:360px"><label>Sync mode</label><select id="cf-sync">' +
           SYNC_MODES.map(function (s) { return '<option value="' + s.value + '"' + ((form.sync || "active") === s.value ? " selected" : "") + ">" + s.label + "</option>"; }).join("") +
         '</select><div class="mg-note" id="cf-sync-hint"></div></div>' +
+        '<label class="mg-check' + (PRIORITIES[form.slug] ? " on" : "") + '" style="max-width:420px"><input type="checkbox" id="cf-priority"' + (PRIORITIES[form.slug] ? " checked" : "") + "> ⭐ High priority</label>" +
+        '<div class="mg-note">Auto-briefed on the weekday 10am ET schedule. Everything else needs a manual Run Now / Brief now.</div>' +
 
         (isNew ? "" :
           "<h3>Pill color</h3>" +
@@ -553,6 +580,9 @@
       l.querySelector("input").addEventListener("change", function (e) {
         l.classList.toggle("on", e.target.checked);
       });
+    });
+    $("cf-priority").addEventListener("change", function (e) {
+      $("cf-priority").closest(".mg-check").classList.toggle("on", e.target.checked);
     });
 
     // Pill color controls (existing cases only) — same store as the row gears.
@@ -666,6 +696,7 @@
         if (!payload.case.court || !payload.case.case_number || !payload.case.judge) { err.textContent = "Court, case number, and judge are required."; return; }
       } else if (!payload.claims_administrator.url) { err.textContent = "A claims-agent URL is required."; return; }
 
+      var priorityOn = $("cf-priority").checked;
       var btn = $("cf-save");
       btn.disabled = true; btn.textContent = "Saving…";
       apiFetch("/api/admin/cases", {
@@ -675,8 +706,8 @@
       }).then(function (r) { return r.json(); }).then(function (j) {
         if (!j.ok) throw new Error(j.error || "Save failed");
         setBanner("ok", "Case " + (isNew ? "created" : "updated") + ".");
-        return loadCases();
-      }).then(renderCases).catch(function (e) {
+        return pushPriorityToPrefs(slug, priorityOn);
+      }).then(loadCases).then(renderCases).catch(function (e) {
         btn.disabled = false; btn.textContent = isNew ? "Create case" : "Save changes";
         err.textContent = String(e.message || e);
       });
@@ -1785,7 +1816,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     // Each loader degrades on its own — the page always routes.
-    Promise.all([loadManifest(), loadThemes(), loadCases()]).then(route);
+    Promise.all([loadManifest(), loadThemes(), loadCases(), loadPriorities()]).then(route);
     hydrateFilterGroups();
   });
 })();

@@ -5,8 +5,12 @@ run-name: "${{ (inputs.case || github.event.client_payload.case) && format('Brie
 
 on:
   schedule:
-    # 14:00 UTC = 10:00 AM ET during DST (Mar-Nov), 9:00 AM ET in standard time
-    - cron: '0 14 * * *'
+    # 14:00 UTC = 10:00 AM ET during DST (Mar-Nov), 9:00 AM ET in standard time.
+    # Weekdays only (Mon-Fri) — unscoped runs only auto-brief cases starred
+    # ⭐ high-priority on the intel dashboard (see generate_case_briefings.py
+    # load_priorities()). Everything else runs via the admin Run Now / Brief
+    # now button, which passes `case` below and bypasses the priority gate.
+    - cron: '0 14 * * 1-5'
   workflow_dispatch:
     inputs:
       date:
@@ -14,7 +18,7 @@ on:
         required: false
         default: ""
       case:
-        description: "Run only these case slugs, comma-separated (e.g. bartz-anthropic,poolin). Empty = all tracked cases."
+        description: "Run only these case slugs, comma-separated (e.g. bartz-anthropic,poolin). Empty = only cases starred ⭐ high priority."
         required: false
         default: ""
       force:
