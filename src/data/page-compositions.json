@@ -1336,9 +1336,13 @@
           "colorScheme": "light-gray",
           "content": {
             "eyebrow": "",
-            "markdown": "# A $1.5 billion win for authors and publishers\n\nApproximately **500,000** covered works are entitled to **$3,000** in settlement proceeds with a default 50/50 split for a single author, single publisher work. Rights holders with works on the covered works list and that timely filed a claim form are entitled to payouts from the settlement, but **funds won't start flowing until all appeals have been resolved, *which can take many months or years*.**",
+            "markdown": "Approximately **500,000** covered works are entitled to **$3,000** in settlement proceeds with a default 50/50 split for a single author, single publisher work. Rights holders with works on the covered works list and that timely filed a claim form are entitled to payouts from the settlement, but **funds won't start flowing until all appeals have been resolved, *which can take many months or years*.**",
             "layout": "layout-2-wide",
-            "colorScheme": "light-gray"
+            "colorScheme": "light-gray",
+            "align": "center",
+            "heading1": "A",
+            "heading1Accent": "$1.5 billion win",
+            "heading1After": "for authors and publishers"
           }
         },
         {
@@ -1354,28 +1358,28 @@
             "steps": [
               {
                 "id": "tl-1",
-                "when": "Now · July 2026",
+                "when": "July 2026",
                 "heading": "Final approval granted",
                 "body": "Judge Martínez-Olguín approved the $1.5 billion settlement on July 20, 2026 and cut class counsel’s fees to $101.6 million from the $187.5 million sought. No payments until the Effective Date.",
-                "state": "here",
-                "pillLabel": "",
-                "pillStyle": "neon"
+                "state": "done",
+                "pillLabel": "APPEAL CLOCK STARTS",
+                "pillStyle": "light-gray"
               },
               {
                 "id": "tl-2",
                 "when": "August 2026",
                 "heading": "Appeal window",
                 "body": "Objectors have 30 days from judgment to notice an appeal to the Ninth Circuit — closing on or about August 19, 2026. Most fairness-hearing objections came from non-class members, who lack standing. Class-member objectors do not.",
-                "state": "",
+                "state": "done",
                 "pillLabel": "Appeal filed August 19",
                 "pillStyle": "light-gray"
               },
               {
                 "id": "tl-4",
-                "when": "Late 2026 – 2027",
+                "when": "August 2026 – 2027",
                 "heading": "Appeal freezes the payout",
                 "body": "One notice of appeal suspends the Effective Date. Ninth Circuit briefing, argument, and decision typically run 12–18 months — while Anthropic’s installments keep filling the fund: $450 million by September 25, 2026, the final $450 million by September 25, 2027.",
-                "state": "",
+                "state": "here",
                 "pillLabel": "We are here",
                 "pillStyle": "neon"
               },
@@ -1545,6 +1549,54 @@
             "ctaHref": "/contact?source=ai-copyright",
             "colorScheme": "light-gray",
             "_bookmark": "faq"
+          }
+        },
+        {
+          "id": "sec-1787156403826-vueb",
+          "type": "cta",
+          "visible": true,
+          "layout": "layout-1-getquote",
+          "colorScheme": "dark",
+          "content": {
+            "layout": "layout-1-getquote",
+            "colorScheme": "dark",
+            "eyebrow": "WHY WAIT TO GET PAID?",
+            "title": "Ready to learn more?",
+            "accent": "Talk to us.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null,
+            "titleAccent": "Talk to us.",
+            "body": "Contact us for a quote today. Private, fast and secure.",
+            "cta": {
+              "label": "Get a Quote",
+              "href": "/contact?source=locked-crypto"
+            },
+            "_bookmark": "CTA"
+          }
+        },
+        {
+          "id": "sec-1787156552252-6183",
+          "type": "rich-text",
+          "visible": true,
+          "layout": "layout-1-narrow",
+          "colorScheme": "light-gray",
+          "content": {
+            "eyebrow": "",
+            "align": "center",
+            "height": "auto",
+            "heading1": "",
+            "heading1Accent": "",
+            "heading1After": "",
+            "backgroundImage": "",
+            "imageOpacity": 35,
+            "imageBlur": 0,
+            "markdown": "Turnpage Digital Markets LLC is not affiliated with the court, the claims administrator, class counsel or any other party in the Bartz v. Anthropic litigation. We do not offer legal or financial advice and submitting your claim information or an inquiry through this site does not give rise to any client or other relationship. All materials submitted will be kept confidential pursuant to our policies. ",
+            "layout": "layout-1-narrow",
+            "colorScheme": "light-gray"
           }
         }
       ]
