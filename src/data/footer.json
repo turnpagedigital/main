@@ -6,15 +6,9 @@
       "links": [
         {
           "id": "ai-copyright",
-          "label": "Copyright Claims",
+          "label": "Bartz v. Anthropic Claims",
           "href": "/bartz-v-anthropic",
           "labelKey": "nav.copyright"
-        },
-        {
-          "id": "crypto",
-          "label": "Locked Crypto",
-          "href": "/crypto",
-          "labelKey": "nav.crypto"
         },
         {
           "id": "litigation-finance",
@@ -28,6 +22,12 @@
           "href": "https://www.rewindtariffs.com",
           "labelKey": "nav.tariff",
           "external": true
+        },
+        {
+          "id": "crypto",
+          "label": "Locked Crypto",
+          "href": "/crypto",
+          "labelKey": "nav.crypto"
         }
       ],
       "titleKey": "footer.col.desks"
