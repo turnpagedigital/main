@@ -1552,33 +1552,6 @@
           }
         },
         {
-          "id": "sec-1787156403826-vueb",
-          "type": "cta",
-          "visible": true,
-          "layout": "layout-1-getquote",
-          "colorScheme": "dark",
-          "content": {
-            "layout": "layout-1-getquote",
-            "colorScheme": "dark",
-            "eyebrow": "WHY WAIT TO GET PAID?",
-            "title": "Ready to learn more?",
-            "accent": "Talk to us.",
-            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
-            "primary": {
-              "label": "Get in Touch",
-              "href": "/contact"
-            },
-            "secondary": null,
-            "titleAccent": "Talk to us.",
-            "body": "Contact us for a quote today. Private, fast and secure.",
-            "cta": {
-              "label": "Get a Quote",
-              "href": "/contact?source=locked-crypto"
-            },
-            "_bookmark": "CTA"
-          }
-        },
-        {
           "id": "sec-1787156552252-6183",
           "type": "rich-text",
           "visible": true,
@@ -1597,6 +1570,33 @@
             "markdown": "Turnpage Digital Markets LLC is not affiliated with the court, the claims administrator, class counsel or any other party in the Bartz v. Anthropic litigation. We do not offer legal or financial advice and submitting your claim information or an inquiry through this site does not give rise to any client or other relationship. All materials submitted will be kept confidential pursuant to our policies. ",
             "layout": "layout-1-narrow",
             "colorScheme": "light-gray"
+          }
+        },
+        {
+          "id": "sec-1787156403826-vueb",
+          "type": "cta",
+          "visible": true,
+          "layout": "layout-3-bottomcta",
+          "colorScheme": "dark",
+          "content": {
+            "layout": "layout-3-bottomcta",
+            "colorScheme": "dark",
+            "eyebrow": "WHY WAIT TO GET PAID?",
+            "title": "Ready to learn more?",
+            "accent": "Talk to us.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null,
+            "titleAccent": "Talk to us.",
+            "body": "Contact us for a quote today. Private, fast and secure.",
+            "cta": {
+              "label": "Get a Quote",
+              "href": "/contact?source=locked-crypto"
+            },
+            "_bookmark": "CTA"
           }
         }
       ]
