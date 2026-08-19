@@ -185,6 +185,12 @@
       "id": "item-1781198075347",
       "label": "Capabilities",
       "href": "/#what-we-cover",
+      "active": true
+    },
+    {
+      "id": "item-1781198101329",
+      "label": "Leadership",
+      "href": "/#leadership",
       "active": true,
       "dropdown": {
         "title": "",
@@ -195,12 +201,6 @@
           "href": "/"
         }
       }
-    },
-    {
-      "id": "item-1781198101329",
-      "label": "Leadership",
-      "href": "/#leadership",
-      "active": true
     },
     {
       "id": "item-1781204786861",
