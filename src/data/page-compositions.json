@@ -1336,9 +1336,13 @@
           "colorScheme": "light-gray",
           "content": {
             "eyebrow": "",
-            "markdown": "# A $1.5 billion win for authors and publishers\n\nApproximately **500,000** covered works are entitled to **$3,000** in settlement proceeds with a default 50/50 split for a single author, single publisher work. Rights holders with works on the covered works list and that timely filed a claim form are entitled to payouts from the settlement, but **funds won't start flowing until all appeals have been resolved, *which can take many months or years*.**",
+            "markdown": "Approximately **500,000** covered works are entitled to **$3,000** in settlement proceeds with a default 50/50 split for a single author, single publisher work. Rights holders with works on the covered works list and that timely filed a claim form are entitled to payouts from the settlement, but **funds won't start flowing until all appeals have been resolved, *which can take many months or years*.**",
             "layout": "layout-2-wide",
-            "colorScheme": "light-gray"
+            "colorScheme": "light-gray",
+            "align": "center",
+            "heading1": "A",
+            "heading1Accent": "$1.5 billion win",
+            "heading1After": "for authors and publishers"
           }
         },
         {
@@ -1354,12 +1358,12 @@
             "steps": [
               {
                 "id": "tl-1",
-                "when": "Now · July 2026",
+                "when": "July 2026",
                 "heading": "Final approval granted",
                 "body": "Judge Martínez-Olguín approved the $1.5 billion settlement on July 20, 2026 and cut class counsel’s fees to $101.6 million from the $187.5 million sought. No payments until the Effective Date.",
                 "state": "done",
-                "pillLabel": "",
-                "pillStyle": "neon"
+                "pillLabel": "APPEAL CLOCK STARTS",
+                "pillStyle": "light-gray"
               },
               {
                 "id": "tl-2",
@@ -1372,7 +1376,7 @@
               },
               {
                 "id": "tl-4",
-                "when": "Late 2026 – 2027",
+                "when": "August 2026 – 2027",
                 "heading": "Appeal freezes the payout",
                 "body": "One notice of appeal suspends the Effective Date. Ninth Circuit briefing, argument, and decision typically run 12–18 months — while Anthropic’s installments keep filling the fund: $450 million by September 25, 2026, the final $450 million by September 25, 2027.",
                 "state": "here",
