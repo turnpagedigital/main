@@ -302,12 +302,12 @@
           "id": "sec-1787168600136-5286",
           "type": "rich-text",
           "visible": true,
-          "layout": "layout-1-narrow",
+          "layout": "layout-2-wide",
           "colorScheme": "white",
           "content": {
             "eyebrow": "",
             "markdown": "### Authors and publishers of covered works are entitled to payouts of up to $3,000 per work from the Anthropic settlement fund, but payments won't flow to rights holders until all appeals have been resolved, ***which could take many months or years*.**",
-            "layout": "layout-1-narrow",
+            "layout": "layout-2-wide",
             "colorScheme": "white",
             "align": "left",
             "heading1": "A",
@@ -381,14 +381,14 @@
                 "note": "",
                 "highlight": false,
                 "kicker": " ",
-                "cardStyle": "white"
+                "cardStyle": "light-gray"
               }
             ],
             "kicker": "Scenario",
             "footnote": "",
             "cardRadius": 14,
             "cardAlign": "center",
-            "cardMaxWidth": 900
+            "cardMaxWidth": ""
           }
         },
         {
