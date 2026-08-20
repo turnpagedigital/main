@@ -1049,6 +1049,23 @@ export default function SectionEditorFields({ typeId, form, set }) {
           </div>
         </div>
       </div>
+
+      {/* ── Bottom divider (universal) ── */}
+      <div style={{ marginTop: "1.4rem", paddingTop: "1.2rem", borderTop: `1px solid ${LINE}` }}>
+        <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: "0.85rem", color: INK, cursor: "pointer" }}>
+          <input type="checkbox" checked={Boolean(form._bottomDivider)} onChange={e => set("_bottomDivider", e.target.checked)} />
+          Thin line at the bottom of this section
+        </label>
+        {form._bottomDivider && (
+          <div style={{ ...fieldGroup, marginTop: "0.6rem", maxWidth: 160 }}>
+            <label style={labelStyle}>Line color</label>
+            <select style={{ ...inputStyle, marginTop: 4 }} value={form._bottomDividerColor || "gray"} onChange={e => set("_bottomDividerColor", e.target.value)}>
+              <option value="gray">Gray</option>
+              <option value="black">Black</option>
+            </select>
+          </div>
+        )}
+      </div>
     </>
   );
 }

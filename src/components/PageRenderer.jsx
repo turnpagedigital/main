@@ -1,6 +1,7 @@
 import React from "react";
 import pageCompositions from "../data/page-compositions.json";
 import { SECTION_MAP } from "./sections/registry.js";
+import { INK } from "../data/tokens.js";
 
 /* ── Section spacing & height overrides ─────────────────────────────────
    Stored in section.content._spacing / section.content._minHeight.
@@ -22,13 +23,26 @@ const MIN_HEIGHT_VALUES = {
   "100": "100vh",
 };
 
+// section.content._bottomDivider (bool) + ._bottomDividerColor ("gray" |
+// "black") — same underscored-wrapper pattern as spacing/height above, so
+// any section type gets a bottom rule without its own component changing.
+// Deliberately opaque (not the ~8% LINE token used for internal hairlines)
+// since this is a visible, intentional divider between sections, not a
+// subtle in-section border.
+const DIVIDER_COLORS = {
+  gray:  "#9CA3AF",
+  black: INK,
+};
+
 function buildWrapStyle(c) {
   const mt = SPACING_VALUES[c._spacingTop];
   const mb = SPACING_VALUES[c._spacingBottom];
   const mh = MIN_HEIGHT_VALUES[c._minHeight];
+  const dividerColor = c._bottomDivider ? (DIVIDER_COLORS[c._bottomDividerColor] || DIVIDER_COLORS.gray) : null;
   const hasSpacing = mt || mb;
   const hasHeight  = mh;
-  if (!hasSpacing && !hasHeight) return null;
+  const hasDivider = !!dividerColor;
+  if (!hasSpacing && !hasHeight && !hasDivider) return null;
   // Padding (not margin) so the added space stays inside the wrapper, which
   // adopts the section's own background below — expanded space matches the
   // section instead of exposing the black page body.
@@ -36,6 +50,7 @@ function buildWrapStyle(c) {
     ...(mt  ? { paddingTop:    mt  } : {}),
     ...(mb  ? { paddingBottom: mb  } : {}),
     ...(mh  ? { minHeight:     mh  } : {}),
+    ...(hasDivider ? { borderBottom: `1px solid ${dividerColor}` } : {}),
   };
 }
 
