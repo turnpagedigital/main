@@ -441,8 +441,8 @@
             "cardRadius": "square",
             "_bookmark": "how-it-works",
             "backgroundImage": "/library/joel-filipe-pyhpjejuyhy-unsplash.jpg",
-            "imageFilterStrength": 60,
-            "imageFilter": "none",
+            "imageFilterStrength": 20,
+            "imageFilter": "dark",
             "cardBrightness": 100,
             "cardBlur": 43,
             "stepsLayout": "5"
