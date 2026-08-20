@@ -33,6 +33,7 @@
           "id": "claim-form",
           "heading": "Tell us about your claim",
           "title": "Let's get started",
+          "optional": true,
           "showIf": {
             "fieldId": "select_one",
             "equals": "Author"
@@ -41,7 +42,7 @@
             {
               "id": "claim_form",
               "type": "file",
-              "label": "Please share your claim form",
+              "label": "Upload your form to auto-populate your details",
               "required": true,
               "showIf": {
                 "fieldId": "select_one",
@@ -52,7 +53,7 @@
                 "png",
                 "jpg"
               ],
-              "help": "If your form is not available, you may still proceed, but",
+              "skipLabel": "Continue without the form",
               "extract": "bartz-claim",
               "extractMap": {
                 "first": "contact.firstName",
