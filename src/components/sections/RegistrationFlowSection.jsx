@@ -121,15 +121,16 @@ function IntroText({ text, dark = false, style = {}, scopeClass }) {
   );
 }
 
-// A required "choice" (button-group) field with no answer yet defaults to its
-// first option, so a branch driver like Authored/Published starts pre-picked
-// and its branch-specific fields (see field-level showIf) are visible on load
-// instead of the page opening on an empty, undecided question.
+// A required "choice" (button-group) or "select" (dropdown) field with no
+// answer yet defaults to its first option, so a branch driver like
+// Author/Publisher starts pre-picked and its branch-specific fields (see
+// field-level showIf) are visible on load instead of the page opening on an
+// empty, undecided question.
 function defaultAnswers(flow) {
   const defaults = {};
   for (const s of flow.steps || []) {
     for (const f of s.fields || []) {
-      if (f.type === "choice" && f.required && Array.isArray(f.options) && f.options.length) {
+      if ((f.type === "choice" || f.type === "select") && f.required && Array.isArray(f.options) && f.options.length) {
         defaults[f.id] = f.options[0];
       }
     }
