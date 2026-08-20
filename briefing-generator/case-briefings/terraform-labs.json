@@ -3,6 +3,34 @@
   "case_name": "Terraform Labs",
   "items": [
     {
+      "date": "2026-08-20",
+      "updated": "2026-08-20",
+      "lede": "On August 19, the Wind Down Trust filed an authorization motion (Dkt. 1321) before Judge Brendan Linehan Shannon in Case No. 24-10070-BLS, Bankr. D. Del. The full text of Dkt. 1321 was not produced in the document pull, so its precise object cannot be confirmed from the primary record.",
+      "body_md": "On August 19, the Wind Down Trust filed an authorization motion (Dkt. 1321) before Judge Brendan Linehan Shannon in Case No. 24-10070-BLS, Bankr. D. Del. The full text of Dkt. 1321 was not produced in the document pull, so its precise object cannot be confirmed from the primary record. In a post-confirmation liquidating trust at this stage — with claim reconciliation still active across more than 16,000 Crypto Loss Claims, a $4 billion lawsuit against Jump Trading in progress, and the wind-down phase extended through December 31, 2026 — authorization motions typically seek court approval to take a specific estate action outside the ordinary course of the confirmed plan: executing a significant contract, monetizing an asset, entering a litigation settlement, or making a partial distribution. The applicable standard under the confirmed plan and § 363 of the Bankruptcy Code requires a showing that the action is in the best interests of the estate; no secondary reporting on Dkt. 1321 has surfaced to confirm which action is being authorized. Any reader with PACER access should pull the filing directly to confirm the object before acting on it.\n\nDkt. 1320, the withdrawal notice filed August 18 and covered yesterday, is the only other entry in the window; it carries no additional significance beyond what was already analyzed. Dkts. 1309–1313 and 1319, previously covered, remain as background. The broader distribution posture is unchanged: \nas of the post-confirmation report for the quarter ending March 31, 2026, the Wind Down Trust had distributed nothing to plan creditors, even as the plan administrator continued reconciling more than 16,000 crypto loss claims and pressing a $4 billion lawsuit against Jump Trading as the estate's largest affirmative recovery effort.\n The next concrete milestone on the calendar is December 31, 2026 — the court-extended deadline for the wind-down phase — with any resolution of the Jump Trading litigation or the *Chang v. Terraform Labs Wind Down Trust* adversary proceeding the more material triggers for distribution timing ahead of that date.\n\n## Sources\n\n- [Terraform Labs: $4.47B SEC Settlement Shapes Liquidating Plan](https://elevenflo.com/blog/terraform-labs-bankruptcy) — ElevenFlo, June 17, 2026\n- [Under The Radar: Bankruptcy News You May Have Missed](https://www.law360.com/bankruptcy-authority/mid-cap/articles/2504885) — Law360, July 20, 2026\n- [Terraform Distributions: Wait For 2027?](https://reclaim-capital.com/news_eu/terraform-labs-distributions/) — Reclaim Capital, July 12, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Terraform Labs: $4.47B SEC Settlement Shapes Liquidating Plan",
+          "url": "https://elevenflo.com/blog/terraform-labs-bankruptcy",
+          "note": "ElevenFlo, June 17, 2026"
+        },
+        {
+          "title": "Under The Radar: Bankruptcy News You May Have Missed",
+          "url": "https://www.law360.com/bankruptcy-authority/mid-cap/articles/2504885",
+          "note": "Law360, July 20, 2026"
+        },
+        {
+          "title": "Terraform Distributions: Wait For 2027?",
+          "url": "https://reclaim-capital.com/news_eu/terraform-labs-distributions/",
+          "note": "Reclaim Capital, July 12, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 2,
+        "articles": 0,
+        "latest": "2026-08-19"
+      }
+    },
+    {
       "date": "2026-08-19",
       "updated": "2026-08-19",
       "lede": "On August 18, a withdrawal notice (Dkt. 1320) was filed in Case No. 24-10070-BLS before Judge Brendan Linehan Shannon, Bankr. D. Del. The docket line identifies the entry as \"Withdrawal - Notice\"; the full text of the filing was not pulled, so the specific pleading being withdrawn cannot be confirmed from this record alone.",

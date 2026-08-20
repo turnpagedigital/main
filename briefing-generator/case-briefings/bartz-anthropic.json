@@ -3,6 +3,39 @@
   "case_name": "Bartz v. Anthropic",
   "items": [
     {
+      "date": "2026-08-20",
+      "updated": "2026-08-20",
+      "lede": "On August 19, Cowan DeBaets Abrahams & Sheppard LLP filed its own notice of appeal to the Ninth Circuit (Dkt. 683), paying the $605 filing fee and entering the appeal alongside Edelson PC and Oppenheim + Zebrak, who had done the same the prior day (Dkt. 682). The two notices are separate filings by separate appellants, not a consolidated submission — meaning the Ninth Circuit will open at least two docketed appeal…",
+      "body_md": "On August 19, Cowan DeBaets Abrahams & Sheppard LLP filed its own notice of appeal to the Ninth Circuit (Dkt. 683), paying the $605 filing fee and entering the appeal alongside Edelson PC and Oppenheim + Zebrak, who had done the same the prior day (Dkt. 682). The two notices are separate filings by separate appellants, not a consolidated submission — meaning the Ninth Circuit will open at least two docketed appeal proceedings arising from the July 20 final approval order, though the court may consolidate them on motion or sua sponte. Both appellant groups were coordinating-counsel or fee-claimant firms rather than class counsel, and together they were the primary drivers of the approximately $75 million supplemental fee request that Anthropic opposed as lacking \"scant justification or substantiation\" and that Judge Martínez-Olguín resolved as part of the July 20 order setting aside roughly $101.5 million in attorney fees for class counsel. The back-to-back filings, one on each side of the August 19 appeal deadline, confirm the fee outcome rather than the settlement's substantive terms is the operative grievance — though until opening briefs are filed, the precise scope of each appeal remains unconfirmed on the face of the notices.\n\nThe structural consequence for class members is unchanged from yesterday but now fully locked: with two sets of appellants on the record, the Effective Date under the settlement agreement cannot arrive, the disbursement portal will not launch, and the roughly 70% first-stage distribution remains in abeyance for the duration of the Ninth Circuit proceedings. \nPayments were to be made in two stages, roughly 70% in the first stage and 30% in the second, as Anthropic will be making settlement payments in installments through September 2027.\n The critical distinction for recovery posture — whether the appeal is confined to fees or extends to final approval itself — will determine whether class members face a full stay of all disbursements or only a hold on funds attributable to disputed counsel compensation. If cabined to fees, there is a plausible argument that undisputed settlement funds could be released to class members during the pendency of the appeal, but that would require either a negotiated arrangement or a court order, neither of which appears on the docket. No stay motion has been filed by any party.\n\nAnthropic's payment obligations run independently of the appeal absent a stay. \nPer the settlement's payment schedule, Anthropic's $450 million first installment (Scheduled Payment 1) falls due September 25, 2026.\n That obligation is not suspended by the filing of a notice of appeal, and no party has moved to stay the judgment. The practical question for the coming weeks is whether any party moves in the district court or the Ninth Circuit for a stay pending appeal, which would require the movant to demonstrate likelihood of success on the merits, irreparable harm, balance of equities, and public interest — a high bar for a fee dispute in a settled class action. The next concrete milestone is the Ninth Circuit's assignment of case numbers and issuance of scheduling orders for both appeals, which will establish the opening-brief deadlines and clarify whether the court consolidates the two proceedings.\n\n## Sources\n\n- [Bartz v Anthropic: When to Expect Payments, Next Steps](https://blog.taaonline.net/2026/08/bartz-v-anthropic-when-to-expect-payments-next-steps/) — Textbook & Academic Authors Association, August 7, 2026\n- [Bartz et al v. Anthropic PBC — Case Articles](https://www.law360.com/cases/66c42a501562e5852bfc1794/articles) — Law360\n- [Bartz v. Anthropic Detailed Timeline Post Preliminary Approval](https://www.independentpublishersguild.com/Common/Uploaded%20files/IPG%20document%20library/IPG%20email%20documents/Anthropic%20settlement_Timeline.pdf) — Independent Publishers Guild\n- [Anthropic Blasts Add-On Firms' Bid for $75 Million of IP Deal](https://news.bloomberglaw.com/ip-law/anthropic-blasts-add-on-firms-bid-for-75-million-of-ip-deal-39) — Bloomberg Law, December 18, 2025\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Bartz v Anthropic: When to Expect Payments, Next Steps",
+          "url": "https://blog.taaonline.net/2026/08/bartz-v-anthropic-when-to-expect-payments-next-steps/",
+          "note": "Textbook & Academic Authors Association, August 7, 2026"
+        },
+        {
+          "title": "Bartz et al v. Anthropic PBC — Case Articles",
+          "url": "https://www.law360.com/cases/66c42a501562e5852bfc1794/articles",
+          "note": "Law360"
+        },
+        {
+          "title": "Bartz v. Anthropic Detailed Timeline Post Preliminary Approval",
+          "url": "https://www.independentpublishersguild.com/Common/Uploaded%20files/IPG%20document%20library/IPG%20email%20documents/Anthropic%20settlement_Timeline.pdf",
+          "note": "Independent Publishers Guild"
+        },
+        {
+          "title": "Anthropic Blasts Add-On Firms' Bid for $75 Million of IP Deal",
+          "url": "https://news.bloomberglaw.com/ip-law/anthropic-blasts-add-on-firms-bid-for-75-million-of-ip-deal-39",
+          "note": "Bloomberg Law, December 18, 2025"
+        }
+      ],
+      "activity": {
+        "filings": 2,
+        "articles": 0,
+        "latest": "2026-08-19"
+      }
+    },
+    {
       "date": "2026-08-19",
       "updated": "2026-08-19",
       "lede": "On August 18, Edelson PC and Oppenheim + Zebrak filed a notice of appeal to the Ninth Circuit (Dkt. 682), taking the final approval order entered July 20 up on appeal and triggering the precise scenario that has held class member payments in abeyance since that order issued.",
