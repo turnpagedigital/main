@@ -194,6 +194,41 @@ export function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorSch
     setStepError("");
   }
 
+  // Wraps setAnswer for choice/yesno fields that gate a file field's
+  // visibility (field.showIf.fieldId === this field's id) — e.g. "How would
+  // you like to proceed?" choosing between uploading a claim form or entering
+  // details manually. If the file field currently holds an attached file or
+  // extraction results, switching to a value that would hide it silently
+  // discards real work the visitor already did. Confirm first, and on
+  // confirm clear the file, the extraction, and every answer that extraction
+  // auto-filled (field.extractMap) so "start over" is actually a clean start.
+  function changeAnswerGuarded(field, value) {
+    if (field.type === "choice" || field.type === "yesno") {
+      const guardedFile = (step.fields || []).find(f2 =>
+        f2.type === "file" && f2.showIf && f2.showIf.fieldId === field.id &&
+        f2.showIf.equals !== value &&
+        (files[f2.id] || (f2.extract && extraction)));
+      if (guardedFile) {
+        const ok = window.confirm(
+          "Switching away from the upload will remove your claim form and the details we read from it — you'll need to re-enter them manually. Continue?"
+        );
+        if (!ok) return;
+        setFiles(prev => ({ ...prev, [guardedFile.id]: null }));
+        setExtraction(null);
+        setExtractError("");
+        if (guardedFile.extractMap) {
+          const dropKeys = new Set(Object.keys(guardedFile.extractMap));
+          setAnswers(prev => {
+            const next = { ...prev };
+            for (const k of dropKeys) delete next[k];
+            return next;
+          });
+        }
+      }
+    }
+    setAnswer(field.id, value);
+  }
+
   async function setFile(field, fileObj) {
     if (!fileObj) {
       setFiles(prev => ({ ...prev, [field.id]: null }));
@@ -474,7 +509,7 @@ export function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorSch
                   <FieldControl field={f} value={answers[f.id]} file={files[f.id]}
                     answers={answers} quote={quotes[f.id]}
                     extraction={extraction} extracting={extracting} extractError={extractError}
-                    onChange={v => setAnswer(f.id, v)} onFile={fl => setFile(f, fl)}
+                    onChange={v => changeAnswerGuarded(f, v)} onFile={fl => setFile(f, fl)}
                     noBottomMargin />
                 </div>
               ))}
@@ -483,7 +518,7 @@ export function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorSch
             <FieldControl key={group.field.id} field={group.field} value={answers[group.field.id]} file={files[group.field.id]}
               answers={answers} quote={quotes[group.field.id]}
               extraction={extraction} extracting={extracting} extractError={extractError}
-              onChange={v => setAnswer(group.field.id, v)} onFile={fl => setFile(group.field, fl)} />
+              onChange={v => changeAnswerGuarded(group.field, v)} onFile={fl => setFile(group.field, fl)} />
           )
         ))}
         <style>{`
@@ -1035,7 +1070,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
             <path d="M12 16V4M12 4l-4 4M12 4l4 4" />
             <path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
           </svg>
-          {file ? "Change file" : "Choose file"}
+          {field.uploadLabel || (file ? "Change file" : "Choose file")}
         </label>
         <input id={id} type="file"
           accept={(field.accept || ["pdf", "png", "jpg"]).map(a => "." + a).join(",")}

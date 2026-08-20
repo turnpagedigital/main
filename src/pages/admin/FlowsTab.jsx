@@ -133,6 +133,7 @@ function sanitizeFlow(f) {
         ...(fl.type === "file" && fl.extract ? { extract: fl.extract } : {}),
         ...(fl.type === "file" && fl.extractMap && typeof fl.extractMap === "object" ? { extractMap: fl.extractMap } : {}),
         ...(fl.type === "file" && fl.skipLabel ? { skipLabel: fl.skipLabel } : {}),
+        ...(fl.type === "file" && fl.uploadLabel ? { uploadLabel: fl.uploadLabel } : {}),
         ...(fl.type === "number" && fl.placeholder ? { placeholder: fl.placeholder } : {}),
         ...(fl.type === "computed" ? {
           ...(fl.priced ? { priced: true } : {}),
@@ -759,6 +760,10 @@ function FieldRow({ field, index, total, priorFields = [], allFields = [], onCha
             placeholder="Helper text, e.g. PDF or image, up to 8 MB"
             value={field.help || ""}
             onChange={e => onChange({ help: e.target.value })} />
+          <input style={{ ...inputStyle, fontSize: "0.82rem", marginTop: 6 }}
+            placeholder='Upload button text — leave blank for "Choose file" / "Change file"'
+            value={field.uploadLabel || ""}
+            onChange={e => onChange({ uploadLabel: e.target.value })} />
           <div style={{ display: "flex", gap: 6, alignItems: "center", marginTop: 6 }}>
             <label style={{ fontSize: "0.72rem", color: INK_60, fontWeight: 700, whiteSpace: "nowrap" }}>Auto-read</label>
             <select style={{ ...selectStyle, fontSize: "0.82rem" }}
