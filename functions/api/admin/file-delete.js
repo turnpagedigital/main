@@ -48,6 +48,8 @@ const CASCADE_FILES = [
   "src/data/alerts.json",
   "src/data/faqs.json",
   "src/data/posts.json",
+  "src/data/page-compositions.json",
+  "src/data/file-library.json",
   "public/briefings/index.json",
 ];
 
