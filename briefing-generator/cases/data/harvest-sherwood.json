@@ -15,12 +15,32 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-20",
-    "meta_fetched_at": "2026-08-20T17:49:27.787088+00:00",
-    "fetched_at": "2026-08-20T17:49:27.787088+00:00",
+    "meta_fetched_at": "2026-08-20T19:49:08.571419+00:00",
+    "fetched_at": "2026-08-20T19:49:08.571419+00:00",
     "as_of": "Aug 20, 2026",
     "backfilled": true,
-    "new_in_72h": 19,
+    "new_in_72h": 21,
     "recent": [
+      {
+        "entry_number": 1243,
+        "date_filed": "2026-08-20",
+        "time_filed": "14:28:29",
+        "date_display": "Aug 20, 2026",
+        "description": "Certificate of service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1242,
+        "date_filed": "2026-08-20",
+        "time_filed": "13:38:12",
+        "date_display": "Aug 20, 2026",
+        "description": "Certificate of service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1241,
         "date_filed": "2026-08-20",
@@ -30,29 +50,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 1240,
-        "date_filed": "2026-08-20",
-        "time_filed": "11:44:52",
-        "date_display": "Aug 20, 2026",
-        "description": "Appear pro hac vice",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 1239,
-        "date_filed": "2026-08-20",
-        "time_filed": "11:22:41",
-        "date_display": "Aug 20, 2026",
-        "description": "Appear pro hac vice",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1243,
+        "date_filed": "2026-08-20",
+        "time_filed": "14:28:29",
+        "date_display": "Aug 20, 2026",
+        "description": "Certificate of service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1242,
+        "date_filed": "2026-08-20",
+        "time_filed": "13:38:12",
+        "date_display": "Aug 20, 2026",
+        "description": "Certificate of service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1241,
         "date_filed": "2026-08-20",
