@@ -218,9 +218,11 @@ export async function onRequestPost(context) {
     const phone = (phoneFieldId && answers[phoneFieldId]) || "";
     // First/last name aren't a distinct field type (any "text" field could be
     // one), so — unlike email/phone above — these still rely on the flow
-    // using these exact ids for its name fields.
-    const firstName = answers.first_name || answers.firstName || "";
-    const lastName = answers.last_name || answers.lastName || "";
+    // using one of these recognized ids for its name fields. This list has
+    // already had to grow twice as the admin renamed these fields; if it
+    // grows again, the fix belongs here, not by chasing the latest id.
+    const firstName = answers.first_name || answers.firstName || answers.first || "";
+    const lastName = answers.last_name || answers.lastName || answers.last || "";
 
     const attribution = {};
     for (const f of ATTRIBUTION_FIELDS) {
