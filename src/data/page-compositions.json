@@ -271,7 +271,7 @@
           "type": "stats-band",
           "visible": true,
           "layout": "minimal",
-          "colorScheme": "paper",
+          "colorScheme": "light-gray",
           "content": {
             "stats": [
               {
@@ -292,7 +292,7 @@
             ],
             "footnoteKey": "stats.footnote",
             "footnote": " ",
-            "colorScheme": "paper",
+            "colorScheme": "light-gray",
             "layout": "minimal",
             "align": "center",
             "valueColor": "auto",
@@ -308,7 +308,7 @@
           "colorScheme": "white",
           "content": {
             "eyebrow": "",
-            "markdown": "### Authors and publishers are entitled to their share of $3,000 for each covered work from the Anthropic settlement fund, but payments won't flow to rights holders until all appeals have been resolved, ***which could take many months or years*.**",
+            "markdown": "### Authors and publishers are entitled to their share of $3,000 for each covered work from the Anthropic settlement fund, but payments won't flow to rights holders until all appeals have been resolved, ***which could take years*.**",
             "layout": "layout-2-wide",
             "colorScheme": "white",
             "align": "left",
@@ -381,9 +381,9 @@
                 "figure": "You don't have to wait.",
                 "title": "We help authors and publishers recover faster. See how it works below.",
                 "note": "",
-                "highlight": false,
+                "highlight": true,
                 "kicker": " ",
-                "cardStyle": "light-gray"
+                "cardStyle": "dark"
               }
             ],
             "kicker": "Scenario",
@@ -437,10 +437,10 @@
               }
             ],
             "cardStyle": "standard",
-            "cardRadius": "square",
+            "cardRadius": "rounded",
             "_bookmark": "how-it-works",
             "backgroundImage": "/library/scanning-books.jpg",
-            "imageFilterStrength": 80,
+            "imageFilterStrength": 75,
             "imageFilter": "dark",
             "cardBrightness": 100,
             "cardBlur": 43,
