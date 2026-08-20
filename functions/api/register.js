@@ -78,6 +78,20 @@ function isFieldVisible(field, answers) {
   return !field.showIf || !field.showIf.fieldId || answers[field.showIf.fieldId] === field.showIf.equals;
 }
 
+/* The id of the flow's email (or phone) field, whatever an admin has named
+   it — there's only ever meaningfully one of each type per flow, so looking
+   it up by type instead of a hardcoded id survives an admin renaming the
+   field (which has happened more than once). Answers below are read via
+   these instead of a literal answers.email / answers.phone. */
+function findFieldIdByType(flow, type) {
+  for (const step of flow.steps || []) {
+    for (const f of step.fields || []) {
+      if (f.type === type) return f.id;
+    }
+  }
+  return null;
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
   const corsHeaders = corsHeadersFor(request);
@@ -197,8 +211,16 @@ export async function onRequestPost(context) {
       console.error("pdf-checks error:", err.message);
     }
 
-    const email = answers.email || "";
+    const emailFieldId = findFieldIdByType(flow, "email");
+    const email = (emailFieldId && answers[emailFieldId]) || "";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail("A valid email is required");
+    const phoneFieldId = findFieldIdByType(flow, "phone");
+    const phone = (phoneFieldId && answers[phoneFieldId]) || "";
+    // First/last name aren't a distinct field type (any "text" field could be
+    // one), so — unlike email/phone above — these still rely on the flow
+    // using these exact ids for its name fields.
+    const firstName = answers.first_name || answers.firstName || "";
+    const lastName = answers.last_name || answers.lastName || "";
 
     const attribution = {};
     for (const f of ATTRIBUTION_FIELDS) {
@@ -210,7 +232,7 @@ export async function onRequestPost(context) {
 
     const notifyEmail = env.NOTIFY_EMAIL || "info@turnpagedigital.com";
     const fromEmail = env.FROM_EMAIL || "Turnpage Digital Markets <noreply@turnpagedigital.com>";
-    const fullName = [answers.firstName, answers.lastName].filter(Boolean).join(" ") || email;
+    const fullName = [firstName, lastName].filter(Boolean).join(" ") || email;
 
     // Ordered answer rows following the flow's own step/field order
     const answerRows = steps
@@ -289,10 +311,10 @@ export async function onRequestPost(context) {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            firstName: answers.firstName || "",
-            lastName: answers.lastName || "",
+            firstName,
+            lastName,
             email,
-            phone: answers.phone || "",
+            phone,
             subject: `Registration: ${flow.name}`,
             message: steps.flatMap((s) => s.fields || [])
               .filter((f) => f.type !== "file" && answers[f.id])
@@ -311,7 +333,7 @@ export async function onRequestPost(context) {
     // Attio (best-effort, only when configured)
     if (env.ATTIO_API_KEY) {
       try {
-        await pushToAttio(env, { flow, answers, email, fullName, pageKey, attribution, steps, offerBreakdown });
+        await pushToAttio(env, { flow, answers, email, firstName, lastName, phone, fullName, pageKey, attribution, steps, offerBreakdown });
       } catch (err) {
         console.error("Attio error:", err.message);
       }
@@ -349,7 +371,7 @@ export async function onRequestPost(context) {
             <p style="color:rgba(255,255,255,0.65);margin:6px 0 0;font-size:12px;">${escapeHtml(flow.name)} · Turnpage Digital Markets</p>
           </div>
           <div style="background:#fff;padding:32px;border:1px solid #e5e5e5;border-top:none;border-radius:0 0 12px 12px;">
-            <p style="font-size:14px;line-height:1.6;margin:0 0 16px;">Hi ${escapeHtml(answers.firstName || "there")},</p>
+            <p style="font-size:14px;line-height:1.6;margin:0 0 16px;">Hi ${escapeHtml(firstName || "there")},</p>
             <p style="font-size:14px;line-height:1.6;margin:0 0 16px;">Thanks for registering. Here's a copy of what you submitted${attachments.length ? " (we also received your claim form)" : ""}:</p>
             <table style="width:100%;border-collapse:collapse;font-size:14px;">${answerRows}</table>
             ${worksCounts.total ? `
@@ -405,7 +427,7 @@ export async function onRequestPost(context) {
    owner should ever change without a code deploy. */
 const ATTIO_DEFAULT_DEAL_OWNER = "4802a3c8-c7d8-46fb-9384-b7c4effc8f3c";
 
-async function pushToAttio(env, { flow, answers, email, fullName, pageKey, attribution, steps, offerBreakdown }) {
+async function pushToAttio(env, { flow, answers, email, firstName, lastName, phone, fullName, pageKey, attribution, steps, offerBreakdown }) {
   const headers = {
     Authorization: `Bearer ${env.ATTIO_API_KEY}`,
     "Content-Type": "application/json",
@@ -414,15 +436,15 @@ async function pushToAttio(env, { flow, answers, email, fullName, pageKey, attri
   const personValues = {
     email_addresses: [{ email_address: email }],
   };
-  if (answers.firstName || answers.lastName) {
+  if (firstName || lastName) {
     personValues.name = [{
-      first_name: answers.firstName || "",
-      last_name: answers.lastName || "",
+      first_name: firstName || "",
+      last_name: lastName || "",
       full_name: fullName,
     }];
   }
-  if (answers.phone) {
-    personValues.phone_numbers = [{ original_phone_number: answers.phone }];
+  if (phone) {
+    personValues.phone_numbers = [{ original_phone_number: phone }];
   }
 
   const assertRes = await fetch(

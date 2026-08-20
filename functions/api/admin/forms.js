@@ -146,6 +146,7 @@ function validateFlows(flows) {
         if (typeof fld.label !== "string" || !fld.label.trim()) return `${stepRef}, field ${fieldNum}: needs a label before you can save.`;
         const fieldRef = `${stepRef} → "${fld.label.trim()}"`;
         if (!FIELD_TYPES.has(fld.type)) return `${fieldRef}: "${fld.type}" isn't a recognized field type.`;
+        if (fld.row !== undefined && typeof fld.row !== "string") return `${fieldRef}: the row-pairing value must be text.`;
         if ((fld.type === "select" || fld.type === "choice")) {
           if (!Array.isArray(fld.options) || fld.options.length < 2) return `${fieldRef}: needs at least 2 options.`;
           if (fld.options.length > MAX_OPTIONS) return `${fieldRef}: at most ${MAX_OPTIONS} options.`;
@@ -244,6 +245,7 @@ function normalizeField(fld) {
     required: Boolean(fld.required),
   };
   if (fld.hideLabel) out.hideLabel = true;
+  if (fld.row && String(fld.row).trim()) out.row = String(fld.row).trim().slice(0, 60);
   if (fld.showIf && fld.showIf.fieldId) {
     out.showIf = { fieldId: String(fld.showIf.fieldId), equals: String(fld.showIf.equals) };
   }

@@ -73,6 +73,7 @@ function sanitizeFlow(f) {
         id: fl.id || "", type: fl.type || "text", label: fl.label || "",
         required: Boolean(fl.required),
         ...(fl.hideLabel ? { hideLabel: true } : {}),
+        ...(fl.row ? { row: fl.row } : {}),
         ...(fl.showIf && fl.showIf.fieldId ? { showIf: { fieldId: fl.showIf.fieldId, equals: fl.showIf.equals ?? "" } } : {}),
         ...(fl.options ? { options: fl.options } : {}),
         ...(fl.accept ? { accept: fl.accept } : {}),
@@ -522,7 +523,7 @@ function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, o
 
   return (
     <div style={{ border: `1px solid ${LINE}`, borderRadius: 5, padding: "0.6rem", marginBottom: "0.55rem", background: "#fff" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr auto auto auto auto auto", gap: 8, alignItems: "center" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr auto auto 6.5rem auto auto auto", gap: 8, alignItems: "center" }}>
         <input style={inputStyle} placeholder="Question / label" value={field.label}
           onChange={e => onChange({ label: e.target.value })}
           onBlur={e => { if (!field.id) onChange({ id: slugify(e.target.value).replace(/-/g, "_") }); }} />
@@ -538,6 +539,9 @@ function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, o
           <input type="checkbox" checked={Boolean(field.hideLabel)} onChange={e => onChange({ hideLabel: e.target.checked })} />
           Hide label
         </label>
+        <input style={{ ...inputStyle, fontSize: "0.78rem" }} placeholder="Row"
+          title={'Give two adjacent fields the same row value (e.g. "name") to sit them side by side instead of stacked — useful for First/Last name or Email/Phone'}
+          value={field.row || ""} onChange={e => onChange({ row: e.target.value })} />
         <button style={iconBtnStyle(index === 0)} title="Move up" disabled={index === 0} onClick={() => onMove(-1)}>↑</button>
         <button style={iconBtnStyle(index === total - 1)} title="Move down" disabled={index === total - 1} onClick={() => onMove(1)}>↓</button>
         <button style={{ ...iconBtnStyle(false), color: "#C03030", visibility: removable ? "visible" : "hidden" }} title="Delete field" onClick={onRemove}>✕</button>
