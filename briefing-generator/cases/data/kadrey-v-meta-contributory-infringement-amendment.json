@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
     "date_last_filing": "2026-08-20",
-    "meta_fetched_at": "2026-08-20T16:55:11.627397+00:00",
-    "fetched_at": "2026-08-20T21:47:11.732923+00:00",
+    "meta_fetched_at": "2026-08-20T22:48:17.987651+00:00",
+    "fetched_at": "2026-08-20T22:48:17.987651+00:00",
     "as_of": "Aug 20, 2026",
     "backfilled": true,
-    "new_in_72h": 8,
+    "new_in_72h": 9,
     "recent": [
+      {
+        "entry_number": 818,
+        "date_filed": "2026-08-20",
+        "time_filed": "15:28:26",
+        "date_display": "Aug 20, 2026",
+        "description": "Pro Hac Vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 817,
         "date_filed": "2026-08-20",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 815,
-        "date_filed": "2026-08-19",
-        "time_filed": "21:15:56",
-        "date_display": "Aug 19, 2026",
-        "description": "TRANSCRIPT ORDER for proceedings held on 08/14/2026 before Judge Vince Chhabria by BCP Literary, Inc., Ta-Nehisi Coates, Daring Greatly Corporation, Junot Diaz, Eleven Eleven O' Clock Corporation, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson, for Court Reporter Marla Knox. (Stein, Joshua) (Filed on 8/19/2026) (Entered: 08/19/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 818,
+        "date_filed": "2026-08-20",
+        "time_filed": "15:28:26",
+        "date_display": "Aug 20, 2026",
+        "description": "Pro Hac Vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 817,
         "date_filed": "2026-08-20",
