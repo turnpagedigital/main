@@ -510,6 +510,7 @@ export function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorSch
                     answers={answers} quote={quotes[f.id]}
                     extraction={extraction} extracting={extracting} extractError={extractError}
                     onChange={v => changeAnswerGuarded(f, v)} onFile={fl => setFile(f, fl)}
+                    onNeonCard={onNeonCard}
                     noBottomMargin />
                 </div>
               ))}
@@ -518,7 +519,8 @@ export function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorSch
             <FieldControl key={group.field.id} field={group.field} value={answers[group.field.id]} file={files[group.field.id]}
               answers={answers} quote={quotes[group.field.id]}
               extraction={extraction} extracting={extracting} extractError={extractError}
-              onChange={v => changeAnswerGuarded(group.field, v)} onFile={fl => setFile(group.field, fl)} />
+              onChange={v => changeAnswerGuarded(group.field, v)} onFile={fl => setFile(group.field, fl)}
+              onNeonCard={onNeonCard} />
           )
         ))}
         <style>{`
@@ -662,7 +664,7 @@ function resolvePath(obj, path) {
 /* LinkConfirmField — an external-verification step (e.g. Sumsub KYC):
    a button link, a QR code encoding the same URL for phone hand-off, and a
    required confirmation checkbox. Value is "Yes" once checked. */
-function LinkConfirmField({ field, value, onChange, wrap, label }) {
+function LinkConfirmField({ field, value, onChange, wrap, label, onNeonCard = false }) {
   const [qr, setQr] = useState("");
   const url = (field.url || "").trim();
   useEffect(() => {
@@ -681,7 +683,10 @@ function LinkConfirmField({ field, value, onChange, wrap, label }) {
       {url ? (
         <div style={{ display: "flex", gap: "1.2rem", alignItems: "center", flexWrap: "wrap", marginBottom: "0.9rem" }}>
           <div>
-            <a href={url} target="_blank" rel="noopener noreferrer" className="btn-neon" style={{ display: "inline-block" }}>
+            <a href={url} target="_blank" rel="noopener noreferrer" className="btn-neon" style={{
+              display: "inline-block",
+              ...(onNeonCard ? { background: INK, color: NEON } : {}),
+            }}>
               {field.linkText || "Open verification"} ↗
             </a>
             <p style={{ fontFamily: FONT, fontSize: "0.74rem", color: INK_60, margin: "0.6rem 0 0" }}>
@@ -907,7 +912,7 @@ const VISUALLY_HIDDEN_STYLE = {
   overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0,
 };
 
-function FieldControl({ field, value, file, answers = {}, quote, extraction = null, extracting = false, extractError = "", onChange, onFile, noBottomMargin = false }) {
+function FieldControl({ field, value, file, answers = {}, quote, extraction = null, extracting = false, extractError = "", onChange, onFile, onNeonCard = false, noBottomMargin = false }) {
   const id = React.useId();
   const label = (
     <label htmlFor={id} style={field.hideLabel ? VISUALLY_HIDDEN_STYLE : FIELD_LABEL_STYLE}>
@@ -988,7 +993,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
 
   if (field.type === "link-confirm") {
     return (
-      <LinkConfirmField field={field} value={value} onChange={onChange} wrap={wrap} label={label} />
+      <LinkConfirmField field={field} value={value} onChange={onChange} wrap={wrap} label={label} onNeonCard={onNeonCard} />
     );
   }
 
