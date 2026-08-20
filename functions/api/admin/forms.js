@@ -100,100 +100,109 @@ function validateFlows(flows) {
   const seen = new Set();
   for (let i = 0; i < flows.length; i++) {
     const f = flows[i];
-    if (!f || typeof f !== "object") return `flows[${i}] is not an object`;
-    if (!slugOk(f.id)) return `flows[${i}].id must be a lowercase slug`;
-    if (seen.has(f.id)) return `duplicate flow id "${f.id}"`;
+    if (!f || typeof f !== "object") return `Flow ${i + 1} isn't a valid object — try reloading the tab.`;
+    if (!slugOk(f.id)) return `Flow ${i + 1}'s ID must be a lowercase slug (letters, numbers, dashes).`;
+    if (seen.has(f.id)) return `Two flows both use the ID "${f.id}" — flow IDs must be unique.`;
     seen.add(f.id);
-    if (typeof f.name !== "string" || !f.name.trim()) return `flows[${i}].name is required`;
-    if (!Array.isArray(f.steps) || f.steps.length === 0) return `flows[${i}].steps must be a non-empty array`;
-    if (f.steps.length > MAX_STEPS) return `flows[${i}]: at most ${MAX_STEPS} steps`;
+    if (typeof f.name !== "string" || !f.name.trim()) return `Flow ${i + 1} needs a name before it can be saved.`;
+    const flowRef = `"${f.name.trim()}"`;
+    if (!Array.isArray(f.steps) || f.steps.length === 0) return `${flowRef} needs at least one step.`;
+    if (f.steps.length > MAX_STEPS) return `${flowRef}: at most ${MAX_STEPS} steps are allowed.`;
 
     const fieldIds = new Set();
     const fieldTypes = {}; // id -> type, for validating computed-field references
+    const fieldLabels = {}; // id -> label, so error messages can name the field a broken reference points at
     const fieldChoices = {}; // id -> valid values, for choice/select/yesno fields — catches a showIf left pointing at a renamed/removed option
     for (let j = 0; j < f.steps.length; j++) {
       const s = f.steps[j];
-      if (!s || typeof s !== "object") return `flows[${i}].steps[${j}] is not an object`;
-      if (!slugOk(s.id)) return `flows[${i}].steps[${j}].id must be a lowercase slug`;
-      if (typeof s.heading !== "string" || !s.heading.trim()) return `flows[${i}].steps[${j}].heading is required`;
-      if (s.title !== undefined && typeof s.title !== "string") return `flows[${i}].steps[${j}].title must be a string`;
-      if (s.explainer !== undefined && typeof s.explainer !== "string") return `flows[${i}].steps[${j}].explainer must be a string`;
-      if (s.optional !== undefined && typeof s.optional !== "boolean") return `flows[${i}].steps[${j}].optional must be true/false`;
-      if (!Array.isArray(s.fields) || s.fields.length === 0) return `flows[${i}].steps[${j}].fields must be non-empty`;
-      if (s.fields.length > MAX_FIELDS) return `flows[${i}].steps[${j}]: at most ${MAX_FIELDS} fields`;
+      const stepNum = j + 1;
+      if (!s || typeof s !== "object") return `${flowRef}, step ${stepNum} isn't a valid object — try reloading the tab.`;
+      if (!slugOk(s.id)) return `${flowRef}, step ${stepNum}: internal ID must be a lowercase slug — try retyping its question/heading.`;
+      if (typeof s.heading !== "string" || !s.heading.trim()) return `${flowRef}, step ${stepNum}: needs a question/heading before you can save.`;
+      const stepRef = `${flowRef}, step "${s.heading.trim()}"`;
+      if (s.title !== undefined && typeof s.title !== "string") return `${stepRef}: the optional title must be text.`;
+      if (s.explainer !== undefined && typeof s.explainer !== "string") return `${stepRef}: the optional explainer must be text.`;
+      if (s.optional !== undefined && typeof s.optional !== "boolean") return `${stepRef}: the "optional step" setting got corrupted — try re-toggling its checkbox.`;
+      if (!Array.isArray(s.fields) || s.fields.length === 0) return `${stepRef}: add at least one field, or delete the step.`;
+      if (s.fields.length > MAX_FIELDS) return `${stepRef}: at most ${MAX_FIELDS} fields per step.`;
       if (s.showIf !== undefined && s.showIf !== null) {
         if (typeof s.showIf !== "object" || !s.showIf.fieldId || typeof s.showIf.equals !== "string") {
-          return `flows[${i}].steps[${j}].showIf needs fieldId + equals`;
+          return `${stepRef}: its "Only show this step when…" condition is incomplete — pick both a field and a value, or turn the condition off.`;
         }
         if (!fieldIds.has(s.showIf.fieldId)) {
-          return `flows[${i}].steps[${j}].showIf references "${s.showIf.fieldId}" which is not a field on an EARLIER step`;
+          const targetLabel = fieldLabels[s.showIf.fieldId];
+          return `${stepRef}: its "Only show this step when…" condition points at ${targetLabel ? `"${targetLabel}"` : `a field ("${s.showIf.fieldId}")`} that no longer comes before this step in the list — either that field was moved after this step, renamed, or deleted. Re-pick the field in that dropdown, or move this step later.`;
         }
         if (fieldChoices[s.showIf.fieldId] && !fieldChoices[s.showIf.fieldId].includes(s.showIf.equals)) {
-          return `flows[${i}].steps[${j}].showIf: "${s.showIf.equals}" is not a current option of "${s.showIf.fieldId}" (options are: ${fieldChoices[s.showIf.fieldId].join(", ")}) — this step would never show. Update the condition or the field's options together.`;
+          return `${stepRef}: its "Only show this step when…" condition expects "${fieldLabels[s.showIf.fieldId] || s.showIf.fieldId}" to equal "${s.showIf.equals}", but that's no longer one of its options (current options: ${fieldChoices[s.showIf.fieldId].join(", ")}) — this step would never show. Re-pick the value in that condition.`;
         }
       }
       for (let k = 0; k < s.fields.length; k++) {
         const fld = s.fields[k];
-        if (!fld || typeof fld !== "object") return `flows[${i}].steps[${j}].fields[${k}] is not an object`;
-        if (!slugOk(fld.id)) return `flows[${i}].steps[${j}].fields[${k}].id must be a lowercase slug`;
-        if (fieldIds.has(fld.id)) return `duplicate field id "${fld.id}" in flow "${f.id}"`;
-        if (typeof fld.label !== "string" || !fld.label.trim()) return `field "${fld.id}" needs a label`;
-        if (!FIELD_TYPES.has(fld.type)) return `field "${fld.id}": unknown type "${fld.type}"`;
+        const fieldNum = k + 1;
+        if (!fld || typeof fld !== "object") return `${stepRef}, field ${fieldNum} isn't a valid object — try reloading the tab.`;
+        if (!slugOk(fld.id)) return `${stepRef}, field ${fieldNum}: internal ID must be a lowercase slug — try retyping its label.`;
+        if (fieldIds.has(fld.id)) return `${stepRef}: two fields share the same internal ID ("${fld.id}") — rename one of their labels so they generate different IDs.`;
+        if (typeof fld.label !== "string" || !fld.label.trim()) return `${stepRef}, field ${fieldNum}: needs a label before you can save.`;
+        const fieldRef = `${stepRef} → "${fld.label.trim()}"`;
+        if (!FIELD_TYPES.has(fld.type)) return `${fieldRef}: "${fld.type}" isn't a recognized field type.`;
         if ((fld.type === "select" || fld.type === "choice")) {
-          if (!Array.isArray(fld.options) || fld.options.length < 2) return `field "${fld.id}" needs at least 2 options`;
-          if (fld.options.length > MAX_OPTIONS) return `field "${fld.id}": at most ${MAX_OPTIONS} options`;
-          if (!fld.options.every(o => typeof o === "string" && o.trim())) return `field "${fld.id}": options must be non-empty strings`;
+          if (!Array.isArray(fld.options) || fld.options.length < 2) return `${fieldRef}: needs at least 2 options.`;
+          if (fld.options.length > MAX_OPTIONS) return `${fieldRef}: at most ${MAX_OPTIONS} options.`;
+          if (!fld.options.every(o => typeof o === "string" && o.trim())) return `${fieldRef}: options can't be blank.`;
         }
         if (fld.showIf !== undefined && fld.showIf !== null) {
           if (typeof fld.showIf !== "object" || !fld.showIf.fieldId || typeof fld.showIf.equals !== "string") {
-            return `field "${fld.id}".showIf needs fieldId + equals`;
+            return `${fieldRef}: its "Only show this field when…" condition is incomplete — pick both a field and a value, or turn the condition off.`;
           }
           if (!fieldIds.has(fld.showIf.fieldId)) {
-            return `field "${fld.id}".showIf references "${fld.showIf.fieldId}" which is not an earlier field`;
+            const targetLabel = fieldLabels[fld.showIf.fieldId];
+            return `${fieldRef}: its "Only show this field when…" condition points at ${targetLabel ? `"${targetLabel}"` : `a field ("${fld.showIf.fieldId}")`} that no longer comes before it — either that field was moved, renamed, or deleted. Re-pick the field in that dropdown.`;
           }
           if (fieldChoices[fld.showIf.fieldId] && !fieldChoices[fld.showIf.fieldId].includes(fld.showIf.equals)) {
-            return `field "${fld.id}".showIf: "${fld.showIf.equals}" is not a current option of "${fld.showIf.fieldId}" (options are: ${fieldChoices[fld.showIf.fieldId].join(", ")}) — this field would never show. Update the condition or the field's options together.`;
+            return `${fieldRef}: its "Only show this field when…" condition expects "${fieldLabels[fld.showIf.fieldId] || fld.showIf.fieldId}" to equal "${fld.showIf.equals}", but that's no longer one of its options (current options: ${fieldChoices[fld.showIf.fieldId].join(", ")}) — this field would never show. Re-pick the value in that condition.`;
           }
         }
         if (fld.type === "file" && fld.accept !== undefined) {
           if (!Array.isArray(fld.accept) || !fld.accept.every(a => FILE_ACCEPT.has(a))) {
-            return `field "${fld.id}": accept may only contain ${[...FILE_ACCEPT].join(", ")}`;
+            return `${fieldRef}: accepted file types may only include ${[...FILE_ACCEPT].join(", ")}.`;
           }
         }
         if (fld.type === "file" && fld.extractMap !== undefined) {
           if (typeof fld.extractMap !== "object" || fld.extractMap === null || Array.isArray(fld.extractMap)) {
-            return `field "${fld.id}": extractMap must be an object of { fieldId: path }`;
+            return `${fieldRef}: auto-fill mapping got corrupted — try clearing and redoing it.`;
           }
-          if (Object.keys(fld.extractMap).length > MAX_EXTRACT_MAP) return `field "${fld.id}": too many extractMap entries`;
-          if (!Object.values(fld.extractMap).every(v => typeof v === "string")) return `field "${fld.id}": extractMap values must be strings`;
+          if (Object.keys(fld.extractMap).length > MAX_EXTRACT_MAP) return `${fieldRef}: too many auto-fill mappings.`;
+          if (!Object.values(fld.extractMap).every(v => typeof v === "string")) return `${fieldRef}: auto-fill mapping values must be text.`;
         }
         if (fld.type === "computed") {
           if (fld.priced !== undefined && typeof fld.priced !== "boolean") {
-            return `field "${fld.id}": priced must be true/false`;
+            return `${fieldRef}: the "priced on server" setting got corrupted — try re-toggling it.`;
           }
           for (const key of ["selfField", "publisherField"]) {
             if (fld[key] !== undefined && fld[key] !== "" && fieldTypes[fld[key]] !== "number") {
-              return `field "${fld.id}": ${key} must reference a Number field defined on an earlier step`;
+              return `${fieldRef}: its ${key === "selfField" ? "self-published count" : "publisher count"} field must be a Number field defined earlier in the flow — re-pick it.`;
             }
           }
           if (fld.rate !== undefined && (typeof fld.rate !== "number" || !Number.isFinite(fld.rate) || fld.rate < 0)) {
-            return `field "${fld.id}": rate must be a non-negative number`;
+            return `${fieldRef}: the rate must be a number of 0 or more.`;
           }
           if (fld.terms !== undefined) {
-            if (!Array.isArray(fld.terms)) return `field "${fld.id}": terms must be an array`;
-            if (fld.terms.length > MAX_TERMS) return `field "${fld.id}": at most ${MAX_TERMS} terms`;
+            if (!Array.isArray(fld.terms)) return `${fieldRef}: its pricing terms got corrupted — try removing and re-adding them.`;
+            if (fld.terms.length > MAX_TERMS) return `${fieldRef}: at most ${MAX_TERMS} pricing terms.`;
             for (const t of fld.terms) {
-              if (!t || typeof t !== "object" || typeof t.field !== "string" || !t.field) return `field "${fld.id}": each term needs a field`;
-              if (fieldTypes[t.field] !== "number") return `field "${fld.id}": term "${t.field}" must be a Number field defined on an earlier step`;
-              if (t.factor !== undefined && (typeof t.factor !== "number" || !Number.isFinite(t.factor))) return `field "${fld.id}": term factor must be a number`;
+              if (!t || typeof t !== "object" || typeof t.field !== "string" || !t.field) return `${fieldRef}: every pricing term needs a field.`;
+              if (fieldTypes[t.field] !== "number") return `${fieldRef}: a pricing term references "${fieldLabels[t.field] || t.field}", which must be a Number field defined earlier in the flow.`;
+              if (t.factor !== undefined && (typeof t.factor !== "number" || !Number.isFinite(t.factor))) return `${fieldRef}: a pricing term's factor must be a number.`;
             }
           }
           if (fld.gateOn !== undefined && fld.gateOn !== "" && !fieldTypes[fld.gateOn]) {
-            return `field "${fld.id}": gateOn references "${fld.gateOn}" which is not an earlier field`;
+            return `${fieldRef}: the field it waits on ("${fld.gateOn}") isn't defined earlier in the flow — re-pick it.`;
           }
         }
         fieldIds.add(fld.id);
         fieldTypes[fld.id] = fld.type;
+        fieldLabels[fld.id] = fld.label.trim();
         if (fld.type === "select" || fld.type === "choice") fieldChoices[fld.id] = fld.options;
         if (fld.type === "yesno") fieldChoices[fld.id] = ["Yes", "No"];
       }
