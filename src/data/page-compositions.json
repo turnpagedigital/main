@@ -465,13 +465,13 @@
           "type": "registration-flow",
           "visible": true,
           "layout": "wide",
-          "colorScheme": "light-gray",
+          "colorScheme": "paper",
           "content": {
             "flowId": "bartz-registration",
             "eyebrow": "Ready to sell?",
             "title": "Get your",
             "accent": "instant quote.",
-            "colorScheme": "light-gray",
+            "colorScheme": "paper",
             "cardRadius": 5,
             "cardStyle": "card",
             "align": "left",
@@ -570,60 +570,6 @@
             "markdown": "Turnpage Digital Markets LLC is not affiliated with the court, the claims administrator, class counsel or any other party in the Bartz v. Anthropic litigation. We do not offer legal or financial advice and submitting your claim information or an inquiry through this site does not give rise to any client or other relationship. All materials submitted will be kept confidential pursuant to our policies. ",
             "layout": "layout-1-narrow",
             "colorScheme": "light-gray"
-          }
-        },
-        {
-          "id": "sec-1787168620545-xgw7",
-          "type": "cta",
-          "visible": false,
-          "layout": "layout-1-getquote",
-          "colorScheme": "dark",
-          "content": {
-            "layout": "layout-1-getquote",
-            "colorScheme": "dark",
-            "eyebrow": "WHY WAIT TO GET PAID?",
-            "title": "Get started",
-            "accent": "today.",
-            "kicker": "",
-            "primary": {
-              "label": "Sell my claim",
-              "href": "#sell"
-            },
-            "secondary": null,
-            "titleAccent": "Talk to us.",
-            "body": "Contact us for a quote today. Private, fast and secure.",
-            "cta": {
-              "label": "Get a Quote",
-              "href": "/contact?source=locked-crypto"
-            },
-            "_bookmark": "CTA"
-          }
-        },
-        {
-          "id": "sec-1780972607455-de6l",
-          "type": "cta",
-          "visible": false,
-          "layout": "layout-1-getquote",
-          "colorScheme": "dark",
-          "content": {
-            "layout": "layout-1-getquote",
-            "colorScheme": "dark",
-            "eyebrow": "Questions",
-            "title": "Ask our team",
-            "accent": "Talk to us.",
-            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
-            "primary": {
-              "label": "Get in Touch",
-              "href": "/contact"
-            },
-            "secondary": null,
-            "titleAccent": "for help.",
-            "body": "Contact us to discuss your rights. Private, fast and secure.",
-            "cta": {
-              "label": "Get in Touch",
-              "href": "/contact"
-            },
-            "_bookmark": "cta"
           }
         },
         {
