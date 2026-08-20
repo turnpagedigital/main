@@ -271,7 +271,7 @@
           "type": "stats-band",
           "visible": true,
           "layout": "minimal",
-          "colorScheme": "light-gray",
+          "colorScheme": "neon",
           "content": {
             "stats": [
               {
@@ -292,7 +292,7 @@
             ],
             "footnoteKey": "stats.footnote",
             "footnote": " ",
-            "colorScheme": "light-gray",
+            "colorScheme": "neon",
             "layout": "minimal",
             "align": "center",
             "valueColor": "auto",
