@@ -130,7 +130,7 @@
               "id": "email",
               "type": "text",
               "label": "Email",
-              "required": false
+              "required": true
             },
             {
               "id": "phone",
