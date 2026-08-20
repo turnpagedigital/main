@@ -296,7 +296,7 @@
             "layout": "minimal",
             "align": "center",
             "valueColor": "auto",
-            "density": "tight",
+            "density": "compact",
             "cardRadius": 14
           }
         },
@@ -305,12 +305,12 @@
           "type": "rich-text",
           "visible": true,
           "layout": "layout-2-wide",
-          "colorScheme": "white",
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "",
             "markdown": "### Authors and publishers are entitled to their share of $3,000 for each covered work from the Anthropic settlement fund, but payments won't flow to rights holders until all appeals have been resolved, ***which could take years*.**",
             "layout": "layout-2-wide",
-            "colorScheme": "white",
+            "colorScheme": "light-gray",
             "align": "left",
             "heading1": "A",
             "heading1Accent": "$1.5 billion win",
@@ -322,12 +322,12 @@
           "id": "sec-1787168603480-ayrw",
           "type": "timeline",
           "visible": true,
-          "colorScheme": "light-gray",
+          "colorScheme": "white",
           "content": {
             "eyebrow": "The road to distributions.",
             "title": "So when do I ",
             "accent": "get my check?",
-            "colorScheme": "light-gray",
+            "colorScheme": "white",
             "steps": [
               {
                 "id": "tl-1",
@@ -384,7 +384,7 @@
                 "note": "",
                 "highlight": false,
                 "kicker": " ",
-                "cardStyle": "white"
+                "cardStyle": "light-gray"
               }
             ],
             "kicker": "Scenario",
@@ -479,7 +479,7 @@
             "cardStyle": "card",
             "align": "center",
             "_bookmark": "sell",
-            "cardColor": "white",
+            "cardColor": "neon",
             "formScale": 100,
             "layout": "wide",
             "disclosure": "Turnpage Digital Markets LLC is not affiliated with the court, the claims administrator, class counsel or any other party in the Bartz v. Anthropic litigation. We do not offer legal or financial advice and submitting your claim information or an inquiry through this site does not give rise to any client or other relationship. All materials submitted will be kept confidential pursuant to our policies. "
