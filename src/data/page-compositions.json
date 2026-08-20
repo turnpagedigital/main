@@ -467,13 +467,13 @@
           "type": "registration-flow",
           "visible": true,
           "layout": "wide",
-          "colorScheme": "paper",
+          "colorScheme": "light-gray",
           "content": {
             "flowId": "bartz-registration",
             "eyebrow": "Ready to sell?",
             "title": "Get your",
             "accent": "instant quote.",
-            "colorScheme": "paper",
+            "colorScheme": "light-gray",
             "cardRadius": 5,
             "cardStyle": "card",
             "align": "left",
@@ -543,13 +543,13 @@
           "type": "faq",
           "visible": true,
           "layout": "layout-2-sidebar",
-          "colorScheme": "light-gray",
+          "colorScheme": "light",
           "content": {
             "title": "Your questions,",
             "accent": "answered.",
             "ctaLabel": "Ask our team",
             "ctaHref": "/contact?source=ai-copyright",
-            "colorScheme": "light-gray",
+            "colorScheme": "light",
             "_bookmark": "faq"
           }
         },
