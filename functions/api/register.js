@@ -132,9 +132,9 @@ export async function onRequestPost(context) {
       answers[k] = v.trim();
     }
 
-    // A required file field with skipLabel can be satisfied by a "I don't
-    // have it" checkbox instead of an attachment (see RegistrationFlowSection.jsx
-    // skipAnswerKey). That checkbox's answer travels under a synthetic
+    // A required file field with skipLabel can be satisfied by clicking a
+    // "I don't have it"-style button instead of an attachment (see
+    // RegistrationFlowSection.jsx skipAnswerKey). That click's answer travels under a synthetic
     // `${fieldId}__skip` key — not a real field id, so it's read directly
     // here rather than through the fieldById-driven loop above, and kept out
     // of `answers` so it can never leak into the notification email/Attio
