@@ -211,10 +211,18 @@ export async function onRequestPost(context) {
       console.error("pdf-checks error:", err.message);
     }
 
-    const emailFieldId = findFieldIdByType(flow, "email");
+    // Type-based lookup survives the field being RENAMED, but not its TYPE
+    // being changed (e.g. an admin switching "email"/"phone" to "text" to
+    // merge it into a row with other fields) — which has now happened for
+    // real and silently broke every submission (email lookup returned null,
+    // so a visitor who typed a perfectly valid address got rejected with "A
+    // valid email is required"). Fall back to the conventional id "email"/
+    // "phone" when no field of that type exists, same fallback-chain pattern
+    // already used for first/last name below.
+    const emailFieldId = findFieldIdByType(flow, "email") || (fieldById.email ? "email" : null);
     const email = (emailFieldId && answers[emailFieldId]) || "";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail("A valid email is required");
-    const phoneFieldId = findFieldIdByType(flow, "phone");
+    const phoneFieldId = findFieldIdByType(flow, "phone") || (fieldById.phone ? "phone" : null);
     const phone = (phoneFieldId && answers[phoneFieldId]) || "";
     // First/last name aren't a distinct field type (any "text" field could be
     // one), so — unlike email/phone above — these still rely on the flow
