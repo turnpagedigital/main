@@ -16,7 +16,11 @@ import QRCode from "qrcode";
  * the wizard branches. A field may set `row: "<any id>"` — consecutive
  * fields sharing the same row id render side by side instead of stacked
  * (e.g. First name + Last name), saving vertical space; a field with no row
- * (or whose neighbor doesn't share it) renders full-width as normal. File
+ * (or whose neighbor doesn't share it) renders full-width as normal. A step
+ * may set `disclaimer` — small print shown just above THAT step's Back/
+ * Next/Submit row (e.g. a consent statement right before the final step) —
+ * distinct from the registration-flow section's own `disclosure` prop,
+ * which shows below the whole card on every step instead of one. File
  * fields are read client-side and submitted as
  * base64 (server caps: 8 MB, pdf/png/jpg). Submissions POST to
  * /api/register with the flow id, page key, and ad attribution; a GA4
@@ -462,6 +466,11 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
       {(stepError || formState === "error") && (
         <p role="alert" style={{ fontFamily: FONT, fontSize: "0.9rem", color: ERROR, marginBottom: "0.9rem" }}>
           {stepError || errorMsg}
+        </p>
+      )}
+      {step.disclaimer && (
+        <p className="regflow-card-text" style={{ fontFamily: FONT, fontSize: "0.78rem", color: INK_60, lineHeight: 1.6 }}>
+          {step.disclaimer}
         </p>
       )}
       <div style={{ display: "flex", gap: "0.8rem", marginTop: "1.3rem" }}>
@@ -1066,6 +1075,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
     return (
       <div style={wrap}>
         {label}
+        {helpText}
         <textarea id={id} value={value || ""} onChange={e => onChange(e.target.value)}
           style={FIELD_INPUT_STYLE}
           aria-required={field.required || undefined} />
