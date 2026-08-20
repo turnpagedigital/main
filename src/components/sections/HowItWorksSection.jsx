@@ -11,15 +11,14 @@ import LiquidGlassCard from "../LiquidGlassCard.jsx";
 // own light/dark split (its inverse of needsLightText).
 const LIGHT_CARD_STYLES = ["white", "light-gray", "light-glass", "clear-glass", "neon", "neon-glass"];
 
-// Step numeral — neon on a dark surface (unchanged), ink with a bold neon
-// chevron accent on a light surface, so the brand color stays present even
-// though the number itself needs to flip for contrast. The chevron sits
-// behind the number (number wins the overlap) but straddles its right edge —
-// half tucked behind the second digit, half poking out to the right.
+// Step numeral — neon on a dark surface (unchanged), ink with a neon block
+// underline on a light surface, so the brand color stays present even though
+// the number itself needs to flip for contrast. The block sits under the
+// number rather than beside it, so it reads as an underline, not an arrow.
 function StepNumber({ n, light, fontSize }) {
   // fontSize lives on the wrapper (not just the number span) so the
-  // chevron's em-based size/position resolve against the same font-size —
-  // otherwise the svg inherits whatever ambient size sits above this
+  // underline's em-based size/position resolve against the same font-size —
+  // otherwise it would inherit whatever ambient size sits above this
   // component instead of the number's actual rendered size.
   return (
     <span style={{ position: "relative", display: "inline-block", fontSize, lineHeight: 1 }}>
@@ -31,12 +30,11 @@ function StepNumber({ n, light, fontSize }) {
         {n}
       </span>
       {light && (
-        <svg viewBox="0 0 46 46" aria-hidden="true" focusable="false" style={{
-          position: "absolute", right: "-0.5em", top: 0,
-          width: "1em", height: "1em", zIndex: 0, pointerEvents: "none",
-        }}>
-          <path d="M8 4 L36 23 L8 42" stroke={NEON} strokeWidth="14" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        </svg>
+        <span aria-hidden="true" style={{
+          position: "absolute", left: 0, bottom: "-0.22em",
+          width: "0.9em", height: "0.16em",
+          background: NEON,
+        }} />
       )}
     </span>
   );
