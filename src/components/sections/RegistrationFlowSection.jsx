@@ -929,22 +929,19 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
     return (
       <div style={wrap} role="radiogroup" aria-label={field.label}>
         {label}
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", marginTop: "0.5rem" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.2rem", marginTop: "0.5rem" }}>
           {options.map(opt => {
             const selected = value === opt;
             const optId = `${groupName}-${opt}`;
             return (
               <label key={opt} htmlFor={optId} style={{
-                display: "flex", alignItems: "center", gap: "0.8rem",
-                padding: "0.95rem 1.1rem", cursor: "pointer",
-                border: `1.5px solid ${selected ? INK : LINE_STRONG}`,
-                background: selected ? SECONDARY_BG : SURFACE,
-                transition: "all 0.15s",
+                display: "flex", alignItems: "center", gap: "0.7rem",
+                padding: "0.55rem 0", cursor: "pointer",
               }}>
                 <input id={optId} type="radio" name={groupName} value={opt} checked={selected}
                   onChange={() => onChange(opt)}
-                  style={{ width: 20, height: 20, flexShrink: 0, margin: 0, accentColor: INK }} />
-                <span style={{ fontFamily: FONT, fontSize: "1rem", fontWeight: selected ? 700 : 600, color: INK }}>
+                  style={{ width: 20, height: 20, flexShrink: 0, margin: 0, accentColor: INK, cursor: "pointer" }} />
+                <span style={{ fontFamily: FONT, fontSize: "1rem", fontWeight: selected ? 700 : 500, color: INK }}>
                   {opt}
                 </span>
               </label>
