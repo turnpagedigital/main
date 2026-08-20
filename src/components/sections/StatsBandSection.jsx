@@ -52,7 +52,12 @@ export default function StatsBandSection({ sectionConfig }) {
   const isCards = layout === "cards";
 
   const cols = Math.max(stats.length, 1);
-  const footnoteText = en ? (c.footnote ?? t(footnoteKey)) : t(footnoteKey);
+  // A footnote of only whitespace (e.g. a single space left over from
+  // clearing the field) is still truthy — trim so it's treated as absent.
+  // Otherwise the empty <p> below still renders and its height throws off
+  // the strip's vertical centering, worst in compact/tight density where
+  // that phantom line is a much bigger fraction of the strip's height.
+  const footnoteText = (en ? (c.footnote ?? t(footnoteKey)) : t(footnoteKey)).trim();
   const d = DENSITY[c.density] || DENSITY.normal;
   const cardRadius = Number.isFinite(Number(c.cardRadius)) && c.cardRadius !== "" && c.cardRadius !== null
     ? Math.max(0, Math.min(40, Number(c.cardRadius)))
@@ -85,6 +90,12 @@ export default function StatsBandSection({ sectionConfig }) {
               ...(isBand ? { borderRight: `1px solid ${s.line}` } : {}),
               ...(isCards ? { background: s.card, border: `1px solid ${s.line}`, borderRadius: cardRadius } : {}),
               textAlign: center ? "center" : "left",
+              // Grid rows stretch to the tallest cell (e.g. one label
+              // wrapping to two lines) — without this, shorter cells' content
+              // stays pinned to the top of that taller row instead of
+              // centering in it. Normal density's generous padding mostly
+              // hides the drift; compact/tight make it obvious.
+              display: "flex", flexDirection: "column", justifyContent: "center",
             }}>
               <div style={{
                 fontFamily: FONT, fontWeight: 900,
