@@ -16,8 +16,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
     "date_last_filing": "2026-08-19",
-    "meta_fetched_at": "2026-08-20T14:59:20.624802+00:00",
-    "fetched_at": "2026-08-20T15:53:54.068523+00:00",
+    "meta_fetched_at": "2026-08-20T16:55:24.687835+00:00",
+    "fetched_at": "2026-08-20T16:55:24.687835+00:00",
     "as_of": "Aug 20, 2026",
     "backfilled": false,
     "new_in_72h": 3,
@@ -12285,6 +12285,16 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.508.0.pdf"
       },
       {
+        "entry_number": 507,
+        "date_filed": "2025-08-29",
+        "time_filed": "23:40:09",
+        "date_display": "Aug 29, 2025",
+        "description": "***EX-PARTE*** LETTER addressed to Magistrate Judge Ona T. Wang from Justin A. Nelson dated 8/29/25 re: Class Plaintiffs Motion Seeking In Camera Review of OpenAI Documents. Document filed by David Baldacci. (Attachments: # 1 Exhibit 1, # 2 Exhibit 2, # 3 Exhibit 3)Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTWMotion or Order to File Under Seal: 506 .(Nelson, Justin) (Entered: 08/29/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 506,
         "date_filed": "2025-08-29",
         "time_filed": "23:10:49",
@@ -12295,11 +12305,41 @@
         "doc_url": ""
       },
       {
+        "entry_number": 505,
+        "date_filed": "2025-08-29",
+        "time_filed": "19:44:46",
+        "date_display": "Aug 29, 2025",
+        "description": "REDACTION to (611 in 1:23-cv-08292-SHS-OTW, 162 in 1:25-cv-03483-SHS-OTW, 122 in 1:25-cv-03291-SHS-OTW, 567 in 1:25-cv-03482-SHS-OTW, 504 in 1:25-md-03143-SHS-OTW, 250 in 1:24-cv-00084-SHS-OTW, 485 in 1:23-cv-10211-SHS-OTW) Letter,,,,, by OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP, OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund Management LLC, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI, Inc., OpenAI, Inc. Copyright Infringement…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.505.0.pdf"
+      },
+      {
+        "entry_number": 504,
+        "date_filed": "2025-08-29",
+        "time_filed": "19:26:21",
+        "date_display": "Aug 29, 2025",
+        "description": "***SELECTED PARTIES*** LETTER addressed to Magistrate Judge Ona T. Wang from R. James Slaughter, Margaret Graham, Caitlin Sinclaire Blythe dated August 29, 2025 Document filed by OpenAI, Inc., OpenAI Startup Fund GP I LLC, OpenAI LP, OpenAI Holdings LLC, OpenAI Startup Fund Management LLC, OAI Corporation, LLC, OpenAI Startup Fund I LP, OpenAI GP, LLC, OpenAI Global, L.L.C., OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI OpCo LLC, OAI Corporation, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI, LLC, OpenAI Inc., OpenAI Global LLC, OpenAI Holdings, LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund I LP(a Delaware limited partnership), OAI Corporation LLC, OpenAI LLC, OpenAI GP LLC, OpenAI, Inc. Copyright Infringement Litigation, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI GP LLC, OpenAI Inc., OpenAI LP(a…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 503,
         "date_filed": "2025-08-29",
         "time_filed": "17:06:12",
         "date_display": "Aug 29, 2025",
         "description": "***SELECTED PARTIES***DECLARATION of Maile Yeats-Rowe in Support re: (564 in 1:25-cv-03482-SHS-OTW, 501 in 1:25-md-03143-SHS-OTW, 608 in 1:23-cv-08292-SHS-OTW) LETTER MOTION to Seal addressed to Magistrate Judge Ona T. Wang from Caitlin S. Blythe, Christopher S. Sun, Herman H. Yue dated August 29, 2025.. Document filed by OpenAI, Inc., OpenAI LP, OAI Corporation, LLC, OpenAI Startup Fund GP I LLC, OpenAI Holdings LLC, OpenAI GP, LLC, OpenAI Global, L.L.C., OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI Inc., OpenAI Holdings, LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund I LP(a Delaware limited partnership), OAI Corporation LLC, OpenAI LLC, OpenAI GP LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI Startup Fund Management LLC, OpenAI Global LLC, OpenAI OpCo LLC,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 502,
+        "date_filed": "2025-08-29",
+        "time_filed": "16:52:56",
+        "date_display": "Aug 29, 2025",
+        "description": "DECLARATION of Maile Yeats-Rowe in Opposition re: (564 in 1:25-cv-03482-SHS-OTW) LETTER MOTION to Seal addressed to Magistrate Judge Ona T. Wang from Caitlin S. Blythe, Christopher S. Sun, Herman H. Yue dated August 29, 2025.. Document filed by OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund I LP, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI Startup Fund Management LLC, OpenAI, Inc., OpenAI GP LLC, OpenAI Inc., OpenAI LP(a…",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -12343,9 +12383,1149 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-08-29",
+        "time_filed": "",
+        "date_display": "Aug 29, 2025",
+        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 500 MOTION for Monica Anne Svetoslavov to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number ANYSDC-31640029. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (rju)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 498,
+        "date_filed": "2025-08-28",
+        "time_filed": "21:25:59",
+        "date_display": "Aug 28, 2025",
+        "description": "DECLARATION of Joseph C. Gratz in Support re: (118 in 1:25-cv-03483-SHS-OTW, 206 in 1:24-cv-00084-SHS-OTW, 336 in 1:25-md-03143-SHS-OTW, 430 in 1:23-cv-10211-SHS-OTW, 535 in 1:23-cv-08292-SHS-OTW) MOTION to Strike Document No. (183) as to Portions of the Consolidated Class Action Complaint .. Document filed by OpenAI Inc., OpenAI OpCo LLC, OAI Corporation LLC, OpenAI GP LLC, OpenAI Global LLC, OpenAI Holdings LLC, OpenAI LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI Startup Fund GP I LLC, OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI GP LLC, OpenAI Inc., OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OAI Corporation, LLC, OpenAI GP, LLC, OpenAI Holdings, LLC, OpenAI, Inc., OpenAI Startup Fund I LP, OpenAI Startup Fund Management LLC, OpenAI, LLC,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 497,
+        "date_filed": "2025-08-28",
+        "time_filed": "21:06:08",
+        "date_display": "Aug 28, 2025",
+        "description": "REPLY MEMORANDUM OF LAW in Support re: (118 in 1:25-cv-03483-SHS-OTW, 206 in 1:24-cv-00084-SHS-OTW, 336 in 1:25-md-03143-SHS-OTW, 430 in 1:23-cv-10211-SHS-OTW, 535 in 1:23-cv-08292-SHS-OTW) MOTION to Strike Document No. (183) as to Portions of the Consolidated Class Action Complaint . . Document filed by OpenAI Inc., OpenAI OpCo LLC, OAI Corporation, OAI Corporation LLC, OpenAI GP LLC, OpenAI Global LLC, OpenAI Holdings LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI Startup Fund GP I LLC, OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI, LLC, OpenAI GP LLC, OpenAI Inc., OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OAI Corporation, LLC, OpenAI GP, LLC, OpenAI Holdings, LLC, OpenAI LLC, OpenAI, Inc., OpenAI Startup Fund I LP, OpenAI Startup Fund…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.497.0.pdf"
+      },
+      {
+        "entry_number": 496,
+        "date_filed": "2025-08-28",
+        "time_filed": "19:55:14",
+        "date_display": "Aug 28, 2025",
+        "description": "REPLY MEMORANDUM OF LAW in Support re: (326 in 1:25-md-03143-SHS-OTW) MOTION to Strike Document No. (183) as to Portions of the Consolidated Class Action Complaint. . Document filed by Microsoft Corporation, Microsoft Corporation, Microsoft Corporation. Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Najemy, Laura) (Entered: 08/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.496.0.pdf"
+      },
+      {
+        "entry_number": 495,
+        "date_filed": "2025-08-28",
+        "time_filed": "19:24:54",
+        "date_display": "Aug 28, 2025",
+        "description": "REPLY MEMORANDUM OF LAW in Support re: (527 in 1:23-cv-08292-SHS-OTW) MOTION to Dismiss ., (324 in 1:25-md-03143-SHS-OTW) MOTION to Dismiss . . Document filed by OAI Corporation LLC, OpenAI GP LLC, OpenAI Global LLC, OpenAI Holdings LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo LLC. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW.(Ybarra, Michelle) (Entered: 08/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.495.0.pdf"
+      },
+      {
+        "entry_number": 494,
+        "date_filed": "2025-08-27",
+        "time_filed": "23:21:29",
+        "date_display": "Aug 27, 2025",
+        "description": "FIRST MEMORANDUM OF LAW in Opposition re: (405 in 1:25-md-03143-SHS-OTW) MOTION to Dismiss Ziff Davis First Amended Complaint. . Document filed by CNET MEDIA, INC., Everyday Health Media LLC, IGN Entertainment Inc., Mashable, Inc., Ziff Davis Inc., Ziff Davis, LLC, Mashable, Inc.. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:25-cv-04315-SHS-OTW.(Koonce, Lacy) (Entered: 08/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.494.0.pdf"
+      },
+      {
+        "entry_number": 493,
+        "date_filed": "2025-08-26",
+        "time_filed": "",
+        "date_display": "Aug 26, 2025",
+        "description": "ORDER FOR ADMISSION PRO HAC VICE granting (821) Motion for Daniel D. Justice to Appear Pro Hac Vice; granting (822) Motion for Daniel D. Justice to Appear Pro Hac Vice in case 1:23-cv-11195-SHS-OTW; granting (445) Motion for Daniel D. Justice to Appear Pro Hac Vice in case 1:25-md-03143-SHS-OTW. IT IS HEREBY ORDERED that Daniel D. Justice is admitted to practice Pro Hac Vicein the above captioned case in the United States District Court for the Southern District of New York. All attorneys appearing before this Court are subject to the Local Rules of this Court, including the Rules governing the discipline of attorneys. (Signed by Magistrate Judge Ona T. Wang on 8/26/2025) Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW (sgz) (Entered: 08/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 492,
+        "date_filed": "2025-08-26",
+        "time_filed": "",
+        "date_display": "Aug 26, 2025",
+        "description": "ORDER GRANTING MOTION TO ADMIT COUNSEL PRO HAC VICE granting (582) Motion for Eleanor Frances Brock to Appear Pro Hac Vice in case 1:23-cv-08292-SHS-OTW; granting (817) Motion for Eleanor Frances Brock to Appear Pro Hac Vice in case 1:23-cv-11195-SHS-OTW; granting (441) Motion for Eleanor Frances Brock to Appear Pro Hac Vice in case 1:25-md-03143-SHS-OTW. IT IS HEREBY ORDERED that Applicant is admitted to practice Pro Hac Vice in theabove captioned case in the United States District Court for the Southern District of New York. All attorneys appearing before this Court are subject to the Local Rules of this Court, including the Rules governing discipline of attorneys. (Signed by Magistrate Judge Ona T. Wang on 8/26/2025) Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al. (sgz) (Entered: 08/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 491,
+        "date_filed": "2025-08-26",
+        "time_filed": "",
+        "date_display": "Aug 26, 2025",
+        "description": "MEMO ENDORSEMENT granting (739) Motion to Withdraw as Attorney; granting (413) Motion to Withdraw as Attorney; granting (307) Motion to Withdraw as Attorney. ENDORSEMENT: Application GRANTED. The Clerk of Court is respectfully directed to reflect this termination on the docket and to terminate the motion at ECF 307. SO ORDERED. Attorney Jocelyn Edith Greer terminated in case 1:24-cv-03285-SHS-OTW; Attorney Jocelyn Edith Greer terminated in case 1:25-md-03143-SHS-OTW. Attorney Jocelyn Edith Greer terminated in case 1:23-cv-11195-SHS-OTW. (Signed by Magistrate Judge Ona T. Wang on 8/26/2025) Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW, 1:24-cv-03285-SHS-OTW (sgz) (Entered: 08/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 490,
+        "date_filed": "2025-08-26",
+        "time_filed": "",
+        "date_display": "Aug 26, 2025",
+        "description": "ORDER GRANTING MOTION TO ADMIT COUNSEL PRO HAC VICE granting (490) Motion for Catherine Porto to Appear Pro Hac Vice in case 1:23-cv-08292-SHS-OTW; granting (693) Motion for Catherine Porto to Appear Pro Hac Vice in case 1:23-cv-11195-SHS-OTW; granting (242) Motion for Catherine Porto to Appear Pro Hac Vice in case 1:25-md-03143-SHS-OTW. IT IS HEREBY ORDERED that Applicant is admitted to practice Pro Hac Vice in the above captioned case in the United States District Court for the Southern District of New York. All attorneys appearing before this Court are subject to the Local Rules of this Court, including the Rules governing discipline of attorneys. (Signed by Magistrate Judge Ona T. Wang on 8/26/2025) Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al. (sgz) (Entered: 08/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 489,
+        "date_filed": "2025-08-26",
+        "time_filed": "",
+        "date_display": "Aug 26, 2025",
+        "description": "ORDER FOR ATTORNEY ADMISSION PRO HAC VICE in case 1:23-cv-08292-SHS-OTW; granting (85) Motion for Guy Ruttenberg to Appear Pro Hac Vice in case 1:25-md-03143-SHS-OTW. IT IS HEREBY ORDERED that Guy Ruttenberg is admitted to practice pro hac vice in the above-captioned case in the United States District Court for the Southern District of New York. All attorneys appearing before this Court are subject to the Local Rules of this Court, including the Rules governing discipline of attorneys. (Signed by Magistrate Judge Ona T. Wang on 8/26/2025) Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al. (sgz) (Entered: 08/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 488,
+        "date_filed": "2025-08-26",
+        "time_filed": "",
+        "date_display": "Aug 26, 2025",
+        "description": "ORDER GRANTING MOTION TO ADMIT COUNSEL PRO HAC VICE granting (469) Motion for Reid Patrick Mullen to Appear Pro Hac Vice in case 1:23-cv-08292-SHS-OTW; granting (398) Motion for Reid Patrick Mullen to Appear Pro Hac Vice in case 1:23-cv-10211-SHS-OTW; granting (664) Motion for Reid Patrick Mullen to Appear Pro Hac Vice in case 1:23-cv-11195-SHS-OTW; granting (179) Motion for Reid Patrick Mullen to Appear Pro Hac Vice in case 1:24-cv-00084-SHS-OTW; granting (189) Motion for Reid Patrick Mullen to Appear Pro Hac Vice in case 1:24-cv-01515-SHS-OTW; granting (385) Motion for Reid Patrick Mullen to Appear Pro Hac Vice in case 1:24-cv-03285-SHS-OTW; granting (299) Motion for Reid Patrick Mullen to Appear Pro Hac Vice in case 1:24-cv-04872-SHS-OTW; granting (206) Motion for Reid Patrick Mullen to Appear Pro Hac Vice in case 1:25-md-03143-SHS-OTW; granting (66) Motion for Reid Patrick Mullen to…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 487,
+        "date_filed": "2025-08-25",
+        "time_filed": "18:15:14",
+        "date_display": "Aug 25, 2025",
+        "description": "MEMO ENDORSEMENT on re: 474 Letter, filed by OpenAI, Inc., OpenAI GP LLC, OpenAI Startup Fund GP I LLC, OpenAI LP, OAI Corporation LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund I LP, OpenAI GP, LLC, OpenAI Holdings LLC, OpenAI OpCo LLC, OpenAI Holdings, LLC, OpenAI Global LLC, OpenAI Inc., OpenAI LLC, OpenAI Startup Fund Management LLC, OpenAI Global, L.L.C., OAI Corporation, OAI Corporation, LLC. The parties' briefs are due by August 29, 2025, and are not to exceed 1,500 words, not including exhibits. SO ORDERED. ( Brief due by 8/29/2025.) (Signed by Magistrate Judge Ona T. Wang on 8/25/2025) (jjc) (Entered: 08/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.487.0.pdf"
+      },
+      {
+        "entry_number": 486,
+        "date_filed": "2025-08-25",
+        "time_filed": "18:09:39",
+        "date_display": "Aug 25, 2025",
+        "description": "STIPULATION AND ORDER: NOW THEREFORE, The Times and OpenAI stipulate that, upon the Court's approval of the stipulation: 1. OpenAI will not seek in camera review of the two redacted documents The Times logged on August 15, 2025; 2. No further briefing is necessary as to the three specific documents The Times produced on August 21, 2025; 3. The Times will log any additional drafts or communications related to the presentations and training module at issue in OpenAI's motion in its final privilege log, which is due August 27, 2025; 4. The Times will identify the specific log entries for these additional documents to OpenAI by September 2, 2025, so that the parties can continue meet and confer over these additional entries; 5. The parties will inform the Court if further briefing is necessary as to those additional entries after completion of meet and confer. IT IS SO STIPULATED, through…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.486.0.pdf"
+      },
+      {
+        "entry_number": 485,
+        "date_filed": "2025-08-25",
+        "time_filed": "14:11:09",
+        "date_display": "Aug 25, 2025",
+        "description": "ORDER denying (844) Motion to Intervene in case 1:23-cv-11195-SHS-OTW; denying (484) Motion to Intervene in case 1:25-md-03143-SHS-OTW. The Court has received by mail a motion from non-party Paul W. Winters to intervene in this action \"for the limited purpose of challenging\" Magistrate Judge Ona Wang's May 13, 2025 preservation order. The requirements for intervention as of right are set forth in Federal Rule of Civil Procedure 24(a), and the requirements for permissive intervention are set forth in Rule 24(b). Neither the requirements for intervention as of right pursuant to Rule 24(a) nor the requirements for permissive intervention pursuant to Rule 24(b) are satisfied here for the reasons explained in Judge Wang's order denying a similar motion to intervene regarding the May 13 preservation order. (See ECF No. 237 at 4-8). The motion to intervene is therefore denied. The Clerk of…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.485.0.pdf"
+      },
+      {
+        "entry_number": 484,
+        "date_filed": "2025-08-25",
+        "time_filed": "14:08:07",
+        "date_display": "Aug 25, 2025",
+        "description": "LETTER MOTION TO INTERVENE AND FOR PROTECTIVE ORDER. Filed by Paul W. Winters. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW. (mml) (Entered: 08/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.484.0.pdf"
+      },
+      {
+        "entry_number": 483,
+        "date_filed": "2025-08-25",
+        "time_filed": "11:13:36",
+        "date_display": "Aug 25, 2025",
+        "description": "STIPULATION & ORDER RE: TRAINING DATA INSPECTION PROTOCOL: Upon the stipulation of the parties, the following protocol will apply to the inspection, review, and/or disclosure of Training Data produced by Defendants OpenAI, Inc., OpenAI, L.P., OpenAI L.L.C., OpenAI OpCo, L.L.C., OpenAI Global L.L.C., OAI Corporation L.L.C., OpenAI Holdings L.L.C., OpenAI GP, L.L.C., OpenAI Startup Fund GP I, L.L.C., OpenAI Startup Fund I, L.P., and OpenAI Startup Fund Management, LLC (collectively, \"OpenAI\"): For the purposes of this protocol, \"Training Data\" shall be defined as data used to train relevant OpenAI LLMs, though the parties may, upon mutual agreement, use this protocol for other data as well (e.g. data regarding output filtration). OpenAI reserves the right to update the Training Data made available for inspection should it find additional responsive data, and Plaintiffs reserve the right…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.483.0.pdf"
+      },
+      {
+        "entry_number": 482,
+        "date_filed": "2025-08-22",
+        "time_filed": "23:02:30",
+        "date_display": "Aug 22, 2025",
+        "description": "***SELECTED PARTIES***DECLARATION of Joseph C. Gratz re: (480 in 1:25-md-03143-SHS-OTW) LETTER MOTION to Seal addressed to Magistrate Judge Ona T. Wang from Caitlin S. Blythe, Christopher S. Sun, Herman H. Yue dated August 22, 2025. . Document filed by OpenAI, Inc., OpenAI LP, OAI Corporation, LLC, OpenAI Startup Fund GP I LLC, OpenAI Holdings LLC, OpenAI GP, LLC, OpenAI Global, L.L.C., OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OAI Corporation, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI Inc., OpenAI Holdings, LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund I LP(a Delaware limited partnership), OAI Corporation LLC, OpenAI LLC, OpenAI GP LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI Startup Fund Management LLC, OpenAI Global LLC, OpenAI OpCo LLC, OpenAI Startup Fund I LP, Jonathan Alter, AlterNet Media,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 481,
+        "date_filed": "2025-08-22",
+        "time_filed": "22:54:20",
+        "date_display": "Aug 22, 2025",
+        "description": "REDACTION to 479 Letter,,,,,,,,,,, Re: Timeline in Response to ECF No. 459 by David Baldacci (Attachments: # 1 Exhibit 1, # 2 Exhibit 2, # 3 Exhibit 3, # 4 Exhibit 4, # 5 Exhibit 5).(Nelson, Justin) (Entered: 08/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.481.0.pdf"
+      },
+      {
+        "entry_number": 480,
+        "date_filed": "2025-08-22",
+        "time_filed": "22:54:07",
+        "date_display": "Aug 22, 2025",
+        "description": "LETTER MOTION to Seal addressed to Magistrate Judge Ona T. Wang from Caitlin S. Blythe, Christopher S. Sun, Herman H. Yue dated August 22, 2025. Document filed by OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund I LP, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI Startup Fund Management LLC, OpenAI, Inc.. (Attachments: # 1 Proposed Order Granting Sealing Motion)Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Blythe,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 479,
+        "date_filed": "2025-08-22",
+        "time_filed": "22:14:28",
+        "date_display": "Aug 22, 2025",
+        "description": "***SELECTED PARTIES*** LETTER addressed to Magistrate Judge Ona T. Wang from Justin Nelson dated August 22, 2025 re: Timeline in Response to ECF No. 459. Document filed by David Baldacci, Jonathan Alter, AlterNet Media, Inc., Dario Amodei, Authors Guild, Andrea Bartz, Nicholas Basbanes, Nicholas Basbanes, Nicholas A Basbanes, Kai Bird, Mary Bly, Jason Bramble, Taylor Branch, CNET MEDIA, INC., Michael Chabon, Chicago Tribune Company, LLC, Ta-Nehisi Coates, Ta-Nehisi P. Coates, Rich Cohen, Michael Connelly, DP Media Network, LLC, Daily News LP, Sylvia Day, Junot Daz, Catherine Denial, Junot Diaz, Eloisa James, Inc., Everyday Health Media LLC, Jonathan Franzen, ANDREW SEAN GREER, Christopher Golden, Andrew Greer, Andrew Sean Greer, John Grisham, Sides Hampton, Elin Hilderbrand, Aidan Hunt, David Hwang, David Henry Hwang, David Henry Hwang, David Henry Hwang, IGN Entertainment Inc., Richard…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 478,
+        "date_filed": "2025-08-22",
+        "time_filed": "20:46:07",
+        "date_display": "Aug 22, 2025",
+        "description": "LETTER MOTION to Seal addressed to Magistrate Judge Ona T. Wang from Justin Nelson dated August 22, 2025. Document filed by David Baldacci..(Nelson, Justin) (Entered: 08/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 477,
+        "date_filed": "2025-08-22",
+        "time_filed": "17:40:07",
+        "date_display": "Aug 22, 2025",
+        "description": "***SELECTED PARTIES*** LETTER MOTION for Discovery SUPPLEMENTAL LETTER MOTION REGARDING DEFENDANTS MOTIONS TO COMPEL THE PRODUCTION OF CHATEXPLORER LOGS addressed to Magistrate Judge Ona T. Wang from Davida Brook dated 08/22/2025. Document filed by The New York Times Company, Microsoft Corporation, OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund I LP, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI Startup Fund Management…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 476,
+        "date_filed": "2025-08-22",
+        "time_filed": "17:32:47",
+        "date_display": "Aug 22, 2025",
+        "description": "MOTION to Seal . Document filed by The New York Times Company. (Attachments: # 1 Supplement MEMORANDUM OF LAW IN SUPPORT OF MOTION TO SEAL).(Brook, Davida) (Entered: 08/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 475,
+        "date_filed": "2025-08-22",
+        "time_filed": "17:28:33",
+        "date_display": "Aug 22, 2025",
+        "description": "LETTER MOTION for Discovery SUPPLEMENTAL LETTER MOTION REGARDING DEFENDANTS MOTIONS TO COMPEL THE PRODUCTION OF CHATEXPLORER LOGS addressed to Magistrate Judge Ona T. Wang from Davida Brook dated 08/22/2025. Document filed by The New York Times Company. (Attachments: # 1 Exhibit B).(Brook, Davida) (Entered: 08/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 474,
+        "date_filed": "2025-08-22",
+        "time_filed": "17:11:21",
+        "date_display": "Aug 22, 2025",
+        "description": "JOINT LETTER addressed to Magistrate Judge Ona T. Wang from Joseph C. Gratz and Jordan Connors dated August 22, 2025 re: Status of In Camera Review. Document filed by OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund I LP, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI Startup Fund Management LLC, OpenAI, Inc..Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Gratz, Joseph) (Entered: 08/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 473,
+        "date_filed": "2025-08-22",
+        "time_filed": "16:44:00",
+        "date_display": "Aug 22, 2025",
+        "description": "PROPOSED STIPULATION AND ORDER. Document filed by OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP, OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund Management LLC, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI, Inc., OpenAI, Inc. Copyright Infringement Litigation, OpenAI, LLC..(Slaughter, R.) (Entered: 08/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.473.0.pdf"
+      },
+      {
+        "entry_number": 472,
+        "date_filed": "2025-08-22",
+        "time_filed": "16:25:31",
+        "date_display": "Aug 22, 2025",
+        "description": "***SELECTED PARTIES***SUPPLEMENTAL LETTER MOTION for Discovery concerning The Timess destruction of evidence of its use of OpenAIs LLMs addressed to Magistrate Judge Ona T. Wang from Sarah Salomon dated August 22, 2025. Document filed by OpenAI LP, OAI Corporation, LLC, OpenAI GP, LLC, OpenAI Inc., OpenAI Holdings, LLC, OpenAI LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI Global LLC, AlterNet Media, Inc., Authors Guild, David Baldacci, Nicholas A Basbanes, Mary Bly, CNET MEDIA, INC., Michael Chabon, Chicago Tribune Company, LLC, Ta-Nehisi P. Coates, Michael Connelly, DP Media Network, LLC, Daily News LP, Sylvia Day, Catherine Denial, Junot Diaz, Eloisa James, Inc., Everyday Health Media LLC, Jonathan Franzen, Christopher Golden, Andrew Sean Greer, John Grisham, Elin Hilderbrand, David Hwang, David Henry Hwang, IGN Entertainment Inc., Richard Kadrey, Matthew…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 471,
+        "date_filed": "2025-08-22",
+        "time_filed": "16:10:36",
+        "date_display": "Aug 22, 2025",
+        "description": "SUPPLEMENTAL LETTER MOTION for Discovery concerning The Times's Destruction of Evidence of its use of OpenAI's LLMs-Redacted addressed to Magistrate Judge Ona T. Wang from Sarah Salomon dated August 22, 2025. Document filed by OAI Corporation, LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation). (Attachments: # 1 Exhibit 1 - Redacted, # 2 Exhibit 2, # 3 Exhibit 3, # 4 Exhibit 4, # 5 Exhibit 5, # 6 Exhibit 6)Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW.(Salomon, Sarah) (Entered: 08/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 470,
+        "date_filed": "2025-08-22",
+        "time_filed": "15:57:23",
+        "date_display": "Aug 22, 2025",
+        "description": "MOTION to Seal . Document filed by OAI Corporation, LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation).Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW.(Salomon, Sarah) (Entered: 08/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 469,
+        "date_filed": "2025-08-22",
+        "time_filed": "15:34:46",
+        "date_display": "Aug 22, 2025",
+        "description": "SUPPLEMENTAL BRIEF re: (789 in 1:23-cv-11195-SHS-OTW, 396 in 1:25-md-03143-SHS-OTW) LETTER MOTION to Compel The New York Times Company to Produce Its Data Re Its Use of OpenAI's LLMs addressed to Magistrate Judge Ona T. Wang from Annette L. Hurst dated 7/30/2025. . Document filed by Microsoft Corporation, Microsoft Corporation, Microsoft Corporation. (Attachments: # 1 Exhibit A, # 2 Exhibit B)Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW.(Hurst, Annette) (Entered: 08/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 468,
+        "date_filed": "2025-08-22",
+        "time_filed": "15:25:41",
+        "date_display": "Aug 22, 2025",
+        "description": "***SELECTED PARTIES***SUPPLEMENTAL BRIEF re: (789 in 1:23-cv-11195-SHS-OTW, 396 in 1:25-md-03143-SHS-OTW) LETTER MOTION to Compel The New York Times Company to Produce Its Data Re Its Use of OpenAI's LLMs addressed to Magistrate Judge Ona T. Wang from Annette L. Hurst dated 7/30/2025. . Document filed by Microsoft Corporation, Microsoft Corporation, Jonathan Alter, AlterNet Media, Inc., Dario Amodei, Authors Guild, David Baldacci, Nicholas A Basbanes, Mary Bly, CNET MEDIA, INC., Michael Chabon, Chicago Tribune Company, LLC, Ta-Nehisi P. Coates, Michael Connelly, DP Media Network, LLC, Daily News LP, Sylvia Day, Catherine Denial, Junot Diaz, Eloisa James, Inc., Everyday Health Media LLC, Jonathan Franzen, Christopher Golden, Andrew Sean Greer, John Grisham, Elin Hilderbrand, David Hwang, David Henry Hwang, IGN Entertainment Inc., Richard Kadrey, Matthew Klam, Christina Baker Kline,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 467,
+        "date_filed": "2025-08-22",
+        "time_filed": "15:07:41",
+        "date_display": "Aug 22, 2025",
+        "description": "MOTION to Seal a portion of its supplemental letter motion to compel The New York Times to produce logs reflecting The Times's use of OpenAIs GPT models. Document filed by Microsoft Corporation, Microsoft Corporation, Microsoft Corporation.Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW.(Hurst, Annette) (Entered: 08/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 466,
+        "date_filed": "2025-08-21",
+        "time_filed": "23:13:53",
+        "date_display": "Aug 21, 2025",
+        "description": "DECLARATION of Maile Yeats-Rowe in Support re: (588 in 1:23-cv-08292-SHS-OTW) MOTION to Seal .. Document filed by OAI Corporation LLC, OpenAI GP LLC, OpenAI Global LLC, OpenAI Holdings LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI Startup Fund GP I LLC, OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund Management LLC(a Delaware limited liability company). Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW.(Blythe, Caitlin) (Entered: 08/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 465,
+        "date_filed": "2025-08-21",
+        "time_filed": "22:59:47",
+        "date_display": "Aug 21, 2025",
+        "description": "MOTION to Seal . Document filed by OAI Corporation LLC, OpenAI GP LLC, OpenAI Global LLC, OpenAI Holdings LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI Startup Fund GP I LLC, OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund Management LLC(a Delaware limited liability company). (Attachments: # 1 Proposed Order Granting OpenAi's Moton to Seal)Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW.(Blythe, Caitlin) (Entered: 08/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 464,
+        "date_filed": "2025-08-21",
+        "time_filed": "20:27:12",
+        "date_display": "Aug 21, 2025",
+        "description": "LETTER addressed to Magistrate Judge Ona T. Wang from Justin Nelson, Jennifer Maisel and Thomas Gorman dated August 21, 2025 re: Training Data Inspection Protocol. Document filed by OAI Corporation, LLC, OpenAI GP LLC, OpenAI Global LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI OpCo LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI, Inc.. (Attachments: # 1 Exhibit A)Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Gorman, Thomas) (Entered: 08/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.464.0.pdf"
+      },
+      {
+        "entry_number": 463,
+        "date_filed": "2025-08-19",
+        "time_filed": "12:01:04",
+        "date_display": "Aug 19, 2025",
+        "description": "ORDER RE: CONVERSATION DATA SAMPLING: It is now ORDERED, that the following procedures shall apply to the sampling of the consumer output log data set forth in the Court's May 29, 2025 Order: As soon as practicable following entry of this Order, OpenAI shall generate data samples using a random sampling methodology as follows: and further set forth in this Order. (Signed by Magistrate Judge Ona T. Wang on 8/19/2025) (rro) (Entered: 08/19/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.463.0.pdf"
+      },
+      {
+        "entry_number": 462,
+        "date_filed": "2025-08-18",
+        "time_filed": "20:13:56",
+        "date_display": "Aug 18, 2025",
+        "description": "NOTICE of Proposed Order Regarding Conversation Data Sampling. Document filed by Chicago Tribune Company, LLC, DP Media Network, LLC, Daily News LP, Northwest Publications, LLC, ORB Publishing, LLC, Orlando Sentinel Communications Company, LLC, San Jose Mercury-News, LLC, Sun-sentinel Company, LLC. (Attachments: # 1 Proposed Order Re Conversation Data Sampling)Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW.(Maisel, Jennifer) (Entered: 08/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 461,
+        "date_filed": "2025-08-15",
+        "time_filed": "22:30:23",
+        "date_display": "Aug 15, 2025",
+        "description": "***SELECTED PARTIES***DECLARATION of Joseph C. Gratz re: (154 in 1:25-cv-04315-SHS-OTW, 592 in 1:23-cv-08292-SHS-OTW, 172 in 1:25-cv-03297-SHS-OTW, 460 in 1:25-md-03143-SHS-OTW, 238 in 1:24-cv-00084-SHS-OTW, 472 in 1:23-cv-10211-SHS-OTW, 150 in 1:25-cv-03483-SHS-OTW, 22 in 1:25-cv-06286-SHS-OTW, 552 in 1:25-cv-03482-SHS-OTW, 235 in 1:24-cv-01514-SHS-OTW, 828 in 1:23-cv-11195-SHS-OTW, 251 in 1:24-cv-01515-SHS-OTW, 111 in 1:25-cv-03291-SHS-OTW, 432 in 1:24-cv-03285-SHS-OTW, 343 in 1:24-cv-04872-SHS-OTW) LETTER MOTION to Seal addressed to Magistrate Judge Ona T. Wang from Caitlin S. Blythe, Christopher S. Sun, Herman H. Yue dated August 15, 2025. . Document filed by OpenAI, Inc., OpenAI LP, OAI Corporation, LLC, OpenAI Startup Fund GP I LLC, OpenAI Holdings LLC, OpenAI GP, LLC, OpenAI Global, L.L.C., OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OAI Corporation,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 460,
+        "date_filed": "2025-08-15",
+        "time_filed": "22:14:04",
+        "date_display": "Aug 15, 2025",
+        "description": "LETTER MOTION to Seal addressed to Magistrate Judge Ona T. Wang from Caitlin S. Blythe, Christopher S. Sun, Herman H. Yue dated August 15, 2025. Document filed by OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund I LP, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI Startup Fund Management LLC, OpenAI, Inc.. (Attachments: # 1 Proposed Order Granting Sealing Motion)Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Blythe, Caitlin) (Entered: 08/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 459,
+        "date_filed": "2025-08-15",
+        "time_filed": "11:01:15",
+        "date_display": "Aug 15, 2025",
+        "description": "ORDER granting (551) Letter Motion to Compel in case 1:23-cv-08292-SHS-OTW; granting (442) Letter Motion to Compel in case 1:23-cv-10211-SHS-OTW; denying (772) Letter Motion to Compel; granting (778) Letter Motion to Compel; denying (780) Letter Motion to Compel in case 1:23-cv-11195-SHS-OTW; denying (372) Letter Motion to Compel; granting (378) Letter Motion to Compel; granting (380) Letter Motion to Compel; denying (383) Letter Motion to Compel in case 1:25-md-03143-SHS-OTW. For the reasons discussed on the record: 1) Regarding OpenAI's motion at ECF 376/377 and Microsoft's motion at ECF 392/396 to compel the New York Times to produce evidence of its use of OpenAI's LLMs through ChatExplorer, the parties are directed to submit supplemental briefs not to exceed 5 pages by close of business on Friday, August 22, 2025. The parties' supplemental briefs should address: (1) relevance of the…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.459.0.pdf"
+      },
+      {
+        "entry_number": 458,
+        "date_filed": "2025-08-15",
+        "time_filed": "00:38:44",
+        "date_display": "Aug 15, 2025",
+        "description": "NOTICE of Corrected Filing re: (812 in 1:23-cv-11195-SHS-OTW, 436 in 1:25-md-03143-SHS-OTW) Response in Opposition to Motion,,,,,,. Document filed by OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund I LP, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI Startup Fund Management LLC, OpenAI, Inc., OpenAI, LLC, OAI Corporation, LLC. (Attachments: # 1 Exhibit 1 - Corrected Declaration of Taylor Berg-Kirkpatrick in Support of OpenAI Defendants' Opposition to News Plaintiffs' Motion Regarding…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 457,
+        "date_filed": "2025-08-15",
+        "time_filed": "00:35:07",
+        "date_display": "Aug 15, 2025",
+        "description": "REDACTION to (456 in 1:25-md-03143-SHS-OTW) Memorandum of Law in Opposition to Motion,,, by David Baldacci (Attachments: # 1 Affidavit Declaration of H. Walter, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Exhibit 3, # 5 Exhibit 4, # 6 Exhibit 5, # 7 Exhibit 6, # 8 Exhibit 7, # 9 Exhibit 8, # 10 Exhibit 9, # 11 Exhibit 10, # 12 Exhibit 11, # 13 Exhibit 12, # 14 Exhibit 13, # 15 Exhibit 14, # 16 Exhibit 15, # 17 Exhibit 16, # 18 Exhibit 17, # 19 Exhibit 18, # 20 Exhibit 19, # 21 Exhibit 20, # 22 Exhibit 21)Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Nelson, Justin) (Entered: 08/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.457.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-08-15",
+        "time_filed": "",
+        "date_display": "Aug 15, 2025",
+        "description": "Set/Reset Deadlines: ( Brief due by 8/22/2025., Deposition due by 9/30/2025., Motions due by 11/21/2025.), Set/Reset Hearings:( Discovery Hearing set for 10/29/2025 at 09:30 AM in Courtroom 20D, 500 Pearl Street, New York, NY 10007 before Magistrate Judge Ona T. Wang., Status Conference set for 9/25/2025 at 02:30 PM in Courtroom 20D, 500 Pearl Street, New York, NY 10007 before Magistrate Judge Ona T. Wang., Discovery Hearing set for 12/4/2025 at 09:30 AM in Courtroom 20D, 500 Pearl Street, New York, NY 10007 before Magistrate Judge Ona T. Wang.) Associated Cases: 1:25-md-03143-SHS-OTW et al.(tg)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-08-15",
+        "time_filed": "",
+        "date_display": "Aug 15, 2025",
+        "description": "Minute Entry for proceedings held before Magistrate Judge Ona T. Wang: Settlement Conference held on 8/15/2025. Associated Cases: 1:25-md-03143-SHS-OTW et al.(Quinn, Diane)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-08-15",
+        "time_filed": "",
+        "date_display": "Aug 15, 2025",
+        "description": "Settlement Conference",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-08-15",
+        "time_filed": "",
+        "date_display": "Aug 15, 2025",
+        "description": "Set/Reset Deadlines",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 456,
+        "date_filed": "2025-08-14",
+        "time_filed": "",
+        "date_display": "Aug 14, 2025",
+        "description": "***SELECTED PARTIES*** MEMORANDUM OF LAW in Opposition re: (118 in 1:25-cv-03483-SHS-OTW) MOTION to Strike Document No. (183) as to Portions of the Consolidated Class Action Complaint . . Document filed by All Defendants. (Attachments: # 1 Affidavit Declaration of H. Walter, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Exhibit 3, # 5 Exhibit 4, # 6 Exhibit 5, # 7 Exhibit 6, # 8 Exhibit 7, # 9 Exhibit 8, # 10 Exhibit 9, # 11 Exhibit 10, # 12 Exhibit 11, # 13 Exhibit 12, # 14 Exhibit 13, # 15 Exhibit 14, # 16 Exhibit 15, # 17 Exhibit 16, # 18 Exhibit 17, # 19 Exhibit 18, # 20 Exhibit 19, # 21 Exhibit 20, # 22 Exhibit 21)Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al.Motion or Order to File Under Seal: 455 .(Nelson, Justin) (Entered: 08/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 455,
+        "date_filed": "2025-08-14",
+        "time_filed": "23:36:32",
+        "date_display": "Aug 14, 2025",
+        "description": "MOTION to Seal . Document filed by David Baldacci.Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Nelson, Justin) (Entered: 08/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 454,
+        "date_filed": "2025-08-14",
+        "time_filed": "22:48:51",
+        "date_display": "Aug 14, 2025",
+        "description": "MEMORANDUM OF LAW in Opposition re: (527 in 1:23-cv-08292-SHS-OTW) MOTION to Dismiss . . Document filed by David Baldacci. (Attachments: # 1 Affidavit Declaration of J. Stein, # 2 Exhibit A Baldacci Output FICTION-0072131, # 3 Exhibit B Branch Output NON-FICTION-0074284, # 4 Exhibit C Day Output FICTION-0072144, # 5 Exhibit D Franzen Output FICTION-0072151, # 6 Exhibit E Grisham Output FICTION-0072158, # 7 Exhibit F Martin Output FICTION-0072190, # 8 Exhibit G Picoult Output FICTION-0072212, # 9 Exhibit H Schiff Output NON-FICTION-0074296, # 10 Exhibit I Shapiro Output NON-FICTION-0074303, # 11 Exhibit J AG-Eberhart Output FICTION-0072205, # 12 Exhibit K Connelly Output FICTION-0072197)Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Nelson, Justin) (Entered: 08/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.454.0_1.pdf"
+      },
+      {
+        "entry_number": 453,
+        "date_filed": "2025-08-14",
+        "time_filed": "21:45:14",
+        "date_display": "Aug 14, 2025",
+        "description": "MEMORANDUM OF LAW in Opposition re: (326 in 1:25-md-03143-SHS-OTW) MOTION to Strike Document No. (183) as to Portions of the Consolidated Class Action Complaint. . Document filed by David Baldacci. (Attachments: # 1 Affidavit Declaration of H. Walter, # 2 Exhibit 1 December 17, 2024 Transcript, # 3 Exhibit 2 March 27, 2025 Transcript, # 4 Exhibit 3 May 22, 2025 Transcript)Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Nelson, Justin) (Entered: 08/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.453.0_1.pdf"
+      },
+      {
+        "entry_number": 452,
+        "date_filed": "2025-08-13",
+        "time_filed": "17:07:13",
+        "date_display": "Aug 13, 2025",
+        "description": "NOTICE OF APPEARANCE by Henry Walter on behalf of Jonathan Alter, Authors Guild. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW, 1:23-cv-10211-SHS-OTW.(Walter, Henry) (Entered: 08/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.452.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-08-12",
+        "time_filed": "",
+        "date_display": "Aug 12, 2025",
+        "description": "Minute Entry for proceedings held before Magistrate Judge Ona T. Wang: Status Conference held on 8/12/2025. Associated Cases: 1:25-md-03143-SHS-OTW et al.(Quinn, Diane)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-08-12",
+        "time_filed": "",
+        "date_display": "Aug 12, 2025",
+        "description": "Status Conference",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 451,
+        "date_filed": "2025-08-11",
+        "time_filed": "18:23:04",
+        "date_display": "Aug 11, 2025",
+        "description": "MEMO ENDORSEMENT on re: (433 in 1:25-md-03143-SHS-OTW, 147 in 1:25-cv-04315-SHS-OTW) Memorandum of Law in Opposition to Motion filed by CNET MEDIA, INC., Ziff Davis Inc., Mashable, Inc., IGN Entertainment Inc., Ziff Davis, LLC, Everyday Health Media LLC. ENDORSEMENT: Do this, + M + C on a date for subst'd completion. (Signed by Magistrate Judge Ona T. Wang on 8/11/2025) (jjc) (Entered: 08/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.451.0.pdf"
+      },
+      {
+        "entry_number": 450,
+        "date_filed": "2025-08-11",
+        "time_filed": "15:57:27",
+        "date_display": "Aug 11, 2025",
+        "description": "MEMO ENDORSEMENT on re: 449 Letter, filed by OpenAI, Inc., OpenAI Startup Fund GP I LLC, OpenAI GP LLC, OpenAI LP, OAI Corporation LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund I LP, OpenAI GP, LLC, OpenAI Holdings LLC, OpenAI, Inc. Copyright Infringement Litigation, OpenAI OpCo LLC, OpenAI, LLC, OpenAI Holdings, LLC, OpenAI Global LLC, OpenAI Inc., OpenAI LLC, OpenAI Startup Fund Management LLC, OpenAI Global, L.L.C., OAI Corporation, OAI Corporation, LLC. ENDORSEMENT: Class Plaintiffs, Ziff Davis, and The Intercept may attend the August 15 Settlement Conference. Each party may send no more than 2 attorneys to the conference. SO ORDERED. (Signed by Magistrate Judge Ona T. Wang on 8/11/2025) (rro) (Entered: 08/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.450.0.pdf"
+      },
+      {
+        "entry_number": 449,
+        "date_filed": "2025-08-11",
+        "time_filed": "12:07:22",
+        "date_display": "Aug 11, 2025",
+        "description": "LETTER addressed to Magistrate Judge Ona T. Wang from Luke Budiardjo, Ryan K. Wong, and Rose S. Lee dated August 11, 2025 re: Response to Plaintiffs' request to be included in the upcoming settlement conference (ECF No. 434). Document filed by OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP, OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund Management LLC, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI, Inc., OpenAI, Inc. Copyright Infringement…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.449.0.pdf"
+      },
+      {
+        "entry_number": 448,
+        "date_filed": "2025-08-08",
+        "time_filed": "23:41:49",
+        "date_display": "Aug 8, 2025",
+        "description": "***SELECTED PARTIES***NOTICE of of Errata. Document filed by OpenAI, Inc., OpenAI Startup Fund GP I LLC, OpenAI LP, OpenAI Holdings LLC, OpenAI Startup Fund Management LLC, OpenAI Startup Fund I LP, OpenAI GP, LLC, OpenAI Global, L.L.C., OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI OpCo LLC, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI, LLC, OpenAI Inc., OpenAI Global LLC, OpenAI Holdings, LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI LLC, OpenAI GP LLC, OpenAI, Inc. Copyright Infringement Litigation, OpenAI OpCo LLC(a Delaware limited liability corporation), The New York Times Company. (Attachments: # 1 Exhibit 10 SEALED [for Errata])Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTWMotion or Order to File Under Seal: 447 .(Salomon, Sarah) (Entered:…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 447,
+        "date_filed": "2025-08-08",
+        "time_filed": "23:16:36",
+        "date_display": "Aug 8, 2025",
+        "description": "LETTER MOTION for Leave to File under seal portions of an errata with an accompanying exhibit addressed to Judge Sidney H. Stein from Sarah Salomon, Allison S. Blanco and Rose S. Lee and A dated August 8, 2025. Document filed by OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP, OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund Management LLC, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI, Inc., OpenAI, Inc. Copyright Infringement Litigation, OpenAI, LLC.Filed In Associated Cases: 1:25-md-03143-SHS-OTW,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 446,
+        "date_filed": "2025-08-08",
+        "time_filed": "14:57:31",
+        "date_display": "Aug 8, 2025",
+        "description": "MOTION for Daniel D. Justice to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number NYSDC-31506501. Motion and supporting papers to be reviewed by Clerk's Office staff. Document filed by Microsoft Corporation, Microsoft Corporation. (Attachments: # 1 Affidavit of Daniel Justice in Support, # 2 Exhibit Certificate of Good Standing (CA), # 3 Proposed Order admitting Daniel Justice Pro Hac Vice)Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW.(Justice, Daniel) (Entered: 08/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 445,
+        "date_filed": "2025-08-08",
+        "time_filed": "14:54:44",
+        "date_display": "Aug 8, 2025",
+        "description": "MOTION for Daniel D. Justice to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number NYSDC-31506501. Motion and supporting papers to be reviewed by Clerk's Office staff. Document filed by Microsoft Corporation, Microsoft Corporation. (Attachments: # 1 Affidavit of Daniel Justice in Support, # 2 Exhibit Certificate of Good Standing (CA), # 3 Proposed Order admitting Daniel Justice Pro Hac Vice)Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW.(Justice, Daniel) (Entered: 08/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 444,
+        "date_filed": "2025-08-08",
+        "time_filed": "12:40:42",
+        "date_display": "Aug 8, 2025",
+        "description": "SCHEDULING ORDER: The Court is in receipt of ECF 410. The Court will hold an In-Person, confidential settlement conference to discuss the parties' preserved data sampling protocol on Friday, August 15, 2025, at 9:30 a.m. in Courtroom 20D, 500 Pearl Street, New York, NY 10007. Each party in attendance shall send no more than two attorneys each to the settlement conference. SO ORDERED. Settlement Conference set for 8/15/2025 at 09:30 AM in Courtroom 20D, 500 Pearl Street, New York, NY 10007 before Magistrate Judge Ona T. Wang. (Signed by Magistrate Judge Ona T. Wang on 8/8/2025) Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW (rro) (Entered: 08/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.444.0.pdf"
+      },
+      {
+        "entry_number": 443,
+        "date_filed": "2025-08-08",
+        "time_filed": "12:38:57",
+        "date_display": "Aug 8, 2025",
+        "description": "MEMO ENDORSEMENT on re: (542 in 1:25-cv-03482-SHS-OTW, 230 in 1:24-cv-01514-SHS-OTW, 461 in 1:23-cv-10211-SHS-OTW, 140 in 1:25-cv-03483-SHS-OTW, 101 in 1:25-cv-03291-SHS-OTW, 427 in 1:24-cv-03285-SHS-OTW, 434 in 1:25-md-03143-SHS-OTW, 228 in 1:24-cv-00084-SHS-OTW, 810 in 1:23-cv-11195-SHS-OTW, 11 in 1:25-cv-06286-SHS-OTW, 148 in 1:25-cv-04315-SHS-OTW, 163 in 1:25-cv-03297-SHS-OTW, 579 in 1:23-cv-08292-SHS-OTW, 246 in 1:24-cv-01515-SHS-OTW, 338 in 1:24-cv-04872-SHS-OTW) Letter, filed by The Intercept Media, Inc., Ziff Davis Inc., Jonathan Alter, Ziff Davis, LLC. ENDORSEMENT: OpenAI is directed to meet and confer with Class Plaintiff, Ziff Davis, and The Intercept regarding this request and to file a letter reply by 12:00 p.m. Monday, August 11, 2025. SO ORDERED. (Signed by Magistrate Judge Ona T. Wang on 8/8/2025) Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al. (rro) (Entered:…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.443.0_2.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-08-08",
+        "time_filed": "",
+        "date_display": "Aug 8, 2025",
+        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. (446 in 1:25-md-03143-SHS-OTW, 822 in 1:23-cv-11195-SHS-OTW) MOTION for Daniel D. Justice to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number NYSDC-31506501. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW(bc)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-08-08",
+        "time_filed": "16:05:27",
+        "date_display": "Aug 8, 2025",
+        "description": "Notice Regarding Pro Hac Vice Motion",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 442,
+        "date_filed": "2025-08-07",
+        "time_filed": "18:23:28",
+        "date_display": "Aug 7, 2025",
+        "description": "RESPONSE to Motion re: 382 MOTION to Seal a portion of its letter motion to compel., 387 MOTION to Seal a portion of its letter motion to compel. . Document filed by The New York Times Company..(Brook, Davida) (Entered: 08/07/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 441,
+        "date_filed": "2025-08-07",
+        "time_filed": "16:47:57",
+        "date_display": "Aug 7, 2025",
+        "description": "MOTION for Eleanor Frances Brock to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number NYSDC-31500968. Motion and supporting papers to be reviewed by Clerk's Office staff. Document filed by OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP, OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund Management LLC, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI, Inc., OpenAI, Inc. Copyright Infringement Litigation, OpenAI, LLC. (Attachments: # 1…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 440,
+        "date_filed": "2025-08-07",
+        "time_filed": "16:02:45",
+        "date_display": "Aug 7, 2025",
+        "description": "ORDER: The Court has received by mail a request from non-party John P. Springett II for leave to file an amicus brief \"in support of neither party\" regarding Magistrate Judge Ona Wang's May 13, 2025 preservation order. \"An amicus brief should normally be allowed when a party is not represented competently or is not represented at all, when the amicus has an interest in some other case that may be affected by the decision in the present case..., or when the amicus has unique information or perspective that can help the court beyond the help that lawyers for the parties are able to provide. Otherwise, leave to file an amicus curiae brief should be denied.\" In re Terrorist Attacks on Sep. 11, 2001, No. 03-md-1570, 2022 WL 17326181, at *2 (S.D.N.Y. Nov. 29, 2022) (quoting Ryan v. Commodity Futures Trading Comm'n, 125 F.3d 1062, 1063 (7th Cir. 1997)). None of the circumstances supporting…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.440.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-08-07",
+        "time_filed": "",
+        "date_display": "Aug 7, 2025",
+        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. (582 in 1:23-cv-08292-SHS-OTW, 817 in 1:23-cv-11195-SHS-OTW, 441 in 1:25-md-03143-SHS-OTW) MOTION for Eleanor Frances Brock to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number NYSDC-31500968. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW, 1:23-cv-11195-SHS-OTW(bc)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-08-07",
+        "time_filed": "16:52:54",
+        "date_display": "Aug 7, 2025",
+        "description": "Notice Regarding Pro Hac Vice Motion",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 439,
+        "date_filed": "2025-08-06",
+        "time_filed": "21:57:27",
+        "date_display": "Aug 6, 2025",
+        "description": "RESPONSE to Motion re: (373 in 1:25-md-03143-SHS-OTW, 773 in 1:23-cv-11195-SHS-OTW) MOTION to Seal . . Document filed by The New York Times Company. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW.(Brook, Davida) (Entered: 08/06/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.815.0.pdf"
+      },
+      {
+        "entry_number": 438,
+        "date_filed": "2025-08-05",
+        "time_filed": "13:27:24",
+        "date_display": "Aug 5, 2025",
+        "description": "RESPONSE in Support of Motion re: (556 in 1:23-cv-08292-SHS-OTW, 782 in 1:23-cv-11195-SHS-OTW, 385 in 1:25-md-03143-SHS-OTW) MOTION to Seal PLAINTIFFS THE NEW YORK TIMES COMPANY AND AUTHORS GUILD'S MOTION TO SEAL. . Document filed by Microsoft Corporation, Microsoft Corporation, Microsoft Corporation. (Attachments: # 1 Exhibit A)Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW, 1:23-cv-11195-SHS-OTW.(Briant, Jared) (Entered: 08/05/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.814.0.pdf"
+      },
+      {
+        "entry_number": 437,
+        "date_filed": "2025-08-05",
+        "time_filed": "02:22:31",
+        "date_display": "Aug 5, 2025",
+        "description": "LETTER addressed to Magistrate Judge Ona T. Wang from Elana Nightingale Dawson, Christopher S. Sun and Rose S. Lee dated August 4, 2025 re: Chart Containing Summaries of Disputes. Document filed by OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund I LP, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI Startup Fund Management LLC, OpenAI, Inc., OpenAI, LLC. (Attachments: # 1 Exhibit A - News Chart, # 2 Exhibit B Class Chart, # 3 Exhibit C News &…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.813.0.pdf"
+      },
+      {
+        "entry_number": 436,
+        "date_filed": "2025-08-04",
+        "time_filed": "22:08:53",
+        "date_display": "Aug 4, 2025",
+        "description": "LETTER RESPONSE in Opposition to Motion addressed to Magistrate Judge Ona T. Wang from Elana Nightingale Dawson, Edward A. Bayley and Rose S. Lee dated August 4, 2025 re: (394 in 1:25-md-03143-SHS-OTW, 788 in 1:23-cv-11195-SHS-OTW) LETTER MOTION to Compel OpenAI Defendants to to produce a statistically valid monthly sample of OpenAIs ChatGPT output logs from December 2022 through November 2024 addressed to Magistrate Judge Ona T. Wang from Steven Lieberman, Ian B. C (Redacted). Document filed by OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP(a Delaware limited…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.436.0.pdf"
+      },
+      {
+        "entry_number": 435,
+        "date_filed": "2025-08-04",
+        "time_filed": "21:49:23",
+        "date_display": "Aug 4, 2025",
+        "description": "***SELECTED PARTIES***LETTER RESPONSE in Opposition to Motion addressed to Magistrate Judge Ona T. Wang from Elana Nightingale Dawson, Edward A. Bayley and Rose S. Lee dated August 4, 2025 re: (394 in 1:25-md-03143-SHS-OTW, 788 in 1:23-cv-11195-SHS-OTW) LETTER MOTION to Compel OpenAI Defendants to to produce a statistically valid monthly sample of OpenAIs ChatGPT output logs from December 2022 through November 2024 addressed to Magistrate Judge Ona T. Wang from Steven Lieberman, Ian B. C . Document filed by OpenAI, Inc., OpenAI LP, OpenAI Startup Fund GP I LLC, OpenAI Holdings LLC, OpenAI GP, LLC, OpenAI Global, L.L.C., OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI, LLC, OpenAI Inc., OpenAI Holdings, LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund I LP(a Delaware limited partnership),…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 434,
+        "date_filed": "2025-08-04",
+        "time_filed": "19:59:47",
+        "date_display": "Aug 4, 2025",
+        "description": "JOINT LETTER addressed to Magistrate Judge Ona T. Wang from Justin Nelson dated 08/04/2025 re: Classifier Reports. Document filed by The Intercept Media, Inc., Ziff Davis Inc., Ziff Davis, LLC, Jonathan Alter.Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Nelson, Justin) (Entered: 08/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.434.0.pdf"
+      },
+      {
+        "entry_number": 433,
+        "date_filed": "2025-08-04",
+        "time_filed": "17:28:06",
+        "date_display": "Aug 4, 2025",
+        "description": "MEMORANDUM OF LAW in Opposition re: (137 in 1:25-cv-04315-SHS-OTW, 381 in 1:25-md-03143-SHS-OTW) LETTER MOTION to Compel Document Production Substantial Completion Date addressed to Magistrate Judge Ona T. Wang from Christopher Sun dated July 30, 2025. . Document filed by CNET MEDIA, INC., Everyday Health Media LLC, IGN Entertainment Inc., Mashable, Inc., Ziff Davis Inc., Ziff Davis, LLC. (Attachments: # 1 Exhibit Exhibit A, # 2 Exhibit Exhibit B)Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:25-cv-04315-SHS-OTW.(Koonce, Lacy) (Entered: 08/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 432,
+        "date_filed": "2025-08-04",
+        "time_filed": "17:24:32",
+        "date_display": "Aug 4, 2025",
+        "description": "LETTER addressed to Magistrate Judge Ona T. Wang from Elana Nightingale Dawson dated August 4, 2025 re: Response to ECF No. 390 (25-md-03143). Document filed by OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund I LP, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI Startup Fund Management LLC, OpenAI, Inc., OpenAI, LLC.Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW, 1:23-cv-11195-SHS-OTW.(Nightingale…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 431,
+        "date_filed": "2025-08-04",
+        "time_filed": "17:04:01",
+        "date_display": "Aug 4, 2025",
+        "description": "***SELECTED PARTIES*** RESPONSE in Opposition to Motion re: 396 LETTER MOTION to Compel The New York Times Company to Produce Its Data Re Its Use of OpenAI's LLMs addressed to Magistrate Judge Ona T. Wang from Annette L. Hurst dated 7/30/2025. . Document filed by The New York Times Company, Microsoft Corporation, Microsoft Corporation, OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund I LP, OpenAI Startup Fund Management LLC(a Delaware limited liability…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 430,
+        "date_filed": "2025-08-04",
+        "time_filed": "16:56:24",
+        "date_display": "Aug 4, 2025",
+        "description": "MOTION to Seal . Document filed by The New York Times Company. (Attachments: # 1 Supplement Memorandum of Law in Support of Motion to Seal).(Brook, Davida) (Entered: 08/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 429,
+        "date_filed": "2025-08-04",
+        "time_filed": "16:49:04",
+        "date_display": "Aug 4, 2025",
+        "description": "LETTER RESPONSE in Opposition to Motion addressed to Magistrate Judge Ona T. Wang from Justin Nelson dated August 4, 2025 re: (532 in 1:25-cv-03482-SHS-OTW, 564 in 1:23-cv-08292-SHS-OTW, 452 in 1:23-cv-10211-SHS-OTW, 397 in 1:25-md-03143-SHS-OTW) LETTER MOTION to Compel Five Former Named Plaintiffs to Comply With Deposition Subpoenas addressed to Magistrate Judge Ona T. Wang from Katie Lynn Joyce, Elana Nightingale Dawson, and Tiffany Cheung dated July 30, 2025. . Document filed by Authors Guild. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW, 1:23-cv-10211-SHS-OTW, 1:25-cv-03482-SHS-OTW.(Geman, Rachel) (Entered: 08/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.429.0.pdf"
+      },
+      {
+        "entry_number": 428,
+        "date_filed": "2025-08-04",
+        "time_filed": "16:48:01",
+        "date_display": "Aug 4, 2025",
+        "description": "LETTER RESPONSE in Opposition to Motion addressed to Magistrate Judge Ona T. Wang from R. James Slaughter, Herman H. Yue, Rose S. Lee dated August 4, 2025 re: (413 in 1:25-md-03143-SHS-OTW, 99 in 1:25-cv-03291-SHS-OTW, 138 in 1:25-cv-03483-SHS-OTW, 568 in 1:23-cv-08292-SHS-OTW, 226 in 1:24-cv-00084-SHS-OTW, 534 in 1:25-cv-03482-SHS-OTW, 456 in 1:23-cv-10211-SHS-OTW) LETTER MOTION to Compel OpenAI to Produce Materials Over Which OpenAI Claims Privilege Regarding the Reasons for Deletion of These Materials addressed to Magistrate Judge Ona T. Wang from Justin A. Nelson dated July 30, 2025. . Document filed by OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI OpCo LLC(a Delaware limited liability…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.428.0.pdf"
+      },
+      {
+        "entry_number": 427,
+        "date_filed": "2025-08-04",
+        "time_filed": "16:45:05",
+        "date_display": "Aug 4, 2025",
+        "description": "LETTER RESPONSE in Opposition to Motion addressed to Magistrate Judge Ona T. Wang from Davida Brook dated August 4, 2025 re: 396 LETTER MOTION to Compel The New York Times Company to Produce Its Data Re Its Use of OpenAI's LLMs addressed to Magistrate Judge Ona T. Wang from Annette L. Hurst dated 7/30/2025. . Document filed by The New York Times Company..(Brook, Davida) (Entered: 08/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.427.0.pdf"
+      },
+      {
+        "entry_number": 426,
+        "date_filed": "2025-08-04",
+        "time_filed": "16:41:43",
+        "date_display": "Aug 4, 2025",
+        "description": "LETTER RESPONSE in Opposition to Motion addressed to Magistrate Judge Ona T. Wang from Annette L. Hurst and Jared B. Briant dated August 4, 2025 re: (380 in 1:25-md-03143-SHS-OTW, 778 in 1:23-cv-11195-SHS-OTW) LETTER MOTION to Compel Microsoft Corp. to to produce a witness by August 15, 2025 for the 30(b)(6) deposition addressed to Magistrate Judge Ona T. Wang from Steven Lieberman dated July 30, 2025. . Document filed by Microsoft Corporation, Microsoft Corporation, Microsoft Corporation. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW, 1:24-cv-03285-SHS-OTW, 1:24-cv-04872-SHS-OTW.(Briant, Jared) (Entered: 08/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.806.0.pdf"
+      },
+      {
+        "entry_number": 425,
+        "date_filed": "2025-08-04",
+        "time_filed": "16:24:08",
+        "date_display": "Aug 4, 2025",
+        "description": "LETTER RESPONSE in Opposition to Motion addressed to Magistrate Judge Ona T. Wang from Davida Brook dated August 4, 2025 re: 384 LETTER MOTION to Compel The New York Times to produce reports and analyses relating to its surveys of the reasons users cancelled their subscriptions where such surveys included AI as a possible answer addressed to Magistrate Judge Ona T. . Document filed by The New York Times Company..(Brook, Davida) (Entered: 08/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 424,
+        "date_filed": "2025-08-04",
+        "time_filed": "16:13:13",
+        "date_display": "Aug 4, 2025",
+        "description": "REDACTION to (423 in 1:25-md-03143-SHS-OTW, 574 in 1:23-cv-08292-SHS-OTW, 538 in 1:25-cv-03482-SHS-OTW) Response in Opposition to Motion,,,,,,,,,,,,, by OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP, OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund Management LLC, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI, Inc., OpenAI, LLC, OpenAI GP LLC, OpenAI Inc., OpenAI LP(a Delaware limited partnership) (Attachments: # 1 Exhibit A, # 2 Exhibit B)Filed…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 423,
+        "date_filed": "2025-08-04",
+        "time_filed": "16:07:40",
+        "date_display": "Aug 4, 2025",
+        "description": "***SELECTED PARTIES***LETTER RESPONSE in Opposition to Motion addressed to Magistrate Judge Ona T. Wang from Rose S. Lee, Christopher S. Sun, Elana Nightingale Dawson dated 08-04-2025 re: (412 in 1:25-md-03143-SHS-OTW, 567 in 1:23-cv-08292-SHS-OTW) LETTER MOTION for Discovery addressed to Magistrate Judge Ona T. Wang from Justin A. Nelson dated July 30, 2025. . Document filed by OpenAI, Inc., OpenAI Startup Fund GP I LLC, OpenAI LP, OpenAI Holdings LLC, OpenAI Startup Fund Management LLC, OAI Corporation, LLC, OpenAI Startup Fund I LP, OpenAI GP, LLC, OpenAI Global, L.L.C., OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI OpCo LLC, OAI Corporation, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI, LLC, OpenAI Inc., OpenAI Global LLC, OpenAI Holdings, LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund I LP(a Delaware limited…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 422,
+        "date_filed": "2025-08-04",
+        "time_filed": "15:58:09",
+        "date_display": "Aug 4, 2025",
+        "description": "REDACTION to (161 in 1:25-cv-03297-SHS-OTW, 228 in 1:24-cv-01514-SHS-OTW, 536 in 1:25-cv-03482-SHS-OTW, 801 in 1:23-cv-11195-SHS-OTW, 145 in 1:25-cv-04315-SHS-OTW, 244 in 1:24-cv-01515-SHS-OTW, 572 in 1:23-cv-08292-SHS-OTW, 421 in 1:25-md-03143-SHS-OTW) Declaration in Support of Motion,,,,,,,,,,,,,, by OpenAI Inc., OpenAI OpCo LLC, OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP, OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund Management LLC, OpenAI Startup Fund Management LLC(a Delaware limited liability…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.422.0.pdf"
+      },
+      {
+        "entry_number": 421,
+        "date_filed": "2025-08-04",
+        "time_filed": "15:51:54",
+        "date_display": "Aug 4, 2025",
+        "description": "***SELECTED PARTIES***DECLARATION of Maile Yeats-Rowe in Support re: (227 in 1:24-cv-01514-SHS-OTW, 243 in 1:24-cv-01515-SHS-OTW, 420 in 1:25-md-03143-SHS-OTW, 571 in 1:23-cv-08292-SHS-OTW, 160 in 1:25-cv-03297-SHS-OTW, 144 in 1:25-cv-04315-SHS-OTW, 535 in 1:25-cv-03482-SHS-OTW, 800 in 1:23-cv-11195-SHS-OTW) LETTER MOTION to Seal addressed to Magistrate Judge Ona T. Wang from Caitlin S. Blythe, Christopher S. Sun, Herman H. Yue dated 08-04-2025.. Document filed by OpenAI, Inc., OpenAI Startup Fund GP I LLC, OpenAI LP, OpenAI Holdings LLC, OpenAI Startup Fund Management LLC, OAI Corporation, LLC, OpenAI Startup Fund I LP, OpenAI GP, LLC, OpenAI Global, L.L.C., OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI OpCo LLC, OAI Corporation, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI, LLC, OpenAI Inc., OpenAI Global LLC, OpenAI…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 420,
+        "date_filed": "2025-08-04",
+        "time_filed": "15:38:49",
+        "date_display": "Aug 4, 2025",
+        "description": "LETTER MOTION to Seal addressed to Magistrate Judge Ona T. Wang from Caitlin S. Blythe, Christopher S. Sun, Herman H. Yue dated 08-04-2025. Document filed by OpenAI Inc., OpenAI OpCo LLC, OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP, OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund Management LLC, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI, Inc., OpenAI, LLC, OpenAI GP LLC, OpenAI Inc., OpenAI LP(a Delaware limited partnership). (Attachments: # 1 Proposed Order Granting…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 419,
+        "date_filed": "2025-08-04",
+        "time_filed": "12:17:33",
+        "date_display": "Aug 4, 2025",
+        "description": "JOINT LETTER addressed to Magistrate Judge Ona T. Wang from Andrea Bartz and Open AI dated 8/4/25 re: Dkt. 379 and production in another matter. Document filed by Andrea Bartz..(Smyser, Craig) (Entered: 08/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.419.0.pdf"
+      },
+      {
+        "entry_number": 418,
+        "date_filed": "2025-08-01",
+        "time_filed": "22:35:53",
+        "date_display": "Aug 1, 2025",
+        "description": "FIRST LETTER addressed to Judge Sidney H. Stein from Lacy H. (Lance) Koonce, III dated August 1, 2025 re: Errata to Plaintiffs Ziff Davis et al.s Opposition (ECF No. 83) to Defendants OpenAIs Motion to Stay (ECF No. 49). Document filed by CNET MEDIA, INC., Everyday Health Media LLC, IGN Entertainment Inc., Mashable, Inc., Ziff Davis Inc., Ziff Davis, LLC, Mashable, Inc..Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:25-cv-04315-SHS-OTW.(Koonce, Lacy) (Entered: 08/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 417,
+        "date_filed": "2025-08-01",
+        "time_filed": "21:59:06",
+        "date_display": "Aug 1, 2025",
+        "description": "LETTER RESPONSE in Opposition to Motion addressed to Magistrate Judge Ona T. Wang from Davida Brook and Steven Lieberman dated August 1, 2025 re: 377 LETTER MOTION to Compel The New York Times to re: Destruction of Evidence of Its Use of OpenAIs LLMs addressed to Magistrate Judge Ona T. Wang from Sarah Salomon, Allison S. Blanco, and Rose Lee dated July 29, 2025. . Document filed by The New York Times Company. (Attachments: # 1 Affidavit Declaration of James Pettit, # 2 Exhibit A, # 3 Exhibit B).(Brook, Davida) (Entered: 08/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 416,
+        "date_filed": "2025-08-01",
+        "time_filed": "19:59:51",
+        "date_display": "Aug 1, 2025",
+        "description": "LETTER RESPONSE in Opposition to Motion addressed to Magistrate Judge Ona T. Wang from Davida Brook dated August 1, 2025 re: 374 LETTER MOTION to Compel The New York Times to Deficient Privilege Claims addressed to Magistrate Judge Ona T. Wang from Sarah Salomon, Allison S. Blanco, and Rose S. Lee dated July 29, 2025. . Document filed by The New York Times Company. (Attachments: # 1 Exhibit A).(Brook, Davida) (Entered: 08/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 415,
+        "date_filed": "2025-08-01",
+        "time_filed": "19:23:28",
+        "date_display": "Aug 1, 2025",
+        "description": "LETTER RESPONSE to Motion addressed to Magistrate Judge Ona T. Wang from Justin Nelson dated August 1, 2025 re: (551 in 1:23-cv-08292-SHS-OTW, 442 in 1:23-cv-10211-SHS-OTW, 378 in 1:25-md-03143-SHS-OTW) LETTER MOTION to Compel Class Plaintiffs to Respond to Six RFAs addressed to Magistrate Judge Ona T. Wang from Katie Lynn Joyce, Elana Nightingale Dawson, and Rose Lee dated July 29, 2025. . Document filed by Authors Guild. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW, 1:23-cv-10211-SHS-OTW.(Geman, Rachel) (Entered: 08/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 414,
+        "date_filed": "2025-08-01",
+        "time_filed": "16:32:55",
+        "date_display": "Aug 1, 2025",
+        "description": "LETTER addressed to Magistrate Judge Ona T. Wang from Class Plaintiffs dated 08/01/2025 re: Granting Sealing Motions on Dkts. 389 & 411. Document filed by Authors Guild, Mary Bly, Michael Connelly, Sylvia Day, Jonathan Franzen, John Grisham, Elin Hilderbrand, Christina Baker Kline, Victor LaValle, Maya Shanbhag Lang, George R.R. Martin, Jodi Picoult, Douglas Preston, Roxana Robinson, George Saunders, Scott Turow, Rachel Vail, Kai Bird.Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW, 1:23-cv-10211-SHS-OTW.(Nelson, Justin) (Entered: 08/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 413,
+        "date_filed": "2025-07-31",
+        "time_filed": "21:13:04",
+        "date_display": "Jul 31, 2025",
+        "description": "***SELECTED PARTIES*** LETTER MOTION to Compel OpenAI to Produce Materials Over Which OpenAI Claims Privilege Regarding the Reasons for Deletion of These Materials addressed to Magistrate Judge Ona T. Wang from Justin A. Nelson dated July 30, 2025. Document filed by David Baldacci, Jonathan Alter, AlterNet Media, Inc., Dario Amodei, Authors Guild, Andrea Bartz, Nicholas Basbanes, Nicholas Basbanes, Nicholas A Basbanes, Kai Bird, Mary Bly, Jason Bramble, Taylor Branch, CNET MEDIA, INC., Michael Chabon, Chicago Tribune Company, LLC, Ta-Nehisi Coates, Ta-Nehisi P. Coates, Rich Cohen, Michael Connelly, DP Media Network, LLC, Daily News LP, Sylvia Day, Junot Daz, Catherine Denial, Junot Diaz, Eloisa James, Inc., Everyday Health Media LLC, Jonathan Franzen, ANDREW SEAN GREER, Christopher Golden, Andrew Greer, Andrew Sean Greer, John Grisham, Sides Hampton, Elin Hilderbrand, Aidan Hunt, David…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 412,
+        "date_filed": "2025-07-31",
+        "time_filed": "19:07:28",
+        "date_display": "Jul 31, 2025",
+        "description": "LETTER MOTION for Discovery addressed to Magistrate Judge Ona T. Wang from Justin A. Nelson dated July 30, 2025. Document filed by David Baldacci. (Attachments: # 1 Exhibit 1 Filed Under Seal)Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW, 1:23-cv-10211-SHS-OTW.(Nelson, Justin) (Entered: 07/31/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.412.0.pdf"
+      },
+      {
+        "entry_number": 411,
+        "date_filed": "2025-07-31",
+        "time_filed": "19:01:41",
+        "date_display": "Jul 31, 2025",
+        "description": "MOTION to Seal . Document filed by David Baldacci.Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW, 1:23-cv-10211-SHS-OTW.(Nelson, Justin) (Entered: 07/31/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 410,
+        "date_filed": "2025-07-31",
+        "time_filed": "18:59:44",
+        "date_display": "Jul 31, 2025",
+        "description": "JOINT LETTER addressed to Magistrate Judge Ona T. Wang from Edward A. Bayley dated 7/31/25 re: Request for Confidential Settlement Conference in Lieu of Further Briefing. Document filed by OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP, OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund Management LLC, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI, Inc., OpenAI, Inc. Copyright Infringement Litigation, OpenAI, LLC.Filed In Associated Cases:…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.797.0.pdf"
+      },
+      {
+        "entry_number": 409,
+        "date_filed": "2025-07-31",
+        "time_filed": "13:41:07",
+        "date_display": "Jul 31, 2025",
+        "description": "LETTER RESPONSE to Motion addressed to Magistrate Judge Ona T. Wang from Annette L. Hurst and Jared B. Briant dated July 31, 2025 re: (772 in 1:23-cv-11195-SHS-OTW, 372 in 1:25-md-03143-SHS-OTW) SUPPLEMENTAL LETTER MOTION to Compel Microsoft Corp. to to provide discovery into all versions of Microsofts Copilot chatbot product addressed to Magistrate Judge Ona T. Wang from Steven Lieberman dated July 28, 2025. . Document filed by Microsoft Corporation, Microsoft Corporation, Microsoft Corporation. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW.(Briant, Jared) (Entered: 07/31/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.796.0.pdf"
+      },
+      {
+        "entry_number": 407,
+        "date_filed": "2025-07-30",
+        "time_filed": "23:44:35",
+        "date_display": "Jul 30, 2025",
+        "description": "MEMORANDUM OF LAW in Support re: 405 MOTION to Dismiss Ziff Davis First Amended Complaint. . Document filed by OAI Corporation, OpenAI GP LLC, OpenAI Global LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI OpCo LLC..(Gass, Andrew) (Entered: 07/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.407.0.pdf"
+      },
+      {
+        "entry_number": 398,
+        "date_filed": "2025-07-30",
+        "time_filed": "17:44:34",
+        "date_display": "Jul 30, 2025",
+        "description": "LETTER MOTION to Compel OpenAI Defendants to Sample and Search the API and ChatGPT output log data OpenAI has recently been ordered to preserve addressed to Magistrate Judge Ona T. Wang from Steven Lieberman, Ian B. Crosby and Stephen Stich Match dated July 30, 2025. Document filed by Chicago Tribune Company, LLC, DP Media Network, LLC, Daily News LP, Northwest Publications, LLC, ORB Publishing, LLC, Orlando Sentinel Communications Company, LLC, San Jose Mercury-News, LLC, Sun-sentinel Company, LLC, The Center for Investigative Reporting, Inc., The New York Times Company, The New York Times Company. (Attachments: # 1 Exhibit A - News Plaintiffs Revised Order re Conversation Data Sampling (Clean), # 2 Exhibit B - Redline of News Plaintiffs Revised Order re Conversation Data Sampling, # 3 Exhibit C - Excerpts from 2025-06-26 Conference Transcript, # 4 Exhibit D - Email from K. Logan to E.…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.398.0.pdf"
+      },
+      {
+        "entry_number": 397,
+        "date_filed": "2025-07-30",
+        "time_filed": "17:23:46",
+        "date_display": "Jul 30, 2025",
+        "description": "LETTER MOTION to Compel Five Former Named Plaintiffs to Comply With Deposition Subpoenas addressed to Magistrate Judge Ona T. Wang from Katie Lynn Joyce, Elana Nightingale Dawson, and Tiffany Cheung dated July 30, 2025. Document filed by OpenAI GP LLC, OpenAI Inc., OpenAI LP(a Delaware limited partnership), OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund Management LLC(a Delaware limited liability company), OAI Corporation LLC, OpenAI GP LLC, OpenAI Global LLC, OpenAI Holdings LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI Startup Fund GP I LLC, OpenAI Startup Fund I LP, OpenAI Startup Fund Management LLC, OAI Corporation, LLC, OpenAI GP, LLC, OpenAI Holdings, LLC, OpenAI, LLC. (Attachments: # 1 Exhibit A - Filed…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 396,
+        "date_filed": "2025-07-30",
+        "time_filed": "17:18:05",
+        "date_display": "Jul 30, 2025",
+        "description": "***SELECTED PARTIES*** LETTER MOTION to Compel The New York Times Company to Produce Its Data Re Its Use of OpenAI's LLMs addressed to Magistrate Judge Ona T. Wang from Annette L. Hurst dated 7/30/2025. Document filed by Microsoft Corporation, Jonathan Alter, AlterNet Media, Inc., Dario Amodei, Authors Guild, David Baldacci, Andrea Bartz, Nicholas Basbanes, Nicholas Basbanes, Nicholas A Basbanes, Kai Bird, Mary Bly, Jason Bramble, Taylor Branch, CNET MEDIA, INC., Michael Chabon, Chicago Tribune Company, LLC, Ta-Nehisi Coates, Ta-Nehisi P. Coates, Rich Cohen, Michael Connelly, DP Media Network, LLC, Daily News LP, Sylvia Day, Junot Daz, Junot Diaz, Eloisa James, Inc., Everyday Health Media LLC, Jonathan Franzen, ANDREW SEAN GREER, Christopher Golden, Andrew Greer, Andrew Sean Greer, John Grisham, Sides Hampton, Elin Hilderbrand, Aidan Hunt, David Hwang, David Henry Hwang, David Henry…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 393,
+        "date_filed": "2025-07-30",
+        "time_filed": "17:06:18",
+        "date_display": "Jul 30, 2025",
+        "description": "***SELECTED PARTIES*** LETTER MOTION to Compel Five Former Named Plaintiffs to To Comply With Deposition Subpoenas addressed to Magistrate Judge Ona T. Wang from Katie Lynn Joyce, Elana Nightingale Dawson, and Tiffany Cheung dated July 30, 2025. Document filed by OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI GP LLC, OpenAI Inc., OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI LP(a Delaware limited partnership), OpenAI OpCo LLC(a Delaware limited liability corporation), Jonathan Alter, Dario Amodei, Authors Guild, TA-NEHISI COATES, Michael Chabon, Junot Diaz, ANDREW SEAN GREER, Christopher Golden, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Benjamin J. Mann, Microsoft Corporation, Reuters News & Media Inc, RACHEL LOUISE SNYDER, Sarah Silverman, Paul…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 390,
+        "date_filed": "2025-07-30",
+        "time_filed": "16:56:05",
+        "date_display": "Jul 30, 2025",
+        "description": "***SELECTED PARTIES***REDACTION to (782 in 1:23-cv-11195-SHS-OTW) MOTION to Seal PLAINTIFFS THE NEW YORK TIMES COMPANY AND AUTHORS GUILD'S MOTION TO SEAL. by Microsoft Corporation, OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund I LP, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI Startup Fund Management LLC, OpenAI, Inc., Authors Guild, The New York Times Company (Attachments: # 1 Exhibit 1, # 2 Exhibit 2, # 3 Exhibit 3, #…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 389,
+        "date_filed": "2025-07-30",
+        "time_filed": "16:55:21",
+        "date_display": "Jul 30, 2025",
+        "description": "LETTER MOTION to Seal addressed to Magistrate Judge Ona T. Wang from Justin A. Nelson dated 07/30/2025. Document filed by David Baldacci.Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Nelson, Justin) (Entered: 07/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 388,
+        "date_filed": "2025-07-30",
+        "time_filed": "16:49:22",
+        "date_display": "Jul 30, 2025",
+        "description": "LETTER MOTION to Compel OpenAI to produce documents addressed to Magistrate Judge Ona T. Wang from Justin A. Nelson dated 07/30/2025. Document filed by Authors Guild, Kai Bird, Mary Bly, Michael Connelly, Sylvia Day, Jonathan Franzen, John Grisham, Elin Hilderbrand, Christina Baker Kline, Victor LaValle, Maya Shanbhag Lang, George R.R. Martin, Jodi Picoult, Douglas Preston, Roxana Robinson, George Saunders, Scott Turow, Rachel Vail. (Attachments: # 1 Exhibit 1)Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Nelson, Justin) (Entered: 07/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 387,
+        "date_filed": "2025-07-30",
+        "time_filed": "16:44:55",
+        "date_display": "Jul 30, 2025",
+        "description": "MOTION to Seal a portion of its letter motion to compel. Document filed by Microsoft Corporation, Microsoft Corporation.Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW.(Hurst, Annette) (Entered: 07/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 386,
+        "date_filed": "2025-07-30",
+        "time_filed": "16:44:31",
+        "date_display": "Jul 30, 2025",
+        "description": "MOTION to Seal . Document filed by OpenAI GP LLC, OpenAI Inc., OpenAI LP(a Delaware limited partnership), OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund Management LLC(a Delaware limited liability company), OAI Corporation LLC, OpenAI GP LLC, OpenAI Global LLC, OpenAI Holdings LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI Startup Fund GP I LLC, OpenAI Startup Fund I LP, OpenAI Startup Fund Management LLC, OAI Corporation, LLC, OpenAI GP, LLC, OpenAI Holdings, LLC, OpenAI, LLC.Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW, 1:23-cv-10211-SHS-OTW, 1:25-cv-03482-SHS-OTW.(Nightingale Dawson, Elana) (Entered: 07/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 385,
+        "date_filed": "2025-07-30",
+        "time_filed": "16:43:05",
+        "date_display": "Jul 30, 2025",
+        "description": "MOTION to Seal PLAINTIFFS THE NEW YORK TIMES COMPANY AND AUTHORS GUILD'S MOTION TO SEAL. Document filed by Authors Guild, The New York Times Company.Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW, 1:23-cv-11195-SHS-OTW.(Brook, Davida) (Entered: 07/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.385.0.pdf"
+      },
+      {
+        "entry_number": 382,
+        "date_filed": "2025-07-30",
+        "time_filed": "16:08:28",
+        "date_display": "Jul 30, 2025",
+        "description": "MOTION to Seal a portion of its letter motion to compel. Document filed by Microsoft Corporation, Microsoft Corporation.Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW.(Hurst, Annette) (Entered: 07/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 379,
+        "date_filed": "2025-07-30",
+        "time_filed": "11:28:16",
+        "date_display": "Jul 30, 2025",
+        "description": "JOINT LETTER addressed to Magistrate Judge Ona T. Wang from Andrea Bartz and Open AI dated 7/29/25 re: Joint Notice Regarding Production in Another Matter. Document filed by Andrea Bartz..(Smyser, Craig) (Entered: 07/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69879510&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=68"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69879510&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=74"
   },
   "claims_administrator": null,
   "coverage": [
