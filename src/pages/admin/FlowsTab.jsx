@@ -4,6 +4,26 @@ import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, forma
 import { useTabData } from "./useTabData.js";
 import { sectionsFingerprint } from "../../lib/section-fingerprint.js";
 import { Wizard } from "../../components/sections/RegistrationFlowSection.jsx";
+import pageCompositionsData from "../../data/page-compositions.json";
+
+// Where a flow is actually placed (a registration-flow section pointing at
+// this flow id), read from the last-deployed page-compositions.json — same
+// staleness tradeoff as the "Flow" picker in Page Builder's own section
+// fields, which reads this same file the same way. Used to preview a flow
+// with its REAL page styling (colors, layout, headline) instead of a
+// generic placeholder — a flow can be placed on more than one page, so this
+// returns every match and lets the admin pick.
+function findFlowPlacements(flowId) {
+  const out = [];
+  for (const p of pageCompositionsData.pages || []) {
+    for (const s of p.sections || []) {
+      if (s.type === "registration-flow" && s.content && s.content.flowId === flowId) {
+        out.push({ pageKey: p.pageKey, pageTitle: p.title || p.pageKey, path: p.path, sectionId: s.id, content: s.content });
+      }
+    }
+  }
+  return out;
+}
 
 /* FlowsTab — build multi-step registration flows (src/data/forms.json).
  *
@@ -300,6 +320,9 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
   // want (a field's label changing shouldn't kick you back to step 1).
   const [previewKey, setPreviewKey] = useState(0);
   const [previewWide, setPreviewWide] = useState(false);
+  const placements = findFlowPlacements(flow.id);
+  const [placementIdx, setPlacementIdx] = useState(0);
+  const activePlacement = placements[Math.min(placementIdx, placements.length - 1)];
 
   function conditionTargets(stepIndex) {
     const out = [];
@@ -358,7 +381,9 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
         <span style={{ color: INK_60 }}>{open ? "▾" : "▸"}</span>
       </div>
 
-      {open && previewOpen && (
+      {open && previewOpen && (() => {
+        const c = activePlacement ? activePlacement.content : {};
+        return (
         <div style={{
           position: "fixed", top: 0, right: 0, bottom: 0,
           width: previewWide ? "min(900px, 96vw)" : "min(440px, 100vw)",
@@ -366,43 +391,55 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
           zIndex: 50, display: "flex", flexDirection: "column",
           transition: "width 0.15s ease",
         }}>
-          <div style={{
-            display: "flex", alignItems: "center", justifyContent: "space-between",
-            padding: "0.8rem 1rem", background: "#fff", borderBottom: `1px solid ${LINE}`, flexShrink: 0,
-          }}>
-            <strong style={{ fontFamily: FONT, fontSize: "0.85rem", color: INK }}>
-              Live preview — {flow.name || "Untitled flow"}
-            </strong>
-            <div style={{ display: "flex", gap: 6 }}>
-              <button type="button" onClick={() => setPreviewWide(w => !w)} title={previewWide ? "Narrow the preview panel" : "Widen the preview panel"}
-                style={{ ...btnStyle, fontSize: "0.72rem", padding: "0.3rem 0.6rem" }}>
-                {previewWide ? "⤡ Narrow" : "⤢ Widen"}
-              </button>
-              <button type="button" onClick={() => setPreviewKey(k => k + 1)} title="Restart from step 1"
-                style={{ ...btnStyle, fontSize: "0.72rem", padding: "0.3rem 0.6rem" }}>
-                ↺ Restart
-              </button>
-              <button type="button" onClick={() => setPreviewOpen(false)} title="Close preview"
-                style={{ ...btnStyle, fontSize: "0.72rem", padding: "0.3rem 0.6rem" }}>
-                ✕
-              </button>
-            </div>
-          </div>
-          <div style={{ flex: 1, overflowY: "auto", padding: "1.75rem 1.25rem" }}>
+          <div style={{ background: "#fff", borderBottom: `1px solid ${LINE}`, flexShrink: 0 }}>
             <div style={{
-              maxWidth: previewWide ? 640 : "none", margin: "0 auto",
-              background: "#fff", border: `1px solid ${LINE}`, borderRadius: 10,
-              padding: "clamp(1.5rem,5vw,2.25rem)", boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
+              display: "flex", alignItems: "center", justifyContent: "space-between",
+              padding: "0.8rem 1rem", gap: 8,
             }}>
-              <Wizard key={previewKey} flow={flow} previewMode
-                layout="center" colorScheme="paper" cardStyle="float" align="left" />
+              <strong style={{ fontFamily: FONT, fontSize: "0.85rem", color: INK }}>
+                Live preview — {flow.name || "Untitled flow"}
+              </strong>
+              <div style={{ display: "flex", gap: 6, flexShrink: 0 }}>
+                <button type="button" onClick={() => setPreviewWide(w => !w)} title={previewWide ? "Narrow the preview panel" : "Widen the preview panel"}
+                  style={{ ...btnStyle, fontSize: "0.72rem", padding: "0.3rem 0.6rem" }}>
+                  {previewWide ? "⤡ Narrow" : "⤢ Widen"}
+                </button>
+                <button type="button" onClick={() => setPreviewKey(k => k + 1)} title="Restart from step 1"
+                  style={{ ...btnStyle, fontSize: "0.72rem", padding: "0.3rem 0.6rem" }}>
+                  ↺ Restart
+                </button>
+                <button type="button" onClick={() => setPreviewOpen(false)} title="Close preview"
+                  style={{ ...btnStyle, fontSize: "0.72rem", padding: "0.3rem 0.6rem" }}>
+                  ✕
+                </button>
+              </div>
             </div>
-            <p style={{ fontFamily: FONT, fontSize: "0.72rem", color: INK_60, marginTop: "0.9rem", lineHeight: 1.6, maxWidth: previewWide ? 640 : "none", marginLeft: previewWide ? "auto" : 0, marginRight: previewWide ? "auto" : 0 }}>
-              This reflects your unsaved edits live. It never submits for real — clicking through to the end just fakes the success screen. Page styling (colors, layout, headline) comes from wherever this flow is placed in Page Builder, not from here.
+            {placements.length > 1 && (
+              <div style={{ padding: "0 1rem 0.7rem" }}>
+                <label style={{ ...label, marginBottom: 3 }}>This flow is placed on {placements.length} pages — preview which one?</label>
+                <select style={selectStyle} value={placementIdx} onChange={e => setPlacementIdx(Number(e.target.value))}>
+                  {placements.map((p, i) => <option key={p.pageKey + p.sectionId} value={i}>{p.pageTitle} ({p.path})</option>)}
+                </select>
+              </div>
+            )}
+          </div>
+          <div style={{ flex: 1, overflowY: "auto" }}>
+            <Wizard key={`${previewKey}-${activePlacement ? activePlacement.sectionId : "none"}`} flow={flow} previewMode
+              pageKey={activePlacement ? activePlacement.pageKey : undefined}
+              eyebrow={c.eyebrow} title={c.title} accent={c.accent}
+              layout={c.layout || "center"} colorScheme={c.colorScheme}
+              backgroundImage={c.backgroundImage} imageFilter={c.imageFilter} imageFilterStrength={c.imageFilterStrength}
+              cardRadius={c.cardRadius} cardStyle={c.cardStyle} cardColor={c.cardColor}
+              formScale={c.formScale} disclosure={c.disclosure} align={c.align} cardAlign={c.cardAlign} />
+            <p style={{ fontFamily: FONT, fontSize: "0.72rem", color: INK_60, lineHeight: 1.6, padding: "0 1.25rem 1.5rem" }}>
+              {activePlacement
+                ? <>Matches how this flow actually looks on <strong>{activePlacement.pageTitle}</strong> ({activePlacement.path}) as last deployed — colors, layout, and headline included. Fields/steps reflect your unsaved edits live. Exact spacing can differ slightly from the full site since this panel isn't full browser width. It never submits for real — clicking through fakes the success screen.</>
+                : <>This flow isn't placed on any page yet, so there's no real styling to match — showing a generic layout. Fields/steps reflect your unsaved edits live. It never submits for real — clicking through fakes the success screen.</>}
             </p>
           </div>
         </div>
-      )}
+        );
+      })()}
 
       {open && (
         <div style={{ padding: "0 1rem 1rem", borderTop: `1px solid ${LINE}` }}>
@@ -476,6 +513,7 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
 
 function StepCard({ step, index, total, conditionTargets, priorStepFields = [], onChange, onRemove, onMove }) {
   const label = { display: "block", fontSize: "0.72rem", color: INK_60, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 3 };
+  const [collapsed, setCollapsed] = useState(false);
   const conditioned = Boolean(step.showIf && step.showIf.fieldId);
   const target = conditioned ? conditionTargets.find(f => f.id === step.showIf.fieldId) : null;
   const targetOptions = target
@@ -497,17 +535,41 @@ function StepCard({ step, index, total, conditionTargets, priorStepFields = [], 
     onChange({ fields: next });
   }
 
+  const fieldCount = (step.fields || []).length;
+  const badges = [
+    conditioned && !staleCondition && "conditional",
+    staleCondition && "⚠ broken condition",
+    step.optional && "skippable",
+  ].filter(Boolean);
+
   return (
-    <div style={{ border: `1px solid ${LINE}`, borderRadius: 6, padding: "0.8rem", marginBottom: "0.7rem", background: "#F9FAFB" }}>
-      <div style={{ display: "flex", gap: 8, alignItems: "flex-end", marginBottom: "0.6rem" }}>
-        <div style={{ flex: 1 }}>
-          <label style={label}>Step {index + 1} — title (optional, small text shown above the question)</label>
-          <input style={inputStyle} placeholder="e.g. Almost there" value={step.title || ""}
-            onChange={e => onChange({ title: e.target.value })} />
-        </div>
-        <button style={iconBtnStyle(index === 0)} title="Move up" disabled={index === 0} onClick={() => onMove(-1)}>↑</button>
-        <button style={iconBtnStyle(index === total - 1)} title="Move down" disabled={index === total - 1} onClick={() => onMove(1)}>↓</button>
-        <button style={{ ...iconBtnStyle(total === 1), color: "#C03030" }} title="Delete step" disabled={total === 1} onClick={onRemove}>✕</button>
+    <div style={{ border: `1.5px solid ${LINE}`, borderRadius: 8, marginBottom: "0.9rem", background: "#fff", overflow: "hidden" }}>
+      <div
+        onClick={() => setCollapsed(c => !c)}
+        style={{ display: "flex", alignItems: "center", gap: 10, padding: "0.7rem 0.8rem", background: "#EEF0F3", cursor: "pointer" }}
+      >
+        <span style={{
+          display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+          width: 26, height: 26, borderRadius: "50%", background: INK, color: "#fff",
+          fontSize: "0.78rem", fontWeight: 800,
+        }}>{index + 1}</span>
+        <span style={{ flex: 1, minWidth: 0, fontFamily: FONT, fontWeight: 700, fontSize: "0.9rem", color: INK, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          {step.heading || <em style={{ color: INK_60, fontWeight: 400 }}>Untitled step</em>}
+          <span style={{ fontWeight: 400, color: INK_60, fontSize: "0.76rem", marginLeft: 8 }}>
+            {fieldCount} field{fieldCount !== 1 ? "s" : ""}{badges.length ? ` · ${badges.join(" · ")}` : ""}
+          </span>
+        </span>
+        <button style={iconBtnStyle(index === 0)} title="Move up" disabled={index === 0} onClick={e => { e.stopPropagation(); onMove(-1); }}>↑</button>
+        <button style={iconBtnStyle(index === total - 1)} title="Move down" disabled={index === total - 1} onClick={e => { e.stopPropagation(); onMove(1); }}>↓</button>
+        <button style={{ ...iconBtnStyle(total === 1), color: "#C03030" }} title="Delete step" disabled={total === 1} onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
+        <span style={{ color: INK_60, flexShrink: 0, width: 14, textAlign: "center" }}>{collapsed ? "▸" : "▾"}</span>
+      </div>
+      {!collapsed && (
+      <div style={{ padding: "0.9rem", background: "#F9FAFB" }}>
+      <div style={{ marginBottom: "0.6rem" }}>
+        <label style={label}>Title (optional, small text shown above the question)</label>
+        <input style={inputStyle} placeholder="e.g. Almost there" value={step.title || ""}
+          onChange={e => onChange({ title: e.target.value })} />
       </div>
       <div style={{ marginBottom: "0.6rem" }}>
         <label style={label}>Question / heading (required — this is the big text people actually see)</label>
@@ -578,6 +640,8 @@ function StepCard({ step, index, total, conditionTargets, priorStepFields = [], 
       ))}
       <button style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.35rem 0.7rem" }}
         onClick={() => onChange({ fields: [...step.fields, blankField()] })}>+ Add field</button>
+      </div>
+      )}
     </div>
   );
 }
