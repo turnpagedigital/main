@@ -7,10 +7,13 @@ import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
    PUT  /api/admin/footer  → { ok: true, commitSha }
    Body for PUT: { columns, copyright, contactEmail }
 
-   Each column: { id, title, titleKey?, links: [{ id, label, labelKey?, href, external? }] }
+   Each column: { id, title, titleKey?, hidden?, links: [{ id, label, labelKey?, href, external?, hidden? }] }
    - id: stable key (string)
    - title: display text
    - titleKey: optional i18n key (preserved round-trip)
+   - hidden: boolean — true suppresses the column/link on the public footer
+     (Footer.jsx filters on this; keep both normalizeColumn/normalizeLink
+     preserving it below, or the admin's Hide toggle silently no-ops on save)
    - links[].external: boolean — true opens in new tab
 */
 
@@ -167,6 +170,9 @@ function normalizeColumn(col) {
   if (typeof col.titleKey === "string" && col.titleKey.trim()) {
     out.titleKey = col.titleKey.trim().slice(0, MAX_KEY_LEN);
   }
+  // Preserve hidden flag — was missing entirely, so the admin's Hide/Show
+  // toggle silently reverted on every save regardless of what was clicked.
+  if (col.hidden === true) out.hidden = true;
   return out;
 }
 
@@ -182,5 +188,7 @@ function normalizeLink(link) {
   }
   // Preserve external flag
   if (link.external === true) out.external = true;
+  // Preserve hidden flag — same bug as the column-level one above.
+  if (link.hidden === true) out.hidden = true;
   return out;
 }
