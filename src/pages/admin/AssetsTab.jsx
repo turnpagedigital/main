@@ -245,22 +245,41 @@ export default function AssetsTab({ onDirtyChange }) {
   const isSaving = phase === "saving";
 
   // ── Mutations ────────────────────────────────────────────────────────────
-  function addFile(entry) {
-    setLibrary(lib => ({
-      ...lib,
-      files: [
-        sanitizeFile({
-          id:        entry.id || newId(),
-          name:      entry.name || "Untitled",
-          url:       entry.url || "",
-          type:      entry.type || "",
-          companies: entry.companies || [],
-          source:    entry.source || "url",
-          addedAt:   entry.addedAt || new Date().toISOString(),
-        }),
-        ...lib.files,
-      ],
-    }));
+  // Uploads commit the binary to the repo immediately (file-upload.js), but
+  // the library ENTRY describing it only used to save when the admin clicked
+  // the separate Save button below — if that click never happened (tab
+  // closed, forgot, error), the file sat in public/library/ with no entry
+  // anywhere: no thumbnail in this tab, unusable in AssetPicker. So `addFile`
+  // now persists immediately instead of just marking state dirty. On failure
+  // the new entry stays in local state (dirty) so the existing Save button
+  // is still a working retry path.
+  async function addFile(entry) {
+    const newEntry = sanitizeFile({
+      id:        entry.id || newId(),
+      name:      entry.name || "Untitled",
+      url:       entry.url || "",
+      type:      entry.type || "",
+      companies: entry.companies || [],
+      source:    entry.source || "url",
+      addedAt:   entry.addedAt || new Date().toISOString(),
+    });
+    const newFiles = [newEntry, ...(library?.files || [])];
+    setLibrary(lib => ({ ...lib, files: newFiles }));
+
+    try {
+      const r = await fetch("/api/admin/file-library", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ files: newFiles }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
+      setOriginal(orig => orig ? { ...orig, files: newFiles } : orig);
+      setLastSavedAt(new Date());
+    } catch (e) {
+      setError(`Added "${newEntry.name}" but couldn't auto-save the library entry: ${e.message}. Click Save below to retry.`);
+    }
   }
   function updateFile(id, field, value) {
     setLibrary(lib => ({

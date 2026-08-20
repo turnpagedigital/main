@@ -42,7 +42,12 @@ const CASCADE_FILES = [
   "src/data/alerts.json",
   "src/data/faqs.json",
   "src/data/posts.json",        // may not exist yet — handled gracefully
+  "src/data/page-compositions.json",
   "public/briefings/index.json",
+  // NOTE: file-library.json itself is deliberately NOT cascaded here — the
+  // Assets tab's save() already rewrites the renamed entry's url in its own
+  // follow-up PUT to /api/admin/file-library moments later. Cascading it here
+  // too would race that PUT for no benefit.
 ];
 
 export async function onRequestPost({ request, env }) {
