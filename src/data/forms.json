@@ -14,7 +14,8 @@
       "steps": [
         {
           "id": "role",
-          "heading": "Your details",
+          "heading": "Tell us about your claim",
+          "title": "Let's get started",
           "fields": [
             {
               "id": "role",
@@ -28,49 +29,29 @@
               ]
             },
             {
-              "id": "claim_form",
-              "type": "file",
-              "label": "Upload your claim form",
-              "required": true,
-              "skipLabel": "I don't have my claim form",
-              "showIf": {
-                "fieldId": "role",
-                "equals": "I am an author"
-              },
-              "accept": [
-                "pdf",
-                "png",
-                "jpg"
-              ],
-              "help": "Upload your Bartz settlement claim form and we'll auto-calculate your estimated allocation. If your form is not available, you may still proceed, but we can cannot provide a firm offer.",
-              "extract": "bartz-claim",
-              "extractMap": {
-                "first_name": "contact.firstName",
-                "last_name": "contact.lastName",
-                "your_email": "contact.email",
-                "self_pub_count": "counts.self",
-                "publisher_count": "counts.publisher"
-              },
-              "moreInfo": {
-                "label": "Where do I find my claim form?",
-                "body": "The plan administrator will have emailed this to you. If you don't have it handy, you may request it by emailing info@AnthropicCopyrightSettlement.com or calling 1 877-206-2314. Click \"Next\" to enter your details manually."
-              }
-            },
-            {
               "id": "claimant_id",
               "type": "text",
-              "label": "Claimant ID number (from JND, if available)",
+              "label": "Enter your claimant ID number (from JND, if available)",
               "required": false,
               "help": "The unique ID the Settlement Administrator assigned to your claim. Don't have it or not sure? Leave this blank — we'll help you track it down."
             },
             {
-              "id": "p",
-              "type": "text",
-              "label": "Publisher name",
+              "id": "claim_form",
+              "type": "choice",
+              "label": "Upload my claim form to auto-populate my claim details",
               "required": true,
               "showIf": {
                 "fieldId": "role",
-                "equals": "I am a publisher"
+                "equals": "I am an author"
+              },
+              "options": [
+                "Upload my claim form to auto-populate my claim details",
+                "Enter my claim details manually"
+              ],
+              "help": "If your form is not available, you may still proceed, but",
+              "moreInfo": {
+                "label": "Where do I find my claim form?",
+                "body": "The plan administrator will have emailed this to you. If you don't have it handy, you may request it by emailing info@AnthropicCopyrightSettlement.com or calling 1 877-206-2314. Click \"Next\" to enter your details manually."
               }
             },
             {
@@ -84,34 +65,6 @@
               },
               "placeholder": "Number of covered works",
               "help": "(estimate if unknown)"
-            },
-            {
-              "id": "first_name",
-              "type": "text",
-              "label": "First name",
-              "required": true,
-              "row": "name"
-            },
-            {
-              "id": "last_name",
-              "type": "text",
-              "label": "Last name",
-              "required": true,
-              "row": "name"
-            },
-            {
-              "id": "your_email",
-              "type": "email",
-              "label": "Your email",
-              "required": true,
-              "row": "contact"
-            },
-            {
-              "id": "your_phone",
-              "type": "phone",
-              "label": "Your phone",
-              "required": false,
-              "row": "contact"
             },
             {
               "id": "works_summary",
@@ -167,6 +120,54 @@
           ]
         },
         {
+          "id": "step-4",
+          "heading": "Who holds the claim?",
+          "fields": [
+            {
+              "id": "first",
+              "type": "text",
+              "label": "First",
+              "required": true
+            },
+            {
+              "id": "last",
+              "type": "text",
+              "label": "Last",
+              "required": true
+            },
+            {
+              "id": "publisher_name",
+              "type": "text",
+              "label": "Publisher Name",
+              "required": true,
+              "showIf": {
+                "fieldId": "role",
+                "equals": "I am a publisher"
+              }
+            }
+          ]
+        },
+        {
+          "id": "step-5",
+          "heading": "Please provide your contact info so we can reach you.",
+          "fields": [
+            {
+              "id": "email",
+              "type": "email",
+              "label": "Email",
+              "required": true,
+              "row": "Row"
+            },
+            {
+              "id": "phone_optional",
+              "type": "phone",
+              "label": "Phone (optional)",
+              "required": false,
+              "row": "Row"
+            }
+          ]
+        },
+        {
           "id": "anything-else",
           "heading": "Anything else we should know?",
           "disclaimer": "By clicking \"submit\" below, you confirm the accuracy of the information provided and consent to Turnpage Digital Markets LLC contacting you regarding your claim.",
@@ -183,7 +184,10 @@
         },
         {
           "id": "kyc",
-          "heading": "Identity Verification",
+          "heading": "Please verify your identity.",
+          "title": "KYC",
+          "explainer": "To expedite the sale of your claim, please verify your identity with Sumsub.",
+          "optional": true,
           "showIf": {
             "fieldId": "role",
             "equals": "I am an author"
