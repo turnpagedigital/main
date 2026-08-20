@@ -9987,6 +9987,13 @@
       "summary": "OpenAI filed its opposition brief on August 14, telling Judge Stein that publishers have 'no evidence whatsoever' that ChatGPT systematically regurgitates their articles and that its claim of hiding search capabilities is an attempt 'to rewrite history.' OpenAI maintained it followed court orders to preserve ChatGPT conversations 'to the letter' and made 'herculean efforts' to produce training data and tens of millions of outputs."
     },
     {
+      "headline": "OpenAI Fights Sanctions Bid In News Copyright MDL",
+      "url": "https://www.law360.com/articles/2513548/openai-fights-sanctions-bid-in-news-copyright-mdl",
+      "source": "Law360",
+      "date": "2026-08-14",
+      "summary": "OpenAI urged Judge Sidney Stein to reject sanctions that would bar it from relying on a 20 million-chat evidence sample, arguing it neither violated the preservation order nor misrepresented its ability to search for copyrighted material. The filing is the company's formal opposition to the 17-publisher coalition's sanctions motion in the consolidated MDL."
+    },
+    {
       "headline": "New York Times and Other News Outlets Accuse OpenAI of Lying in Discovery, Demand Legal Sanctions Against AI Giant",
       "url": "https://variety.com/2026/digital/news/new-york-times-news-outlets-accuse-openai-of-lying-lawsuit-1236805648/",
       "source": "Variety",
@@ -10006,6 +10013,13 @@
       "source": "MLex",
       "date": "2026-07-09",
       "summary": "MLex reported on the sanctions motion filed in the S.D.N.Y., quoting the publishers' filing that OpenAI's concealment 'withheld highly relevant evidence, prolonged discovery, inflated expenses, and burdened the court.' The motion directly challenges OpenAI's representations about its technical search capabilities."
+    },
+    {
+      "headline": "New York Times says OpenAI hid evidence in ChatGPT copyright trial",
+      "url": "https://techcrunch.com/2026/07/09/new-york-times-says-openai-hid-evidence-in-chatgpt-copyright-trial/",
+      "source": "TechCrunch",
+      "date": "2026-07-09",
+      "summary": "Publishers allege OpenAI falsely claimed for years it lacked the ability to search its training corpus and ChatGPT output logs, and that it deleted billions of ChatGPT outputs in violation of the court's preservation order and substituted millions of logs in the requested 20-million-record sample. Plaintiffs are asking the court to bar OpenAI from relying on that sample at trial and to enter adverse-inference findings."
     }
   ],
   "events": []
