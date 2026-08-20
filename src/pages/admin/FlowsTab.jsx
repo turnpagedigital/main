@@ -824,20 +824,50 @@ function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, o
             </p>
           )}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginBottom: 8 }}>
-            <div>
-              <label style={miniLabel}>Self-published count field</label>
-              <select style={selectStyle} value={field.selfField || ""} onChange={e => onChange({ selfField: e.target.value, priced: true })}>
-                <option value="" disabled>Select a number field…</option>
-                {numberFields.map(nf => <option key={nf.id} value={nf.id}>{nf.label || nf.id}</option>)}
-              </select>
-            </div>
-            <div>
-              <label style={miniLabel}>Works-with-publisher count field</label>
-              <select style={selectStyle} value={field.publisherField || ""} onChange={e => onChange({ publisherField: e.target.value, priced: true })}>
-                <option value="" disabled>Select a number field…</option>
-                {numberFields.map(nf => <option key={nf.id} value={nf.id}>{nf.label || nf.id}</option>)}
-              </select>
-            </div>
+            {(() => {
+              // A field that's already selected but no longer matches any
+              // number field (e.g. that field got deleted and recreated
+              // while restructuring steps, minting a new id) would otherwise
+              // vanish from the <select>'s value — the browser then falls
+              // back to silently displaying the FIRST real option as if it
+              // were chosen, which looks fine but writes the wrong id on
+              // save. Render the stale id as its own flagged option instead,
+              // so a broken link is visibly broken rather than invisibly wrong.
+              const selfBroken = field.selfField && !numberFields.some(nf => nf.id === field.selfField);
+              const pubBroken = field.publisherField && !numberFields.some(nf => nf.id === field.publisherField);
+              return (
+                <>
+                  <div>
+                    <label style={miniLabel}>Self-published count field</label>
+                    <select style={selectStyle} value={field.selfField || ""} onChange={e => onChange({ selfField: e.target.value, priced: true })}>
+                      <option value="" disabled>Select a number field…</option>
+                      {selfBroken && <option value={field.selfField}>⚠ Not found — re-pick ({field.selfField})</option>}
+                      {numberFields.map(nf => <option key={nf.id} value={nf.id}>{nf.label || nf.id}</option>)}
+                    </select>
+                    {selfBroken && (
+                      <p style={{ fontSize: "0.72rem", color: "#B4700F", margin: "4px 0 0" }}>
+                        This pointed at a number field that no longer exists — probably deleted and recreated while
+                        editing. Pick the right one again from the list.
+                      </p>
+                    )}
+                  </div>
+                  <div>
+                    <label style={miniLabel}>Works-with-publisher count field</label>
+                    <select style={selectStyle} value={field.publisherField || ""} onChange={e => onChange({ publisherField: e.target.value, priced: true })}>
+                      <option value="" disabled>Select a number field…</option>
+                      {pubBroken && <option value={field.publisherField}>⚠ Not found — re-pick ({field.publisherField})</option>}
+                      {numberFields.map(nf => <option key={nf.id} value={nf.id}>{nf.label || nf.id}</option>)}
+                    </select>
+                    {pubBroken && (
+                      <p style={{ fontSize: "0.72rem", color: "#B4700F", margin: "4px 0 0" }}>
+                        This pointed at a number field that no longer exists — probably deleted and recreated while
+                        editing. Pick the right one again from the list.
+                      </p>
+                    )}
+                  </div>
+                </>
+              );
+            })()}
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "auto auto 1fr", gap: 8, marginBottom: 8, alignItems: "end" }}>
