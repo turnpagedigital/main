@@ -14,8 +14,7 @@
       "steps": [
         {
           "id": "step-6",
-          "heading": "Tell us about your claim",
-          "title": "Let's get started",
+          "heading": "Let's get started",
           "fields": [
             {
               "id": "select_one",
@@ -32,7 +31,6 @@
         {
           "id": "claim-form",
           "heading": "Tell us about your claim",
-          "title": "Let's get started",
           "optional": true,
           "showIf": {
             "fieldId": "select_one",
@@ -71,7 +69,7 @@
         },
         {
           "id": "claim-counts",
-          "heading": "Let's get started",
+          "heading": "Confirm your works eligible for settlement.",
           "showIf": {
             "fieldId": "select_one",
             "equals": "Author"
@@ -80,7 +78,7 @@
             {
               "id": "works_summary",
               "type": "works-summary",
-              "label": "Works we found on your claim form",
+              "label": "Below are the works we found on your claim form:",
               "required": false,
               "help": "Self-published works count at the full rate, works with a publisher at half rate. Multi-author works aren't purchased."
             },
@@ -102,19 +100,22 @@
         },
         {
           "id": "step-4",
-          "heading": "Please provide your details",
+          "heading": "Confirm your name and contact info.",
+          "explainer": "Using the same name and email as on your claim form will expedite your sale process.",
           "fields": [
             {
               "id": "first",
               "type": "text",
               "label": "First",
-              "required": true
+              "required": true,
+              "row": "Row"
             },
             {
               "id": "last",
               "type": "text",
               "label": "Last",
-              "required": true
+              "required": true,
+              "row": "Row"
             },
             {
               "id": "publisher_name",
@@ -125,26 +126,18 @@
                 "fieldId": "select_one",
                 "equals": "Publisher"
               }
-            }
-          ]
-        },
-        {
-          "id": "step-5",
-          "heading": "Please provide your contact info so we can reach you.",
-          "fields": [
-            {
-              "id": "email",
-              "type": "email",
-              "label": "Email",
-              "required": true,
-              "row": "Row"
             },
             {
-              "id": "phone_optional",
-              "type": "phone",
-              "label": "Phone (optional)",
-              "required": false,
-              "row": "Row"
+              "id": "email",
+              "type": "text",
+              "label": "Email",
+              "required": false
+            },
+            {
+              "id": "phone",
+              "type": "text",
+              "label": "Phone",
+              "required": false
             }
           ]
         },
@@ -156,7 +149,7 @@
             {
               "id": "additional_context",
               "type": "textarea",
-              "label": "Additional context",
+              "label": "Optional context",
               "required": false,
               "hideLabel": true,
               "help": "Additional context about your claim (optional)"
@@ -165,9 +158,8 @@
         },
         {
           "id": "kyc",
-          "heading": "Please verify your identity.",
-          "title": "KYC",
-          "explainer": "To expedite the sale of your claim, please verify your identity with Sumsub.",
+          "heading": "Verify your identity.",
+          "explainer": "To expedite the sale of your claim, please complete KYC with Sumsub.",
           "optional": true,
           "showIf": {
             "fieldId": "select_one",
@@ -188,7 +180,7 @@
         },
         {
           "id": "your-offer",
-          "heading": "Your offer",
+          "heading": "Review your estimated offer.",
           "showIf": {
             "fieldId": "select_one",
             "equals": "Author"
@@ -197,8 +189,9 @@
             {
               "id": "estimated_offer",
               "type": "computed",
-              "label": "Your estimated offer",
+              "label": "Offer",
               "required": false,
+              "hideLabel": true,
               "showIf": {
                 "fieldId": "select_one",
                 "equals": "Author"
@@ -208,7 +201,7 @@
               "publisherField": "publisher_count",
               "prefix": "$",
               "suffix": "",
-              "help": "This is an estimate — we will confirm your final offer by email."
+              "help": "This is an indicative offer only. We will confirm your final offer by email after reviewing your submission."
             }
           ]
         }
