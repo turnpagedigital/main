@@ -3,6 +3,34 @@
   "case_name": "Poolin",
   "items": [
     {
+      "date": "2026-08-20",
+      "updated": "2026-08-20",
+      "lede": "On August 19, Poolin Technology filed the Notice of Sale by Auction and Sale Hearing (Dkt. 148) and the Notice of Cure Amount and Potential Assumption and Assignment of Executory Contracts and Unexpired Leases (Dkt. 149), both issued pursuant to Dkt. 138 — Judge O'Hagan's August 17 order approving bidding procedures for the sale of substantially all of the debtor's assets. Together, these two filings execute the…",
+      "body_md": "On August 19, Poolin Technology filed the Notice of Sale by Auction and Sale Hearing (Dkt. 148) and the Notice of Cure Amount and Potential Assumption and Assignment of Executory Contracts and Unexpired Leases (Dkt. 149), both issued pursuant to Dkt. 138 — Judge O'Hagan's August 17 order approving bidding procedures for the sale of substantially all of the debtor's assets. Together, these two filings execute the auction machinery the court authorized three days earlier: Dkt. 148 formally notifies the market of the auction date and the sale hearing, while Dkt. 149 discloses the cure amounts attached to any executory contracts or unexpired leases the estate proposes to assume and assign to a buyer. The cure notice is the first document in this case to put counterparties on the clock: \nthe assumption and assignment notice, with the assigned contracts schedule and proposed cure amounts, was due August 21, 2026\n — meaning objections to cure amounts and to assumption or assignment will run from that notice's service date. Any counterparty that disputes a cure figure must object before the sale hearing; silence operates as consent to the stated amount, and an undisclosed cure dispute can encumber title post-closing.\n\nFor creditor recovery, the cure notice carries direct financial relevance. The estate's first-day declaration disclosed an outstanding balance of $1,344,788.13 owed to Elektron Energy in connection with the Texas power agreements; whether that figure appears as a proposed cure amount — or is instead the subject of the pending Rule 9019 settlement motion (Dkt. 129) — determines whether it travels with the assets to the buyer or settles separately before closing. That ambiguity remains open: the 9019 settlement (Dkt. 129) was filed August 14 on shortened time (Dkt. 137, order to shorten entered August 17, scheduling a hearing for August 20 at 11:00 a.m.), and no docket entry yet confirms the outcome of that hearing. If the 9019 hearing proceeded today as scheduled, a resulting order will be the next substantive filing to watch; its content — whether it resolves the Elektron Energy dispute and on what terms — determines whether that liability survives as a cure amount, a claim against the estate, or neither. \nJudge O'Hagan cleared Poolin Technology to pursue the asset sale at the August 14 hearing, also giving stalking-horse Thor CALAP LLC time to evaluate a neighboring property for an AI data center in Texas.\n \nThe qualified bid deadline is September 8, 2026, with the auction scheduled for September 10 and the sale hearing set for September 16.\n\n\nOn the trustee motion front, creditor Lin Liang filed an amended notice of hearing (Dkt. 143) on August 18, conforming the hearing date on her motion to appoint a Chapter 11 trustee (Dkt. 103) to the October 21, 2026 date Judge O'Hagan set by text order on August 17 — no new substantive argument, just calendaring alignment. The trustee motion remains pending and unresolved; if granted before the sale hearing on September 16, the CRO's authority terminates and an independent trustee assumes control of the sale process, which would at minimum create timing risk for the auction. \nThe creditor moved for appointment of a Chapter 11 trustee, alleging the company's principal absconded from China to the U.S. with customer funds.\n Archer & Greiner's amended July fee statement (Dkt. 146, correcting Dkt. 145, objection deadline September 2) is procedural and routine. Dkts. 150–154 are BNC certificates of notice — filing infrastructure, not reported. The next concrete milestone is the September 8 qualified bid deadline for the West Texas auction, preceded by whatever order emerges from today's 9019 hearing if the August 20 at 11:00 a.m. hearing proceeded as scheduled.\n\n## Sources\n\n- [Poolin Cleared To Pursue Asset Sale Amid Trustee Fight](https://www.law360.com/bankruptcy/articles/2513768) — Law360, August 14, 2026\n- [Poolin Creditor Seeks Ch. 11 Trustee To Probe Transfers](https://www.law360.com/bankruptcy-authority/mid-cap/articles/2511097) — Law360, August 10, 2026\n- [Case Summary: Poolin Chapter 11](https://bondoro.com/poolin/) — Bondoro, August 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Poolin Cleared To Pursue Asset Sale Amid Trustee Fight",
+          "url": "https://www.law360.com/bankruptcy/articles/2513768",
+          "note": "Law360, August 14, 2026"
+        },
+        {
+          "title": "Poolin Creditor Seeks Ch. 11 Trustee To Probe Transfers",
+          "url": "https://www.law360.com/bankruptcy-authority/mid-cap/articles/2511097",
+          "note": "Law360, August 10, 2026"
+        },
+        {
+          "title": "Case Summary: Poolin Chapter 11",
+          "url": "https://bondoro.com/poolin/",
+          "note": "Bondoro, August 2026"
+        }
+      ],
+      "activity": {
+        "filings": 12,
+        "articles": 0,
+        "latest": "2026-08-20"
+      }
+    },
+    {
       "date": "2026-08-19",
       "updated": "2026-08-19",
       "lede": "On August 18, an unnamed professional filed a monthly fee statement (Dkt. 145) and a support document (Dkt. 143), and August 17 produced the substantive cluster that warrants attention today: an amended motion combined with a retention application (Dkt. 140), a generic motion of unverified subject matter (Dkt. 139), and — carrying the most analytical weight — an interim order on a final hearing (Dkt. 138), entered…",
