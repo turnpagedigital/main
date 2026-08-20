@@ -14,7 +14,8 @@
           "id": "litigation-finance",
           "label": "Litigation Funding",
           "href": "/litigation-funding",
-          "labelKey": "nav.litigation"
+          "labelKey": "nav.litigation",
+          "hidden": true
         },
         {
           "id": "tariff-refunds",
