@@ -122,6 +122,7 @@ function validateFlows(flows) {
       const stepRef = `${flowRef}, step "${s.heading.trim()}"`;
       if (s.title !== undefined && typeof s.title !== "string") return `${stepRef}: the optional title must be text.`;
       if (s.explainer !== undefined && typeof s.explainer !== "string") return `${stepRef}: the optional explainer must be text.`;
+      if (s.disclaimer !== undefined && typeof s.disclaimer !== "string") return `${stepRef}: the optional disclaimer must be text.`;
       if (s.optional !== undefined && typeof s.optional !== "boolean") return `${stepRef}: the "optional step" setting got corrupted — try re-toggling its checkbox.`;
       if (!Array.isArray(s.fields) || s.fields.length === 0) return `${stepRef}: add at least one field, or delete the step.`;
       if (s.fields.length > MAX_FIELDS) return `${stepRef}: at most ${MAX_FIELDS} fields per step.`;
@@ -228,6 +229,7 @@ function normalizeFlow(f) {
       heading: String(s.heading).trim().slice(0, SHORT),
       ...(s.title && String(s.title).trim() ? { title: String(s.title).trim().slice(0, SHORT) } : {}),
       ...(s.explainer && String(s.explainer).trim() ? { explainer: String(s.explainer).trim().slice(0, LONG) } : {}),
+      ...(s.disclaimer && String(s.disclaimer).trim() ? { disclaimer: String(s.disclaimer).trim().slice(0, LONG) } : {}),
       ...(s.optional ? { optional: true } : {}),
       ...(s.showIf && s.showIf.fieldId
         ? { showIf: { fieldId: String(s.showIf.fieldId), equals: String(s.showIf.equals) } }

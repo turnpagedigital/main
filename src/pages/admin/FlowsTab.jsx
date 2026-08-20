@@ -67,6 +67,7 @@ function sanitizeFlow(f) {
     successTitle: f.successTitle || "", successBody: f.successBody || "",
     steps: Array.isArray(f.steps) ? f.steps.map(s => ({
       id: s.id || "", heading: s.heading || "", title: s.title || "", explainer: s.explainer || "",
+      disclaimer: s.disclaimer || "",
       optional: Boolean(s.optional),
       ...(s.showIf && s.showIf.fieldId ? { showIf: { fieldId: s.showIf.fieldId, equals: s.showIf.equals ?? "" } } : {}),
       fields: Array.isArray(s.fields) ? s.fields.map(fl => ({
@@ -442,6 +443,14 @@ function StepCard({ step, index, total, conditionTargets, priorStepFields = [], 
         <label style={label}>Explainer (optional, small text shown below the question)</label>
         <textarea style={{ ...inputStyle, minHeight: 44 }} placeholder="e.g. This helps us confirm you're the rights holder."
           value={step.explainer || ""} onChange={e => onChange({ explainer: e.target.value })} />
+      </div>
+      <div style={{ marginBottom: "0.6rem" }}>
+        <label style={label}>Disclaimer (optional, small print shown just above this step's Back/Next button)</label>
+        <textarea style={{ ...inputStyle, minHeight: 44 }} placeholder='e.g. By clicking "submit" below, you confirm the accuracy of the information provided…'
+          value={step.disclaimer || ""} onChange={e => onChange({ disclaimer: e.target.value })} />
+        <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 3 }}>
+          Different from the section's own "Disclosure" setting in Page Builder, which shows below the whole form on every step — this only shows on this one step, right before its button.
+        </p>
       </div>
       <div style={{ marginBottom: "0.7rem" }}>
         <label style={{ display: "flex", alignItems: "center", gap: 7, fontSize: "0.82rem", color: INK, cursor: "pointer" }}>
