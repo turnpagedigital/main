@@ -43,18 +43,17 @@ import QRCode from "qrcode";
  *     background of the form card (card style only)
  *   disclosure      — small-print paragraph rendered below the form
  *   align           — "left" (default) | "center": the OUTER heading —
- *     eyebrow + title/accent — and the disclosure below the form. On the
- *     split layout this also covers the intro (it sits in the same left
- *     column as the heading there, not inside the card).
+ *     eyebrow + title/accent — the flow's intro text (sits under the
+ *     heading, above the card, on every layout including split), and the
+ *     disclosure below the form.
  *   cardAlign       — "left" (default) | "center": chrome INSIDE the card —
- *     the step title and step counter, plus the intro on every layout
- *     EXCEPT split (there it follows `align` instead — see above). Set
- *     independently of `align` so, e.g., a centered hero heading can sit
- *     above a left-aligned, easy-to-scan form, or vice versa. Either way,
- *     the fields themselves — labels, inputs, choice buttons — always stay
- *     left-aligned regardless of both settings, since the input boxes are
- *     always full-width/left-text; centering only the surrounding chrome
- *     avoids a half-centered, half-left look.
+ *     just the step title and step counter. Set independently of `align`
+ *     so, e.g., a centered hero heading can sit above a left-aligned,
+ *     easy-to-scan form, or vice versa. Either way, the fields themselves —
+ *     labels, inputs, choice buttons — always stay left-aligned regardless
+ *     of both settings, since the input boxes are always full-width/
+ *     left-text; centering only the surrounding chrome avoids a
+ *     half-centered, half-left look.
  *   formScale       — form zoom in % (100–150, default 100) for a bigger,
  *     easier-to-read form
  */
@@ -129,23 +128,6 @@ function IntroText({ text, dark = false, style = {}, scopeClass }) {
   );
 }
 
-// A required "choice" (button-group) or "select" (dropdown) field with no
-// answer yet defaults to its first option, so a branch driver like
-// Author/Publisher starts pre-picked and its branch-specific fields (see
-// field-level showIf) are visible on load instead of the page opening on an
-// empty, undecided question.
-function defaultAnswers(flow) {
-  const defaults = {};
-  for (const s of flow.steps || []) {
-    for (const f of s.fields || []) {
-      if ((f.type === "choice" || f.type === "select") && f.required && Array.isArray(f.options) && f.options.length) {
-        defaults[f.id] = f.options[0];
-      }
-    }
-  }
-  return defaults;
-}
-
 // Named export (in addition to the section's default export) so the admin
 // Flows editor can render this exact component — same rendering, same
 // validation, same behavior a visitor gets — as a live preview of whatever's
@@ -153,7 +135,7 @@ function defaultAnswers(flow) {
 // the actual submit network call (see submit() below) so clicking through a
 // preview can never send a real notification email / Sheet row / Attio push.
 export function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle, cardColor, formScale, disclosure, align, cardAlign, previewMode = false }) {
-  const [answers, setAnswers] = useState(() => defaultAnswers(flow));
+  const [answers, setAnswers] = useState({});
   const [files, setFiles] = useState({});
   const [stepIndex, setStepIndex] = useState(0);
   const [stepError, setStepError] = useState("");
@@ -425,11 +407,6 @@ export function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorSch
         }}>
           Preview — nothing here submits
         </div>
-      )}
-      {/* Split layout already shows the intro under the left-column heading —
-          don't repeat it inside the form card. */}
-      {flow.intro && stepIndex === 0 && layout !== "split" && (
-        <IntroText text={flow.intro} style={{ marginBottom: "2rem" }} scopeClass="regflow-card-text" />
       )}
       {stepCountKnown && (
         <>
@@ -714,12 +691,11 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
   // read as inconsistent sitting under a centered label or button row.
   //
   // The chrome splits into two independently controllable groups:
-  //   align     — the OUTER heading (eyebrow + h2) and the disclosure below
-  //               the form; on the split layout this also covers the intro
-  //               (it sits in the heading's left column there, not the card)
-  //   cardAlign — chrome INSIDE the card: the step title (h3) and step
-  //               counter, plus the intro on every OTHER layout (there it's
-  //               the first thing inside the card)
+  //   align     — the OUTER heading (eyebrow + h2), the flow's intro text
+  //               (sits under the heading, above the card, on every layout),
+  //               and the disclosure below the form
+  //   cardAlign — chrome INSIDE the card: just the step title (h3) and
+  //               step counter
   // scoped via regflow-outer-text / regflow-card-text on the elements that
   // need it (h2/h3 are targeted directly since they're unambiguous).
   const outerCentered = align === "center";
@@ -824,8 +800,13 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
     <section className={[surfaceClass, alignClasses].filter(Boolean).join(" ")} style={{ ...sectionStyle, padding: sectionPad }}>
       {centerCss}
       <div className="container" style={{ maxWidth, margin: "0 auto" }}>
-        {headingBlock && (
-          <div style={{ marginBottom: "2rem" }}>{headingBlock}</div>
+        {(headingBlock || flowIntro) && (
+          <div style={{ marginBottom: "2rem" }}>
+            {headingBlock}
+            {flowIntro && (
+              <IntroText text={flowIntro} dark={isDark} style={{ marginTop: headingBlock ? "1.2rem" : 0 }} scopeClass="regflow-outer-text" />
+            )}
+          </div>
         )}
         <div style={cardStyle}>{children}</div>
         {disclosureNode}
@@ -944,25 +925,29 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
 
   if (field.type === "choice" || field.type === "yesno") {
     const options = field.type === "yesno" ? ["Yes", "No"] : (field.options || []);
+    const groupName = `${field.id}-${id}`;
     return (
       <div style={wrap} role="radiogroup" aria-label={field.label}>
         {label}
-        <div className="regflow-choices" style={{ display: "flex", flexWrap: "wrap", gap: "0.7rem", marginTop: "0.5rem" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", marginTop: "0.5rem" }}>
           {options.map(opt => {
             const selected = value === opt;
+            const optId = `${groupName}-${opt}`;
             return (
-              <button key={opt} type="button" role="radio" aria-checked={selected}
-                onClick={() => onChange(opt)}
-                style={{
-                  fontFamily: FONT, fontSize: "1rem", fontWeight: 700,
-                  padding: "0.95rem 1.6rem", cursor: "pointer",
-                  border: `1.5px solid ${selected ? INK : LINE_STRONG}`,
-                  background: selected ? INK : SURFACE,
-                  color: selected ? TEXT : INK,
-                  transition: "all 0.15s",
-                }}>
-                {opt}
-              </button>
+              <label key={opt} htmlFor={optId} style={{
+                display: "flex", alignItems: "center", gap: "0.8rem",
+                padding: "0.95rem 1.1rem", cursor: "pointer",
+                border: `1.5px solid ${selected ? INK : LINE_STRONG}`,
+                background: selected ? SECONDARY_BG : SURFACE,
+                transition: "all 0.15s",
+              }}>
+                <input id={optId} type="radio" name={groupName} value={opt} checked={selected}
+                  onChange={() => onChange(opt)}
+                  style={{ width: 20, height: 20, flexShrink: 0, margin: 0, accentColor: INK }} />
+                <span style={{ fontFamily: FONT, fontSize: "1rem", fontWeight: selected ? 700 : 600, color: INK }}>
+                  {opt}
+                </span>
+              </label>
             );
           })}
         </div>
