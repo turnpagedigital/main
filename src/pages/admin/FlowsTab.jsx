@@ -299,6 +299,7 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
   // it already had as you keep editing elsewhere, which is usually what you
   // want (a field's label changing shouldn't kick you back to step 1).
   const [previewKey, setPreviewKey] = useState(0);
+  const [previewWide, setPreviewWide] = useState(false);
 
   function conditionTargets(stepIndex) {
     const out = [];
@@ -359,9 +360,11 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
 
       {open && previewOpen && (
         <div style={{
-          position: "fixed", top: 0, right: 0, bottom: 0, width: "min(440px, 100vw)",
+          position: "fixed", top: 0, right: 0, bottom: 0,
+          width: previewWide ? "min(900px, 96vw)" : "min(440px, 100vw)",
           background: "#F4F5F7", borderLeft: `1px solid ${LINE}`, boxShadow: "-6px 0 28px rgba(0,0,0,0.16)",
           zIndex: 50, display: "flex", flexDirection: "column",
+          transition: "width 0.15s ease",
         }}>
           <div style={{
             display: "flex", alignItems: "center", justifyContent: "space-between",
@@ -371,6 +374,10 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
               Live preview — {flow.name || "Untitled flow"}
             </strong>
             <div style={{ display: "flex", gap: 6 }}>
+              <button type="button" onClick={() => setPreviewWide(w => !w)} title={previewWide ? "Narrow the preview panel" : "Widen the preview panel"}
+                style={{ ...btnStyle, fontSize: "0.72rem", padding: "0.3rem 0.6rem" }}>
+                {previewWide ? "⤡ Narrow" : "⤢ Widen"}
+              </button>
               <button type="button" onClick={() => setPreviewKey(k => k + 1)} title="Restart from step 1"
                 style={{ ...btnStyle, fontSize: "0.72rem", padding: "0.3rem 0.6rem" }}>
                 ↺ Restart
@@ -383,13 +390,14 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
           </div>
           <div style={{ flex: 1, overflowY: "auto", padding: "1.75rem 1.25rem" }}>
             <div style={{
+              maxWidth: previewWide ? 640 : "none", margin: "0 auto",
               background: "#fff", border: `1px solid ${LINE}`, borderRadius: 10,
               padding: "clamp(1.5rem,5vw,2.25rem)", boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
             }}>
               <Wizard key={previewKey} flow={flow} previewMode
                 layout="center" colorScheme="paper" cardStyle="float" align="left" />
             </div>
-            <p style={{ fontFamily: FONT, fontSize: "0.72rem", color: INK_60, marginTop: "0.9rem", lineHeight: 1.6 }}>
+            <p style={{ fontFamily: FONT, fontSize: "0.72rem", color: INK_60, marginTop: "0.9rem", lineHeight: 1.6, maxWidth: previewWide ? 640 : "none", marginLeft: previewWide ? "auto" : 0, marginRight: previewWide ? "auto" : 0 }}>
               This reflects your unsaved edits live. It never submits for real — clicking through to the end just fakes the success screen. Page styling (colors, layout, headline) comes from wherever this flow is placed in Page Builder, not from here.
             </p>
           </div>
