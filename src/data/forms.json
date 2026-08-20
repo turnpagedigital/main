@@ -13,40 +13,44 @@
       "successBody": "We've received your details and will be in touch within 48 hours with your offer and next steps.",
       "steps": [
         {
-          "id": "role",
+          "id": "step-6",
           "heading": "Tell us about your claim",
           "title": "Let's get started",
           "fields": [
             {
-              "id": "role",
+              "id": "select_one",
               "type": "choice",
-              "label": "Select one:",
+              "label": "Is the claimholder an author or publisher?",
               "required": true,
-              "hideLabel": true,
               "options": [
-                "I am an author",
-                "I am a publisher"
+                "Author",
+                "Publisher"
               ]
-            },
-            {
-              "id": "claimant_id",
-              "type": "text",
-              "label": "Enter your claimant ID number (from JND, if available)",
-              "required": false,
-              "help": "The unique ID the Settlement Administrator assigned to your claim. Don't have it or not sure? Leave this blank — we'll help you track it down."
-            },
+            }
+          ]
+        },
+        {
+          "id": "role",
+          "heading": "Tell us about your claim",
+          "title": "Let's get started",
+          "showIf": {
+            "fieldId": "select_one",
+            "equals": "Author"
+          },
+          "fields": [
             {
               "id": "claim_form",
-              "type": "choice",
-              "label": "Upload my claim form to auto-populate my claim details",
+              "type": "file",
+              "label": "Please share your claim form",
               "required": true,
               "showIf": {
-                "fieldId": "role",
-                "equals": "I am an author"
+                "fieldId": "select_one",
+                "equals": "Author"
               },
-              "options": [
-                "Upload my claim form to auto-populate my claim details",
-                "Enter my claim details manually"
+              "accept": [
+                "pdf",
+                "png",
+                "jpg"
               ],
               "help": "If your form is not available, you may still proceed, but",
               "moreInfo": {
@@ -60,8 +64,8 @@
               "label": "Covered works",
               "required": false,
               "showIf": {
-                "fieldId": "role",
-                "equals": "I am a publisher"
+                "fieldId": "select_one",
+                "equals": "Author"
               },
               "placeholder": "Number of covered works",
               "help": "(estimate if unknown)"
@@ -72,8 +76,8 @@
               "label": "Works we found on your claim form",
               "required": false,
               "showIf": {
-                "fieldId": "role",
-                "equals": "I am an author"
+                "fieldId": "select_one",
+                "equals": "Author"
               },
               "help": "Self-published works count at the full rate, works with a publisher at half rate. Multi-author works aren't purchased."
             },
@@ -83,8 +87,8 @@
               "label": "Self-published works",
               "required": true,
               "showIf": {
-                "fieldId": "role",
-                "equals": "I am an author"
+                "fieldId": "select_one",
+                "equals": "Author"
               },
               "placeholder": "0",
               "help": "Auto-filled from your claim form — edit if needed."
@@ -95,8 +99,8 @@
               "label": "Works with a publisher",
               "required": true,
               "showIf": {
-                "fieldId": "role",
-                "equals": "I am an author"
+                "fieldId": "select_one",
+                "equals": "Author"
               },
               "placeholder": "0",
               "help": "Auto-filled from your claim form — edit if needed."
@@ -107,8 +111,8 @@
               "label": "Your estimated offer",
               "required": false,
               "showIf": {
-                "fieldId": "role",
-                "equals": "I am an author"
+                "fieldId": "select_one",
+                "equals": "Author"
               },
               "priced": true,
               "selfField": "self_pub_count",
@@ -121,7 +125,7 @@
         },
         {
           "id": "step-4",
-          "heading": "Who holds the claim?",
+          "heading": "Please provide your details",
           "fields": [
             {
               "id": "first",
@@ -141,8 +145,8 @@
               "label": "Publisher Name",
               "required": true,
               "showIf": {
-                "fieldId": "role",
-                "equals": "I am a publisher"
+                "fieldId": "select_one",
+                "equals": "Publisher"
               }
             }
           ]
@@ -189,8 +193,8 @@
           "explainer": "To expedite the sale of your claim, please verify your identity with Sumsub.",
           "optional": true,
           "showIf": {
-            "fieldId": "role",
-            "equals": "I am an author"
+            "fieldId": "select_one",
+            "equals": "Author"
           },
           "fields": [
             {
