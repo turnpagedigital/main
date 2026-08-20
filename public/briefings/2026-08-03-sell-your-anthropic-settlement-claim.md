@@ -1,6 +1,12 @@
 # Can You Sell Your Bartz v. Anthropic Settlement Claim?
 
-Yes. A right to payment from a class settlement is property, and in most cases it can be assigned — sold to a buyer who pays you a fixed amount now and collects from the fund as it pays out. This page explains how such a sale works, what you give up, and the questions worth asking anyone who offers to buy, including us. Turnpage Digital Markets buys these claims; that is disclosed up front so you can weigh what follows accordingly.
+Yes. The Bartz v. Anthropic settlement agreement does not bar claimants from assigning their right to payment — there is no anti-assignment clause. A right to payment from a class settlement is property, and property that isn't expressly restricted can be sold like any other asset: to a buyer who pays you a fixed amount now and collects from the fund as it pays out. This page explains how such a sale works, what you give up, and the questions worth asking anyone who offers to buy, including us. Turnpage Digital Markets buys these claims; that is disclosed up front so you can weigh what follows accordingly.
+
+## This isn't the "claim selling is a scam" warning you may have seen
+
+Some searches about selling an Anthropic settlement claim surface warnings that selling a class-action claim is barred, invalid, or fraudulent. Those warnings trace back to a real scheme — a company called ClaimsHero that a federal judge described as "a fraud of immense proportions," for pressuring authors to opt **out** of the settlement entirely, before the March 30, 2026 filing deadline, on the promise of a bigger payout from a separate, speculative lawsuit. That asked people to abandon their claim in this settlement on a gamble — a fundamentally different transaction from a sale.
+
+Selling an already-filed claim is the opposite. You keep your claim exactly as filed and approved inside the Bartz settlement — nothing is abandoned, nothing is opted out of, and the deadline that mattered (March 30, 2026) has already passed with your claim intact. You simply assign your right to receive the payment the settlement already owes you, in exchange for a fixed price now instead of waiting for the installment schedule to finish in 2027.
 
 ## Why some claimants sell
 
@@ -44,4 +50,4 @@ Turnpage quotes Bartz claims at no cost and with no obligation: you describe you
 
 ---
 
-*Turnpage Digital Markets is an independent claims buyer — not the court, class counsel, or the settlement administrator, and not affiliated with any party to Bartz v. Anthropic. Whether and how a specific claim can be assigned depends on the settlement's terms and your circumstances. This page is general information, not legal, tax, or financial advice.*
+*Turnpage Digital Markets is an independent claims buyer — not the court, class counsel, or the settlement administrator, and not affiliated with any party to Bartz v. Anthropic. This page describes our understanding of the settlement's assignment terms as general information, not legal, tax, or financial advice — every claimant should confirm details with their own counsel before assigning a claim.*
