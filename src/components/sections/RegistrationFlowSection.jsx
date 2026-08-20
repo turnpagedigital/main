@@ -1010,9 +1010,8 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
         {field.moreInfo && field.moreInfo.body && (
           <details style={{ margin: "0.35rem 0 0.9rem" }}>
             <summary style={{
-              fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700, color: INK,
-              cursor: "pointer", textDecoration: "underline", textDecorationColor: NEON,
-              textDecorationThickness: 2, textUnderlineOffset: 3,
+              fontFamily: FONT, fontSize: "0.78rem", fontWeight: 500, color: INK_60,
+              cursor: "pointer", textDecoration: "underline", textUnderlineOffset: 3,
             }}>
               {field.moreInfo.label || "More info"}
             </summary>

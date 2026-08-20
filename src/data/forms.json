@@ -33,7 +33,6 @@
           "id": "claim-form",
           "heading": "Tell us about your claim",
           "title": "Let's get started",
-          "optional": true,
           "showIf": {
             "fieldId": "select_one",
             "equals": "Author"
@@ -53,7 +52,7 @@
                 "png",
                 "jpg"
               ],
-              "skipLabel": "Continue without the form",
+              "skipLabel": "Enter my claim details manually",
               "extract": "bartz-claim",
               "extractMap": {
                 "first": "contact.firstName",
