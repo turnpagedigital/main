@@ -545,13 +545,13 @@
           "type": "faq",
           "visible": true,
           "layout": "layout-2-sidebar",
-          "colorScheme": "light",
+          "colorScheme": "light-gray",
           "content": {
             "title": "Your questions,",
             "accent": "answered.",
             "ctaLabel": "Ask our team",
             "ctaHref": "/contact?source=ai-copyright",
-            "colorScheme": "light",
+            "colorScheme": "light-gray",
             "_bookmark": "faq"
           }
         },
