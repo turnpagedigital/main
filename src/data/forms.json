@@ -71,7 +71,7 @@
         },
         {
           "id": "claim-counts",
-          "heading": "Please confirm your claim details",
+          "heading": "Let's get started",
           "showIf": {
             "fieldId": "select_one",
             "equals": "Author"
@@ -88,13 +88,15 @@
               "id": "self_pub_count",
               "type": "number",
               "label": "Self-published works",
-              "required": true
+              "required": true,
+              "help": "Estimated author allocation of $3,000 per work."
             },
             {
               "id": "publisher_count",
               "type": "number",
               "label": "Works with publisher",
-              "required": true
+              "required": true,
+              "help": "Estimated author allocation of $1,500 per work."
             }
           ]
         },
