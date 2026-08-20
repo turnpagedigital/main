@@ -12,6 +12,7 @@ import { NEON, FONT, INK, INK_60, LINE, PAPER_2 } from "../../data/tokens.js";
 
    Layouts:
      layout-1-narrow  — centered reading column (~72 chars), best for essays
+     layout-4-medium  — middle-ground column, wider than narrow, short of full width
      layout-2-wide    — full content width, left-aligned
      layout-3-two-col — text flows across two columns on desktop
 
@@ -81,8 +82,10 @@ export default function RichTextSection({ sectionConfig }) {
   }, [markdown]);
 
   const isNarrow = layout === "layout-1-narrow";
+  const isMedium = layout === "layout-4-medium";
   const isTwoCol = layout === "layout-3-two-col";
   const schemeClass = `rt-${colorScheme}`;
+  const maxWidth = isNarrow ? 760 : isMedium ? 1000 : 1280;
 
   return (
     <section style={{
@@ -115,7 +118,7 @@ export default function RichTextSection({ sectionConfig }) {
       <div style={{
         position: "relative", zIndex: 1,
         width: "100%",
-        maxWidth: isNarrow ? 760 : 1280,
+        maxWidth,
         margin: "0 auto",
         textAlign: align === "center" ? "center" : undefined,
       }}>

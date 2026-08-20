@@ -673,6 +673,16 @@ function RichTextNarrowThumb() {
     </div>
   );
 }
+function RichTextMediumThumb() {
+  return (
+    <div style={{ width: W, height: H, background: "#fff", padding: "60px 155px", display: "flex", flexDirection: "column", gap: 14 }}>
+      <p style={{ fontFamily: FONT, fontSize: 39, fontWeight: 800, color: INK, margin: "0 0 8px" }}>Heading goes here.</p>
+      <TextLine w="100%" /><TextLine w="95%" /><TextLine w="98%" /><TextLine w="58%" />
+      <p style={{ fontFamily: FONT, fontSize: 26, fontWeight: 800, color: INK, margin: "18px 0 4px" }}>Subheading</p>
+      <TextLine w="100%" /><TextLine w="80%" /><TextLine w="45%" />
+    </div>
+  );
+}
 function RichTextWideThumb() {
   return (
     <div style={{ width: W, height: H, background: "#fff", padding: "60px 80px", display: "flex", flexDirection: "column", gap: 14 }}>
@@ -873,6 +883,7 @@ const THUMBS = {
   "image-text/layout-3-image-top":       ImageTextTopThumb,
   "rich-text":                           RichTextNarrowThumb,
   "rich-text/layout-1-narrow":           RichTextNarrowThumb,
+  "rich-text/layout-4-medium":           RichTextMediumThumb,
   "rich-text/layout-2-wide":             RichTextWideThumb,
   "rich-text/layout-3-two-col":          RichTextTwoColThumb,
 };

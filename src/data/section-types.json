@@ -800,6 +800,18 @@
           ]
         },
         {
+          "id": "layout-4-medium",
+          "displayName": "Medium",
+          "description": "Wider than Narrow, short of full width — a middle-ground reading column.",
+          "supportedColorSchemes": [
+            "white",
+            "light-gray",
+            "paper-2",
+            "charcoal",
+            "dark"
+          ]
+        },
+        {
           "id": "layout-2-wide",
           "displayName": "Wide",
           "description": "Full content width, left-aligned.",
