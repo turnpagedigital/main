@@ -479,10 +479,11 @@
             "cardStyle": "card",
             "align": "center",
             "_bookmark": "sell",
-            "cardColor": "neon",
+            "cardColor": "white",
             "formScale": 100,
             "layout": "wide",
-            "disclosure": "Turnpage Digital Markets LLC is not affiliated with the court, the claims administrator, class counsel or any other party in the Bartz v. Anthropic litigation. We do not offer legal or financial advice and submitting your claim information or an inquiry through this site does not give rise to any client or other relationship. All materials submitted will be kept confidential pursuant to our policies. "
+            "disclosure": "Turnpage Digital Markets LLC is not affiliated with the court, the claims administrator, class counsel or any other party in the Bartz v. Anthropic litigation. We do not offer legal or financial advice and submitting your claim information or an inquiry through this site does not give rise to any client or other relationship. All materials submitted will be kept confidential pursuant to our policies. ",
+            "_bottomDivider": false
           }
         },
         {
