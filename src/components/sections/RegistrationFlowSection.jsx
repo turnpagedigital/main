@@ -146,7 +146,13 @@ function defaultAnswers(flow) {
   return defaults;
 }
 
-function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle, cardColor, formScale, disclosure, align, cardAlign }) {
+// Named export (in addition to the section's default export) so the admin
+// Flows editor can render this exact component — same rendering, same
+// validation, same behavior a visitor gets — as a live preview of whatever's
+// currently in the editor, before it's saved. `previewMode` short-circuits
+// the actual submit network call (see submit() below) so clicking through a
+// preview can never send a real notification email / Sheet row / Attio push.
+export function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle, cardColor, formScale, disclosure, align, cardAlign, previewMode = false }) {
   const [answers, setAnswers] = useState(() => defaultAnswers(flow));
   const [files, setFiles] = useState({});
   const [stepIndex, setStepIndex] = useState(0);
@@ -313,6 +319,14 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
   }
 
   async function submit() {
+    // Preview never actually submits — no notification email, no Sheet row,
+    // no Attio push. Fakes the round trip so the success screen is visible
+    // (that's real content someone's editing too, worth being able to see).
+    if (previewMode) {
+      setFormState("submitting");
+      setTimeout(() => setFormState("success"), 350);
+      return;
+    }
     setFormState("submitting");
     setErrorMsg("");
     const visibleFieldIds = new Set(
@@ -361,6 +375,11 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
 
   const successNode = (
     <div role="status" style={{ textAlign: "center", padding: "3rem 1rem" }}>
+      {previewMode && (
+        <p aria-hidden="true" style={{ fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: INK_40, marginBottom: "1.4rem" }}>
+          Preview — nothing was submitted
+        </p>
+      )}
       <div aria-hidden="true" style={{
         width: 56, height: 56, borderRadius: 50,
         background: onNeonCard ? INK : NEON, color: onNeonCard ? NEON : INK,
@@ -398,6 +417,15 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
 
   const formNode = (
     <>
+      {previewMode && (
+        <div aria-hidden="true" style={{
+          display: "inline-block", fontFamily: FONT, fontSize: "0.66rem", fontWeight: 800,
+          letterSpacing: "0.14em", textTransform: "uppercase", padding: "0.25rem 0.6rem",
+          borderRadius: 4, background: WARNING_BG, color: "#7A4B00", marginBottom: "1rem",
+        }}>
+          Preview — nothing here submits
+        </div>
+      )}
       {/* Split layout already shows the intro under the left-column heading —
           don't repeat it inside the form card. */}
       {flow.intro && stepIndex === 0 && layout !== "split" && (

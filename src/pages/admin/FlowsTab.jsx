@@ -3,6 +3,7 @@ import { FONT, INK, INK_60, LINE, NEON } from "../../data/tokens.js";
 import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
 import { useTabData } from "./useTabData.js";
 import { sectionsFingerprint } from "../../lib/section-fingerprint.js";
+import { Wizard } from "../../components/sections/RegistrationFlowSection.jsx";
 
 /* FlowsTab — build multi-step registration flows (src/data/forms.json).
  *
@@ -19,6 +20,13 @@ import { sectionsFingerprint } from "../../lib/section-fingerprint.js";
  * Drop the "Registration Flow" section onto any Page Builder page and pick a
  * flow to put it live. Submissions land in the notification inbox (and
  * Attio once ATTIO_API_KEY is configured).
+ *
+ * "Live preview" (per flow, while its card is open) renders the exact same
+ * Wizard component the public site uses, fed straight from this tab's
+ * in-progress (unsaved) edit state — so it updates as you type, before you
+ * hit Save. It runs in previewMode: clicking through to the end fakes the
+ * success screen instead of actually POSTing to /api/register, so it can
+ * never send a real notification email, Sheet row, or Attio push.
  *
  * Includes an AI flow generator (POST /api/admin/flow-generator) that
  * creates a complete flow from a plain-English description. Requires
@@ -285,6 +293,12 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
   const head = { display: "flex", alignItems: "center", gap: 10, padding: "0.8rem 1rem", cursor: "pointer" };
   const label = { display: "block", fontSize: "0.72rem", color: INK_60, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 3 };
   const group = { marginBottom: "0.8rem" };
+  const [previewOpen, setPreviewOpen] = useState(false);
+  // Bumping this remounts the preview Wizard from step 1 with fresh answers
+  // (the "Restart" button) — otherwise it keeps whatever step/answers state
+  // it already had as you keep editing elsewhere, which is usually what you
+  // want (a field's label changing shouldn't kick you back to step 1).
+  const [previewKey, setPreviewKey] = useState(0);
 
   function conditionTargets(stepIndex) {
     const out = [];
@@ -326,8 +340,61 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
           fontSize: "0.7rem", fontWeight: 700, padding: "0.2rem 0.6rem", borderRadius: 4,
           background: flow.active ? "#E7F7E2" : "#F3F4F6", color: flow.active ? "#2D8E47" : INK_60,
         }}>{flow.active ? "ACTIVE" : "DRAFT"}</span>
+        {open && (
+          <button
+            type="button"
+            onClick={e => { e.stopPropagation(); setPreviewOpen(v => !v); }}
+            style={{
+              fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700, padding: "0.3rem 0.7rem",
+              borderRadius: 4, border: `1px solid ${previewOpen ? INK : NEON}`,
+              background: previewOpen ? INK : "transparent", color: previewOpen ? NEON : INK,
+              cursor: "pointer", whiteSpace: "nowrap",
+            }}
+          >
+            {previewOpen ? "✕ Close preview" : "▶ Live preview"}
+          </button>
+        )}
         <span style={{ color: INK_60 }}>{open ? "▾" : "▸"}</span>
       </div>
+
+      {open && previewOpen && (
+        <div style={{
+          position: "fixed", top: 0, right: 0, bottom: 0, width: "min(440px, 100vw)",
+          background: "#F4F5F7", borderLeft: `1px solid ${LINE}`, boxShadow: "-6px 0 28px rgba(0,0,0,0.16)",
+          zIndex: 50, display: "flex", flexDirection: "column",
+        }}>
+          <div style={{
+            display: "flex", alignItems: "center", justifyContent: "space-between",
+            padding: "0.8rem 1rem", background: "#fff", borderBottom: `1px solid ${LINE}`, flexShrink: 0,
+          }}>
+            <strong style={{ fontFamily: FONT, fontSize: "0.85rem", color: INK }}>
+              Live preview — {flow.name || "Untitled flow"}
+            </strong>
+            <div style={{ display: "flex", gap: 6 }}>
+              <button type="button" onClick={() => setPreviewKey(k => k + 1)} title="Restart from step 1"
+                style={{ ...btnStyle, fontSize: "0.72rem", padding: "0.3rem 0.6rem" }}>
+                ↺ Restart
+              </button>
+              <button type="button" onClick={() => setPreviewOpen(false)} title="Close preview"
+                style={{ ...btnStyle, fontSize: "0.72rem", padding: "0.3rem 0.6rem" }}>
+                ✕
+              </button>
+            </div>
+          </div>
+          <div style={{ flex: 1, overflowY: "auto", padding: "1.75rem 1.25rem" }}>
+            <div style={{
+              background: "#fff", border: `1px solid ${LINE}`, borderRadius: 10,
+              padding: "clamp(1.5rem,5vw,2.25rem)", boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
+            }}>
+              <Wizard key={previewKey} flow={flow} previewMode
+                layout="center" colorScheme="paper" cardStyle="float" align="left" />
+            </div>
+            <p style={{ fontFamily: FONT, fontSize: "0.72rem", color: INK_60, marginTop: "0.9rem", lineHeight: 1.6 }}>
+              This reflects your unsaved edits live. It never submits for real — clicking through to the end just fakes the success screen. Page styling (colors, layout, headline) comes from wherever this flow is placed in Page Builder, not from here.
+            </p>
+          </div>
+        </div>
+      )}
 
       {open && (
         <div style={{ padding: "0 1rem 1rem", borderTop: `1px solid ${LINE}` }}>
