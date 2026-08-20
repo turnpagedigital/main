@@ -7,15 +7,14 @@
       "active": true,
       "attioLabel": "bartz-landing",
       "attioProject": "Bartz",
-      "intro": "Submit your claim details to see what your claim is worth.\n\nNo obligation to sell. 100% confidential.\n\nHave your claim form ready to speed up your offer and payment. To transact, you will need (i) your claim form, (ii) a valid form of ID (driver's license, passport or permanent residency card) and (iii) proof of address.",
+      "intro": "No obligation to sell. 100% confidential.\n\nHave your claim form ready to speed up your offer and payment. To transact, you will need (i) your claim form, (ii) a valid form of ID (driver's license, passport or permanent residency card) and (iii) proof of address.",
       "submitLabel": "Submit",
       "successTitle": "Got it!",
       "successBody": "We've received your details and will be in touch within 48 hours with your offer and next steps.",
       "steps": [
         {
           "id": "step-6",
-          "heading": "Tell us about your claim",
-          "title": "Let's get started",
+          "heading": "Let's get started",
           "fields": [
             {
               "id": "select_one",
@@ -32,7 +31,7 @@
         {
           "id": "claim-form",
           "heading": "Tell us about your claim",
-          "title": "Let's get started",
+          "optional": true,
           "showIf": {
             "fieldId": "select_one",
             "equals": "Author"
@@ -41,7 +40,7 @@
             {
               "id": "claim_form",
               "type": "file",
-              "label": "Please share your claim form",
+              "label": "Upload your form to auto-populate your details",
               "required": true,
               "showIf": {
                 "fieldId": "select_one",
@@ -52,11 +51,7 @@
                 "png",
                 "jpg"
               ],
-              "help": "If your form is not available, you may still proceed, but",
-              "moreInfo": {
-                "label": "Where do I find my claim form?",
-                "body": "The plan administrator will have emailed this to you. If you don't have it handy, you may request it by emailing info@AnthropicCopyrightSettlement.com or calling 1 877-206-2314. Click \"Next\" to enter your details manually."
-              },
+              "skipLabel": "Continue without the form",
               "extract": "bartz-claim",
               "extractMap": {
                 "first": "contact.firstName",
@@ -64,13 +59,17 @@
                 "email": "contact.email",
                 "self_pub_count": "counts.self",
                 "publisher_count": "counts.publisher"
+              },
+              "moreInfo": {
+                "label": "Where do I find my claim form?",
+                "body": "The plan administrator will have emailed this to you. If you don't have it handy, you may request it by emailing info@AnthropicCopyrightSettlement.com or calling 1 877-206-2314. Click \"Next\" to enter your details manually."
               }
             }
           ]
         },
         {
           "id": "claim-counts",
-          "heading": "Please confirm your claim details",
+          "heading": "Confirm your works eligible for settlement.",
           "showIf": {
             "fieldId": "select_one",
             "equals": "Author"
@@ -79,7 +78,7 @@
             {
               "id": "works_summary",
               "type": "works-summary",
-              "label": "Works we found on your claim form",
+              "label": "Below are the works we found on your claim form:",
               "required": false,
               "help": "Self-published works count at the full rate, works with a publisher at half rate. Multi-author works aren't purchased."
             },
@@ -87,31 +86,36 @@
               "id": "self_pub_count",
               "type": "number",
               "label": "Self-published works",
-              "required": true
+              "required": true,
+              "help": "Estimated author allocation of $3,000 per work."
             },
             {
               "id": "publisher_count",
               "type": "number",
               "label": "Works with publisher",
-              "required": true
+              "required": true,
+              "help": "Estimated author allocation of $1,500 per work."
             }
           ]
         },
         {
           "id": "step-4",
-          "heading": "Please provide your details",
+          "heading": "Confirm your name and contact info.",
+          "explainer": "Using the same name and email as on your claim form will expedite your sale process.",
           "fields": [
             {
               "id": "first",
               "type": "text",
               "label": "First",
-              "required": true
+              "required": true,
+              "row": "Row"
             },
             {
               "id": "last",
               "type": "text",
               "label": "Last",
-              "required": true
+              "required": true,
+              "row": "Row"
             },
             {
               "id": "publisher_name",
@@ -122,26 +126,18 @@
                 "fieldId": "select_one",
                 "equals": "Publisher"
               }
-            }
-          ]
-        },
-        {
-          "id": "step-5",
-          "heading": "Please provide your contact info so we can reach you.",
-          "fields": [
-            {
-              "id": "email",
-              "type": "email",
-              "label": "Email",
-              "required": true,
-              "row": "Row"
             },
             {
-              "id": "phone_optional",
-              "type": "phone",
-              "label": "Phone (optional)",
-              "required": false,
-              "row": "Row"
+              "id": "email",
+              "type": "text",
+              "label": "Email",
+              "required": false
+            },
+            {
+              "id": "phone",
+              "type": "text",
+              "label": "Phone",
+              "required": false
             }
           ]
         },
@@ -153,7 +149,7 @@
             {
               "id": "additional_context",
               "type": "textarea",
-              "label": "Additional context",
+              "label": "Optional context",
               "required": false,
               "hideLabel": true,
               "help": "Additional context about your claim (optional)"
@@ -162,9 +158,8 @@
         },
         {
           "id": "kyc",
-          "heading": "Please verify your identity.",
-          "title": "KYC",
-          "explainer": "To expedite the sale of your claim, please verify your identity with Sumsub.",
+          "heading": "Verify your identity.",
+          "explainer": "To expedite the sale of your claim, please complete KYC with Sumsub.",
           "optional": true,
           "showIf": {
             "fieldId": "select_one",
@@ -185,7 +180,7 @@
         },
         {
           "id": "your-offer",
-          "heading": "Your offer",
+          "heading": "Review your estimated offer.",
           "showIf": {
             "fieldId": "select_one",
             "equals": "Author"
@@ -194,8 +189,9 @@
             {
               "id": "estimated_offer",
               "type": "computed",
-              "label": "Your estimated offer",
+              "label": "Offer",
               "required": false,
+              "hideLabel": true,
               "showIf": {
                 "fieldId": "select_one",
                 "equals": "Author"
@@ -205,7 +201,7 @@
               "publisherField": "publisher_count",
               "prefix": "$",
               "suffix": "",
-              "help": "This is an estimate — we will confirm your final offer by email."
+              "help": "This is an indicative offer only. We will confirm your final offer by email after reviewing your submission."
             }
           ]
         }
