@@ -438,11 +438,11 @@
               }
             ],
             "cardStyle": "standard",
-            "cardRadius": "rounded",
+            "cardRadius": "square",
             "_bookmark": "how-it-works",
-            "backgroundImage": "/library/scanning-books.jpg",
-            "imageFilterStrength": 75,
-            "imageFilter": "dark",
+            "backgroundImage": "/library/joel-filipe-pyhpjejuyhy-unsplash.jpg",
+            "imageFilterStrength": 60,
+            "imageFilter": "none",
             "cardBrightness": 100,
             "cardBlur": 43,
             "stepsLayout": "5"
