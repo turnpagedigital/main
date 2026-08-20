@@ -296,7 +296,7 @@
             "layout": "minimal",
             "align": "center",
             "valueColor": "auto",
-            "density": "normal",
+            "density": "compact",
             "cardRadius": 14
           }
         },
@@ -314,7 +314,8 @@
             "align": "left",
             "heading1": "A",
             "heading1Accent": "$1.5 billion win",
-            "heading1After": "for copyright holders."
+            "heading1After": "for copyright holders.",
+            "height": "small"
           }
         },
         {
@@ -381,9 +382,9 @@
                 "figure": "You don't have to wait.",
                 "title": "We help authors and publishers recover faster. See how it works below.",
                 "note": "",
-                "highlight": true,
+                "highlight": false,
                 "kicker": " ",
-                "cardStyle": "dark"
+                "cardStyle": "white"
               }
             ],
             "kicker": "Scenario",
