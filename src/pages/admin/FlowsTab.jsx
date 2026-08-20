@@ -47,7 +47,7 @@ function blankField() {
   return { id: "", type: "text", label: "", required: false };
 }
 function blankStep(n) {
-  return { id: `step-${n}`, title: "", fields: [blankField()] };
+  return { id: `step-${n}`, heading: "", fields: [blankField()] };
 }
 function blankFlow() {
   return {
@@ -66,7 +66,8 @@ function sanitizeFlow(f) {
     submitLabel: f.submitLabel || "Submit",
     successTitle: f.successTitle || "", successBody: f.successBody || "",
     steps: Array.isArray(f.steps) ? f.steps.map(s => ({
-      id: s.id || "", title: s.title || "",
+      id: s.id || "", heading: s.heading || "", title: s.title || "", explainer: s.explainer || "",
+      optional: Boolean(s.optional),
       ...(s.showIf && s.showIf.fieldId ? { showIf: { fieldId: s.showIf.fieldId, equals: s.showIf.equals ?? "" } } : {}),
       fields: Array.isArray(s.fields) ? s.fields.map(fl => ({
         id: fl.id || "", type: fl.type || "text", label: fl.label || "",
@@ -423,13 +424,29 @@ function StepCard({ step, index, total, conditionTargets, priorStepFields = [], 
     <div style={{ border: `1px solid ${LINE}`, borderRadius: 6, padding: "0.8rem", marginBottom: "0.7rem", background: "#F9FAFB" }}>
       <div style={{ display: "flex", gap: 8, alignItems: "flex-end", marginBottom: "0.6rem" }}>
         <div style={{ flex: 1 }}>
-          <label style={label}>Step {index + 1} title</label>
-          <input style={inputStyle} value={step.title}
-            onChange={e => onChange({ title: e.target.value, id: step.id || slugify(e.target.value) })} />
+          <label style={label}>Step {index + 1} — title (optional, small text shown above the question)</label>
+          <input style={inputStyle} placeholder="e.g. Almost there" value={step.title || ""}
+            onChange={e => onChange({ title: e.target.value })} />
         </div>
         <button style={iconBtnStyle(index === 0)} title="Move up" disabled={index === 0} onClick={() => onMove(-1)}>↑</button>
         <button style={iconBtnStyle(index === total - 1)} title="Move down" disabled={index === total - 1} onClick={() => onMove(1)}>↓</button>
         <button style={{ ...iconBtnStyle(total === 1), color: "#C03030" }} title="Delete step" disabled={total === 1} onClick={onRemove}>✕</button>
+      </div>
+      <div style={{ marginBottom: "0.6rem" }}>
+        <label style={label}>Question / heading (required — this is the big text people actually see)</label>
+        <input style={inputStyle} value={step.heading || ""}
+          onChange={e => onChange({ heading: e.target.value, id: step.id || slugify(e.target.value) })} />
+      </div>
+      <div style={{ marginBottom: "0.6rem" }}>
+        <label style={label}>Explainer (optional, small text shown below the question)</label>
+        <textarea style={{ ...inputStyle, minHeight: 44 }} placeholder="e.g. This helps us confirm you're the rights holder."
+          value={step.explainer || ""} onChange={e => onChange({ explainer: e.target.value })} />
+      </div>
+      <div style={{ marginBottom: "0.7rem" }}>
+        <label style={{ display: "flex", alignItems: "center", gap: 7, fontSize: "0.82rem", color: INK, cursor: "pointer" }}>
+          <input type="checkbox" checked={Boolean(step.optional)} onChange={e => onChange({ optional: e.target.checked })} />
+          Optional step — show a "Skip this step" link so people can move on without answering anything here
+        </label>
       </div>
 
       {/* Branching condition */}

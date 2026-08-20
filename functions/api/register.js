@@ -118,6 +118,22 @@ export async function onRequestPost(context) {
       answers[k] = v.trim();
     }
 
+    // A required file field with skipLabel can be satisfied by a "I don't
+    // have it" checkbox instead of an attachment (see RegistrationFlowSection.jsx
+    // skipAnswerKey). That checkbox's answer travels under a synthetic
+    // `${fieldId}__skip` key — not a real field id, so it's read directly
+    // here rather than through the fieldById-driven loop above, and kept out
+    // of `answers` so it can never leak into the notification email/Attio
+    // note (those iterate by defined field, not by raw answer key).
+    const skipFlags = {};
+    for (const step of flow.steps || []) {
+      for (const f of step.fields || []) {
+        if (f.type === "file" && f.skipLabel && rawAnswers[`${f.id}__skip`] === "Yes") {
+          skipFlags[f.id] = true;
+        }
+      }
+    }
+
     // Enforce required fields on the steps (and, within a step, the fields)
     // actually visible for these answers
     const steps = visibleSteps(flow, answers);
@@ -126,11 +142,12 @@ export async function onRequestPost(context) {
     );
     const files = Array.isArray(body.files) ? body.files.slice(0, MAX_FILES) : [];
     for (const step of steps) {
+      if (step.optional) continue; // visitor may have skipped this step entirely
       for (const f of step.fields || []) {
         if (!isFieldVisible(f, answers)) continue;
         if (!f.required) continue;
         if (f.type === "file") {
-          if (!files.some((x) => x && x.fieldId === f.id)) return fail(`Missing required file: ${f.label}`);
+          if (!skipFlags[f.id] && !files.some((x) => x && x.fieldId === f.id)) return fail(`Missing required file: ${f.label}`);
         } else if (!answers[f.id]) {
           return fail(`Missing required answer: ${f.label}`);
         }

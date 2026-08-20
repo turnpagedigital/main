@@ -121,15 +121,16 @@ function IntroText({ text, dark = false, style = {}, scopeClass }) {
   );
 }
 
-// A required "choice" (button-group) field with no answer yet defaults to its
-// first option, so a branch driver like Authored/Published starts pre-picked
-// and its branch-specific fields (see field-level showIf) are visible on load
-// instead of the page opening on an empty, undecided question.
+// A required "choice" (button-group) or "select" (dropdown) field with no
+// answer yet defaults to its first option, so a branch driver like
+// Author/Publisher starts pre-picked and its branch-specific fields (see
+// field-level showIf) are visible on load instead of the page opening on an
+// empty, undecided question.
 function defaultAnswers(flow) {
   const defaults = {};
   for (const s of flow.steps || []) {
     for (const f of s.fields || []) {
-      if (f.type === "choice" && f.required && Array.isArray(f.options) && f.options.length) {
+      if ((f.type === "choice" || f.type === "select") && f.required && Array.isArray(f.options) && f.options.length) {
         defaults[f.id] = f.options[0];
       }
     }
@@ -294,14 +295,33 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
     if (stepIndex > 0) setStepIndex(i => i - 1);
   }
 
+  // Bypasses validateStep() entirely — for a step marked `optional`, so its
+  // fields' required flags only bite if the visitor actually engages with
+  // the step instead of skipping past it.
+  function skip() {
+    setStepError("");
+    if (!isLast) setStepIndex(i => i + 1);
+    else submit();
+  }
+
   async function submit() {
     setFormState("submitting");
     setErrorMsg("");
     const visibleFieldIds = new Set(
       visibleSteps.flatMap(s => (s.fields || []).filter(f => fieldVisible(f, answers)).map(f => f.id)),
     );
+    // The claim-form skip checkbox's answer lives under a synthetic
+    // `${fieldId}__skip` key (see skipAnswerKey) — not a real field id, so
+    // it's outside visibleFieldIds and needs including explicitly or the
+    // server never learns the box was checked and rejects a legitimately
+    // skipped upload.
+    const skipKeys = new Set(
+      visibleSteps.flatMap(s => (s.fields || [])
+        .filter(f => f.type === "file" && f.skipLabel && fieldVisible(f, answers))
+        .map(f => skipAnswerKey(f))),
+    );
     const cleanAnswers = Object.fromEntries(
-      Object.entries(answers).filter(([k]) => visibleFieldIds.has(k)),
+      Object.entries(answers).filter(([k]) => visibleFieldIds.has(k) || skipKeys.has(k)),
     );
     const cleanFiles = Object.entries(files)
       .filter(([k, v]) => v && visibleFieldIds.has(k))
@@ -392,9 +412,19 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
           </p>
         </>
       )}
-      <h3 style={{ fontFamily: FONT, fontWeight: 800, fontSize: "clamp(1.5rem, 3vw, 1.75rem)", color: INK, marginBottom: "2.1rem", letterSpacing: "-0.01em" }}>
-        {step.title}
+      {step.title && (
+        <p className="regflow-card-text" style={{ fontFamily: FONT, fontSize: "0.85rem", fontWeight: 600, color: INK_60, marginBottom: "0.5rem" }}>
+          {step.title}
+        </p>
+      )}
+      <h3 style={{ fontFamily: FONT, fontWeight: 800, fontSize: "clamp(1.5rem, 3vw, 1.75rem)", color: INK, marginBottom: step.explainer ? "0.7rem" : "2.1rem", letterSpacing: "-0.01em" }}>
+        {step.heading}
       </h3>
+      {step.explainer && (
+        <p className="regflow-card-text" style={{ fontFamily: FONT, fontSize: "0.92rem", color: INK_60, lineHeight: 1.6, marginBottom: "2.1rem" }}>
+          {step.explainer}
+        </p>
+      )}
       <div className="field-light">
         {(step.fields || []).filter(f => fieldVisible(f, answers)).map(f => (
           <FieldControl key={f.id} field={f} value={answers[f.id]} file={files[f.id]}
@@ -431,6 +461,15 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
           {extracting ? "Reading your claim form…" : formState === "submitting" ? "Sending..." : isLast ? (flow.submitLabel || "Submit") : "Next →"}
         </button>
       </div>
+      {step.optional && (
+        <button type="button" onClick={skip} disabled={busy} className="regflow-card-text" style={{
+          display: "block", width: "100%", marginTop: "0.9rem", background: "none", border: "none", padding: 0,
+          cursor: busy ? "wait" : "pointer", fontFamily: FONT, fontSize: "0.85rem", color: INK_60,
+          textDecoration: "underline", textUnderlineOffset: "3px",
+        }}>
+          Skip this step →
+        </button>
+      )}
     </>
   );
 
@@ -884,11 +923,25 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
             </p>
           </details>
         )}
+        <label htmlFor={id} style={{
+          display: "inline-flex", alignItems: "center", gap: "0.65rem",
+          padding: "0.9rem 1.5rem", cursor: "pointer",
+          border: `1.5px solid ${file ? INK : LINE_STRONG}`,
+          background: file ? INK : SURFACE, color: file ? TEXT : INK,
+          fontFamily: FONT, fontWeight: 700, fontSize: "0.95rem",
+          transition: "all 0.15s",
+        }}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M12 16V4M12 4l-4 4M12 4l4 4" />
+            <path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
+          </svg>
+          {file ? "Change file" : "Choose file"}
+        </label>
         <input id={id} type="file"
           accept={(field.accept || ["pdf", "png", "jpg"]).map(a => "." + a).join(",")}
           onChange={e => onFile(e.target.files && e.target.files[0])}
           aria-required={(field.required && !field.skipLabel) || undefined}
-          style={{ fontFamily: FONT, fontSize: "0.95rem", padding: "0.9rem 0" }} />
+          style={VISUALLY_HIDDEN_STYLE} />
         {file && (
           <p style={{ fontFamily: FONT, fontSize: "0.8rem", color: INK_60, marginTop: "0.3rem" }}>
             Attached: {file.name}{" "}

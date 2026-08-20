@@ -115,7 +115,10 @@ function validateFlows(flows) {
       const s = f.steps[j];
       if (!s || typeof s !== "object") return `flows[${i}].steps[${j}] is not an object`;
       if (!slugOk(s.id)) return `flows[${i}].steps[${j}].id must be a lowercase slug`;
-      if (typeof s.title !== "string" || !s.title.trim()) return `flows[${i}].steps[${j}].title is required`;
+      if (typeof s.heading !== "string" || !s.heading.trim()) return `flows[${i}].steps[${j}].heading is required`;
+      if (s.title !== undefined && typeof s.title !== "string") return `flows[${i}].steps[${j}].title must be a string`;
+      if (s.explainer !== undefined && typeof s.explainer !== "string") return `flows[${i}].steps[${j}].explainer must be a string`;
+      if (s.optional !== undefined && typeof s.optional !== "boolean") return `flows[${i}].steps[${j}].optional must be true/false`;
       if (!Array.isArray(s.fields) || s.fields.length === 0) return `flows[${i}].steps[${j}].fields must be non-empty`;
       if (s.fields.length > MAX_FIELDS) return `flows[${i}].steps[${j}]: at most ${MAX_FIELDS} fields`;
       if (s.showIf !== undefined && s.showIf !== null) {
@@ -212,7 +215,10 @@ function normalizeFlow(f) {
     successBody: String(f.successBody || "We'll be in touch shortly.").trim().slice(0, LONG),
     steps: f.steps.map(s => ({
       id: String(s.id),
-      title: String(s.title).trim().slice(0, SHORT),
+      heading: String(s.heading).trim().slice(0, SHORT),
+      ...(s.title && String(s.title).trim() ? { title: String(s.title).trim().slice(0, SHORT) } : {}),
+      ...(s.explainer && String(s.explainer).trim() ? { explainer: String(s.explainer).trim().slice(0, LONG) } : {}),
+      ...(s.optional ? { optional: true } : {}),
       ...(s.showIf && s.showIf.fieldId
         ? { showIf: { fieldId: String(s.showIf.fieldId), equals: String(s.showIf.equals) } }
         : {}),
