@@ -295,7 +295,9 @@
             "colorScheme": "paper",
             "layout": "minimal",
             "align": "center",
-            "valueColor": "auto"
+            "valueColor": "auto",
+            "density": "normal",
+            "cardRadius": 14
           }
         },
         {
