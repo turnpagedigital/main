@@ -253,15 +253,19 @@ export function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorSch
     }
   }
 
-  function validateStep() {
+  // Accepts an optional answers override so a click handler that just set a
+  // new answer (e.g. skipFileField below) can validate and advance against
+  // the fresh value immediately, instead of the stale `answers` from closure
+  // that setAnswers/setAnswer hasn't finished re-rendering with yet.
+  function validateStep(a = answers) {
     for (const f of step.fields || []) {
-      if (!fieldVisible(f, answers)) continue;
+      if (!fieldVisible(f, a)) continue;
       if (f.type === "computed") continue; // display-only, never blocks
-      const v = answers[f.id];
+      const v = a[f.id];
       const empty = v === undefined || v === null || String(v).trim() === "";
       if (f.required) {
         if (f.type === "file") {
-          const skipped = f.skipLabel && answers[skipAnswerKey(f)] === "Yes";
+          const skipped = f.skipLabel && a[skipAnswerKey(f)] === "Yes";
           if (!files[f.id] && !skipped) return `Please attach: ${f.label}`;
         } else if (empty) {
           return `Please answer: ${f.label}`;
@@ -286,6 +290,21 @@ export function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorSch
     else submit();
   }
 
+  // A required file field with `skipLabel` set renders an alternate button
+  // next to Next (see skippableFileFields below) reading that label (e.g.
+  // "I don't have my claim form"). Clicking it marks the field satisfied
+  // without a file and immediately tries to advance — same validation as
+  // Next, so any OTHER required field still on this step still blocks.
+  function skipFileField(field) {
+    const nextAnswers = { ...answers, [skipAnswerKey(field)]: "Yes" };
+    setAnswers(nextAnswers);
+    const err = validateStep(nextAnswers);
+    if (err) { setStepError(err); return; }
+    setStepError("");
+    if (!isLast) setStepIndex(i => i + 1);
+    else submit(nextAnswers);
+  }
+
   function back() {
     setStepError("");
     if (stepIndex > 0) setStepIndex(i => i - 1);
@@ -300,7 +319,7 @@ export function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorSch
     else submit();
   }
 
-  async function submit() {
+  async function submit(a = answers) {
     // Preview never actually submits — no notification email, no Sheet row,
     // no Attio push. Fakes the round trip so the success screen is visible
     // (that's real content someone's editing too, worth being able to see).
@@ -312,20 +331,20 @@ export function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorSch
     setFormState("submitting");
     setErrorMsg("");
     const visibleFieldIds = new Set(
-      visibleSteps.flatMap(s => (s.fields || []).filter(f => fieldVisible(f, answers)).map(f => f.id)),
+      visibleSteps.flatMap(s => (s.fields || []).filter(f => fieldVisible(f, a)).map(f => f.id)),
     );
-    // The claim-form skip checkbox's answer lives under a synthetic
+    // The claim-form skip button's answer lives under a synthetic
     // `${fieldId}__skip` key (see skipAnswerKey) — not a real field id, so
     // it's outside visibleFieldIds and needs including explicitly or the
-    // server never learns the box was checked and rejects a legitimately
-    // skipped upload.
+    // server never learns the alternative was taken and rejects a
+    // legitimately skipped upload.
     const skipKeys = new Set(
       visibleSteps.flatMap(s => (s.fields || [])
-        .filter(f => f.type === "file" && f.skipLabel && fieldVisible(f, answers))
+        .filter(f => f.type === "file" && f.skipLabel && fieldVisible(f, a))
         .map(f => skipAnswerKey(f))),
     );
     const cleanAnswers = Object.fromEntries(
-      Object.entries(answers).filter(([k]) => visibleFieldIds.has(k) || skipKeys.has(k)),
+      Object.entries(a).filter(([k]) => visibleFieldIds.has(k) || skipKeys.has(k)),
     );
     const cleanFiles = Object.entries(files)
       .filter(([k, v]) => v && visibleFieldIds.has(k))
@@ -397,6 +416,14 @@ export function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorSch
   const stepReady = !validateStep();
   const busy = formState === "submitting" || extracting;
 
+  // Required file fields on this step that offer a skipLabel alternative and
+  // don't yet have a file attached — each renders its own secondary button
+  // next to Next (see skipFileField above). Once a file's attached, the
+  // alternative no longer applies, so it drops out of this list.
+  const skippableFileFields = (step.fields || []).filter(
+    f => f.required && f.type === "file" && f.skipLabel && fieldVisible(f, answers) && !files[f.id],
+  );
+
   const formNode = (
     <>
       {previewMode && (
@@ -447,7 +474,7 @@ export function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorSch
                   <FieldControl field={f} value={answers[f.id]} file={files[f.id]}
                     answers={answers} quote={quotes[f.id]}
                     extraction={extraction} extracting={extracting} extractError={extractError}
-                    onChange={v => setAnswer(f.id, v)} onFile={fl => setFile(f, fl)} onAnswer={setAnswer}
+                    onChange={v => setAnswer(f.id, v)} onFile={fl => setFile(f, fl)}
                     noBottomMargin />
                 </div>
               ))}
@@ -456,7 +483,7 @@ export function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorSch
             <FieldControl key={group.field.id} field={group.field} value={answers[group.field.id]} file={files[group.field.id]}
               answers={answers} quote={quotes[group.field.id]}
               extraction={extraction} extracting={extracting} extractError={extractError}
-              onChange={v => setAnswer(group.field.id, v)} onFile={fl => setFile(group.field, fl)} onAnswer={setAnswer} />
+              onChange={v => setAnswer(group.field.id, v)} onFile={fl => setFile(group.field, fl)} />
           )
         ))}
         <style>{`
@@ -484,6 +511,12 @@ export function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorSch
             ← Back
           </button>
         )}
+        {skippableFileFields.map(f => (
+          <button key={f.id} type="button" onClick={() => skipFileField(f)} disabled={busy}
+            className="btn-ghost-ink" style={{ flexShrink: 0, cursor: busy ? "wait" : "pointer" }}>
+            {f.skipLabel}
+          </button>
+        ))}
         <button
           type="button"
           onClick={next}
@@ -551,11 +584,12 @@ function fieldVisible(field, answers) {
 }
 
 // A required file field with `skipLabel` set can also be satisfied by
-// checking "I don't have it" instead of attaching a file — e.g. not every
-// claimant has their claim form handy. The checkbox's answer is stored
-// under this synthetic key; it's UI-only bookkeeping (not a real field id
-// in the flow) so it's dropped automatically wherever answers are filtered
-// down to known field ids (submit, /api/register), same as any other stray key.
+// clicking an alternate button (e.g. "I don't have my claim form") next to
+// Next instead of attaching a file — e.g. not every claimant has their claim
+// form handy. That click's answer is stored under this synthetic key; it's
+// UI-only bookkeeping (not a real field id in the flow) so it's dropped
+// automatically wherever answers are filtered down to known field ids
+// (submit, /api/register), same as any other stray key.
 function skipAnswerKey(field) {
   return `${field.id}__skip`;
 }
@@ -838,7 +872,7 @@ const VISUALLY_HIDDEN_STYLE = {
   overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0,
 };
 
-function FieldControl({ field, value, file, answers = {}, quote, extraction = null, extracting = false, extractError = "", onChange, onFile, onAnswer, noBottomMargin = false }) {
+function FieldControl({ field, value, file, answers = {}, quote, extraction = null, extracting = false, extractError = "", onChange, onFile, noBottomMargin = false }) {
   const id = React.useId();
   const label = (
     <label htmlFor={id} style={field.hideLabel ? VISUALLY_HIDDEN_STYLE : FIELD_LABEL_STYLE}>
@@ -1017,14 +1051,6 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
               remove
             </button>
           </p>
-        )}
-        {field.skipLabel && (
-          <label style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginTop: "0.8rem", cursor: "pointer", fontFamily: FONT, fontSize: "0.9rem", color: INK }}>
-            <input type="checkbox" checked={answers[skipAnswerKey(field)] === "Yes"}
-              onChange={e => onAnswer(skipAnswerKey(field), e.target.checked ? "Yes" : "")}
-              style={{ accentColor: NEON, width: 18, height: 18, flexShrink: 0 }} />
-            {field.skipLabel}
-          </label>
         )}
         {field.extract && extracting && (
           <p role="status" style={{ fontFamily: FONT, fontSize: "0.85rem", color: INK, marginTop: "0.5rem", fontWeight: 600 }}>

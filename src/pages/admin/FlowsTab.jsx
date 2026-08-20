@@ -754,12 +754,17 @@ function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, o
             </p>
           )}
           <input style={{ ...inputStyle, fontSize: "0.82rem", marginTop: 6 }}
-            placeholder="Can't-upload checkbox text (e.g. I don't have my claim form) — leave blank to require the file with no alternative"
+            placeholder="Can't-upload button text (e.g. I don't have my claim form) — leave blank to require the file with no alternative"
             value={field.skipLabel || ""}
             onChange={e => onChange({ skipLabel: e.target.value })} />
           {field.skipLabel && !field.required && (
             <p style={{ fontSize: "0.72rem", color: "#B4700F", margin: "4px 0 0" }}>
-              This checkbox only blocks Next when the field is also marked <strong>Req</strong> above — check that too, or the file stays fully optional.
+              This button only appears when the field is also marked <strong>Req</strong> above — check that too, or the file stays fully optional.
+            </p>
+          )}
+          {field.skipLabel && field.required && (
+            <p style={{ fontSize: "0.72rem", color: INK_60, margin: "4px 0 0" }}>
+              Renders as a button next to "Next" — clicking it satisfies this field without a file, then advances (any other required field on this step still has to be answered).
             </p>
           )}
           <input style={{ ...inputStyle, fontSize: "0.82rem", marginTop: 6 }}
