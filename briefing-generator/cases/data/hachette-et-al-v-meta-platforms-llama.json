@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73294740/elsevier-inc-v-meta-platforms-inc/",
     "date_last_filing": "2026-08-18",
     "meta_fetched_at": "2026-08-19T01:57:38.064448+00:00",
-    "fetched_at": "2026-08-19T23:42:09.494385+00:00",
-    "as_of": "Aug 19, 2026",
+    "fetched_at": "2026-08-20T01:55:18.860465+00:00",
+    "as_of": "Aug 20, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 2,
     "recent": [
       {
         "entry_number": 96,
@@ -48,7 +48,7 @@
         "time_filed": "11:11:38",
         "date_display": "Aug 17, 2026",
         "description": "MEMO ENDORSEMENT granting 93 Motion to Withdraw as Attorney. ENDORSEMENT: SO ORDERED. Attorney Samuel Rubinstein terminated. (Signed by Judge P. Kevin Castel on 8/17/2026) (vfr) (Entered: 08/17/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -80,7 +80,7 @@
         "time_filed": "11:11:38",
         "date_display": "Aug 17, 2026",
         "description": "MEMO ENDORSEMENT granting 93 Motion to Withdraw as Attorney. ENDORSEMENT: SO ORDERED. Attorney Samuel Rubinstein terminated. (Signed by Judge P. Kevin Castel on 8/17/2026) (vfr) (Entered: 08/17/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
