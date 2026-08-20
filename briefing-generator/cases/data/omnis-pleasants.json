@@ -15,44 +15,204 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-20",
-    "meta_fetched_at": "2026-08-20T22:47:45.345852+00:00",
-    "fetched_at": "2026-08-20T22:47:45.345852+00:00",
+    "meta_fetched_at": "2026-08-20T23:43:40.171366+00:00",
+    "fetched_at": "2026-08-20T23:43:40.171366+00:00",
     "as_of": "Aug 20, 2026",
     "backfilled": true,
-    "new_in_72h": 7,
+    "new_in_72h": 23,
     "recent": [
       {
-        "entry_number": 104,
+        "entry_number": 124,
         "date_filed": "2026-08-20",
-        "time_filed": "17:54:45",
+        "time_filed": "19:28:53",
         "date_display": "Aug 20, 2026",
-        "description": "Affidavit/Declaration of Service",
+        "description": "Subpoena",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 103,
+        "entry_number": 123,
         "date_filed": "2026-08-20",
-        "time_filed": "17:33:30",
+        "time_filed": "19:27:28",
         "date_display": "Aug 20, 2026",
-        "description": "Motion to Establish Deadline to File Proofs of Claim",
+        "description": "Subpoena",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 102,
+        "entry_number": 122,
         "date_filed": "2026-08-20",
-        "time_filed": "16:12:41",
+        "time_filed": "19:25:59",
         "date_display": "Aug 20, 2026",
-        "description": "Certificate of Service",
+        "description": "Subpoena",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 124,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:28:53",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 123,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:27:28",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 122,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:25:59",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 121,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:24:06",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 120,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:22:28",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 119,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:21:08",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 118,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:19:34",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 117,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:18:06",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 116,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:16:31",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 115,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:15:03",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 114,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:13:13",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 109,
+        "date_filed": "2026-08-20",
+        "time_filed": "18:57:55",
+        "date_display": "Aug 20, 2026",
+        "description": "Certificate of No Objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 108,
+        "date_filed": "2026-08-20",
+        "time_filed": "18:54:55",
+        "date_display": "Aug 20, 2026",
+        "description": "Certificate of No Objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 107,
+        "date_filed": "2026-08-20",
+        "time_filed": "18:52:11",
+        "date_display": "Aug 20, 2026",
+        "description": "Certificate of No Objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 106,
+        "date_filed": "2026-08-20",
+        "time_filed": "18:48:56",
+        "date_display": "Aug 20, 2026",
+        "description": "Certificate of No Objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 105,
+        "date_filed": "2026-08-20",
+        "time_filed": "18:47:19",
+        "date_display": "Aug 20, 2026",
+        "description": "Certificate of No Objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 104,
         "date_filed": "2026-08-20",
