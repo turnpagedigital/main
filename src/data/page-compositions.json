@@ -271,7 +271,7 @@
           "type": "stats-band",
           "visible": true,
           "layout": "minimal",
-          "colorScheme": "paper",
+          "colorScheme": "neon",
           "content": {
             "stats": [
               {
@@ -292,7 +292,7 @@
             ],
             "footnoteKey": "stats.footnote",
             "footnote": " ",
-            "colorScheme": "paper",
+            "colorScheme": "neon",
             "layout": "minimal",
             "align": "center",
             "valueColor": "auto",
@@ -308,7 +308,7 @@
           "colorScheme": "white",
           "content": {
             "eyebrow": "",
-            "markdown": "### Authors and publishers are entitled to their share of $3,000 for each covered work from the Anthropic settlement fund, but payments won't flow to rights holders until all appeals have been resolved, ***which could take many months or years*.**",
+            "markdown": "### Authors and publishers are entitled to their share of $3,000 for each covered work from the Anthropic settlement fund, but payments won't flow to rights holders until all appeals have been resolved, ***which could take years*.**",
             "layout": "layout-2-wide",
             "colorScheme": "white",
             "align": "left",
@@ -381,9 +381,9 @@
                 "figure": "You don't have to wait.",
                 "title": "We help authors and publishers recover faster. See how it works below.",
                 "note": "",
-                "highlight": false,
+                "highlight": true,
                 "kicker": " ",
-                "cardStyle": "light-gray"
+                "cardStyle": "dark"
               }
             ],
             "kicker": "Scenario",
@@ -437,10 +437,10 @@
               }
             ],
             "cardStyle": "standard",
-            "cardRadius": "square",
+            "cardRadius": "rounded",
             "_bookmark": "how-it-works",
             "backgroundImage": "/library/scanning-books.jpg",
-            "imageFilterStrength": 80,
+            "imageFilterStrength": 75,
             "imageFilter": "dark",
             "cardBrightness": 100,
             "cardBlur": 43,
@@ -467,20 +467,21 @@
           "type": "registration-flow",
           "visible": true,
           "layout": "wide",
-          "colorScheme": "paper",
+          "colorScheme": "light-gray",
           "content": {
             "flowId": "bartz-registration",
-            "eyebrow": "Ready to sell?",
-            "title": "Get your",
+            "eyebrow": "",
+            "title": "Get an",
             "accent": "instant quote.",
-            "colorScheme": "paper",
+            "colorScheme": "light-gray",
             "cardRadius": 5,
             "cardStyle": "card",
-            "align": "left",
+            "align": "center",
             "_bookmark": "sell",
             "cardColor": "white",
             "formScale": 100,
-            "layout": "wide"
+            "layout": "wide",
+            "disclosure": "Turnpage Digital Markets LLC is not affiliated with the court, the claims administrator, class counsel or any other party in the Bartz v. Anthropic litigation. We do not offer legal or financial advice and submitting your claim information or an inquiry through this site does not give rise to any client or other relationship. All materials submitted will be kept confidential pursuant to our policies. "
           }
         },
         {
@@ -543,35 +544,14 @@
           "type": "faq",
           "visible": true,
           "layout": "layout-2-sidebar",
-          "colorScheme": "light-gray",
+          "colorScheme": "light",
           "content": {
             "title": "Your questions,",
             "accent": "answered.",
             "ctaLabel": "Ask our team",
             "ctaHref": "/contact?source=ai-copyright",
-            "colorScheme": "light-gray",
+            "colorScheme": "light",
             "_bookmark": "faq"
-          }
-        },
-        {
-          "id": "sec-1787168624162-oh6p",
-          "type": "rich-text",
-          "visible": true,
-          "layout": "layout-1-narrow",
-          "colorScheme": "light-gray",
-          "content": {
-            "eyebrow": "",
-            "align": "center",
-            "height": "auto",
-            "heading1": "",
-            "heading1Accent": "",
-            "heading1After": "",
-            "backgroundImage": "",
-            "imageOpacity": 35,
-            "imageBlur": 0,
-            "markdown": "Turnpage Digital Markets LLC is not affiliated with the court, the claims administrator, class counsel or any other party in the Bartz v. Anthropic litigation. We do not offer legal or financial advice and submitting your claim information or an inquiry through this site does not give rise to any client or other relationship. All materials submitted will be kept confidential pursuant to our policies. ",
-            "layout": "layout-1-narrow",
-            "colorScheme": "light-gray"
           }
         },
         {
