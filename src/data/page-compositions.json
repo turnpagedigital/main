@@ -484,6 +484,27 @@
           }
         },
         {
+          "id": "sec-1787168624162-oh6p",
+          "type": "rich-text",
+          "visible": true,
+          "layout": "layout-1-narrow",
+          "colorScheme": "light-gray",
+          "content": {
+            "eyebrow": "",
+            "align": "center",
+            "height": "auto",
+            "heading1": "",
+            "heading1Accent": "",
+            "heading1After": "",
+            "backgroundImage": "",
+            "imageOpacity": 35,
+            "imageBlur": 0,
+            "markdown": "Turnpage Digital Markets LLC is not affiliated with the court, the claims administrator, class counsel or any other party in the Bartz v. Anthropic litigation. We do not offer legal or financial advice and submitting your claim information or an inquiry through this site does not give rise to any client or other relationship. All materials submitted will be kept confidential pursuant to our policies. ",
+            "layout": "layout-1-narrow",
+            "colorScheme": "light-gray"
+          }
+        },
+        {
           "id": "sec-1787168615766-a0me",
           "type": "our-edge",
           "visible": true,
@@ -551,27 +572,6 @@
             "ctaHref": "/contact?source=ai-copyright",
             "colorScheme": "light",
             "_bookmark": "faq"
-          }
-        },
-        {
-          "id": "sec-1787168624162-oh6p",
-          "type": "rich-text",
-          "visible": true,
-          "layout": "layout-1-narrow",
-          "colorScheme": "light-gray",
-          "content": {
-            "eyebrow": "",
-            "align": "center",
-            "height": "auto",
-            "heading1": "",
-            "heading1Accent": "",
-            "heading1After": "",
-            "backgroundImage": "",
-            "imageOpacity": 35,
-            "imageBlur": 0,
-            "markdown": "Turnpage Digital Markets LLC is not affiliated with the court, the claims administrator, class counsel or any other party in the Bartz v. Anthropic litigation. We do not offer legal or financial advice and submitting your claim information or an inquiry through this site does not give rise to any client or other relationship. All materials submitted will be kept confidential pursuant to our policies. ",
-            "layout": "layout-1-narrow",
-            "colorScheme": "light-gray"
           }
         },
         {
