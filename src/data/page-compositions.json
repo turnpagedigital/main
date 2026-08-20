@@ -296,7 +296,7 @@
             "layout": "minimal",
             "align": "center",
             "valueColor": "auto",
-            "density": "compact",
+            "density": "tight",
             "cardRadius": 14
           }
         },
