@@ -1,5 +1,5 @@
 {
-  "_comment": "Multi-step registration flows. Edited via /admin/registration/flows; rendered on landing pages by the 'registration-flow' section (pick a flow in the Page Builder). Field types: text, email, phone, number, textarea, select, choice (button group), yesno, file, computed (a live display-only price. When 'priced': true it is calculated SERVER-SIDE from the private pricing config (functions/api/_pricing-config.json, edited in the admin Pricing tab): names a 'selfField' and 'publisherField' number field, and offer = (payoutRatePct/100) × (selfRecovery × self + publisherRecovery × publisher). Supports prefix/suffix and gateOn to hide until a field is filled), works-summary (display-only list of works read from an uploaded claim form). A file field may carry 'extract' (a server extractor name, e.g. 'bartz-claim') plus 'extractMap' ({ flowFieldId: 'path.into.result' }) — on upload the file is POSTed to /api/extract-claim and the named fields auto-fill. A step with showIf only appears when the named earlier field equals the given value; a FIELD may also carry showIf (same {fieldId, equals} shape) to conditionally show/hide within the same step — used to keep a branch driver (like Authored/Published) and its branch-specific fields together on one page. A required 'choice' field with no answer yet auto-defaults to its first option. A field may set 'hideLabel': true to keep its label for screen readers while hiding it visually — for when the step title already asks the question the label would just repeat. A required file field may set 'skipLabel' (e.g. \"I don't have my claim form\") to render a checkbox that satisfies the requirement in place of an attached file — use when not everyone filling out the form will have the file. Submissions POST to /api/register → notification email (+ Google Sheet, + Attio when ATTIO_API_KEY is configured, labeled with attioLabel).",
+  "_comment": "Multi-step registration flows. Edited via /admin/registration/flows; rendered on landing pages by the 'registration-flow' section (pick a flow in the Page Builder). Field types: text, email, phone, number, textarea, select, choice (button group), yesno, file, computed (a live display-only price. When 'priced': true it is calculated SERVER-SIDE from the private pricing config (functions/api/_pricing-config.json, edited in the admin Pricing tab): names a 'selfField' and 'publisherField' number field, and offer = (payoutRatePct/100) × (selfRecovery × self + publisherRecovery × publisher). Supports prefix/suffix and gateOn to hide until a field is filled), works-summary (display-only list of works read from an uploaded claim form). A file field may carry 'extract' (a server extractor name, e.g. 'bartz-claim') plus 'extractMap' ({ flowFieldId: 'path.into.result' }) — on upload the file is POSTed to /api/extract-claim and the named fields auto-fill. Each STEP has a required 'heading' (the big question people see) plus three optional extras: 'title' (small text shown above the heading), 'explainer' (small text shown below it), and 'optional': true (renders a \"Skip this step\" link — its fields' required flags are then only enforced if the visitor engages with the step instead of skipping). A step with showIf only appears when the named earlier field equals the given value; a FIELD may also carry showIf (same {fieldId, equals} shape) to conditionally show/hide within the same step — used to keep a branch driver (like Authored/Published) and its branch-specific fields together on one page. A required 'choice' field with no answer yet auto-defaults to its first option. A field may set 'hideLabel': true to keep its label for screen readers while hiding it visually — for when the step heading already asks the question the label would just repeat. A required file field may set 'skipLabel' (e.g. \"I don't have my claim form\") to render a checkbox that satisfies the requirement in place of an attached file — use when not everyone filling out the form will have the file. Submissions POST to /api/register → notification email (+ Google Sheet, + Attio when ATTIO_API_KEY is configured, labeled with attioLabel).",
   "flows": [
     {
       "id": "bartz-registration",
@@ -14,7 +14,7 @@
       "steps": [
         {
           "id": "role",
-          "title": "I am an",
+          "heading": "I am an",
           "fields": [
             {
               "id": "role",
@@ -89,7 +89,7 @@
         },
         {
           "id": "contact",
-          "title": "Your Details",
+          "heading": "Your Details",
           "fields": [
             {
               "id": "firstName",
@@ -113,7 +113,7 @@
         },
         {
           "id": "author-confirm",
-          "title": "Your Offer",
+          "heading": "Your Offer",
           "showIf": {
             "fieldId": "role",
             "equals": "Author"
@@ -158,7 +158,7 @@
         },
         {
           "id": "kyc",
-          "title": "Identity Verification",
+          "heading": "Identity Verification",
           "showIf": {
             "fieldId": "role",
             "equals": "Author"
