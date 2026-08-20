@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
-    "date_last_filing": "2026-08-19",
-    "meta_fetched_at": "2026-08-19T15:51:04.962156+00:00",
-    "fetched_at": "2026-08-20T17:50:17.835987+00:00",
+    "date_last_filing": "2026-08-20",
+    "meta_fetched_at": "2026-08-20T19:49:24.833555+00:00",
+    "fetched_at": "2026-08-20T19:49:24.833555+00:00",
     "as_of": "Aug 20, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 376,
+        "date_filed": "2026-08-20",
+        "time_filed": "15:01:27",
+        "date_display": "Aug 20, 2026",
+        "description": "Compel",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 375,
         "date_filed": "2026-08-19",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.374.0.pdf"
-      },
-      {
-        "entry_number": 371,
-        "date_filed": "2026-08-14",
-        "time_filed": "11:25:49",
-        "date_display": "Aug 14, 2026",
-        "description": "Certificate of Service",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 376,
+        "date_filed": "2026-08-20",
+        "time_filed": "15:01:27",
+        "date_display": "Aug 20, 2026",
+        "description": "Compel",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 375,
         "date_filed": "2026-08-19",
