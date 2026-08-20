@@ -7,7 +7,7 @@
       "active": true,
       "attioLabel": "bartz-landing",
       "attioProject": "Bartz",
-      "intro": "Submit your claim details to see what your claim is worth.\n\nNo obligation to sell. 100% confidential.\n\nHave your claim form ready to speed up your offer and payment. To transact, you will need (i) your claim form, (ii) a valid form of ID (driver's license, passport or permanent residency card) and (iii) proof of address.",
+      "intro": "No obligation to sell. 100% confidential.\n\nHave your claim form ready to speed up your offer and payment. To transact, you will need (i) your claim form, (ii) a valid form of ID (driver's license, passport or permanent residency card) and (iii) proof of address.",
       "submitLabel": "Submit",
       "successTitle": "Got it!",
       "successBody": "We've received your details and will be in touch within 48 hours with your offer and next steps.",
@@ -53,10 +53,6 @@
                 "jpg"
               ],
               "help": "If your form is not available, you may still proceed, but",
-              "moreInfo": {
-                "label": "Where do I find my claim form?",
-                "body": "The plan administrator will have emailed this to you. If you don't have it handy, you may request it by emailing info@AnthropicCopyrightSettlement.com or calling 1 877-206-2314. Click \"Next\" to enter your details manually."
-              },
               "extract": "bartz-claim",
               "extractMap": {
                 "first": "contact.firstName",
@@ -64,6 +60,10 @@
                 "email": "contact.email",
                 "self_pub_count": "counts.self",
                 "publisher_count": "counts.publisher"
+              },
+              "moreInfo": {
+                "label": "Where do I find my claim form?",
+                "body": "The plan administrator will have emailed this to you. If you don't have it handy, you may request it by emailing info@AnthropicCopyrightSettlement.com or calling 1 877-206-2314. Click \"Next\" to enter your details manually."
               }
             }
           ]
