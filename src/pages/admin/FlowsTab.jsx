@@ -68,6 +68,23 @@ const FIELD_TYPES = [
   { value: "link-confirm", label: "External link + QR + confirm checkbox (e.g. KYC)" },
 ];
 
+// Each server extractor (functions/api/*.js) returns a fixed result shape —
+// this mirrors it so the extractMap editor below can offer a real picker
+// instead of making admins hand-type `{ fieldId: "path.into.result" }` JSON
+// (which was the ONLY way to set it before: the old UI just displayed
+// whatever extractMap already existed, with no way to add, change, or fix
+// an entry). Add an entry here whenever a new extractor ships.
+const EXTRACTOR_PATHS = {
+  "bartz-claim": [
+    { path: "contact.firstName", label: "First name" },
+    { path: "contact.lastName", label: "Last name" },
+    { path: "contact.email", label: "Email" },
+    { path: "contact.phone", label: "Phone" },
+    { path: "counts.self", label: "Self-published works count" },
+    { path: "counts.publisher", label: "Works-with-publisher count" },
+  ],
+};
+
 const slugify = (s) =>
   String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "item";
 
@@ -497,6 +514,7 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
             <StepCard key={j} step={step} index={j} total={flow.steps.length}
               conditionTargets={conditionTargets(j)}
               priorStepFields={flow.steps.slice(0, j).flatMap(s => s.fields || [])}
+              allFields={flow.steps.flatMap(s => s.fields || [])}
               onChange={patch => setStep(j, patch)}
               onRemove={() => removeStep(j)}
               onMove={dir => moveStep(j, dir)} />
@@ -511,7 +529,7 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
   );
 }
 
-function StepCard({ step, index, total, conditionTargets, priorStepFields = [], onChange, onRemove, onMove }) {
+function StepCard({ step, index, total, conditionTargets, priorStepFields = [], allFields = [], onChange, onRemove, onMove }) {
   const label = { display: "block", fontSize: "0.72rem", color: INK_60, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 3 };
   const [collapsed, setCollapsed] = useState(false);
   const conditioned = Boolean(step.showIf && step.showIf.fieldId);
@@ -633,6 +651,7 @@ function StepCard({ step, index, total, conditionTargets, priorStepFields = [], 
           index={k}
           total={step.fields.length}
           priorFields={[...priorStepFields, ...step.fields.slice(0, k)]}
+          allFields={allFields}
           onChange={patch => setField(k, patch)}
           onRemove={() => removeField(k)}
           onMove={dir => moveField(k, dir)}
@@ -646,7 +665,7 @@ function StepCard({ step, index, total, conditionTargets, priorStepFields = [], 
   );
 }
 
-function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, onMove, removable }) {
+function FieldRow({ field, index, total, priorFields = [], allFields = [], onChange, onRemove, onMove, removable }) {
   const hasOptions = field.type === "select" || field.type === "choice";
   const isComputed = field.type === "computed";
   const isNumber = field.type === "number";
@@ -742,16 +761,51 @@ function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, o
             onChange={e => onChange({ help: e.target.value })} />
           <div style={{ display: "flex", gap: 6, alignItems: "center", marginTop: 6 }}>
             <label style={{ fontSize: "0.72rem", color: INK_60, fontWeight: 700, whiteSpace: "nowrap" }}>Auto-read</label>
-            <input style={{ ...inputStyle, fontSize: "0.82rem" }}
-              placeholder="Extractor name (e.g. bartz-claim) — leave blank for a plain upload"
+            <select style={{ ...selectStyle, fontSize: "0.82rem" }}
               value={field.extract || ""}
-              onChange={e => onChange({ extract: e.target.value.trim() })} />
+              onChange={e => onChange(e.target.value ? { extract: e.target.value } : { extract: "", extractMap: undefined })}>
+              <option value="">No auto-read — plain upload</option>
+              {field.extract && !EXTRACTOR_PATHS[field.extract] && (
+                <option value={field.extract}>⚠ Unknown reader "{field.extract}"</option>
+              )}
+              {Object.keys(EXTRACTOR_PATHS).map(name => <option key={name} value={name}>{name}</option>)}
+            </select>
           </div>
-          {field.extract && (
-            <p style={{ fontSize: "0.72rem", color: INK_60, margin: "4px 0 0", lineHeight: 1.5 }}>
-              On upload, this file is read by the <strong>{field.extract}</strong> reader and auto-fills{" "}
-              {field.extractMap ? Object.keys(field.extractMap).join(", ") : "no fields yet"}.
-            </p>
+          {field.extract && EXTRACTOR_PATHS[field.extract] && (
+            <div style={{ marginTop: 8, padding: "0.6rem 0.7rem", border: `1px dashed ${LINE}`, borderRadius: 6, background: "#FAFAF7" }}>
+              <p style={{ fontSize: "0.72rem", color: INK_60, margin: "0 0 0.5rem", lineHeight: 1.5 }}>
+                On upload, this file is read and can auto-fill the fields below — pick which one each piece of
+                data should land in, or leave it "— don't auto-fill —".
+              </p>
+              {EXTRACTOR_PATHS[field.extract].map(({ path, label: pathLabel }) => {
+                const eligible = allFields.filter(f => ["text", "email", "phone", "number", "textarea"].includes(f.type) && f.id);
+                const currentFieldId = Object.entries(field.extractMap || {}).find(([, p]) => p === path)?.[0] || "";
+                const broken = currentFieldId && !eligible.some(f => f.id === currentFieldId);
+                return (
+                  <div key={path} style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 8, alignItems: "center", marginBottom: 6 }}>
+                    <label style={{ fontSize: "0.78rem", color: INK }}>{pathLabel}</label>
+                    <div>
+                      <select style={{ ...selectStyle, fontSize: "0.8rem" }} value={currentFieldId}
+                        onChange={e => {
+                          const map = { ...(field.extractMap || {}) };
+                          for (const [fid, p] of Object.entries(map)) { if (p === path) delete map[fid]; }
+                          if (e.target.value) map[e.target.value] = path;
+                          onChange({ extractMap: map });
+                        }}>
+                        <option value="">— don't auto-fill —</option>
+                        {broken && <option value={currentFieldId}>⚠ Not found — re-pick ({currentFieldId})</option>}
+                        {eligible.map(f => <option key={f.id} value={f.id}>{f.label || f.id}</option>)}
+                      </select>
+                      {broken && (
+                        <p style={{ fontSize: "0.68rem", color: "#B4700F", margin: "3px 0 0" }}>
+                          Pointed at a field that no longer exists — pick again.
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           )}
           <input style={{ ...inputStyle, fontSize: "0.82rem", marginTop: 6 }}
             placeholder="Can't-upload button text (e.g. I don't have my claim form) — leave blank to require the file with no alternative"
