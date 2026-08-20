@@ -14,18 +14,17 @@
       "steps": [
         {
           "id": "role",
-          "heading": "I am a (select one):",
-          "title": "Your details",
+          "heading": "Your details",
           "fields": [
             {
               "id": "role",
               "type": "choice",
-              "label": "role",
+              "label": "Select one:",
               "required": true,
               "hideLabel": true,
               "options": [
-                "Author",
-                "Publisher"
+                "I am an author",
+                "I am a publisher"
               ]
             },
             {
@@ -35,7 +34,7 @@
               "required": true,
               "showIf": {
                 "fieldId": "role",
-                "equals": "Author"
+                "equals": "I am an author"
               },
               "accept": [
                 "pdf",
@@ -59,9 +58,21 @@
             {
               "id": "claimant_id",
               "type": "text",
-              "label": "Claimant ID number (from JND)",
+              "label": "Claimant ID number (from JND, if available)",
               "required": false,
               "help": "The unique ID the Settlement Administrator assigned to your claim. Don't have it or not sure? Leave this blank — we'll help you track it down."
+            },
+            {
+              "id": "first_name",
+              "type": "text",
+              "label": "First name",
+              "required": true
+            },
+            {
+              "id": "last_name",
+              "type": "text",
+              "label": "Last name",
+              "required": true
             },
             {
               "id": "p",
@@ -70,7 +81,7 @@
               "required": true,
               "showIf": {
                 "fieldId": "role",
-                "equals": "Publisher"
+                "equals": "I am a publisher"
               }
             },
             {
@@ -80,99 +91,22 @@
               "required": false,
               "showIf": {
                 "fieldId": "role",
-                "equals": "Publisher"
+                "equals": "I am a publisher"
               },
-              "placeholder": "Enter number of works",
-              "help": "Provide an estimate if unknown"
-            }
-          ]
-        },
-        {
-          "id": "contact",
-          "heading": "Your Details",
-          "fields": [
-            {
-              "id": "firstName",
-              "type": "text",
-              "label": "First name",
-              "required": true
+              "placeholder": "Number of covered works",
+              "help": "(estimate if unknown)"
             },
             {
-              "id": "lastName",
-              "type": "text",
-              "label": "Last name",
-              "required": true
-            },
-            {
-              "id": "email",
+              "id": "your_email",
               "type": "email",
-              "label": "Email",
+              "label": "Your email",
               "required": true
-            }
-          ]
-        },
-        {
-          "id": "author-confirm",
-          "heading": "Your Offer",
-          "showIf": {
-            "fieldId": "role",
-            "equals": "Author"
-          },
-          "fields": [
-            {
-              "id": "works_summary",
-              "type": "works-summary",
-              "label": "Works we found on your claim form",
-              "required": false,
-              "help": "Self-published works count at the full rate, works with a publisher at half rate. Multi-author works aren't purchased."
             },
             {
-              "id": "self_pub_count",
-              "type": "number",
-              "label": "Self-published works",
-              "required": true,
-              "placeholder": "0",
-              "help": "Auto-filled from your claim form — edit if needed."
-            },
-            {
-              "id": "publisher_count",
-              "type": "number",
-              "label": "Works with a publisher",
-              "required": true,
-              "placeholder": "0",
-              "help": "Auto-filled from your claim form — edit if needed."
-            },
-            {
-              "id": "estimated_offer",
-              "type": "computed",
-              "label": "Your estimated offer",
-              "required": false,
-              "priced": true,
-              "selfField": "self_pub_count",
-              "publisherField": "publisher_count",
-              "prefix": "$",
-              "suffix": "",
-              "help": "This is an estimate — we will confirm your final offer by email."
-            }
-          ]
-        },
-        {
-          "id": "kyc",
-          "heading": "Identity Verification",
-          "showIf": {
-            "fieldId": "role",
-            "equals": "Author"
-          },
-          "fields": [
-            {
-              "id": "kycConfirmed",
-              "type": "link-confirm",
-              "label": "Verify your identity",
-              "required": true,
-              "help": "Click the link below — or scan the QR code with your phone — to complete identity verification (KYC), then confirm here.",
-              "url": "https://in.sumsub.com/websdk/p/uni_9wj7aWAdtUJ2JBSs",
-              "linkText": "Start verification",
-              "confirmLabel": "I have completed identity verification"
+              "id": "your_phone",
+              "type": "phone",
+              "label": "Your phone",
+              "required": false
             }
           ]
         }
