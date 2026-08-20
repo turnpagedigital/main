@@ -296,7 +296,7 @@
             "layout": "minimal",
             "align": "center",
             "valueColor": "auto",
-            "density": "compact",
+            "density": "tight",
             "cardRadius": 14
           }
         },
@@ -438,10 +438,10 @@
               }
             ],
             "cardStyle": "standard",
-            "cardRadius": "rounded",
+            "cardRadius": "square",
             "_bookmark": "how-it-works",
-            "backgroundImage": "/library/scanning-books.jpg",
-            "imageFilterStrength": 75,
+            "backgroundImage": "/library/joel-filipe-pyhpjejuyhy-unsplash.jpg",
+            "imageFilterStrength": 20,
             "imageFilter": "dark",
             "cardBrightness": 100,
             "cardBlur": 43,
@@ -545,13 +545,13 @@
           "type": "faq",
           "visible": true,
           "layout": "layout-2-sidebar",
-          "colorScheme": "light",
+          "colorScheme": "light-gray",
           "content": {
             "title": "Your questions,",
             "accent": "answered.",
             "ctaLabel": "Ask our team",
             "ctaHref": "/contact?source=ai-copyright",
-            "colorScheme": "light",
+            "colorScheme": "light-gray",
             "_bookmark": "faq"
           }
         },
