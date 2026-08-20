@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
     "date_last_filing": "2026-08-19",
     "meta_fetched_at": "2026-08-19T15:51:04.962156+00:00",
-    "fetched_at": "2026-08-19T23:42:33.353070+00:00",
-    "as_of": "Aug 19, 2026",
+    "fetched_at": "2026-08-20T01:55:54.730857+00:00",
+    "as_of": "Aug 20, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 1,
     "recent": [
       {
         "entry_number": 375,
@@ -38,7 +38,7 @@
         "time_filed": "15:00:39",
         "date_display": "Aug 17, 2026",
         "description": "Appellee Designation",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.374.0.pdf"
       },
@@ -70,7 +70,7 @@
         "time_filed": "15:00:39",
         "date_display": "Aug 17, 2026",
         "description": "Appellee Designation",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.374.0.pdf"
       },

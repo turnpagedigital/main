@@ -16,11 +16,11 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
     "date_last_filing": "2026-08-19",
-    "meta_fetched_at": "2026-08-19T22:46:23.864541+00:00",
-    "fetched_at": "2026-08-19T23:42:28.039182+00:00",
-    "as_of": "Aug 19, 2026",
+    "meta_fetched_at": "2026-08-20T01:55:46.854789+00:00",
+    "fetched_at": "2026-08-20T01:55:46.854789+00:00",
+    "as_of": "Aug 20, 2026",
     "backfilled": true,
-    "new_in_72h": 5,
+    "new_in_72h": 4,
     "recent": [
       {
         "entry_number": 813,
@@ -43,14 +43,14 @@
         "doc_url": ""
       },
       {
-        "entry_number": 812,
-        "date_filed": "2026-08-18",
-        "time_filed": "15:10:39",
-        "date_display": "Aug 18, 2026",
-        "description": "STATUS REPORT Jointly Filed re Discovery Hearing by BCP Literary, Inc., Ta-Nehisi Coates, Daring Greatly Corporation, Junot Diaz, Eleven Eleven O' Clock Corporation, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Attachments: # 1 Exhibit A, # 2 Exhibit B)(Weinbach, Annabel) (Filed on 8/18/2026) (Entered: 08/18/2026)",
+        "entry_number": null,
+        "date_filed": "2026-08-19",
+        "time_filed": "17:02:08",
+        "date_display": "Aug 19, 2026",
+        "description": "Discovery Hearing AND ~Util - Set Deadlines/Hearings",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.812.0.pdf"
+        "doc_url": ""
       }
     ],
     "entries": [
@@ -75,6 +75,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": null,
+        "date_filed": "2026-08-19",
+        "time_filed": "17:02:08",
+        "date_display": "Aug 19, 2026",
+        "description": "Discovery Hearing AND ~Util - Set Deadlines/Hearings",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 812,
         "date_filed": "2026-08-18",
         "time_filed": "15:10:39",
@@ -90,7 +100,7 @@
         "time_filed": "09:36:31",
         "date_display": "Aug 17, 2026",
         "description": "EXHIBITS re 805 Order on Administrative Motion to Consider Whether Another Partys Material Should Be Sealed,, Re Dkt. 781 filed byMeta Platforms, Inc.. (Attachments: # 1 Exhibit B, # 2 Exhibit D, # 3 Exhibit E, # 4 Exhibit F, # 5 Exhibit G, # 6 Exhibit H)(Related document(s) 805 ) (Morton, Phillip) (Filed on 8/17/2026) (Entered: 08/17/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.810.0.pdf"
       },
@@ -100,7 +110,7 @@
         "time_filed": "15:17:20",
         "date_display": "Aug 17, 2026",
         "description": "Case Management Conference - Further",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
