@@ -13,7 +13,11 @@ import QRCode from "qrcode";
  * Drop onto any Page Builder page and pick a flow (defined in
  * src/data/forms.json, edited via /admin/registration/flows). Steps with a
  * showIf condition only appear when the named earlier answer matches, so
- * the wizard branches. File fields are read client-side and submitted as
+ * the wizard branches. A field may set `row: "<any id>"` — consecutive
+ * fields sharing the same row id render side by side instead of stacked
+ * (e.g. First name + Last name), saving vertical space; a field with no row
+ * (or whose neighbor doesn't share it) renders full-width as normal. File
+ * fields are read client-side and submitted as
  * base64 (server caps: 8 MB, pdf/png/jpg). Submissions POST to
  * /api/register with the flow id, page key, and ad attribution; a GA4
  * lead event fires on success when analytics is configured.
@@ -426,12 +430,34 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
         </p>
       )}
       <div className="field-light">
-        {(step.fields || []).filter(f => fieldVisible(f, answers)).map(f => (
-          <FieldControl key={f.id} field={f} value={answers[f.id]} file={files[f.id]}
-            answers={answers} quote={quotes[f.id]}
-            extraction={extraction} extracting={extracting} extractError={extractError}
-            onChange={v => setAnswer(f.id, v)} onFile={fl => setFile(f, fl)} onAnswer={setAnswer} />
+        {groupFieldsIntoRows((step.fields || []).filter(f => fieldVisible(f, answers))).map((group, gi) => (
+          group.row ? (
+            <div key={`row-${gi}`} className="regflow-field-row" style={{ marginBottom: "2.1rem" }}>
+              {group.fields.map(f => (
+                <div key={f.id} className="regflow-field-row-item">
+                  <FieldControl field={f} value={answers[f.id]} file={files[f.id]}
+                    answers={answers} quote={quotes[f.id]}
+                    extraction={extraction} extracting={extracting} extractError={extractError}
+                    onChange={v => setAnswer(f.id, v)} onFile={fl => setFile(f, fl)} onAnswer={setAnswer}
+                    noBottomMargin />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <FieldControl key={group.field.id} field={group.field} value={answers[group.field.id]} file={files[group.field.id]}
+              answers={answers} quote={quotes[group.field.id]}
+              extraction={extraction} extracting={extracting} extractError={extractError}
+              onChange={v => setAnswer(group.field.id, v)} onFile={fl => setFile(group.field, fl)} onAnswer={setAnswer} />
+          )
         ))}
+        <style>{`
+          .regflow-field-row { display: flex; gap: 1rem; }
+          .regflow-field-row-item { flex: 1; min-width: 0; }
+          @media (max-width: 520px) {
+            .regflow-field-row { flex-direction: column; gap: 0; }
+            .regflow-field-row-item:not(:last-child) { margin-bottom: 2.1rem; }
+          }
+        `}</style>
       </div>
       {(stepError || formState === "error") && (
         <p role="alert" style={{ fontFamily: FONT, fontSize: "0.9rem", color: ERROR, marginBottom: "0.9rem" }}>
@@ -518,6 +544,25 @@ function fieldVisible(field, answers) {
 // down to known field ids (submit, /api/register), same as any other stray key.
 function skipAnswerKey(field) {
   return `${field.id}__skip`;
+}
+
+// Fields sharing the same non-empty `row` value, consecutively, render side
+// by side (e.g. First name + Last name) instead of stacked — saves vertical
+// space for short fields. A field with no `row` (or a row no adjacent field
+// shares) renders full-width as normal.
+function groupFieldsIntoRows(fields) {
+  const groups = [];
+  for (const f of fields) {
+    const last = groups[groups.length - 1];
+    if (f.row && last && last.row && last.rowKey === f.row) {
+      last.fields.push(f);
+    } else if (f.row) {
+      groups.push({ row: true, rowKey: f.row, fields: [f] });
+    } else {
+      groups.push({ row: false, field: f });
+    }
+  }
+  return groups;
 }
 
 /* Read "counts.self" style dot-paths out of an extraction result. */
@@ -775,7 +820,7 @@ const VISUALLY_HIDDEN_STYLE = {
   overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0,
 };
 
-function FieldControl({ field, value, file, answers = {}, quote, extraction = null, extracting = false, extractError = "", onChange, onFile, onAnswer }) {
+function FieldControl({ field, value, file, answers = {}, quote, extraction = null, extracting = false, extractError = "", onChange, onFile, onAnswer, noBottomMargin = false }) {
   const id = React.useId();
   const label = (
     <label htmlFor={id} style={field.hideLabel ? VISUALLY_HIDDEN_STYLE : FIELD_LABEL_STYLE}>
@@ -783,7 +828,10 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
       {field.required && <span aria-hidden="true" style={{ color: ERROR, marginLeft: 4, fontWeight: 700 }}>*</span>}
     </label>
   );
-  const wrap = { marginBottom: "2.1rem" };
+  // When paired with another field in a row (see groupFieldsIntoRows), the
+  // row wrapper supplies the bottom margin instead, so this field doesn't
+  // double it up.
+  const wrap = { marginBottom: noBottomMargin ? 0 : "2.1rem" };
   const helpText = (field.help
     ? <p style={{ fontFamily: FONT, fontSize: "0.82rem", color: INK_60, margin: "0.4rem 0 0.7rem", lineHeight: 1.6 }}>{field.help}</p>
     : null);
