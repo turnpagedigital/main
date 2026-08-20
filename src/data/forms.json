@@ -30,7 +30,7 @@
           ]
         },
         {
-          "id": "role",
+          "id": "claim-form",
           "heading": "Tell us about your claim",
           "title": "Let's get started",
           "showIf": {
@@ -57,69 +57,28 @@
                 "label": "Where do I find my claim form?",
                 "body": "The plan administrator will have emailed this to you. If you don't have it handy, you may request it by emailing info@AnthropicCopyrightSettlement.com or calling 1 877-206-2314. Click \"Next\" to enter your details manually."
               }
-            },
-            {
-              "id": "e",
-              "type": "number",
-              "label": "Covered works",
-              "required": false,
-              "showIf": {
-                "fieldId": "select_one",
-                "equals": "Author"
-              },
-              "placeholder": "Number of covered works",
-              "help": "(estimate if unknown)"
-            },
-            {
-              "id": "works_summary",
-              "type": "works-summary",
-              "label": "Works we found on your claim form",
-              "required": false,
-              "showIf": {
-                "fieldId": "select_one",
-                "equals": "Author"
-              },
-              "help": "Self-published works count at the full rate, works with a publisher at half rate. Multi-author works aren't purchased."
-            },
+            }
+          ]
+        },
+        {
+          "id": "claim-counts",
+          "heading": "Please confirm your claim details",
+          "showIf": {
+            "fieldId": "select_one",
+            "equals": "Author"
+          },
+          "fields": [
             {
               "id": "self_pub_count",
               "type": "number",
               "label": "Self-published works",
-              "required": true,
-              "showIf": {
-                "fieldId": "select_one",
-                "equals": "Author"
-              },
-              "placeholder": "0",
-              "help": "Auto-filled from your claim form — edit if needed."
+              "required": true
             },
             {
               "id": "publisher_count",
               "type": "number",
-              "label": "Works with a publisher",
-              "required": true,
-              "showIf": {
-                "fieldId": "select_one",
-                "equals": "Author"
-              },
-              "placeholder": "0",
-              "help": "Auto-filled from your claim form — edit if needed."
-            },
-            {
-              "id": "estimated_offer",
-              "type": "computed",
-              "label": "Your estimated offer",
-              "required": false,
-              "showIf": {
-                "fieldId": "select_one",
-                "equals": "Author"
-              },
-              "priced": true,
-              "selfField": "self_pub_count",
-              "publisherField": "publisher_count",
-              "prefix": "$",
-              "suffix": "",
-              "help": "This is an estimate — we will confirm your final offer by email."
+              "label": "Works with publisher",
+              "required": true
             }
           ]
         },
@@ -206,6 +165,32 @@
               "url": "https://in.sumsub.com/websdk/p/uni_9wj7aWAdtUJ2JBSs",
               "linkText": "Start verification",
               "confirmLabel": "I have completed identity verification"
+            }
+          ]
+        },
+        {
+          "id": "your-offer",
+          "heading": "Your offer",
+          "showIf": {
+            "fieldId": "select_one",
+            "equals": "Author"
+          },
+          "fields": [
+            {
+              "id": "estimated_offer",
+              "type": "computed",
+              "label": "Your estimated offer",
+              "required": false,
+              "showIf": {
+                "fieldId": "select_one",
+                "equals": "Author"
+              },
+              "priced": true,
+              "selfField": "self_pub_count",
+              "publisherField": "publisher_count",
+              "prefix": "$",
+              "suffix": "",
+              "help": "This is an estimate — we will confirm your final offer by email."
             }
           ]
         }
