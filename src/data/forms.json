@@ -14,12 +14,13 @@
       "steps": [
         {
           "id": "role",
-          "heading": "I am an",
+          "heading": "I am a (select one):",
+          "title": "Your details",
           "fields": [
             {
               "id": "role",
-              "type": "select",
-              "label": "Select one",
+              "type": "choice",
+              "label": "role",
               "required": true,
               "hideLabel": true,
               "options": [
@@ -42,7 +43,6 @@
                 "jpg"
               ],
               "help": "Upload your Bartz settlement claim form and we'll auto-calculate your estimated allocation. If your form is not available, you may still proceed, but we can cannot provide a firm offer.",
-              "skipLabel": "I don't have my claim form",
               "extract": "bartz-claim",
               "extractMap": {
                 "firstName": "contact.firstName",
@@ -53,7 +53,7 @@
               },
               "moreInfo": {
                 "label": "Where do I find my claim form?",
-                "body": "The plan administrator will have emailed this to you. If you don't have it handy, you may request it by emailing info@AnthropicCopyrightSettlement.com or calling 1 877-206-2314. Click \"Continue\" to enter your details manually."
+                "body": "The plan administrator will have emailed this to you. If you don't have it handy, you may request it by emailing info@AnthropicCopyrightSettlement.com or calling 1 877-206-2314. Click \"Next\" to enter your details manually."
               }
             },
             {
