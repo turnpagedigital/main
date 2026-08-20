@@ -16,12 +16,32 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
     "date_last_filing": "2026-08-19",
-    "meta_fetched_at": "2026-08-20T01:55:46.854789+00:00",
-    "fetched_at": "2026-08-20T04:03:16.905903+00:00",
+    "meta_fetched_at": "2026-08-20T14:03:26.685698+00:00",
+    "fetched_at": "2026-08-20T14:03:26.685698+00:00",
     "as_of": "Aug 20, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 6,
     "recent": [
+      {
+        "entry_number": 815,
+        "date_filed": "2026-08-19",
+        "time_filed": "21:15:56",
+        "date_display": "Aug 19, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 08/14/2026 before Judge Vince Chhabria by BCP Literary, Inc., Ta-Nehisi Coates, Daring Greatly Corporation, Junot Diaz, Eleven Eleven O' Clock Corporation, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson, for Court Reporter Marla Knox. (Stein, Joshua) (Filed on 8/19/2026) (Entered: 08/19/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 814,
+        "date_filed": "2026-08-19",
+        "time_filed": "",
+        "date_display": "Aug 19, 2026",
+        "description": "Minute Entry for proceedings held before Magistrate Judge Thomas S. Hixson: Discovery Hearing held on 8/19/2026. Zoom Recording Time: 2:03 - 3:43. 3:23-cv-03417-VC Kadrey et al v. Meta Platforms, Inc.Attorneys for Plaintiffs: Maxwell PrittAttorneys for Defendant: Maryl Governski, Phillip Morton3:25-cv-09579-VCEntrepreneur Media, LLC v. Meta Platforms, Inc. Attorney for Plaintiff: Lee Linderman, Harlye CarltonAttorneys for Defendant: Maryl Governski, Phillip Morton3:26-cv-02333-VCChicken Soup for the Soul, LLC v. Meta Platforms Inc. Attorneys for Plaintiff: Kyle Roche, Elizabeth Brannen Attorneys for Defendant: Maryl Governski, Phillip Morton3:26-cv-03725-VCCambronne Inc. et al v. Meta Platforms, Inc. Attorneys for Plaintiff: Kyle Roche, Elizabeth Brannen Attorneys for Defendant: Maryl Governski, Phillip Morton3:26-cv-04053-VCCognella, Inc. v. Meta Platforms, Inc. Attorneys for…",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 813,
         "date_filed": "2026-08-19",
@@ -31,29 +51,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-08-19",
-        "time_filed": "12:41:27",
-        "date_display": "Aug 19, 2026",
-        "description": "Clerk's Notice Setting Zoom Hearing",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-08-19",
-        "time_filed": "17:02:08",
-        "date_display": "Aug 19, 2026",
-        "description": "Discovery Hearing AND ~Util - Set Deadlines/Hearings",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 815,
+        "date_filed": "2026-08-19",
+        "time_filed": "21:15:56",
+        "date_display": "Aug 19, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 08/14/2026 before Judge Vince Chhabria by BCP Literary, Inc., Ta-Nehisi Coates, Daring Greatly Corporation, Junot Diaz, Eleven Eleven O' Clock Corporation, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson, for Court Reporter Marla Knox. (Stein, Joshua) (Filed on 8/19/2026) (Entered: 08/19/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 814,
+        "date_filed": "2026-08-19",
+        "time_filed": "",
+        "date_display": "Aug 19, 2026",
+        "description": "Minute Entry for proceedings held before Magistrate Judge Thomas S. Hixson: Discovery Hearing held on 8/19/2026. Zoom Recording Time: 2:03 - 3:43. 3:23-cv-03417-VC Kadrey et al v. Meta Platforms, Inc.Attorneys for Plaintiffs: Maxwell PrittAttorneys for Defendant: Maryl Governski, Phillip Morton3:25-cv-09579-VCEntrepreneur Media, LLC v. Meta Platforms, Inc. Attorney for Plaintiff: Lee Linderman, Harlye CarltonAttorneys for Defendant: Maryl Governski, Phillip Morton3:26-cv-02333-VCChicken Soup for the Soul, LLC v. Meta Platforms Inc. Attorneys for Plaintiff: Kyle Roche, Elizabeth Brannen Attorneys for Defendant: Maryl Governski, Phillip Morton3:26-cv-03725-VCCambronne Inc. et al v. Meta Platforms, Inc. Attorneys for Plaintiff: Kyle Roche, Elizabeth Brannen Attorneys for Defendant: Maryl Governski, Phillip Morton3:26-cv-04053-VCCognella, Inc. v. Meta Platforms, Inc. Attorneys for…",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 813,
         "date_filed": "2026-08-19",

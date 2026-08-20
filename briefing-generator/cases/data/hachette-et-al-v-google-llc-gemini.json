@@ -17,7 +17,7 @@
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
     "date_last_filing": "2026-08-10",
     "meta_fetched_at": "2026-08-13T16:16:54.933393+00:00",
-    "fetched_at": "2026-08-20T01:55:13.532650+00:00",
+    "fetched_at": "2026-08-20T14:03:05.318126+00:00",
     "as_of": "Aug 20, 2026",
     "backfilled": true,
     "new_in_72h": 0,
@@ -513,6 +513,13 @@
       "source": "TechCrunch",
       "date": "2026-07-14",
       "summary": "TechCrunch reported that Hachette, Cengage, Elsevier, Scott Turow, and S.C.R.I.B.E. allege Google trained Gemini on books licensed only for limited Google Books and Play Books uses, and that an internal Google document cited in the complaint warned such conduct could expose the company to '$10Bs-$100Bs in potential fines.' Google had not issued a detailed public response."
+    },
+    {
+      "headline": "Hachette, Scott Turow Sue Google for Using Books to Train Gemini AI",
+      "url": "https://www.thewrap.com/industry-news/tech/hachette-scott-turow-google-gemini-ai-copyright-lawsuit/",
+      "source": "The Wrap",
+      "date": "2026-07-14",
+      "summary": "The Wrap covers the class action alleging Google copied millions of books from Google Books, online libraries, and pirated websites to build Gemini without payment or permission, and that Gemini now competes directly with the original works by generating summaries and textbook-style content."
     },
     {
       "headline": "Hachette Book Group Inc. et al v. Google LLC — Case Docket",

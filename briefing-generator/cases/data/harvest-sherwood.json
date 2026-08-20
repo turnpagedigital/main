@@ -15,12 +15,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-19",
-    "meta_fetched_at": "2026-08-20T01:55:26.120357+00:00",
-    "fetched_at": "2026-08-20T04:03:04.823671+00:00",
+    "meta_fetched_at": "2026-08-20T04:57:16.185552+00:00",
+    "fetched_at": "2026-08-20T14:03:15.910254+00:00",
     "as_of": "Aug 20, 2026",
     "backfilled": true,
-    "new_in_72h": 15,
+    "new_in_72h": 16,
     "recent": [
+      {
+        "entry_number": 1238,
+        "date_filed": "2026-08-19",
+        "time_filed": "23:24:36",
+        "date_display": "Aug 19, 2026",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1237,
         "date_filed": "2026-08-19",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 1235,
-        "date_filed": "2026-08-19",
-        "time_filed": "15:34:03",
-        "date_display": "Aug 19, 2026",
-        "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1238,
+        "date_filed": "2026-08-19",
+        "time_filed": "23:24:36",
+        "date_display": "Aug 19, 2026",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1237,
         "date_filed": "2026-08-19",
@@ -14540,6 +14550,13 @@
       "source": "Law360",
       "date": "2026-08-10",
       "summary": "Law360's weekly mid-cap roundup noted that food distributor Harvest Sherwood confirmed its Chapter 11 plan, alongside other major bankruptcy developments including TPx Communications' new postpetition financing. The plan confirmation marks a key milestone for unsecured creditors awaiting recoveries from antitrust litigation proceeds."
+    },
+    {
+      "headline": "Senate Seeks Expanded Sub V; Harvest Sherwood Plan OK'd",
+      "url": "https://www.law360.com/bankruptcy-authority/amp/articles/2511540",
+      "source": "Law360",
+      "date": "2026-08-10",
+      "summary": "Law360 reported that food distributor Harvest Sherwood confirmed its Chapter 11 plan, noting the confirmation as a key milestone alongside other bankruptcy developments that week."
     },
     {
       "headline": "Senate Seeks Expanded Sub V; Harvest Sherwood Plan OK'd",

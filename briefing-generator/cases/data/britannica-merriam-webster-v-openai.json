@@ -17,8 +17,8 @@
     "docket_url": "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/",
     "date_last_filing": "2026-08-12",
     "meta_fetched_at": "2026-08-13T16:16:32.261940+00:00",
-    "fetched_at": "2026-08-19T22:45:26.104627+00:00",
-    "as_of": "Aug 19, 2026",
+    "fetched_at": "2026-08-20T13:16:13.218940+00:00",
+    "as_of": "Aug 20, 2026",
     "backfilled": true,
     "new_in_72h": 0,
     "recent": [
@@ -1012,6 +1012,13 @@
       "source": "Quartz / Yahoo Finance",
       "date": "2026-03-17",
       "summary": "Reports that the lawsuit alleges OpenAI's retrieval-augmented generation system pulls from Britannica's content in real time, and that trademark claims center on ChatGPT presenting invented content under Britannica's name. OpenAI responded that its models are 'grounded in fair use.'"
+    },
+    {
+      "headline": "Encyclopedia Britannica, Merriam-Webster sue OpenAI over 'Massive Copyright' Infringement",
+      "url": "https://www.washingtontimes.com/news/2026/mar/17/encyclopedia-britannica-merriam-webster-sue-openai-massive-copyright/",
+      "source": "The Washington Times",
+      "date": "2026-03-17",
+      "summary": "The Washington Times reported that the complaint alleges OpenAI scraped nearly 100,000 Britannica encyclopedia entries and Merriam-Webster dictionary definitions without authorization, and that ChatGPT generates outputs containing full or near-verbatim reproductions, diverting users and depriving the publishers of subscription and advertising revenue."
     },
     {
       "headline": "Britannica, Merriam-Webster Accuse OpenAI of Copying Their Works",
