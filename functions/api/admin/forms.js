@@ -279,6 +279,7 @@ function normalizeField(fld) {
     out.accept = Array.isArray(fld.accept) && fld.accept.length ? fld.accept : ["pdf", "png", "jpg"];
     if (fld.help) out.help = String(fld.help).trim().slice(0, SHORT);
     if (fld.skipLabel) out.skipLabel = String(fld.skipLabel).trim().slice(0, SHORT);
+    if (fld.uploadLabel) out.uploadLabel = String(fld.uploadLabel).trim().slice(0, SHORT);
     if (fld.extract) out.extract = String(fld.extract).trim().slice(0, 60);
     if (fld.extractMap && typeof fld.extractMap === "object" && !Array.isArray(fld.extractMap)) {
       const map = {};
