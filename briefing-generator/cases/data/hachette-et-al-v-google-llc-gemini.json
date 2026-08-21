@@ -16,11 +16,11 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
     "date_last_filing": "2026-08-21",
-    "meta_fetched_at": "2026-08-21T14:58:10.576761+00:00",
-    "fetched_at": "2026-08-21T14:58:10.576761+00:00",
+    "meta_fetched_at": "2026-08-21T19:01:06.409285+00:00",
+    "fetched_at": "2026-08-21T19:01:06.409285+00:00",
     "as_of": "Aug 21, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 3,
     "recent": [
       {
         "entry_number": null,
@@ -28,6 +28,16 @@
         "time_filed": "",
         "date_display": "Aug 21, 2026",
         "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 27 MOTION for Benjamin Blystad Gould to Appear Pro Hac Vice receipt number ANYSDC-33253987. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (rju)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-21",
+        "time_filed": "09:29:20",
+        "date_display": "Aug 21, 2026",
+        "description": "Notice Regarding Pro Hac Vice Motion",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -41,16 +51,6 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 26,
-        "date_filed": "2026-08-10",
-        "time_filed": "18:47:31",
-        "date_display": "Aug 10, 2026",
-        "description": "LETTER REPLY to Response to Motion addressed to Judge Loretta A. Preska from Eric K. Nikolaides dated August 10, 2026 re: 21 LETTER MOTION for Conference concerning Defendant Google LLC's anticipated motion to transfer this action to the Northern District of California addressed to Judge Loretta A. Preska from Eric K. Nikolaides dated August 4, 2026. . Document filed by Google LLC..(Nikolaides, Eric) (Entered: 08/10/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.668114/gov.uscourts.nysd.668114.26.0_1.pdf"
       }
     ],
     "entries": [
@@ -60,6 +60,16 @@
         "time_filed": "",
         "date_display": "Aug 21, 2026",
         "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 27 MOTION for Benjamin Blystad Gould to Appear Pro Hac Vice receipt number ANYSDC-33253987. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (rju)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-21",
+        "time_filed": "09:29:20",
+        "date_display": "Aug 21, 2026",
+        "description": "Notice Regarding Pro Hac Vice Motion",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -169,7 +179,7 @@
         "date_filed": "2026-08-05",
         "time_filed": "",
         "date_display": "Aug 5, 2026",
-        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 19 MOTION for Paul J. Sampson to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number ANYSDC-33241859. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (bc)",
+        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 18 MOTION for Derek William Loeser to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number ANYSDC-33241839. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (bc)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
