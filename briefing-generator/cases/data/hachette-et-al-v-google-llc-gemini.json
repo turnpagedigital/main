@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
-    "date_last_filing": "2026-08-10",
-    "meta_fetched_at": "2026-08-13T16:16:54.933393+00:00",
-    "fetched_at": "2026-08-20T14:03:05.318126+00:00",
-    "as_of": "Aug 20, 2026",
+    "date_last_filing": "2026-08-20",
+    "meta_fetched_at": "2026-08-21T04:05:46.234636+00:00",
+    "fetched_at": "2026-08-21T04:05:46.234636+00:00",
+    "as_of": "Aug 21, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 27,
+        "date_filed": "2026-08-20",
+        "time_filed": "18:10:46",
+        "date_display": "Aug 20, 2026",
+        "description": "Appear Pro Hac Vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 26,
         "date_filed": "2026-08-10",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.668114/gov.uscourts.nysd.668114.25.0_1.pdf"
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-08-07",
-        "time_filed": "10:18:42",
-        "date_display": "Aug 7, 2026",
-        "description": "Notice Regarding Deficient Motion to Appear Pro Hac Vice",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 27,
+        "date_filed": "2026-08-20",
+        "time_filed": "18:10:46",
+        "date_display": "Aug 20, 2026",
+        "description": "Appear Pro Hac Vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 26,
         "date_filed": "2026-08-10",
@@ -149,7 +159,7 @@
         "date_filed": "2026-08-05",
         "time_filed": "",
         "date_display": "Aug 5, 2026",
-        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 18 MOTION for Derek William Loeser to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number ANYSDC-33241839. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (bc)",
+        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 22 MOTION for Chris Nathaniel Ryder to Appear Pro Hac Vice receipt number ANYSDC-33241877. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (bc)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""

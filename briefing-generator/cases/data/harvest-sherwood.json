@@ -16,10 +16,10 @@
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-20",
     "meta_fetched_at": "2026-08-20T21:47:00.671420+00:00",
-    "fetched_at": "2026-08-20T21:47:00.671420+00:00",
-    "as_of": "Aug 20, 2026",
+    "fetched_at": "2026-08-21T04:05:56.978280+00:00",
+    "as_of": "Aug 21, 2026",
     "backfilled": true,
-    "new_in_72h": 24,
+    "new_in_72h": 16,
     "recent": [
       {
         "entry_number": 1245,
@@ -219,7 +219,7 @@
         "time_filed": "22:58:50",
         "date_display": "Aug 18, 2026",
         "description": "Notice (generic)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -229,7 +229,7 @@
         "time_filed": "15:45:19",
         "date_display": "Aug 18, 2026",
         "description": "Notice (generic)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -239,7 +239,7 @@
         "time_filed": "15:41:52",
         "date_display": "Aug 18, 2026",
         "description": "Notice (generic)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -249,7 +249,7 @@
         "time_filed": "15:17:15",
         "date_display": "Aug 18, 2026",
         "description": "Notice (generic)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -259,7 +259,7 @@
         "time_filed": "15:13:35",
         "date_display": "Aug 18, 2026",
         "description": "Notice (generic)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -269,7 +269,7 @@
         "time_filed": "15:07:36",
         "date_display": "Aug 18, 2026",
         "description": "Notice (generic)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -279,7 +279,7 @@
         "time_filed": "10:38:23",
         "date_display": "Aug 18, 2026",
         "description": "Certificate of service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -289,7 +289,7 @@
         "time_filed": "10:19:59",
         "date_display": "Aug 18, 2026",
         "description": "Certificate of service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
