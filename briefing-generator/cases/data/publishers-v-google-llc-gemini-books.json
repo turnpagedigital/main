@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67599029/in-re-google-generative-ai-copyright-litigation/",
     "date_last_filing": "2026-08-21",
-    "meta_fetched_at": "2026-08-21T19:41:09.676101+00:00",
-    "fetched_at": "2026-08-21T20:43:58.817808+00:00",
+    "meta_fetched_at": "2026-08-21T23:42:43.828808+00:00",
+    "fetched_at": "2026-08-21T23:42:43.828808+00:00",
     "as_of": "Aug 21, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 478,
+        "date_filed": "2026-08-21",
+        "time_filed": "15:43:52",
+        "date_display": "Aug 21, 2026",
+        "description": "Administrative Motion per Civil Local Rule 7-11",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 477,
         "date_filed": "2026-08-21",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-08-13",
-        "time_filed": "11:19:28",
-        "date_display": "Aug 13, 2026",
-        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 478,
+        "date_filed": "2026-08-21",
+        "time_filed": "15:43:52",
+        "date_display": "Aug 21, 2026",
+        "description": "Administrative Motion per Civil Local Rule 7-11",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 477,
         "date_filed": "2026-08-21",
