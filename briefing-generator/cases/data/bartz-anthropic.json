@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-08-19",
     "meta_fetched_at": "2026-08-20T14:01:41.486389+00:00",
-    "fetched_at": "2026-08-20T23:43:29.414646+00:00",
-    "as_of": "Aug 20, 2026",
+    "fetched_at": "2026-08-21T01:59:55.162446+00:00",
+    "as_of": "Aug 21, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 1,
     "recent": [
       {
         "entry_number": 683,
@@ -38,7 +38,7 @@
         "time_filed": "16:34:43",
         "date_display": "Aug 18, 2026",
         "description": "NOTICE OF APPEAL to the 9th Circuit Court of Appeals filed by Edelson PC, Oppenheim + Zebrak. (Appeal fee of $605 receipt number ACANDC-22353084 paid.) (Silverkorn, Brandt) (Filed on 8/18/2026) (Entered: 08/18/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.682.0_1.pdf"
       },
@@ -70,7 +70,7 @@
         "time_filed": "16:34:43",
         "date_display": "Aug 18, 2026",
         "description": "NOTICE OF APPEAL to the 9th Circuit Court of Appeals filed by Edelson PC, Oppenheim + Zebrak. (Appeal fee of $605 receipt number ACANDC-22353084 paid.) (Silverkorn, Brandt) (Filed on 8/18/2026) (Entered: 08/18/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.682.0_1.pdf"
       },
