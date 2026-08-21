@@ -15,44 +15,74 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-21",
-    "meta_fetched_at": "2026-08-21T18:59:26.222255+00:00",
-    "fetched_at": "2026-08-21T18:59:26.222255+00:00",
+    "meta_fetched_at": "2026-08-21T19:40:53.057587+00:00",
+    "fetched_at": "2026-08-21T19:40:53.057587+00:00",
     "as_of": "Aug 21, 2026",
     "backfilled": true,
-    "new_in_72h": 37,
+    "new_in_72h": 40,
     "recent": [
       {
-        "entry_number": 141,
+        "entry_number": 144,
         "date_filed": "2026-08-21",
-        "time_filed": "14:20:43",
+        "time_filed": "15:16:08",
         "date_display": "Aug 21, 2026",
-        "description": "Motion to Pay Employee Wages",
+        "description": "Chapter 11 First Day Motions",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 140,
+        "entry_number": 143,
         "date_filed": "2026-08-21",
-        "time_filed": "14:11:45",
+        "time_filed": "15:04:26",
         "date_display": "Aug 21, 2026",
-        "description": "Notice of Service",
+        "description": "Motion to File Under Seal",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 139,
+        "entry_number": 142,
         "date_filed": "2026-08-21",
-        "time_filed": "14:10:07",
+        "time_filed": "14:52:14",
         "date_display": "Aug 21, 2026",
-        "description": "Motion to Pay Critical Trade Vendor Claims",
+        "description": "Chapter 11 First Day Motions",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 144,
+        "date_filed": "2026-08-21",
+        "time_filed": "15:16:08",
+        "date_display": "Aug 21, 2026",
+        "description": "Chapter 11 First Day Motions",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 143,
+        "date_filed": "2026-08-21",
+        "time_filed": "15:04:26",
+        "date_display": "Aug 21, 2026",
+        "description": "Motion to File Under Seal",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 142,
+        "date_filed": "2026-08-21",
+        "time_filed": "14:52:14",
+        "date_display": "Aug 21, 2026",
+        "description": "Chapter 11 First Day Motions",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 141,
         "date_filed": "2026-08-21",
