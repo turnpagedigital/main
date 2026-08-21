@@ -15,13 +15,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72497647/goliath-ventures-inc/",
-    "date_last_filing": "2026-07-28",
-    "meta_fetched_at": "2026-08-19T14:58:28.514808+00:00",
-    "fetched_at": "2026-08-21T14:58:04.966112+00:00",
+    "date_last_filing": "2026-08-21",
+    "meta_fetched_at": "2026-08-21T19:00:59.957740+00:00",
+    "fetched_at": "2026-08-21T19:00:59.957740+00:00",
     "as_of": "Aug 21, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 23,
+        "date_filed": "2026-08-21",
+        "time_filed": "11:11:08",
+        "date_display": "Aug 21, 2026",
+        "description": "Schedules/Statements or Amended Schedules/Statements",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-21",
+        "time_filed": "11:11:34",
+        "date_display": "Aug 21, 2026",
+        "description": "Auto-Docket of Credit Card",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 22,
         "date_filed": "2026-07-28",
@@ -31,29 +51,29 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
+      }
+    ],
+    "entries": [
       {
-        "entry_number": 21,
-        "date_filed": "2026-07-28",
-        "time_filed": "16:48:47",
-        "date_display": "Jul 28, 2026",
-        "description": "Schedules and Statements Filed",
-        "is_new": false,
+        "entry_number": 23,
+        "date_filed": "2026-08-21",
+        "time_filed": "11:11:08",
+        "date_display": "Aug 21, 2026",
+        "description": "Schedules/Statements or Amended Schedules/Statements",
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
         "entry_number": null,
-        "date_filed": "2026-07-28",
-        "time_filed": "16:49:15",
-        "date_display": "Jul 28, 2026",
+        "date_filed": "2026-08-21",
+        "time_filed": "11:11:34",
+        "date_display": "Aug 21, 2026",
         "description": "Auto-Docket of Credit Card",
-        "is_new": false,
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
-      }
-    ],
-    "entries": [
+      },
       {
         "entry_number": 22,
         "date_filed": "2026-07-28",
