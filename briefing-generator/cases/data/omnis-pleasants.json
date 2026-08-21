@@ -15,16 +15,16 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-20",
-    "meta_fetched_at": "2026-08-20T23:43:40.171366+00:00",
-    "fetched_at": "2026-08-20T23:43:40.171366+00:00",
-    "as_of": "Aug 20, 2026",
+    "meta_fetched_at": "2026-08-21T02:00:05.571087+00:00",
+    "fetched_at": "2026-08-21T02:00:05.571087+00:00",
+    "as_of": "Aug 21, 2026",
     "backfilled": true,
-    "new_in_72h": 23,
+    "new_in_72h": 30,
     "recent": [
       {
-        "entry_number": 124,
+        "entry_number": 132,
         "date_filed": "2026-08-20",
-        "time_filed": "19:28:53",
+        "time_filed": "19:42:45",
         "date_display": "Aug 20, 2026",
         "description": "Subpoena",
         "is_new": true,
@@ -32,9 +32,9 @@
         "doc_url": ""
       },
       {
-        "entry_number": 123,
+        "entry_number": 131,
         "date_filed": "2026-08-20",
-        "time_filed": "19:27:28",
+        "time_filed": "19:41:07",
         "date_display": "Aug 20, 2026",
         "description": "Subpoena",
         "is_new": true,
@@ -42,9 +42,9 @@
         "doc_url": ""
       },
       {
-        "entry_number": 122,
+        "entry_number": 130,
         "date_filed": "2026-08-20",
-        "time_filed": "19:25:59",
+        "time_filed": "19:39:36",
         "date_display": "Aug 20, 2026",
         "description": "Subpoena",
         "is_new": true,
@@ -53,6 +53,86 @@
       }
     ],
     "entries": [
+      {
+        "entry_number": 132,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:42:45",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 131,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:41:07",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 130,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:39:36",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 129,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:38:04",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 128,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:36:13",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 127,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:33:34",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 126,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:32:05",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 125,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:30:24",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 124,
         "date_filed": "2026-08-20",
@@ -279,7 +359,7 @@
         "time_filed": "11:23:26",
         "date_display": "Aug 18, 2026",
         "description": "Exhibit(s) // Notice of Extension of Objection Deadline for Debtor's Motion for Entry of Interim and Final Orders (I) Authorizing Postpetition Use of Prepetition Collateral, Including Cash Collateral, (II) Granting Adequate Protection to the Prepetition Secured Parties, (III) Modifying the Automatic Stay, (IV) Scheduling a Final Hearing, and (V) Granting Related Relief (related document(s)17, 50) Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 08/18/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

@@ -16,10 +16,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-20",
     "meta_fetched_at": "2026-08-20T16:54:14.371564+00:00",
-    "fetched_at": "2026-08-20T23:43:51.575393+00:00",
-    "as_of": "Aug 20, 2026",
+    "fetched_at": "2026-08-21T02:00:16.534143+00:00",
+    "as_of": "Aug 21, 2026",
     "backfilled": true,
-    "new_in_72h": 13,
+    "new_in_72h": 10,
     "recent": [
       {
         "entry_number": 154,
@@ -159,7 +159,7 @@
         "time_filed": "16:00:06",
         "date_display": "Aug 18, 2026",
         "description": "Monthly Fee Statement. For the Month of July 2026. Objection Date is September 1, 2026. Filed by Stephen M. Packman on behalf of Archer & Greiner, P.C.. (Attachments: # 1 Exhibit A - Invoice) (Packman, Stephen) (Entered: 08/18/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -169,7 +169,7 @@
         "time_filed": "13:47:25",
         "date_display": "Aug 18, 2026",
         "description": "Certificate of Service (related document:103 Motion to Appoint Trustee filed by Creditor Lin Liang, 113 Support filed by Creditor Lin Liang, 143 Support filed by Creditor Lin Liang) filed by Sari Blair Placona on behalf of Lin Liang. (Placona, Sari) (Entered: 08/18/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -179,7 +179,7 @@
         "time_filed": "13:29:32",
         "date_display": "Aug 18, 2026",
         "description": "Amended Notice of Motion to Appoint a Chapter 11 Trustee - Hearing Date: October 21, 2026 at 10:00 a.m. in support of (related document:103 Motion to Appoint Trustee filed by Creditor Lin Liang, 113 Support filed by Creditor Lin Liang, 142 Hearing (Document) Scheduled, Text Order) filed by Sari Blair Placona on behalf of Lin Liang. (Placona, Sari) (Entered: 08/18/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

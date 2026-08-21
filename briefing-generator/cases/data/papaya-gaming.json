@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-08-20",
     "meta_fetched_at": "2026-08-20T13:15:33.218695+00:00",
-    "fetched_at": "2026-08-20T23:43:46.283573+00:00",
-    "as_of": "Aug 20, 2026",
+    "fetched_at": "2026-08-21T02:00:11.112116+00:00",
+    "as_of": "Aug 21, 2026",
     "backfilled": true,
-    "new_in_72h": 5,
+    "new_in_72h": 4,
     "recent": [
       {
         "entry_number": 74,
@@ -100,7 +100,7 @@
         "time_filed": "10:32:31",
         "date_display": "Aug 18, 2026",
         "description": "Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
