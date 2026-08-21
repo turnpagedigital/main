@@ -16,10 +16,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-08-19",
-    "meta_fetched_at": "2026-08-20T14:01:41.486389+00:00",
-    "fetched_at": "2026-08-21T04:04:31.436932+00:00",
+    "meta_fetched_at": "2026-08-21T08:07:20.869239+00:00",
+    "fetched_at": "2026-08-21T08:07:20.869239+00:00",
     "as_of": "Aug 21, 2026",
-    "backfilled": true,
+    "backfilled": false,
     "new_in_72h": 1,
     "recent": [
       {
@@ -7529,7 +7529,8 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=5"
   },
   "claims_administrator": {
     "name": "JND Legal Administration",
