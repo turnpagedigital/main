@@ -15,16 +15,16 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-21",
-    "meta_fetched_at": "2026-08-21T13:15:19.843393+00:00",
-    "fetched_at": "2026-08-21T13:15:19.843393+00:00",
+    "meta_fetched_at": "2026-08-21T14:01:28.264085+00:00",
+    "fetched_at": "2026-08-21T14:01:28.264085+00:00",
     "as_of": "Aug 21, 2026",
     "backfilled": true,
-    "new_in_72h": 11,
+    "new_in_72h": 18,
     "recent": [
       {
-        "entry_number": 155,
+        "entry_number": 162,
         "date_filed": "2026-08-21",
-        "time_filed": "08:59:42",
+        "time_filed": "09:20:24",
         "date_display": "Aug 21, 2026",
         "description": "Motion (Generic)",
         "is_new": true,
@@ -32,27 +32,97 @@
         "doc_url": ""
       },
       {
-        "entry_number": 154,
-        "date_filed": "2026-08-20",
-        "time_filed": "00:17:00",
-        "date_display": "Aug 20, 2026",
-        "description": "BNC Certificate of Notice - Order",
+        "entry_number": 161,
+        "date_filed": "2026-08-21",
+        "time_filed": "09:18:33",
+        "date_display": "Aug 21, 2026",
+        "description": "Motion (Generic)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 153,
-        "date_filed": "2026-08-20",
-        "time_filed": "00:17:00",
-        "date_display": "Aug 20, 2026",
-        "description": "BNC Certificate of Notice - Order",
+        "entry_number": 160,
+        "date_filed": "2026-08-21",
+        "time_filed": "09:15:57",
+        "date_display": "Aug 21, 2026",
+        "description": "Motion (Generic)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 162,
+        "date_filed": "2026-08-21",
+        "time_filed": "09:20:24",
+        "date_display": "Aug 21, 2026",
+        "description": "Motion (Generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 161,
+        "date_filed": "2026-08-21",
+        "time_filed": "09:18:33",
+        "date_display": "Aug 21, 2026",
+        "description": "Motion (Generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 160,
+        "date_filed": "2026-08-21",
+        "time_filed": "09:15:57",
+        "date_display": "Aug 21, 2026",
+        "description": "Motion (Generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 159,
+        "date_filed": "2026-08-21",
+        "time_filed": "09:13:57",
+        "date_display": "Aug 21, 2026",
+        "description": "Motion (Generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 158,
+        "date_filed": "2026-08-21",
+        "time_filed": "09:08:35",
+        "date_display": "Aug 21, 2026",
+        "description": "Motion (Generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 157,
+        "date_filed": "2026-08-21",
+        "time_filed": "09:04:34",
+        "date_display": "Aug 21, 2026",
+        "description": "Motion (Generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 156,
+        "date_filed": "2026-08-21",
+        "time_filed": "09:01:48",
+        "date_display": "Aug 21, 2026",
+        "description": "Motion (Generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 155,
         "date_filed": "2026-08-21",
