@@ -15,39 +15,39 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
-    "date_last_filing": "2026-08-20",
-    "meta_fetched_at": "2026-08-21T08:09:25.926723+00:00",
-    "fetched_at": "2026-08-21T14:56:40.913852+00:00",
+    "date_last_filing": "2026-08-21",
+    "meta_fetched_at": "2026-08-21T16:55:10.569771+00:00",
+    "fetched_at": "2026-08-21T16:55:10.569771+00:00",
     "as_of": "Aug 21, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 6,
     "recent": [
+      {
+        "entry_number": 76,
+        "date_filed": "2026-08-21",
+        "time_filed": "12:16:39",
+        "date_display": "Aug 21, 2026",
+        "description": "Notice of Hearing - Notice of Virtual Discovery Hearing (related document(s)73) Filed by Skillz Platform Inc.. Hearing scheduled for 8/28/2026 at 10:00 AM at US Bankruptcy Court, 824 Market St., 5th Fl., Courtroom #4, Wilmington, Delaware. Objections due by 8/26/2026. (Neiburg, Michael) (Entered: 08/21/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 75,
+        "date_filed": "2026-08-21",
+        "time_filed": "11:32:17",
+        "date_display": "Aug 21, 2026",
+        "description": "Order Shortening Notice for Hearing on Skillz Platform Inc.s Motion to Compel Production of Documents and Witness for Deposition (Related Doc # 74, 73) Order Signed on 8/21/2026. (LJH) (Entered: 08/21/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 74,
         "date_filed": "2026-08-20",
         "time_filed": "08:56:35",
         "date_display": "Aug 20, 2026",
         "description": "Motion to Shorten Notice With Respect to Skillz Platform Inc.'s Motion to Compel Production of Documents and Witness for Deposition (related document(s)73) Filed by Skillz Platform Inc.. (Attachments: # 1 Exhibit) (Neiburg, Michael) (Entered: 08/20/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 73,
-        "date_filed": "2026-08-20",
-        "time_filed": "08:52:43",
-        "date_display": "Aug 20, 2026",
-        "description": "Motion to Compel Production of Documents and Certain Deposition Witnesses Filed by Skillz Platform Inc.. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B # 4 Exhibit C # 5 Exhibit D # 6 Exhibit E # 7 Exhibit F # 8 Exhibit G) (Neiburg, Michael) (Entered: 08/20/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 72,
-        "date_filed": "2026-08-19",
-        "time_filed": "18:55:25",
-        "date_display": "Aug 19, 2026",
-        "description": "Certificate of Service",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -55,6 +55,26 @@
     ],
     "entries": [
       {
+        "entry_number": 76,
+        "date_filed": "2026-08-21",
+        "time_filed": "12:16:39",
+        "date_display": "Aug 21, 2026",
+        "description": "Notice of Hearing - Notice of Virtual Discovery Hearing (related document(s)73) Filed by Skillz Platform Inc.. Hearing scheduled for 8/28/2026 at 10:00 AM at US Bankruptcy Court, 824 Market St., 5th Fl., Courtroom #4, Wilmington, Delaware. Objections due by 8/26/2026. (Neiburg, Michael) (Entered: 08/21/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 75,
+        "date_filed": "2026-08-21",
+        "time_filed": "11:32:17",
+        "date_display": "Aug 21, 2026",
+        "description": "Order Shortening Notice for Hearing on Skillz Platform Inc.s Motion to Compel Production of Documents and Witness for Deposition (Related Doc # 74, 73) Order Signed on 8/21/2026. (LJH) (Entered: 08/21/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 74,
         "date_filed": "2026-08-20",
         "time_filed": "08:56:35",
@@ -79,7 +99,7 @@
         "date_filed": "2026-08-19",
         "time_filed": "18:55:25",
         "date_display": "Aug 19, 2026",
-        "description": "Certificate of Service",
+        "description": "Certificate of Service (related document(s)70, 71) Filed by Oriel Bachar. (Attachments: # 1 Service List) (Malow, Jennifer) (Entered: 08/19/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -89,7 +109,7 @@
         "date_filed": "2026-08-19",
         "time_filed": "15:07:02",
         "date_display": "Aug 19, 2026",
-        "description": "Rescheduled Hearing - Notice",
+        "description": "Notice of Rescheduled Hearing Hearing Originally Scheduled for Thursday, September 3, 2026 at 9:30 a.m. (ET) has been rescheduled. Filed by Oriel Bachar. Objections due by 8/27/2026. (Malow, Jennifer) (Entered: 08/19/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -99,7 +119,7 @@
         "date_filed": "2026-08-18",
         "time_filed": "10:32:31",
         "date_display": "Aug 18, 2026",
-        "description": "Order",
+        "description": "Order Approving Stipulated Protective Order Governing Discovery Material (related document(s)69) Order Signed on 8/18/2026. (Attachments: # 1 Exhibit 1) (LJH) (Entered: 08/18/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -109,7 +129,7 @@
         "date_filed": "2026-08-17",
         "time_filed": "21:07:34",
         "date_display": "Aug 17, 2026",
-        "description": "Certification of Counsel(Aty)",
+        "description": "Certification of Counsel Regarding Stipulated Protective Order Governing Discovery Material Filed by Oriel Bachar. (Attachments: # 1 Exhibit A) (Malow, Jennifer) (Entered: 08/17/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -119,7 +139,7 @@
         "date_filed": "2026-08-14",
         "time_filed": "09:57:40",
         "date_display": "Aug 14, 2026",
-        "description": "Notice of Service",
+        "description": "Notice of Service of the Foreign Representative's Responses and Objections to Skillz Platform Inc.'s First Set of Requests for Production to Debtors in Connection with Chapter 15 Petition for Recognition Filed by Oriel Bachar. (Malow, Jennifer) (Entered: 08/14/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -129,7 +149,7 @@
         "date_filed": "2026-08-11",
         "time_filed": "16:50:24",
         "date_display": "Aug 11, 2026",
-        "description": "Affidavit",
+        "description": "Affidavit of Publication Regarding Notice of Recognition Hearing on Foreign Recognition Proceeding in the New York Times Filed by Oriel Bachar. (Malow, Jennifer) (Entered: 08/11/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.67.0_1.pdf"
@@ -139,7 +159,7 @@
         "date_filed": "2026-08-11",
         "time_filed": "16:48:34",
         "date_display": "Aug 11, 2026",
-        "description": "Affidavit",
+        "description": "Affidavit of Publication Regarding Notice of Recognition Hearing on Foreign Recognition Proceeding in the Wall Street Journal Filed by Oriel Bachar. (Malow, Jennifer) (Entered: 08/11/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.66.0.pdf"
@@ -149,7 +169,7 @@
         "date_filed": "2026-08-11",
         "time_filed": "08:39:24",
         "date_display": "Aug 11, 2026",
-        "description": "Appear pro hac vice",
+        "description": "Order Approving Motion for Admission pro hac vice of Matthew Kutcher (Related Doc # 60) Signed on 8/11/2026. (LMC) (Entered: 08/11/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -159,7 +179,7 @@
         "date_filed": "2026-08-11",
         "time_filed": "08:38:55",
         "date_display": "Aug 11, 2026",
-        "description": "Appear pro hac vice",
+        "description": "Order Approving Motion for Admission pro hac vice of Matthew Oliver (Related Doc # 59) Signed on 8/11/2026. (LMC) (Entered: 08/11/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -169,7 +189,7 @@
         "date_filed": "2026-08-11",
         "time_filed": "08:38:24",
         "date_display": "Aug 11, 2026",
-        "description": "Appear pro hac vice",
+        "description": "Order Approving Motion for Admission pro hac vice of Erin Trenda (Related Doc # 58) Signed on 8/11/2026. (LMC) (Entered: 08/11/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -179,7 +199,7 @@
         "date_filed": "2026-08-11",
         "time_filed": "08:14:11",
         "date_display": "Aug 11, 2026",
-        "description": "Deposition - Notice",
+        "description": "Notice of Deposition of Papaya Gaming Ltd. in Connection With Chapter 15 Petition for Recognition Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/11/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -189,7 +209,7 @@
         "date_filed": "2026-08-11",
         "time_filed": "08:11:11",
         "date_display": "Aug 11, 2026",
-        "description": "Deposition - Notice",
+        "description": "Notice of Deposition of Papaya Gaming Inc. in Connection With Chapter 15 Petition for Recognition Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/11/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -209,7 +229,7 @@
         "date_filed": "2026-08-10",
         "time_filed": "18:10:09",
         "date_display": "Aug 10, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "description": "Motion to Appear pro hac vice of Matthew Oliver. Receipt Number ADEDC-5038, Filed by Oriel Bachar. (Malow, Jennifer) (Entered: 08/10/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -219,7 +239,7 @@
         "date_filed": "2026-08-10",
         "time_filed": "18:08:54",
         "date_display": "Aug 10, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "description": "Motion to Appear pro hac vice of Erin Trenda. Receipt Number ADEDC-5038, Filed by Oriel Bachar. (Malow, Jennifer) (Entered: 08/10/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""

@@ -15,12 +15,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-21",
-    "meta_fetched_at": "2026-08-21T14:01:28.264085+00:00",
-    "fetched_at": "2026-08-21T14:56:46.680661+00:00",
+    "meta_fetched_at": "2026-08-21T16:55:19.770829+00:00",
+    "fetched_at": "2026-08-21T16:55:19.770829+00:00",
     "as_of": "Aug 21, 2026",
     "backfilled": true,
-    "new_in_72h": 18,
+    "new_in_72h": 19,
     "recent": [
+      {
+        "entry_number": 163,
+        "date_filed": "2026-08-21",
+        "time_filed": "11:39:08",
+        "date_display": "Aug 21, 2026",
+        "description": "Master Service List",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 162,
         "date_filed": "2026-08-21",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 160,
-        "date_filed": "2026-08-21",
-        "time_filed": "09:15:57",
-        "date_display": "Aug 21, 2026",
-        "description": "Motion (Generic)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 163,
+        "date_filed": "2026-08-21",
+        "time_filed": "11:39:08",
+        "date_display": "Aug 21, 2026",
+        "description": "Master Service List",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 162,
         "date_filed": "2026-08-21",
