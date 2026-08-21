@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
-    "date_last_filing": "2026-08-20",
-    "meta_fetched_at": "2026-08-20T19:49:24.833555+00:00",
-    "fetched_at": "2026-08-21T11:46:43.078882+00:00",
+    "date_last_filing": "2026-08-21",
+    "meta_fetched_at": "2026-08-21T13:16:04.536117+00:00",
+    "fetched_at": "2026-08-21T13:16:04.536117+00:00",
     "as_of": "Aug 21, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 3,
     "recent": [
+      {
+        "entry_number": 377,
+        "date_filed": "2026-08-21",
+        "time_filed": "08:59:51",
+        "date_display": "Aug 21, 2026",
+        "description": "Order To Set Hearing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 376,
         "date_filed": "2026-08-20",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 374,
-        "date_filed": "2026-08-17",
-        "time_filed": "15:00:39",
-        "date_display": "Aug 17, 2026",
-        "description": "Appellee Designation",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.374.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 377,
+        "date_filed": "2026-08-21",
+        "time_filed": "08:59:51",
+        "date_display": "Aug 21, 2026",
+        "description": "Order To Set Hearing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 376,
         "date_filed": "2026-08-20",
