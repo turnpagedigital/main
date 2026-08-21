@@ -15,19 +15,29 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
-    "date_last_filing": "2026-08-20",
-    "meta_fetched_at": "2026-08-21T04:05:46.234636+00:00",
-    "fetched_at": "2026-08-21T10:51:58.557853+00:00",
+    "date_last_filing": "2026-08-21",
+    "meta_fetched_at": "2026-08-21T14:58:10.576761+00:00",
+    "fetched_at": "2026-08-21T14:58:10.576761+00:00",
     "as_of": "Aug 21, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-21",
+        "time_filed": "",
+        "date_display": "Aug 21, 2026",
+        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 27 MOTION for Benjamin Blystad Gould to Appear Pro Hac Vice receipt number ANYSDC-33253987. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (rju)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 27,
         "date_filed": "2026-08-20",
         "time_filed": "18:10:46",
         "date_display": "Aug 20, 2026",
-        "description": "Appear Pro Hac Vice",
+        "description": "MOTION for Benjamin Blystad Gould to Appear Pro Hac Vice receipt number ANYSDC-33253987. Motion and supporting papers to be reviewed by Clerk's Office staff. Document filed by Cengage Learning, Inc., Elsevier Inc., Hachette Book Group, Inc., S.C.R.I.B.E., Inc., Scott Turow. (Attachments: # 1 Affidavit of Ben Gould, # 2 Supplement WA State Certificate of Good Service, # 3 Supplement OR State Certificate of Good Service, # 4 Supplement CA State Certificate of Good Standing, # 5 Proposed Order Admission PHV).(Gould, Benjamin) (Entered: 08/20/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -37,29 +47,29 @@
         "date_filed": "2026-08-10",
         "time_filed": "18:47:31",
         "date_display": "Aug 10, 2026",
-        "description": "Reply to Response to Motion",
+        "description": "LETTER REPLY to Response to Motion addressed to Judge Loretta A. Preska from Eric K. Nikolaides dated August 10, 2026 re: 21 LETTER MOTION for Conference concerning Defendant Google LLC's anticipated motion to transfer this action to the Northern District of California addressed to Judge Loretta A. Preska from Eric K. Nikolaides dated August 4, 2026. . Document filed by Google LLC..(Nikolaides, Eric) (Entered: 08/10/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.668114/gov.uscourts.nysd.668114.26.0_1.pdf"
-      },
-      {
-        "entry_number": 25,
-        "date_filed": "2026-08-07",
-        "time_filed": "20:10:07",
-        "date_display": "Aug 7, 2026",
-        "description": "LETTER RESPONSE to Motion addressed to Judge Loretta A. Preska from Jeffrey M. Gould dated August 7, 2026 re: 21 LETTER MOTION for Conference concerning Defendant Google LLC's anticipated motion to transfer this action to the Northern District of California addressed to Judge Loretta A. Preska from Eric K. Nikolaides dated August 4, 2026. . Document filed by Cengage Learning, Inc., Elsevier Inc., Hachette Book Group, Inc., S.C.R.I.B.E., Inc., Scott Turow..(Gould, Jeffrey) (Entered: 08/07/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.668114/gov.uscourts.nysd.668114.25.0_1.pdf"
       }
     ],
     "entries": [
       {
+        "entry_number": null,
+        "date_filed": "2026-08-21",
+        "time_filed": "",
+        "date_display": "Aug 21, 2026",
+        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 27 MOTION for Benjamin Blystad Gould to Appear Pro Hac Vice receipt number ANYSDC-33253987. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (rju)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 27,
         "date_filed": "2026-08-20",
         "time_filed": "18:10:46",
         "date_display": "Aug 20, 2026",
-        "description": "Appear Pro Hac Vice",
+        "description": "MOTION for Benjamin Blystad Gould to Appear Pro Hac Vice receipt number ANYSDC-33253987. Motion and supporting papers to be reviewed by Clerk's Office staff. Document filed by Cengage Learning, Inc., Elsevier Inc., Hachette Book Group, Inc., S.C.R.I.B.E., Inc., Scott Turow. (Attachments: # 1 Affidavit of Ben Gould, # 2 Supplement WA State Certificate of Good Service, # 3 Supplement OR State Certificate of Good Service, # 4 Supplement CA State Certificate of Good Standing, # 5 Proposed Order Admission PHV).(Gould, Benjamin) (Entered: 08/20/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -69,7 +79,7 @@
         "date_filed": "2026-08-10",
         "time_filed": "18:47:31",
         "date_display": "Aug 10, 2026",
-        "description": "Reply to Response to Motion",
+        "description": "LETTER REPLY to Response to Motion addressed to Judge Loretta A. Preska from Eric K. Nikolaides dated August 10, 2026 re: 21 LETTER MOTION for Conference concerning Defendant Google LLC's anticipated motion to transfer this action to the Northern District of California addressed to Judge Loretta A. Preska from Eric K. Nikolaides dated August 4, 2026. . Document filed by Google LLC..(Nikolaides, Eric) (Entered: 08/10/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.668114/gov.uscourts.nysd.668114.26.0_1.pdf"
@@ -159,7 +169,7 @@
         "date_filed": "2026-08-05",
         "time_filed": "",
         "date_display": "Aug 5, 2026",
-        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 22 MOTION for Chris Nathaniel Ryder to Appear Pro Hac Vice receipt number ANYSDC-33241877. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (bc)",
+        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 19 MOTION for Paul J. Sampson to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number ANYSDC-33241859. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (bc)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
