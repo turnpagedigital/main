@@ -3,6 +3,39 @@
   "case_name": "Omnis Pleasants",
   "items": [
     {
+      "date": "2026-08-21",
+      "updated": "2026-08-21",
+      "lede": "On August 20, fifteen subpoenas — Dkts. 118 through 132 — landed on the Omnis Pleasants docket in a single day.",
+      "body_md": "On August 20, fifteen subpoenas — Dkts. 118 through 132 — landed on the Omnis Pleasants docket in a single day. The docket lines are captioned uniformly as \"Subpoena,\" with no further description of recipients or subject matter visible on their face. Fifteen subpoenas filed simultaneously is not a routine discovery event, even in a contested Chapter 11. The timing and volume place this squarely in the context of the dismissal motion (Dkt. 93) filed by Omnis Fuel Technologies and Quantum Pleasants: with the objection deadline on that motion set for August 28 and the September 3 final cash collateral and first-day hearings closing in, either the movants or the debtor — most likely the movants given the aggressive posture Lowenstein Sandler has already established through the First Set of Requests for Production (Dkt. 99) — is moving to lock in third-party testimony and document production before the contested hearings. Discovery in support of a dismissal motion or a trustee-appointment request would logically target individuals with knowledge of the circumstances surrounding the Chapter 11 filing itself: the corporate authorization question, the rejected $75.64 million payoff, the governance dispute, and the events preceding the West Virginia state court loss one business day before the petition date.\n\nThe practical consequence for the debtor is compounding pressure. The estate is now simultaneously defending against a dismissal/trustee motion with a hard August 28 objection deadline, managing third-party document production in response to Dkt. 99, responding to fifteen subpoenas whose return dates are unknown from the docket face but are presumably keyed to the September 3 hearing complex, and preparing final-hearing submissions on cash collateral and first-day operational orders. Each of those tracks feeds into the others: if subpoena responses surface evidence bearing on corporate authority or the circumstances of the filing, that evidence reaches the dismissal hearing; if the dismissal motion carries, the cash collateral and first-day orders become moot. The debtor's counsel at Young Conaway and Herbert Smith Freehills Kramer will need to manage objections to any subpoenas that are overbroad or seek privileged material while simultaneously briefing the substantive response to Dkt. 93 — a resource allocation problem that is not trivial.\n\nFor creditors and claimants, the subpoena barrage is the clearest indicator yet that the August 28 and September 3 proceedings are heading toward full-scale evidentiary contests rather than uncontested hearings. \nThe debtor is operating under interim cash-collateral authority while pursuing a sale of substantially all assets, with the final approval of that authority set for September 3; the interim cash-collateral order requires the debtor to continue the sale process and limits any plan absent secured-party consent to one that pays TRAG LLC and RG Energy LLC in full in cash.\n A contested dismissal that succeeds, or a trustee appointment in the alternative, would fundamentally reset those dynamics: a Chapter 11 trustee would step into control of the sale process and could take positions adverse to the debtor's current secured-party relationships. \nIf the court declines dismissal, the movants are asking it to appoint an independent Chapter 11 trustee and to vacate the interim cash collateral order.\n Recovery posture for unsecured creditors, including the West Virginia Economic Development Authority — \nthe largest creditor at more than $50.8 million, listed as unsecured\n — depends heavily on whether the sale process proceeds on the debtor's terms or is restructured under a trustee. The next concrete milestone is August 27, the objection deadline on the professional retention applications (including Sidley Austin as special regulatory counsel, Dkt. 85), followed by August 28, the objection deadline on the dismissal and trustee motion (Dkt. 93).\n\n## Sources\n\n- [Fight for Control of Profitable West Virginia Power Plant Escalates With Motion to Dismiss Bankruptcy](https://www.prnewswire.com/news-releases/fight-for-control-of-profitable-west-virginia-power-plant-escalates-with-motion-to-dismiss-bankruptcy-302853407.html) — PR Newswire, August 17, 2026\n- [Omnis Pleasants, LLC Bankruptcy Case](https://elevenflo.com/cases/17751) — ElevenFlo\n- [Omnis Pleasants Files Chapter 11 After $75.64M Payoff Rejected](https://elevenflo.com/blog/omnis-pleasants-llc-17751) — ElevenFlo, August 13, 2026\n- [Future of former Pleasants Power Plant uncertain as Omnis Pleasants files for bankruptcy](https://www.newsandsentinel.com/news/business/2026/07/future-of-former-pleasants-power-plant-uncertain-as-omnis-pleasants-files-for-bankruptcy/) — News and Sentinel, July 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Fight for Control of Profitable West Virginia Power Plant Escalates With Motion to Dismiss Bankruptcy",
+          "url": "https://www.prnewswire.com/news-releases/fight-for-control-of-profitable-west-virginia-power-plant-escalates-with-motion-to-dismiss-bankruptcy-302853407.html",
+          "note": "PR Newswire, August 17, 2026"
+        },
+        {
+          "title": "Omnis Pleasants, LLC Bankruptcy Case",
+          "url": "https://elevenflo.com/cases/17751",
+          "note": "ElevenFlo"
+        },
+        {
+          "title": "Omnis Pleasants Files Chapter 11 After $75.64M Payoff Rejected",
+          "url": "https://elevenflo.com/blog/omnis-pleasants-llc-17751",
+          "note": "ElevenFlo, August 13, 2026"
+        },
+        {
+          "title": "Future of former Pleasants Power Plant uncertain as Omnis Pleasants files for bankruptcy",
+          "url": "https://www.newsandsentinel.com/news/business/2026/07/future-of-former-pleasants-power-plant-uncertain-as-omnis-pleasants-files-for-bankruptcy/",
+          "note": "News and Sentinel, July 2026"
+        }
+      ],
+      "activity": {
+        "filings": 30,
+        "articles": 0,
+        "latest": "2026-08-20"
+      }
+    },
+    {
       "date": "2026-08-20",
       "updated": "2026-08-20",
       "lede": "On August 18, Omnis Pleasants filed Dkt. 100, extending the objection deadline on its cash collateral motion (related to Dkts. 17 and 50) — the interim order authorizing postpetition use of prepetition collateral, adequate protection to TRAG LLC and RG Energy LLC, automatic stay modification, and related relief.",

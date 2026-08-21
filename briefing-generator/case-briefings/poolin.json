@@ -3,6 +3,39 @@
   "case_name": "Poolin",
   "items": [
     {
+      "date": "2026-08-21",
+      "updated": "2026-08-21",
+      "lede": "Today, the Poolin Technology docket recorded eight motions — Dkts. 155 through 162 — all filed on August 21 and classified in the court's system as \"Motion (Generic).\" The docket metadata provides no further description of their subject matter, and no secondary reporting has identified their content as of this writing; they cannot be characterized with precision and will require direct review of the filed documents…",
+      "body_md": "Today, the Poolin Technology docket recorded eight motions — Dkts. 155 through 162 — all filed on August 21 and classified in the court's system as \"Motion (Generic).\" The docket metadata provides no further description of their subject matter, and no secondary reporting has identified their content as of this writing; they cannot be characterized with precision and will require direct review of the filed documents to assess materiality. Eight simultaneous generic motion filings in a single day is unusual in this case and warrants monitoring: depending on their content, they could represent anything from omnibus claim objections to contract rejection motions to creditor-initiated relief requests — all of which would be substantive. Confirmation will require access to the underlying documents on the CM/ECF docket for Case No. 26-18325 (Bankr. D.N.J., Judge O'Hagan).\n\nThe August 20 hearing on the Rule 9019 settlement motion (Dkt. 129) — the Elektron Energy settlement scheduled for 11:00 a.m. in Courtroom 2, Trenton, per the order shortening time (Dkt. 137) — has produced no confirming docket entry as of today. The docket reflects a \"Hearing Held\" entry for August 20, which is consistent with the hearing having proceeded, but no resulting order has appeared. Until an order issues, the Elektron Energy liability — \na $1,344,788.13 balance owed to Lonestar Dream for the March 2025 to March 2026 period, held in escrow pending release conditions\n — remains unresolved in terms of whether it closes out as a settlement, survives as a cure amount disclosed in Dkt. 149, or persists as a general unsecured claim. That ambiguity has direct bearing on what travels clean to the buyer at closing.\n\n\nAugust 21 was the deadline for the assumption and assignment notice, with the assigned contracts schedule and proposed cure amounts\n — executed by Dkt. 149, filed August 19. \nAugust 27 is the deadline for nonbinding indications of interest\n, the next immediate milestone in the sale timeline, followed by \nthe September 8 qualified bid deadline, the September 10 auction, and the September 16 sale hearing.\n Counterparties to executory contracts and unexpired leases now hold cure objection rights running from service of Dkt. 149; silence operates as consent to the stated cure amounts, and any undisclosed dispute can encumber title post-closing. The trustee motion (Dkt. 103, hearing October 21) remains pending and unchanged; if granted before the September 16 sale hearing, CRO Michael DuFrayne's authority terminates and an independent trustee assumes control of the auction process. Dkts. 150–154 are BNC certificates of notice — not reported. The immediate priority is identifying the content of Dkts. 155–162 and obtaining the order, if any, that emerged from the August 20 Elektron Energy hearing.\n\n## Sources\n\n- [Poolin Cleared To Pursue Asset Sale Amid Trustee Fight](https://www.law360.com/bankruptcy-authority/mid-cap/articles/2513768) — Law360, August 13, 2026\n- [Poolin Creditor Seeks Ch. 11 Trustee To Probe Transfers](https://www.law360.com/bankruptcy-authority/mid-cap/articles/2511097) — Law360, August 10, 2026\n- [Case Summary: Poolin Chapter 11](https://bondoro.com/poolin/) — Bondoro, August 2026\n- [Poolin Chapter 11 Bankruptcy Puts $52M Texas Auction in Play](https://www.cryptonexa.com/poolin-chapter-11-bankruptcy-puts-52m-texas-auction-in-play) — CryptoNexa, August 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Poolin Cleared To Pursue Asset Sale Amid Trustee Fight",
+          "url": "https://www.law360.com/bankruptcy-authority/mid-cap/articles/2513768",
+          "note": "Law360, August 13, 2026"
+        },
+        {
+          "title": "Poolin Creditor Seeks Ch. 11 Trustee To Probe Transfers",
+          "url": "https://www.law360.com/bankruptcy-authority/mid-cap/articles/2511097",
+          "note": "Law360, August 10, 2026"
+        },
+        {
+          "title": "Case Summary: Poolin Chapter 11",
+          "url": "https://bondoro.com/poolin/",
+          "note": "Bondoro, August 2026"
+        },
+        {
+          "title": "Poolin Chapter 11 Bankruptcy Puts $52M Texas Auction in Play",
+          "url": "https://www.cryptonexa.com/poolin-chapter-11-bankruptcy-puts-52m-texas-auction-in-play",
+          "note": "CryptoNexa, August 2026"
+        }
+      ],
+      "activity": {
+        "filings": 18,
+        "articles": 0,
+        "latest": "2026-08-21"
+      }
+    },
+    {
       "date": "2026-08-20",
       "updated": "2026-08-20",
       "lede": "On August 19, Poolin Technology filed the Notice of Sale by Auction and Sale Hearing (Dkt. 148) and the Notice of Cure Amount and Potential Assumption and Assignment of Executory Contracts and Unexpired Leases (Dkt. 149), both issued pursuant to Dkt. 138 — Judge O'Hagan's August 17 order approving bidding procedures for the sale of substantially all of the debtor's assets. Together, these two filings execute the…",
