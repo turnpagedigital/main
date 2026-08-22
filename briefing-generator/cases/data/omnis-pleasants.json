@@ -16,10 +16,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-21",
     "meta_fetched_at": "2026-08-21T19:40:53.057587+00:00",
-    "fetched_at": "2026-08-21T23:42:26.601309+00:00",
-    "as_of": "Aug 21, 2026",
+    "fetched_at": "2026-08-22T01:53:24.587317+00:00",
+    "as_of": "Aug 22, 2026",
     "backfilled": true,
-    "new_in_72h": 40,
+    "new_in_72h": 38,
     "recent": [
       {
         "entry_number": 144,
@@ -439,7 +439,7 @@
         "time_filed": "",
         "date_display": "Aug 19, 2026",
         "description": "Receipt of filing fee for Motion to Sale of Property Free and Clear of Liens( 26-11169-KBO) [motion,msell] ( 199.00). Receipt Number A12787407, amount $ 199.00. (U.S. Treasury) (Entered: 08/19/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -449,7 +449,7 @@
         "time_filed": "09:08:26",
         "date_display": "Aug 19, 2026",
         "description": "none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

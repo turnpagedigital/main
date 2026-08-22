@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-08-21",
     "meta_fetched_at": "2026-08-21T20:43:17.385005+00:00",
-    "fetched_at": "2026-08-21T23:42:15.745654+00:00",
-    "as_of": "Aug 21, 2026",
+    "fetched_at": "2026-08-22T01:53:13.280668+00:00",
+    "as_of": "Aug 22, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 1,
     "recent": [
       {
         "entry_number": 684,
@@ -38,7 +38,7 @@
         "time_filed": "18:31:23",
         "date_display": "Aug 19, 2026",
         "description": "NOTICE OF APPEAL to the 9th Circuit Court of Appeals filed by Cowan DeBaets Abrahams & Sheppard LLP. (Appeal fee of $605 receipt number ACANDC-22359014 paid.) (Wolff, Nancy) (Filed on 8/19/2026) (Entered: 08/19/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.683.0_1.pdf"
       },
@@ -70,7 +70,7 @@
         "time_filed": "18:31:23",
         "date_display": "Aug 19, 2026",
         "description": "NOTICE OF APPEAL to the 9th Circuit Court of Appeals filed by Cowan DeBaets Abrahams & Sheppard LLP. (Appeal fee of $605 receipt number ACANDC-22359014 paid.) (Wolff, Nancy) (Filed on 8/19/2026) (Entered: 08/19/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.683.0_1.pdf"
       },

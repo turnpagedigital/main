@@ -16,10 +16,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-21",
     "meta_fetched_at": "2026-08-21T16:55:19.770829+00:00",
-    "fetched_at": "2026-08-21T23:42:37.931491+00:00",
-    "as_of": "Aug 21, 2026",
+    "fetched_at": "2026-08-22T01:53:36.770385+00:00",
+    "as_of": "Aug 22, 2026",
     "backfilled": true,
-    "new_in_72h": 19,
+    "new_in_72h": 15,
     "recent": [
       {
         "entry_number": 163,
@@ -209,7 +209,7 @@
         "time_filed": "15:21:59",
         "date_display": "Aug 19, 2026",
         "description": "Document re: Notice of Cure Amount and Potential Assumption and Assignment of Executory Contracts and Unexpired Leases in Connection with Sale of Substantially All Assets (related document:12 Motion (Generic) filed by Debtor Poolin Technology PTE. LTD, 30 Amended Motion filed by Debtor Poolin Technology PTE. LTD, 138 Order (I) Approving Bidding Procedures for the Sale of Substantially all of the Debtors Assets, (II) Authorizing the Debtors to Enter Into One or More Stalking Horse Purchase Agreement and Provide Bid Protections, (III) Scheduling an Auction and Approving the Form and Manner of Notice Thereof, (IV) Approving Procedures for the Assumption and Assignment of or Rejection of Designated Executory Contracts and Unexpired Leases, (V) Scheduling a Sale Hearing and Approving the Form and Manner of Notice Thereof, and (VI) Granting Related Relief.iled by Stephen M. Packman on behalf…",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -219,7 +219,7 @@
         "time_filed": "14:36:36",
         "date_display": "Aug 19, 2026",
         "description": "Document re: Notice of Sale by Auction and Sale Hearing (related document:138 Order (I) Approving Bidding Procedures for the Sale of Substantially all of the Debtors Assets, (II) Authorizing the Debtors to Enter Into One or More Stalking Horse Purchase Agreement and Provide Bid Protections, (III) Scheduling an Auction and Approving the Form and Manner of Notice Thereof, (IV) Approving Procedures for the Assumption and Assignment of or Rejection of Designated Executory Contracts and Unexpired Leases, (V) Scheduling a Sale Hearing and Approving the Form and Manner of Notice Thereof, and (VI) Granting Related Relief) filed by Stephen M. Packman on behalf of Poolin Technology PTE. LTD. (Packman, Stephen) Modified TEXT on 8/19/2026 (rms). (Entered: 08/19/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -229,7 +229,7 @@
         "time_filed": "13:32:08",
         "date_display": "Aug 19, 2026",
         "description": "Notice of Agenda filed by Stephen M. Packman on behalf of Poolin Technology PTE. LTD. (Packman, Stephen) (Entered: 08/19/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -239,7 +239,7 @@
         "time_filed": "10:20:30",
         "date_display": "Aug 19, 2026",
         "description": "AMENDED Monthly Fee Statement. For the Month of July 2026. Objection Date is September 2, 2026. Filed by Stephen M. Packman on behalf of Archer & Greiner, P.C.. (Attachments: # 1 Exhibit A - Invoice) (Packman, Stephen). Related document(s) 145 Monthly Fee Statement filed by Attorney Archer & Greiner, P.C.. Modified on 8/19/2026 (mrg). (Entered: 08/19/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
