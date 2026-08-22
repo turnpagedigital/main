@@ -16,10 +16,10 @@
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-21",
     "meta_fetched_at": "2026-08-21T19:01:47.352204+00:00",
-    "fetched_at": "2026-08-21T23:43:29.507482+00:00",
-    "as_of": "Aug 21, 2026",
+    "fetched_at": "2026-08-22T01:54:19.322258+00:00",
+    "as_of": "Aug 22, 2026",
     "backfilled": true,
-    "new_in_72h": 18,
+    "new_in_72h": 10,
     "recent": [
       {
         "entry_number": 1246,
@@ -159,7 +159,7 @@
         "time_filed": "23:24:36",
         "date_display": "Aug 19, 2026",
         "description": "BNC certificate of mailing - PDF document",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -169,7 +169,7 @@
         "time_filed": "19:52:04",
         "date_display": "Aug 19, 2026",
         "description": "Chapter 11 Monthly Operating Report UST Form 11-MOR",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -179,7 +179,7 @@
         "time_filed": "16:19:25",
         "date_display": "Aug 19, 2026",
         "description": "Certificate of service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -189,7 +189,7 @@
         "time_filed": "15:34:03",
         "date_display": "Aug 19, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -199,7 +199,7 @@
         "time_filed": "15:26:41",
         "date_display": "Aug 19, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -209,7 +209,7 @@
         "time_filed": "11:52:31",
         "date_display": "Aug 19, 2026",
         "description": "Certificate of service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -219,7 +219,7 @@
         "time_filed": "10:55:24",
         "date_display": "Aug 19, 2026",
         "description": "Request for transcript/audio",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -229,7 +229,7 @@
         "time_filed": "15:35:25",
         "date_display": "Aug 19, 2026",
         "description": "none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

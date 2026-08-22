@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
     "date_last_filing": "2026-08-19",
     "meta_fetched_at": "2026-08-20T01:54:39.893602+00:00",
-    "fetched_at": "2026-08-21T23:42:50.635914+00:00",
-    "as_of": "Aug 21, 2026",
+    "fetched_at": "2026-08-22T01:53:57.066214+00:00",
+    "as_of": "Aug 22, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 1321,
@@ -28,7 +28,7 @@
         "time_filed": "20:11:42",
         "date_display": "Aug 19, 2026",
         "description": "Authorize - Motion",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -60,7 +60,7 @@
         "time_filed": "20:11:42",
         "date_display": "Aug 19, 2026",
         "description": "Authorize - Motion",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
