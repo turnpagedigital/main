@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
     "date_last_filing": "2026-08-21",
-    "meta_fetched_at": "2026-08-21T19:01:06.409285+00:00",
-    "fetched_at": "2026-08-22T01:54:07.562957+00:00",
+    "meta_fetched_at": "2026-08-22T10:45:41.890637+00:00",
+    "fetched_at": "2026-08-22T10:45:41.890637+00:00",
     "as_of": "Aug 22, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 4,
     "recent": [
+      {
+        "entry_number": 28,
+        "date_filed": "2026-08-21",
+        "time_filed": "23:07:12",
+        "date_display": "Aug 21, 2026",
+        "description": "Conference",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": null,
         "date_filed": "2026-08-21",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 27,
-        "date_filed": "2026-08-20",
-        "time_filed": "18:10:46",
-        "date_display": "Aug 20, 2026",
-        "description": "MOTION for Benjamin Blystad Gould to Appear Pro Hac Vice receipt number ANYSDC-33253987. Motion and supporting papers to be reviewed by Clerk's Office staff. Document filed by Cengage Learning, Inc., Elsevier Inc., Hachette Book Group, Inc., S.C.R.I.B.E., Inc., Scott Turow. (Attachments: # 1 Affidavit of Ben Gould, # 2 Supplement WA State Certificate of Good Service, # 3 Supplement OR State Certificate of Good Service, # 4 Supplement CA State Certificate of Good Standing, # 5 Proposed Order Admission PHV).(Gould, Benjamin) (Entered: 08/20/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 28,
+        "date_filed": "2026-08-21",
+        "time_filed": "23:07:12",
+        "date_display": "Aug 21, 2026",
+        "description": "Conference",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": null,
         "date_filed": "2026-08-21",
@@ -179,7 +189,7 @@
         "date_filed": "2026-08-05",
         "time_filed": "",
         "date_display": "Aug 5, 2026",
-        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 18 MOTION for Derek William Loeser to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number ANYSDC-33241839. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (bc)",
+        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 19 MOTION for Paul J. Sampson to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number ANYSDC-33241859. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (bc)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
