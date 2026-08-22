@@ -1,6 +1,51 @@
 {
   "items": [
     {
+      "id": "braskem-idesa",
+      "kind": "summaries",
+      "source": "Bondoro",
+      "source_id": "bondoro-summaries",
+      "show": "both",
+      "title": "Case Summary: Braskem Idesa Chapter 11",
+      "url": "https://bondoro.com/braskem-idesa/",
+      "date": "2026-08-21",
+      "published_at": "2026-08-21T21:30:20+00:00",
+      "excerpt": "Braskem Idesa, the Mexican petrochemical joint venture behind the Etileno XXI complex, filed for Chapter 11 after Pemex ethane shortfalls forced costly imported feedstock amid a prolonged downcycle, with an RSA backed by ~79% of secured debt to cut funded debt by over $920 million.",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "insight-works-filing-alert",
+      "kind": "alert",
+      "source": "Bondoro",
+      "source_id": "bondoro-alert",
+      "show": "both",
+      "title": "Filing Alert: Insight Works Chapter 11",
+      "url": "https://bondoro.com/insight-works-filing-alert/",
+      "date": "2026-08-21",
+      "published_at": "2026-08-21T19:32:28+00:00",
+      "excerpt": "Insight Works Files Chapter 11 in District of Wyoming",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
+      "kind": "Asset Sale",
+      "source": "Daily DAC",
+      "source_id": "daily-dac-article",
+      "show": "news",
+      "title": "PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Metal stamping and manufacturing company",
+      "url": "https://www.dailydac.com/public-notice-of-ucc-article-9-sale-metal-stamping-and-manufacturing-company/?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-metal-stamping-and-manufacturing-company",
+      "date": "2026-08-21",
+      "published_at": "2026-08-21T04:48:25+00:00",
+      "excerpt": "NOTICE OF PUBLIC SALE OF COLLATERAL PURSUANT TO ARTICLE 9 OF THE UNIFORM COMMERCIAL CODE &#160; PLEASE TAKE NOTICE that on September 22, 2026, at 1:00 P.M. (CDT) at the offices of Vedder Price P.C., 222 N. LaSalle Street, Suite 2600, Chicago, Illinois 60601 and/or virtually via Zoom or similar softw",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
       "id": "dish-to-trinseo-hold-my-beer",
       "kind": "news",
       "source": "Petition",
@@ -5001,7 +5046,8 @@
       "excerpt": "San Diego-based Cubic Corporation, owned by Veritas Capital and Elliott Investment Management, is collapsing under the weight of its massive debt load.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "alea-holdings",
@@ -5016,7 +5062,8 @@
       "excerpt": "Alea Holdings US Company and affiliates, non-operating holdcos in Catalina Holdings' runoff platform, filed Chapter 11 after non-Debtor SPARTA was left holding legacy AEIC liabilities and a TruPS tender fell short, pursuing an RSA-backed plan and 363 sales of equity in two non-Debtor insurers.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "im-super-crazy-busy",
