@@ -15,11 +15,11 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-21",
-    "meta_fetched_at": "2026-08-22T03:09:52.849837+00:00",
-    "fetched_at": "2026-08-22T04:52:42.054670+00:00",
+    "meta_fetched_at": "2026-08-22T07:57:13.688386+00:00",
+    "fetched_at": "2026-08-22T07:57:13.688386+00:00",
     "as_of": "Aug 22, 2026",
-    "backfilled": true,
-    "new_in_72h": 48,
+    "backfilled": false,
+    "new_in_72h": 56,
     "recent": [
       {
         "entry_number": 159,
@@ -127,6 +127,26 @@
         "entry_number": 152,
         "date_filed": "2026-08-21",
         "time_filed": "22:10:12",
+        "date_display": "Aug 21, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 148,
+        "date_filed": "2026-08-21",
+        "time_filed": "22:02:26",
+        "date_display": "Aug 21, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 147,
+        "date_filed": "2026-08-21",
+        "time_filed": "22:00:24",
         "date_display": "Aug 21, 2026",
         "description": "Subpoena",
         "is_new": true,
@@ -249,6 +269,26 @@
         "time_filed": "13:26:22",
         "date_display": "Aug 21, 2026",
         "description": "Continuation of Utility Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 134,
+        "date_filed": "2026-08-20",
+        "time_filed": "21:15:46",
+        "date_display": "Aug 20, 2026",
+        "description": "Certification of Counsel(Aty)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 133,
+        "date_filed": "2026-08-20",
+        "time_filed": "21:09:31",
+        "date_display": "Aug 20, 2026",
+        "description": "Extend - Motion",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -439,6 +479,46 @@
         "time_filed": "19:13:13",
         "date_display": "Aug 20, 2026",
         "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 113,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:11:49",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 112,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:09:43",
+        "date_display": "Aug 20, 2026",
+        "description": "Subpoena",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 111,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:04:09",
+        "date_display": "Aug 20, 2026",
+        "description": "Certificate of No Objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 110,
+        "date_filed": "2026-08-20",
+        "time_filed": "19:00:08",
+        "date_display": "Aug 20, 2026",
+        "description": "Certificate of No Objection",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -1713,7 +1793,8 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": {
     "name": "Stretto",
