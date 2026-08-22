@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
     "date_last_filing": "2026-08-21",
-    "meta_fetched_at": "2026-08-22T03:59:50.027805+00:00",
-    "fetched_at": "2026-08-22T03:59:50.027805+00:00",
+    "meta_fetched_at": "2026-08-22T04:53:04.867424+00:00",
+    "fetched_at": "2026-08-22T04:53:04.867424+00:00",
     "as_of": "Aug 22, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 3,
     "recent": [
+      {
+        "entry_number": 1323,
+        "date_filed": "2026-08-21",
+        "time_filed": "23:30:12",
+        "date_display": "Aug 21, 2026",
+        "description": "Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1322,
         "date_filed": "2026-08-21",
@@ -33,33 +43,43 @@
         "doc_url": ""
       },
       {
-        "entry_number": 1321,
-        "date_filed": "2026-08-19",
-        "time_filed": "20:11:42",
-        "date_display": "Aug 19, 2026",
-        "description": "Authorize - Motion",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 1320,
-        "date_filed": "2026-08-18",
-        "time_filed": "14:56:06",
-        "date_display": "Aug 18, 2026",
-        "description": "Withdrawal - Notice",
-        "is_new": false,
+        "entry_number": null,
+        "date_filed": "2026-08-21",
+        "time_filed": "23:31:16",
+        "date_display": "Aug 21, 2026",
+        "description": "none",
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
       {
+        "entry_number": 1323,
+        "date_filed": "2026-08-21",
+        "time_filed": "23:30:12",
+        "date_display": "Aug 21, 2026",
+        "description": "Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 1322,
         "date_filed": "2026-08-21",
         "time_filed": "23:09:26",
         "date_display": "Aug 21, 2026",
         "description": "Certificate of Mailing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-21",
+        "time_filed": "23:31:16",
+        "date_display": "Aug 21, 2026",
+        "description": "none",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
