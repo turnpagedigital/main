@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
     "date_last_filing": "2026-08-21",
     "meta_fetched_at": "2026-08-22T10:45:41.890637+00:00",
-    "fetched_at": "2026-08-22T18:55:00.991090+00:00",
-    "as_of": "Aug 22, 2026",
+    "fetched_at": "2026-08-23T02:03:26.311093+00:00",
+    "as_of": "Aug 23, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 3,
     "recent": [
       {
         "entry_number": 28,
@@ -90,7 +90,7 @@
         "time_filed": "18:10:46",
         "date_display": "Aug 20, 2026",
         "description": "MOTION for Benjamin Blystad Gould to Appear Pro Hac Vice receipt number ANYSDC-33253987. Motion and supporting papers to be reviewed by Clerk's Office staff. Document filed by Cengage Learning, Inc., Elsevier Inc., Hachette Book Group, Inc., S.C.R.I.B.E., Inc., Scott Turow. (Attachments: # 1 Affidavit of Ben Gould, # 2 Supplement WA State Certificate of Good Service, # 3 Supplement OR State Certificate of Good Service, # 4 Supplement CA State Certificate of Good Standing, # 5 Proposed Order Admission PHV).(Gould, Benjamin) (Entered: 08/20/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
