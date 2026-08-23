@@ -1538,6 +1538,13 @@
       "source": "Bloomberg Law",
       "date": "2025-09-08",
       "summary": "Authors Grady Hendrix and Jennifer Roberson filed suit in N.D. Cal. alleging Apple trained Apple Intelligence on the Books3 pirated dataset, accessed via the RedPajama training corpus hosted by Hugging Face. The complaint targets both Apple's OpenELM and Foundation Language Models."
+    },
+    {
+      "headline": "Apple Sued by Authors for Copyright Infringement",
+      "url": "https://www.publishersweekly.com/pw/by-topic/industry-news/industry-deals/article/98546-apple-sued-by-authors-for-copyright-infringement.html",
+      "source": "Publishers Weekly",
+      "date": "2025-09-08",
+      "summary": "Hendrix and Roberson filed suit in N.D. Cal. targeting Apple's OpenELM LLMs, alleging use of the Books3 pirated-books dataset and web-scraping via Applebot to reach shadow libraries. The filing landed the same day Anthropic disclosed its $1.5 billion settlement with a parallel author class."
     }
   ],
   "events": []

@@ -18223,6 +18223,13 @@
       "summary": "OpenAI urged Judge Sidney Stein to reject sanctions that would bar it from relying on a 20 million-chat evidence sample, arguing it neither violated the preservation order nor misrepresented its ability to search for copyrighted material. The filing is the company's formal opposition to the 17-publisher coalition's sanctions motion in the consolidated MDL."
     },
     {
+      "headline": "OpenAI says news outlets' sanctions motion seeks to 'rewrite history'",
+      "url": "https://www.mlex.com/mlex/intellectual-property/articles/2513598",
+      "source": "MLex",
+      "date": "2026-08-13",
+      "summary": "OpenAI pushed back on allegations from the NYT-led publisher coalition that it obstructed discovery in the MDL copyright case, calling the sanctions bid an 'end run around proving their case' and defending spending 'hundreds of hours and millions of dollars' on what it described as one of the most complex evidence productions in U.S. litigation history."
+    },
+    {
       "headline": "New York Times and Other News Outlets Accuse OpenAI of Lying in Discovery, Demand Legal Sanctions Against AI Giant",
       "url": "https://variety.com/2026/digital/news/new-york-times-news-outlets-accuse-openai-of-lying-lawsuit-1236805648/",
       "source": "Variety",
@@ -18235,6 +18242,13 @@
       "source": "Quartz",
       "date": "2026-07-10",
       "summary": "Quartz reported that publishers contend OpenAI rendered billions of ChatGPT exchanges inaccessible through deletion or by stripping them of searchability, and that OpenAI had already built an internal database of roughly 78 million de-identified ChatGPT conversations before the Times filed suit. Publishers sought monetary penalties, attorney fees, and an adverse evidentiary finding regarding their copyrighted works."
+    },
+    {
+      "headline": "Deposition Reveals OpenAI Tracked Its Own Copyright Violations While Claiming It Could Not",
+      "url": "https://www.techtimes.com/articles/320106/20260710/deposition-reveals-openai-tracked-its-own-copyright-violations-while-claiming-it-could-not.htm",
+      "source": "TechTimes",
+      "date": "2026-07-10",
+      "summary": "The article details the 17-publisher coalition's allegation that OpenAI ran internal searches for copyright-infringing content while simultaneously telling the court such searches were technically impossible, and that it deleted billions of ChatGPT conversation logs ordered to be preserved. If the sanctions motion succeeds, it could hand publishers a trial-altering evidentiary win without requiring merits proof."
     },
     {
       "headline": "New York Times Seeks Sanctions Against OpenAI in Copyright Case",
@@ -18263,6 +18277,20 @@
       "source": "Al Jazeera",
       "date": "2026-07-09",
       "summary": "The New York Times, Daily News, and other media outlets asked a federal judge to impose sanctions on OpenAI, with publisher counsel alleging OpenAI made misrepresentations for two years about its ability to search training datasets for copyrighted content."
+    },
+    {
+      "headline": "New York Times Seeks Sanctions Against OpenAI in Copyright Case",
+      "url": "https://news.bloomberglaw.com/privacy-and-data-security/new-york-times-seeks-sanctions-against-openai-in-copyright-case",
+      "source": "Bloomberg Law",
+      "date": "2026-07-09",
+      "summary": "Bloomberg Law reported that the NYT and co-plaintiff publishers filed a motion accusing OpenAI of a 'deliberate and systemic effort to obstruct discovery' in the MDL copyright proceeding. The motion centers on allegations that OpenAI concealed search capabilities and deleted billions of ChatGPT conversation logs under a court preservation order."
+    },
+    {
+      "headline": "News Orgs. Want OpenAI Sanctioned In Copyright MDL",
+      "url": "https://www.law360.com/articles/2428386/news-orgs-want-openai-sanctioned-in-copyright-mdl",
+      "source": "Law360",
+      "date": "2026-01-09",
+      "summary": "Law360 reported on the earlier, January 2026 iteration of the discovery fight, detailing allegations that OpenAI failed to properly maintain or produce ChatGPT output logs in the MDL. This reporting laid the groundwork for the broader July sanctions motion."
     }
   ],
   "events": []
