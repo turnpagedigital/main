@@ -1,14 +1,14 @@
-# Every Major AI Copyright Lawsuit, Tracked (August 2026)
+# Keeping up with the AI copyright dockets (August 2026)
 
 One page, every major case against an LLM or generative-AI provider, current as of **August 3, 2026** — who's suing, what's at stake, where it stands, and what it means for rights holders. Bookmark this; we maintain it as the docket moves. For the deep dives, each section links to our full briefing.
 
 ## Anthropic
 
-**Bartz v. Anthropic (books) — SETTLED, $1.5 billion; judgment now ON APPEAL.** Final approval July 20, 2026; at least ~$3,000 per work across 482,460 books. **A notice of appeal to the Ninth Circuit was filed August 18, 2026 (Dkt. 682)** — distribution milestones (Aug 21, Oct 9) are now subject to the appeal, which typically pauses payouts for the 12–18 months such appeals run. The release covers past acquisition conduct only — outputs and future conduct remain open. → [The appeal, explained](/briefings/2026-08-03-anthropic-settlement-appeal-risk) · [Plain-English author guide](/briefings/2026-08-03-anthropic-settlement-author-guide) · [Payment timeline](/briefings/2026-08-03-anthropic-settlement-payment-timeline) · [Per-book amounts](/briefings/2026-08-03-anthropic-settlement-how-much-per-book)
+**Bartz v. Anthropic (books) — SETTLED, $1.5 billion; judgment now ON APPEAL.** Final approval July 20, 2026; at least \~$3,000 per work across 482,460 books. **A notice of appeal to the Ninth Circuit was filed August 18, 2026 (Dkt. 682)** — distribution milestones (Aug 21, Oct 9) are now subject to the appeal, which typically pauses payouts for the 12–18 months such appeals run. The release covers past acquisition conduct only — outputs and future conduct remain open. → [The appeal, explained](/briefings/2026-08-03-anthropic-settlement-appeal-risk) · [Plain-English author guide](/briefings/2026-08-03-anthropic-settlement-author-guide) · [Payment timeline](/briefings/2026-08-03-anthropic-settlement-payment-timeline) · [Per-book amounts](/briefings/2026-08-03-anthropic-settlement-how-much-per-book)
 
 **Concord Music Group v. Anthropic (lyrics) — ACTIVE.** Music publishers (Concord, Capitol CMG, UMPG, ABKCO) in deep discovery before Judge Eumi K. Lee (N.D. Cal.); publishers have moved to defeat fair use ahead of trial. → [Full briefing](/briefings/2026-08-03-concord-v-anthropic-music-lawsuit)
 
-**BMG v. Anthropic (lyrics) — ACTIVE, NEW 2026.** Two suits: ~500 identified compositions, plus a 20,000+ song action reportedly seeking $3 billion+ over shadow-library torrenting. → [Full briefing](/briefings/2026-08-03-bmg-v-anthropic-lyrics-lawsuits)
+**BMG v. Anthropic (lyrics) — ACTIVE, NEW 2026.** Two suits: \~500 identified compositions, plus a 20,000+ song action reportedly seeking $3 billion+ over shadow-library torrenting. → [Full briefing](/briefings/2026-08-03-bmg-v-anthropic-lyrics-lawsuits)
 
 ## OpenAI / Microsoft
 
@@ -30,8 +30,7 @@ The **Third Circuit heard argument June 11, 2026** on the first appellate review
 
 ## Music generators
 
-**UMG/WMG/Sony v. Suno — ACTIVE.** All three majors continue against Suno.
-**UMG v. Udio — SETTLED into a partnership**: the lawsuit became a licensed AI music platform launching in 2026 — the second template (after cash settlement) for how these cases end. The musicians' union (AFM) has sued UMG and WMG over whether artists share in those settlements — the question of who shares in these resolutions is just beginning to be litigated.
+**UMG/WMG/Sony v. Suno — ACTIVE.** All three majors continue against Suno. **UMG v. Udio — SETTLED into a partnership**: the lawsuit became a licensed AI music platform launching in 2026 — the second template (after cash settlement) for how these cases end. The musicians' union (AFM) has sued UMG and WMG over whether artists share in those settlements — the question of who shares in these resolutions is just beginning to be litigated.
 
 ## What this board means if you own rights
 

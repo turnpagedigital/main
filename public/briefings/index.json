@@ -26,16 +26,14 @@
     {
       "slug": "2026-08-03-ai-copyright-lawsuit-tracker",
       "date": "2026-08-03",
-      "title": "Every Major AI Copyright Lawsuit, Tracked (August 2026)",
-      "summary": "Anthropic, OpenAI, Meta, Stability, Midjourney, Suno, Udio — every major AI copyright case on one page: status, stakes, and what each means for rights holders. Updated as the docket moves.",
+      "type": "briefing",
+      "title": "We're following the AI copyright lawsuits, and there are dozens!",
+      "summary": "Anthropic, OpenAI, Meta, Stability, Midjourney, Suno, Udio — we're tracking every major AI copyright case. The status, the stakes, and implications for rights holders.",
       "tags": [
         "AI Copyright",
         "Tracker",
         "Advisory"
-      ],
-      "author": "Turnpage Intelligence",
-      "type": "briefing",
-      "active": true
+      ]
     },
     {
       "slug": "2026-08-03-anthropic-settlement-payment-timeline",
