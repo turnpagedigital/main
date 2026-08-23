@@ -1802,11 +1802,25 @@
   },
   "coverage": [
     {
+      "headline": "Crypto Miner Poolin Files For Bankruptcy",
+      "url": "https://finance.yahoo.com/markets/crypto/articles/crypto-miner-poolin-files-bankruptcy-141500892.html",
+      "source": "Yahoo Finance (Canadian Press)",
+      "date": "2026-08-21",
+      "summary": "Poolin Technology PTE filed for Chapter 11 in the U.S. Bankruptcy Court for the District of New Jersey with liabilities up to $500 million and between 10,001 and 25,000 creditors. The company is pursuing a court-supervised sale with qualified bids due September 8 and an auction scheduled for September 10."
+    },
+    {
       "headline": "Poolin Cleared To Pursue Asset Sale Amid Trustee Fight",
       "url": "https://www.law360.com/bankruptcy/articles/2513768",
       "source": "Law360",
       "date": "2026-08-14",
       "summary": "A New Jersey bankruptcy judge cleared Poolin Technology to proceed with its planned next-month asset sale, granting stalking-horse bidder Thor CALAP LLC additional time to also pursue a neighboring property for an AI data center in Texas. The ruling came despite the ongoing creditor trustee dispute."
+    },
+    {
+      "headline": "Poolin Cleared To Pursue Asset Sale Amid Trustee Fight",
+      "url": "https://www.law360.com/fintech/articles/2513768",
+      "source": "Law360",
+      "date": "2026-08-14",
+      "summary": "A New Jersey bankruptcy judge cleared Poolin Technology to proceed with its planned September asset sale, allowing the stalking-horse bidder additional time to pursue acquisition of a neighboring property for an AI data center in Texas. The ruling came even as the creditor's motion to appoint a Chapter 11 trustee remains pending."
     },
     {
       "headline": "Poolin Cleared To Pursue Asset Sale Amid Trustee Fight",
@@ -1919,6 +1933,14 @@
       "source": "U.S. Bankruptcy Court, D.N.J. / U.S. Trustee"
     },
     {
+      "title": "Section 341 Creditors' Meeting (Remote)",
+      "date": "2026-08-28",
+      "time": "09:00 AM ET",
+      "kind": "Call",
+      "url": "https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/",
+      "source": "U.S. Bankruptcy Court, D.N.J."
+    },
+    {
       "title": "Poolin Asset Sale — Qualified Bid Deadline",
       "date": "2026-09-08",
       "time": "",
@@ -1965,6 +1987,14 @@
       "kind": "Call",
       "url": "https://bondoro.com/poolin/",
       "source": "U.S. Bankruptcy Court, D.N.J. (Case 26-18325)"
+    },
+    {
+      "title": "Hearing on Creditor's Motion to Appoint Chapter 11 Trustee",
+      "date": "2026-10-21",
+      "time": "",
+      "kind": "Deadline",
+      "url": "https://elevenflo.com/cases/17582",
+      "source": "U.S. Bankruptcy Court, D.N.J."
     }
   ]
 }
