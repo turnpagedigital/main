@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-08-21",
     "meta_fetched_at": "2026-08-22T07:57:51.804923+00:00",
-    "fetched_at": "2026-08-22T18:52:02.008672+00:00",
-    "as_of": "Aug 22, 2026",
+    "fetched_at": "2026-08-23T02:02:13.301442+00:00",
+    "as_of": "Aug 23, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 2,
     "recent": [
       {
         "entry_number": 76,
@@ -48,7 +48,7 @@
         "time_filed": "08:56:35",
         "date_display": "Aug 20, 2026",
         "description": "Motion to Shorten Notice With Respect to Skillz Platform Inc.'s Motion to Compel Production of Documents and Witness for Deposition (related document(s)73) Filed by Skillz Platform Inc.. (Attachments: # 1 Exhibit) (Neiburg, Michael) (Entered: 08/20/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -80,7 +80,7 @@
         "time_filed": "08:56:35",
         "date_display": "Aug 20, 2026",
         "description": "Motion to Shorten Notice With Respect to Skillz Platform Inc.'s Motion to Compel Production of Documents and Witness for Deposition (related document(s)73) Filed by Skillz Platform Inc.. (Attachments: # 1 Exhibit) (Neiburg, Michael) (Entered: 08/20/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -90,7 +90,7 @@
         "time_filed": "08:52:43",
         "date_display": "Aug 20, 2026",
         "description": "Motion to Compel Production of Documents and Certain Deposition Witnesses Filed by Skillz Platform Inc.. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B # 4 Exhibit C # 5 Exhibit D # 6 Exhibit E # 7 Exhibit F # 8 Exhibit G) (Neiburg, Michael) (Entered: 08/20/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
