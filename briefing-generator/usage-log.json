@@ -1,15 +1,1 @@
-{
-  "runs": [
-    {
-      "ts": "2026-08-24T10:00:57Z",
-      "date": "2026-08-24",
-      "task": "prospect-scan",
-      "provider": "anthropic",
-      "requests": 6,
-      "tokens_in": 311476,
-      "tokens_out": 12637,
-      "ok": true,
-      "model": "claude-sonnet-4-6"
-    }
-  ]
-}
+{"runs": []}
