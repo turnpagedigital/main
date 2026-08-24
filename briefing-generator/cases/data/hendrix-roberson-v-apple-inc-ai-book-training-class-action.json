@@ -16,8 +16,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/71279155/hendrix-v-apple-inc/",
     "date_last_filing": "2026-08-21",
-    "meta_fetched_at": "2026-08-21T19:01:56.104677+00:00",
-    "fetched_at": "2026-08-24T19:05:34.518510+00:00",
+    "meta_fetched_at": "2026-08-24T23:41:15.607097+00:00",
+    "fetched_at": "2026-08-24T23:41:15.607097+00:00",
     "as_of": "Aug 24, 2026",
     "backfilled": true,
     "new_in_72h": 0,
@@ -27,7 +27,17 @@
         "date_filed": "2026-08-21",
         "time_filed": "09:10:14",
         "date_display": "Aug 21, 2026",
-        "description": "Discovery Order AND ~Util - Set Deadlines/Hearings AND ~Util - Teleconference Zoom",
+        "description": "ORDER RE: 119 JOINT DISCOVERY LETTER BRIEF. Signed by Magistrate Judge Ajay Krishnan on 8/21/2026. Discovery Hearing on 119 set for 8/25/2026, 02:00 PM in Oakland - via Zoom webinar before Magistrate Judge Ajay Krishnan. Webinar Access: All counsel, members of the public, and media may access the webinar information at https://cand.uscourts.gov/judges/ask/krishnan-ajay-sCiv LR 77-3(d). Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited.Zoom Guidance and Setup: https://cand.uscourts.gov/zoom.(kmm2, COURT STAFF) (Filed on 8/21/2026) (Entered: 08/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.123.0.pdf"
+      },
+      {
+        "entry_number": 122,
+        "date_filed": "2026-08-14",
+        "time_filed": "",
+        "date_display": "Aug 14, 2026",
+        "description": "NOTICE of Withdrawal filed by Samuel Rubinstein, no longer appearing on behalf of Grady Hendrix, John Hornor Jacobs, Eboni McKinnon, Jennifer Roberson in this case (Rubinstein, Samuel) (Filed on 8/14/2026) (Entered: 08/14/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -37,17 +47,7 @@
         "date_filed": "2026-08-14",
         "time_filed": "11:16:41",
         "date_display": "Aug 14, 2026",
-        "description": "Order on Motion for Pro Hac Vice",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-08-14",
-        "time_filed": "14:44:36",
-        "date_display": "Aug 14, 2026",
-        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "description": "APPLICATION FOR ADMISSION OF ATTORNEY PRO HAC VICE; ORDER by Judge Yvonne Gonzalez Rogers Granting 120 Motion for Pro Hac Vice (Daniel J. Lecavalier). (eac, COURT STAFF) (Filed on 8/14/2026) (Entered: 08/14/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -59,7 +59,17 @@
         "date_filed": "2026-08-21",
         "time_filed": "09:10:14",
         "date_display": "Aug 21, 2026",
-        "description": "Discovery Order AND ~Util - Set Deadlines/Hearings AND ~Util - Teleconference Zoom",
+        "description": "ORDER RE: 119 JOINT DISCOVERY LETTER BRIEF. Signed by Magistrate Judge Ajay Krishnan on 8/21/2026. Discovery Hearing on 119 set for 8/25/2026, 02:00 PM in Oakland - via Zoom webinar before Magistrate Judge Ajay Krishnan. Webinar Access: All counsel, members of the public, and media may access the webinar information at https://cand.uscourts.gov/judges/ask/krishnan-ajay-sCiv LR 77-3(d). Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited.Zoom Guidance and Setup: https://cand.uscourts.gov/zoom.(kmm2, COURT STAFF) (Filed on 8/21/2026) (Entered: 08/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.123.0.pdf"
+      },
+      {
+        "entry_number": 122,
+        "date_filed": "2026-08-14",
+        "time_filed": "",
+        "date_display": "Aug 14, 2026",
+        "description": "NOTICE of Withdrawal filed by Samuel Rubinstein, no longer appearing on behalf of Grady Hendrix, John Hornor Jacobs, Eboni McKinnon, Jennifer Roberson in this case (Rubinstein, Samuel) (Filed on 8/14/2026) (Entered: 08/14/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -69,7 +79,7 @@
         "date_filed": "2026-08-14",
         "time_filed": "11:16:41",
         "date_display": "Aug 14, 2026",
-        "description": "Order on Motion for Pro Hac Vice",
+        "description": "APPLICATION FOR ADMISSION OF ATTORNEY PRO HAC VICE; ORDER by Judge Yvonne Gonzalez Rogers Granting 120 Motion for Pro Hac Vice (Daniel J. Lecavalier). (eac, COURT STAFF) (Filed on 8/14/2026) (Entered: 08/14/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
