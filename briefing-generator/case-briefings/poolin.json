@@ -3,6 +3,34 @@
   "case_name": "Poolin",
   "items": [
     {
+      "date": "2026-08-24",
+      "updated": "2026-08-24",
+      "lede": "On August 24, Poolin's docket recorded one pro hac vice admission (Dkt. 176) and eight BNC certificates of notice (Dkts. 163–171) — all procedural-and-routine, with no bearing on recovery or timing.",
+      "body_md": "On August 24, Poolin's docket recorded one pro hac vice admission (Dkt. 176) and eight BNC certificates of notice (Dkts. 163–171) — all procedural-and-routine, with no bearing on recovery or timing. The master service list update filed by KCC dba Verita Global on August 21 (Dkt. 163) is likewise administrative. The open questions flagged in Friday's briefing — the content of Dkts. 155–162 and the disposition of the Elektron Energy Rule 9019 settlement following the August 20 hearing — remain unresolved on the face of the publicly available docket and require direct CM/ECF review to close out.\n\nOver the weekend, broader press coverage crystallized the scale of the creditor exposure. \nPoolin's bankruptcy filing lists assets of between $1 million and $10 million against liabilities of as much as $500 million.\n \nThe petition estimates between 10,001 and 25,000 creditors.\n \nPoolin told the court it entered Chapter 11 to carry out a sale of its business and preserve value for creditors, with qualified bids due by September 8 and an auction scheduled for September 10.\n That framing does nothing to close the asset-liability gap: \nPoolin filed Chapter 11 with $163.7 million in wallet IOUs owed to roughly 11,700 users with balances above $100, while the $52 million in signed stalking-horse offers covers Texas mining assets — not wallet cash — and equals just 31.8% of those IOUs before costs.\n The structural disconnect between what the sale covers and where the bulk of creditor claims sit remains the central recovery question.\n\nThe next concrete milestone is Thursday, August 27 — the nonbinding indications of interest deadline — followed immediately by the Section 341 creditors' meeting on August 28 (remote). \nCreditors are scheduled to meet remotely on August 28 at 9 a.m. ET, a standard step where creditors can question company representatives under oath.\n The Section 341 examination is the first formal opportunity for the creditor body — including the wallet IOU holders — to probe CRO Michael DuFrayne on the pre-petition fund movements that underlie the pending trustee motion (Dkt. 103). The qualified bid deadline follows on September 8, and the auction on September 10, assuming at least one competing bid clears the qualification threshold.\n\n## Sources\n\n- [Crypto Miner Poolin Files For Bankruptcy](https://finance.yahoo.com/markets/crypto/articles/crypto-miner-poolin-files-bankruptcy-141500892.html) — Yahoo Finance (Canadian Press), August 21, 2026\n- [Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million](https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/) — CryptoSlate, July 24, 2026\n- [Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process](https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/) — CryptoNomist, August 21, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Crypto Miner Poolin Files For Bankruptcy",
+          "url": "https://finance.yahoo.com/markets/crypto/articles/crypto-miner-poolin-files-bankruptcy-141500892.html",
+          "note": "Yahoo Finance (Canadian Press), August 21, 2026"
+        },
+        {
+          "title": "Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million",
+          "url": "https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/",
+          "note": "CryptoSlate, July 24, 2026"
+        },
+        {
+          "title": "Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process",
+          "url": "https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/",
+          "note": "CryptoNomist, August 21, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 10,
+        "articles": 1,
+        "latest": "2026-08-24"
+      }
+    },
+    {
       "date": "2026-08-21",
       "updated": "2026-08-21",
       "lede": "Today, the Poolin Technology docket recorded eight motions — Dkts. 155 through 162 — all filed on August 21 and classified in the court's system as \"Motion (Generic).\" The docket metadata provides no further description of their subject matter, and no secondary reporting has identified their content as of this writing; they cannot be characterized with precision and will require direct review of the filed documents…",

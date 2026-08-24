@@ -3,6 +3,39 @@
   "case_name": "Bartz v. Anthropic",
   "items": [
     {
+      "date": "2026-08-24",
+      "updated": "2026-08-24",
+      "lede": "On August 21, the clerk docketed Dkt. 684 — a USCA Case Number entry — confirming that the Ninth Circuit has accepted and assigned a docket number to at least one of the two pending fee appeals. The entry follows the notices filed by Edelson PC and Oppenheim + Zebrak (Dkt. 682, August 18) and Cowan DeBaets Abrahams & Sheppard LLP (Dkt. 683, August 19).",
+      "body_md": "On August 21, the clerk docketed Dkt. 684 — a USCA Case Number entry — confirming that the Ninth Circuit has accepted and assigned a docket number to at least one of the two pending fee appeals. The entry follows the notices filed by Edelson PC and Oppenheim + Zebrak (Dkt. 682, August 18) and Cowan DeBaets Abrahams & Sheppard LLP (Dkt. 683, August 19). The district court's notation of a USCA case number is the ministerial step that closes the opening of an appellate proceeding: the Ninth Circuit clerk has received the record, opened a case file, and issued a number that all subsequent appellate filings must reference. Whether the court assigned a single number to both appeals or opened two separate proceedings — and whether it has already or will sua sponte consolidate them — is not apparent from the face of Dkt. 684 alone and cannot be confirmed from available public sources this morning. The specific Ninth Circuit docket number(s) will become confirmable once the appellate docket appears on PACER or a public aggregator.\n\nThe substantive posture is unchanged but the procedural clock is now running at the appellate level. Once the Ninth Circuit issues its scheduling order — standard practice shortly after a case number is assigned — opening-brief deadlines will be set, typically running 40 days from the date the record on appeal is filed. \nThe fee dispute at the core of both appeals centers on the district court's denial of class counsel's requested 12.5% fee (which would have yielded $187,500,000) and its substitution of a lodestar-multiplier award of $101,561,111 plus approximately $3 million in expense reimbursements\n — and, critically for the appellants, the exclusion of Edelson, Oppenheim + Zebrak, and Cowan DeBaets from any share of that award. Until opening briefs are filed, the precise legal theory each appellant group is pressing — fee exclusion only, or a broader challenge to the July 20 final approval order — remains unconfirmed on the face of the notices.\n\nFor class members, the assignment of a USCA case number is procedurally expected but consequential: it confirms the appellate track is live and the Effective Date has not arrived. The disbursement portal remains dormant, and the approximately 70% first-stage distribution stays in abeyance for the duration of the Ninth Circuit proceedings absent a court order or negotiated arrangement permitting earlier release of undisputed settlement funds. Anthropic's payment obligations run independently. \nThe 30-day window from July 20 during which appeals could be noticed has now closed\n, meaning the appellate record is set and no additional notices of appeal are expected. Anthropic's $450 million first installment (Scheduled Payment 1) falls due September 25, 2026 — that obligation is not stayed by the pending appeals, and no party has moved for a stay. The next concrete milestone is the Ninth Circuit's issuance of scheduling orders establishing opening-brief deadlines and formally resolving whether the two appeals proceed separately or on a consolidated track.\n\n## Sources\n\n- [Bartz v Anthropic Granted Final Approval by the Court](https://blog.taaonline.net/2026/07/bartz-v-anthropic-granted-final-approval-by-the-court/) — Textbook & Academic Authors Association, July 22, 2026\n- [Firms Cut From $101M Anthropic Atty Fees Appeal To 9th Circ.](https://www.law360.com/ip/articles/2515634) — Law360, August 20, 2026\n- [Firms Appeal After Exclusion From Fees Award in Anthropic Case](https://news.bloomberglaw.com/legal-ops-and-tech/firms-appeal-after-exclusion-from-fees-award-in-anthropic-case) — Bloomberg Law, August 19, 2026\n- [Bartz et al. v. Anthropic PBC — CourtListener Docket](https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/) — CourtListener (PACER/RECAP)\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Bartz v Anthropic Granted Final Approval by the Court",
+          "url": "https://blog.taaonline.net/2026/07/bartz-v-anthropic-granted-final-approval-by-the-court/",
+          "note": "Textbook & Academic Authors Association, July 22, 2026"
+        },
+        {
+          "title": "Firms Cut From $101M Anthropic Atty Fees Appeal To 9th Circ.",
+          "url": "https://www.law360.com/ip/articles/2515634",
+          "note": "Law360, August 20, 2026"
+        },
+        {
+          "title": "Firms Appeal After Exclusion From Fees Award in Anthropic Case",
+          "url": "https://news.bloomberglaw.com/legal-ops-and-tech/firms-appeal-after-exclusion-from-fees-award-in-anthropic-case",
+          "note": "Bloomberg Law, August 19, 2026"
+        },
+        {
+          "title": "Bartz et al. v. Anthropic PBC — CourtListener Docket",
+          "url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
+          "note": "CourtListener (PACER/RECAP)"
+        }
+      ],
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-08-21"
+      }
+    },
+    {
       "date": "2026-08-20",
       "updated": "2026-08-20",
       "lede": "On August 19, Cowan DeBaets Abrahams & Sheppard LLP filed its own notice of appeal to the Ninth Circuit (Dkt. 683), paying the $605 filing fee and entering the appeal alongside Edelson PC and Oppenheim + Zebrak, who had done the same the prior day (Dkt. 682). The two notices are separate filings by separate appellants, not a consolidated submission — meaning the Ninth Circuit will open at least two docketed appeal…",

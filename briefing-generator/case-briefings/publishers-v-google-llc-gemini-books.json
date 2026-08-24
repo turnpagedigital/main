@@ -3,6 +3,34 @@
   "case_name": "Publishers v. Google",
   "items": [
     {
+      "date": "2026-08-24",
+      "updated": "2026-08-24",
+      "lede": "On August 21, Judge Eumi K. Lee entered an order — Dkt. 477 — resolving both an administrative motion and the pending motion to intervene filed by Cengage Learning and Hachette Book Group (Dkt. 342), formally closing the publisher-intervention track in In re Google Generative AI Copyright Litigation, 5:23-cv-03440. The companion administrative motion, Dkt. 478, filed the same day under Civil Local Rule 7-11, relates…",
+      "body_md": "On August 21, Judge Eumi K. Lee entered an order — Dkt. 477 — resolving both an administrative motion and the pending motion to intervene filed by Cengage Learning and Hachette Book Group (Dkt. 342), formally closing the publisher-intervention track in *In re Google Generative AI Copyright Litigation*, 5:23-cv-03440. The companion administrative motion, Dkt. 478, filed the same day under Civil Local Rule 7-11, relates to that same intervention cluster. The order follows Cengage and Hachette's July 10 administrative motion to withdraw their intervention bid (Dkt. 473), which itself was contested — Google opposed it on July 14 (Dkt. 474) and the publishers sought leave to reply on July 15 (Dkt. 475). The August 21 order resolves that contested withdrawal proceeding.\n\nThe procedural endgame here tracks a strategic pivot that matters for recovery posture. \nWith the new lawsuit, Cengage and Hachette withdrew their motion to take part in the 2023 suit, observing that Google could assert that a three-year statute of limitations pertains to the class member claims.\n That limitations concern, combined with the pendency of class certification in this case without a ruling on the intervention, drove the publishers to file a standalone action rather than remain tethered to a class whose scope and adequacy of representation they could not control. \nOn July 13, 2026, Hachette Book Group, Cengage Learning, Elsevier, and author Scott Turow filed a putative class action lawsuit against Google for willful infringement of millions of textual works to develop Google's Gemini large language models.\n \nThe proposed class action, filed July 10 in federal court in New York, accuses Google of illegally copying millions of works to train Gemini, including works scraped from \"behind paywalls,\" from \"known pirate sources,\" and books scanned and submitted via Google Books, Google Play, and Google Scholar.\n \nThe AAP stated the decision to file its own suit \"aims to preserve the right to pursue all the claims that publishers and their authors have against Google, including important ones that fall outside the putative class in that case.\"\n\n\nFor claimants in the 5:23-cv-03440 class, the departure of Cengage and Hachette as proposed intervenors removes a potential source of publisher-side representation in the class certification calculus and eliminates the intra-class tension Google had been exploiting. \nDespite holding a hearing nearly five months ago on class certification, Judge Lee has yet to rule on the publishers' motion to intervene in the case\n — a delay that contributed to the publishers' decision to exit. The outstanding class certification ruling now becomes the next substantive milestone in this proceeding: that order will define the plaintiff class's composition and, directly, the universe of claimants able to share in any eventual recovery. No hearing date for the class certification ruling has been separately docketed; the next concrete date to watch is whenever Judge Lee issues that order.\n\n## Sources\n\n- [Publishers and Authors File Class Action Lawsuit Against Google for Willful Copyright Infringement to Develop Gemini AI Models](https://www.hachettebookgroup.com/hachette-book-group-news/publishers-and-authors-file-class-action-lawsuit-against-google-for-willful-copyright-infringement-to-develop-gemini-ai-models/) — Hachette Book Group, July 13, 2026\n- [Publishers, Authors File Class Action Lawsuit Against Google](https://www.publishersweekly.com/pw/by-topic/digital/copyright/article/100820-new-lawsuit-aims-to-stop-google-from-copyright-infringement-in-creating-ai-models.html) — Publishers Weekly, July 13, 2026\n- [Publishers Sue Google, Alleging Massive Copyright Infringement Behind Its Gemini AI Service](https://www.wordsandmoney.com/publishers-sue-google-alleging-massive-copyright-infringement-behind-its-gemini-ai-service/) — Words & Money, July 14, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Publishers and Authors File Class Action Lawsuit Against Google for Willful Copyright Infringement to Develop Gemini AI Models",
+          "url": "https://www.hachettebookgroup.com/hachette-book-group-news/publishers-and-authors-file-class-action-lawsuit-against-google-for-willful-copyright-infringement-to-develop-gemini-ai-models/",
+          "note": "Hachette Book Group, July 13, 2026"
+        },
+        {
+          "title": "Publishers, Authors File Class Action Lawsuit Against Google",
+          "url": "https://www.publishersweekly.com/pw/by-topic/digital/copyright/article/100820-new-lawsuit-aims-to-stop-google-from-copyright-infringement-in-creating-ai-models.html",
+          "note": "Publishers Weekly, July 13, 2026"
+        },
+        {
+          "title": "Publishers Sue Google, Alleging Massive Copyright Infringement Behind Its Gemini AI Service",
+          "url": "https://www.wordsandmoney.com/publishers-sue-google-alleging-massive-copyright-infringement-behind-its-gemini-ai-service/",
+          "note": "Words & Money, July 14, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 2,
+        "articles": 0,
+        "latest": "2026-08-21"
+      }
+    },
+    {
       "date": "2026-08-13",
       "updated": "2026-08-13",
       "lede": "On August 13, the docket recorded a Notice of Appearance/Substitution/Change/Withdrawal of Attorney — procedural and routine, with no bearing on claim exposure or case trajectory.",
