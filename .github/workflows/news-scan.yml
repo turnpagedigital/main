@@ -102,6 +102,7 @@ jobs:
           cp -f briefing-generator/uploads.json dev-site/briefing-generator/ 2>/dev/null || true
           cp -rf briefing-generator/uploads dev-site/briefing-generator/ 2>/dev/null || true
           cp -f briefing-generator/calendar.html dev-site/briefing-generator/ 2>/dev/null || true
+          cp -f briefing-generator/usage-log.json dev-site/briefing-generator/ 2>/dev/null || true
 
       - name: Commit to dev
         if: env.CHANGED == '1'

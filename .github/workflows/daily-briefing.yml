@@ -138,6 +138,7 @@ jobs:
           for page in docket.html calendar.html news.html notes.html; do
             cp -f "briefing-generator/$page" "dev-site/briefing-generator/$page" 2>/dev/null || true
           done
+          cp -f briefing-generator/usage-log.json dev-site/briefing-generator/ 2>/dev/null || true
 
       - name: Commit intel artifacts to dev
         working-directory: dev-site
