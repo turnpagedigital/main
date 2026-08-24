@@ -15,51 +15,91 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67599029/in-re-google-generative-ai-copyright-litigation/",
-    "date_last_filing": "2026-08-21",
-    "meta_fetched_at": "2026-08-21T23:42:43.828808+00:00",
-    "fetched_at": "2026-08-24T15:04:28.448154+00:00",
+    "date_last_filing": "2026-08-24",
+    "meta_fetched_at": "2026-08-24T16:58:27.144544+00:00",
+    "fetched_at": "2026-08-24T16:58:27.144544+00:00",
     "as_of": "Aug 24, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 4,
     "recent": [
       {
-        "entry_number": 478,
-        "date_filed": "2026-08-21",
-        "time_filed": "15:43:52",
-        "date_display": "Aug 21, 2026",
-        "description": "Administrative Motion per Civil Local Rule 7-11",
-        "is_new": false,
+        "entry_number": 482,
+        "date_filed": "2026-08-24",
+        "time_filed": "09:22:58",
+        "date_display": "Aug 24, 2026",
+        "description": "Order on Administrative Motion per Civil Local Rule 7-11 AND Order on Motion for Miscellaneous Relief AND Order on Motion for Miscellaneous Relief AND Order on Motion for Miscellaneous Relief AND Order on Motion for Sanctions AND Order on Motion to Certify Class AND Order on Motion to Intervene",
+        "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.482.0.pdf"
       },
       {
-        "entry_number": 477,
-        "date_filed": "2026-08-21",
-        "time_filed": "11:45:02",
-        "date_display": "Aug 21, 2026",
-        "description": "Order on Administrative Motion per Civil Local Rule 7-11 AND Order on Administrative Motion per Civil Local Rule 7-11 AND Order on Motion to Intervene",
-        "is_new": false,
+        "entry_number": 481,
+        "date_filed": "2026-08-24",
+        "time_filed": "09:11:54",
+        "date_display": "Aug 24, 2026",
+        "description": "ORDER Denying 328 Motion for Relief. Signed by Judge Eumi K. Lee.(lrt, COURT STAFF) (Filed on 8/24/2026) (Entered: 08/24/2026)",
+        "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.477.0.pdf"
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.481.0.pdf"
       },
       {
-        "entry_number": 476,
-        "date_filed": "2026-08-13",
-        "time_filed": "",
-        "date_display": "Aug 13, 2026",
-        "description": "NOTICE of Withdrawal filed by Jeremy Paul Auster, no longer appearing on behalf of Alphabet Inc., Google LLC in this case (Auster, Jeremy) (Filed on 8/13/2026) (Entered: 08/13/2026)",
-        "is_new": false,
+        "entry_number": 480,
+        "date_filed": "2026-08-24",
+        "time_filed": "09:07:56",
+        "date_display": "Aug 24, 2026",
+        "description": "ORDER Granting 269 Motion for Leave to File Supplemental Authority. Signed by Judge Eumi K. Lee. (lrt, COURT STAFF) (Filed on 8/24/2026) (Entered: 08/24/2026)",
+        "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.480.0.pdf"
       }
     ],
     "entries": [
       {
+        "entry_number": 482,
+        "date_filed": "2026-08-24",
+        "time_filed": "09:22:58",
+        "date_display": "Aug 24, 2026",
+        "description": "Order on Administrative Motion per Civil Local Rule 7-11 AND Order on Motion for Miscellaneous Relief AND Order on Motion for Miscellaneous Relief AND Order on Motion for Miscellaneous Relief AND Order on Motion for Sanctions AND Order on Motion to Certify Class AND Order on Motion to Intervene",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.482.0.pdf"
+      },
+      {
+        "entry_number": 481,
+        "date_filed": "2026-08-24",
+        "time_filed": "09:11:54",
+        "date_display": "Aug 24, 2026",
+        "description": "ORDER Denying 328 Motion for Relief. Signed by Judge Eumi K. Lee.(lrt, COURT STAFF) (Filed on 8/24/2026) (Entered: 08/24/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.481.0.pdf"
+      },
+      {
+        "entry_number": 480,
+        "date_filed": "2026-08-24",
+        "time_filed": "09:07:56",
+        "date_display": "Aug 24, 2026",
+        "description": "ORDER Granting 269 Motion for Leave to File Supplemental Authority. Signed by Judge Eumi K. Lee. (lrt, COURT STAFF) (Filed on 8/24/2026) (Entered: 08/24/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.480.0.pdf"
+      },
+      {
+        "entry_number": 479,
+        "date_filed": "2026-08-24",
+        "time_filed": "09:04:12",
+        "date_display": "Aug 24, 2026",
+        "description": "Order on Administrative Motion per Civil Local Rule 7-11 AND Order on Administrative Motion to Consider Whether Another Partys Material Should Be Sealed",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.479.0_1.pdf"
+      },
+      {
         "entry_number": 478,
         "date_filed": "2026-08-21",
         "time_filed": "15:43:52",
         "date_display": "Aug 21, 2026",
-        "description": "Administrative Motion per Civil Local Rule 7-11",
+        "description": "ADMINISTRATIVE MOTION to Consider Whether Cases Should be Related filed by Google LLC. Responses due by 8/25/2026. (Attachments: # 1 Declaration Declaration of Kelly M. Knoll, # 2 Proposed Order)(Sampson, Paul) (Filed on 8/21/2026) (Entered: 08/21/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
