@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-08-21",
     "meta_fetched_at": "2026-08-23T13:47:44.676779+00:00",
-    "fetched_at": "2026-08-23T13:47:44.676779+00:00",
-    "as_of": "Aug 23, 2026",
+    "fetched_at": "2026-08-24T01:59:31.599697+00:00",
+    "as_of": "Aug 24, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 684,
@@ -28,7 +28,7 @@
         "time_filed": "12:35:20",
         "date_display": "Aug 21, 2026",
         "description": "USCA Case Number",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.684.0.pdf"
       },
@@ -60,7 +60,7 @@
         "time_filed": "12:35:20",
         "date_display": "Aug 21, 2026",
         "description": "USCA Case Number",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.684.0.pdf"
       },

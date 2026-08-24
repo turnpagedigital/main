@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
     "date_last_filing": "2026-08-21",
     "meta_fetched_at": "2026-08-22T10:45:41.890637+00:00",
-    "fetched_at": "2026-08-23T04:55:01.717176+00:00",
-    "as_of": "Aug 23, 2026",
+    "fetched_at": "2026-08-24T02:02:08.209130+00:00",
+    "as_of": "Aug 24, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 28,
@@ -28,7 +28,7 @@
         "time_filed": "23:07:12",
         "date_display": "Aug 21, 2026",
         "description": "Conference",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -38,7 +38,7 @@
         "time_filed": "",
         "date_display": "Aug 21, 2026",
         "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 27 MOTION for Benjamin Blystad Gould to Appear Pro Hac Vice receipt number ANYSDC-33253987. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (rju)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -48,7 +48,7 @@
         "time_filed": "09:29:20",
         "date_display": "Aug 21, 2026",
         "description": "Notice Regarding Pro Hac Vice Motion",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -60,7 +60,7 @@
         "time_filed": "23:07:12",
         "date_display": "Aug 21, 2026",
         "description": "Conference",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -70,7 +70,7 @@
         "time_filed": "",
         "date_display": "Aug 21, 2026",
         "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 27 MOTION for Benjamin Blystad Gould to Appear Pro Hac Vice receipt number ANYSDC-33253987. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (rju)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -80,7 +80,7 @@
         "time_filed": "09:29:20",
         "date_display": "Aug 21, 2026",
         "description": "Notice Regarding Pro Hac Vice Motion",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

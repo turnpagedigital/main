@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/67599029/in-re-google-generative-ai-copyright-litigation/",
     "date_last_filing": "2026-08-21",
     "meta_fetched_at": "2026-08-21T23:42:43.828808+00:00",
-    "fetched_at": "2026-08-23T13:48:56.794967+00:00",
-    "as_of": "Aug 23, 2026",
+    "fetched_at": "2026-08-24T02:00:10.341180+00:00",
+    "as_of": "Aug 24, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 478,
@@ -28,7 +28,7 @@
         "time_filed": "15:43:52",
         "date_display": "Aug 21, 2026",
         "description": "Administrative Motion per Civil Local Rule 7-11",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -38,7 +38,7 @@
         "time_filed": "11:45:02",
         "date_display": "Aug 21, 2026",
         "description": "Order on Administrative Motion per Civil Local Rule 7-11 AND Order on Administrative Motion per Civil Local Rule 7-11 AND Order on Motion to Intervene",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.477.0.pdf"
       },
@@ -60,7 +60,7 @@
         "time_filed": "15:43:52",
         "date_display": "Aug 21, 2026",
         "description": "Administrative Motion per Civil Local Rule 7-11",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -70,7 +70,7 @@
         "time_filed": "11:45:02",
         "date_display": "Aug 21, 2026",
         "description": "Order on Administrative Motion per Civil Local Rule 7-11 AND Order on Administrative Motion per Civil Local Rule 7-11 AND Order on Motion to Intervene",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.477.0.pdf"
       },

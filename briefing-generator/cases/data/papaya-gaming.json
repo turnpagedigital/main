@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-08-21",
     "meta_fetched_at": "2026-08-23T07:58:57.441962+00:00",
-    "fetched_at": "2026-08-23T13:48:39.294060+00:00",
-    "as_of": "Aug 23, 2026",
+    "fetched_at": "2026-08-24T01:59:58.382835+00:00",
+    "as_of": "Aug 24, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 76,
@@ -28,7 +28,7 @@
         "time_filed": "12:16:39",
         "date_display": "Aug 21, 2026",
         "description": "Notice of Hearing - Notice of Virtual Discovery Hearing (related document(s)73) Filed by Skillz Platform Inc.. Hearing scheduled for 8/28/2026 at 10:00 AM at US Bankruptcy Court, 824 Market St., 5th Fl., Courtroom #4, Wilmington, Delaware. Objections due by 8/26/2026. (Neiburg, Michael) (Entered: 08/21/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -38,7 +38,7 @@
         "time_filed": "11:32:17",
         "date_display": "Aug 21, 2026",
         "description": "Order Shortening Notice for Hearing on Skillz Platform Inc.s Motion to Compel Production of Documents and Witness for Deposition (Related Doc # 74, 73) Order Signed on 8/21/2026. (LJH) (Entered: 08/21/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -60,7 +60,7 @@
         "time_filed": "12:16:39",
         "date_display": "Aug 21, 2026",
         "description": "Notice of Hearing - Notice of Virtual Discovery Hearing (related document(s)73) Filed by Skillz Platform Inc.. Hearing scheduled for 8/28/2026 at 10:00 AM at US Bankruptcy Court, 824 Market St., 5th Fl., Courtroom #4, Wilmington, Delaware. Objections due by 8/26/2026. (Neiburg, Michael) (Entered: 08/21/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -70,7 +70,7 @@
         "time_filed": "11:32:17",
         "date_display": "Aug 21, 2026",
         "description": "Order Shortening Notice for Hearing on Skillz Platform Inc.s Motion to Compel Production of Documents and Witness for Deposition (Related Doc # 74, 73) Order Signed on 8/21/2026. (LJH) (Entered: 08/21/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

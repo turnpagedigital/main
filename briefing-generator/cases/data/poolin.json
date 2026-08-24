@@ -16,10 +16,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-21",
     "meta_fetched_at": "2026-08-22T18:52:09.866414+00:00",
-    "fetched_at": "2026-08-23T13:48:47.286253+00:00",
-    "as_of": "Aug 23, 2026",
+    "fetched_at": "2026-08-24T02:00:05.019127+00:00",
+    "as_of": "Aug 24, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 163,
@@ -27,7 +27,7 @@
         "time_filed": "11:39:08",
         "date_display": "Aug 21, 2026",
         "description": "Master Service List filed by Stephen M. Packman on behalf of Kurtzman Carson Consultants, LLC dba Verita Global. (Packman, Stephen) (Entered: 08/21/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -59,7 +59,7 @@
         "time_filed": "11:39:08",
         "date_display": "Aug 21, 2026",
         "description": "Master Service List filed by Stephen M. Packman on behalf of Kurtzman Carson Consultants, LLC dba Verita Global. (Packman, Stephen) (Entered: 08/21/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
