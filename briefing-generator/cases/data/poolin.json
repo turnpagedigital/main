@@ -15,12 +15,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-24",
-    "meta_fetched_at": "2026-08-24T19:03:54.373442+00:00",
-    "fetched_at": "2026-08-24T19:03:54.373442+00:00",
+    "meta_fetched_at": "2026-08-24T22:47:13.195942+00:00",
+    "fetched_at": "2026-08-24T22:47:13.195942+00:00",
     "as_of": "Aug 24, 2026",
     "backfilled": true,
-    "new_in_72h": 11,
+    "new_in_72h": 12,
     "recent": [
+      {
+        "entry_number": 179,
+        "date_filed": "2026-08-24",
+        "time_filed": "17:37:40",
+        "date_display": "Aug 24, 2026",
+        "description": "Retention (Do Not Use to Employ/Appoint an Examiner)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 178,
         "date_filed": "2026-08-24",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 176,
-        "date_filed": "2026-08-24",
-        "time_filed": "10:27:44",
-        "date_display": "Aug 24, 2026",
-        "description": "Appear Pro Hac Vice",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 179,
+        "date_filed": "2026-08-24",
+        "time_filed": "17:37:40",
+        "date_display": "Aug 24, 2026",
+        "description": "Retention (Do Not Use to Employ/Appoint an Examiner)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 178,
         "date_filed": "2026-08-24",
@@ -318,7 +328,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "",
         "date_display": "Aug 20, 2026",
-        "description": "Minute of Hearing Held, OUTCOME: Motion Granted (related document:7 Motion re: Debtors Motion for Entry of Interim and Final Orders Authorizing (I) the Continued Use of Existing Cash Management System, on a Limited Basis; (II) the Continued Interim Use of a PNC Operating Bank Account, Cryptocurrency Exchange Accounts, Ramp Credit Card Account and Business Forms; and (III) Granting Related Relief Filed by Stephen M. Packman on behalf of Poolin Technology PTE. LTD.. (Attachments: # 1 Exhibit A - Proposed Interim Order # 2 Exhibit B - Proposed Final Order) Filed by Debtor Poolin Technology PTE. LTD) (mjb)",
+        "description": "Minute of Hearing Held, OUTCOME: Motion Granted (related document:8 Motion re: Motion of the Debtors for Entry of Interim and Final Orders (I) Authorizing the Debtors to (A) Pay Pre-Petition Employee Obligations and (B) Continue Employee Benefits Programs; and (II) Granting Related Relief Filed by Stephen M. Packman on behalf of Poolin Technology PTE. LTD.. (Attachments: # 1 Exhibit A - Proposed Interim Order # 2 Exhibit B - Proposed Final Order) Filed by Debtor Poolin Technology PTE. LTD) (mjb)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
