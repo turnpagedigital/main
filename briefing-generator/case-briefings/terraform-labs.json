@@ -3,6 +3,34 @@
   "case_name": "Terraform Labs",
   "items": [
     {
+      "date": "2026-08-24",
+      "updated": "2026-08-24",
+      "lede": "On August 21, Serrur Investment Partners, LP filed a transfer of claim (Dkt. 1323) in Case No. 24-10070-BLS, Bankr. D. Del., assigning a Class 5 Crypto Loss Claim with a face amount of $3,454,036.42 — the same transferee that filed three prior claim transfers on August 3 (Dkts. 1309–1311) and a Rule 3001(e)(2) notice of transfer for the same claim pool (Dkt. 1312).",
+      "body_md": "On August 21, Serrur Investment Partners, LP filed a transfer of claim (Dkt. 1323) in Case No. 24-10070-BLS, Bankr. D. Del., assigning a Class 5 Crypto Loss Claim with a face amount of $3,454,036.42 — the same transferee that filed three prior claim transfers on August 3 (Dkts. 1309–1311) and a Rule 3001(e)(2) notice of transfer for the same claim pool (Dkt. 1312). Dkt. 1323 is a substantive docket event in that it records a change in claim ownership, but it is routine at this stage: it does not alter the aggregate size of the Class 5 pool, the allowance status of the transferred claim, or any recovery percentage. It does confirm that secondary-market buying in Terraform's Crypto Loss Claim pool remains active heading into the fall, with Serrur accumulating at least five discrete transfers since early August. The identity of the transferor is withheld per the notice procedure used in Dkt. 1312, which stated that Serrur holds a signed Evidence of Transfer and will produce it to the Court, the debtors' claims agent, or relevant professionals on written request. Dkt. 1322 is a certificate of mailing and carries no independent significance.\n\nThe more consequential open item from the weekend concerns the SEC's Tai Mo Shan Fair Fund. \nThe SEC faced an August 20 deadline to submit a plan for distributing the $123.1 million fund paid by Jump Crypto subsidiary Tai Mo Shan to investors harmed by Terra's 2022 collapse.\n \nWhen the SEC extended the deadline in February, it said its staff needed additional time to develop the distribution methodology and, where appropriate, coordinate with anticipated distributions from the Terraform litigation.\n \nCoordination with Terraform's separate bankruptcy recovery remains unresolved, and claims in the bankruptcy proceeding do not automatically establish eligibility for this fund.\n No SEC filing confirming submission of the distribution plan has surfaced as of this briefing; confirmation would take the form of a public SEC order or staff submission appearing on the SEC's EDGAR or enforcement docket. The Fair Fund is a parallel recovery track, not a bankruptcy estate asset, but its methodology — particularly how it defines eligible losses and coordinates with plan distributions — will directly affect the net recovery position of Class 5 claimants holding overlapping losses in both processes.\n\nThe authorization motion filed August 19 (Dkt. 1321), covered in the prior briefing, remains unresolved on the public record; no order granting or denying it has appeared on the docket. The next fixed milestone remains December 31, 2026 — the court-extended wind-down deadline — with the Jump Trading litigation and the *Chang v. Terraform Labs Wind Down Trust* adversary proceeding the primary near-term resolution triggers ahead of that date. Any SEC submission on the Tai Mo Shan Fair Fund distribution plan, if it landed on or around August 20, would be the most immediately actionable development for claimants to track this week.\n\n## Sources\n\n- [SEC faces Aug. 20 deadline to unlock $123 million recovery fund for Terra investors](https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/) — CryptoSlate, August 20, 2026\n- [Terraform Ch. 11 Trust Gets OK For $45M Crypto Deal](https://www.law360.com/bankruptcy-authority/articles/2254629/terraform-ch-11-trust-gets-ok-for-45m-crypto-deal) — Law360, August 19, 2026\n- [Terraform Labs: $4.47B SEC Settlement Shapes Liquidating Plan](https://elevenflo.com/blog/terraform-labs-bankruptcy) — ElevenFlo, June 17, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "SEC faces Aug. 20 deadline to unlock $123 million recovery fund for Terra investors",
+          "url": "https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/",
+          "note": "CryptoSlate, August 20, 2026"
+        },
+        {
+          "title": "Terraform Ch. 11 Trust Gets OK For $45M Crypto Deal",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2254629/terraform-ch-11-trust-gets-ok-for-45m-crypto-deal",
+          "note": "Law360, August 19, 2026"
+        },
+        {
+          "title": "Terraform Labs: $4.47B SEC Settlement Shapes Liquidating Plan",
+          "url": "https://elevenflo.com/blog/terraform-labs-bankruptcy",
+          "note": "ElevenFlo, June 17, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 3,
+        "articles": 0,
+        "latest": "2026-08-21"
+      }
+    },
+    {
       "date": "2026-08-20",
       "updated": "2026-08-20",
       "lede": "On August 19, the Wind Down Trust filed an authorization motion (Dkt. 1321) before Judge Brendan Linehan Shannon in Case No. 24-10070-BLS, Bankr. D. Del. The full text of Dkt. 1321 was not produced in the document pull, so its precise object cannot be confirmed from the primary record.",
