@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
-    "date_last_filing": "2026-08-21",
-    "meta_fetched_at": "2026-08-21T13:16:04.536117+00:00",
-    "fetched_at": "2026-08-24T16:58:51.047800+00:00",
+    "date_last_filing": "2026-08-24",
+    "meta_fetched_at": "2026-08-24T17:50:28.838938+00:00",
+    "fetched_at": "2026-08-24T17:50:28.838938+00:00",
     "as_of": "Aug 24, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 379,
+        "date_filed": "2026-08-24",
+        "time_filed": "13:16:43",
+        "date_display": "Aug 24, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 377,
         "date_filed": "2026-08-21",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 375,
-        "date_filed": "2026-08-19",
-        "time_filed": "10:36:07",
-        "date_display": "Aug 19, 2026",
-        "description": "Transmittal of Complete Record on Appeal",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 379,
+        "date_filed": "2026-08-24",
+        "time_filed": "13:16:43",
+        "date_display": "Aug 24, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 377,
         "date_filed": "2026-08-21",
