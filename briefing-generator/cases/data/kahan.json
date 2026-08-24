@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
     "date_last_filing": "2026-08-21",
     "meta_fetched_at": "2026-08-21T13:16:04.536117+00:00",
-    "fetched_at": "2026-08-23T11:40:50.213304+00:00",
-    "as_of": "Aug 23, 2026",
+    "fetched_at": "2026-08-24T02:01:08.828090+00:00",
+    "as_of": "Aug 24, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 377,
@@ -28,7 +28,7 @@
         "time_filed": "08:59:51",
         "date_display": "Aug 21, 2026",
         "description": "Order To Set Hearing",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.377.0_2.pdf"
       },
@@ -60,7 +60,7 @@
         "time_filed": "08:59:51",
         "date_display": "Aug 21, 2026",
         "description": "Order To Set Hearing",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.377.0_2.pdf"
       },

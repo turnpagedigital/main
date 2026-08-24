@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
     "date_last_filing": "2026-08-21",
     "meta_fetched_at": "2026-08-21T23:44:18.764286+00:00",
-    "fetched_at": "2026-08-23T13:49:19.769198+00:00",
-    "as_of": "Aug 23, 2026",
+    "fetched_at": "2026-08-24T02:01:20.331959+00:00",
+    "as_of": "Aug 24, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 541,
@@ -28,7 +28,7 @@
         "time_filed": "16:57:38",
         "date_display": "Aug 21, 2026",
         "description": "Extend Time (Motion)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -60,7 +60,7 @@
         "time_filed": "16:57:38",
         "date_display": "Aug 21, 2026",
         "description": "Extend Time (Motion)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
