@@ -15,11 +15,12 @@ entries are never rewritten, so hand-seeded coverage survives. Runs daily via
 .github/workflows/news-scan.yml; needs ANTHROPIC_API_KEY. Degrades to a no-op
 without the key — it never breaks the pipeline.
 """
+import hashlib
 import os, sys, json, re, time
 import datetime as dt
 import urllib.error, urllib.request
 
-from cases_common import load_cases, DATA_DIR
+from cases_common import load_cases, DATA_DIR, REPO_ROOT
 
 try:
     import usage_log                      # API-usage telemetry; never fatal
@@ -413,6 +414,24 @@ def scan_case(client, case):
     return True
 
 
+def load_priorities():
+    """Slugs starred high-priority on the dashboard (roamed via
+    intel-prefs.json — the same file the dashboard's ★ toggle writes to)."""
+    try:
+        prefs = json.loads((REPO_ROOT / "intel-prefs.json").read_text(encoding="utf-8"))
+        return {slug for slug, on in (prefs.get("priorities") or {}).items() if on}
+    except Exception:
+        return set()
+
+
+def _weekly_slot(slug):
+    """Stable 0-4 (Mon-Fri) bucket for a case slug (md5-based, so it doesn't
+    reshuffle when other cases are added or removed) — used to spread
+    non-priority cases' once-a-week scan across the weekdays this workflow
+    actually runs on, instead of piling them onto one day."""
+    return int(hashlib.md5(slug.encode()).hexdigest(), 16) % 5
+
+
 def main():
     if "--cap-only" in sys.argv:
         # Retroactive pass over every case data file — no API needed.
@@ -443,6 +462,21 @@ def main():
         # Only sync=active cases are news-searched — manual and archived
         # cases keep their saved coverage but cost no scan budget.
         cases = [c for c in cases if c["config"].get("sync", "active") == "active"]
+        # ⭐ priority cases scan every run (1x/day); everything else scans
+        # once a week, on a slug-stable rotating day, so the daily call
+        # volume doesn't scale with total tracked cases.
+        priority = load_priorities()
+        pri_cases = [c for c in cases if c["slug"] in priority]
+        rest = [c for c in cases if c["slug"] not in priority]
+        # Workflow only runs Mon-Fri, so weekday() (0=Mon..4=Fri) lines up
+        # 1:1 with _weekly_slot's 0-4 buckets — a weekend manual dispatch
+        # (weekday 5/6) just runs nobody's slot, which is fine.
+        today_slot = dt.date.today().weekday()
+        rest_today = [c for c in rest if _weekly_slot(c["slug"]) == today_slot]
+        skipped = [c["slug"] for c in rest if c not in rest_today]
+        if skipped:
+            print(f"  · non-priority, not today's weekly slot — skipped: {', '.join(skipped)}")
+        cases = pri_cases + rest_today
     if not cases:
         print("No cases found in cases/*.md" + (f" matching --slug {only}" if only else ""))
         return

@@ -1,17 +1,17 @@
 name: Daily News & Events Scan
 
-# Finds reputable-press articles and upcoming webinars/events for every
-# tracked case (scripts/scan_news.py) and merges them into the case data:
-# articles surface on the unified docket (toggleable) and case pages,
-# events land on the unified calendar. Twice daily — the morning run lands
-# before the daily briefing so the briefing can lean on fresh coverage; the
-# afternoon run catches the day's news. (Weekly prospect scanning lives in
-# prospects-scan.yml.)
+# Finds reputable-press articles and upcoming webinars/events for tracked
+# cases (scripts/scan_news.py) and merges them into the case data: articles
+# surface on the unified docket (toggleable) and case pages, events land on
+# the unified calendar. Once daily on weekdays, timed to land before the
+# 14:00 daily briefing so it can lean on fresh coverage. Cost control lives
+# inside scan_news.py itself: ⭐ priority cases scan every run, everything
+# else scans once a week on a rotating weekday (2026-08-24). (Weekly
+# prospect scanning lives in prospects-scan.yml.)
 
 on:
   schedule:
-    - cron: '40 12 * * *'   # morning: 12:40 UTC (8:40 AM ET, before the 14:00 briefing run)
-    - cron: '40 20 * * *'   # afternoon: 20:40 UTC (4:40 PM ET)
+    - cron: '40 12 * * 1-5'   # weekdays, 12:40 UTC (8:40 AM ET, before the 14:00 briefing run)
   workflow_dispatch: {}
 
 permissions:
