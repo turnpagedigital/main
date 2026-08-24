@@ -76,17 +76,26 @@ jobs:
 
       - name: Commit to main only if docket content changed
         run: |
-          # Ignore lines that change on every fetch (timestamps); if nothing
-          # else changed in the data files, this run was a no-op.
-          if git diff -I '"fetched_at":' -I '"as_of":' --exit-code -- briefing-generator/cases/data > /dev/null; then
-            echo "No docket changes this hour — skipping commit"
-            git checkout -- briefing-generator
-            echo "CHANGED=0" >> "$GITHUB_ENV"
-            exit 0
-          fi
-          echo "CHANGED=1" >> "$GITHUB_ENV"
           git config --local user.email "actions@github.com"
           git config --local user.name "Docket Sync Bot"
+          # Ignore lines that change on every fetch (timestamps); if nothing
+          # else changed in the data files, this run was a no-op for docket
+          # content — CHANGED gates the dev mirror below, which only carries
+          # real docket artifacts. Discard the regenerated noise either way,
+          # but keep usage-log.json's fresh row: it's this run's own
+          # CourtListener spend and would otherwise be lost on every quiet
+          # hour (most of them) before ever reaching a commit.
+          if git diff -I '"fetched_at":' -I '"as_of":' --exit-code -- briefing-generator/cases/data > /dev/null; then
+            echo "No docket changes this hour"
+            echo "CHANGED=0" >> "$GITHUB_ENV"
+            git checkout -- briefing-generator ':!briefing-generator/usage-log.json'
+          else
+            echo "CHANGED=1" >> "$GITHUB_ENV"
+          fi
+          if git diff --quiet -- briefing-generator; then
+            echo "Nothing to commit"
+            exit 0
+          fi
           git add briefing-generator
           git commit -m "Docket sync $(date -u +'%Y-%m-%d %H:%M UTC')"
           for attempt in 1 2 3 4 5; do
@@ -122,6 +131,7 @@ jobs:
           cp -f briefing-generator/notes.html dev-site/briefing-generator/ 2>/dev/null || true
           cp -f briefing-generator/uploads.json dev-site/briefing-generator/ 2>/dev/null || true
           cp -rf briefing-generator/uploads dev-site/briefing-generator/ 2>/dev/null || true
+          cp -f briefing-generator/usage-log.json dev-site/briefing-generator/ 2>/dev/null || true
 
       - name: Commit to dev
         if: env.CHANGED == '1'
