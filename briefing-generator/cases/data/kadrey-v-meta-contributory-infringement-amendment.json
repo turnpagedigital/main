@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
-    "date_last_filing": "2026-08-20",
-    "meta_fetched_at": "2026-08-21T04:06:10.285368+00:00",
-    "fetched_at": "2026-08-24T23:41:20.991827+00:00",
-    "as_of": "Aug 24, 2026",
+    "date_last_filing": "2026-08-24",
+    "meta_fetched_at": "2026-08-25T01:56:25.048089+00:00",
+    "fetched_at": "2026-08-25T01:56:25.048089+00:00",
+    "as_of": "Aug 25, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 820,
+        "date_filed": "2026-08-24",
+        "time_filed": "16:34:43",
+        "date_display": "Aug 24, 2026",
+        "description": "Transcript Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 819,
         "date_filed": "2026-08-20",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 817,
-        "date_filed": "2026-08-20",
-        "time_filed": "09:24:51",
-        "date_display": "Aug 20, 2026",
-        "description": "Transcript of Proceedings held on August 14, 2026, before Judge Vince Chhabria. Court Reporter, Marla F. Knox, RPR, CRR, RMR, telephone number (602) 391-6990/email marla_knox@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 816 Transcript Order ) Release of Transcript Restriction set for 11/18/2026. (Related documents(s) 816 ) (Knox, Marla) (Filed on 8/20/2026) (Entered: 08/20/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 820,
+        "date_filed": "2026-08-24",
+        "time_filed": "16:34:43",
+        "date_display": "Aug 24, 2026",
+        "description": "Transcript Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 819,
         "date_filed": "2026-08-20",

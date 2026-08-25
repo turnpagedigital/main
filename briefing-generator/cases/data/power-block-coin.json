@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
     "date_last_filing": "2026-08-24",
-    "meta_fetched_at": "2026-08-24T23:41:40.406851+00:00",
-    "fetched_at": "2026-08-24T23:41:40.406851+00:00",
-    "as_of": "Aug 24, 2026",
+    "meta_fetched_at": "2026-08-25T01:56:45.438781+00:00",
+    "fetched_at": "2026-08-25T01:56:45.438781+00:00",
+    "as_of": "Aug 25, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 542,
+        "date_filed": "2026-08-24",
+        "time_filed": "17:35:01",
+        "date_display": "Aug 24, 2026",
+        "description": "Complaint",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": null,
         "date_filed": "2026-08-24",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 540,
-        "date_filed": "2026-08-19",
-        "time_filed": "17:47:10",
-        "date_display": "Aug 19, 2026",
-        "description": "Declaration",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 542,
+        "date_filed": "2026-08-24",
+        "time_filed": "17:35:01",
+        "date_display": "Aug 24, 2026",
+        "description": "Complaint",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": null,
         "date_filed": "2026-08-24",
