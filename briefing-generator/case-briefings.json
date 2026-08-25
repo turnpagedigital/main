@@ -1,6 +1,37 @@
 {
-  "generated_at": "2026-08-24T14:50:09+00:00",
+  "generated_at": "2026-08-25T14:51:45+00:00",
   "items": [
+    {
+      "slug": "papaya-gaming",
+      "case_name": "Papaya Gaming",
+      "short_name": "Papaya Gaming",
+      "emoji": "⚖️",
+      "themes": [
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "United States Bankruptcy Court, D. Delaware",
+      "status": "active",
+      "signature": "d1abe779c098",
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-08-24"
+      },
+      "checked": "2026-08-25T14:51:45+00:00",
+      "date": "2026-08-25",
+      "updated": "2026-08-25",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "On August 24, Oriel Bachar filed a deposition notice (Dkt. 77) in Case No. 26-11217 before Judge Walrath. The filing arrives one day before Papaya's objection deadline to Skillz's Motion to Compel Production of Documents and Certain Deposition Witnesses (Dkt. 73, objections due August 26), and three days before the virtual discovery hearing (Dkt. 76, August 28, 10:00 a.m. ET, Courtroom 4).",
+      "body_md": "On August 24, Oriel Bachar filed a deposition notice (Dkt. 77) in Case No. 26-11217 before Judge Walrath. The filing arrives one day before Papaya's objection deadline to Skillz's Motion to Compel Production of Documents and Certain Deposition Witnesses (Dkt. 73, objections due August 26), and three days before the virtual discovery hearing (Dkt. 76, August 28, 10:00 a.m. ET, Courtroom 4). The notice is substantive in classification — it is the foreign representative's own deposition notice, filed in direct response to the discovery dispute Skillz forced to a head via Dkt. 73 — but its significance is bounded: it reflects Papaya's willingness to put a witness forward, which potentially narrows the factual dispute before the court on Thursday, but it does not resolve whether Skillz's broader document production demands will be satisfied.\n\nThe strategic read is that Papaya filed Dkt. 77 ahead of its written objection to blunt at least the deposition-witness prong of Skillz's motion to compel. Skillz's Dkt. 73 attacked on two fronts — document production deficiencies and the availability of deposition witnesses — and Papaya's deposition notice, filed before the objection deadline, signals a concession on the witness availability issue while leaving the document production fight open. If Papaya's August 26 objection confirms that posture, the August 28 hearing before Judge Walrath may sharpen to a narrower dispute over the sufficiency of document production rather than the full scope of Dkt. 73. That would be a partial win for Skillz — it secures the deposition — but would leave unresolved how much of the underlying documentary record Skillz can build before the recognition hearing.\n\nFor recovery analysis, nothing has shifted structurally. \nJudge Cote ordered Papaya to pay approximately $719 million in disgorgement, as well as approximately $10.1 million in attorneys' fees and legal costs\n — that judgment remains stayed as to U.S. assets under Judge Walrath's temporary injunction. \nPapaya applied to the Tel Aviv District Court for a temporary stay, under which the company's available cash and current profits would be transferred to a designated fund held by an authorized representative on behalf of the court, intended to safeguard creditors' rights if Papaya's appeal is ultimately rejected.\n The adequacy of that fund — and Skillz's ability to contest recognition — still turns on how much of a factual record Skillz can assemble. Dkt. 77 represents one data point in that build. The next two hard deadlines are Papaya's written objection to Dkt. 73 on August 26 and the virtual discovery hearing before Judge Walrath on August 28, where the court will rule on the scope and timing of any compelled production.\n\n## Sources\n\n- [Papaya Gaming wins U.S. bankruptcy protection after $719 million ruling](https://www.calcalistech.com/ctechnews/article/idop8ipjs) — Calcalist / CTech, August 9, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Papaya Gaming wins U.S. bankruptcy protection after $719 million ruling",
+          "url": "https://www.calcalistech.com/ctechnews/article/idop8ipjs",
+          "note": "Calcalist / CTech, August 9, 2026"
+        }
+      ]
+    },
     {
       "slug": "poolin",
       "case_name": "Poolin",
@@ -12,34 +43,75 @@
       ],
       "court": "Bankr. D. N.J.",
       "status": "active",
-      "signature": "c3c98c88ffee",
+      "signature": "0df1aaddb30c",
       "activity": {
-        "filings": 10,
-        "articles": 1,
+        "filings": 12,
+        "articles": 0,
         "latest": "2026-08-24"
       },
-      "checked": "2026-08-24T14:50:09+00:00",
-      "date": "2026-08-24",
-      "updated": "2026-08-24",
+      "checked": "2026-08-25T14:51:45+00:00",
+      "date": "2026-08-25",
+      "updated": "2026-08-25",
       "moved": true,
       "no_change_since": null,
-      "lede": "On August 24, Poolin's docket recorded one pro hac vice admission (Dkt. 176) and eight BNC certificates of notice (Dkts. 163–171) — all procedural-and-routine, with no bearing on recovery or timing.",
-      "body_md": "On August 24, Poolin's docket recorded one pro hac vice admission (Dkt. 176) and eight BNC certificates of notice (Dkts. 163–171) — all procedural-and-routine, with no bearing on recovery or timing. The master service list update filed by KCC dba Verita Global on August 21 (Dkt. 163) is likewise administrative. The open questions flagged in Friday's briefing — the content of Dkts. 155–162 and the disposition of the Elektron Energy Rule 9019 settlement following the August 20 hearing — remain unresolved on the face of the publicly available docket and require direct CM/ECF review to close out.\n\nOver the weekend, broader press coverage crystallized the scale of the creditor exposure. \nPoolin's bankruptcy filing lists assets of between $1 million and $10 million against liabilities of as much as $500 million.\n \nThe petition estimates between 10,001 and 25,000 creditors.\n \nPoolin told the court it entered Chapter 11 to carry out a sale of its business and preserve value for creditors, with qualified bids due by September 8 and an auction scheduled for September 10.\n That framing does nothing to close the asset-liability gap: \nPoolin filed Chapter 11 with $163.7 million in wallet IOUs owed to roughly 11,700 users with balances above $100, while the $52 million in signed stalking-horse offers covers Texas mining assets — not wallet cash — and equals just 31.8% of those IOUs before costs.\n The structural disconnect between what the sale covers and where the bulk of creditor claims sit remains the central recovery question.\n\nThe next concrete milestone is Thursday, August 27 — the nonbinding indications of interest deadline — followed immediately by the Section 341 creditors' meeting on August 28 (remote). \nCreditors are scheduled to meet remotely on August 28 at 9 a.m. ET, a standard step where creditors can question company representatives under oath.\n The Section 341 examination is the first formal opportunity for the creditor body — including the wallet IOU holders — to probe CRO Michael DuFrayne on the pre-petition fund movements that underlie the pending trustee motion (Dkt. 103). The qualified bid deadline follows on September 8, and the auction on September 10, assuming at least one competing bid clears the qualification threshold.\n\n## Sources\n\n- [Crypto Miner Poolin Files For Bankruptcy](https://finance.yahoo.com/markets/crypto/articles/crypto-miner-poolin-files-bankruptcy-141500892.html) — Yahoo Finance (Canadian Press), August 21, 2026\n- [Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million](https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/) — CryptoSlate, July 24, 2026\n- [Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process](https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/) — CryptoNomist, August 21, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "lede": "On August 24, Poolin's professionals filed a retention application (Dkt. 179) and the first monthly fee statement in the case (Dkt. 178). The retention application is labeled \"Do Not Use to Employ/Appoint an Examiner,\" indicating it concerns a professional other than an examiner — most likely a financial advisor, special counsel, or other estate professional.",
+      "body_md": "On August 24, Poolin's professionals filed a retention application (Dkt. 179) and the first monthly fee statement in the case (Dkt. 178). The retention application is labeled \"Do Not Use to Employ/Appoint an Examiner,\" indicating it concerns a professional other than an examiner — most likely a financial advisor, special counsel, or other estate professional. The fee statement is the first submitted under whatever interim compensation procedures the court has established. Neither filing is contested on the face of the docket; both are substantive but routine at this stage of a Chapter 11 wind-down. Two additional pro hac vice admissions (Dkts. 176–177) and eight BNC certificates (Dkts. 164–171) are procedural-and-routine and carry no independent weight.\n\nOne material piece of scheduling context not previously flagged in these briefings: \nthe creditor's motion to appoint a Chapter 11 trustee (Dkt. 103) is set for hearing on October 21, 2026\n, per case-tracking data from __[Elevenflo](https://elevenflo.com/cases/17582)__. That date matters for recovery posture. The trustee fight will not resolve before the September sale closes — meaning current management remains in control through the auction regardless of the motion's ultimate outcome. The trustee motion thus functions as a post-sale governance risk rather than a pre-sale disruption, unless the creditor moves to expedite, which there is no indication it has done.\n\nThe next two concrete milestones arrive in rapid succession: the nonbinding indications of interest deadline is Thursday, August 27, followed by the Section 341 creditors' meeting on August 28 at 9 a.m. ET (remote). \nCreditors are scheduled to meet remotely on August 28 at 9 a.m. ET for a Section 341 meeting, where creditors can question company representatives under oath.\n That examination is the first formal opportunity for the creditor body — including the ~11,700 wallet IOU holders — to question CRO Michael DuFrayne on the pre-petition fund movements underpinning Dkt. 103. The qualified bid deadline follows on September 8, and the auction on September 10, assuming at least one competing bid clears the qualification threshold; \na sale hearing is set for September 18.\n\n\n## Sources\n\n- [Poolin Creditor Seeks Ch. 11 Trustee To Probe Transfers](https://www.law360.com/bankruptcy-authority/mid-cap/articles/2511097) — Law360, August 10, 2026\n- [Poolin Cleared To Pursue Asset Sale Amid Trustee Fight](https://www.law360.com/bankruptcy-authority/mid-cap/articles/2513768) — Law360, August 14, 2026\n- [Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process](https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/) — CryptoNomist, August 21, 2026\n- [Poolin Technology Case Summary](https://elevenflo.com/cases/17582) — Elevenflo (case aggregator), accessed August 25, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
         {
-          "title": "Crypto Miner Poolin Files For Bankruptcy",
-          "url": "https://finance.yahoo.com/markets/crypto/articles/crypto-miner-poolin-files-bankruptcy-141500892.html",
-          "note": "Yahoo Finance (Canadian Press), August 21, 2026"
+          "title": "Poolin Creditor Seeks Ch. 11 Trustee To Probe Transfers",
+          "url": "https://www.law360.com/bankruptcy-authority/mid-cap/articles/2511097",
+          "note": "Law360, August 10, 2026"
         },
         {
-          "title": "Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million",
-          "url": "https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/",
-          "note": "CryptoSlate, July 24, 2026"
+          "title": "Poolin Cleared To Pursue Asset Sale Amid Trustee Fight",
+          "url": "https://www.law360.com/bankruptcy-authority/mid-cap/articles/2513768",
+          "note": "Law360, August 14, 2026"
         },
         {
           "title": "Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process",
           "url": "https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/",
           "note": "CryptoNomist, August 21, 2026"
+        },
+        {
+          "title": "Poolin Technology Case Summary",
+          "url": "https://elevenflo.com/cases/17582",
+          "note": "Elevenflo (case aggregator), accessed August 25, 2026"
+        }
+      ]
+    },
+    {
+      "slug": "publishers-v-google-llc-gemini-books",
+      "case_name": "Publishers v. Google",
+      "short_name": "Publishers v. Google",
+      "emoji": "⚖️",
+      "themes": [
+        "llm-class-action"
+      ],
+      "court": "District Court, N.D. California",
+      "status": "active",
+      "signature": "c09a85649130",
+      "activity": {
+        "filings": 4,
+        "articles": 0,
+        "latest": "2026-08-24"
+      },
+      "checked": "2026-08-25T14:51:45+00:00",
+      "date": "2026-08-25",
+      "updated": "2026-08-25",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "On August 24, Judge Eumi K. Lee issued a cluster of orders in In re Google Generative AI Copyright Litigation, 5:23-cv-03440, resolving every major pending motion from the February 20 class certification hearing in a single day's docket activity. The central order is Dkt. 482 — an omnibus ruling that adjudicates the motion to certify the plaintiff class, Google's motion for sanctions, three motions for miscellaneous…",
+      "body_md": "On August 24, Judge Eumi K. Lee issued a cluster of orders in *In re Google Generative AI Copyright Litigation*, 5:23-cv-03440, resolving every major pending motion from the February 20 class certification hearing in a single day's docket activity. The central order is Dkt. 482 — an omnibus ruling that adjudicates the motion to certify the plaintiff class, Google's motion for sanctions, three motions for miscellaneous relief, an administrative motion under Civil Local Rule 7-11, and the outstanding motion to intervene. In a separate order (Dkt. 481), Judge Lee denied Dkt. 328, the Motion for Relief. Dkt. 480 granted Dkt. 269, Google's motion for leave to file supplemental authority — a routine procedural authorization that takes no classification above procedural-and-routine. Dkt. 479 resolved a sealing administrative motion, also procedural.\n\nThe operative question for recovery posture is the disposition in Dkt. 482 of the class certification motion. The docket entry confirms the order exists and that it resolves the certification motion, but does not recite the ruling's outcome in its text as reproduced here. What is confirmed: \nJudge Lee did not rule from the bench at the February 20 hearing on any of the motions to certify class, for sanctions, relief, or to intervene\n — meaning all four tracks were held under submission until this omnibus order. The sanctions motion is the one Google filed in November 2025, in which \nGoogle argued that plaintiffs had tried to \"smuggle\" in new classes into the lawsuit by seeking to certify multiple classes and subclasses of works \"downloaded and/or ingested to develop\" Google's generative AI models, whether used for training or not.\n Whether Judge Lee granted or denied sanctions — and whether she certified any class, a narrowed class, or none — are facts determinable only from the face of Dkt. 482 itself, which has not yet been reproduced in any secondary source confirmed in this cycle. The docket record is authoritative; the disposition is unverified and therefore not stated here.\n\nWhat the chronology does establish is that this day's output concludes a phase of the case that has been under submission since February 20, approximately six months. The motion to certify class is substantive and dispositive of the plaintiff class's universe — certification defines who can share in any recovery and anchors the damages exposure Google faces on a per-work statutory-damages theory. \nGoogle's sanctions theory — that plaintiffs repositioned the case away from AI training by proposing classes defined around works \"downloaded and/or ingested,\" not just trained-on — was briefed through February 5, 2026, with the hearing held February 20.\n Denial of the sanctions motion keeps plaintiffs' proposed class structure in play; a grant would have disciplinary and potentially structural consequences for class scope. The parallel denial of Dkt. 328 (Motion for Relief) closes a discrete contested track whose precise subject matter is not further described in the available docket text. On the intervention axis, Dkt. 482 also resolves the separate motion to intervene that remained pending after Cengage and Hachette withdrew their own intervention bid (Dkt. 342, resolved by Dkt. 477 on August 21) — the Lee Child/Andrew Child/Girlcomix motion filed at Dkt. 468 by consolidated plaintiffs, which had a hearing date set for February 20. The full text of Dkt. 482 — available on PACER at 5:23-cv-03440 — is the next document to pull; it will determine the class's shape, the sanctions outcome, and the case trajectory from here.\n\n## Sources\n\n- [Authors, illustrators push for copyright owner class in case against Google AI](https://www.courthousenews.com/authors-illustrators-push-for-copyright-owner-class-in-case-against-google-ai/) — Courthouse News Service, February 20, 2026\n- [AI Class Action Litigation Update (Books): Where things stand in early 2026](https://authorsalliance.substack.com/p/ai-class-action-litigation-update) — Authors Alliance, January 27, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Authors, illustrators push for copyright owner class in case against Google AI",
+          "url": "https://www.courthousenews.com/authors-illustrators-push-for-copyright-owner-class-in-case-against-google-ai/",
+          "note": "Courthouse News Service, February 20, 2026"
+        },
+        {
+          "title": "AI Class Action Litigation Update (Books): Where things stand in early 2026",
+          "url": "https://authorsalliance.substack.com/p/ai-class-action-litigation-update",
+          "note": "Authors Alliance, January 27, 2026"
         }
       ]
     },
@@ -56,15 +128,15 @@
       "status": "active",
       "signature": "9e7345b3d1ba",
       "activity": {
-        "filings": 1,
+        "filings": 0,
         "articles": 0,
         "latest": "2026-08-21"
       },
-      "checked": "2026-08-24T14:50:09+00:00",
+      "checked": "2026-08-25T14:51:45+00:00",
       "date": "2026-08-24",
       "updated": "2026-08-24",
-      "moved": true,
-      "no_change_since": null,
+      "moved": false,
+      "no_change_since": "2026-08-21",
       "lede": "On August 21, the clerk docketed Dkt. 684 — a USCA Case Number entry — confirming that the Ninth Circuit has accepted and assigned a docket number to at least one of the two pending fee appeals. The entry follows the notices filed by Edelson PC and Oppenheim + Zebrak (Dkt. 682, August 18) and Cowan DeBaets Abrahams & Sheppard LLP (Dkt. 683, August 19).",
       "body_md": "On August 21, the clerk docketed Dkt. 684 — a USCA Case Number entry — confirming that the Ninth Circuit has accepted and assigned a docket number to at least one of the two pending fee appeals. The entry follows the notices filed by Edelson PC and Oppenheim + Zebrak (Dkt. 682, August 18) and Cowan DeBaets Abrahams & Sheppard LLP (Dkt. 683, August 19). The district court's notation of a USCA case number is the ministerial step that closes the opening of an appellate proceeding: the Ninth Circuit clerk has received the record, opened a case file, and issued a number that all subsequent appellate filings must reference. Whether the court assigned a single number to both appeals or opened two separate proceedings — and whether it has already or will sua sponte consolidate them — is not apparent from the face of Dkt. 684 alone and cannot be confirmed from available public sources this morning. The specific Ninth Circuit docket number(s) will become confirmable once the appellate docket appears on PACER or a public aggregator.\n\nThe substantive posture is unchanged but the procedural clock is now running at the appellate level. Once the Ninth Circuit issues its scheduling order — standard practice shortly after a case number is assigned — opening-brief deadlines will be set, typically running 40 days from the date the record on appeal is filed. \nThe fee dispute at the core of both appeals centers on the district court's denial of class counsel's requested 12.5% fee (which would have yielded $187,500,000) and its substitution of a lodestar-multiplier award of $101,561,111 plus approximately $3 million in expense reimbursements\n — and, critically for the appellants, the exclusion of Edelson, Oppenheim + Zebrak, and Cowan DeBaets from any share of that award. Until opening briefs are filed, the precise legal theory each appellant group is pressing — fee exclusion only, or a broader challenge to the July 20 final approval order — remains unconfirmed on the face of the notices.\n\nFor class members, the assignment of a USCA case number is procedurally expected but consequential: it confirms the appellate track is live and the Effective Date has not arrived. The disbursement portal remains dormant, and the approximately 70% first-stage distribution stays in abeyance for the duration of the Ninth Circuit proceedings absent a court order or negotiated arrangement permitting earlier release of undisputed settlement funds. Anthropic's payment obligations run independently. \nThe 30-day window from July 20 during which appeals could be noticed has now closed\n, meaning the appellate record is set and no additional notices of appeal are expected. Anthropic's $450 million first installment (Scheduled Payment 1) falls due September 25, 2026 — that obligation is not stayed by the pending appeals, and no party has moved for a stay. The next concrete milestone is the Ninth Circuit's issuance of scheduling orders establishing opening-brief deadlines and formally resolving whether the two appeals proceed separately or on a consolidated track.\n\n## Sources\n\n- [Bartz v Anthropic Granted Final Approval by the Court](https://blog.taaonline.net/2026/07/bartz-v-anthropic-granted-final-approval-by-the-court/) — Textbook & Academic Authors Association, July 22, 2026\n- [Firms Cut From $101M Anthropic Atty Fees Appeal To 9th Circ.](https://www.law360.com/ip/articles/2515634) — Law360, August 20, 2026\n- [Firms Appeal After Exclusion From Fees Award in Anthropic Case](https://news.bloomberglaw.com/legal-ops-and-tech/firms-appeal-after-exclusion-from-fees-award-in-anthropic-case) — Bloomberg Law, August 19, 2026\n- [Bartz et al. v. Anthropic PBC — CourtListener Docket](https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/) — CourtListener (PACER/RECAP)\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
@@ -102,15 +174,15 @@
       "status": "active",
       "signature": "a21558a5b0e9",
       "activity": {
-        "filings": 22,
+        "filings": 0,
         "articles": 0,
         "latest": "2026-08-21"
       },
-      "checked": "2026-08-24T14:50:09+00:00",
+      "checked": "2026-08-25T14:51:45+00:00",
       "date": "2026-08-24",
       "updated": "2026-08-24",
-      "moved": true,
-      "no_change_since": null,
+      "moved": false,
+      "no_change_since": "2026-08-21",
       "lede": "On August 21, the Omnis Pleasants docket recorded a second wave of subpoenas — Dkts. 145 through 148 and 152 through 158, twelve in total — alongside two Chapter 11 first-day motion filings (Dkts.",
       "body_md": "On August 21, the Omnis Pleasants docket recorded a second wave of subpoenas — Dkts. 145 through 148 and 152 through 158, twelve in total — alongside two Chapter 11 first-day motion filings (Dkts. 142 and 144), a motion to file under seal (Dkt. 143), and a notice of service (Dkt. 159). The first-day motion filings at this stage of the case are not new petitions; they are almost certainly supplemental or amended first-day motions, or motions seeking approval of additional operational relief, filed as the debtor prepares for the September 3 final hearing complex. The motion to file under seal (Dkt. 143) is substantive to the extent its underlying subject matter is substantive — which, given the timing and context, likely involves materials bearing on the dismissal motion or the cash collateral record — but the sealing request itself does not independently move the case.\n\nThe twelve new subpoenas are the more consequential development. Combined with the fifteen subpoenas filed on August 20 (Dkts. 118–132, covered in Friday's briefing), the docket now reflects twenty-seven third-party subpoenas issued in a two-day window. That volume, compressed into 48 hours immediately before the August 28 objection deadline on the dismissal and trustee motion (Dkt. 93), is consistent with one or both sides conducting an accelerated pre-hearing discovery sweep keyed to the September 3 evidentiary proceedings. \nThe August 14 motion filed by Omnis Fuel Technologies, LLC and Quantum Pleasants, LLC asks the court — if it declines dismissal — to appoint an independent Chapter 11 trustee and to vacate the interim cash collateral order.\n Third-party subpoenas at this stage would logically target witnesses with knowledge of the corporate authorization of the bankruptcy filing, the governance events of late July, and the circumstances surrounding the rejected $75.64 million payoff. The return dates on the subpoenas are not visible on the docket face but are presumably calibrated to produce documents and testimony before September 3.\n\n\nThe debtor is operating under interim cash-collateral authority while pursuing a sale of substantially all assets, with final approval set for September 3; the interim order (Dkt. 50) permits use of prepetition collateral under an approved budget, grants TRAG LLC and RG Energy LLC adequate protection, requires the debtor to continue the sale process, and limits any plan absent secured-party consent to one that pays those obligations in full in cash.\n That framework is directly in the crosshairs: a successful dismissal motion ends the case; a trustee appointment restructures who controls the sale. For unsecured creditors — including the West Virginia Economic Development Authority, \nOmnis Pleasants' largest creditor at more than $50.8 million, listed as unsecured\n — the outcome of the September 3 hearing complex is the central recovery variable. The debtor's Young Conaway and Herbert Smith Freehills Kramer teams are now simultaneously managing objections to a subpoena barrage, briefing the dismissal opposition due August 28, and preparing final-hearing submissions on wages, utilities, critical vendor payments, and cash collateral — all converging on a single hearing date. The next concrete milestone is August 28, the objection deadline on the dismissal and trustee motion (Dkt. 93), which will be the first substantive public indicator of the debtor's legal theory for why the case should survive.\n\n## Sources\n\n- [Fight for Control of Profitable West Virginia Power Plant Escalates With Motion to Dismiss Bankruptcy](https://www.prnewswire.com/news-releases/fight-for-control-of-profitable-west-virginia-power-plant-escalates-with-motion-to-dismiss-bankruptcy-302853407.html) — PR Newswire, August 17, 2026\n- [Omnis Pleasants, LLC Bankruptcy Case](https://elevenflo.com/cases/17751) — ElevenFlo\n- [Omnis Pleasants Files Chapter 11 After $75.64M Payoff Rejected](https://elevenflo.com/blog/omnis-pleasants-llc-17751) — ElevenFlo, August 13, 2026\n- [Future of former Pleasants Power Plant uncertain as Omnis Pleasants files for bankruptcy](https://www.mariettatimes.com/znewsletter-sunday-znewsletter-sunday/2026/07/future-of-former-pleasants-power-plant-uncertain-as-omnis-pleasants-files-for-bankruptcy-2/) — Marietta Times, July 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
@@ -137,78 +209,6 @@
       ]
     },
     {
-      "slug": "papaya-gaming",
-      "case_name": "Papaya Gaming",
-      "short_name": "Papaya Gaming",
-      "emoji": "⚖️",
-      "themes": [
-        "bankruptcy-creditor-rights"
-      ],
-      "court": "United States Bankruptcy Court, D. Delaware",
-      "status": "active",
-      "signature": "a434d63a7ec1",
-      "activity": {
-        "filings": 2,
-        "articles": 0,
-        "latest": "2026-08-21"
-      },
-      "checked": "2026-08-24T14:50:09+00:00",
-      "date": "2026-08-24",
-      "updated": "2026-08-24",
-      "moved": true,
-      "no_change_since": null,
-      "lede": "On August 21, Judge Walrath signed an Order Shortening Notice (Dkt. 75) on Skillz's Motion to Compel Production of Documents and Certain Deposition Witnesses (Dkt. 73), and the clerk simultaneously docketed a Notice of Virtual Discovery Hearing (Dkt. 76) setting argument for August 28, 2026, at 10:00 a.m. ET, Courtroom 4, 824 Market Street, Wilmington — with objections due August 26. Taken together, Dkts.",
-      "body_md": "On August 21, Judge Walrath signed an Order Shortening Notice (Dkt. 75) on Skillz's Motion to Compel Production of Documents and Certain Deposition Witnesses (Dkt. 73), and the clerk simultaneously docketed a Notice of Virtual Discovery Hearing (Dkt. 76) setting argument for August 28, 2026, at 10:00 a.m. ET, Courtroom 4, 824 Market Street, Wilmington — with objections due August 26. Taken together, Dkts. 75 and 76 resolve the open question from the August 20 briefing: Judge Walrath granted the motion to shorten notice the same day it was submitted, compressing what would have been a standard-notice hearing into a seven-day turnaround from the date of filing. That speed signals the court's recognition that the underlying discovery dispute is time-sensitive relative to the recognition hearing.\n\nThe August 28 virtual hearing on the motion to compel is now the nearest hard milestone. Skillz's Dkt. 73 attaches seven exhibits — Exhibits A through G — documenting the alleged production deficiencies, and the court's willingness to schedule on shortened notice strongly suggests Judge Walrath credited Skillz's prejudice argument: that ordinary scheduling would leave insufficient time to complete discovery before the recognition hearing. \nJudge Walrath previously granted Papaya's motion for a temporary injunction, staying collection and enforcement proceedings against the company's U.S. assets pending the recognition hearing\n — meaning the stay remains in place, but its continuation depends on Papaya ultimately obtaining recognition. Skillz's theory is that a deficient factual record from Papaya weakens Papaya's recognition case and strengthens Skillz's ability to resist it or to argue that any recognized proceeding should not preserve the stay. If the motion to compel is granted on August 28, Papaya faces a court-ordered production deadline, likely tight, before the recognition hearing; if it is denied, Skillz proceeds with whatever record it has already built from Dkt. 68's responses and any depositions completed under the notices filed earlier in August.\n\nFor recovery analysis, the calculus is unchanged in structure but more acute in timing. \nJudge Cote ordered Papaya to pay approximately $719 million in disgorgement, as well as approximately $10.1 million in attorneys' fees and legal costs.\n That judgment remains stayed as to U.S. assets. Skillz/Firy's ability to resume collection — and creditors' ability to assess the realistic value of the Israeli-supervised fund — hinges on the recognition hearing outcome, which in turn now hinges substantially on whether Skillz can complete an adequate evidentiary record by August 28. Objections to the motion to compel are due August 26, making that the next active deadline: Papaya's response, if any, will define the precise scope of the dispute before the court hears argument two days later.\n\n## Sources\n\n- [Papaya Gaming wins U.S. bankruptcy protection after $719 million ruling](https://www.calcalistech.com/ctechnews/article/idop8ipjs) — Calcalist / CTech, August 9, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
-      "sources": [
-        {
-          "title": "Papaya Gaming wins U.S. bankruptcy protection after $719 million ruling",
-          "url": "https://www.calcalistech.com/ctechnews/article/idop8ipjs",
-          "note": "Calcalist / CTech, August 9, 2026"
-        }
-      ]
-    },
-    {
-      "slug": "publishers-v-google-llc-gemini-books",
-      "case_name": "Publishers v. Google",
-      "short_name": "Publishers v. Google",
-      "emoji": "⚖️",
-      "themes": [
-        "llm-class-action"
-      ],
-      "court": "District Court, N.D. California",
-      "status": "active",
-      "signature": "05de35c29c00",
-      "activity": {
-        "filings": 2,
-        "articles": 0,
-        "latest": "2026-08-21"
-      },
-      "checked": "2026-08-24T14:50:09+00:00",
-      "date": "2026-08-24",
-      "updated": "2026-08-24",
-      "moved": true,
-      "no_change_since": null,
-      "lede": "On August 21, Judge Eumi K. Lee entered an order — Dkt. 477 — resolving both an administrative motion and the pending motion to intervene filed by Cengage Learning and Hachette Book Group (Dkt. 342), formally closing the publisher-intervention track in In re Google Generative AI Copyright Litigation, 5:23-cv-03440. The companion administrative motion, Dkt. 478, filed the same day under Civil Local Rule 7-11, relates…",
-      "body_md": "On August 21, Judge Eumi K. Lee entered an order — Dkt. 477 — resolving both an administrative motion and the pending motion to intervene filed by Cengage Learning and Hachette Book Group (Dkt. 342), formally closing the publisher-intervention track in *In re Google Generative AI Copyright Litigation*, 5:23-cv-03440. The companion administrative motion, Dkt. 478, filed the same day under Civil Local Rule 7-11, relates to that same intervention cluster. The order follows Cengage and Hachette's July 10 administrative motion to withdraw their intervention bid (Dkt. 473), which itself was contested — Google opposed it on July 14 (Dkt. 474) and the publishers sought leave to reply on July 15 (Dkt. 475). The August 21 order resolves that contested withdrawal proceeding.\n\nThe procedural endgame here tracks a strategic pivot that matters for recovery posture. \nWith the new lawsuit, Cengage and Hachette withdrew their motion to take part in the 2023 suit, observing that Google could assert that a three-year statute of limitations pertains to the class member claims.\n That limitations concern, combined with the pendency of class certification in this case without a ruling on the intervention, drove the publishers to file a standalone action rather than remain tethered to a class whose scope and adequacy of representation they could not control. \nOn July 13, 2026, Hachette Book Group, Cengage Learning, Elsevier, and author Scott Turow filed a putative class action lawsuit against Google for willful infringement of millions of textual works to develop Google's Gemini large language models.\n \nThe proposed class action, filed July 10 in federal court in New York, accuses Google of illegally copying millions of works to train Gemini, including works scraped from \"behind paywalls,\" from \"known pirate sources,\" and books scanned and submitted via Google Books, Google Play, and Google Scholar.\n \nThe AAP stated the decision to file its own suit \"aims to preserve the right to pursue all the claims that publishers and their authors have against Google, including important ones that fall outside the putative class in that case.\"\n\n\nFor claimants in the 5:23-cv-03440 class, the departure of Cengage and Hachette as proposed intervenors removes a potential source of publisher-side representation in the class certification calculus and eliminates the intra-class tension Google had been exploiting. \nDespite holding a hearing nearly five months ago on class certification, Judge Lee has yet to rule on the publishers' motion to intervene in the case\n — a delay that contributed to the publishers' decision to exit. The outstanding class certification ruling now becomes the next substantive milestone in this proceeding: that order will define the plaintiff class's composition and, directly, the universe of claimants able to share in any eventual recovery. No hearing date for the class certification ruling has been separately docketed; the next concrete date to watch is whenever Judge Lee issues that order.\n\n## Sources\n\n- [Publishers and Authors File Class Action Lawsuit Against Google for Willful Copyright Infringement to Develop Gemini AI Models](https://www.hachettebookgroup.com/hachette-book-group-news/publishers-and-authors-file-class-action-lawsuit-against-google-for-willful-copyright-infringement-to-develop-gemini-ai-models/) — Hachette Book Group, July 13, 2026\n- [Publishers, Authors File Class Action Lawsuit Against Google](https://www.publishersweekly.com/pw/by-topic/digital/copyright/article/100820-new-lawsuit-aims-to-stop-google-from-copyright-infringement-in-creating-ai-models.html) — Publishers Weekly, July 13, 2026\n- [Publishers Sue Google, Alleging Massive Copyright Infringement Behind Its Gemini AI Service](https://www.wordsandmoney.com/publishers-sue-google-alleging-massive-copyright-infringement-behind-its-gemini-ai-service/) — Words & Money, July 14, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
-      "sources": [
-        {
-          "title": "Publishers and Authors File Class Action Lawsuit Against Google for Willful Copyright Infringement to Develop Gemini AI Models",
-          "url": "https://www.hachettebookgroup.com/hachette-book-group-news/publishers-and-authors-file-class-action-lawsuit-against-google-for-willful-copyright-infringement-to-develop-gemini-ai-models/",
-          "note": "Hachette Book Group, July 13, 2026"
-        },
-        {
-          "title": "Publishers, Authors File Class Action Lawsuit Against Google",
-          "url": "https://www.publishersweekly.com/pw/by-topic/digital/copyright/article/100820-new-lawsuit-aims-to-stop-google-from-copyright-infringement-in-creating-ai-models.html",
-          "note": "Publishers Weekly, July 13, 2026"
-        },
-        {
-          "title": "Publishers Sue Google, Alleging Massive Copyright Infringement Behind Its Gemini AI Service",
-          "url": "https://www.wordsandmoney.com/publishers-sue-google-alleging-massive-copyright-infringement-behind-its-gemini-ai-service/",
-          "note": "Words & Money, July 14, 2026"
-        }
-      ]
-    },
-    {
       "slug": "terraform-labs",
       "case_name": "Terraform Labs",
       "short_name": "Terraform Labs",
@@ -221,15 +221,15 @@
       "status": "active",
       "signature": "ac0214c10279",
       "activity": {
-        "filings": 3,
+        "filings": 0,
         "articles": 0,
         "latest": "2026-08-21"
       },
-      "checked": "2026-08-24T14:50:09+00:00",
+      "checked": "2026-08-25T14:51:45+00:00",
       "date": "2026-08-24",
       "updated": "2026-08-24",
-      "moved": true,
-      "no_change_since": null,
+      "moved": false,
+      "no_change_since": "2026-08-21",
       "lede": "On August 21, Serrur Investment Partners, LP filed a transfer of claim (Dkt. 1323) in Case No. 24-10070-BLS, Bankr. D. Del., assigning a Class 5 Crypto Loss Claim with a face amount of $3,454,036.42 — the same transferee that filed three prior claim transfers on August 3 (Dkts. 1309–1311) and a Rule 3001(e)(2) notice of transfer for the same claim pool (Dkt. 1312).",
       "body_md": "On August 21, Serrur Investment Partners, LP filed a transfer of claim (Dkt. 1323) in Case No. 24-10070-BLS, Bankr. D. Del., assigning a Class 5 Crypto Loss Claim with a face amount of $3,454,036.42 — the same transferee that filed three prior claim transfers on August 3 (Dkts. 1309–1311) and a Rule 3001(e)(2) notice of transfer for the same claim pool (Dkt. 1312). Dkt. 1323 is a substantive docket event in that it records a change in claim ownership, but it is routine at this stage: it does not alter the aggregate size of the Class 5 pool, the allowance status of the transferred claim, or any recovery percentage. It does confirm that secondary-market buying in Terraform's Crypto Loss Claim pool remains active heading into the fall, with Serrur accumulating at least five discrete transfers since early August. The identity of the transferor is withheld per the notice procedure used in Dkt. 1312, which stated that Serrur holds a signed Evidence of Transfer and will produce it to the Court, the debtors' claims agent, or relevant professionals on written request. Dkt. 1322 is a certificate of mailing and carries no independent significance.\n\nThe more consequential open item from the weekend concerns the SEC's Tai Mo Shan Fair Fund. \nThe SEC faced an August 20 deadline to submit a plan for distributing the $123.1 million fund paid by Jump Crypto subsidiary Tai Mo Shan to investors harmed by Terra's 2022 collapse.\n \nWhen the SEC extended the deadline in February, it said its staff needed additional time to develop the distribution methodology and, where appropriate, coordinate with anticipated distributions from the Terraform litigation.\n \nCoordination with Terraform's separate bankruptcy recovery remains unresolved, and claims in the bankruptcy proceeding do not automatically establish eligibility for this fund.\n No SEC filing confirming submission of the distribution plan has surfaced as of this briefing; confirmation would take the form of a public SEC order or staff submission appearing on the SEC's EDGAR or enforcement docket. The Fair Fund is a parallel recovery track, not a bankruptcy estate asset, but its methodology — particularly how it defines eligible losses and coordinates with plan distributions — will directly affect the net recovery position of Class 5 claimants holding overlapping losses in both processes.\n\nThe authorization motion filed August 19 (Dkt. 1321), covered in the prior briefing, remains unresolved on the public record; no order granting or denying it has appeared on the docket. The next fixed milestone remains December 31, 2026 — the court-extended wind-down deadline — with the Jump Trading litigation and the *Chang v. Terraform Labs Wind Down Trust* adversary proceeding the primary near-term resolution triggers ahead of that date. Any SEC submission on the Tai Mo Shan Fair Fund distribution plan, if it landed on or around August 20, would be the most immediately actionable development for claimants to track this week.\n\n## Sources\n\n- [SEC faces Aug. 20 deadline to unlock $123 million recovery fund for Terra investors](https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/) — CryptoSlate, August 20, 2026\n- [Terraform Ch. 11 Trust Gets OK For $45M Crypto Deal](https://www.law360.com/bankruptcy-authority/articles/2254629/terraform-ch-11-trust-gets-ok-for-45m-crypto-deal) — Law360, August 19, 2026\n- [Terraform Labs: $4.47B SEC Settlement Shapes Liquidating Plan](https://elevenflo.com/blog/terraform-labs-bankruptcy) — ElevenFlo, June 17, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
@@ -260,13 +260,13 @@
       ],
       "court": "To be confirmed (financials sector Ch. 11, filed ~July 21, 2026)",
       "status": "active",
-      "signature": "7453d28e2864",
+      "signature": "6b6d066c651c",
       "activity": {
         "filings": 0,
         "articles": 0,
         "latest": "2026-08-20"
       },
-      "checked": "2026-08-24T14:50:09+00:00",
+      "checked": "2026-08-25T14:51:45+00:00",
       "date": "2026-08-14",
       "updated": "2026-08-14",
       "moved": false,
