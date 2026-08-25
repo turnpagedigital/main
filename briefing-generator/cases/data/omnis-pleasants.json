@@ -14,13 +14,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
-    "date_last_filing": "2026-08-21",
-    "meta_fetched_at": "2026-08-25T09:03:18.844477+00:00",
-    "fetched_at": "2026-08-25T21:47:44.265860+00:00",
+    "date_last_filing": "2026-08-25",
+    "meta_fetched_at": "2026-08-25T22:48:05.132379+00:00",
+    "fetched_at": "2026-08-25T22:48:05.132379+00:00",
     "as_of": "Aug 25, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 161,
+        "date_filed": "2026-08-25",
+        "time_filed": "17:41:26",
+        "date_display": "Aug 25, 2026",
+        "description": "Certification of Counsel(Aty)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 160,
+        "date_filed": "2026-08-25",
+        "time_filed": "17:39:51",
+        "date_display": "Aug 25, 2026",
+        "description": "Rescheduled Hearing - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.160.0.pdf"
+      },
       {
         "entry_number": 159,
         "date_filed": "2026-08-21",
@@ -30,29 +50,29 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 158,
-        "date_filed": "2026-08-21",
-        "time_filed": "22:19:45",
-        "date_display": "Aug 21, 2026",
-        "description": "Subpoena / Notice of Intent to Serve Subpoena on Ajay Gupta. Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 08/21/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.158.0.pdf"
-      },
-      {
-        "entry_number": 157,
-        "date_filed": "2026-08-21",
-        "time_filed": "22:18:23",
-        "date_display": "Aug 21, 2026",
-        "description": "Subpoena / Notice of Intent to Serve Subpoena on Anthony Jay Robbins. Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 08/21/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.157.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 161,
+        "date_filed": "2026-08-25",
+        "time_filed": "17:41:26",
+        "date_display": "Aug 25, 2026",
+        "description": "Certification of Counsel(Aty)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 160,
+        "date_filed": "2026-08-25",
+        "time_filed": "17:39:51",
+        "date_display": "Aug 25, 2026",
+        "description": "Rescheduled Hearing - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.160.0.pdf"
+      },
       {
         "entry_number": 159,
         "date_filed": "2026-08-21",

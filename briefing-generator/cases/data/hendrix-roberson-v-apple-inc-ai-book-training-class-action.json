@@ -15,13 +15,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/71279155/hendrix-v-apple-inc/",
-    "date_last_filing": "2026-08-21",
-    "meta_fetched_at": "2026-08-24T23:41:15.607097+00:00",
-    "fetched_at": "2026-08-25T21:48:30.344198+00:00",
+    "date_last_filing": "2026-08-25",
+    "meta_fetched_at": "2026-08-25T22:48:32.772591+00:00",
+    "fetched_at": "2026-08-25T22:48:32.772591+00:00",
     "as_of": "Aug 25, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 125,
+        "date_filed": "2026-08-25",
+        "time_filed": "15:16:16",
+        "date_display": "Aug 25, 2026",
+        "description": "Transcript Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-25",
+        "time_filed": "14:53:22",
+        "date_display": "Aug 25, 2026",
+        "description": "Discovery Hearing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 123,
         "date_filed": "2026-08-21",
@@ -31,29 +51,29 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.123.0.pdf"
-      },
-      {
-        "entry_number": 122,
-        "date_filed": "2026-08-14",
-        "time_filed": "",
-        "date_display": "Aug 14, 2026",
-        "description": "NOTICE of Withdrawal filed by Samuel Rubinstein, no longer appearing on behalf of Grady Hendrix, John Hornor Jacobs, Eboni McKinnon, Jennifer Roberson in this case (Rubinstein, Samuel) (Filed on 8/14/2026) (Entered: 08/14/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 121,
-        "date_filed": "2026-08-14",
-        "time_filed": "11:16:41",
-        "date_display": "Aug 14, 2026",
-        "description": "APPLICATION FOR ADMISSION OF ATTORNEY PRO HAC VICE; ORDER by Judge Yvonne Gonzalez Rogers Granting 120 Motion for Pro Hac Vice (Daniel J. Lecavalier). (eac, COURT STAFF) (Filed on 8/14/2026) (Entered: 08/14/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 125,
+        "date_filed": "2026-08-25",
+        "time_filed": "15:16:16",
+        "date_display": "Aug 25, 2026",
+        "description": "Transcript Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-25",
+        "time_filed": "14:53:22",
+        "date_display": "Aug 25, 2026",
+        "description": "Discovery Hearing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 123,
         "date_filed": "2026-08-21",
