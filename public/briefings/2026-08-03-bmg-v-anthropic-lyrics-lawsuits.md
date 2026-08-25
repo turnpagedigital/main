@@ -1,6 +1,8 @@
 # BMG v. Anthropic: The Lawsuits Over 20,000 Songs
 
-**The short answer:** BMG Rights Management has opened a second music front against Anthropic — separate from [the Concord case](/briefings/2026-08-03-concord-v-anthropic-music-lawsuit) — with two 2026 lawsuits: one targeting roughly **500 identified compositions** (works recorded by artists like Justin Bieber, Bruno Mars, and the Rolling Stones), and a broader action covering **more than 20,000 songs** that reportedly seeks **over $3 billion** for Anthropic's alleged torrenting of lyrics from pirate "shadow libraries." For music rights holders, these are the newest and broadest claims in the system.
+The short answer: BMG Rights Management has opened a second music front against Anthropic — separate from [the Concord case](/briefings/2026-08-03-concord-v-anthropic-music-lawsuit) — with two 2026 lawsuits.
+
+One targets roughly **500 identified compositions**, works recorded by artists like Justin Bieber, Bruno Mars, and the Rolling Stones. The other, broader action covers **more than 20,000 songs** and reportedly seeks **over $3 billion** for Anthropic's alleged torrenting of lyrics from pirate "shadow libraries." For music rights holders, these are the newest and broadest claims in the system.
 
 ## What BMG alleges
 

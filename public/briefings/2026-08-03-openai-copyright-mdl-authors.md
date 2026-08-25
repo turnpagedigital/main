@@ -1,6 +1,8 @@
 # The OpenAI Copyright MDL: Where Authors' and Publishers' Claims Stand Now
 
-**The short answer:** the consolidated OpenAI copyright litigation (*In re OpenAI Copyright MDL*, No. 1:25-md-03143, S.D.N.Y., Judge Sidney H. Stein) survived OpenAI's motion to dismiss, is deep in discovery, and is **expected to reach trial in late 2026 or early 2027**. After Anthropic paid $1.5 billion to settle materially similar claims, the question every author asks is obvious: is a Bartz-style settlement coming here — and what would my works be worth if it does?
+The short answer: the consolidated OpenAI copyright litigation (*In re OpenAI Copyright MDL*, No. 1:25-md-03143, S.D.N.Y., Judge Sidney H. Stein) survived OpenAI's motion to dismiss, is deep in discovery, and is **expected to reach trial in late 2026 or early 2027**.
+
+After Anthropic paid $1.5 billion to settle materially similar claims, the question every author asks is obvious: is a Bartz-style settlement coming here — and what would my works be worth if it does?
 
 ## What's in the MDL
 

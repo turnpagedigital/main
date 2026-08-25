@@ -1,6 +1,8 @@
 # How Much Is the Anthropic Settlement Per Book?
 
-**The short answer:** the court's estimate is **approximately $3,000 per work** — four times the $750 statutory minimum for copyright infringement. But that's the headline figure, not a guarantee of what lands in your account: attorneys' fees and administration come out of the same $1.5 billion fund, allocation rules govern how a work's payment is divided when more than one rights holder claims it, and the money arrives in waves into 2027. Here's the honest arithmetic.
+The short answer is approximately $3,000 per work — four times the $750 statutory minimum for copyright infringement.
+
+That's the court's estimate, not a guarantee of what lands in your account. Attorneys' fees and administration come out of the same $1.5 billion fund. Allocation rules govern how a work's payment is divided when more than one rights holder claims it. And the money arrives in waves, into 2027. Here's the arithmetic.
 
 ## Where the \~$3,000 figure comes from
 
@@ -24,7 +26,7 @@ Payments follow the installment schedule — next milestones August 21 and Octob
 
 ## If you'd rather have a fixed number than an estimate
 
-Every figure above is an estimate until the administrator cuts your check. Claimants who prefer a known amount now can sell their claim with Turnpage.
+Every figure above is an estimate until the administrator cuts your check. Claimants who'd rather have a known amount now can sell their claim with Turnpage — a fixed cash price today instead of an installment schedule running into 2027.
 
 Sources
 
