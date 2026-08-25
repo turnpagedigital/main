@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-21",
-    "meta_fetched_at": "2026-08-24T09:07:57.743497+00:00",
-    "fetched_at": "2026-08-25T01:55:19.408026+00:00",
+    "meta_fetched_at": "2026-08-25T08:10:36.592763+00:00",
+    "fetched_at": "2026-08-25T08:10:36.592763+00:00",
     "as_of": "Aug 25, 2026",
-    "backfilled": true,
+    "backfilled": false,
     "new_in_72h": 0,
     "recent": [
       {
@@ -138,20 +138,20 @@
         "date_filed": "2026-08-21",
         "time_filed": "22:02:26",
         "date_display": "Aug 21, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena / Notice of Intent to Serve Subpoena on RG Energy LLC. Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 08/21/2026)",
         "is_new": false,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.148.0.pdf"
       },
       {
         "entry_number": 147,
         "date_filed": "2026-08-21",
         "time_filed": "22:00:24",
         "date_display": "Aug 21, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena / Notice of Intent to Serve Subpoena on TRAG LLC. Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 08/21/2026)",
         "is_new": false,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.147.0.pdf"
       },
       {
         "entry_number": 146,
@@ -278,7 +278,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "21:15:46",
         "date_display": "Aug 20, 2026",
-        "description": "Certification of Counsel(Aty)",
+        "description": "Certification of Counsel Regarding Revised Proposed Final Order (I) Authorizing the Debtor to (A) Continue to Operate Its Cash Management System and Honor Prepetition Obligations Related Thereto, (B) Maintain Existing Bank Accounts, and (C) Maintain Existing Business Forms; (II) Suspending the Time to Comply With 11 U.S.C § 345(b); and (III) Granting Related Relief (related document(s)8, 54) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Diver, James) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -288,7 +288,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "21:09:31",
         "date_display": "Aug 20, 2026",
-        "description": "Extend - Motion",
+        "description": "Motion to Extend - Debtor's Motion for Entry of an Order (I) Extending the Time for the Debtor to File its Schedule of Assets and Liabilities and Statements of Financial Affairs and (II) Granting Related Relief Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Objections due by 8/27/2026. (Attachments: # 1 Notice # 2 Exhibit A) (Faris, S. Alexander) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -298,17 +298,17 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:42:45",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on StarSource, LLC. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.132.0.pdf"
       },
       {
         "entry_number": 131,
         "date_filed": "2026-08-20",
         "time_filed": "19:41:07",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Randall Smith. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -318,7 +318,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:39:36",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Simply Noble Investments, Limited. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -328,7 +328,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:38:04",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Simon K. Hodson. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -338,7 +338,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:36:13",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Omnis Global Technologies, LLC. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -348,7 +348,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:33:34",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Industrial Accessories Company. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -358,7 +358,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:32:05",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Hodson Investments LLC. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -388,7 +388,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:27:28",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Harmony Trust. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -398,7 +398,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:25:59",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Charles Gassenheimer. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -408,7 +408,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:24:06",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Flacks Group. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -418,7 +418,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:22:28",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Element H Data, LLC. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -428,7 +428,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:21:08",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Dynamic HC Co d/b/a Dynamic Holdings Corporation. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -448,7 +448,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:18:06",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Cort Stephens. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -458,7 +458,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:16:31",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Angela Chen Sabella. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -488,7 +488,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:11:49",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Kuro Infrastructure Delaware, Inc. (as Successor by Merger with Bily Technology, LLC). Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -498,17 +498,17 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:09:43",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Golchehreh Abtahian. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.112.0.pdf"
       },
       {
         "entry_number": 111,
         "date_filed": "2026-08-20",
         "time_filed": "19:04:09",
         "date_display": "Aug 20, 2026",
-        "description": "Certificate of No Objection",
+        "description": "Certificate of No Objection Regarding Debtor's Motion for Entry of an Order (I) Authorizing the Debtor to Redact Certain Personally Identifiable Information from the Creditor Matrix, Schedules and Statements, and Other Similar Pleadings, and (II) Granting Related Relief (related document(s)63) Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -518,7 +518,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:00:08",
         "date_display": "Aug 20, 2026",
-        "description": "Certificate of No Objection",
+        "description": "Certificate of No Objection Regarding Debtor's Motion for Entry of Interim and Final Orders (I) Authorizing the Debtor to Continue Prepetition Hedging Arrangement and Honor Any Obligations Related Thereto, (II) Authorizing the Debtor to Enter Into, and Perform Under, Postpetition Hedging Arrangements, (III) Modifying the Automatic Stay, and (IV) Granting Related Relief (related document(s)9) Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -528,7 +528,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "18:57:55",
         "date_display": "Aug 20, 2026",
-        "description": "Certificate of No Objection",
+        "description": "Certificate of No Objection Regarding Debtor's Motion for Entry of Interim and Final Orders (I) Authorizing (A) Payment of Prepetition Wages, Salaries and Related Workforce Obligations, and (B) Continuation of Benefits Programs; and (II) Granting Related Relief (related document(s)7) Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -548,7 +548,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "18:52:11",
         "date_display": "Aug 20, 2026",
-        "description": "Certificate of No Objection",
+        "description": "Certificate of No Objection Regarding Debtor's Motion for Entry of Interim and Final Orders (I) Authorizing Debtor to (A) Maintain Prepetition Insurance Policies and Surety Bonds, and Pay Related Prepetition Insurance Policies and Surety Bonds, and Pay Related Prepetition Obligations Arising Thereunder, and (B) Renew, Replace, Supplement, or Otherwise Modify Such Insurance Policies and Surety Bonds; (II) Modifying the Automatic Stay with Respect to the Workers Compensation Program; and (III) Granting Related Relief (related document(s)5) Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -558,7 +558,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "18:48:56",
         "date_display": "Aug 20, 2026",
-        "description": "Certificate of No Objection",
+        "description": "Certificate of No Objection Regarding Debtor's Motion for Entry of Interim and Final Orders (I) Authorizing the Payment of Certain Prepetition Taxes and Fees, and (II) Granting Related Relief (related document(s)4) Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -568,7 +568,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "18:47:19",
         "date_display": "Aug 20, 2026",
-        "description": "Certificate of No Objection",
+        "description": "Certificate of No Objection Regarding Debtor's Motion for Entry of Interim and Final Orders (I) Approving Debtors Proposed Adequate Assurance of Payment for Future Utility Services; (II) Establishing Procedures for Resolving Objections by Utility Providers; (III) Prohibiting Utility Providers from Altering, Refusing, or Discontinuing Services; and (IV) Granting Related Relief (related document(s)3) Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -578,7 +578,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "17:54:45",
         "date_display": "Aug 20, 2026",
-        "description": "Affidavit/Declaration of Service",
+        "description": "Affidavit/Declaration of Service re: Debtors Motion for Entry of an Order Authorizing the Debtor to Retain and Compensate Certain Professionals Utilized by the Debtor in the Ordinary Course of Business (Docket No. 77), Debtors Motion for Entry of an Order (I) Establishing Procedures for Interim Compensation and Reimbursement of Expenses for Professionals and (II) Granting Related Relief (Docket No. 78), Debtors Application for Entry of an Order Authorizing the Employment of Stretto, Inc. as Administrative Advisor Effective as of the Petition Date (Docket No. 79), Debtors Application for Entry of an Order Authorizing the (I) Retention of AP Services, LLC, (II) Designation of David Hindman as Chief Executive Officer, Effective as of the Petition Date, and (III) Granting Related Relief (Docket No. 81), Debtors Application for Entry of an Order Authorizing the Retention and Employment of…",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -598,7 +598,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "16:12:41",
         "date_display": "Aug 20, 2026",
-        "description": "Certificate of Service",
+        "description": "Certificate of Service (related document(s)93, 94) Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -609,6 +609,16 @@
         "time_filed": "10:34:37",
         "date_display": "Aug 20, 2026",
         "description": "Add Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-20",
+        "time_filed": "",
+        "date_display": "Aug 20, 2026",
+        "description": "Attorney Michael A. Kaplan and Christopher A. Ward for Omnis Fuel Technologies, LLC and Quantum Pleasants LLC, Rebecca Ryan and Christopher A. Ward for Omnis Fuel Technologies, LLC and Quantum Pleasants LLC, Rebecca Ryan and Christopher A. Ward for Omnis Fuel Technologies, LLC and Quantum Pleasants LLC added to case Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -1793,7 +1803,8 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": {
     "name": "Stretto",
