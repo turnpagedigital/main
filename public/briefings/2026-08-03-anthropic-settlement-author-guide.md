@@ -2,7 +2,7 @@
 
 *Updated August 3, 2026. This guide is maintained as the settlement moves through distribution — dates below reflect court filings and administrator materials as of the update date.*
 
-If you wrote a book that Anthropic downloaded from a pirate library, a court has now approved a $1.5 billion settlement that should pay you at least a few thousand dollars per book. The claims deadline has passed, the money is being assembled, and the remaining questions are mostly about timing, amounts, and what happens next. This guide answers those questions in plain language.
+If you wrote a book that Anthropic downloaded from a pirate library, a court has now approved a $1.5 billion settlement that should pay you at least a few thousand dollars per book. The claims deadline has passed, the money is being assembled, and the remaining questions are mostly about timing, amounts, and what happens next.
 
 ## What happened, briefly
 
@@ -62,7 +62,7 @@ For what's still in motion across the industry, see our [AI copyright litigation
 
 Some claimants — estates settling accounts, authors with many titles, anyone with near-term needs — prefer a fixed amount now over installments running into 2027. Two mechanisms exist: selling the claim outright, or taking a non-recourse advance against it. Both involve accepting less than the projected payout in exchange for certainty and speed, and both deserve the same scrutiny you'd give any financial agreement — [here is how claim sales work](/briefings/2026-08-03-sell-your-anthropic-settlement-claim), including the questions to ask any buyer.
 
-Plainly disclosed: buying claims is Turnpage's business. If you want to know what your claim is worth as a cash number today, you can [request a quote](/copyright); if waiting suits you, the schedule above is all you need.
+Buying claims is Turnpage's business, worth knowing as you weigh what follows. If you want to know what your claim is worth as a cash number today, [request a quote](/copyright); if waiting suits you, the schedule above is all you need.
 
 ## Official resources
 

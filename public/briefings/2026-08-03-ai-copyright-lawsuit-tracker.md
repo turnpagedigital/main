@@ -1,6 +1,6 @@
 # Keeping up with the AI copyright dockets (August 2026)
 
-One page, every major case against an LLM or generative-AI provider, current as of **August 3, 2026** — who's suing, what's at stake, where it stands, and what it means for rights holders. Bookmark this; we maintain it as the docket moves. For the deep dives, each section links to our full briefing.
+One page, every major case against an LLM or generative-AI provider, current as of **August 3, 2026** — who's suing, what's at stake, where it stands, and what it means for rights holders.
 
 ## Anthropic
 

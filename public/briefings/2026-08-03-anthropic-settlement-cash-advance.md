@@ -1,6 +1,6 @@
 # Anthropic Settlement Advances: What They Are and How They Work
 
-An advance converts part of a pending settlement payment into cash now. For Bartz v. Anthropic claimants — whose fund pays out in waves into 2027 — advances and outright sales are the two mechanisms for not waiting. This page explains how advances work, how they differ from selling, and the terms that separate a fair offer from an expensive one. Turnpage Digital Markets offers both structures; that interest is disclosed here at the top.
+An advance converts part of a pending settlement payment into cash now. For Bartz v. Anthropic claimants — whose fund pays out in waves into 2027 — advances and outright sales are the two mechanisms for not waiting. Turnpage Digital Markets offers both structures, worth knowing as you weigh what follows.
 
 ## The two structures, side by side
 

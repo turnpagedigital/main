@@ -1,6 +1,8 @@
 # Anthropic Settlement Payment Timeline: When Will You Actually Get Paid?
 
-**The short answer:** the Bartz v. Anthropic settlement received final approval on July 20, 2026, and the money was set to move on a fixed schedule — **but on August 18, 2026, a notice of appeal was filed** ([what the appeal means for your payment](/briefings/2026-08-03-anthropic-settlement-appeal-risk)), and the milestones below should be treated as **uncertain until the administrator or court says otherwise**. The schedule as written: administrator mailing August 21, 2026; Anthropic's first **$450 million installment September 25, 2026**; a second wave of checks **October 9, 2026**; final $450 million installment **September 25, 2027**. We update this page as each development lands.
+The short answer: the Bartz v. Anthropic settlement received final approval on July 20, 2026, and the money was set to move on a fixed schedule.
+
+Then, on August 18, 2026, a notice of appeal was filed ([what the appeal means for your payment](/briefings/2026-08-03-anthropic-settlement-appeal-risk)) — the milestones below are now **uncertain until the administrator or court says otherwise**. The schedule as written: administrator mailing August 21, 2026; Anthropic's first **$450 million installment September 25, 2026**; a second wave of checks **October 9, 2026**; final $450 million installment **September 25, 2027**.
 
 ## The verified schedule, in order
 
@@ -26,7 +28,7 @@ Unlikely. The fund itself fills in installments — half of the remaining balanc
 
 ## If the schedule doesn't work for you
 
-For most claimants, the right move is simply to wait — the money arrives without anyone's help. Claimants who need a fixed amount sooner do have options: claims can be sold or advanced against, [as explained here](/briefings/2026-08-03-sell-your-anthropic-settlement-claim). Disclosed plainly: buying claims is Turnpage's business, and a [free quote](/copyright) is available if a number would help you decide.
+For most claimants, the right move is simply to wait — the money arrives without anyone's help. Claimants who need a fixed amount sooner do have options: claims can be sold or advanced against, [as explained here](/briefings/2026-08-03-sell-your-anthropic-settlement-claim). Turnpage buys these claims, and a [free quote](/copyright) is available if a number would help you decide.
 
 ## Related reading
 

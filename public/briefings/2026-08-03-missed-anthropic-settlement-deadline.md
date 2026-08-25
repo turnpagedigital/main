@@ -1,6 +1,8 @@
 # Missed the Anthropic Settlement Deadline? Here's What You Can Still Do
 
-**The short answer:** the claims deadline was **March 30, 2026**, and it has not been extended. But "missed the deadline" doesn't always mean "gets nothing" — the Plan of Allocation schedules checks to **non-filing claimants on August 21, 2026**, and the settlement's release was deliberately written to leave several doors open, including all claims about Anthropic's *outputs* and anything it did after August 25, 2025. Here's the map.
+The short answer: the claims deadline was **March 30, 2026**, and it has not been extended.
+
+But "missed the deadline" doesn't always mean "gets nothing." The Plan of Allocation schedules checks to **non-filing claimants on August 21, 2026**, and the settlement's release was deliberately written to leave several doors open — including all claims about Anthropic's *outputs* and anything it did after August 25, 2025. Here's the map.
 
 ## First: are you actually in the class?
 
