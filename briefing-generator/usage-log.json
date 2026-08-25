@@ -111,6 +111,28 @@
       "tokens_in": 0,
       "tokens_out": 0,
       "ok": true
+    },
+    {
+      "ts": "2026-08-25T13:32:08Z",
+      "date": "2026-08-25",
+      "task": "feed-scan",
+      "provider": "anthropic",
+      "requests": 1,
+      "tokens_in": 38875,
+      "tokens_out": 200,
+      "ok": true,
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "ts": "2026-08-25T13:41:39Z",
+      "date": "2026-08-25",
+      "task": "news-scan",
+      "provider": "anthropic",
+      "requests": 10,
+      "tokens_in": 534854,
+      "tokens_out": 14439,
+      "ok": true,
+      "model": "claude-sonnet-4-6"
     }
   ]
 }

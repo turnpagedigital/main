@@ -1,6 +1,36 @@
 {
   "items": [
     {
+      "id": "galindo-law-filing-alert",
+      "kind": "alert",
+      "source": "Bondoro",
+      "source_id": "bondoro-alert",
+      "show": "both",
+      "title": "Filing Alert: Galindo Law Chapter 11",
+      "url": "https://bondoro.com/galindo-law-filing-alert/",
+      "date": "2026-08-25",
+      "published_at": "2026-08-25T01:35:29+00:00",
+      "excerpt": "Galindo Law Files Chapter 11 in Southern District of Texas",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "yinghua-filing-alert",
+      "kind": "alert",
+      "source": "Bondoro",
+      "source_id": "bondoro-alert",
+      "show": "both",
+      "title": "Filing Alert: Yinghua Chapter 11",
+      "url": "https://bondoro.com/yinghua-filing-alert/",
+      "date": "2026-08-25",
+      "published_at": "2026-08-25T00:42:46+00:00",
+      "excerpt": "Yinghua Files Chapter 11 in Central District of California",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
       "kind": "Asset Sale",
       "source": "Daily DAC",
@@ -11,6 +41,21 @@
       "date": "2026-08-24",
       "published_at": "2026-08-24T00:28:07+00:00",
       "excerpt": "Mad Capital Company announces an UCC Article 9 sale of SNAPS Holding Company, which holds 12.8 million shares of Novra Technologies on the Canadian Exchange. The post PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Substantial equity and convertible debt positions in Novra Technologies Inc. appeared first on D",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
+      "kind": "Asset Sale",
+      "source": "Daily DAC",
+      "source_id": "daily-dac-article",
+      "show": "news",
+      "title": "PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Xevant Holdco, LLC",
+      "url": "https://www.dailydac.com/public-notice-of-ucc-article-9-sale-xevant-holdco-llc/?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-xevant-holdco-llc",
+      "date": "2026-08-24",
+      "published_at": "2026-08-24T18:06:47+00:00",
+      "excerpt": "AMENDED NOTICE OF SECURED PARTY PUBLIC SALE OF PERSONAL PROPERTY OF XEVANT, INC. Pursuant to Section 9-610 of the Uniform Commercial Code, Xevant Holdco, LLC (the “Secured Party”) will hold a secured party public sale to the highest and best bidder, to be conducted virtually via online video confere",
       "case_slug": null,
       "group_name": null,
       "theme_slug": null
@@ -85,7 +130,7 @@
       "url": "https://www.dailydac.com/public-notice-of-ucc-article-9-sale-metal-stamping-and-manufacturing-company/?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-metal-stamping-and-manufacturing-company",
       "date": "2026-08-21",
       "published_at": "2026-08-21T04:48:25+00:00",
-      "excerpt": "NOTICE OF PUBLIC SALE OF COLLATERAL PURSUANT TO ARTICLE 9 OF THE UNIFORM COMMERCIAL CODE &#160; PLEASE TAKE NOTICE that on September 22, 2026, at 1:00 P.M. (CDT) at the offices of Vedder Price P.C., 222 N. LaSalle Street, Suite 2600, Chicago, Illinois 60601 and/or virtually via Zoom or similar softw",
+      "excerpt": "NOTICE OF PUBLIC SALE OF COLLATERAL PURSUANT TO ARTICLE 9 OF THE UNIFORM COMMERCIAL CODE PLEASE TAKE NOTICE that on September 22, 2026, at 1:00 P.M. (CDT) at the offices of Vedder Price P.C., 222 N. LaSalle Street, Suite 2600, Chicago, Illinois 60601 and/or virtually via Zoom or similar software, Ma",
       "case_slug": null,
       "group_name": null,
       "theme_slug": null
