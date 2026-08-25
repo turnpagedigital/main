@@ -3,6 +3,39 @@
   "case_name": "Poolin",
   "items": [
     {
+      "date": "2026-08-25",
+      "updated": "2026-08-25",
+      "lede": "On August 24, Poolin's professionals filed a retention application (Dkt. 179) and the first monthly fee statement in the case (Dkt. 178). The retention application is labeled \"Do Not Use to Employ/Appoint an Examiner,\" indicating it concerns a professional other than an examiner — most likely a financial advisor, special counsel, or other estate professional.",
+      "body_md": "On August 24, Poolin's professionals filed a retention application (Dkt. 179) and the first monthly fee statement in the case (Dkt. 178). The retention application is labeled \"Do Not Use to Employ/Appoint an Examiner,\" indicating it concerns a professional other than an examiner — most likely a financial advisor, special counsel, or other estate professional. The fee statement is the first submitted under whatever interim compensation procedures the court has established. Neither filing is contested on the face of the docket; both are substantive but routine at this stage of a Chapter 11 wind-down. Two additional pro hac vice admissions (Dkts. 176–177) and eight BNC certificates (Dkts. 164–171) are procedural-and-routine and carry no independent weight.\n\nOne material piece of scheduling context not previously flagged in these briefings: \nthe creditor's motion to appoint a Chapter 11 trustee (Dkt. 103) is set for hearing on October 21, 2026\n, per case-tracking data from __[Elevenflo](https://elevenflo.com/cases/17582)__. That date matters for recovery posture. The trustee fight will not resolve before the September sale closes — meaning current management remains in control through the auction regardless of the motion's ultimate outcome. The trustee motion thus functions as a post-sale governance risk rather than a pre-sale disruption, unless the creditor moves to expedite, which there is no indication it has done.\n\nThe next two concrete milestones arrive in rapid succession: the nonbinding indications of interest deadline is Thursday, August 27, followed by the Section 341 creditors' meeting on August 28 at 9 a.m. ET (remote). \nCreditors are scheduled to meet remotely on August 28 at 9 a.m. ET for a Section 341 meeting, where creditors can question company representatives under oath.\n That examination is the first formal opportunity for the creditor body — including the ~11,700 wallet IOU holders — to question CRO Michael DuFrayne on the pre-petition fund movements underpinning Dkt. 103. The qualified bid deadline follows on September 8, and the auction on September 10, assuming at least one competing bid clears the qualification threshold; \na sale hearing is set for September 18.\n\n\n## Sources\n\n- [Poolin Creditor Seeks Ch. 11 Trustee To Probe Transfers](https://www.law360.com/bankruptcy-authority/mid-cap/articles/2511097) — Law360, August 10, 2026\n- [Poolin Cleared To Pursue Asset Sale Amid Trustee Fight](https://www.law360.com/bankruptcy-authority/mid-cap/articles/2513768) — Law360, August 14, 2026\n- [Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process](https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/) — CryptoNomist, August 21, 2026\n- [Poolin Technology Case Summary](https://elevenflo.com/cases/17582) — Elevenflo (case aggregator), accessed August 25, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Poolin Creditor Seeks Ch. 11 Trustee To Probe Transfers",
+          "url": "https://www.law360.com/bankruptcy-authority/mid-cap/articles/2511097",
+          "note": "Law360, August 10, 2026"
+        },
+        {
+          "title": "Poolin Cleared To Pursue Asset Sale Amid Trustee Fight",
+          "url": "https://www.law360.com/bankruptcy-authority/mid-cap/articles/2513768",
+          "note": "Law360, August 14, 2026"
+        },
+        {
+          "title": "Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process",
+          "url": "https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/",
+          "note": "CryptoNomist, August 21, 2026"
+        },
+        {
+          "title": "Poolin Technology Case Summary",
+          "url": "https://elevenflo.com/cases/17582",
+          "note": "Elevenflo (case aggregator), accessed August 25, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 12,
+        "articles": 0,
+        "latest": "2026-08-24"
+      }
+    },
+    {
       "date": "2026-08-24",
       "updated": "2026-08-24",
       "lede": "On August 24, Poolin's docket recorded one pro hac vice admission (Dkt. 176) and eight BNC certificates of notice (Dkts. 163–171) — all procedural-and-routine, with no bearing on recovery or timing.",
