@@ -3,6 +3,39 @@
   "case_name": "Bartz v. Anthropic",
   "items": [
     {
+      "date": "2026-08-26",
+      "updated": "2026-08-26",
+      "lede": "On August 25, the district court clerk docketed Dkt. 685 — a second USCA Case Number entry — confirming that the Ninth Circuit has opened at least one additional appellate proceeding arising from the fee appeals filed by Edelson PC / Oppenheim + Zebrak (Dkt. 682, August 18) and Cowan DeBaets Abrahams & Sheppard LLP (Dkt. 683, August 19). Dkt. 684, filed August 21, was the first such notation; the appearance of a…",
+      "body_md": "On August 25, the district court clerk docketed Dkt. 685 — a second USCA Case Number entry — confirming that the Ninth Circuit has opened at least one additional appellate proceeding arising from the fee appeals filed by Edelson PC / Oppenheim + Zebrak (Dkt. 682, August 18) and Cowan DeBaets Abrahams & Sheppard LLP (Dkt. 683, August 19). Dkt. 684, filed August 21, was the first such notation; the appearance of a second entry four days later strongly suggests the court assigned separate docket numbers to the two appeals rather than immediately consolidating them into a single track. That said, the specific Ninth Circuit case numbers remain unconfirmed from publicly available sources: \nCourtListener's district-court docket for 4:24-cv-05417 was last updated August 23, 2026, and its data is sourced from PACER and RECAP, which may not be current\n — meaning the appellate docket numbers have not yet propagated to any public aggregator this desk can verify. Confirmation will come once the Ninth Circuit clerk's entries appear on PACER or a public index. For analytical purposes, the operative fact is that two separate USCA Case Number notations now sit on the district docket, one per notice of appeal, consistent with the clerk opening two distinct appellate files.\n\nThe substantive posture of the fee dispute is unchanged. \nTwo firms involved in generating the $1.5 billion copyright settlement appealed to the Ninth Circuit after being cut out of the $101 million attorney fee award, which was restricted to court-approved class counsel Susman Godfrey and Lieff Cabraser Heimann & Bernstein.\n \nA week before he retired, Judge Alsup castigated plaintiffs' counsel for improperly requesting $75 million for work done by the two appealing firms and Cowan DeBaets in an initial $300 million fees request.\n Whether each appellant group is challenging only its exclusion from the fee award or also mounting a broader attack on the July 20 final approval order remains unconfirmed on the face of the notices; that question will be answered when opening briefs are filed. The existence of two separate appellate files — rather than a consolidated one — creates a procedural fork: the Ninth Circuit will need to decide, either sua sponte or on motion, whether to consolidate the proceedings. Consolidation is standard where appeals arise from the same underlying order and share common issues, but it is not automatic, and separate scheduling orders could issue in the interim.\n\nFor class members, Dkt. 685 closes the opening phase of the appellate record: both fee appellants now have active Ninth Circuit cases, the Effective Date has not arrived, and the disbursement portal remains dormant. Anthropic's payment obligations run independently of the appeals, and no party has moved for a stay. The $450 million first installment (Scheduled Payment 1) falls due September 25, 2026 — four weeks out. The next concrete milestones are: (1) the Ninth Circuit's scheduling orders establishing opening-brief deadlines for each docket, typically issued within weeks of case opening; and (2) any consolidation order, which would determine whether the two appeals proceed on a unified or parallel track and could affect both briefing timelines and the ultimate scope of any panel decision.\n\n## Sources\n\n- [Bartz et al. v. Anthropic PBC — CourtListener Docket (N.D. Cal. 4:24-cv-05417)](https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/) — CourtListener (PACER/RECAP)\n- [Bartz, et al. v. Anthropic, PBC, 25-4843 — CourtListener Appellate Docket](https://www.courtlistener.com/docket/70991505/bartz-et-al-v-anthropic-pbc/) — CourtListener (PACER/RECAP)\n- [Firms Appeal After Exclusion From Fees Award in Anthropic Case](https://news.bloomberglaw.com/legal-ops-and-tech/firms-appeal-after-exclusion-from-fees-award-in-anthropic-case) — Bloomberg Law, August 19, 2026\n- [Firms Cut From $101M Anthropic Atty Fees Appeal To 9th Circ.](https://www.law360.com/ip/articles/2515634) — Law360, August 20, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Bartz et al. v. Anthropic PBC — CourtListener Docket (N.D. Cal. 4:24-cv-05417)",
+          "url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
+          "note": "CourtListener (PACER/RECAP)"
+        },
+        {
+          "title": "Bartz, et al. v. Anthropic, PBC, 25-4843 — CourtListener Appellate Docket",
+          "url": "https://www.courtlistener.com/docket/70991505/bartz-et-al-v-anthropic-pbc/",
+          "note": "CourtListener (PACER/RECAP)"
+        },
+        {
+          "title": "Firms Appeal After Exclusion From Fees Award in Anthropic Case",
+          "url": "https://news.bloomberglaw.com/legal-ops-and-tech/firms-appeal-after-exclusion-from-fees-award-in-anthropic-case",
+          "note": "Bloomberg Law, August 19, 2026"
+        },
+        {
+          "title": "Firms Cut From $101M Anthropic Atty Fees Appeal To 9th Circ.",
+          "url": "https://www.law360.com/ip/articles/2515634",
+          "note": "Law360, August 20, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-08-25"
+      }
+    },
+    {
       "date": "2026-08-24",
       "updated": "2026-08-24",
       "lede": "On August 21, the clerk docketed Dkt. 684 — a USCA Case Number entry — confirming that the Ninth Circuit has accepted and assigned a docket number to at least one of the two pending fee appeals. The entry follows the notices filed by Edelson PC and Oppenheim + Zebrak (Dkt. 682, August 18) and Cowan DeBaets Abrahams & Sheppard LLP (Dkt. 683, August 19).",
