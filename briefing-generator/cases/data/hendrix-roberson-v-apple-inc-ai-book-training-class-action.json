@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/71279155/hendrix-v-apple-inc/",
     "date_last_filing": "2026-08-25",
-    "meta_fetched_at": "2026-08-25T22:48:32.772591+00:00",
-    "fetched_at": "2026-08-25T22:48:32.772591+00:00",
-    "as_of": "Aug 25, 2026",
+    "meta_fetched_at": "2026-08-26T02:02:59.296575+00:00",
+    "fetched_at": "2026-08-26T02:02:59.296575+00:00",
+    "as_of": "Aug 26, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 3,
     "recent": [
+      {
+        "entry_number": 126,
+        "date_filed": "2026-08-25",
+        "time_filed": "17:21:48",
+        "date_display": "Aug 25, 2026",
+        "description": "Transcript Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 125,
         "date_filed": "2026-08-25",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 123,
-        "date_filed": "2026-08-21",
-        "time_filed": "09:10:14",
-        "date_display": "Aug 21, 2026",
-        "description": "ORDER RE: 119 JOINT DISCOVERY LETTER BRIEF. Signed by Magistrate Judge Ajay Krishnan on 8/21/2026. Discovery Hearing on 119 set for 8/25/2026, 02:00 PM in Oakland - via Zoom webinar before Magistrate Judge Ajay Krishnan. Webinar Access: All counsel, members of the public, and media may access the webinar information at https://cand.uscourts.gov/judges/ask/krishnan-ajay-sCiv LR 77-3(d). Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited.Zoom Guidance and Setup: https://cand.uscourts.gov/zoom.(kmm2, COURT STAFF) (Filed on 8/21/2026) (Entered: 08/21/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.123.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 126,
+        "date_filed": "2026-08-25",
+        "time_filed": "17:21:48",
+        "date_display": "Aug 25, 2026",
+        "description": "Transcript Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 125,
         "date_filed": "2026-08-25",
