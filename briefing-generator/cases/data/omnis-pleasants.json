@@ -15,12 +15,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-26",
-    "meta_fetched_at": "2026-08-26T15:54:44.942448+00:00",
-    "fetched_at": "2026-08-26T15:54:44.942448+00:00",
+    "meta_fetched_at": "2026-08-26T18:05:30.952845+00:00",
+    "fetched_at": "2026-08-26T18:05:30.952845+00:00",
     "as_of": "Aug 26, 2026",
     "backfilled": true,
-    "new_in_72h": 6,
+    "new_in_72h": 7,
     "recent": [
+      {
+        "entry_number": 166,
+        "date_filed": "2026-08-26",
+        "time_filed": "12:54:34",
+        "date_display": "Aug 26, 2026",
+        "description": "Omnibus Hearing Dates",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 165,
         "date_filed": "2026-08-26",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 163,
-        "date_filed": "2026-08-25",
-        "time_filed": "19:57:05",
-        "date_display": "Aug 25, 2026",
-        "description": "Affidavit/Declaration of Service re: Debtors Motion for Entry of an Order (I) Establishing Bar Dates and Related Procedures for Filing Proofs of Claim, Including for Claims Arising Under Section 503(b)(9) of the Bankruptcy Code, (II) Approving the Form and Manner of Notice Thereof, and (III) Granting Related Relief (Docket No. 103), Notice of Intent to Serve Subpoena (Docket Nos. 112-132), Debtors Motion for Entry of an Order (I) Extending the Time for the Debtor to File Its Schedules of Assets and Liabilities and Statements of Financial Affairs and (II) Granting Related Relief (Docket No. 133). Filed by Stretto, Inc.. (related document(s)103, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133) (Betance, Sheryl) (Entered: 08/25/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 166,
+        "date_filed": "2026-08-26",
+        "time_filed": "12:54:34",
+        "date_display": "Aug 26, 2026",
+        "description": "Omnibus Hearing Dates",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 165,
         "date_filed": "2026-08-26",
