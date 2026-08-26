@@ -16,50 +16,70 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-08-26",
-    "meta_fetched_at": "2026-08-26T20:07:57.077957+00:00",
-    "fetched_at": "2026-08-26T20:07:57.077957+00:00",
+    "meta_fetched_at": "2026-08-26T23:41:01.958969+00:00",
+    "fetched_at": "2026-08-26T23:41:01.958969+00:00",
     "as_of": "Aug 26, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 4,
     "recent": [
+      {
+        "entry_number": 80,
+        "date_filed": "2026-08-26",
+        "time_filed": "17:10:14",
+        "date_display": "Aug 26, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 79,
+        "date_filed": "2026-08-26",
+        "time_filed": "16:04:35",
+        "date_display": "Aug 26, 2026",
+        "description": "Notice of Agenda of Matters Scheduled for Hearing (related document(s)73, 74, 75, 76, 77, 78) Filed by Oriel Bachar. (Malow, Jennifer) (Entered: 08/26/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 78,
         "date_filed": "2026-08-26",
         "time_filed": "15:58:50",
         "date_display": "Aug 26, 2026",
-        "description": "Objection",
+        "description": "Objection Foreign Representative's Opposition to Skillz Platform Inc.'s Motion to Compel Production of Documents and Witness for Deposition (related document(s)73) Filed by Oriel Bachar (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D # 5 Exhibit E # 6 Exhibit F # 7 Exhibit G # 8 Exhibit H # 9 Exhibit I # 10 Exhibit J # 11 Exhibit K # 12 Exhibit L # 13 Exhibit M # 14 Exhibit N # 15 Exhibit O # 16 Exhibit P # 17 Exhibit Q) (Malow, Jennifer) (Entered: 08/26/2026)",
         "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 77,
-        "date_filed": "2026-08-24",
-        "time_filed": "18:02:30",
-        "date_display": "Aug 24, 2026",
-        "description": "Deposition - Notice",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 76,
-        "date_filed": "2026-08-21",
-        "time_filed": "12:16:39",
-        "date_display": "Aug 21, 2026",
-        "description": "Notice of Hearing - Notice of Virtual Discovery Hearing (related document(s)73) Filed by Skillz Platform Inc.. Hearing scheduled for 8/28/2026 at 10:00 AM at US Bankruptcy Court, 824 Market St., 5th Fl., Courtroom #4, Wilmington, Delaware. Objections due by 8/26/2026. (Neiburg, Michael) (Entered: 08/21/2026)",
-        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
       {
+        "entry_number": 80,
+        "date_filed": "2026-08-26",
+        "time_filed": "17:10:14",
+        "date_display": "Aug 26, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 79,
+        "date_filed": "2026-08-26",
+        "time_filed": "16:04:35",
+        "date_display": "Aug 26, 2026",
+        "description": "Notice of Agenda of Matters Scheduled for Hearing (related document(s)73, 74, 75, 76, 77, 78) Filed by Oriel Bachar. (Malow, Jennifer) (Entered: 08/26/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 78,
         "date_filed": "2026-08-26",
         "time_filed": "15:58:50",
         "date_display": "Aug 26, 2026",
-        "description": "Objection",
+        "description": "Objection Foreign Representative's Opposition to Skillz Platform Inc.'s Motion to Compel Production of Documents and Witness for Deposition (related document(s)73) Filed by Oriel Bachar (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D # 5 Exhibit E # 6 Exhibit F # 7 Exhibit G # 8 Exhibit H # 9 Exhibit I # 10 Exhibit J # 11 Exhibit K # 12 Exhibit L # 13 Exhibit M # 14 Exhibit N # 15 Exhibit O # 16 Exhibit P # 17 Exhibit Q) (Malow, Jennifer) (Entered: 08/26/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -69,7 +89,7 @@
         "date_filed": "2026-08-24",
         "time_filed": "18:02:30",
         "date_display": "Aug 24, 2026",
-        "description": "Deposition - Notice",
+        "description": "Amended Notice of Deposition of Oriel Bachar in Connection With Chapter 15 Petition for Recognition of a Foreign Proceeding Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/24/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
