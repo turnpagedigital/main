@@ -16,16 +16,26 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
     "date_last_filing": "2026-08-25",
-    "meta_fetched_at": "2026-08-25T19:02:16.768026+00:00",
-    "fetched_at": "2026-08-25T19:02:16.768026+00:00",
-    "as_of": "Aug 25, 2026",
+    "meta_fetched_at": "2026-08-26T02:02:35.468288+00:00",
+    "fetched_at": "2026-08-26T02:02:35.468288+00:00",
+    "as_of": "Aug 26, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 30,
+        "date_filed": "2026-08-25",
+        "time_filed": "16:16:40",
+        "date_display": "Aug 25, 2026",
+        "description": "Order on Motion for Conference",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.668114/gov.uscourts.nysd.668114.30.0.pdf"
+      },
       {
         "entry_number": 29,
         "date_filed": "2026-08-25",
-        "time_filed": "",
+        "time_filed": "13:29:54",
         "date_display": "Aug 25, 2026",
         "description": "ORDER GRANTING MOTION FOR ADMISSION PRO HAC VICE OF BENJAMIN GOULD AS ADDITIONAL COUNSEL FOR PLAINTIFFS granting 27 Motion for Benjamin Blystad Gould to Appear Pro Hac Vice. (Signed by Judge Loretta A. Preska on 8/25/2026) (ks) Transmission to Attorney Services/Help Desk. (Entered: 08/25/2026)",
         "is_new": true,
@@ -41,23 +51,23 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-08-21",
-        "time_filed": "",
-        "date_display": "Aug 21, 2026",
-        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 27 MOTION for Benjamin Blystad Gould to Appear Pro Hac Vice receipt number ANYSDC-33253987. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (rju)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
       {
+        "entry_number": 30,
+        "date_filed": "2026-08-25",
+        "time_filed": "16:16:40",
+        "date_display": "Aug 25, 2026",
+        "description": "Order on Motion for Conference",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.668114/gov.uscourts.nysd.668114.30.0.pdf"
+      },
+      {
         "entry_number": 29,
         "date_filed": "2026-08-25",
-        "time_filed": "",
+        "time_filed": "13:29:54",
         "date_display": "Aug 25, 2026",
         "description": "ORDER GRANTING MOTION FOR ADMISSION PRO HAC VICE OF BENJAMIN GOULD AS ADDITIONAL COUNSEL FOR PLAINTIFFS granting 27 Motion for Benjamin Blystad Gould to Appear Pro Hac Vice. (Signed by Judge Loretta A. Preska on 8/25/2026) (ks) Transmission to Attorney Services/Help Desk. (Entered: 08/25/2026)",
         "is_new": true,
@@ -199,7 +209,7 @@
         "date_filed": "2026-08-05",
         "time_filed": "",
         "date_display": "Aug 5, 2026",
-        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 18 MOTION for Derek William Loeser to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number ANYSDC-33241839. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (bc)",
+        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 22 MOTION for Chris Nathaniel Ryder to Appear Pro Hac Vice receipt number ANYSDC-33241877. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (bc)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
