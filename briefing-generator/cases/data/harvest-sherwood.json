@@ -14,28 +14,100 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
-    "date_last_filing": "2026-08-25",
-    "meta_fetched_at": "2026-08-25T17:49:06.278087+00:00",
-    "fetched_at": "2026-08-26T11:49:50.970379+00:00",
+    "date_last_filing": "2026-08-26",
+    "meta_fetched_at": "2026-08-26T20:09:30.487362+00:00",
+    "fetched_at": "2026-08-26T20:09:30.487362+00:00",
     "as_of": "Aug 26, 2026",
     "backfilled": true,
-    "new_in_72h": 12,
+    "new_in_72h": 20,
     "recent": [
       {
-        "entry_number": 1258,
-        "date_filed": "2026-08-25",
-        "time_filed": "10:47:01",
-        "date_display": "Aug 25, 2026",
+        "entry_number": 1264,
+        "date_filed": "2026-08-26",
+        "time_filed": "14:35:04",
+        "date_display": "Aug 26, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1257,
-        "date_filed": "2026-08-25",
-        "time_filed": "10:39:32",
-        "date_display": "Aug 25, 2026",
+        "entry_number": 1263,
+        "date_filed": "2026-08-26",
+        "time_filed": "14:32:43",
+        "date_display": "Aug 26, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1262,
+        "date_filed": "2026-08-26",
+        "time_filed": "14:30:23",
+        "date_display": "Aug 26, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 1264,
+        "date_filed": "2026-08-26",
+        "time_filed": "14:35:04",
+        "date_display": "Aug 26, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1263,
+        "date_filed": "2026-08-26",
+        "time_filed": "14:32:43",
+        "date_display": "Aug 26, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1262,
+        "date_filed": "2026-08-26",
+        "time_filed": "14:30:23",
+        "date_display": "Aug 26, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1261,
+        "date_filed": "2026-08-26",
+        "time_filed": "14:28:41",
+        "date_display": "Aug 26, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1260,
+        "date_filed": "2026-08-26",
+        "time_filed": "13:30:55",
+        "date_display": "Aug 26, 2026",
+        "description": "Stipulation",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1259,
+        "date_filed": "2026-08-26",
+        "time_filed": "13:28:50",
+        "date_display": "Aug 26, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
         "is_new": true,
         "landmark": "",
@@ -43,16 +115,24 @@
       },
       {
         "entry_number": null,
-        "date_filed": "2026-08-25",
-        "time_filed": "10:49:50",
-        "date_display": "Aug 25, 2026",
-        "description": "none AND none",
+        "date_filed": "2026-08-26",
+        "time_filed": "13:29:28",
+        "date_display": "Aug 26, 2026",
+        "description": "none",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      }
-    ],
-    "entries": [
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-26",
+        "time_filed": "14:35:57",
+        "date_display": "Aug 26, 2026",
+        "description": "none AND none AND none AND none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1258,
         "date_filed": "2026-08-25",
