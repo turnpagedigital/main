@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-25",
-    "meta_fetched_at": "2026-08-26T02:01:04.046851+00:00",
-    "fetched_at": "2026-08-26T07:11:34.505529+00:00",
+    "meta_fetched_at": "2026-08-26T08:10:14.164965+00:00",
+    "fetched_at": "2026-08-26T08:10:14.164965+00:00",
     "as_of": "Aug 26, 2026",
-    "backfilled": true,
+    "backfilled": false,
     "new_in_72h": 5,
     "recent": [
       {
@@ -182,6 +182,16 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.152.0.pdf"
+      },
+      {
+        "entry_number": 150,
+        "date_filed": "2026-08-21",
+        "time_filed": "22:06:18",
+        "date_display": "Aug 21, 2026",
+        "description": "Subpoena / Notice of Intent to Serve Subpoena on Joseph Helms. Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 08/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.150.0.pdf"
       },
       {
         "entry_number": 148,
@@ -418,7 +428,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:30:24",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Simon Hodson. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -488,7 +498,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:19:34",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Dynamic Finance Corporation. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -518,7 +528,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:15:03",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Angela Chen Sabella. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -528,7 +538,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:13:13",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Blake Stephens. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -588,7 +598,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "18:54:55",
         "date_display": "Aug 20, 2026",
-        "description": "Certificate of No Objection",
+        "description": "Certificate of No Objection Regarding Debtor's Motion for Entry of Interim and Final Orders (I) Authorizing Debtor to Pay Prepetition Claims of Critical Vendors, Lienholders, and 503(b)(9) Claimants; (II) Confirming Administrative Expense Priority of Outstanding Orders; (III) Directing Financial Institutions to Honor and Process Payments in Connection Therewith; and (IV) Granting Related Relief (related document(s)6) Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -638,10 +648,10 @@
         "date_filed": "2026-08-20",
         "time_filed": "17:33:30",
         "date_display": "Aug 20, 2026",
-        "description": "Motion to Establish Deadline to File Proofs of Claim",
+        "description": "Motion to Establish Deadline to File Proofs of Claim - Debtor's Motion for Entry of an Order (I) Establishing Bar Dates and Related Procedures for Filing Proofs of Claim, Including Claims Arising Under Section 503(b)(9) of the Bankruptcy Code, (II) Approving the Form and Manner of Notice Thereof, and (III) Granting Related Relief Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Objections due by 8/27/2026. (Attachments: # 1 Notice # 2 Exhibit A) (Faris, S. Alexander) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.103.0.pdf"
       },
       {
         "entry_number": 102,
@@ -1853,7 +1863,8 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": {
     "name": "Stretto",
