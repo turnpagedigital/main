@@ -14,13 +14,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
-    "date_last_filing": "2026-08-24",
-    "meta_fetched_at": "2026-08-25T21:47:56.523815+00:00",
-    "fetched_at": "2026-08-26T18:05:44.743167+00:00",
+    "date_last_filing": "2026-08-26",
+    "meta_fetched_at": "2026-08-26T20:08:03.074069+00:00",
+    "fetched_at": "2026-08-26T20:08:03.074069+00:00",
     "as_of": "Aug 26, 2026",
     "backfilled": true,
-    "new_in_72h": 8,
+    "new_in_72h": 9,
     "recent": [
+      {
+        "entry_number": 180,
+        "date_filed": "2026-08-26",
+        "time_filed": "14:06:01",
+        "date_display": "Aug 26, 2026",
+        "description": "Document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 179,
         "date_filed": "2026-08-24",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 177,
-        "date_filed": "2026-08-24",
-        "time_filed": "10:30:08",
-        "date_display": "Aug 24, 2026",
-        "description": "Order Granting Application To Allow Shirley S. Cho to Appear Pro Hac Vice (Related Doc # 123). Service of notice of the entry of this order pursuant to Rule 9022 was made on the appropriate parties. See BNC Certificate of Notice. This order has been mailed to the Treasurer of the New Jersey Lawyer's Fund for Client Protection via US mail. Signed on 8/24/2026. (mjb) (Entered: 08/24/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 180,
+        "date_filed": "2026-08-26",
+        "time_filed": "14:06:01",
+        "date_display": "Aug 26, 2026",
+        "description": "Document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 179,
         "date_filed": "2026-08-24",
@@ -378,7 +388,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "",
         "date_display": "Aug 20, 2026",
-        "description": "Minute of Hearing Held, OUTCOME: Motion Granted (related document:7 Motion re: Debtors Motion for Entry of Interim and Final Orders Authorizing (I) the Continued Use of Existing Cash Management System, on a Limited Basis; (II) the Continued Interim Use of a PNC Operating Bank Account, Cryptocurrency Exchange Accounts, Ramp Credit Card Account and Business Forms; and (III) Granting Related Relief Filed by Stephen M. Packman on behalf of Poolin Technology PTE. LTD.. (Attachments: # 1 Exhibit A - Proposed Interim Order # 2 Exhibit B - Proposed Final Order) Filed by Debtor Poolin Technology PTE. LTD) (mjb)",
+        "description": "Minute of Hearing Held, OUTCOME: Motion Granted (related document:6 Motion re: Debtors Motion for Entry of an Order (I) Authorizing Redaction of Certain Personally Identifiable Information of Natural Persons; and (II) Granting Related Relief Filed by Stephen M. Packman on behalf of Poolin Technology PTE. LTD.. (Attachments: # 1 Exhibit A - Proposed Order) Filed by Debtor Poolin Technology PTE. LTD) (mjb)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
