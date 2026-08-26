@@ -294,6 +294,28 @@
       "tokens_in": 0,
       "tokens_out": 0,
       "ok": false
+    },
+    {
+      "ts": "2026-08-26T13:38:47Z",
+      "date": "2026-08-26",
+      "task": "feed-scan",
+      "provider": "anthropic",
+      "requests": 1,
+      "tokens_in": 38249,
+      "tokens_out": 197,
+      "ok": true,
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "ts": "2026-08-26T13:45:46Z",
+      "date": "2026-08-26",
+      "task": "news-scan",
+      "provider": "anthropic",
+      "requests": 8,
+      "tokens_in": 461649,
+      "tokens_out": 9541,
+      "ok": true,
+      "model": "claude-sonnet-4-6"
     }
   ]
 }

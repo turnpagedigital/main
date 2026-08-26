@@ -31,6 +31,36 @@
       "theme_slug": null
     },
     {
+      "id": "bfg-supply",
+      "kind": "summaries",
+      "source": "Bondoro",
+      "source_id": "bondoro-summaries",
+      "show": "both",
+      "title": "Case Summary: BFG Supply Chapter 11",
+      "url": "https://bondoro.com/bfg-supply/",
+      "date": "2026-08-25",
+      "published_at": "2026-08-25T18:02:43+00:00",
+      "excerpt": "BFG Supply, a lawn, garden and greenhouse products distributor, filed for Chapter 11 after sales force turnover drove customer attrition and suppliers tightened trade credit, pursuing a going-concern sale alongside an already-underway inventory liquidation, funded by a DIP facility of up to $55M.",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "?utm_source=rss&utm_medium=rss&utm_campaign=dailydacs-market-summary-explainer-f",
+      "kind": "article",
+      "source": "Daily DAC",
+      "source_id": "daily-dac-article",
+      "show": "news",
+      "title": "DailyDAC’s Market Summary/Explainer for Seven Day Period Ending August 24, 2026",
+      "url": "https://www.dailydac.com/dailydacs-market-summary-explainer-for-seven-day-period-ending-august-24-2026/?utm_source=rss&utm_medium=rss&utm_campaign=dailydacs-market-summary-explainer-for-seven-day-period-ending-august-24-2026",
+      "date": "2026-08-25",
+      "published_at": "2026-08-25T12:31:18+00:00",
+      "excerpt": "Market Watch: Week of August 18, 2026 – August 24, 2026 DailyDAC&#8217;s Sentiment Score: 3.6/10 Not much happened in distressed credit this week. But everything happened to the price of borrowing money. The 30-year Treasury yield (essentially the government’s cost to borrow money for three decades,",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
       "kind": "Asset Sale",
       "source": "Daily DAC",
@@ -5074,7 +5104,8 @@
       "excerpt": "Plus: QVC Group Inc. + Sangamo Therapeutics Inc. ($SGMO) + GoldenPeaks Poland Holding Limited + Freedom Forever LLC updates & Central Falls Detention Facility Corporation Files",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "central-falls-detention-facility-chapter-11-bankruptcy-filing",
@@ -5089,7 +5120,8 @@
       "excerpt": "Back on July 10, 2026, Central Falls Detention Facility Corporation (the &#8220;debtor&#8221;) filed a prearranged chapter 11 bankruptcy case in the District of Rhode Island (Judge Dorsey).* The public corp.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "poolin",
