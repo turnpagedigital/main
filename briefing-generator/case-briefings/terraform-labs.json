@@ -3,6 +3,34 @@
   "case_name": "Terraform Labs",
   "items": [
     {
+      "date": "2026-08-27",
+      "updated": "2026-08-27",
+      "lede": "On August 24, the SEC issued Release No. 106177 in an administrative proceeding (File No. 3-22435), extending the deadline to submit a Proposed Plan of Distribution — most likely to August 26, 2027 — after the Division received four public comments on a proposed plan it published for comment on June 29, 2026. The Commission published a Notice of Proposed Plan of Distribution on June 29, 2026 under Rule 1103…",
+      "body_md": "On August 24, the SEC issued Release No. 106177 in an administrative proceeding (File No. 3-22435), extending the deadline to submit a Proposed Plan of Distribution — most likely to August 26, 2027 — after the Division received four public comments on a proposed plan it published for comment on June 29, 2026. \nThe Commission published a Notice of Proposed Plan of Distribution on June 29, 2026 under Rule 1103, inviting public comment through July 29, 2026, and received four comments raising various issues before issuing this extension on August 24, 2026.\n The practical consequence for Class 5 claimants is significant: the August 20 deadline the SEC faced — under the Second Extension Order (Release No. 104875, February 20, 2026, File No. 3-22382) — has now been superseded, and the Commission's own published distribution methodology will not be finalized for another year. The relationship between File No. 3-22382 (the prior Tai Mo Shan extension orders) and File No. 3-22435 (Release No. 106177) requires confirmation against the full order text; the operative point for recovery posture is that the __[SEC's enforcement docket](https://www.sec.gov/files/litigation/admin/2026/34-106177.pdf)__ reflects a further extension well past August 20, meaning no distribution framework for the $123.1 million Fair Fund will issue in the near term.\n\n\nThe plan, once submitted, must define investor eligibility, loss calculations, claim requirements, and payment procedures; the deadline does not trigger payouts. Coordination with Terraform's separate bankruptcy recovery remains unresolved, and claims in the bankruptcy proceeding do not automatically establish eligibility for this fund.\n For Class 5 holders with overlapping losses in both tracks, this extension compounds timing uncertainty: the bankruptcy wind-down runs through December 31, 2026, but the parallel Fair Fund track — which could affect net recovery on duplicate losses — now trails it by a year or more. The SEC's apparent reason for the further extension is the public comment process: \nthe Commission published a Notice of Proposed Plan under Rule 1103, with the comment period closing July 29, 2026, suggesting the four comments received required the Division to rework or respond to the proposed methodology before a final plan can be submitted.\n\n\nDkt. 1325, filed today, is a rescheduled hearing notice — procedural and routine, carrying no independent effect on recovery or claim allowance. The authorization motion filed August 19 (Dkt. 1321) remains unresolved on the public record, with no corresponding order yet appearing on the docket. The next fixed milestone is December 31, 2026 — the court-extended wind-down deadline — with the Jump Trading litigation and *Chang v. Terraform Labs Wind Down Trust* adversary proceeding the primary substantive resolution triggers ahead of that date. On the Fair Fund track, the operative question is now whether the SEC's next extension order (Release No. 106177) covers the same File No. 3-22382 proceeding as the prior Tai Mo Shan orders, or a distinct but related administrative matter; confirmation would come from the full order text available at the __[SEC enforcement docket](https://www.sec.gov/files/litigation/admin/2026/34-106177.pdf)__.\n\n## Sources\n\n- [SEC Release No. 106177 — Fair Fund Extension Order (August 24, 2026)](https://www.sec.gov/files/litigation/admin/2026/34-106177.pdf) — SEC.gov, August 24, 2026\n- [SEC Release No. 104875 — Second Extension Order, Tai Mo Shan (February 20, 2026)](https://www.sec.gov/files/litigation/admin/2026/34-104875.pdf) — SEC.gov, February 20, 2026\n- [SEC faces Aug. 20 deadline to unlock $123 million recovery fund for Terra investors](https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/) — CryptoSlate, August 20, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "SEC Release No. 106177 — Fair Fund Extension Order (August 24, 2026)",
+          "url": "https://www.sec.gov/files/litigation/admin/2026/34-106177.pdf",
+          "note": "SEC.gov, August 24, 2026"
+        },
+        {
+          "title": "SEC Release No. 104875 — Second Extension Order, Tai Mo Shan (February 20, 2026)",
+          "url": "https://www.sec.gov/files/litigation/admin/2026/34-104875.pdf",
+          "note": "SEC.gov, February 20, 2026"
+        },
+        {
+          "title": "SEC faces Aug. 20 deadline to unlock $123 million recovery fund for Terra investors",
+          "url": "https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/",
+          "note": "CryptoSlate, August 20, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-08-27"
+      }
+    },
+    {
       "date": "2026-08-24",
       "updated": "2026-08-24",
       "lede": "On August 21, Serrur Investment Partners, LP filed a transfer of claim (Dkt. 1323) in Case No. 24-10070-BLS, Bankr. D. Del., assigning a Class 5 Crypto Loss Claim with a face amount of $3,454,036.42 — the same transferee that filed three prior claim transfers on August 3 (Dkts. 1309–1311) and a Rule 3001(e)(2) notice of transfer for the same claim pool (Dkt. 1312).",
