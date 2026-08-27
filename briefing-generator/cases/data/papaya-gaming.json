@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-08-27",
-    "meta_fetched_at": "2026-08-27T20:35:33.304929+00:00",
-    "fetched_at": "2026-08-27T20:35:33.304929+00:00",
+    "meta_fetched_at": "2026-08-27T23:41:03.426410+00:00",
+    "fetched_at": "2026-08-27T23:41:03.426410+00:00",
     "as_of": "Aug 27, 2026",
     "backfilled": true,
-    "new_in_72h": 6,
+    "new_in_72h": 7,
     "recent": [
+      {
+        "entry_number": 84,
+        "date_filed": "2026-08-27",
+        "time_filed": "17:27:10",
+        "date_display": "Aug 27, 2026",
+        "description": "Exhibit",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 83,
         "date_filed": "2026-08-27",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 81,
-        "date_filed": "2026-08-27",
-        "time_filed": "15:16:03",
-        "date_display": "Aug 27, 2026",
-        "description": "Supplement",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 84,
+        "date_filed": "2026-08-27",
+        "time_filed": "17:27:10",
+        "date_display": "Aug 27, 2026",
+        "description": "Exhibit",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 83,
         "date_filed": "2026-08-27",
