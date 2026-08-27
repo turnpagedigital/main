@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
     "date_last_filing": "2026-08-25",
     "meta_fetched_at": "2026-08-25T20:50:32.128683+00:00",
-    "fetched_at": "2026-08-26T23:41:56.470107+00:00",
-    "as_of": "Aug 26, 2026",
+    "fetched_at": "2026-08-27T18:27:24.634791+00:00",
+    "as_of": "Aug 27, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 2,
     "recent": [
       {
         "entry_number": 821,
@@ -48,7 +48,7 @@
         "time_filed": "16:34:43",
         "date_display": "Aug 24, 2026",
         "description": "TRANSCRIPT ORDER for proceedings held on 08/19/2026 before Magistrate Judge Thomas S. Hixson by BCP Literary, Inc., Ta-Nehisi Coates, Daring Greatly Corporation, Junot Diaz, Eleven Eleven O' Clock Corporation, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson, for Recorded Proceeding - San Francisco. (Stein, Joshua) (Filed on 8/24/2026) (Entered: 08/24/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -80,7 +80,7 @@
         "time_filed": "16:34:43",
         "date_display": "Aug 24, 2026",
         "description": "TRANSCRIPT ORDER for proceedings held on 08/19/2026 before Magistrate Judge Thomas S. Hixson by BCP Literary, Inc., Ta-Nehisi Coates, Daring Greatly Corporation, Junot Diaz, Eleven Eleven O' Clock Corporation, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson, for Recorded Proceeding - San Francisco. (Stein, Joshua) (Filed on 8/24/2026) (Entered: 08/24/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

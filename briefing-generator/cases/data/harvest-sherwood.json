@@ -14,45 +14,95 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
-    "date_last_filing": "2026-08-26",
-    "meta_fetched_at": "2026-08-26T23:41:45.178508+00:00",
-    "fetched_at": "2026-08-26T23:41:45.178508+00:00",
-    "as_of": "Aug 26, 2026",
+    "date_last_filing": "2026-08-27",
+    "meta_fetched_at": "2026-08-27T18:27:05.764966+00:00",
+    "fetched_at": "2026-08-27T18:27:05.764966+00:00",
+    "as_of": "Aug 27, 2026",
     "backfilled": true,
-    "new_in_72h": 26,
+    "new_in_72h": 22,
     "recent": [
       {
-        "entry_number": 1269,
-        "date_filed": "2026-08-26",
-        "time_filed": "16:35:50",
-        "date_display": "Aug 26, 2026",
-        "description": "Order (generic)",
+        "entry_number": 1274,
+        "date_filed": "2026-08-27",
+        "time_filed": "12:52:57",
+        "date_display": "Aug 27, 2026",
+        "description": "Leave (Not for Appeal use)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1268,
-        "date_filed": "2026-08-26",
-        "time_filed": "15:49:16",
-        "date_display": "Aug 26, 2026",
-        "description": "Notice (generic)",
+        "entry_number": 1273,
+        "date_filed": "2026-08-27",
+        "time_filed": "11:36:03",
+        "date_display": "Aug 27, 2026",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1267,
-        "date_filed": "2026-08-26",
-        "time_filed": "15:41:32",
-        "date_display": "Aug 26, 2026",
-        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "entry_number": 1272,
+        "date_filed": "2026-08-27",
+        "time_filed": "11:34:55",
+        "date_display": "Aug 27, 2026",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1274,
+        "date_filed": "2026-08-27",
+        "time_filed": "12:52:57",
+        "date_display": "Aug 27, 2026",
+        "description": "Leave (Not for Appeal use)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1273,
+        "date_filed": "2026-08-27",
+        "time_filed": "11:36:03",
+        "date_display": "Aug 27, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1272,
+        "date_filed": "2026-08-27",
+        "time_filed": "11:34:55",
+        "date_display": "Aug 27, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1271,
+        "date_filed": "2026-08-27",
+        "time_filed": "11:21:51",
+        "date_display": "Aug 27, 2026",
+        "description": "Leave (Not for Appeal use)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1270,
+        "date_filed": "2026-08-27",
+        "time_filed": "11:01:02",
+        "date_display": "Aug 27, 2026",
+        "description": "Notice of appearance and request for notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1269,
         "date_filed": "2026-08-26",
@@ -229,7 +279,7 @@
         "time_filed": "16:41:59",
         "date_display": "Aug 24, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -239,7 +289,7 @@
         "time_filed": "16:40:18",
         "date_display": "Aug 24, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -249,7 +299,7 @@
         "time_filed": "16:38:18",
         "date_display": "Aug 24, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -259,7 +309,7 @@
         "time_filed": "16:36:26",
         "date_display": "Aug 24, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -269,7 +319,7 @@
         "time_filed": "16:34:34",
         "date_display": "Aug 24, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -279,7 +329,7 @@
         "time_filed": "16:32:24",
         "date_display": "Aug 24, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -289,7 +339,7 @@
         "time_filed": "11:16:27",
         "date_display": "Aug 24, 2026",
         "description": "Certificate of service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -299,7 +349,7 @@
         "time_filed": "16:42:57",
         "date_display": "Aug 24, 2026",
         "description": "none AND none AND none AND none AND none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -309,7 +359,7 @@
         "time_filed": "16:42:56",
         "date_display": "Aug 24, 2026",
         "description": "none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

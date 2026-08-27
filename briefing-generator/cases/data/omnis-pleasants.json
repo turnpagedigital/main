@@ -14,13 +14,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
-    "date_last_filing": "2026-08-26",
-    "meta_fetched_at": "2026-08-27T09:55:56.926031+00:00",
-    "fetched_at": "2026-08-27T09:55:56.926031+00:00",
+    "date_last_filing": "2026-08-27",
+    "meta_fetched_at": "2026-08-27T18:24:22.018374+00:00",
+    "fetched_at": "2026-08-27T18:24:22.018374+00:00",
     "as_of": "Aug 27, 2026",
-    "backfilled": true,
-    "new_in_72h": 8,
+    "backfilled": false,
+    "new_in_72h": 9,
     "recent": [
+      {
+        "entry_number": 168,
+        "date_filed": "2026-08-27",
+        "time_filed": "12:11:54",
+        "date_display": "Aug 27, 2026",
+        "description": "Objection Industrial Accessories Company's Limited Objection and Reservation of Rights Regarding Debtor's Motion to Sell Substantially All Assets (related document(s)86) Filed by Industrial Accessories Company (Hitchings, Jarret) (Entered: 08/27/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 167,
         "date_filed": "2026-08-26",
@@ -29,7 +39,7 @@
         "description": "Exhibit(s) - Notice of Filing of Proposed Final Order (I) Authorizing Postpetition Use of Prepetition Collateral, Including Cash Collateral, (II) Granting Adequate Protection to the Prepetition Secured Parties, (III) Modifying the Automatic Stay, and (IV) Granting Related Relief (related document(s)17, 50) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Faris, S. Alexander) (Entered: 08/26/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.167.0.pdf"
       },
       {
         "entry_number": 166,
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 165,
-        "date_filed": "2026-08-26",
-        "time_filed": "11:08:56",
-        "date_display": "Aug 26, 2026",
-        "description": "Certificate of Service (related document(s)112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Majewski, Katherine) (Entered: 08/26/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 168,
+        "date_filed": "2026-08-27",
+        "time_filed": "12:11:54",
+        "date_display": "Aug 27, 2026",
+        "description": "Objection Industrial Accessories Company's Limited Objection and Reservation of Rights Regarding Debtor's Motion to Sell Substantially All Assets (related document(s)86) Filed by Industrial Accessories Company (Hitchings, Jarret) (Entered: 08/27/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 167,
         "date_filed": "2026-08-26",
@@ -61,7 +71,7 @@
         "description": "Exhibit(s) - Notice of Filing of Proposed Final Order (I) Authorizing Postpetition Use of Prepetition Collateral, Including Cash Collateral, (II) Granting Adequate Protection to the Prepetition Secured Parties, (III) Modifying the Automatic Stay, and (IV) Granting Related Relief (related document(s)17, 50) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Faris, S. Alexander) (Entered: 08/26/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.167.0.pdf"
       },
       {
         "entry_number": 166,
@@ -468,7 +478,7 @@
         "date_filed": "2026-08-20",
         "time_filed": "19:28:53",
         "date_display": "Aug 20, 2026",
-        "description": "Subpoena",
+        "description": "Subpoena - Notice of Intent to Serve Subpoena on Mathew Hart. Filed by Omnis Pleasants, LLC. (Majewski, Katherine) (Entered: 08/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -1893,7 +1903,8 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": {
     "name": "Stretto",
