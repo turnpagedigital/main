@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "id": "transport-services-filing-alert-aircraft",
+      "kind": "alert",
+      "source": "Bondoro",
+      "source_id": "bondoro-alert",
+      "show": "both",
+      "title": "Filing Alert: Aircraft Transport Services Chapter 11",
+      "url": "https://bondoro.com/transport-services-filing-alert-aircraft/",
+      "date": "2026-08-27",
+      "published_at": "2026-08-27T22:29:45+00:00",
+      "excerpt": "Aircraft Transport Services Files Chapter 11 in Middle District of Florida",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-ucc-article-9-adjournm",
+      "kind": "Asset Sale",
+      "source": "Daily DAC",
+      "source_id": "daily-dac-article",
+      "show": "news",
+      "title": "PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Fulton SCG Member LLC",
+      "url": "https://www.dailydac.com/public-notice-ucc-article-9-adjournment-fulton-scg-member-llc/?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-ucc-article-9-adjournment-fulton-scg-member-llc",
+      "date": "2026-08-27",
+      "published_at": "2026-08-27T16:14:46+00:00",
+      "excerpt": "UCC Public Sale Notice – Adjournment Please take notice that Newmark, on behalf of FULTON SCG II DEBT FUND, LLC, a Delaware limited liability company (the “Secured Party”), will offer for sale at public auction on September 10, 2026 at 10:30 a.m. EDT in connection with a Uniform Commercial Code sale",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "federacion-de-asociaciones-pecuarias-de-puerto-rico-filing-alert",
+      "kind": "alert",
+      "source": "Bondoro",
+      "source_id": "bondoro-alert",
+      "show": "both",
+      "title": "Filing Alert: Federacion De Asociaciones Pecuarias De Puerto Rico Chapter 11",
+      "url": "https://bondoro.com/federacion-de-asociaciones-pecuarias-de-puerto-rico-filing-alert/",
+      "date": "2026-08-26",
+      "published_at": "2026-08-26T21:23:50+00:00",
+      "excerpt": "Federacion De Asociaciones Pecuarias De Puerto Rico Files Chapter 11 in District of Puerto Rico",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
+      "kind": "Asset Sale",
+      "source": "Daily DAC",
+      "source_id": "daily-dac-article",
+      "show": "news",
+      "title": "PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Legalis Capital, LLC, Oliphant Credit, LLC",
+      "url": "https://www.dailydac.com/public-notice-of-ucc-article-9-sale-legalis-capital-llc-oliphant-credit-llc/?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-legalis-capital-llc-oliphant-credit-llc",
+      "date": "2026-08-26",
+      "published_at": "2026-08-26T19:09:03+00:00",
+      "excerpt": "NOTIFICATION OF PUBLIC DISPOSITION OF COLLATERAL DEBTORS: Legalis Capital, LLC (“Legalis Capital”) and Oliphant Credit, LLC (“Oliphant Credit” and together with Legalis Capital, the “Debtors”) Please take notice that on TUESDAY, SEPTEMBER 15, 2026 AT 10 A.M. EASTERN TIME, a public sale (the “Public ",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
       "id": "galindo-law-filing-alert",
       "kind": "alert",
       "source": "Bondoro",
@@ -5074,7 +5134,8 @@
       "excerpt": "Magellan Aerospace, Middletown filed for Chapter 11 after legacy aircraft programs wound down with no replacements and decades-old environmental liabilities at former California sites triggered mounting cleanup orders and an adverse jury verdict, exploring a standalone restructuring or sale.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-chapter-11-sale-pic",
@@ -5089,7 +5150,8 @@
       "excerpt": "LEGAL NOTICE OF PROPOSED SALE OF REAL PROPERTY Notice is hereby given that PIC Estate, LLC (“PIC”), which filed a chapter 11 bankruptcy case on March 2, 2026, currently pending in the United States Bankruptcy Court for the Eastern District of Texas (the “Bankruptcy Court”) as Case No. 26-40725 has e",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "sleep-numbers-number-is-7018-million",
