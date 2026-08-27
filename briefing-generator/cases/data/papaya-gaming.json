@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-08-26",
     "meta_fetched_at": "2026-08-26T23:41:01.958969+00:00",
-    "fetched_at": "2026-08-26T23:41:01.958969+00:00",
-    "as_of": "Aug 26, 2026",
+    "fetched_at": "2026-08-27T09:56:02.692028+00:00",
+    "as_of": "Aug 27, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 3,
     "recent": [
       {
         "entry_number": 80,
@@ -90,7 +90,7 @@
         "time_filed": "18:02:30",
         "date_display": "Aug 24, 2026",
         "description": "Amended Notice of Deposition of Oriel Bachar in Connection With Chapter 15 Petition for Recognition of a Foreign Proceeding Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/24/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
