@@ -15,19 +15,29 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
-    "date_last_filing": "2026-08-25",
-    "meta_fetched_at": "2026-08-26T02:02:35.468288+00:00",
-    "fetched_at": "2026-08-26T23:41:34.807719+00:00",
-    "as_of": "Aug 26, 2026",
+    "date_last_filing": "2026-08-26",
+    "meta_fetched_at": "2026-08-27T18:26:54.352719+00:00",
+    "fetched_at": "2026-08-27T18:26:54.352719+00:00",
+    "as_of": "Aug 27, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 3,
     "recent": [
+      {
+        "entry_number": 31,
+        "date_filed": "2026-08-26",
+        "time_filed": "20:27:31",
+        "date_display": "Aug 26, 2026",
+        "description": "Response (non-motion)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 30,
         "date_filed": "2026-08-25",
         "time_filed": "16:16:40",
         "date_display": "Aug 25, 2026",
-        "description": "Order on Motion for Conference",
+        "description": "ORDER granting 28 Letter Motion for Conference. The parties shall appear for oral argument on October 8, 2026 at 10:30 AM in Courtroom 12A to discuss the requested stay and Google's anticipated transfer motion. Plaintiffs remain free to file to file any opposition letter as to the stay, and Google may in turn file a reply in accordance with the Court's pre-motion rules. SO ORDERED.. (Signed by Judge Loretta A. Preska on 8/25/2026) Oral Argument set for 10/8/2026 at 10:30 AM in Courtroom 12A, 500 Pearl Street, New York, NY 10007 before Judge Loretta A. Preska. (ks) (Entered: 08/25/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.668114/gov.uscourts.nysd.668114.30.0.pdf"
@@ -39,27 +49,27 @@
         "date_display": "Aug 25, 2026",
         "description": "ORDER GRANTING MOTION FOR ADMISSION PRO HAC VICE OF BENJAMIN GOULD AS ADDITIONAL COUNSEL FOR PLAINTIFFS granting 27 Motion for Benjamin Blystad Gould to Appear Pro Hac Vice. (Signed by Judge Loretta A. Preska on 8/25/2026) (ks) Transmission to Attorney Services/Help Desk. (Entered: 08/25/2026)",
         "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 28,
-        "date_filed": "2026-08-21",
-        "time_filed": "23:07:12",
-        "date_display": "Aug 21, 2026",
-        "description": "LETTER MOTION for Conference concerning Defendant Google LLC's anticipated motion to stay proceedings in this case addressed to Judge Loretta A. Preska from Paul J. Sampson dated August 21, 2026. Document filed by Google LLC. (Attachments: # 1 Exhibit A - August 21, 2026 Order in In re Google Generative AI Copyright Litigation).(Sampson, Paul) (Entered: 08/21/2026)",
-        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
       {
+        "entry_number": 31,
+        "date_filed": "2026-08-26",
+        "time_filed": "20:27:31",
+        "date_display": "Aug 26, 2026",
+        "description": "Response (non-motion)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 30,
         "date_filed": "2026-08-25",
         "time_filed": "16:16:40",
         "date_display": "Aug 25, 2026",
-        "description": "Order on Motion for Conference",
+        "description": "ORDER granting 28 Letter Motion for Conference. The parties shall appear for oral argument on October 8, 2026 at 10:30 AM in Courtroom 12A to discuss the requested stay and Google's anticipated transfer motion. Plaintiffs remain free to file to file any opposition letter as to the stay, and Google may in turn file a reply in accordance with the Court's pre-motion rules. SO ORDERED.. (Signed by Judge Loretta A. Preska on 8/25/2026) Oral Argument set for 10/8/2026 at 10:30 AM in Courtroom 12A, 500 Pearl Street, New York, NY 10007 before Judge Loretta A. Preska. (ks) (Entered: 08/25/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.668114/gov.uscourts.nysd.668114.30.0.pdf"
@@ -82,7 +92,7 @@
         "description": "LETTER MOTION for Conference concerning Defendant Google LLC's anticipated motion to stay proceedings in this case addressed to Judge Loretta A. Preska from Paul J. Sampson dated August 21, 2026. Document filed by Google LLC. (Attachments: # 1 Exhibit A - August 21, 2026 Order in In re Google Generative AI Copyright Litigation).(Sampson, Paul) (Entered: 08/21/2026)",
         "is_new": false,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.668114/gov.uscourts.nysd.668114.28.0.pdf"
       },
       {
         "entry_number": null,

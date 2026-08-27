@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
-    "date_last_filing": "2026-08-21",
-    "meta_fetched_at": "2026-08-22T04:53:04.867424+00:00",
-    "fetched_at": "2026-08-26T23:41:19.303450+00:00",
-    "as_of": "Aug 26, 2026",
+    "date_last_filing": "2026-08-27",
+    "meta_fetched_at": "2026-08-27T18:25:50.128394+00:00",
+    "fetched_at": "2026-08-27T18:25:50.128394+00:00",
+    "as_of": "Aug 27, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 1325,
+        "date_filed": "2026-08-27",
+        "time_filed": "13:46:04",
+        "date_display": "Aug 27, 2026",
+        "description": "Rescheduled Hearing - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1323,
         "date_filed": "2026-08-21",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-08-21",
-        "time_filed": "23:31:16",
-        "date_display": "Aug 21, 2026",
-        "description": "none",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1325,
+        "date_filed": "2026-08-27",
+        "time_filed": "13:46:04",
+        "date_display": "Aug 27, 2026",
+        "description": "Rescheduled Hearing - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1323,
         "date_filed": "2026-08-21",
