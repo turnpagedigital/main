@@ -15,18 +15,28 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-26",
-    "meta_fetched_at": "2026-08-26T18:05:30.952845+00:00",
-    "fetched_at": "2026-08-26T23:40:56.517751+00:00",
-    "as_of": "Aug 26, 2026",
+    "meta_fetched_at": "2026-08-27T09:55:56.926031+00:00",
+    "fetched_at": "2026-08-27T09:55:56.926031+00:00",
+    "as_of": "Aug 27, 2026",
     "backfilled": true,
-    "new_in_72h": 7,
+    "new_in_72h": 8,
     "recent": [
+      {
+        "entry_number": 167,
+        "date_filed": "2026-08-26",
+        "time_filed": "22:39:02",
+        "date_display": "Aug 26, 2026",
+        "description": "Exhibit(s) - Notice of Filing of Proposed Final Order (I) Authorizing Postpetition Use of Prepetition Collateral, Including Cash Collateral, (II) Granting Adequate Protection to the Prepetition Secured Parties, (III) Modifying the Automatic Stay, and (IV) Granting Related Relief (related document(s)17, 50) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Faris, S. Alexander) (Entered: 08/26/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 166,
         "date_filed": "2026-08-26",
         "time_filed": "12:54:34",
         "date_display": "Aug 26, 2026",
-        "description": "Omnibus Hearing Dates",
+        "description": "Order Scheduling Omnibus Hearing Dates. (Related document(s)161) Omnibus Hearing scheduled for 10/14/2026 at 09:30 AM US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Omnibus Hearing scheduled for 11/18/2026 at 10:00 AM US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Signed on 8/26/2026. (Mml) (Entered: 08/26/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -36,17 +46,7 @@
         "date_filed": "2026-08-26",
         "time_filed": "11:08:56",
         "date_display": "Aug 26, 2026",
-        "description": "Certificate of Service",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 164,
-        "date_filed": "2026-08-25",
-        "time_filed": "20:01:10",
-        "date_display": "Aug 25, 2026",
-        "description": "Affidavit/Declaration of Service re: Final Order (I) Approving Debtors Proposed Adequate Assurance of Payment for Future Utility Services; (II) Establishing Procedures for Resolving Objections by Utility Providers; (III) Prohibiting Utility Providers from Altering, Refusing, or Discontinuing Services; and (IV) Granting Related Relief (Docket No. 135), Final Order (I) Authorizing the Payment of Certain Prepetition Taxes and Fees and (II) Granting Related Relief (Docket No. 136), Final Order (I) Authorizing Debtor to (A) Maintain Prepetition Insurance Policies and Surety Bonds, and Pay Related Prepetition Obligations Arising Thereunder, and (B) Renew, Replace, Supplement, or Otherwise Modify Such Insurance Policies and Surety Bonds; (II) Modifying the Automatic Stay with Respect to the Workers Compensation Program; and (III) Granting Related Relief (Docket No. 137), Final Order (I)…",
+        "description": "Certificate of Service (related document(s)112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Majewski, Katherine) (Entered: 08/26/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -54,11 +54,21 @@
     ],
     "entries": [
       {
+        "entry_number": 167,
+        "date_filed": "2026-08-26",
+        "time_filed": "22:39:02",
+        "date_display": "Aug 26, 2026",
+        "description": "Exhibit(s) - Notice of Filing of Proposed Final Order (I) Authorizing Postpetition Use of Prepetition Collateral, Including Cash Collateral, (II) Granting Adequate Protection to the Prepetition Secured Parties, (III) Modifying the Automatic Stay, and (IV) Granting Related Relief (related document(s)17, 50) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Faris, S. Alexander) (Entered: 08/26/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 166,
         "date_filed": "2026-08-26",
         "time_filed": "12:54:34",
         "date_display": "Aug 26, 2026",
-        "description": "Omnibus Hearing Dates",
+        "description": "Order Scheduling Omnibus Hearing Dates. (Related document(s)161) Omnibus Hearing scheduled for 10/14/2026 at 09:30 AM US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Omnibus Hearing scheduled for 11/18/2026 at 10:00 AM US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Signed on 8/26/2026. (Mml) (Entered: 08/26/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -68,7 +78,7 @@
         "date_filed": "2026-08-26",
         "time_filed": "11:08:56",
         "date_display": "Aug 26, 2026",
-        "description": "Certificate of Service",
+        "description": "Certificate of Service (related document(s)112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Majewski, Katherine) (Entered: 08/26/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
