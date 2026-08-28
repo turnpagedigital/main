@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
-    "date_last_filing": "2026-08-27",
-    "meta_fetched_at": "2026-08-27T20:36:09.180084+00:00",
-    "fetched_at": "2026-08-28T18:49:23.154602+00:00",
+    "date_last_filing": "2026-08-28",
+    "meta_fetched_at": "2026-08-28T23:30:30.464200+00:00",
+    "fetched_at": "2026-08-28T23:30:30.464200+00:00",
     "as_of": "Aug 28, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 4,
     "recent": [
+      {
+        "entry_number": 383,
+        "date_filed": "2026-08-28",
+        "time_filed": "15:55:41",
+        "date_display": "Aug 28, 2026",
+        "description": "Supplemental Document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 382,
         "date_filed": "2026-08-27",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
+      }
+    ],
+    "entries": [
       {
-        "entry_number": 380,
-        "date_filed": "2026-08-26",
-        "time_filed": "12:00:43",
-        "date_display": "Aug 26, 2026",
+        "entry_number": 383,
+        "date_filed": "2026-08-28",
+        "time_filed": "15:55:41",
+        "date_display": "Aug 28, 2026",
         "description": "Supplemental Document",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      }
-    ],
-    "entries": [
+      },
       {
         "entry_number": 382,
         "date_filed": "2026-08-27",

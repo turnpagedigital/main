@@ -14,13 +14,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
-    "date_last_filing": "2026-08-27",
-    "meta_fetched_at": "2026-08-28T05:28:49.476658+00:00",
-    "fetched_at": "2026-08-28T18:49:02.698328+00:00",
+    "date_last_filing": "2026-08-28",
+    "meta_fetched_at": "2026-08-28T23:30:09.897985+00:00",
+    "fetched_at": "2026-08-28T23:30:09.897985+00:00",
     "as_of": "Aug 28, 2026",
     "backfilled": true,
-    "new_in_72h": 22,
+    "new_in_72h": 24,
     "recent": [
+      {
+        "entry_number": 1278,
+        "date_filed": "2026-08-28",
+        "time_filed": "17:28:54",
+        "date_display": "Aug 28, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1277,
+        "date_filed": "2026-08-28",
+        "time_filed": "17:26:02",
+        "date_display": "Aug 28, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1276,
         "date_filed": "2026-08-27",
@@ -30,29 +50,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 1275,
-        "date_filed": "2026-08-27",
-        "time_filed": "17:22:43",
-        "date_display": "Aug 27, 2026",
-        "description": "Certificate of service",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 1274,
-        "date_filed": "2026-08-27",
-        "time_filed": "12:52:57",
-        "date_display": "Aug 27, 2026",
-        "description": "Leave (Not for Appeal use)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1278,
+        "date_filed": "2026-08-28",
+        "time_filed": "17:28:54",
+        "date_display": "Aug 28, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1277,
+        "date_filed": "2026-08-28",
+        "time_filed": "17:26:02",
+        "date_display": "Aug 28, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1276,
         "date_filed": "2026-08-27",
