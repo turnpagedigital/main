@@ -15,38 +15,38 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-28",
-    "meta_fetched_at": "2026-08-28T19:34:18.190676+00:00",
-    "fetched_at": "2026-08-28T19:34:18.190676+00:00",
+    "meta_fetched_at": "2026-08-28T23:29:07.169244+00:00",
+    "fetched_at": "2026-08-28T23:29:07.169244+00:00",
     "as_of": "Aug 28, 2026",
     "backfilled": false,
-    "new_in_72h": 25,
+    "new_in_72h": 27,
     "recent": [
+      {
+        "entry_number": 189,
+        "date_filed": "2026-08-28",
+        "time_filed": "16:07:25",
+        "date_display": "Aug 28, 2026",
+        "description": "Certificate of Service (related document(s)181) Filed by Angela Chen (f/k/a Angela Chen Sabella), Harmony Trust, Dynamic HC Co (d/b/a Dynamic Holdings Corporation), and Dynamic Finance Corporation. (Jones, Laura Davis) (Entered: 08/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 188,
+        "date_filed": "2026-08-28",
+        "time_filed": "15:30:33",
+        "date_display": "Aug 28, 2026",
+        "description": "Objection of Omnis Fuel Technologies, LLC and Quantum Pleasants, LLC to Retention of Herbert Smith Freehills Kramer (US) LLP (related document(s)83) Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC (Ward, Christopher) (Entered: 08/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 187,
         "date_filed": "2026-08-28",
         "time_filed": "14:46:56",
         "date_display": "Aug 28, 2026",
-        "description": "Affidavit/Declaration of Service",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 186,
-        "date_filed": "2026-08-28",
-        "time_filed": "14:44:51",
-        "date_display": "Aug 28, 2026",
-        "description": "Affidavit/Declaration of Service",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 185,
-        "date_filed": "2026-08-28",
-        "time_filed": "07:55:16",
-        "date_display": "Aug 28, 2026",
-        "description": "Order Granting Motion for Admission pro hac vice of Kate Doorley, Esquire (Related Doc # 180) Order Signed on 8/28/2026. (CEB) (Entered: 08/28/2026)",
+        "description": "Affidavit/Declaration of Service re: Order Scheduling Omnibus Hearing Dates (Docket No. 166), Notice of Filing of Proposed Final Order (I) Authorizing Postpetition Use of Prepetition Collateral, Including Cash Collateral, (II) Granting Adequate Protection to the Prepetition Secured Parties, (III) Modifying the Automatic Stay, and (IV) Granting Related Relief (Docket No. 167). Filed by Stretto, Inc.. (related document(s)166, 167) (Betance, Sheryl) (Entered: 08/28/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -54,11 +54,31 @@
     ],
     "entries": [
       {
+        "entry_number": 189,
+        "date_filed": "2026-08-28",
+        "time_filed": "16:07:25",
+        "date_display": "Aug 28, 2026",
+        "description": "Certificate of Service (related document(s)181) Filed by Angela Chen (f/k/a Angela Chen Sabella), Harmony Trust, Dynamic HC Co (d/b/a Dynamic Holdings Corporation), and Dynamic Finance Corporation. (Jones, Laura Davis) (Entered: 08/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 188,
+        "date_filed": "2026-08-28",
+        "time_filed": "15:30:33",
+        "date_display": "Aug 28, 2026",
+        "description": "Objection of Omnis Fuel Technologies, LLC and Quantum Pleasants, LLC to Retention of Herbert Smith Freehills Kramer (US) LLP (related document(s)83) Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC (Ward, Christopher) (Entered: 08/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 187,
         "date_filed": "2026-08-28",
         "time_filed": "14:46:56",
         "date_display": "Aug 28, 2026",
-        "description": "Affidavit/Declaration of Service",
+        "description": "Affidavit/Declaration of Service re: Order Scheduling Omnibus Hearing Dates (Docket No. 166), Notice of Filing of Proposed Final Order (I) Authorizing Postpetition Use of Prepetition Collateral, Including Cash Collateral, (II) Granting Adequate Protection to the Prepetition Secured Parties, (III) Modifying the Automatic Stay, and (IV) Granting Related Relief (Docket No. 167). Filed by Stretto, Inc.. (related document(s)166, 167) (Betance, Sheryl) (Entered: 08/28/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -68,7 +88,7 @@
         "date_filed": "2026-08-28",
         "time_filed": "14:44:51",
         "date_display": "Aug 28, 2026",
-        "description": "Affidavit/Declaration of Service",
+        "description": "Affidavit/Declaration of Service re: Notice of Rescheduled Hearing (Docket No. 160). Filed by Stretto, Inc.. (related document(s)160) (Betance, Sheryl) (Entered: 08/28/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -2114,7 +2134,7 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=11"
   },
   "claims_administrator": {
     "name": "Stretto",
