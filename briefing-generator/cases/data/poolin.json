@@ -14,13 +14,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
-    "date_last_filing": "2026-08-27",
-    "meta_fetched_at": "2026-08-27T18:25:37.173364+00:00",
-    "fetched_at": "2026-08-28T05:28:10.604822+00:00",
+    "date_last_filing": "2026-08-28",
+    "meta_fetched_at": "2026-08-28T18:48:11.279465+00:00",
+    "fetched_at": "2026-08-28T18:48:11.279465+00:00",
     "as_of": "Aug 28, 2026",
     "backfilled": true,
-    "new_in_72h": 7,
+    "new_in_72h": 8,
     "recent": [
+      {
+        "entry_number": 190,
+        "date_filed": "2026-08-28",
+        "time_filed": "09:07:20",
+        "date_display": "Aug 28, 2026",
+        "description": "Approve Compromise Under Rule 9019",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 186,
         "date_filed": "2026-08-27",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-08-27",
-        "time_filed": "08:18:46",
-        "date_display": "Aug 27, 2026",
-        "description": "Hearing Rescheduled (Document)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 190,
+        "date_filed": "2026-08-28",
+        "time_filed": "09:07:20",
+        "date_display": "Aug 28, 2026",
+        "description": "Approve Compromise Under Rule 9019",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 186,
         "date_filed": "2026-08-27",
