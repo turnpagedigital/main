@@ -15,12 +15,32 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-28",
-    "meta_fetched_at": "2026-08-28T18:48:00.263058+00:00",
-    "fetched_at": "2026-08-28T18:48:00.263058+00:00",
+    "meta_fetched_at": "2026-08-28T19:34:18.190676+00:00",
+    "fetched_at": "2026-08-28T19:34:18.190676+00:00",
     "as_of": "Aug 28, 2026",
-    "backfilled": true,
-    "new_in_72h": 23,
+    "backfilled": false,
+    "new_in_72h": 25,
     "recent": [
+      {
+        "entry_number": 187,
+        "date_filed": "2026-08-28",
+        "time_filed": "14:46:56",
+        "date_display": "Aug 28, 2026",
+        "description": "Affidavit/Declaration of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 186,
+        "date_filed": "2026-08-28",
+        "time_filed": "14:44:51",
+        "date_display": "Aug 28, 2026",
+        "description": "Affidavit/Declaration of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 185,
         "date_filed": "2026-08-28",
@@ -30,29 +50,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 184,
-        "date_filed": "2026-08-28",
-        "time_filed": "07:54:33",
-        "date_display": "Aug 28, 2026",
-        "description": "Order Granting Motion for Admission pro hac vice of Sophia N. Bavaro, Esquire (Related Doc # 179) Order Signed on 8/28/2026. (CEB) (Entered: 08/28/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 183,
-        "date_filed": "2026-08-28",
-        "time_filed": "07:53:25",
-        "date_display": "Aug 28, 2026",
-        "description": "Order Granting Motion for Admission pro hac vice of Scott L. Alberino, Esquire (Related Doc # 178) Order Signed on 8/28/2026. (CEB) (Entered: 08/28/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 187,
+        "date_filed": "2026-08-28",
+        "time_filed": "14:46:56",
+        "date_display": "Aug 28, 2026",
+        "description": "Affidavit/Declaration of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 186,
+        "date_filed": "2026-08-28",
+        "time_filed": "14:44:51",
+        "date_display": "Aug 28, 2026",
+        "description": "Affidavit/Declaration of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 185,
         "date_filed": "2026-08-28",
@@ -2093,7 +2113,8 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": {
     "name": "Stretto",
