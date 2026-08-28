@@ -16,11 +16,11 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-08-25",
-    "meta_fetched_at": "2026-08-27T23:40:20.125881+00:00",
-    "fetched_at": "2026-08-27T23:40:20.125881+00:00",
-    "as_of": "Aug 27, 2026",
+    "meta_fetched_at": "2026-08-28T05:27:12.194716+00:00",
+    "fetched_at": "2026-08-28T05:27:12.194716+00:00",
+    "as_of": "Aug 28, 2026",
     "backfilled": false,
-    "new_in_72h": 1,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 685,
@@ -28,7 +28,7 @@
         "time_filed": "11:34:00",
         "date_display": "Aug 25, 2026",
         "description": "USCA Case Number",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -60,7 +60,7 @@
         "time_filed": "11:34:00",
         "date_display": "Aug 25, 2026",
         "description": "USCA Case Number",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -7550,7 +7550,7 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=17"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=23"
   },
   "claims_administrator": {
     "name": "JND Legal Administration",

@@ -15,12 +15,32 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-27",
-    "meta_fetched_at": "2026-08-27T23:40:57.420984+00:00",
-    "fetched_at": "2026-08-27T23:40:57.420984+00:00",
-    "as_of": "Aug 27, 2026",
+    "meta_fetched_at": "2026-08-28T05:27:58.943211+00:00",
+    "fetched_at": "2026-08-28T05:27:58.943211+00:00",
+    "as_of": "Aug 28, 2026",
     "backfilled": true,
-    "new_in_72h": 23,
+    "new_in_72h": 20,
     "recent": [
+      {
+        "entry_number": 182,
+        "date_filed": "2026-08-27",
+        "time_filed": "20:46:32",
+        "date_display": "Aug 27, 2026",
+        "description": "Objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 181,
+        "date_filed": "2026-08-27",
+        "time_filed": "20:15:25",
+        "date_display": "Aug 27, 2026",
+        "description": "Notice of Appearance. Filed by Angela Chen (f/k/a Angela Chen Sabella), Harmony Trust, Dynamic HC Co (d/b/a Dynamic Holdings Corporation), and Dynamic Finance Corporation. (Jones, Laura Davis) (Entered: 08/27/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.181.0.pdf"
+      },
       {
         "entry_number": 180,
         "date_filed": "2026-08-27",
@@ -30,29 +50,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 179,
-        "date_filed": "2026-08-27",
-        "time_filed": "16:35:06",
-        "date_display": "Aug 27, 2026",
-        "description": "Motion to Appear pro hac vice of Sophia N. Bavaro, of Akin Gump Strauss Hauer & Feld LLP. Receipt Number 5052839, Filed by Pleasants, LLC. (DeFranceschi, Daniel) (Entered: 08/27/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 178,
-        "date_filed": "2026-08-27",
-        "time_filed": "16:29:53",
-        "date_display": "Aug 27, 2026",
-        "description": "Motion to Appear pro hac vice of Scott L. Alberino, of Akin Gump Strauss Hauer & Feld LLP. Receipt Number 5052839, Filed by Pleasants, LLC. (DeFranceschi, Daniel) (Entered: 08/27/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 182,
+        "date_filed": "2026-08-27",
+        "time_filed": "20:46:32",
+        "date_display": "Aug 27, 2026",
+        "description": "Objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 181,
+        "date_filed": "2026-08-27",
+        "time_filed": "20:15:25",
+        "date_display": "Aug 27, 2026",
+        "description": "Notice of Appearance. Filed by Angela Chen (f/k/a Angela Chen Sabella), Harmony Trust, Dynamic HC Co (d/b/a Dynamic Holdings Corporation), and Dynamic Finance Corporation. (Jones, Laura Davis) (Entered: 08/27/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.181.0.pdf"
+      },
       {
         "entry_number": 180,
         "date_filed": "2026-08-27",
@@ -239,7 +259,7 @@
         "time_filed": "20:01:10",
         "date_display": "Aug 25, 2026",
         "description": "Affidavit/Declaration of Service re: Final Order (I) Approving Debtors Proposed Adequate Assurance of Payment for Future Utility Services; (II) Establishing Procedures for Resolving Objections by Utility Providers; (III) Prohibiting Utility Providers from Altering, Refusing, or Discontinuing Services; and (IV) Granting Related Relief (Docket No. 135), Final Order (I) Authorizing the Payment of Certain Prepetition Taxes and Fees and (II) Granting Related Relief (Docket No. 136), Final Order (I) Authorizing Debtor to (A) Maintain Prepetition Insurance Policies and Surety Bonds, and Pay Related Prepetition Obligations Arising Thereunder, and (B) Renew, Replace, Supplement, or Otherwise Modify Such Insurance Policies and Surety Bonds; (II) Modifying the Automatic Stay with Respect to the Workers Compensation Program; and (III) Granting Related Relief (Docket No. 137), Final Order (I)…",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -249,7 +269,7 @@
         "time_filed": "19:57:05",
         "date_display": "Aug 25, 2026",
         "description": "Affidavit/Declaration of Service re: Debtors Motion for Entry of an Order (I) Establishing Bar Dates and Related Procedures for Filing Proofs of Claim, Including for Claims Arising Under Section 503(b)(9) of the Bankruptcy Code, (II) Approving the Form and Manner of Notice Thereof, and (III) Granting Related Relief (Docket No. 103), Notice of Intent to Serve Subpoena (Docket Nos. 112-132), Debtors Motion for Entry of an Order (I) Extending the Time for the Debtor to File Its Schedules of Assets and Liabilities and Statements of Financial Affairs and (II) Granting Related Relief (Docket No. 133). Filed by Stretto, Inc.. (related document(s)103, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133) (Betance, Sheryl) (Entered: 08/25/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -259,7 +279,7 @@
         "time_filed": "19:53:12",
         "date_display": "Aug 25, 2026",
         "description": "Affidavit/Declaration of Service re: Notice of Extension of Objection Deadline for Debtors Motion for Entry of Interim and Final Orders (I) Authorizing Postpetition Use of Prepetition Collateral, Including Cash Collateral, (II) Granting Adequate Protection to the Prepetition Secured Parties, (III) Modifying the Automatic Stay, (IV) Scheduling a Final Hearing, and (V) Granting Related Relief (Docket No. 100). Filed by Stretto, Inc.. (related document(s)100) (Betance, Sheryl) (Entered: 08/25/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -269,7 +289,7 @@
         "time_filed": "17:41:26",
         "date_display": "Aug 25, 2026",
         "description": "Certification of Counsel Regarding Scheduling of Omnibus Hearing Dates Filed by Omnis Pleasants, LLC. (Attachments: # 1 Proposed Form of Order) (Faris, S. Alexander) (Entered: 08/25/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.161.0.pdf"
       },
@@ -279,7 +299,7 @@
         "time_filed": "17:39:51",
         "date_display": "Aug 25, 2026",
         "description": "Notice of Rescheduled Hearing - Hearing Originally Scheduled for 09/03/2026 has been rescheduled. Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 11:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Faris, S. Alexander) (Entered: 08/25/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.160.0.pdf"
       },
