@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/",
     "date_last_filing": "2026-08-27",
-    "meta_fetched_at": "2026-08-28T05:28:27.596580+00:00",
-    "fetched_at": "2026-08-28T05:28:27.596580+00:00",
+    "meta_fetched_at": "2026-08-28T18:48:40.377548+00:00",
+    "fetched_at": "2026-08-28T18:48:40.377548+00:00",
     "as_of": "Aug 28, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 76,
+        "date_filed": "2026-08-27",
+        "time_filed": "",
+        "date_display": "Aug 27, 2026",
+        "description": "NOTICE of Withdrawal filed by Aditya Vijay Kamdar, no longer appearing on behalf of Stability AI US Services Corporation, Stability AI, Inc., Stability AI, Ltd. in this case (Kamdar, Aditya) (Filed on 8/27/2026) (Entered: 08/27/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": null,
         "date_filed": "2026-08-27",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 74,
-        "date_filed": "2026-08-18",
-        "time_filed": "08:56:07",
-        "date_display": "Aug 18, 2026",
-        "description": "REVISED CASE MANAGEMENT AND SCHEDULING ORDER 68 . Signed by Judge Trina L. Thompson on 8/18/2026.Dispositive Motion Hearing set for 8/31/2027 at 2:00 PM in San Francisco, Courtroom 09, 19th Floor before Judge Trina L Thompson.Replies due by 7/16/2027.Responses due by 6/18/2027.Dispositive Motion due by 5/7/2027.Close of Expert Discovery is 4/16/2027. Rebuttal Reports due by 2/26/2027. Opening Reports due by 1/8/2027. Close of Fact Discovery is 11/20/2026.All other dates 38 are maintained. (tltlc2, COURT STAFF) (Filed on 8/18/2026) (Entered: 08/18/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.454636/gov.uscourts.cand.454636.74.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 76,
+        "date_filed": "2026-08-27",
+        "time_filed": "",
+        "date_display": "Aug 27, 2026",
+        "description": "NOTICE of Withdrawal filed by Aditya Vijay Kamdar, no longer appearing on behalf of Stability AI US Services Corporation, Stability AI, Inc., Stability AI, Ltd. in this case (Kamdar, Aditya) (Filed on 8/27/2026) (Entered: 08/27/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": null,
         "date_filed": "2026-08-27",
