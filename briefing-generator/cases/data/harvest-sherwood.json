@@ -16,10 +16,10 @@
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-28",
     "meta_fetched_at": "2026-08-28T23:30:09.897985+00:00",
-    "fetched_at": "2026-08-28T23:30:09.897985+00:00",
-    "as_of": "Aug 28, 2026",
+    "fetched_at": "2026-08-29T09:08:57.329900+00:00",
+    "as_of": "Aug 29, 2026",
     "backfilled": true,
-    "new_in_72h": 24,
+    "new_in_72h": 10,
     "recent": [
       {
         "entry_number": 1278,
@@ -159,7 +159,7 @@
         "time_filed": "16:35:50",
         "date_display": "Aug 26, 2026",
         "description": "Order (generic)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -169,7 +169,7 @@
         "time_filed": "15:49:16",
         "date_display": "Aug 26, 2026",
         "description": "Notice (generic)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -179,7 +179,7 @@
         "time_filed": "15:41:32",
         "date_display": "Aug 26, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -189,7 +189,7 @@
         "time_filed": "15:39:09",
         "date_display": "Aug 26, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -199,7 +199,7 @@
         "time_filed": "15:36:41",
         "date_display": "Aug 26, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -209,7 +209,7 @@
         "time_filed": "14:35:04",
         "date_display": "Aug 26, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -219,7 +219,7 @@
         "time_filed": "14:32:43",
         "date_display": "Aug 26, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -229,7 +229,7 @@
         "time_filed": "14:30:23",
         "date_display": "Aug 26, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -239,7 +239,7 @@
         "time_filed": "14:28:41",
         "date_display": "Aug 26, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -249,7 +249,7 @@
         "time_filed": "13:30:55",
         "date_display": "Aug 26, 2026",
         "description": "Stipulation",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -259,7 +259,7 @@
         "time_filed": "13:28:50",
         "date_display": "Aug 26, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -269,7 +269,7 @@
         "time_filed": "15:42:30",
         "date_display": "Aug 26, 2026",
         "description": "none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -279,7 +279,7 @@
         "time_filed": "14:35:57",
         "date_display": "Aug 26, 2026",
         "description": "none AND none AND none AND none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -289,7 +289,7 @@
         "time_filed": "15:42:31",
         "date_display": "Aug 26, 2026",
         "description": "none AND none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
