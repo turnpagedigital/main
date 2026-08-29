@@ -15,44 +15,74 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-28",
-    "meta_fetched_at": "2026-08-28T23:29:07.169244+00:00",
-    "fetched_at": "2026-08-28T23:29:07.169244+00:00",
-    "as_of": "Aug 28, 2026",
-    "backfilled": false,
+    "meta_fetched_at": "2026-08-29T02:16:03.364660+00:00",
+    "fetched_at": "2026-08-29T02:16:03.364660+00:00",
+    "as_of": "Aug 29, 2026",
+    "backfilled": true,
     "new_in_72h": 27,
     "recent": [
       {
-        "entry_number": 189,
+        "entry_number": 192,
         "date_filed": "2026-08-28",
-        "time_filed": "16:07:25",
+        "time_filed": "21:12:10",
         "date_display": "Aug 28, 2026",
-        "description": "Certificate of Service (related document(s)181) Filed by Angela Chen (f/k/a Angela Chen Sabella), Harmony Trust, Dynamic HC Co (d/b/a Dynamic Holdings Corporation), and Dynamic Finance Corporation. (Jones, Laura Davis) (Entered: 08/28/2026)",
+        "description": "Certification of Counsel(Aty)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 188,
+        "entry_number": 191,
         "date_filed": "2026-08-28",
-        "time_filed": "15:30:33",
+        "time_filed": "21:07:03",
         "date_display": "Aug 28, 2026",
-        "description": "Objection of Omnis Fuel Technologies, LLC and Quantum Pleasants, LLC to Retention of Herbert Smith Freehills Kramer (US) LLP (related document(s)83) Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC (Ward, Christopher) (Entered: 08/28/2026)",
+        "description": "Certification of Counsel(Aty)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 187,
+        "entry_number": 190,
         "date_filed": "2026-08-28",
-        "time_filed": "14:46:56",
+        "time_filed": "20:59:54",
         "date_display": "Aug 28, 2026",
-        "description": "Affidavit/Declaration of Service re: Order Scheduling Omnibus Hearing Dates (Docket No. 166), Notice of Filing of Proposed Final Order (I) Authorizing Postpetition Use of Prepetition Collateral, Including Cash Collateral, (II) Granting Adequate Protection to the Prepetition Secured Parties, (III) Modifying the Automatic Stay, and (IV) Granting Related Relief (Docket No. 167). Filed by Stretto, Inc.. (related document(s)166, 167) (Betance, Sheryl) (Entered: 08/28/2026)",
+        "description": "Certificate of No Objection",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 192,
+        "date_filed": "2026-08-28",
+        "time_filed": "21:12:10",
+        "date_display": "Aug 28, 2026",
+        "description": "Certification of Counsel(Aty)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 191,
+        "date_filed": "2026-08-28",
+        "time_filed": "21:07:03",
+        "date_display": "Aug 28, 2026",
+        "description": "Certification of Counsel(Aty)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 190,
+        "date_filed": "2026-08-28",
+        "time_filed": "20:59:54",
+        "date_display": "Aug 28, 2026",
+        "description": "Certificate of No Objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 189,
         "date_filed": "2026-08-28",
@@ -299,7 +329,7 @@
         "time_filed": "22:39:02",
         "date_display": "Aug 26, 2026",
         "description": "Exhibit(s) - Notice of Filing of Proposed Final Order (I) Authorizing Postpetition Use of Prepetition Collateral, Including Cash Collateral, (II) Granting Adequate Protection to the Prepetition Secured Parties, (III) Modifying the Automatic Stay, and (IV) Granting Related Relief (related document(s)17, 50) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Faris, S. Alexander) (Entered: 08/26/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.167.0.pdf"
       },
@@ -309,7 +339,7 @@
         "time_filed": "12:54:34",
         "date_display": "Aug 26, 2026",
         "description": "Order Scheduling Omnibus Hearing Dates. (Related document(s)161) Omnibus Hearing scheduled for 10/14/2026 at 09:30 AM US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Omnibus Hearing scheduled for 11/18/2026 at 10:00 AM US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Signed on 8/26/2026. (Mml) (Entered: 08/26/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -319,7 +349,7 @@
         "time_filed": "11:08:56",
         "date_display": "Aug 26, 2026",
         "description": "Certificate of Service (related document(s)112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Majewski, Katherine) (Entered: 08/26/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.165.0.pdf"
       },
@@ -2133,8 +2163,7 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=11"
+    ]
   },
   "claims_administrator": {
     "name": "Stretto",
