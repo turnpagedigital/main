@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/",
     "date_last_filing": "2026-08-27",
     "meta_fetched_at": "2026-08-28T18:48:40.377548+00:00",
-    "fetched_at": "2026-08-29T18:37:17.201715+00:00",
-    "as_of": "Aug 29, 2026",
+    "fetched_at": "2026-08-30T00:25:05.211058+00:00",
+    "as_of": "Aug 30, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 76,
@@ -28,7 +28,7 @@
         "time_filed": "",
         "date_display": "Aug 27, 2026",
         "description": "NOTICE of Withdrawal filed by Aditya Vijay Kamdar, no longer appearing on behalf of Stability AI US Services Corporation, Stability AI, Inc., Stability AI, Ltd. in this case (Kamdar, Aditya) (Filed on 8/27/2026) (Entered: 08/27/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -38,7 +38,7 @@
         "time_filed": "15:29:24",
         "date_display": "Aug 27, 2026",
         "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -60,7 +60,7 @@
         "time_filed": "",
         "date_display": "Aug 27, 2026",
         "description": "NOTICE of Withdrawal filed by Aditya Vijay Kamdar, no longer appearing on behalf of Stability AI US Services Corporation, Stability AI, Inc., Stability AI, Ltd. in this case (Kamdar, Aditya) (Filed on 8/27/2026) (Entered: 08/27/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -70,7 +70,7 @@
         "time_filed": "15:29:24",
         "date_display": "Aug 27, 2026",
         "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

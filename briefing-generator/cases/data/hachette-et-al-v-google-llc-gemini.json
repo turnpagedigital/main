@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
     "date_last_filing": "2026-08-27",
     "meta_fetched_at": "2026-08-28T05:28:38.201238+00:00",
-    "fetched_at": "2026-08-29T18:37:29.374135+00:00",
-    "as_of": "Aug 29, 2026",
+    "fetched_at": "2026-08-30T00:25:16.640955+00:00",
+    "as_of": "Aug 30, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 32,
@@ -28,7 +28,7 @@
         "time_filed": "19:33:54",
         "date_display": "Aug 27, 2026",
         "description": "Reply to Response to Motion",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.668114/gov.uscourts.nysd.668114.32.0.pdf"
       },
@@ -60,7 +60,7 @@
         "time_filed": "19:33:54",
         "date_display": "Aug 27, 2026",
         "description": "Reply to Response to Motion",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.668114/gov.uscourts.nysd.668114.32.0.pdf"
       },

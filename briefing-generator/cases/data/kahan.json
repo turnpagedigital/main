@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
     "date_last_filing": "2026-08-28",
     "meta_fetched_at": "2026-08-28T23:30:30.464200+00:00",
-    "fetched_at": "2026-08-29T18:36:19.022395+00:00",
-    "as_of": "Aug 29, 2026",
+    "fetched_at": "2026-08-30T00:25:56.848146+00:00",
+    "as_of": "Aug 30, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 1,
     "recent": [
       {
         "entry_number": 383,
@@ -38,7 +38,7 @@
         "time_filed": "15:50:13",
         "date_display": "Aug 27, 2026",
         "description": "Order on Motion to Compel",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -48,7 +48,7 @@
         "time_filed": "15:47:07",
         "date_display": "Aug 27, 2026",
         "description": "Order on Motion to Compel",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -70,7 +70,7 @@
         "time_filed": "15:50:13",
         "date_display": "Aug 27, 2026",
         "description": "Order on Motion to Compel",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -80,7 +80,7 @@
         "time_filed": "15:47:07",
         "date_display": "Aug 27, 2026",
         "description": "Order on Motion to Compel",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
