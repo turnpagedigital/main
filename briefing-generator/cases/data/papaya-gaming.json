@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-08-28",
     "meta_fetched_at": "2026-08-29T13:21:00.961619+00:00",
-    "fetched_at": "2026-08-29T21:47:56.267235+00:00",
-    "as_of": "Aug 29, 2026",
+    "fetched_at": "2026-08-30T00:24:17.397122+00:00",
+    "as_of": "Aug 30, 2026",
     "backfilled": true,
-    "new_in_72h": 8,
+    "new_in_72h": 4,
     "recent": [
       {
         "entry_number": 88,
@@ -100,7 +100,7 @@
         "time_filed": "17:27:10",
         "date_display": "Aug 27, 2026",
         "description": "Exhibit",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -110,7 +110,7 @@
         "time_filed": "16:28:43",
         "date_display": "Aug 27, 2026",
         "description": "Certificate of Service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -120,7 +120,7 @@
         "time_filed": "15:37:07",
         "date_display": "Aug 27, 2026",
         "description": "Agenda of Matters Scheduled for Hearing - Notice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -130,7 +130,7 @@
         "time_filed": "15:16:03",
         "date_display": "Aug 27, 2026",
         "description": "Supplement",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
