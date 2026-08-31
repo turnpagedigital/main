@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
     "date_last_filing": "2026-08-31",
-    "meta_fetched_at": "2026-08-31T19:57:50.006513+00:00",
-    "fetched_at": "2026-08-31T19:57:50.006513+00:00",
+    "meta_fetched_at": "2026-08-31T23:55:58.515439+00:00",
+    "fetched_at": "2026-08-31T23:55:58.515439+00:00",
     "as_of": "Aug 31, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 1680,
+        "date_filed": "2026-08-31",
+        "time_filed": "16:53:52",
+        "date_display": "Aug 31, 2026",
+        "description": "ANSWER to 1677 Amended Complaint, with JURY DEMAND. Document filed by Microsoft Corporation..(Hurst, Annette) (Entered: 08/31/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1680.0.pdf"
+      },
       {
         "entry_number": 1679,
         "date_filed": "2026-08-31",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1678.0_1.pdf"
-      },
-      {
-        "entry_number": 1677,
-        "date_filed": "2026-08-21",
-        "time_filed": "17:13:57",
-        "date_display": "Aug 21, 2026",
-        "description": "THIRD AMENDED COMPLAINT amending 72 Amended Complaint, against Microsoft Corporation, OAI Corporation LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Holdings LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation) with JURY DEMAND.Document filed by The New York Times Company. Related document: 72 Amended Complaint,..(Crosby, Ian) (Entered: 08/21/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1677.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 1680,
+        "date_filed": "2026-08-31",
+        "time_filed": "16:53:52",
+        "date_display": "Aug 31, 2026",
+        "description": "ANSWER to 1677 Amended Complaint, with JURY DEMAND. Document filed by Microsoft Corporation..(Hurst, Annette) (Entered: 08/31/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1680.0.pdf"
+      },
       {
         "entry_number": 1679,
         "date_filed": "2026-08-31",
