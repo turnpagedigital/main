@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
     "date_last_filing": "2026-08-25",
     "meta_fetched_at": "2026-08-26T02:02:03.462695+00:00",
-    "fetched_at": "2026-08-30T00:24:51.082301+00:00",
-    "as_of": "Aug 30, 2026",
+    "fetched_at": "2026-08-31T05:45:05.180341+00:00",
+    "as_of": "Aug 31, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 790,
@@ -28,7 +28,7 @@
         "time_filed": "14:21:50",
         "date_display": "Aug 28, 2026",
         "description": "Opposition/Response to Motion",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -38,7 +38,7 @@
         "time_filed": "13:56:42",
         "date_display": "Aug 28, 2026",
         "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -60,7 +60,7 @@
         "time_filed": "14:21:50",
         "date_display": "Aug 28, 2026",
         "description": "Opposition/Response to Motion",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -70,7 +70,7 @@
         "time_filed": "13:56:42",
         "date_display": "Aug 28, 2026",
         "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
