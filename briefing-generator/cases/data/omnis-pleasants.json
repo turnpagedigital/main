@@ -15,44 +15,74 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-31",
-    "meta_fetched_at": "2026-08-31T15:20:22.165034+00:00",
-    "fetched_at": "2026-08-31T15:20:22.165034+00:00",
+    "meta_fetched_at": "2026-08-31T19:54:19.123054+00:00",
+    "fetched_at": "2026-08-31T19:54:19.123054+00:00",
     "as_of": "Aug 31, 2026",
     "backfilled": false,
-    "new_in_72h": 1,
+    "new_in_72h": 4,
     "recent": [
       {
-        "entry_number": 193,
+        "entry_number": 196,
         "date_filed": "2026-08-31",
-        "time_filed": "09:27:13",
+        "time_filed": "13:16:17",
         "date_display": "Aug 31, 2026",
-        "description": "Notice of Service",
+        "description": "Employ (Application)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 192,
-        "date_filed": "2026-08-28",
-        "time_filed": "21:12:10",
-        "date_display": "Aug 28, 2026",
-        "description": "Certification of Counsel Regarding Revised Order Authorizing the Employment of Stretto, Inc. as Administrative Advisor Effective as of the Petition Date (related document(s)79) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit 1 - 2) (Faris, S. Alexander) (Entered: 08/28/2026)",
-        "is_new": false,
+        "entry_number": 195,
+        "date_filed": "2026-08-31",
+        "time_filed": "13:07:18",
+        "date_display": "Aug 31, 2026",
+        "description": "Order Approving Motion Regarding Interim Compensation Procedures",
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 191,
-        "date_filed": "2026-08-28",
-        "time_filed": "21:07:03",
-        "date_display": "Aug 28, 2026",
-        "description": "Certification of Counsel Debtor's Motion for Entry of an Order (I) Establishing Procedures for Interim Compensation and Reimbursement of Expenses for Professionals and (II) Granting Related Relief (related document(s)78) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit 1 - 2) (Faris, S. Alexander) (Entered: 08/28/2026)",
-        "is_new": false,
+        "entry_number": 194,
+        "date_filed": "2026-08-31",
+        "time_filed": "13:00:25",
+        "date_display": "Aug 31, 2026",
+        "description": "Extend Time",
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 196,
+        "date_filed": "2026-08-31",
+        "time_filed": "13:16:17",
+        "date_display": "Aug 31, 2026",
+        "description": "Employ (Application)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 195,
+        "date_filed": "2026-08-31",
+        "time_filed": "13:07:18",
+        "date_display": "Aug 31, 2026",
+        "description": "Order Approving Motion Regarding Interim Compensation Procedures",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 194,
+        "date_filed": "2026-08-31",
+        "time_filed": "13:00:25",
+        "date_display": "Aug 31, 2026",
+        "description": "Extend Time",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 193,
         "date_filed": "2026-08-31",
@@ -2184,7 +2214,7 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=11"
   },
   "claims_administrator": {
     "name": "Stretto",

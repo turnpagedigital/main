@@ -15,61 +15,71 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
-    "date_last_filing": "2026-08-25",
-    "meta_fetched_at": "2026-08-31T15:19:27.982890+00:00",
-    "fetched_at": "2026-08-31T15:19:27.982890+00:00",
+    "date_last_filing": "2026-08-31",
+    "meta_fetched_at": "2026-08-31T19:53:12.170045+00:00",
+    "fetched_at": "2026-08-31T19:53:12.170045+00:00",
     "as_of": "Aug 31, 2026",
     "backfilled": false,
-    "new_in_72h": 0,
+    "new_in_72h": 1,
     "recent": [
       {
+        "entry_number": 686,
+        "date_filed": "2026-08-31",
+        "time_filed": "11:02:56",
+        "date_display": "Aug 31, 2026",
+        "description": "Transcript Designation Form (Silverkorn, Brandt) (Filed on 8/31/2026) (Entered: 08/31/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.686.0.pdf"
+      },
+      {
         "entry_number": 685,
-        "date_filed": "2026-08-25",
-        "time_filed": "11:34:00",
-        "date_display": "Aug 25, 2026",
-        "description": "USCA Case Number",
+        "date_filed": "2026-08-24",
+        "time_filed": "",
+        "date_display": "Aug 24, 2026",
+        "description": "USCA Case Number 26-5455 Court of Appeals for the Ninth Circuit for 683 Notice of Appeal to the Ninth Circuit filed by Cowan DeBaets Abrahams & Sheppard LLP. (kmg, COURT STAFF) (Filed on 8/24/2026) (Entered: 08/25/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.685.0_2.pdf"
       },
       {
         "entry_number": 684,
-        "date_filed": "2026-08-21",
-        "time_filed": "12:35:20",
-        "date_display": "Aug 21, 2026",
-        "description": "USCA Case Number",
+        "date_filed": "2026-08-20",
+        "time_filed": "",
+        "date_display": "Aug 20, 2026",
+        "description": "USCA Case Number 26-5391 Court of Appeals for the Ninth Circuit for 682 Notice of Appeal to the Ninth Circuit filed by Edelson PC, Oppenheim + Zebrak. (kmg, COURT STAFF) (Filed on 8/20/2026) (Entered: 08/21/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.684.0.pdf"
-      },
-      {
-        "entry_number": 683,
-        "date_filed": "2026-08-19",
-        "time_filed": "18:31:23",
-        "date_display": "Aug 19, 2026",
-        "description": "NOTICE OF APPEAL to the 9th Circuit Court of Appeals filed by Cowan DeBaets Abrahams & Sheppard LLP. (Appeal fee of $605 receipt number ACANDC-22359014 paid.) (Wolff, Nancy) (Filed on 8/19/2026) (Entered: 08/19/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.683.0_1.pdf"
       }
     ],
     "entries": [
       {
+        "entry_number": 686,
+        "date_filed": "2026-08-31",
+        "time_filed": "11:02:56",
+        "date_display": "Aug 31, 2026",
+        "description": "Transcript Designation Form (Silverkorn, Brandt) (Filed on 8/31/2026) (Entered: 08/31/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.686.0.pdf"
+      },
+      {
         "entry_number": 685,
-        "date_filed": "2026-08-25",
-        "time_filed": "11:34:00",
-        "date_display": "Aug 25, 2026",
-        "description": "USCA Case Number",
+        "date_filed": "2026-08-24",
+        "time_filed": "",
+        "date_display": "Aug 24, 2026",
+        "description": "USCA Case Number 26-5455 Court of Appeals for the Ninth Circuit for 683 Notice of Appeal to the Ninth Circuit filed by Cowan DeBaets Abrahams & Sheppard LLP. (kmg, COURT STAFF) (Filed on 8/24/2026) (Entered: 08/25/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.685.0_2.pdf"
       },
       {
         "entry_number": 684,
-        "date_filed": "2026-08-21",
-        "time_filed": "12:35:20",
-        "date_display": "Aug 21, 2026",
-        "description": "USCA Case Number",
+        "date_filed": "2026-08-20",
+        "time_filed": "",
+        "date_display": "Aug 20, 2026",
+        "description": "USCA Case Number 26-5391 Court of Appeals for the Ninth Circuit for 682 Notice of Appeal to the Ninth Circuit filed by Edelson PC, Oppenheim + Zebrak. (kmg, COURT STAFF) (Filed on 8/20/2026) (Entered: 08/21/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.684.0.pdf"
@@ -109,7 +119,7 @@
         "date_filed": "2026-07-20",
         "time_filed": "13:27:21",
         "date_display": "Jul 20, 2026",
-        "description": "ORDER GRANTING FINAL APPROVAL OF CLASS ACTION SETTLEMENT; GRANTING IN PART MOTION FOR ATTORNEY'S FEES, REIMBURSEMENT OF EXPENSES, AND PLAINTIFF SERVICE AWARDS; JUDGMENT. Signed by Judge Araceli Martinez-Olguin on July 20, 2026. (amolc1, COURTSTAFF) (Filed on 7/20/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice of Electronic Filing (NEF)",
+        "description": "ORDER GRANTING FINAL APPROVAL OF CLASS ACTION SETTLEMENT; GRANTING IN PART MOTION FOR ATTORNEY'S FEES, REIMBURSEMENT OF EXPENSES, AND PLAINTIFF SERVICE AWARDS; JUDGMENT. Signed by Judge Araceli Martinez-Olguin on July 20, 2026. (amolc1, COURTSTAFF) (Filed on 7/20/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice of Electronic Filing (NEF) (Entered: 07/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.680.0_5.pdf"
@@ -7550,7 +7560,7 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=11"
   },
   "claims_administrator": {
     "name": "JND Legal Administration",

@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
-    "date_last_filing": "2026-08-28",
-    "meta_fetched_at": "2026-08-28T23:30:44.265458+00:00",
-    "fetched_at": "2026-08-31T15:22:58.668475+00:00",
+    "date_last_filing": "2026-08-31",
+    "meta_fetched_at": "2026-08-31T19:57:50.006513+00:00",
+    "fetched_at": "2026-08-31T19:57:50.006513+00:00",
     "as_of": "Aug 31, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 1679,
+        "date_filed": "2026-08-31",
+        "time_filed": "11:42:10",
+        "date_display": "Aug 31, 2026",
+        "description": "ORDER: Plaintiff is ordered to show cause in writing on or before September 11, 2026, why this action should not be stayed pending resolution of summary judgment motions in the other active cases in this multidistrict litigation. Defendants' response, if any, shall be filed by September 18, 2026. SO ORDERED. Show Cause Response due by 9/11/2026. (Signed by Judge Sidney H. Stein on 8/28/2026) Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:26-cv-07171-SHS (jca) (Entered: 08/31/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1678,
         "date_filed": "2026-08-28",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1677.0.pdf"
-      },
-      {
-        "entry_number": 1676,
-        "date_filed": "2026-08-19",
-        "time_filed": "14:32:39",
-        "date_display": "Aug 19, 2026",
-        "description": "SECOND AMENDED COMPLAINT amending 300 Amended Complaint, against OAI Corporation, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Holdings LLC, OpenAI Inc., OpenAI LLC, OpenAI OpCo LLC(a Delaware limited liability corporation) with JURY DEMAND.Document filed by Everyday Health Media LLC, CNET MEDIA, INC., Ziff Davis, LLC, IGN Entertainment Inc., Mashable, Inc., Ziff Davis Inc.. Related document: 300 Amended Complaint,..(Koonce, Lacy) (Entered: 08/19/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1676.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 1679,
+        "date_filed": "2026-08-31",
+        "time_filed": "11:42:10",
+        "date_display": "Aug 31, 2026",
+        "description": "ORDER: Plaintiff is ordered to show cause in writing on or before September 11, 2026, why this action should not be stayed pending resolution of summary judgment motions in the other active cases in this multidistrict litigation. Defendants' response, if any, shall be filed by September 18, 2026. SO ORDERED. Show Cause Response due by 9/11/2026. (Signed by Judge Sidney H. Stein on 8/28/2026) Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:26-cv-07171-SHS (jca) (Entered: 08/31/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1678,
         "date_filed": "2026-08-28",
