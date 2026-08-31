@@ -15,9 +15,9 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
-    "date_last_filing": "2026-08-25",
-    "meta_fetched_at": "2026-08-26T02:02:03.462695+00:00",
-    "fetched_at": "2026-08-31T05:45:05.180341+00:00",
+    "date_last_filing": "2026-08-28",
+    "meta_fetched_at": "2026-08-31T15:22:05.307284+00:00",
+    "fetched_at": "2026-08-31T15:22:05.307284+00:00",
     "as_of": "Aug 31, 2026",
     "backfilled": true,
     "new_in_72h": 0,
@@ -27,7 +27,17 @@
         "date_filed": "2026-08-28",
         "time_filed": "14:21:50",
         "date_display": "Aug 28, 2026",
-        "description": "Opposition/Response to Motion",
+        "description": "OPPOSITION/RESPONSE (re 786 ADMINISTRATIVE MOTION to Consider Whether Cases Should be Related Pursuant to Civil Local Rules 3-12 and 7-11 ) filed byGFP Co-Invest, LP, RH Carlin Holdings LLC, Round Hill Music LP, Round Hill Music Royalty Fund II, LP, Round Hill Music Royalty Fund III Plus, LP, Round Hill Music Royalty Fund III, LP. (Attachments: # 1 Declaration, # 2 Exhibit A, # 3 Proposed Order)(Busch, Richard) (Filed on 8/28/2026) (Entered: 08/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 789,
+        "date_filed": "2026-08-28",
+        "time_filed": "",
+        "date_display": "Aug 28, 2026",
+        "description": "NOTICE of Appearance filed by Richard Steven Busch on behalf of Round Hill Music LP, Round Hill Music Royalty Fund II, LP, Round Hill Music Royalty Fund III Plus, LP, Round Hill Music Royalty Fund III, LP, GFP Co-Invest, LP, RH Carlin Holdings LLC (Busch, Richard) (Filed on 8/28/2026) (Entered: 08/28/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -41,16 +51,6 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 788,
-        "date_filed": "2026-08-25",
-        "time_filed": "17:07:53",
-        "date_display": "Aug 25, 2026",
-        "description": "ORDER Granting 787 Motion for Pro Hac Vice as to attorney Alex W. Miller. Signed by Judge Eumi K. Lee. (lrt, COURT STAFF) (Filed on 8/25/2026) (Entered: 08/25/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
@@ -59,7 +59,17 @@
         "date_filed": "2026-08-28",
         "time_filed": "14:21:50",
         "date_display": "Aug 28, 2026",
-        "description": "Opposition/Response to Motion",
+        "description": "OPPOSITION/RESPONSE (re 786 ADMINISTRATIVE MOTION to Consider Whether Cases Should be Related Pursuant to Civil Local Rules 3-12 and 7-11 ) filed byGFP Co-Invest, LP, RH Carlin Holdings LLC, Round Hill Music LP, Round Hill Music Royalty Fund II, LP, Round Hill Music Royalty Fund III Plus, LP, Round Hill Music Royalty Fund III, LP. (Attachments: # 1 Declaration, # 2 Exhibit A, # 3 Proposed Order)(Busch, Richard) (Filed on 8/28/2026) (Entered: 08/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 789,
+        "date_filed": "2026-08-28",
+        "time_filed": "",
+        "date_display": "Aug 28, 2026",
+        "description": "NOTICE of Appearance filed by Richard Steven Busch on behalf of Round Hill Music LP, Round Hill Music Royalty Fund II, LP, Round Hill Music Royalty Fund III Plus, LP, Round Hill Music Royalty Fund III, LP, GFP Co-Invest, LP, RH Carlin Holdings LLC (Busch, Richard) (Filed on 8/28/2026) (Entered: 08/28/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
