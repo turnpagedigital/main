@@ -14,13 +14,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
-    "date_last_filing": "2026-08-28",
-    "meta_fetched_at": "2026-08-30T17:33:44.037514+00:00",
-    "fetched_at": "2026-08-31T05:44:18.472762+00:00",
+    "date_last_filing": "2026-08-31",
+    "meta_fetched_at": "2026-08-31T14:00:05.825931+00:00",
+    "fetched_at": "2026-08-31T14:00:05.825931+00:00",
     "as_of": "Aug 31, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 193,
+        "date_filed": "2026-08-31",
+        "time_filed": "09:27:13",
+        "date_display": "Aug 31, 2026",
+        "description": "Notice of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 192,
         "date_filed": "2026-08-28",
@@ -40,19 +50,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 190,
-        "date_filed": "2026-08-28",
-        "time_filed": "20:59:54",
-        "date_display": "Aug 28, 2026",
-        "description": "Certificate of No Objection Regarding Debtor's Motion for Entry of an Order (I) Extending the Time for the Debtor to File its Schedule of Assets and Liabilities and Statements of Financial Affairs and (II) Granting Related Relief (related document(s)133) Filed by Omnis Pleasants, LLC. (Faris, S. Alexander) (Entered: 08/28/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 193,
+        "date_filed": "2026-08-31",
+        "time_filed": "09:27:13",
+        "date_display": "Aug 31, 2026",
+        "description": "Notice of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 192,
         "date_filed": "2026-08-28",
