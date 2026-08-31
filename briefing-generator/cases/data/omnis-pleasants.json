@@ -15,12 +15,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-31",
-    "meta_fetched_at": "2026-08-31T19:54:19.123054+00:00",
-    "fetched_at": "2026-08-31T19:54:19.123054+00:00",
+    "meta_fetched_at": "2026-08-31T23:54:32.542725+00:00",
+    "fetched_at": "2026-08-31T23:54:32.542725+00:00",
     "as_of": "Aug 31, 2026",
-    "backfilled": false,
-    "new_in_72h": 4,
+    "backfilled": true,
+    "new_in_72h": 5,
     "recent": [
+      {
+        "entry_number": 197,
+        "date_filed": "2026-08-31",
+        "time_filed": "16:06:02",
+        "date_display": "Aug 31, 2026",
+        "description": "Affidavit/Declaration of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 196,
         "date_filed": "2026-08-31",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 194,
-        "date_filed": "2026-08-31",
-        "time_filed": "13:00:25",
-        "date_display": "Aug 31, 2026",
-        "description": "Extend Time",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 197,
+        "date_filed": "2026-08-31",
+        "time_filed": "16:06:02",
+        "date_display": "Aug 31, 2026",
+        "description": "Affidavit/Declaration of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 196,
         "date_filed": "2026-08-31",
@@ -311,7 +321,7 @@
         "description": "Objection // West Virginia Economic Development Authority's Objection to (A) Debtor's Motion for Entry of Interim and Final Orders (I) Authorizing Postpetition Use of Prepetition Collateral, Including Cash Collateral, (II) Granting Adequate Protection to the Prepetition Secured Parties, (III) Modifying the Automatic Stay, (IV) Scheduling a Final Hearing, and (V) Granting Related Relief and (B) Debtor's Motion for Entry of an Order (I) Approving the Auction and Bidding Procedures for the Sale of the Debtor's Assets, (II) Scheduling Certain Dates and Deadlines Related Thereto, (III) Approving the Form and Manner of Notice Thereof, (IV) Authorizing the Debtor to Designate a Stalking Horse Bidder and Offer Bid Protections Related Thereto, (V) Establishing Notice and Procedures for the Assumption and Assignment of Contracts and Leases, (VI) Approving the Sale of Assets, and (VII) Granting…",
         "is_new": false,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.171.0.pdf"
       },
       {
         "entry_number": 170,
@@ -2213,8 +2223,7 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=11"
+    ]
   },
   "claims_administrator": {
     "name": "Stretto",
