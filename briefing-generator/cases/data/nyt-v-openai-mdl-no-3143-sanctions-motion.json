@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
     "date_last_filing": "2026-08-31",
-    "meta_fetched_at": "2026-08-31T23:55:58.515439+00:00",
-    "fetched_at": "2026-08-31T23:55:58.515439+00:00",
-    "as_of": "Aug 31, 2026",
+    "meta_fetched_at": "2026-09-01T05:18:21.966522+00:00",
+    "fetched_at": "2026-09-01T05:18:21.966522+00:00",
+    "as_of": "Sep 1, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 3,
     "recent": [
+      {
+        "entry_number": 1681,
+        "date_filed": "2026-08-31",
+        "time_filed": "21:52:52",
+        "date_display": "Aug 31, 2026",
+        "description": "Proposed Stipulation and Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1680,
         "date_filed": "2026-08-31",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 1678,
-        "date_filed": "2026-08-28",
-        "time_filed": "18:22:23",
-        "date_display": "Aug 28, 2026",
-        "description": "ORDER : Plaintiffs are ordered to show cause in writing on or before September 11, 2026, why this action should not be stayed pending resolution of summary judgment motions in the other active cases in this multidistrict litigation. Defendants' response, if any,shall be filed by September 18, 2026. SO ORDERED. Show Cause Response due by 9/11/2026. (Signed by Judge Sidney H. Stein on 8/28/2026) Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:26-cv-06966-SHS (jca) (Entered: 08/28/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1678.0_1.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 1681,
+        "date_filed": "2026-08-31",
+        "time_filed": "21:52:52",
+        "date_display": "Aug 31, 2026",
+        "description": "Proposed Stipulation and Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1680,
         "date_filed": "2026-08-31",
