@@ -14,45 +14,75 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
-    "date_last_filing": "2026-08-31",
-    "meta_fetched_at": "2026-09-01T12:43:16.537820+00:00",
-    "fetched_at": "2026-09-01T12:43:16.537820+00:00",
+    "date_last_filing": "2026-09-01",
+    "meta_fetched_at": "2026-09-01T14:57:38.093629+00:00",
+    "fetched_at": "2026-09-01T14:57:38.093629+00:00",
     "as_of": "Sep 1, 2026",
-    "backfilled": false,
-    "new_in_72h": 5,
+    "backfilled": true,
+    "new_in_72h": 8,
     "recent": [
       {
-        "entry_number": 197,
-        "date_filed": "2026-08-31",
-        "time_filed": "16:06:02",
-        "date_display": "Aug 31, 2026",
-        "description": "Affidavit/Declaration of Service",
+        "entry_number": 200,
+        "date_filed": "2026-09-01",
+        "time_filed": "09:58:35",
+        "date_display": "Sep 1, 2026",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 196,
-        "date_filed": "2026-08-31",
-        "time_filed": "13:16:17",
-        "date_display": "Aug 31, 2026",
-        "description": "Employ (Application)",
+        "entry_number": 199,
+        "date_filed": "2026-09-01",
+        "time_filed": "09:35:25",
+        "date_display": "Sep 1, 2026",
+        "description": "Certificate of No Objection",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 195,
-        "date_filed": "2026-08-31",
-        "time_filed": "13:07:18",
-        "date_display": "Aug 31, 2026",
-        "description": "Order Approving Motion Regarding Interim Compensation Procedures",
+        "entry_number": 198,
+        "date_filed": "2026-09-01",
+        "time_filed": "09:32:56",
+        "date_display": "Sep 1, 2026",
+        "description": "Pro Hac Vice Admission - Motion",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 200,
+        "date_filed": "2026-09-01",
+        "time_filed": "09:58:35",
+        "date_display": "Sep 1, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 199,
+        "date_filed": "2026-09-01",
+        "time_filed": "09:35:25",
+        "date_display": "Sep 1, 2026",
+        "description": "Certificate of No Objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 198,
+        "date_filed": "2026-09-01",
+        "time_filed": "09:32:56",
+        "date_display": "Sep 1, 2026",
+        "description": "Pro Hac Vice Admission - Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 197,
         "date_filed": "2026-08-31",
@@ -2223,8 +2253,7 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
+    ]
   },
   "claims_administrator": {
     "name": "Stretto",
