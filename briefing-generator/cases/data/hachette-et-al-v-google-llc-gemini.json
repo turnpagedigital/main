@@ -584,6 +584,20 @@
       "summary": "Gizmodo covered the S.D.N.Y. class action, noting the complaint alleges Google 'reproduced millions of copyrighted works without permission' and that Gemini's outputs include verbatim copies, replacement chapters, and content that mimics specific authors' expressive styles."
     },
     {
+      "headline": "Book Publishers Sue Google For Copyright Infringement Over Gemini AI Training",
+      "url": "https://yro.slashdot.org/story/26/07/15/2113245/book-publishers-sue-google-for-copyright-infringement-over-gemini-ai-training",
+      "source": "Slashdot (via The Guardian)",
+      "date": "2026-07-15",
+      "summary": "Aggregating Guardian reporting, the piece details plaintiffs' argument that Google repurposed books supplied under limited-use agreements for Google Books, Google Play Books, and Google Scholar — licenses that permitted snippets or e-book sales but not copying for commercial AI training."
+    },
+    {
+      "headline": "Hachette, Elsevier, and Scott Turow Sue Google, Alleging Gemini Trained on Millions of Pirated Books",
+      "url": "https://finance.biggo.com/news/04d55f75-43db-4aaf-bc5b-4c07ff0123a6",
+      "source": "BigGo Finance",
+      "date": "2026-07-15",
+      "summary": "Reports that internal Google documents allegedly warned the company that its AI training practices could result in tens of billions in fines, and notes the same plaintiff group had previously filed a similar class action against Meta over its Llama AI models."
+    },
+    {
       "headline": "Google Faces Another AI Copyright Suit By Publishers",
       "url": "https://www.law360.com/articles/2500754/google-faces-another-ai-copyright-suit-by-publishers",
       "source": "Law360",
