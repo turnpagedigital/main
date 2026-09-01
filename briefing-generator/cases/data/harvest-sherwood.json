@@ -16,10 +16,10 @@
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-31",
     "meta_fetched_at": "2026-08-31T19:57:19.258717+00:00",
-    "fetched_at": "2026-08-31T23:55:31.243298+00:00",
-    "as_of": "Aug 31, 2026",
+    "fetched_at": "2026-09-01T10:12:58.871605+00:00",
+    "as_of": "Sep 1, 2026",
     "backfilled": true,
-    "new_in_72h": 7,
+    "new_in_72h": 6,
     "recent": [
       {
         "entry_number": 1284,
@@ -119,7 +119,7 @@
         "time_filed": "23:23:35",
         "date_display": "Aug 29, 2026",
         "description": "BNC certificate of mailing - PDF document",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
