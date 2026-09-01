@@ -1,6 +1,47 @@
 {
-  "generated_at": "2026-08-31T19:58:34+00:00",
+  "generated_at": "2026-09-01T17:44:47+00:00",
   "items": [
+    {
+      "slug": "omnis-pleasants",
+      "case_name": "Omnis Pleasants",
+      "short_name": "Omnis Pleasants",
+      "emoji": "⚖️",
+      "themes": [
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "United States Bankruptcy Court, D. Delaware",
+      "status": "active",
+      "signature": "bb6e7810b80c",
+      "activity": {
+        "filings": 18,
+        "articles": 0,
+        "latest": "2026-09-01"
+      },
+      "checked": "2026-09-01T17:44:47+00:00",
+      "date": "2026-09-01",
+      "updated": "2026-09-01",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "Today, Omnis Pleasants' docket recorded Dkts. 196–210: an employment application (Dkt. 196), a certificate of no objection (Dkt. 199), five exhibits (Dkts.",
+      "body_md": "Today, Omnis Pleasants' docket recorded Dkts. 196–210: an employment application (Dkt. 196), a certificate of no objection (Dkt. 199), five exhibits (Dkts. 201–205), a hearing agenda (Dkt. 208), and six pro hac vice motions and admissions (Dkts. 198, 206, 207, 209, 210, and 200). The employment application at Dkt. 196 is the only filing on this list that warrants examination before tomorrow's § 341 meeting and the September 3 final hearing complex.\n\nDkt. 196 is a retention application filed August 31. The full text has not been pulled, so the identity of the applicant and the scope of the engagement are not confirmed from primary source. What is clear from context is that Omnis Fuel Technologies and Quantum Pleasants have already placed a contested objection on the record against the HSF Kramer retention (Dkt. 188, filed August 28), and the U.S. Trustee filed its own objection to that same application (Dkt. 175). Any additional professional retention application filed at this stage — two business days before a fully contested final hearing — carries at minimum procedural-and-important weight: it adds another contested item to the September 3 docket or establishes a professional whose fees will run against estate cash. The certificate of no objection at Dkt. 199 relates to an unspecified underlying motion; without the full text, no substantive conclusion follows, though the timing suggests it may concern one of the uncontested first-day orders already on the September 3 agenda. The five exhibits at Dkts. 201–205, also without pulled text, most likely supplement one of the pending contested motions — the cash collateral objection (Dkt. 172), the dismissal motion (Dkt. 93), or the bidding procedures objection (Dkt. 169) — given the volume and proximity to the hearing. The hearing agenda at Dkt. 208 confirms the September 3 contested final hearing is formally calendared; the agenda itself is procedural but its substance will reflect whether any of the open disputes have been resolved consensually before the hearing date. The six pro hac vice entries (Dkts. 198, 200, 206, 207, 209, 210) are procedural and routine.\n\nThe posture entering the final two days has not changed from yesterday's baseline: the September 3, 1:00 p.m. ET hearing before Judge Owens carries simultaneous contested issues on cash collateral (Dkts. 17, 50, opposed by Omnis Fuel Technologies / Quantum at Dkt. 172 and by WVEDA at Dkt. 171), wages and utilities (opposed or under objection deadline), critical vendor payments, bidding procedures (opposed at Dkt. 169), and HSF Kramer's retention (opposed by Omnis Fuel Technologies / Quantum at Dkt. 188 and by the U.S. Trustee at Dkt. 175). A final cash collateral order that materially deviates from the interim terms, or that the court declines to enter at all, is the highest-consequence outcome for recovery: the interim order at Dkt. 50 caps prepetition tax and fee disbursements at $775,000.00, ties all cash use to the adequate protection budget, and requires the sale process to continue — all of which unravel if the final order fails. \nThe § 341 Meeting of Creditors is scheduled for September 2, 2026 at 1:00 p.m. ET via Zoom\n, the day before the hearing complex.\n\n## Sources\n\n- [Omnis Pleasants, LLC — Stretto Case Site](https://cases.stretto.com/pleasantspowerstation/) — Stretto, ongoing\n- [Pleasants Power Station sale eyed as split Omnis firms fight over plant's future](https://www.wvgazettemail.com/news/energy_and_environment/pleasants-power-station-sale-eyed-as-split-omnis-firms-fight-over-plants-future/article_3af8a8ee-7be5-4674-9db9-3810108fb418.html) — Charleston Gazette-Mail, August 26, 2026\n- [Omnis Pleasants Files Chapter 11 After $75.64M Payoff Rejected](https://elevenflo.com/blog/omnis-pleasants-llc-17751) — ElevenFlo, August 13, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Omnis Pleasants, LLC — Stretto Case Site",
+          "url": "https://cases.stretto.com/pleasantspowerstation/",
+          "note": "Stretto, ongoing"
+        },
+        {
+          "title": "Pleasants Power Station sale eyed as split Omnis firms fight over plant's future",
+          "url": "https://www.wvgazettemail.com/news/energy_and_environment/pleasants-power-station-sale-eyed-as-split-omnis-firms-fight-over-plants-future/article_3af8a8ee-7be5-4674-9db9-3810108fb418.html",
+          "note": "Charleston Gazette-Mail, August 26, 2026"
+        },
+        {
+          "title": "Omnis Pleasants Files Chapter 11 After $75.64M Payoff Rejected",
+          "url": "https://elevenflo.com/blog/omnis-pleasants-llc-17751",
+          "note": "ElevenFlo, August 13, 2026"
+        }
+      ]
+    },
     {
       "slug": "bartz-anthropic",
       "case_name": "Bartz v. Anthropic",
@@ -12,80 +53,39 @@
       ],
       "court": "U.S. District Court, N.D. Cal. (San Francisco)",
       "status": "active",
-      "signature": "114df16176cf",
+      "signature": "292bba17c386",
       "activity": {
         "filings": 1,
         "articles": 0,
         "latest": "2026-08-31"
       },
-      "checked": "2026-08-31T19:58:34+00:00",
-      "date": "2026-08-26",
-      "updated": "2026-08-26",
-      "moved": false,
-      "no_change_since": "2026-08-31",
-      "lede": "On August 25, the district court clerk docketed Dkt. 685 — a second USCA Case Number entry — confirming that the Ninth Circuit has opened at least one additional appellate proceeding arising from the fee appeals filed by Edelson PC / Oppenheim + Zebrak (Dkt. 682, August 18) and Cowan DeBaets Abrahams & Sheppard LLP (Dkt. 683, August 19). Dkt. 684, filed August 21, was the first such notation; the appearance of a…",
-      "body_md": "On August 25, the district court clerk docketed Dkt. 685 — a second USCA Case Number entry — confirming that the Ninth Circuit has opened at least one additional appellate proceeding arising from the fee appeals filed by Edelson PC / Oppenheim + Zebrak (Dkt. 682, August 18) and Cowan DeBaets Abrahams & Sheppard LLP (Dkt. 683, August 19). Dkt. 684, filed August 21, was the first such notation; the appearance of a second entry four days later strongly suggests the court assigned separate docket numbers to the two appeals rather than immediately consolidating them into a single track. That said, the specific Ninth Circuit case numbers remain unconfirmed from publicly available sources: \nCourtListener's district-court docket for 4:24-cv-05417 was last updated August 23, 2026, and its data is sourced from PACER and RECAP, which may not be current\n — meaning the appellate docket numbers have not yet propagated to any public aggregator this desk can verify. Confirmation will come once the Ninth Circuit clerk's entries appear on PACER or a public index. For analytical purposes, the operative fact is that two separate USCA Case Number notations now sit on the district docket, one per notice of appeal, consistent with the clerk opening two distinct appellate files.\n\nThe substantive posture of the fee dispute is unchanged. \nTwo firms involved in generating the $1.5 billion copyright settlement appealed to the Ninth Circuit after being cut out of the $101 million attorney fee award, which was restricted to court-approved class counsel Susman Godfrey and Lieff Cabraser Heimann & Bernstein.\n \nA week before he retired, Judge Alsup castigated plaintiffs' counsel for improperly requesting $75 million for work done by the two appealing firms and Cowan DeBaets in an initial $300 million fees request.\n Whether each appellant group is challenging only its exclusion from the fee award or also mounting a broader attack on the July 20 final approval order remains unconfirmed on the face of the notices; that question will be answered when opening briefs are filed. The existence of two separate appellate files — rather than a consolidated one — creates a procedural fork: the Ninth Circuit will need to decide, either sua sponte or on motion, whether to consolidate the proceedings. Consolidation is standard where appeals arise from the same underlying order and share common issues, but it is not automatic, and separate scheduling orders could issue in the interim.\n\nFor class members, Dkt. 685 closes the opening phase of the appellate record: both fee appellants now have active Ninth Circuit cases, the Effective Date has not arrived, and the disbursement portal remains dormant. Anthropic's payment obligations run independently of the appeals, and no party has moved for a stay. The $450 million first installment (Scheduled Payment 1) falls due September 25, 2026 — four weeks out. The next concrete milestones are: (1) the Ninth Circuit's scheduling orders establishing opening-brief deadlines for each docket, typically issued within weeks of case opening; and (2) any consolidation order, which would determine whether the two appeals proceed on a unified or parallel track and could affect both briefing timelines and the ultimate scope of any panel decision.\n\n## Sources\n\n- [Bartz et al. v. Anthropic PBC — CourtListener Docket (N.D. Cal. 4:24-cv-05417)](https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/) — CourtListener (PACER/RECAP)\n- [Bartz, et al. v. Anthropic, PBC, 25-4843 — CourtListener Appellate Docket](https://www.courtlistener.com/docket/70991505/bartz-et-al-v-anthropic-pbc/) — CourtListener (PACER/RECAP)\n- [Firms Appeal After Exclusion From Fees Award in Anthropic Case](https://news.bloomberglaw.com/legal-ops-and-tech/firms-appeal-after-exclusion-from-fees-award-in-anthropic-case) — Bloomberg Law, August 19, 2026\n- [Firms Cut From $101M Anthropic Atty Fees Appeal To 9th Circ.](https://www.law360.com/ip/articles/2515634) — Law360, August 20, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "checked": "2026-09-01T17:44:47+00:00",
+      "date": "2026-09-01",
+      "updated": "2026-09-01",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "On August 31, Brandt Silverkorn of Edelson PC / Oppenheim + Zebrak filed a Transcript Designation Form (Dkt. 686) in the district court — the standard mechanism by which an appellant identifies, for the Ninth Circuit's record, which trial or hearing transcripts are to be prepared and transmitted as part of the appellate record. The filing is procedural, but in context it is worth flagging: it is the first concrete…",
+      "body_md": "On August 31, Brandt Silverkorn of Edelson PC / Oppenheim + Zebrak filed a Transcript Designation Form (Dkt. 686) in the district court — the standard mechanism by which an appellant identifies, for the Ninth Circuit's record, which trial or hearing transcripts are to be prepared and transmitted as part of the appellate record. The filing is procedural, but in context it is worth flagging: it is the first concrete record-assembly step taken in either of the two pending fee appeals since the USCA Case Number entries (Dkts. 684–685) confirmed the Ninth Circuit had opened separate dockets for No. 26-5391 (Edelson PC / Oppenheim + Zebrak) and No. 26-5455 (Cowan DeBaets Abrahams & Sheppard LLP). \nNo. 26-5391, filed August 18, appeals from the July 20 judgment (Dkt. 680) including all prior orders, with Edelson PC and Oppenheim + Zebrak intending to focus on the fee and expenses award.\n \nNo. 26-5455, filed August 19, also appeals from the July 20 judgment but is expressly limited to the district court's order granting in part the motion for attorneys' fees.\n The Transcript Designation Form was filed by Silverkorn — Edelson / O+Z counsel — which means Dkt. 686 is attributable to No. 26-5391; nothing on the district docket as of August 31 reflects a corresponding transcript designation from Cowan DeBaets.\n\nThe significance is limited but real. A transcript designation is procedural under FRAP 10(b) and Ninth Circuit Rule 10-3; it does not affect any party's legal rights or the class's recovery posture directly. It does, however, signal that Edelson / O+Z is actively prosecuting its appeal and has moved to the record-preparation phase. Cowan DeBaets' parallel absence from the district docket through August 31 leaves open whether that firm has filed its own designation directly on the Ninth Circuit docket (where it would not appear here) or has not yet done so; that distinction matters because a failure to timely designate transcripts can draw a Ninth Circuit clerk's default notice. Neither the district docket nor any available public source confirms the status of Cowan DeBaets' transcript designation. No party has moved for consolidation of the two appeals, and no consolidation order has appeared on the district court's docket.\n\nThe class's recovery posture is unchanged. Anthropic's payment obligations run independently of the fee appeals — no party has moved for a stay — and the $450 million first installment (Scheduled Payment 1) remains due September 25, 2026. The next concrete milestones are: (1) Anthropic's $450 million Scheduled Payment 1 on September 25; and (2) Ninth Circuit scheduling orders establishing opening-brief deadlines for Nos. 26-5391 and 26-5455, which the circuit clerk typically issues within the first weeks after a case opens and which will set the appellate briefing clock for both fee disputes.\n\n## Sources\n\n- [Bartz v. Anthropic PBC — CourtListener Docket (N.D. Cal. 4:24-cv-05417)](https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/) — CourtListener (PACER/RECAP), last updated Aug. 30, 2026\n- [Scrivener's Error — Bartz Appeal Analysis](https://scrivenerserror.blogspot.com/) — Scrivener's Error, August 2026\n- [Firms Cut From $101M Anthropic Atty Fees Appeal To 9th Circ.](https://www.law360.com/ip/articles/2515634) — Law360, August 20, 2026\n- [Firms Appeal After Exclusion From Fees Award in Anthropic Case](https://news.bloomberglaw.com/legal-ops-and-tech/firms-appeal-after-exclusion-from-fees-award-in-anthropic-case) — Bloomberg Law, August 19, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
         {
-          "title": "Bartz et al. v. Anthropic PBC — CourtListener Docket (N.D. Cal. 4:24-cv-05417)",
+          "title": "Bartz v. Anthropic PBC — CourtListener Docket (N.D. Cal. 4:24-cv-05417)",
           "url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
-          "note": "CourtListener (PACER/RECAP)"
+          "note": "CourtListener (PACER/RECAP), last updated Aug. 30, 2026"
         },
         {
-          "title": "Bartz, et al. v. Anthropic, PBC, 25-4843 — CourtListener Appellate Docket",
-          "url": "https://www.courtlistener.com/docket/70991505/bartz-et-al-v-anthropic-pbc/",
-          "note": "CourtListener (PACER/RECAP)"
-        },
-        {
-          "title": "Firms Appeal After Exclusion From Fees Award in Anthropic Case",
-          "url": "https://news.bloomberglaw.com/legal-ops-and-tech/firms-appeal-after-exclusion-from-fees-award-in-anthropic-case",
-          "note": "Bloomberg Law, August 19, 2026"
+          "title": "Scrivener's Error — Bartz Appeal Analysis",
+          "url": "https://scrivenerserror.blogspot.com/",
+          "note": "Scrivener's Error, August 2026"
         },
         {
           "title": "Firms Cut From $101M Anthropic Atty Fees Appeal To 9th Circ.",
           "url": "https://www.law360.com/ip/articles/2515634",
           "note": "Law360, August 20, 2026"
-        }
-      ]
-    },
-    {
-      "slug": "omnis-pleasants",
-      "case_name": "Omnis Pleasants",
-      "short_name": "Omnis Pleasants",
-      "emoji": "⚖️",
-      "themes": [
-        "bankruptcy-creditor-rights"
-      ],
-      "court": "United States Bankruptcy Court, D. Delaware",
-      "status": "active",
-      "signature": "44c23f1ffe62",
-      "activity": {
-        "filings": 14,
-        "articles": 0,
-        "latest": "2026-08-31"
-      },
-      "checked": "2026-08-31T19:58:34+00:00",
-      "date": "2026-08-27",
-      "updated": "2026-08-27",
-      "moved": false,
-      "no_change_since": "2026-08-31",
-      "lede": "On August 27, Omnis Fuel Technologies, LLC and Quantum Pleasants, LLC filed a formal objection to approval of the cash collateral motion (Dkt. 172, related to Dkts. 17 and 50), supported by thirteen exhibits, and the West Virginia Economic Development Authority filed its own independent objection to both the cash collateral motion and the debtor's bidding procedures motion (Dkt. 171).",
-      "body_md": "On August 27, Omnis Fuel Technologies, LLC and Quantum Pleasants, LLC filed a formal objection to approval of the cash collateral motion (Dkt. 172, related to Dkts. 17 and 50), supported by thirteen exhibits, and the West Virginia Economic Development Authority filed its own independent objection to both the cash collateral motion and the debtor's bidding procedures motion (Dkt. 171). Those two filings — from the plant's former ownership bloc and from the estate's largest creditor — are the most consequential developments to hit the docket since the August 14 dismissal motion (Dkt. 93), and they converge on the September 3 final hearing from opposite directions.\n\nThe Omnis Fuel Technologies / Quantum cash collateral objection (Dkt. 172) is the logical extension of the August 14 dismissal motion: if the court should not have authorized the case in the first place, the interim cash collateral order (Dkt. 50) that underwrites the debtor's continued operation and sale process should not be made final. The thirteen-exhibit attachment signals a factual record built to contest both the debtor's authority to use collateral and the adequacy of adequate protection provided to the prepetition secured parties — the same factual battleground as the dismissal motion. Separately, Omnis Fuel Technologies and Quantum also filed a formal objection and reservation of rights to the bidding procedures motion and the Houlihan retention application (Dkt. 169, related to Dkts. 84 and 86), directly challenging the sale process architecture before it is court-approved. The Pleasants, LLC (debtor) filed its own reservation of rights regarding the bidding procedures motion (Dkt. 173), preserving flexibility to respond to those objections before or at the September 3 hearing.\n\nThe WVEDA's objection (Dkt. 171) carries its own weight. \nThe authority holds a $50.9 million unsecured loan obligation that matured in June 2026 and remains unpaid\n, making it the largest single creditor in the estate and the party with the most at stake in the sale outcome. Its objection to both cash collateral use and the bidding procedures signals that the debtor does not have the uncontested consent of its major economic stakeholder for the sale framework it is trying to put in place by September 3. For WVEDA's recovery, a contested cash collateral order is a material risk: if the court declines to enter a final order on September 3 or imposes materially different terms than the interim, the operating budget and the sale timeline both come under pressure. On the retention side, the U.S. Trustee filed a formal objection to the debtor's application to employ Herbert Smith Freehills Kramer (US) LLP as bankruptcy counsel (Dkt. 175, related to Dkt. 83). A contested retention application for lead bankruptcy counsel — filed by the U.S. Trustee, not a creditor — is substantively important: if the court sustains the objection in whole or in part, it creates disruption in the debtor's professional infrastructure at the worst possible moment, days before the September 3 hearing complex.\n\nThe simultaneous filing by Omnis Fuel Technologies and Quantum of a Reservation of Rights (Dkt. 177) superseding a prior reservation (Dkt. 170, which was withdrawn at Dkt. 176) regarding the ordinary course professionals motion and certain retention applications (Dkts. 77, 81, 85) rounds out a coordinated filing strategy: the former ownership bloc is now on record opposing the cash collateral, the sale process, the investment banker retention, and the professional retention infrastructure simultaneously. Akin Gump Strauss Hauer & Feld LLP's appearance — through pro hac vice admissions for Scott L. Alberino, Sophia N. Bavaro, and Kate Doorley (Dkts. 178–180) alongside the Pleasants, LLC notice of appearance (Dkt. 174) — adds a second major restructuring firm to the debtor's side of the caption. Akin Gump's entry at this stage, less than a week before the final hearing, suggests the debtor is marshaling additional firepower for the September 3 contested hearing rather than anticipating consent. Dkts. 178–180 are procedural, but Akin Gump's substantive role will become clear once a retention application is filed. The next concrete milestone is September 2, when the § 341 Meeting of Creditors convenes at 1:00 p.m. ET via Zoom, followed immediately by the September 3 final hearing at 1:00 p.m. ET on cash collateral, wages, utilities, critical vendor payments, and bidding procedures — now fully contested on multiple fronts.\n\n## Sources\n\n- [Pleasants Power Station sale eyed as split Omnis firms fight over plant's future](https://www.wvgazettemail.com/news/energy_and_environment/pleasants-power-station-sale-eyed-as-split-omnis-firms-fight-over-plants-future/article_3af8a8ee-7be5-4674-9db9-3810108fb418.html) — Charleston Gazette-Mail, August 26, 2026\n- [Omnis Pleasants Files Chapter 11 After $75.64M Payoff Rejected](https://elevenflo.com/blog/omnis-pleasants-llc-17751) — ElevenFlo, August 13, 2026\n- [Pleasants Power Station's Omnis firm reports 600+ creditors](https://www.herald-dispatch.com/news/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_5b21adc9-1c75-433a-be51-5ed26f74a819.html) — Herald-Dispatch, August 5, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
-      "sources": [
-        {
-          "title": "Pleasants Power Station sale eyed as split Omnis firms fight over plant's future",
-          "url": "https://www.wvgazettemail.com/news/energy_and_environment/pleasants-power-station-sale-eyed-as-split-omnis-firms-fight-over-plants-future/article_3af8a8ee-7be5-4674-9db9-3810108fb418.html",
-          "note": "Charleston Gazette-Mail, August 26, 2026"
         },
         {
-          "title": "Omnis Pleasants Files Chapter 11 After $75.64M Payoff Rejected",
-          "url": "https://elevenflo.com/blog/omnis-pleasants-llc-17751",
-          "note": "ElevenFlo, August 13, 2026"
-        },
-        {
-          "title": "Pleasants Power Station's Omnis firm reports 600+ creditors",
-          "url": "https://www.herald-dispatch.com/news/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_5b21adc9-1c75-433a-be51-5ed26f74a819.html",
-          "note": "Herald-Dispatch, August 5, 2026"
+          "title": "Firms Appeal After Exclusion From Fees Award in Anthropic Case",
+          "url": "https://news.bloomberglaw.com/legal-ops-and-tech/firms-appeal-after-exclusion-from-fees-award-in-anthropic-case",
+          "note": "Bloomberg Law, August 19, 2026"
         }
       ]
     },
@@ -100,19 +100,19 @@
       ],
       "court": "Bankr. D. N.J.",
       "status": "active",
-      "signature": "1108911ed5b3",
+      "signature": "17a298ffc25e",
       "activity": {
-        "filings": 2,
+        "filings": 1,
         "articles": 0,
         "latest": "2026-08-31"
       },
-      "checked": "2026-08-31T19:58:34+00:00",
-      "date": "2026-08-27",
-      "updated": "2026-08-27",
-      "moved": false,
-      "no_change_since": "2026-08-31",
-      "lede": "Today, the nonbinding indications of interest deadline expires — the first hard gate in the sale process since Judge O'Hagan entered the bidding procedures order on August 17. Prospective buyers seeking any portion of the assets had until today to submit nonbinding expressions of interest, with binding qualified bids due September 8.",
-      "body_md": "Today, the nonbinding indications of interest deadline expires\n — the first hard gate in the sale process since Judge O'Hagan entered the bidding procedures order on August 17. \nProspective buyers seeking any portion of the assets had until today to submit nonbinding expressions of interest, with binding qualified bids due September 8.\n The IOI submissions are not filed on the docket and their contents will not be publicly disclosed; what the estate's investment banker receives today will determine whether the September 10 auction is competitive or a formality ceding the assets to stalking-horse Thor CALAP LLC at the floor. \nThe prepetition marketing process generated 28 NDAs, seven LOIs, and three additional indications of interest\n before the petition date, so some market interest pre-existed — but \nNDAs and indications of interest fall short of qualified offers, and prospective buyers still have to value these particular sites above the Thor CALAP terms after accounting for development needs, contracts, and closing risk.\n\n\nOn the docket, Dkts. 180–183 (filed August 26) and the unnumbered hearing-rescheduled entry (filed August 27) each carry generic labels — \"Document,\" \"Document,\" \"Motion (Generic),\" \"Document,\" and \"Hearing Rescheduled\" — without descriptive text available in public-facing records. The motion at Dkt. 181 is the only filing that could be substantive; without confirmed document text it cannot be classified with precision, and it is noted here as unverified pending the underlying pleading's public availability. The hearing-rescheduled entry is procedurally important to the extent it affects a near-term date, but the affected hearing and its new date are not identifiable from docket metadata alone. Dkts. 185 and 186 are BNC certificates of notice and carry no independent weight. Anyone tracking a specific motion or hearing in this case should pull the underlying documents directly from the court's CM/ECF system or __[Verita Global](https://veritaglobal.net/poolin)__ to confirm the affected event.\n\n\nCreditors meet remotely tomorrow, August 28, at 9:00 a.m. ET for the Section 341 examination, where they can question company representatives under oath.\n That examination is the next concrete milestone and carries real weight for recovery analysis: it is the first opportunity for the creditor body — including the ~11,700 wallet IOU holders — to question CRO Michael DuFrayne on record regarding the pre-petition fund movements underlying the Chapter 11 trustee motion (Dkt. 103). The qualified bid deadline follows on September 8, \nwith the auction set for September 10 at 10:00 a.m. Eastern, at Archer & Greiner's offices in Voorhees, New Jersey, virtually, or at another location designated by the debtors.\n \nSale objections are due September 16 at 5:00 p.m. Eastern, and the sale hearing before Judge O'Hagan is scheduled for September 18 at 11:00 a.m.\n\n\n## Sources\n\n- [Case Summary: Poolin Chapter 11](https://bondoro.com/poolin/) — Bondoro, July 2026\n- [Poolin Auction Set for September 10 as Objection Deadline Bars Late Creditors](https://www.cryptotimes.io/2026/08/21/poolin-auction-set-for-september-10-as-objection-deadline-bars-late-creditors/) — CryptoTimes, August 21, 2026\n- [Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process](https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/) — CryptoNomist, August 21, 2026\n- [Poolin Bitcoin Mining Assets Head to Bankruptcy Auction with $52M Opening Bid](https://moneycheck.com/poolin-bitcoin-mining-assets-head-to-bankruptcy-auction-with-52m-opening-bid) — MoneyCheck, August 2026\n- [Filing Alert: Poolin Chapter 11](https://bondoro.com/poolin-filing-alert/) — Bondoro, July 23, 2026\n- [Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million](https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/) — CryptoSlate, July 24, 2026\n- [Poolin Technology Case Information](https://veritaglobal.net/poolin) — Verita Global (case administrator), accessed August 27, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "checked": "2026-09-01T17:44:47+00:00",
+      "date": "2026-09-01",
+      "updated": "2026-09-01",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "On August 31, the Bankruptcy Notification Center docketed Dkt. 191, a certificate of notice tied to an order — filing infrastructure, not a substantive event. The only docket entry with analytical weight in the current window is Dkt. 190 (filed August 28), a motion to approve a compromise under Rule 9019.",
+      "body_md": "On August 31, the Bankruptcy Notification Center docketed Dkt. 191, a certificate of notice tied to an order — filing infrastructure, not a substantive event. The only docket entry with analytical weight in the current window is Dkt. 190 (filed August 28), a motion to approve a compromise under Rule 9019. A Rule 9019 motion is substantive: it seeks court authorization for a settlement of some claim, dispute, or controversy affecting the estate, and if approved it will bind creditors to whatever terms the estate negotiated. The docket metadata does not identify the counterparty, the subject matter, or the dollar amount; the underlying pleading must be pulled directly from CM/ECF or __[Verita Global](https://veritaglobal.net/poolin)__ to assess materiality to recovery. Under the District of New Jersey's standard practice, a Rule 9019 motion carries a 21-day objection period running from the filing date, placing the objection deadline at approximately September 18 — the same date as the sale hearing before Judge O'Hagan. That overlap is operationally significant: any creditor or party in interest contesting the settlement terms must act on a compressed timeline coinciding with the most consequential hearing on the docket.\n\nThe qualified bid deadline arrives one week from today, September 8. Competing bids received by that date trigger the West Texas mining asset auction on September 10 at 10:00 a.m. Eastern at Archer & Greiner's offices in Voorhees, New Jersey (or virtually, or at another debtors-designated location). If no qualified bids clear the stalking-horse floor, the September 10 auction is a formality and Thor CALAP LLC acquires the Pyote and Tarbush sites on its existing $52 million terms. Sale objections are due September 16 at 5:00 p.m. Eastern; the sale hearing before Judge O'Hagan follows on September 18 at 11:00 a.m.\n\nThe next concrete milestone is September 8 — the qualified bid deadline — which will determine whether the auction is competitive or a single-bidder formality. The Rule 9019 compromise at Dkt. 190 warrants immediate attention from any creditor tracking recovery exposure; until the underlying motion is reviewed, its impact on estate value or claim treatment cannot be assessed.\n\n## Sources\n\n- [Case Summary: Poolin Chapter 11](https://bondoro.com/poolin/) — Bondoro, July 2026\n- [Poolin Technology Case Information](https://veritaglobal.net/poolin) — Verita Global (case administrator)\n- [Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million](https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/) — CryptoSlate, July 24, 2026\n- [Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process](https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/) — CryptoNomist, August 21, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
         {
           "title": "Case Summary: Poolin Chapter 11",
@@ -120,24 +120,9 @@
           "note": "Bondoro, July 2026"
         },
         {
-          "title": "Poolin Auction Set for September 10 as Objection Deadline Bars Late Creditors",
-          "url": "https://www.cryptotimes.io/2026/08/21/poolin-auction-set-for-september-10-as-objection-deadline-bars-late-creditors/",
-          "note": "CryptoTimes, August 21, 2026"
-        },
-        {
-          "title": "Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process",
-          "url": "https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/",
-          "note": "CryptoNomist, August 21, 2026"
-        },
-        {
-          "title": "Poolin Bitcoin Mining Assets Head to Bankruptcy Auction with $52M Opening Bid",
-          "url": "https://moneycheck.com/poolin-bitcoin-mining-assets-head-to-bankruptcy-auction-with-52m-opening-bid",
-          "note": "MoneyCheck, August 2026"
-        },
-        {
-          "title": "Filing Alert: Poolin Chapter 11",
-          "url": "https://bondoro.com/poolin-filing-alert/",
-          "note": "Bondoro, July 23, 2026"
+          "title": "Poolin Technology Case Information",
+          "url": "https://veritaglobal.net/poolin",
+          "note": "Verita Global (case administrator)"
         },
         {
           "title": "Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million",
@@ -145,9 +130,9 @@
           "note": "CryptoSlate, July 24, 2026"
         },
         {
-          "title": "Poolin Technology Case Information",
-          "url": "https://veritaglobal.net/poolin",
-          "note": "Verita Global (case administrator), accessed August 27, 2026"
+          "title": "Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process",
+          "url": "https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/",
+          "note": "CryptoNomist, August 21, 2026"
         }
       ]
     },
@@ -161,20 +146,25 @@
       ],
       "court": "United States Bankruptcy Court, D. Delaware",
       "status": "active",
-      "signature": "30bdadd96d57",
+      "signature": "60cf37f02a99",
       "activity": {
-        "filings": 5,
+        "filings": 1,
         "articles": 0,
         "latest": "2026-08-30"
       },
-      "checked": "2026-08-31T19:58:34+00:00",
-      "date": "2026-08-27",
-      "updated": "2026-08-27",
-      "moved": false,
-      "no_change_since": "2026-08-30",
-      "lede": "On August 26, Oriel Bachar filed the foreign representative's opposition to Skillz Platform Inc.'s Motion to Compel Production of Documents and Witness for Deposition (Dkt. 78, related to Dkt. 73), attaching fifteen exhibits — a substantive filing that frames the entire dispute heading into tomorrow's virtual discovery hearing before Judge Walrath (Dkt. 76, August 28, 10:00 a.m. ET, Courtroom 4). The volume of…",
-      "body_md": "On August 26, Oriel Bachar filed the foreign representative's opposition to Skillz Platform Inc.'s Motion to Compel Production of Documents and Witness for Deposition (Dkt. 78, related to Dkt. 73), attaching fifteen exhibits — a substantive filing that frames the entire dispute heading into tomorrow's virtual discovery hearing before Judge Walrath (Dkt. 76, August 28, 10:00 a.m. ET, Courtroom 4). The volume of exhibits — labeled A through O — signals that Papaya's opposition is document-intensive, likely contesting both the adequacy of its prior production and the scope of what Skillz seeks to compel, rather than offering a clean concession on either prong. That posture is consistent with the strategy telegraphed by Dkt. 77 (the amended deposition notice filed August 24): tender a witness to blunt the deposition-witness prong, then fight the document production demands on the merits.\n\nAlso filed today (August 27) are a supplement (Dkt. 81) and a related exhibit (Dkt. 84), both bearing today's date and associated — based on the docket sequence and the hearing context — with the August 28 hearing record. The agenda for that hearing was noticed twice: first by Skillz on August 26 (Dkt. 79, related to Dkts. 73–78), then by a second agenda filed today (Dkt. 82). Two agenda filings for the same hearing is mildly unusual and may reflect the supplement (Dkt. 81) requiring an updated hearing agenda, though the substance of what changed is not apparent from the docket captions alone. Dkts. 80 and 83 are certificates of service — procedural and routine, omitted.\n\nThe August 28 hearing is now the case's controlling near-term event. Judge Walrath will hear Skillz's motion to compel (Dkt. 73) on a shortened-notice schedule granted by the August 21 order (Dkt. 75), with Papaya's fifteen-exhibit opposition (Dkt. 78) squarely before her. The outcome determines how much of an evidentiary record Skillz can build before the recognition hearing — the proceeding at which Judge Walrath will decide whether to formally recognize the Israeli insolvency proceeding and whether to extend the stay protecting \nPapaya's U.S. assets from collection and enforcement\n. \nThe underlying judgment requires Papaya to pay approximately $719 million in disgorgement and approximately $10.1 million in attorneys' fees and costs\n, and Skillz's ability to contest recognition on factual grounds depends directly on the breadth of discovery it can obtain now. If Judge Walrath grants the motion to compel in full, Skillz accelerates its evidentiary build; a denial or a narrow grant limits Skillz's factual record at the recognition hearing and correspondingly improves Papaya's position on the stay. The next hard deadline is the 10:00 a.m. ET virtual hearing tomorrow.\n\n## Sources\n\n- [Papaya Gaming wins U.S. bankruptcy protection after $719 million ruling](https://www.calcalistech.com/ctechnews/article/idop8ipjs) — Calcalist / CTech, August 9, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "checked": "2026-09-01T17:44:47+00:00",
+      "date": "2026-09-01",
+      "updated": "2026-09-01",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "On August 30, a deposition notice was filed in Case No. 26-11217 as Dkt. 89, the sole entry since the August 28 discovery hearing. The docket caption — \"Deposition - Notice\" — does not disclose the noticed witness or the scheduled date.",
+      "body_md": "On August 30, a deposition notice was filed in Case No. 26-11217 as Dkt. 89, the sole entry since the August 28 discovery hearing. The docket caption — \"Deposition - Notice\" — does not disclose the noticed witness or the scheduled date. Given the posture coming out of the August 28 hearing on Skillz's motion to compel (Dkt. 73), two readings are available: Papaya has noticed a deposition consistent with its amended deposition notice strategy telegraphed by Dkt. 77, or Skillz has noticed a witness following a ruling at the August 28 hearing that granted some or all of the relief it sought. No order resolving Dkt. 73 appears on the docket as of this briefing, which itself carries information — if Judge Walrath granted the motion to compel from the bench, a written order would typically follow within a day or two, and its absence suggests either the matter was taken under advisement or the parties are working through a negotiated production protocol.\n\nThe August 28 hearing outcome remains unconfirmed on the docket. No written order on the motion to compel has appeared. The absence of a ruling order does not foreclose a bench decision, but until Dkt. 87 — filed August 28 and labeled only \"Order\" in the prior context — is confirmed to address Dkt. 73 specifically, its scope cannot be assumed. Dkt. 88, a notice of appearance filed the same day, and Dkt. 85, a minute entry, are procedural and carry no independent bearing on recovery or timing.\n\nOn the Israeli track, \nJudge Lushi-Abudi rejected Papaya's motion to convene creditors' meetings to vote on its proposed debt settlement, ruling that the plan — which relies solely on operating profits — must be strengthened\n, per the __[Firy/FIRY press release carried by StockTitan](https://www.stocktitan.net/news/FIRY/israeli-court-says-papaya-gaming-should-improve-its-debt-settlement-81are4y0jeia.html)__ dated August 26. \nThe court stated that Papaya should improve its proposed debt settlement by adding funding beyond just operating profits, and at the August 25 hearing the judge mentioned that the proposal could also be improved by increasing the amount paid into the arrangement following its approval.\n That dynamic reinforces Skillz's interest in maximizing the Delaware discovery record: the broader and more granular the picture of Papaya's financial position before Judge Walrath rules on recognition, the stronger Skillz's factual foundation for contesting the terms of any plan that surfaces in the Israeli proceeding. The next identifiable milestone is the appearance of a written order on Dkt. 73 or a further scheduling directive from Judge Walrath setting the recognition hearing date.\n\n## Sources\n\n- [Israeli court says Papaya Gaming should improve its debt settlement plan](https://www.stocktitan.net/news/FIRY/israeli-court-says-papaya-gaming-should-improve-its-debt-settlement-81are4y0jeia.html) — StockTitan (Firy/FIRY press release), August 26, 2026\n- [Papaya Gaming wins U.S. bankruptcy protection after $719 million ruling](https://www.calcalistech.com/ctechnews/article/idop8ipjs) — Calcalist / CTech, August 9, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
+        {
+          "title": "Israeli court says Papaya Gaming should improve its debt settlement plan",
+          "url": "https://www.stocktitan.net/news/FIRY/israeli-court-says-papaya-gaming-should-improve-its-debt-settlement-81are4y0jeia.html",
+          "note": "StockTitan (Firy/FIRY press release), August 26, 2026"
+        },
         {
           "title": "Papaya Gaming wins U.S. bankruptcy protection after $719 million ruling",
           "url": "https://www.calcalistech.com/ctechnews/article/idop8ipjs",
@@ -193,13 +183,13 @@
       ],
       "court": "Bankr. D. Del.",
       "status": "active",
-      "signature": "66d856904356",
+      "signature": "bcce51c3398f",
       "activity": {
-        "filings": 1,
+        "filings": 0,
         "articles": 0,
         "latest": "2026-08-28"
       },
-      "checked": "2026-08-31T19:58:34+00:00",
+      "checked": "2026-09-01T17:44:47+00:00",
       "date": "2026-08-27",
       "updated": "2026-08-27",
       "moved": false,
@@ -240,7 +230,7 @@
         "articles": 0,
         "latest": "2026-08-25"
       },
-      "checked": "2026-08-31T19:58:34+00:00",
+      "checked": "2026-09-01T17:44:47+00:00",
       "date": "2026-08-26",
       "updated": "2026-08-26",
       "moved": false,
@@ -265,7 +255,7 @@
         "articles": 0,
         "latest": "2026-08-20"
       },
-      "checked": "2026-08-31T19:58:34+00:00",
+      "checked": "2026-09-01T17:44:47+00:00",
       "date": "2026-08-14",
       "updated": "2026-08-14",
       "moved": false,

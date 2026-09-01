@@ -3,6 +3,39 @@
   "case_name": "Bartz v. Anthropic",
   "items": [
     {
+      "date": "2026-09-01",
+      "updated": "2026-09-01",
+      "lede": "On August 31, Brandt Silverkorn of Edelson PC / Oppenheim + Zebrak filed a Transcript Designation Form (Dkt. 686) in the district court — the standard mechanism by which an appellant identifies, for the Ninth Circuit's record, which trial or hearing transcripts are to be prepared and transmitted as part of the appellate record. The filing is procedural, but in context it is worth flagging: it is the first concrete…",
+      "body_md": "On August 31, Brandt Silverkorn of Edelson PC / Oppenheim + Zebrak filed a Transcript Designation Form (Dkt. 686) in the district court — the standard mechanism by which an appellant identifies, for the Ninth Circuit's record, which trial or hearing transcripts are to be prepared and transmitted as part of the appellate record. The filing is procedural, but in context it is worth flagging: it is the first concrete record-assembly step taken in either of the two pending fee appeals since the USCA Case Number entries (Dkts. 684–685) confirmed the Ninth Circuit had opened separate dockets for No. 26-5391 (Edelson PC / Oppenheim + Zebrak) and No. 26-5455 (Cowan DeBaets Abrahams & Sheppard LLP). \nNo. 26-5391, filed August 18, appeals from the July 20 judgment (Dkt. 680) including all prior orders, with Edelson PC and Oppenheim + Zebrak intending to focus on the fee and expenses award.\n \nNo. 26-5455, filed August 19, also appeals from the July 20 judgment but is expressly limited to the district court's order granting in part the motion for attorneys' fees.\n The Transcript Designation Form was filed by Silverkorn — Edelson / O+Z counsel — which means Dkt. 686 is attributable to No. 26-5391; nothing on the district docket as of August 31 reflects a corresponding transcript designation from Cowan DeBaets.\n\nThe significance is limited but real. A transcript designation is procedural under FRAP 10(b) and Ninth Circuit Rule 10-3; it does not affect any party's legal rights or the class's recovery posture directly. It does, however, signal that Edelson / O+Z is actively prosecuting its appeal and has moved to the record-preparation phase. Cowan DeBaets' parallel absence from the district docket through August 31 leaves open whether that firm has filed its own designation directly on the Ninth Circuit docket (where it would not appear here) or has not yet done so; that distinction matters because a failure to timely designate transcripts can draw a Ninth Circuit clerk's default notice. Neither the district docket nor any available public source confirms the status of Cowan DeBaets' transcript designation. No party has moved for consolidation of the two appeals, and no consolidation order has appeared on the district court's docket.\n\nThe class's recovery posture is unchanged. Anthropic's payment obligations run independently of the fee appeals — no party has moved for a stay — and the $450 million first installment (Scheduled Payment 1) remains due September 25, 2026. The next concrete milestones are: (1) Anthropic's $450 million Scheduled Payment 1 on September 25; and (2) Ninth Circuit scheduling orders establishing opening-brief deadlines for Nos. 26-5391 and 26-5455, which the circuit clerk typically issues within the first weeks after a case opens and which will set the appellate briefing clock for both fee disputes.\n\n## Sources\n\n- [Bartz v. Anthropic PBC — CourtListener Docket (N.D. Cal. 4:24-cv-05417)](https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/) — CourtListener (PACER/RECAP), last updated Aug. 30, 2026\n- [Scrivener's Error — Bartz Appeal Analysis](https://scrivenerserror.blogspot.com/) — Scrivener's Error, August 2026\n- [Firms Cut From $101M Anthropic Atty Fees Appeal To 9th Circ.](https://www.law360.com/ip/articles/2515634) — Law360, August 20, 2026\n- [Firms Appeal After Exclusion From Fees Award in Anthropic Case](https://news.bloomberglaw.com/legal-ops-and-tech/firms-appeal-after-exclusion-from-fees-award-in-anthropic-case) — Bloomberg Law, August 19, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Bartz v. Anthropic PBC — CourtListener Docket (N.D. Cal. 4:24-cv-05417)",
+          "url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
+          "note": "CourtListener (PACER/RECAP), last updated Aug. 30, 2026"
+        },
+        {
+          "title": "Scrivener's Error — Bartz Appeal Analysis",
+          "url": "https://scrivenerserror.blogspot.com/",
+          "note": "Scrivener's Error, August 2026"
+        },
+        {
+          "title": "Firms Cut From $101M Anthropic Atty Fees Appeal To 9th Circ.",
+          "url": "https://www.law360.com/ip/articles/2515634",
+          "note": "Law360, August 20, 2026"
+        },
+        {
+          "title": "Firms Appeal After Exclusion From Fees Award in Anthropic Case",
+          "url": "https://news.bloomberglaw.com/legal-ops-and-tech/firms-appeal-after-exclusion-from-fees-award-in-anthropic-case",
+          "note": "Bloomberg Law, August 19, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-08-31"
+      }
+    },
+    {
       "date": "2026-08-26",
       "updated": "2026-08-26",
       "lede": "On August 25, the district court clerk docketed Dkt. 685 — a second USCA Case Number entry — confirming that the Ninth Circuit has opened at least one additional appellate proceeding arising from the fee appeals filed by Edelson PC / Oppenheim + Zebrak (Dkt. 682, August 18) and Cowan DeBaets Abrahams & Sheppard LLP (Dkt. 683, August 19). Dkt. 684, filed August 21, was the first such notation; the appearance of a…",

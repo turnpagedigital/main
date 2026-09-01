@@ -15,16 +15,16 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-09-01",
-    "meta_fetched_at": "2026-09-01T14:57:38.093629+00:00",
-    "fetched_at": "2026-09-01T14:57:38.093629+00:00",
+    "meta_fetched_at": "2026-09-01T17:43:25.828341+00:00",
+    "fetched_at": "2026-09-01T17:43:25.828341+00:00",
     "as_of": "Sep 1, 2026",
     "backfilled": true,
-    "new_in_72h": 8,
+    "new_in_72h": 18,
     "recent": [
       {
-        "entry_number": 200,
+        "entry_number": 210,
         "date_filed": "2026-09-01",
-        "time_filed": "09:58:35",
+        "time_filed": "12:26:40",
         "date_display": "Sep 1, 2026",
         "description": "Appear pro hac vice",
         "is_new": true,
@@ -32,27 +32,127 @@
         "doc_url": ""
       },
       {
-        "entry_number": 199,
+        "entry_number": 209,
         "date_filed": "2026-09-01",
-        "time_filed": "09:35:25",
+        "time_filed": "12:25:53",
         "date_display": "Sep 1, 2026",
-        "description": "Certificate of No Objection",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 198,
+        "entry_number": 208,
         "date_filed": "2026-09-01",
-        "time_filed": "09:32:56",
+        "time_filed": "12:09:35",
         "date_display": "Sep 1, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "description": "Agenda of Matters Scheduled for Hearing - Notice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 210,
+        "date_filed": "2026-09-01",
+        "time_filed": "12:26:40",
+        "date_display": "Sep 1, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 209,
+        "date_filed": "2026-09-01",
+        "time_filed": "12:25:53",
+        "date_display": "Sep 1, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 208,
+        "date_filed": "2026-09-01",
+        "time_filed": "12:09:35",
+        "date_display": "Sep 1, 2026",
+        "description": "Agenda of Matters Scheduled for Hearing - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 207,
+        "date_filed": "2026-09-01",
+        "time_filed": "11:53:43",
+        "date_display": "Sep 1, 2026",
+        "description": "Pro Hac Vice Admission - Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 206,
+        "date_filed": "2026-09-01",
+        "time_filed": "11:43:48",
+        "date_display": "Sep 1, 2026",
+        "description": "Pro Hac Vice Admission - Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 205,
+        "date_filed": "2026-09-01",
+        "time_filed": "11:29:34",
+        "date_display": "Sep 1, 2026",
+        "description": "Exhibit",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.205.0.pdf"
+      },
+      {
+        "entry_number": 204,
+        "date_filed": "2026-09-01",
+        "time_filed": "11:22:23",
+        "date_display": "Sep 1, 2026",
+        "description": "Exhibit",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 203,
+        "date_filed": "2026-09-01",
+        "time_filed": "11:20:26",
+        "date_display": "Sep 1, 2026",
+        "description": "Exhibit",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 202,
+        "date_filed": "2026-09-01",
+        "time_filed": "11:10:20",
+        "date_display": "Sep 1, 2026",
+        "description": "Exhibit",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 201,
+        "date_filed": "2026-09-01",
+        "time_filed": "11:06:06",
+        "date_display": "Sep 1, 2026",
+        "description": "Exhibit",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 200,
         "date_filed": "2026-09-01",

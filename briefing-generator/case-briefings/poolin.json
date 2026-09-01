@@ -3,6 +3,39 @@
   "case_name": "Poolin",
   "items": [
     {
+      "date": "2026-09-01",
+      "updated": "2026-09-01",
+      "lede": "On August 31, the Bankruptcy Notification Center docketed Dkt. 191, a certificate of notice tied to an order — filing infrastructure, not a substantive event. The only docket entry with analytical weight in the current window is Dkt. 190 (filed August 28), a motion to approve a compromise under Rule 9019.",
+      "body_md": "On August 31, the Bankruptcy Notification Center docketed Dkt. 191, a certificate of notice tied to an order — filing infrastructure, not a substantive event. The only docket entry with analytical weight in the current window is Dkt. 190 (filed August 28), a motion to approve a compromise under Rule 9019. A Rule 9019 motion is substantive: it seeks court authorization for a settlement of some claim, dispute, or controversy affecting the estate, and if approved it will bind creditors to whatever terms the estate negotiated. The docket metadata does not identify the counterparty, the subject matter, or the dollar amount; the underlying pleading must be pulled directly from CM/ECF or __[Verita Global](https://veritaglobal.net/poolin)__ to assess materiality to recovery. Under the District of New Jersey's standard practice, a Rule 9019 motion carries a 21-day objection period running from the filing date, placing the objection deadline at approximately September 18 — the same date as the sale hearing before Judge O'Hagan. That overlap is operationally significant: any creditor or party in interest contesting the settlement terms must act on a compressed timeline coinciding with the most consequential hearing on the docket.\n\nThe qualified bid deadline arrives one week from today, September 8. Competing bids received by that date trigger the West Texas mining asset auction on September 10 at 10:00 a.m. Eastern at Archer & Greiner's offices in Voorhees, New Jersey (or virtually, or at another debtors-designated location). If no qualified bids clear the stalking-horse floor, the September 10 auction is a formality and Thor CALAP LLC acquires the Pyote and Tarbush sites on its existing $52 million terms. Sale objections are due September 16 at 5:00 p.m. Eastern; the sale hearing before Judge O'Hagan follows on September 18 at 11:00 a.m.\n\nThe next concrete milestone is September 8 — the qualified bid deadline — which will determine whether the auction is competitive or a single-bidder formality. The Rule 9019 compromise at Dkt. 190 warrants immediate attention from any creditor tracking recovery exposure; until the underlying motion is reviewed, its impact on estate value or claim treatment cannot be assessed.\n\n## Sources\n\n- [Case Summary: Poolin Chapter 11](https://bondoro.com/poolin/) — Bondoro, July 2026\n- [Poolin Technology Case Information](https://veritaglobal.net/poolin) — Verita Global (case administrator)\n- [Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million](https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/) — CryptoSlate, July 24, 2026\n- [Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process](https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/) — CryptoNomist, August 21, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Case Summary: Poolin Chapter 11",
+          "url": "https://bondoro.com/poolin/",
+          "note": "Bondoro, July 2026"
+        },
+        {
+          "title": "Poolin Technology Case Information",
+          "url": "https://veritaglobal.net/poolin",
+          "note": "Verita Global (case administrator)"
+        },
+        {
+          "title": "Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million",
+          "url": "https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/",
+          "note": "CryptoSlate, July 24, 2026"
+        },
+        {
+          "title": "Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process",
+          "url": "https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/",
+          "note": "CryptoNomist, August 21, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-08-31"
+      }
+    },
+    {
       "date": "2026-08-27",
       "updated": "2026-08-27",
       "lede": "Today, the nonbinding indications of interest deadline expires — the first hard gate in the sale process since Judge O'Hagan entered the bidding procedures order on August 17. Prospective buyers seeking any portion of the assets had until today to submit nonbinding expressions of interest, with binding qualified bids due September 8.",
