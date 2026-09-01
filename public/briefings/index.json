@@ -46,7 +46,8 @@
         "AI Copyright",
         "Tracker",
         "Advisory"
-      ]
+      ],
+      "active": false
     },
     {
       "slug": "2026-08-03-anthropic-settlement-how-much-per-book",
