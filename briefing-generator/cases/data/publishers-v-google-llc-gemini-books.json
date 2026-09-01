@@ -5291,18 +5291,11 @@
       "summary": "Slashdot aggregated Guardian reporting that publishers argue Google repurposed books supplied for limited services—such as displaying searchable snippets or selling ebooks via Google Play—not for copying into commercial AI training. The complaint illustrates market-harm claims by noting Gemini can generate a 100-page novel in 20 minutes for 39 cents, directly substituting for original works."
     },
     {
-      "headline": "Publishers sue Google over alleged use of books to train AI models",
-      "url": "https://www.france24.com/en/technology/20260715-publishers-sue-google-over-alleged-use-of-books-to-train-ai-models",
-      "source": "France 24",
+      "headline": "Hatchette and Elsevier Sue Google for Using Their Work to Train AI",
+      "url": "https://gizmodo.com/hatchette-and-elsevier-sue-google-for-using-their-work-to-train-ai-2000785480",
+      "source": "Gizmodo",
       "date": "2026-07-15",
-      "summary": "Multiple book publishers sued Google in U.S. federal court in New York for allegedly copying copyrighted works to train Gemini and then generating content that directly competes with human authors. The plaintiffs requested an injunction and unspecified damages, with the complaint arguing Gemini can produce a 100-page book in 20 minutes for $0.39, a scale no publisher or author can match."
-    },
-    {
-      "headline": "Publishers accuse Google of stealing copyrighted content in new lawsuit",
-      "url": "https://techxplore.com/news/2026-07-publishers-accuse-google-copyrighted-content.html",
-      "source": "TechXplore",
-      "date": "2026-07-15",
-      "summary": "The class action alleges Google secretly copied millions of works provided to Google Books for limited purposes and used them to train Gemini, with the AI then generating outputs that directly compete with the original authors. Plaintiffs seek injunctive relief and damages amid ongoing mixed U.S. court rulings on AI copyright disputes."
+      "summary": "Major publishers Hachette, Cengage, and Elsevier, joined by Scott Turow, sued Google in the Southern District of New York alleging Gemini was trained on millions of copyrighted works obtained without permission or payment. The complaint argues Gemini can generate AI substitutes — such as a 100-page murder mystery in 20 minutes for $0.39 — that directly compete with and undercut the original works."
     },
     {
       "headline": "Google Faces Another AI Training Lawsuit From Major Publishers",
