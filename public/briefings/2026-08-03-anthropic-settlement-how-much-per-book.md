@@ -2,7 +2,9 @@
 
 About $3,000 per work. That is four times the $750 statutory minimum for copyright infringement, and it is the court's estimate, not a promise of what lands in your account.
 
-Attorneys' fees and administration come out of the same $1.5 billion fund. Allocation rules decide how a work's payment is split when more than one rights holder claims it. And the money arrives in installments that run into 2027. Here is the arithmetic.
+Attorneys' fees and administration come out of the same $1.5 billion fund. Allocation rules decide how a work's payment is split when more than one rights holder claims it. And the money was scheduled to arrive in installments that run into 2027 but appeals have now put a pause on all of this
+
+Here is the arithmetic.
 
 ## Where the \~$3,000 figure comes from
 
@@ -14,15 +16,7 @@ The certified class covers 482,460 works on the settlement's Works List: books w
 
 **Administration costs.** Processing 480,000+ claims through JND Legal Administration is not free, and those costs come from the fund.
 
-**Allocation splits.** Under the Plan of Allocation, the default for most traditionally published books is 50/50 between author and publisher. Self-published authors who own all rights receive the full amount. Textbook and educational works, where contracts vary, can be adjudicated individually, with a special master resolving disputes. The Authors Guild's settlement guide covers these mechanics in depth.
-
-## What could make your number bigger
-
-**Multiple works.** The payout is per work, not per person. An author with 10 eligible works is looking at roughly ten times the per-work figure.
-
-**Fund interest.** The $1.5 billion accrues interest until it is fully distributed. The fund is non-reversionary: none of it goes back to Anthropic.
-
-**Unclaimed works.** 91.3% of works had been claimed as of April 2026, an extraordinarily high rate. Whatever remains unclaimed stays in the fund and is distributed to those who did claim.
+**Allocation splits.** Under the Plan of Allocation, the default for most traditionally published books is 50/50 between author and publisher. Self-published authors who own all rights receive the full amount. Textbook and educational works, where contracts vary, can be adjudicated individually, with a special master resolving disputes. 
 
 ## When the money actually arrives
 
@@ -30,7 +24,7 @@ Payments follow the installment schedule. The next milestones are August 21 and 
 
 ## If you'd rather have a fixed number than an estimate
 
-Every figure above is an estimate until the administrator cuts your check, and the last check is more than a year out. Claimants who would rather have a known amount now can sell their claim to Turnpage: a fixed cash price today, in place of an installment schedule running into 2027.
+Every figure above is an estimate until the administrator cuts your check, and the last check is more than a year out. Claimants who would rather have a known amount now can sell their claim to Turnpage: a fixed cash price today, in place of an installment schedule running into 2027 and beyond (depending on appeals).
 
 Why wait?
 
