@@ -15,13 +15,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
-    "date_last_filing": "2026-08-28",
-    "meta_fetched_at": "2026-08-28T18:48:23.002527+00:00",
-    "fetched_at": "2026-09-01T17:43:51.133965+00:00",
+    "date_last_filing": "2026-09-01",
+    "meta_fetched_at": "2026-09-01T18:36:49.387557+00:00",
+    "fetched_at": "2026-09-01T18:36:49.387557+00:00",
     "as_of": "Sep 1, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 1328,
+        "date_filed": "2026-09-01",
+        "time_filed": "14:19:31",
+        "date_display": "Sep 1, 2026",
+        "description": "Certificate of Mailing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1327,
+        "date_filed": "2026-09-01",
+        "time_filed": "13:38:30",
+        "date_display": "Sep 1, 2026",
+        "description": "Certificate of Mailing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1326,
         "date_filed": "2026-08-28",
@@ -31,29 +51,29 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 1325,
-        "date_filed": "2026-08-27",
-        "time_filed": "13:46:04",
-        "date_display": "Aug 27, 2026",
-        "description": "Rescheduled Hearing - Notice",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 1323,
-        "date_filed": "2026-08-21",
-        "time_filed": "23:30:12",
-        "date_display": "Aug 21, 2026",
-        "description": "Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1328,
+        "date_filed": "2026-09-01",
+        "time_filed": "14:19:31",
+        "date_display": "Sep 1, 2026",
+        "description": "Certificate of Mailing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1327,
+        "date_filed": "2026-09-01",
+        "time_filed": "13:38:30",
+        "date_display": "Sep 1, 2026",
+        "description": "Certificate of Mailing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1326,
         "date_filed": "2026-08-28",
