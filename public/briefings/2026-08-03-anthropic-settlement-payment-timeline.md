@@ -1,50 +1,20 @@
 # Anthropic Settlement Payment Timeline: When Will You Actually Get Paid?
 
-The short answer: the Bartz v. Anthropic settlement received final approval on July 20, 2026, and the money was set to move on a fixed schedule.
+The Bartz v. Anthropic requires Anthropic to fund on a fixed schedule: 
 
-Then, on August 18, 2026, a notice of appeal was filed ([what the appeal means for your payment](/briefings/2026-08-03-anthropic-settlement-appeal-risk)) — the milestones below are now **uncertain until the administrator or court says otherwise**. The schedule as written: administrator mailing August 21, 2026; Anthropic's first **$450 million installment September 25, 2026**; a second wave of checks **October 9, 2026**; final $450 million installment **September 25, 2027**.
+1. **$300 million** within five business days of preliminary approval **(paid October 2, 2025)**
+2. **$300 million** within five business days of final approval
+3. **$450 million** ("Scheduled Payment 1") no later than twelve months after preliminary approval **(September 25, 2026);** 
+4. **$450 million** ("Scheduled Payment 2") no later than twenty-four months after preliminary approval **(September 2027).** 
 
-## The verified schedule, in order
+If Anthropic closes a "Qualified Financing" — a preferred stock raise yielding at least $5 billion in gross proceeds (its Series F round was expressly carved out) — or a "Liquidity Event" (an acquisition, or an IPO raising at least $10 billion), the next $450 million installment comes due within 30 days of the later of the closing of that financing and final approval. Anthropic's $30 billion Series G round, which closed in February 2026, crossed that threshold, so the third installment was accelerated from September 2026 to within 30 days of final approval. A second qualifying raise before September 2027 would pull the final installment forward the same way.
 
-| Date | What happens |
-|---|---|
-| October 2025 – July 2026 | Anthropic's first two $300 million tranches went into the fund — one last October, one due within a week of final approval (per the Authors Guild's settlement guide) |
-| July 20, 2026 | Judge Araceli Martínez-Olguín granted final approval of the $1.5 billion settlement and entered judgment |
-| **August 18, 2026** | **A notice of appeal to the Ninth Circuit was filed (Dkt. 682)** — [what the appeal means for your payment](/briefings/2026-08-03-anthropic-settlement-appeal-risk). Milestones below are now subject to the appeal |
-| August 21, 2026 | The Settlement Administrator sends additional checks to non-filing claimants under the Plan of Allocation *(status uncertain pending the appeal — watch the administrator's site)* |
-| September 25, 2026 | Anthropic pays the first scheduled $450 million installment into the fund (12 months after preliminary approval) |
-| October 9, 2026 | Second wave of claimant checks scheduled |
-| September 25, 2027 | Anthropic's second $450 million installment — the final scheduled payment into the fund |
+Based on the settlement, funds were expected to start flowing within approximately one month after the settlement was approved on a final basis. That settlement received final approval on July 20, 2026. Payments were scheduled to start flowing as soon as August 20, 2026 — one business day after the 30-day appeal window closed on August 19 — with additional installments paid into late 2027, but two major factors are putting on the brakes.
 
-Source for the milestone dates: the Independent Publishers Guild's post-approval timeline, drafted against the actual July 20 order, plus the court's final approval order itself. Links at the bottom.
+First, the administrator (JND Legal Administration) has to run the plan of allocation (which dictates how payments are calculated) across a works list of 482,460 works with a 91.3% claim filing rate, which the court described as "magnitudes above the average for class action cases." Processing that many claims, resolving disputes over who owns what, and cutting checks in waves takes months. Expect a longer timeframe simply due to the number of claimants.
 
-## Why haven't checks arrived yet?
+Second, on August 18, 2026, a group of law firms that sought to be compensated out of the settlement fund filed a notice of appeal challenging the court's rejection of their $75 million fee request, throwing a wrench in the payment schedule ([what the appeal means for your payment](/briefings/2026-08-03-anthropic-settlement-appeal-risk)). While the final approval order anticipated challenges to the settlement related to attorney fees and sought to protect against such challenges holding up payments to claimholders, the breadth of the appeal is significant, meaning that the law firms are likely to hold up the entire distribution scheme. Given that these firms' cost of litigation is effectively their time, they have little incentive to back down and by slowing the entire machine of payments, they can inflict maximum pain in an effort to extract a larger settlement. 
 
-Final approval is the legal green light, not the payment itself. The administrator (JND Legal Administration) has to run the Plan of Allocation across a Works List of **482,460 works** with a **91.3% claims rate** — a volume the court itself called "magnitudes above the average for class action cases." Processing that many claims, resolving disputes over who owns what, and cutting checks in waves takes months. The Authors Guild has said it looks forward to distribution commencing, but as of this writing no specific first-payout date has been announced.
+While the appeal pauses distributions, Anthropic is still required pay into the settlement fund (this is great news for claimants, because the funds will be there once payments start to flow). The fund itself fills in installments — 50% of the remaining balance arrives September 2026 (accelerated to August under the financing trigger), the rest September 2027 — so payments to claimants are structured in waves rather than one lump sum. If your recovery spans multiple works, expect the money to arrive in stages stretching into late 2027. If your rights are shared with other authors or you and your publisher dispute your respective allocations in respect of a work, expect a longer distribution timeline.
 
-## Will you get everything at once?
-
-Unlikely. The fund itself fills in installments — half of the remaining balance arrives September 2026, the rest September 2027 — so payments to claimants are structured in waves rather than one lump sum. If your recovery spans multiple works, expect the money to arrive in stages stretching into late 2027.
-
-## If the schedule doesn't work for you
-
-For most claimants, the right move is simply to wait — the money arrives without anyone's help. Claimants who need a fixed amount sooner do have options: claims can be sold or advanced against, [as explained here](/briefings/2026-08-03-sell-your-anthropic-settlement-claim). Turnpage buys these claims, and a [free quote](/copyright) is available if a number would help you decide.
-
-## Related reading
-
-- [The Anthropic settlement: a plain-English guide for authors](/briefings/2026-08-03-anthropic-settlement-author-guide)
-- [How much is the Anthropic settlement per book?](/briefings/2026-08-03-anthropic-settlement-how-much-per-book)
-- [Will an appeal delay your Anthropic settlement payment?](/briefings/2026-08-03-anthropic-settlement-appeal-risk)
-- [Missed the claims deadline? Your options now](/briefings/2026-08-03-missed-anthropic-settlement-deadline)
-- [Every major AI copyright lawsuit, tracked](/briefings/2026-08-03-ai-copyright-lawsuit-tracker)
-
-## Sources
-
-- [Court Grants Final Approval of $1.5 Billion Anthropic Copyright Settlement](https://authorsguild.org/news/court-grants-final-approval-anthropic-copyright-settlement/) — Authors Guild, July 20, 2026
-- [Bartz v. Anthropic Detailed Timeline Post Preliminary Approval](https://www.independentpublishersguild.com/Common/Uploaded%20files/IPG%20document%20library/IPG%20email%20documents/Anthropic%20settlement_Timeline.pdf) — Independent Publishers Guild
-- [Order on Final Approval — Bartz v. Anthropic (PDF)](https://cdn.arstechnica.net/wp-content/uploads/2026/07/Bartz-v-Anthropic-Order-Approving-Settlement-7-20-26.pdf) — N.D. Cal., July 20, 2026
-- [Bartz v. Anthropic Settlement Receives Final Approval](https://www.authorsalliance.org/2026/07/21/bartz-v-anthropic-settlement-receives-final-approval/) — Authors Alliance, July 21, 2026
-
----
-
-*Turnpage Digital Markets is an independent claims buyer. We are not the court, class counsel, or the settlement administrator (JND Legal Administration), and we are not affiliated with any party to Bartz v. Anthropic. For official settlement information, see the administrator's website. This briefing is market intelligence, not legal or financial advice.*
+Waiting means you'll eventually get your funds, but the value of that final distribution today is far less given the time value of money. And, there's a possibility that if the law firms prevail on appeal, your ultimate settlement check might be smaller than you anticipated. If you have filed your claim and you simply wait, you'll eventually collect. The alternative? Turnpage is buying the right to settlement proceeds at a discount today for those rights holders who prefer to collect a fixed amount sooner and eliminate the wait and recovery risk. You can learn more [here](/briefings/2026-08-03-sell-your-anthropic-settlement-claim). Simply upload your claim form for a [free quote](/copyright) and if you decide to move forward, you can have funds within 1-2 days. We've already purchased multiple claims with a proven process.  
