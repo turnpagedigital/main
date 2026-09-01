@@ -1,6 +1,6 @@
 # Anthropic Settlement Payment Timeline: When Will You Actually Get Paid?
 
-The Bartz v. Anthropic requires Anthropic to fund on a fixed schedule: 
+The Bartz v. Anthropic class action settlement requires Anthropic to fund on a fixed schedule: 
 
 1. **$300 million** within five business days of preliminary approval **(paid October 2, 2025)**
 2. **$300 million** within five business days of final approval
