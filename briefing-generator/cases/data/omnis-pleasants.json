@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-09-01",
-    "meta_fetched_at": "2026-09-01T21:50:43.396223+00:00",
-    "fetched_at": "2026-09-02T09:41:40.054526+00:00",
+    "meta_fetched_at": "2026-09-02T12:16:18.386045+00:00",
+    "fetched_at": "2026-09-02T12:16:18.386045+00:00",
     "as_of": "Sep 2, 2026",
-    "backfilled": true,
+    "backfilled": false,
     "new_in_72h": 25,
     "recent": [
       {
@@ -26,10 +26,10 @@
         "date_filed": "2026-09-01",
         "time_filed": "17:19:38",
         "date_display": "Sep 1, 2026",
-        "description": "Agenda of Matters Scheduled for Hearing - Notice",
+        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing (related document(s)208) Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 11:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Faris, S. Alexander) (Entered: 09/01/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.217.0.pdf"
       },
       {
         "entry_number": 216,
@@ -58,10 +58,10 @@
         "date_filed": "2026-09-01",
         "time_filed": "17:19:38",
         "date_display": "Sep 1, 2026",
-        "description": "Agenda of Matters Scheduled for Hearing - Notice",
+        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing (related document(s)208) Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 11:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Faris, S. Alexander) (Entered: 09/01/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.217.0.pdf"
       },
       {
         "entry_number": 216,
@@ -91,7 +91,7 @@
         "description": "Motion for Leave - Motion of the Prepetition Secured Parties for Leave to File Reply of the Prepetition Secured Parties to Objections to the Debtor's Bidding Procedures Motion and Reservation of Rights with Respect to Cash Collateral (related document(s)86, 168, 169, 171, 173, 182, 213) Filed by RG Energy LLC, TRAG LLC. Hearing scheduled for 9/3/2026 at 11:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Martin, R.) (Entered: 09/01/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.214.0.pdf"
       },
       {
         "entry_number": 213,
@@ -101,7 +101,7 @@
         "description": "Reply of the Prepetition Secured Parties to Objections to the Debtor's Bidding Procedures Motion and Reservation of Rights with Respect to Cash Collateral (related document(s)86, 168, 169, 171, 173, 182) Filed by RG Energy LLC, TRAG LLC (Attachments: # 1 Exhibit 1) (Martin, R.) (Entered: 09/01/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.213.0.pdf"
       },
       {
         "entry_number": 212,
@@ -258,7 +258,7 @@
         "date_filed": "2026-08-31",
         "time_filed": "16:06:02",
         "date_display": "Aug 31, 2026",
-        "description": "Affidavit/Declaration of Service",
+        "description": "Affidavit/Declaration of Service Supplemental re: Notice of Zoom-based Section 341 Meeting (Docket No. 75), Notice of Chapter 11 Bankruptcy Case (Docket No. 76), Debtors Motion for Entry of an Order (I) Approving the Auction and Bidding Procedures for the Sale of the Debtors Assets, (II) Scheduling Certain Dates and Deadlines Related Thereto, (III) Approving the Form and Manner of Notice Thereof, (IV) Authorizing the Debtor to Designate a Stalking Horse Bidder and Offer Bid Protections Related Thereto, (V) Establishing Notice and Procedures for the Assumption and Assignment of Contracts and Leases, (VI) Approving the Sale of Assets, and (VII) Granting Related Relief (Docket No. 86). Filed by Stretto, Inc.. (related document(s)75, 76, 86) (Betance, Sheryl) (Entered: 08/31/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -268,7 +268,7 @@
         "date_filed": "2026-08-31",
         "time_filed": "13:16:17",
         "date_display": "Aug 31, 2026",
-        "description": "Employ (Application)",
+        "description": "Order Authorizing the Employment of Stretto, Inc. as Administrative Advisor Effective as of the Petition Date (Related Doc # 79, 192) Order Signed on 8/31/2026. (Mml) (Entered: 08/31/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -278,7 +278,7 @@
         "date_filed": "2026-08-31",
         "time_filed": "13:07:18",
         "date_display": "Aug 31, 2026",
-        "description": "Order Approving Motion Regarding Interim Compensation Procedures",
+        "description": "Order (I) Establishing Procedures for Interim Compensation and Reimbursement of Expenses of Professionals and (II) Granting Related Relief (Related Doc # 78, 191) Order Signed on 8/31/2026. (Mml) (Entered: 08/31/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -288,7 +288,7 @@
         "date_filed": "2026-08-31",
         "time_filed": "13:00:25",
         "date_display": "Aug 31, 2026",
-        "description": "Extend Time",
+        "description": "Order (I) Extending the Time for the Debtor to File Its Schedules of Assets and Liabilities and Statements of Financial Affairs and (II) Granting Related Relief (Related Doc # 133, 190) Order Signed on 8/31/2026. (Mml) (Entered: 08/31/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -298,7 +298,7 @@
         "date_filed": "2026-08-31",
         "time_filed": "09:27:13",
         "date_display": "Aug 31, 2026",
-        "description": "Notice of Service",
+        "description": "Notice of Service of Discovery Filed by Hodson Investments, LLC, Omnis Global Technologies, LLC, Simon K. Hodson, Element H Data, LLC, StarSource, LLC, Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 08/31/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -2423,7 +2423,8 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": {
     "name": "Stretto",
