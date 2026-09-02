@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { buildRedirects } from "../functions/api/admin/page-path.js";
+import { buildRedirects } from "../functions/api/admin/_routes.js";
 
 /* public/_redirects maintenance for page URL renames. */
 
@@ -33,4 +33,17 @@ test("replaces a stale rule for the same source path", () => {
   const existing = "/old /somewhere-else 301\n";
   const out = buildRedirects(existing, "/old", "/new");
   assert.equal(out, "/old /new 301\n");
+});
+
+test("keeps catch-all rules last so appended 301s still fire", () => {
+  // Pages matches top-down, first match wins: a 301 written below the SPA
+  // fallback would never be reached.
+  const existing = "/a /b 301\n/* /index.html 200\n";
+  const out = buildRedirects(existing, "/old", "/new");
+  assert.equal(out, "/a /b 301\n/old /new 301\n/* /index.html 200\n");
+});
+
+test("briefing slug rename produces a usable /briefings 301", () => {
+  const out = buildRedirects("/* /index.html 200\n", "/briefings/2026-08-03-x", "/briefings/2026-09-02-x");
+  assert.equal(out, "/briefings/2026-08-03-x /briefings/2026-09-02-x 301\n/* /index.html 200\n");
 });

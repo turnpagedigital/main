@@ -4,8 +4,10 @@ import {
   commitFileToGitHub,
   commitFilesToGitHub,
 } from "./_github.js";
+import { buildRedirects } from "./_routes.js";
 
 const INDEX_PATH    = "public/briefings/index.json";
+const REDIRECTS_PATH = "public/_redirects";
 const VALID_TYPES   = ["briefing", "article", "announcement"];
 const VALID_AUTHORS = ["Turnpage Intelligence", "Andrew Glantz"];
 
@@ -58,12 +60,26 @@ export async function onRequest({ request, env }) {
       const err = validateItem(item);
       if (err) return jsonResponse({ ok: false, error: err }, 400);
 
+      // A slug rename (the editor re-times the date prefix when the
+      // publication date changes) moves the markdown file and 301s the old
+      // URL. Ignored on new posts — nothing is live yet to move.
+      const prevSlug = !isNew && typeof body.prevSlug === "string" ? body.prevSlug.trim() : "";
+      const renaming = Boolean(prevSlug) && prevSlug !== item.slug;
+
       // 1 — Update index.json
       const indexResult = await getFileFromGitHub(env, INDEX_PATH);
       if (!indexResult.ok) return jsonResponse({ ok: false, error: indexResult.error }, 502);
 
       const items = Array.isArray(indexResult.data?.items) ? indexResult.data.items : [];
-      const existing = items.findIndex(x => x.slug === item.slug);
+
+      if (renaming && items.some(x => x.slug === item.slug)) {
+        return jsonResponse({
+          ok: false,
+          error: `A post with the slug "${item.slug}" already exists. Change the title or date so the slug is unique.`,
+        }, 409);
+      }
+
+      const existing = items.findIndex(x => x.slug === (renaming ? prevSlug : item.slug));
       const normalized = normalizeItem(item);
 
       if (existing >= 0) {
@@ -76,17 +92,39 @@ export async function onRequest({ request, env }) {
       items.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 
       // 2 — Commit index + markdown in ONE atomic commit, so the index can
-      //     never reference a markdown file that failed to save.
+      //     never reference a markdown file that failed to save. On a rename
+      //     the old markdown is deleted and the 301 written in the same commit.
       const newIndexText = JSON.stringify({ items }, null, 2) + "\n";
       const mdPath = `public/briefings/${item.slug}.md`;
       const mdResult = await getFileFromGitHub(env, mdPath);
-      const saved = await commitFilesToGitHub(env, [
+      const files = [
         { path: INDEX_PATH, content: newIndexText, sha: indexResult.sha },
         { path: mdPath,     content,               sha: mdResult.ok ? mdResult.sha : undefined },
-      ], `Posts: ${isNew ? "add" : "update"} ${item.slug}`);
+      ];
+
+      let message = `Posts: ${isNew ? "add" : "update"} ${item.slug}`;
+      if (renaming) {
+        const oldMdPath = `public/briefings/${prevSlug}.md`;
+        const oldMd = await getFileFromGitHub(env, oldMdPath);
+        if (oldMd.ok) files.push({ path: oldMdPath, content: null, sha: oldMd.sha });
+
+        const redirects = await getFileFromGitHub(env, REDIRECTS_PATH);
+        files.push({
+          path: REDIRECTS_PATH,
+          content: buildRedirects(
+            redirects.ok ? redirects.text : "",
+            `/briefings/${prevSlug}`,
+            `/briefings/${item.slug}`,
+          ),
+          sha: redirects.ok ? redirects.sha : undefined,
+        });
+        message = `Posts: rename ${prevSlug} → ${item.slug}`;
+      }
+
+      const saved = await commitFilesToGitHub(env, files, message);
       if (!saved.ok) return jsonResponse({ ok: false, error: saved.error }, 502);
 
-      return jsonResponse({ ok: true });
+      return jsonResponse({ ok: true, slug: item.slug, renamedFrom: renaming ? prevSlug : null });
     }
 
     /* ── toggle-active: flip active field in index.json only ─────────── */

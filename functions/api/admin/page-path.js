@@ -1,6 +1,9 @@
 import { isAuthed, jsonResponse } from "./_utils.js";
 import { getFileFromGitHub, commitFilesToGitHub } from "./_github.js";
-import { detectRouteReferences, applyRouteReferences } from "./_routes.js";
+import { detectRouteReferences, applyRouteReferences, buildRedirects } from "./_routes.js";
+
+// Re-exported for callers (and tests) that already reach for it here.
+export { buildRedirects };
 
 /* PUT /api/admin/page-path — change a page's URL path and cascade the change.
 
@@ -21,24 +24,6 @@ const NAV_PATH          = "src/data/nav.json";
 const FOOTER_PATH       = "src/data/footer.json";
 const COMPOSITIONS_PATH = "src/data/page-compositions.json";
 const REDIRECTS_PATH    = "public/_redirects";
-
-/* Merge a rename into the _redirects rule list:
-   - keep comment lines as-is
-   - drop any rule whose source is the path coming back into service (newPath)
-   - re-point rules that targeted oldPath at newPath (no redirect chains)
-   - replace any stale rule for oldPath with "oldPath newPath 301" */
-export function buildRedirects(existingText, oldPath, newPath) {
-  const lines = (existingText || "").split("\n").map(l => l.trim()).filter(Boolean);
-  const comments = lines.filter(l => l.startsWith("#"));
-  const rules = lines
-    .filter(l => !l.startsWith("#"))
-    .map(l => l.split(/\s+/))
-    .filter(parts => parts.length >= 2)
-    .filter(([from]) => from !== newPath && from !== oldPath)
-    .map(([from, to, ...rest]) => [from, to === oldPath ? newPath : to, ...rest]);
-  rules.push([oldPath, newPath, "301"]);
-  return [...comments, ...rules.map(p => p.join(" "))].join("\n") + "\n";
-}
 
 // Lowercase letters, numbers, dashes, slashes. No dots — also rules out traversal.
 const PATH_RE = /^\/[a-z0-9\-/]*$/;
