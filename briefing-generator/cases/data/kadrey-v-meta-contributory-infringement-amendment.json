@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
     "date_last_filing": "2026-09-01",
-    "meta_fetched_at": "2026-09-02T04:43:59.779572+00:00",
-    "fetched_at": "2026-09-02T04:43:59.779572+00:00",
+    "meta_fetched_at": "2026-09-02T09:42:19.968562+00:00",
+    "fetched_at": "2026-09-02T09:42:19.968562+00:00",
     "as_of": "Sep 2, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 823,
+        "date_filed": "2026-09-01",
+        "time_filed": "22:52:28",
+        "date_display": "Sep 1, 2026",
+        "description": "Status Report",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": null,
         "date_filed": "2026-09-01",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-08-25",
-        "time_filed": "12:53:19",
-        "date_display": "Aug 25, 2026",
-        "description": "Clerk's Notice AND ~Util - Teleconference Zoom",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 823,
+        "date_filed": "2026-09-01",
+        "time_filed": "22:52:28",
+        "date_display": "Sep 1, 2026",
+        "description": "Status Report",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": null,
         "date_filed": "2026-09-01",
