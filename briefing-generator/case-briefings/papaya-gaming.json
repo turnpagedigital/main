@@ -3,6 +3,29 @@
   "case_name": "Papaya Gaming",
   "items": [
     {
+      "date": "2026-09-02",
+      "updated": "2026-09-02",
+      "lede": "On September 2, Judge Walrath signed an order granting in part Skillz Platform Inc.'s motion to compel production of documents and a witness for deposition (Dkt. 92, resolving Dkts. 73, 78, and 91).",
+      "body_md": "On September 2, Judge Walrath signed an order granting in part Skillz Platform Inc.'s motion to compel production of documents and a witness for deposition (Dkt. 92, resolving Dkts. 73, 78, and 91). This is the most significant substantive development since the case was filed: the court has now directed discovery against the foreign representative in a Chapter 15 proceeding where the foreign representative has resisted production, and a partial grant means Judge Walrath credited Skillz's arguments on at least some of the disputed requests while limiting or denying others. The exact scope of what was compelled — which documents, which deponent, and on what timeline — is not disclosed on the face of the docket entry; the order itself controls, and reading the granular holdings will determine whether Skillz obtained what it needs to build a factual record on the recognition contest or was cut back to something narrower.\n\nThe path to Dkt. 92 is straightforward from the prior docket. Skillz filed its motion to compel (Dkt. 73), the foreign representative opposed (Dkt. 78) and supplemented (Dkt. 81), Skillz filed certified English translations of underlying foreign-proceeding documents (Dkt. 84), and the August 28 hearing produced a minute entry directing an order under certification of counsel (Dkt. 85). Skillz filed that certification on September 1 (Dkt. 91), and the order followed the next morning. Dkt. 90, filed September 1, is a notice of service of Oriel Bachar's responses and objections to Skillz's first set of interrogatories — substantive-but-routine at this stage, confirming the foreign representative served written responses to Skillz's interrogatories, though the content of those objections may become a flashpoint if Skillz views them as deficient relative to the newly-issued compel order.\n\nFor recovery posture, the partial grant cuts both ways. Skillz has now secured court-ordered access to at least some of the financial and operational information it needs to contest recognition or to argue that the Israeli proceeding does not qualify as a foreign main proceeding — or, failing that, to attack the adequacy of the debt settlement plan that Judge Lushi-Abudi in Tel Aviv has already told Papaya must be strengthened beyond operating-profit reliance, per the __[Firy/FIRY press release carried by StockTitan](https://www.stocktitan.net/news/FIRY/israeli-court-says-papaya-gaming-should-improve-its-debt-settlement-81are4y0jeia.html)__ dated August 26. The \"in part\" qualifier matters for Papaya: it signals that Judge Walrath drew some limit on the scope of Skillz's discovery demands, preserving at least a partial objection from the foreign representative. The next concrete milestones are compliance with Dkt. 92's production and deposition directives (deadlines to be confirmed from the order itself) and the setting of a recognition hearing date, which has not yet appeared on the docket.\n\n## Sources\n\n- [Israeli court says Papaya Gaming should improve its debt settlement plan](https://www.stocktitan.net/news/FIRY/israeli-court-says-papaya-gaming-should-improve-its-debt-settlement-81are4y0jeia.html) — StockTitan (Firy/FIRY press release), August 26, 2026\n- [Papaya Gaming wins U.S. bankruptcy protection after $719 million ruling](https://www.calcalistech.com/ctechnews/article/idop8ipjs) — Calcalist / CTech, August 9, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Israeli court says Papaya Gaming should improve its debt settlement plan",
+          "url": "https://www.stocktitan.net/news/FIRY/israeli-court-says-papaya-gaming-should-improve-its-debt-settlement-81are4y0jeia.html",
+          "note": "StockTitan (Firy/FIRY press release), August 26, 2026"
+        },
+        {
+          "title": "Papaya Gaming wins U.S. bankruptcy protection after $719 million ruling",
+          "url": "https://www.calcalistech.com/ctechnews/article/idop8ipjs",
+          "note": "Calcalist / CTech, August 9, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 3,
+        "articles": 0,
+        "latest": "2026-09-02"
+      }
+    },
+    {
       "date": "2026-09-01",
       "updated": "2026-09-01",
       "lede": "On August 30, a deposition notice was filed in Case No. 26-11217 as Dkt. 89, the sole entry since the August 28 discovery hearing. The docket caption — \"Deposition - Notice\" — does not disclose the noticed witness or the scheduled date.",

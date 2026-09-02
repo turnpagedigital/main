@@ -3,6 +3,49 @@
   "case_name": "Poolin",
   "items": [
     {
+      "date": "2026-09-02",
+      "updated": "2026-09-02",
+      "lede": "Today, five documents — Dkts. 194 through 198 — landed on the Poolin docket, all filed September 2, with no publicly available metadata describing their content or filer.",
+      "body_md": "Today, five documents — Dkts. 194 through 198 — landed on the Poolin docket, all filed September 2, with no publicly available metadata describing their content or filer. Until those pleadings are pulled from CM/ECF or __[Verita Global](https://veritaglobal.net/poolin)__, their classification cannot be confirmed; any creditor tracking recovery exposure should retrieve them directly before the September 8 bid deadline. Dkt. 191 (August 31) is a BNC Certificate of Notice, filing infrastructure only.\n\nThe substantive development that now demands attention is a creditor's pending motion to appoint a Chapter 11 trustee, set for hearing on October 21, 2026. \nPoolin Technology is in the opening phase of a Chapter 11 wind-down centered on selling substantially all of the debtors' assets and pursuing a liquidating plan; a creditor's motion to appoint a Chapter 11 trustee is set for October 21, 2026.\n That motion is substantive and important on both axes: trustee appointment would strip existing management of debtor-in-possession control, displace the CRO, and hand the sale process and estate administration to a court-appointed fiduciary. \nAll three entities remain debtors in possession, meaning existing management continues to run day-to-day affairs under court oversight rather than handing control to an outside trustee.\n A successful trustee motion would end that posture entirely — affecting who controls the § 363 sale, negotiates the Rule 9019 compromise at Dkt. 190, and ultimately makes distributions. For wallet-holder creditors owed \n$163,723,500 in unsecured wallet-holder IOUs\n against a \n$52 million stalking-horse covering the Tarbush ($37 million) and Pyote ($15 million) West Texas sites — roughly 32 cents on the dollar against the IOU pool before administrative costs and priority claims\n — who controls the estate matters as much as what the auction produces.\n\nThe October 21 trustee hearing sits well after the immediate sale milestones, but its shadow falls on every stage between now and confirmation of any liquidating plan. The Rule 9019 compromise at Dkt. 190 (filed August 28) remains unresolved; its counterparty, subject matter, and dollar amount are not disclosed in the public docket metadata, and the objection deadline — running approximately 21 days from the August 28 filing — expires around September 18, the same date as the sale hearing before Judge O'Hagan. Pachulski Stang Ziehl & Jones LLP's retention as committee counsel (Dkt. 179, filed August 24, objection deadline August 31) should now be effective absent a timely objection, giving the Official Committee of Unsecured Creditors a well-resourced litigation presence at precisely the moment the trustee motion, the 9019 settlement, and the sale hearing converge. The next hard deadline is September 8 — \nqualified bids for the debtors' assets are due by September 8, 2026, with an auction scheduled for September 10, 2026, if competing bids are received.\n\n\n## Sources\n\n- [Case Summary: Poolin Chapter 11](https://bondoro.com/poolin/) — Bondoro, July 2026\n- [Poolin Technology Case Information](https://veritaglobal.net/poolin) — Verita Global (case administrator)\n- [Poolin Technology — Case 17582](https://elevenflo.com/cases/17582) — Elevenflo\n- [Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million](https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/) — CryptoSlate, July 24, 2026\n- [Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process](https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/) — CryptoNomist, August 21, 2026\n- [Crypto mining pool Poolin files for bankruptcy in New Jersey](https://crypto.news/crypto-mining-pool-poolin-files-for-bankruptcy-in-new-jersey/) — Crypto News, August 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Case Summary: Poolin Chapter 11",
+          "url": "https://bondoro.com/poolin/",
+          "note": "Bondoro, July 2026"
+        },
+        {
+          "title": "Poolin Technology Case Information",
+          "url": "https://veritaglobal.net/poolin",
+          "note": "Verita Global (case administrator)"
+        },
+        {
+          "title": "Poolin Technology — Case 17582",
+          "url": "https://elevenflo.com/cases/17582",
+          "note": "Elevenflo"
+        },
+        {
+          "title": "Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million",
+          "url": "https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/",
+          "note": "CryptoSlate, July 24, 2026"
+        },
+        {
+          "title": "Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process",
+          "url": "https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/",
+          "note": "CryptoNomist, August 21, 2026"
+        },
+        {
+          "title": "Crypto mining pool Poolin files for bankruptcy in New Jersey",
+          "url": "https://crypto.news/crypto-mining-pool-poolin-files-for-bankruptcy-in-new-jersey/",
+          "note": "Crypto News, August 2026"
+        }
+      ],
+      "activity": {
+        "filings": 6,
+        "articles": 0,
+        "latest": "2026-09-02"
+      }
+    },
+    {
       "date": "2026-09-01",
       "updated": "2026-09-01",
       "lede": "On August 31, the Bankruptcy Notification Center docketed Dkt. 191, a certificate of notice tied to an order — filing infrastructure, not a substantive event. The only docket entry with analytical weight in the current window is Dkt. 190 (filed August 28), a motion to approve a compromise under Rule 9019.",
