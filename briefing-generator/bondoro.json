@@ -1,6 +1,21 @@
 {
   "items": [
     {
+      "id": "?utm_source=rss&utm_medium=rss&utm_campaign=dailydacs-market-summary-explainer-f",
+      "kind": "article",
+      "source": "Daily DAC",
+      "source_id": "daily-dac-article",
+      "show": "news",
+      "title": "DailyDAC’s Market Summary/Explainer for Seven Day Period Ending August 31, 2026",
+      "url": "https://www.dailydac.com/dailydacs-market-summary-explainer-for-seven-day-period-ending-august-31-2026/?utm_source=rss&utm_medium=rss&utm_campaign=dailydacs-market-summary-explainer-for-seven-day-period-ending-august-31-2026",
+      "date": "2026-09-02",
+      "published_at": "2026-09-02T09:13:58+00:00",
+      "excerpt": "Market Watch: Week of August 25, 2026 – August 31, 2026 DailyDAC’s Sentiment Score: 4.4/10 Three deals this week told the same story, and it is not subtle. Valvoline picked up $125 million of additional revolver capacity, cheaper pricing, five more years of maturity, and half a turn of covenant reli",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
       "id": "twd-real-estate-investment-filing-alert",
       "kind": "alert",
       "source": "Bondoro",
@@ -11,6 +26,81 @@
       "date": "2026-09-01",
       "published_at": "2026-09-01T12:20:00+00:00",
       "excerpt": "TWD Real Estate Investment Files Chapter 11 in Southern District of Georgia",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "wc-galleria-oaks-center-filing-alert",
+      "kind": "alert",
+      "source": "Bondoro",
+      "source_id": "bondoro-alert",
+      "show": "both",
+      "title": "Filing Alert: WC Galleria Oaks Center Chapter 11",
+      "url": "https://bondoro.com/wc-galleria-oaks-center-filing-alert/",
+      "date": "2026-09-01",
+      "published_at": "2026-09-01T22:17:36+00:00",
+      "excerpt": "WC Galleria Oaks Center Files Chapter 11 in Western District of Texas",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "mikes-heating-air-conditioning-electrical-filing-alert",
+      "kind": "alert",
+      "source": "Bondoro",
+      "source_id": "bondoro-alert",
+      "show": "both",
+      "title": "Filing Alert: Mike's Heating Air Conditioning & Electrical Chapter 11",
+      "url": "https://bondoro.com/mikes-heating-air-conditioning-electrical-filing-alert/",
+      "date": "2026-09-01",
+      "published_at": "2026-09-01T22:17:07+00:00",
+      "excerpt": "Mike's Heating Air Conditioning & Electrical Files Chapter 11 in Eastern District of North Carolina",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "45-park-place-development-affiliate-filing-alert",
+      "kind": "alert",
+      "source": "Bondoro",
+      "source_id": "bondoro-alert",
+      "show": "both",
+      "title": "Filing Alert: 45 Park Place Development Affiliate Chapter 11",
+      "url": "https://bondoro.com/45-park-place-development-affiliate-filing-alert/",
+      "date": "2026-09-01",
+      "published_at": "2026-09-01T22:15:18+00:00",
+      "excerpt": "45 Park Place Development Affiliate Files Chapter 11 in Southern District of New York",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "new-jersey-athletic-club-filing-alert",
+      "kind": "alert",
+      "source": "Bondoro",
+      "source_id": "bondoro-alert",
+      "show": "both",
+      "title": "Filing Alert: New Jersey Athletic Club Chapter 11",
+      "url": "https://bondoro.com/new-jersey-athletic-club-filing-alert/",
+      "date": "2026-09-01",
+      "published_at": "2026-09-01T22:07:23+00:00",
+      "excerpt": "New Jersey Athletic Club Files Chapter 11 in District of New Jersey",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "ranchland-apartments-owner-filing-alert",
+      "kind": "alert",
+      "source": "Bondoro",
+      "source_id": "bondoro-alert",
+      "show": "both",
+      "title": "Filing Alert: Ranchland Apartments Owner Chapter 11",
+      "url": "https://bondoro.com/ranchland-apartments-owner-filing-alert/",
+      "date": "2026-09-01",
+      "published_at": "2026-09-01T22:06:56+00:00",
+      "excerpt": "Ranchland Apartments Owner Files Chapter 11 in Western District of Texas",
       "case_slug": null,
       "group_name": null,
       "theme_slug": null
@@ -5117,7 +5207,8 @@
       "excerpt": "Updates: JELD-WEN Holding, Inc. ($JELD) + America&#8217;s Car-Mart Inc. ($CRMT). New Filings: Poolin Technology PTE LTD + CashCall, Inc. + Alea Holdings US Company",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "poolin-chapter-11-bankruptcy-filing",
@@ -5164,7 +5255,8 @@
       "excerpt": "Insurance holdco couldn't get it done out of court, so prepack it is",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-chapter-11-sale-kp-",
