@@ -140,17 +140,15 @@
     {
       "slug": "2026-08-03-openai-copyright-mdl-authors",
       "date": "2026-08-03",
-      "title": "The OpenAI Copyright MDL: Where Authors' and Publishers' Claims Stand Now",
+      "type": "briefing",
+      "title": "The OpenAI Copyright MDL: Where Authors' and Publishers' Claims Stand",
       "summary": "Motion to dismiss denied, discovery running, trial expected late 2026 or early 2027 — and the $1.5B Anthropic settlement is now the floor in every negotiation. What authors should do before it resolves.",
       "tags": [
         "OpenAI",
         "NYT",
         "Authors Guild",
         "MDL"
-      ],
-      "author": "Turnpage Intelligence",
-      "active": true,
-      "type": "briefing"
+      ]
     },
     {
       "slug": "2026-06-12-bankruptcy-advisory",
