@@ -149,3 +149,25 @@ export function applyRouteReferences(navData, changes) {
 
   return updated;
 }
+
+/* Merge a rename into the _redirects rule list:
+   - keep comment lines as-is
+   - drop any rule whose source is the path coming back into service (newPath)
+   - re-point rules that targeted oldPath at newPath (no redirect chains)
+   - replace any stale rule for oldPath with "oldPath newPath 301"
+   - keep catch-all rules (/*) LAST: Pages matches top-down, first match wins,
+     so a 301 appended below the SPA fallback would never fire. */
+export function buildRedirects(existingText, oldPath, newPath) {
+  const lines = (existingText || "").split("\n").map(l => l.trim()).filter(Boolean);
+  const comments = lines.filter(l => l.startsWith("#"));
+  const rules = lines
+    .filter(l => !l.startsWith("#"))
+    .map(l => l.split(/\s+/))
+    .filter(parts => parts.length >= 2)
+    .filter(([from]) => from !== newPath && from !== oldPath)
+    .map(([from, to, ...rest]) => [from, to === oldPath ? newPath : to, ...rest]);
+  rules.push([oldPath, newPath, "301"]);
+  const isCatchAll = ([from]) => from.includes("*");
+  const ordered = [...rules.filter(r => !isCatchAll(r)), ...rules.filter(isCatchAll)];
+  return [...comments, ...ordered.map(p => p.join(" "))].join("\n") + "\n";
+}

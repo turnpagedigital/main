@@ -3,6 +3,7 @@ import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, ErrorBanner, useBriefingTopics } from "./shared.jsx";
 import RichEditor from "./RichEditor.jsx";
 import AssetPicker from "../../components/admin/AssetPicker.jsx";
+import { slugify, retimeSlug } from "../../lib/post-slug.js";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    PostsTab — Posts & Briefings, unified.
@@ -21,19 +22,6 @@ const AUTHOR_COLORS = {
   "Turnpage Intelligence": { bg: "#e5e5e5", fg: "#555" },
   "Andrew Glantz":         { bg: NEON,     fg: "#000" },
 };
-
-function slugify(title, date) {
-  const d = date || new Date().toISOString().slice(0, 10);
-  const s = title
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, "")
-    .trim()
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-")
-    .slice(0, 50)
-    .replace(/-$/, "");
-  return s ? `${d}-${s}` : d;
-}
 
 function blankPostForm() {
   return {
@@ -75,6 +63,7 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
   const [editorPhase, setEditorPhase] = useState("idle"); // idle|loading-content|saving|error
   const [editorError, setEditorError] = useState("");
   const [savedAt, setSavedAt]      = useState(null);
+  const [savedSlug, setSavedSlug]       = useState("");   // slug the open post is live under
   const [togglingSlug, setTogglingSlug] = useState(null); // slug currently being toggled
   const [selected, setSelected]         = useState(new Set()); // slugs checked for bulk ops
   const [bulkDeleting, setBulkDeleting] = useState(false);
@@ -125,6 +114,7 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
     setIsNew(false);
     setEditorPhase("loading-content");
     setEditorError("");
+    setSavedSlug(meta.slug || "");
     setForm({
       slug:       meta.slug       || "",
       date:       meta.date       || "",
@@ -155,6 +145,7 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
     setIsNew(true);
     setEditorPhase("idle");
     setEditorError("");
+    setSavedSlug("");
     setForm(blankPostForm());
     setSavedAt(null);
   }
@@ -168,6 +159,10 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
         const title = key === "title" ? value : f.title;
         const date  = key === "date"  ? value : f.date;
         next.slug = slugify(title, date);
+      } else if (key === "date") {
+        // Published post: the date prefix follows the publication date. The
+        // save renames the markdown file and 301s the old URL.
+        next.slug = retimeSlug(f.slug, value);
       }
       return next;
     });
@@ -193,13 +188,14 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ action: "save-post", item, content: form.content, isNew }),
+        body: JSON.stringify({ action: "save-post", item, content: form.content, isNew, prevSlug: savedSlug }),
       });
       const body = await r.json().catch(() => ({}));
       if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
       setSavedAt(new Date());
       setEditorPhase("idle");
       setIsNew(false); // it now exists
+      setSavedSlug(item.slug);
       await loadPosts();
     } catch (e) {
       setEditorError(e.message);
@@ -536,6 +532,7 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
   // ── EDITOR VIEW ─────────────────────────────────────────────────────────
   const isSaving = editorPhase === "saving";
   const isLoadingContent = editorPhase === "loading-content";
+  const slugRenaming = !isNew && Boolean(savedSlug) && form.slug !== savedSlug;
 
   return (
     <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem) 0" }}>
@@ -656,7 +653,9 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
               />
             </label>
             <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
-              Slug {isNew ? <span style={{ fontWeight: 400 }}>(auto-generated, editable)</span> : <span style={{ fontWeight: 400 }}>(read-only after publish)</span>}
+              Slug {isNew
+                ? <span style={{ fontWeight: 400 }}>(auto-generated, editable)</span>
+                : <span style={{ fontWeight: 400 }}>(date follows the Date field)</span>}
               <input
                 type="text"
                 value={form.slug}
@@ -665,6 +664,12 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
                 placeholder="2026-05-26-my-post-title"
                 style={{ ...inputStyle, background: isNew ? "#fff" : "#F4F5F7", color: isNew ? INK : INK_60 }}
               />
+              {slugRenaming && (
+                <span style={{ display: "block", marginTop: "0.35rem", fontWeight: 400, fontSize: "0.72rem", color: "#8a6d00" }}>
+                  URL changes on save: <code>/briefings/{savedSlug}</code> → <code>/briefings/{form.slug}</code>.
+                  The old link 301-redirects to the new one after the next deploy.
+                </span>
+              )}
             </label>
           </div>
 
