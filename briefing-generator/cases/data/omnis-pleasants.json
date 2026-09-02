@@ -14,45 +14,115 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
-    "date_last_filing": "2026-09-01",
-    "meta_fetched_at": "2026-09-02T14:33:13.453955+00:00",
-    "fetched_at": "2026-09-02T14:33:13.453955+00:00",
+    "date_last_filing": "2026-09-02",
+    "meta_fetched_at": "2026-09-02T17:45:16.847353+00:00",
+    "fetched_at": "2026-09-02T17:45:16.847353+00:00",
     "as_of": "Sep 2, 2026",
     "backfilled": true,
-    "new_in_72h": 25,
+    "new_in_72h": 32,
     "recent": [
       {
-        "entry_number": 217,
-        "date_filed": "2026-09-01",
-        "time_filed": "17:19:38",
-        "date_display": "Sep 1, 2026",
-        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing (related document(s)208) Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 11:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Faris, S. Alexander) (Entered: 09/01/2026)",
+        "entry_number": 223,
+        "date_filed": "2026-09-02",
+        "time_filed": "13:13:54",
+        "date_display": "Sep 2, 2026",
+        "description": "Motion to Appear pro hac vice for John A. Morris. Receipt Number 5056769, Filed by Angela Chen (f/k/a Angela Chen Sabella), Harmony Trust, Dynamic HC Co (d/b/a Dynamic Holdings Corporation), and Dynamic Finance Corporation. (Jones, Laura Davis) (Entered: 09/02/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.217.0.pdf"
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.223.0.pdf"
       },
       {
-        "entry_number": 216,
-        "date_filed": "2026-09-01",
-        "time_filed": "16:49:06",
-        "date_display": "Sep 1, 2026",
-        "description": "Declaration of John Dempsey in Support of Debtor's Application for Entry of an Order Authorizing the (I) Retention of AP Services, LLC, (II) Designation of David Hindman as Chief Executive Officer Effective as of the Petition Date, and (III) Granting Related Relief (related document(s)81) Filed by Omnis Pleasants, LLC. (Faris, S. Alexander) (Entered: 09/01/2026)",
+        "entry_number": 222,
+        "date_filed": "2026-09-02",
+        "time_filed": "13:06:33",
+        "date_display": "Sep 2, 2026",
+        "description": "Notice of Perfection of Mechanics Lien. Filed by Industrial Accessories Company. (Hitchings, Jarret) (Entered: 09/02/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 215,
-        "date_filed": "2026-09-01",
-        "time_filed": "16:46:40",
-        "date_display": "Sep 1, 2026",
-        "description": "Supplemental Declaration of David R. Hindman of AP Services, LLC (related document(s)81) Filed by Omnis Pleasants, LLC. (Faris, S. Alexander) (Entered: 09/01/2026)",
+        "entry_number": 221,
+        "date_filed": "2026-09-02",
+        "time_filed": "12:36:22",
+        "date_display": "Sep 2, 2026",
+        "description": "Motion to Appear pro hac vice for Theodore S. Heckel, Sr.. Receipt Number 5056665, Filed by Angela Chen (f/k/a Angela Chen Sabella), Harmony Trust, Dynamic HC Co (d/b/a Dynamic Holdings Corporation), and Dynamic Finance Corporation. (Jones, Laura Davis) (Entered: 09/02/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.221.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 223,
+        "date_filed": "2026-09-02",
+        "time_filed": "13:13:54",
+        "date_display": "Sep 2, 2026",
+        "description": "Motion to Appear pro hac vice for John A. Morris. Receipt Number 5056769, Filed by Angela Chen (f/k/a Angela Chen Sabella), Harmony Trust, Dynamic HC Co (d/b/a Dynamic Holdings Corporation), and Dynamic Finance Corporation. (Jones, Laura Davis) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.223.0.pdf"
+      },
+      {
+        "entry_number": 222,
+        "date_filed": "2026-09-02",
+        "time_filed": "13:06:33",
+        "date_display": "Sep 2, 2026",
+        "description": "Notice of Perfection of Mechanics Lien. Filed by Industrial Accessories Company. (Hitchings, Jarret) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 221,
+        "date_filed": "2026-09-02",
+        "time_filed": "12:36:22",
+        "date_display": "Sep 2, 2026",
+        "description": "Motion to Appear pro hac vice for Theodore S. Heckel, Sr.. Receipt Number 5056665, Filed by Angela Chen (f/k/a Angela Chen Sabella), Harmony Trust, Dynamic HC Co (d/b/a Dynamic Holdings Corporation), and Dynamic Finance Corporation. (Jones, Laura Davis) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.221.0.pdf"
+      },
+      {
+        "entry_number": 220,
+        "date_filed": "2026-09-02",
+        "time_filed": "12:35:23",
+        "date_display": "Sep 2, 2026",
+        "description": "Order Granting Debtor Leave and Permission to File Omnibus Reply of the Debtor in Support of Its (I) Bidding Procedures Motion and (II) Retention Applications (Related Doc # 211, 212) Order Signed on 9/2/2026. (Mml) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 219,
+        "date_filed": "2026-09-02",
+        "time_filed": "12:20:51",
+        "date_display": "Sep 2, 2026",
+        "description": "Motion to Appear pro hac vice for Ira D. Kharasch. Receipt Number 5056645, Filed by Angela Chen (f/k/a Angela Chen Sabella), Harmony Trust, Dynamic HC Co (d/b/a Dynamic Holdings Corporation), and Dynamic Finance Corporation. (Jones, Laura Davis) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.219.0.pdf"
+      },
+      {
+        "entry_number": 218,
+        "date_filed": "2026-09-02",
+        "time_filed": "12:07:48",
+        "date_display": "Sep 2, 2026",
+        "description": "Order Authorizing the Debtor to Retain and Compensate Certain Professionals Utilized by the Debtor in the Ordinary Course of Business (Related Doc # 77, 199) Order Signed on 9/2/2026. (Attachments: # 1 Exhibit 1) (Mml) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-02",
+        "time_filed": "13:29:29",
+        "date_display": "Sep 2, 2026",
+        "description": "341 Meeting Held and Continued",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 217,
         "date_filed": "2026-09-01",

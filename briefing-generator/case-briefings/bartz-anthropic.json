@@ -3,6 +3,44 @@
   "case_name": "Bartz v. Anthropic",
   "items": [
     {
+      "date": "2026-09-02",
+      "updated": "2026-09-02",
+      "lede": "On September 1, the district court clerk entered Dkt. 687 — a \"Remark\" — the only new filing since yesterday's briefing. A CM/ECF Remark is a clerk's administrative notation, not a filing by any party; it carries no legal consequence and resolves nothing contested.",
+      "body_md": "On September 1, the district court clerk entered Dkt. 687 — a \"Remark\" — the only new filing since yesterday's briefing. A CM/ECF Remark is a clerk's administrative notation, not a filing by any party; it carries no legal consequence and resolves nothing contested. Its specific content is not publicly available through PACER/RECAP, and no secondary source describes it. \nCourtListener reflects September 1 as the date of last known filing on the district docket\n, with no further entries appearing as of this briefing. Dkt. 686 — the Transcript Designation Form filed August 31 by Brandt Silverkorn of Edelson PC / Oppenheim + Zebrak — was covered yesterday and nothing has changed its posture.\n\nThe two Ninth Circuit fee appeals remain the operative story. \nNo. 26-5391 (Edelson PC / O+Z, filed August 18) appeals from the July 20 judgment, with Edelson and O+Z intending to focus on the attorneys' fees and expenses order.\n \nNo. 26-5455 (Cowan DeBaets Abrahams & Sheppard LLP, filed August 19) similarly appeals from the July 20 judgment, limited solely to the district court's order granting in part the motion for attorneys' fees.\n Nothing on the district docket since August 31 reflects a transcript designation from Cowan DeBaets, and no public source confirms whether that firm has acted on the Ninth Circuit's own docket — an open question flagged yesterday that remains unresolved. The class's recovery posture is unaffected by the fee appeals; no party has moved for a stay of Anthropic's payment obligations.\n\nThe next concrete milestone is Anthropic's $450 million Scheduled Payment 1, due September 25, 2026. The Ninth Circuit scheduling orders setting opening-brief deadlines for Nos. 26-5391 and 26-5455 — which will govern the pace and scope of the fee litigation — remain outstanding from the circuit clerk.\n\n## Sources\n\n- [Bartz v. Anthropic PBC — CourtListener Docket (N.D. Cal. 4:24-cv-05417)](https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/) — CourtListener (PACER/RECAP), last updated Sept. 1, 2026\n- [Scrivener's Error — Bartz Appeal Analysis](https://scrivenerserror.blogspot.com/) — Scrivener's Error, August 2026\n- [Firms Cut From $101M Anthropic Atty Fees Appeal To 9th Circ.](https://www.law360.com/ip/articles/2515634) — Law360, August 20, 2026\n- [Firms Appeal After Exclusion From Fees Award in Anthropic Case](https://news.bloomberglaw.com/legal-ops-and-tech/firms-appeal-after-exclusion-from-fees-award-in-anthropic-case) — Bloomberg Law, August 19, 2026\n- [The Bartz Settlement Is in the Books — Payouts to Class Should Take Place by Sept. 17, 2026](https://chatgptiseatingtheworld.com/2026/08/27/the-bartz-settlement-is-in-the-books-payouts-to-class-should-take-place-by-sept-17-2026/) — Chat GPT Is Eating the World, August 27, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Bartz v. Anthropic PBC — CourtListener Docket (N.D. Cal. 4:24-cv-05417)",
+          "url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
+          "note": "CourtListener (PACER/RECAP), last updated Sept. 1, 2026"
+        },
+        {
+          "title": "Scrivener's Error — Bartz Appeal Analysis",
+          "url": "https://scrivenerserror.blogspot.com/",
+          "note": "Scrivener's Error, August 2026"
+        },
+        {
+          "title": "Firms Cut From $101M Anthropic Atty Fees Appeal To 9th Circ.",
+          "url": "https://www.law360.com/ip/articles/2515634",
+          "note": "Law360, August 20, 2026"
+        },
+        {
+          "title": "Firms Appeal After Exclusion From Fees Award in Anthropic Case",
+          "url": "https://news.bloomberglaw.com/legal-ops-and-tech/firms-appeal-after-exclusion-from-fees-award-in-anthropic-case",
+          "note": "Bloomberg Law, August 19, 2026"
+        },
+        {
+          "title": "The Bartz Settlement Is in the Books — Payouts to Class Should Take Place by Sept. 17, 2026",
+          "url": "https://chatgptiseatingtheworld.com/2026/08/27/the-bartz-settlement-is-in-the-books-payouts-to-class-should-take-place-by-sept-17-2026/",
+          "note": "Chat GPT Is Eating the World, August 27, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 2,
+        "articles": 0,
+        "latest": "2026-09-01"
+      }
+    },
+    {
       "date": "2026-09-01",
       "updated": "2026-09-01",
       "lede": "On August 31, Brandt Silverkorn of Edelson PC / Oppenheim + Zebrak filed a Transcript Designation Form (Dkt. 686) in the district court — the standard mechanism by which an appellant identifies, for the Ninth Circuit's record, which trial or hearing transcripts are to be prepared and transmitted as part of the appellate record. The filing is procedural, but in context it is worth flagging: it is the first concrete…",

@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
-    "date_last_filing": "2026-09-01",
-    "meta_fetched_at": "2026-09-02T12:17:03.522464+00:00",
-    "fetched_at": "2026-09-02T14:33:57.941326+00:00",
+    "date_last_filing": "2026-09-02",
+    "meta_fetched_at": "2026-09-02T17:45:22.531122+00:00",
+    "fetched_at": "2026-09-02T17:45:22.531122+00:00",
     "as_of": "Sep 2, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 3,
     "recent": [
+      {
+        "entry_number": 92,
+        "date_filed": "2026-09-02",
+        "time_filed": "13:06:32",
+        "date_display": "Sep 2, 2026",
+        "description": "Order Granting, in Part, Skillz Platform Inc.'s Motion to Compel Production of Documents and Witness for Deposition (Related Doc [73], [78], [91]) Signed on 9/2/2026. (LMC)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.92.0.pdf"
+      },
       {
         "entry_number": 91,
         "date_filed": "2026-09-01",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 89,
-        "date_filed": "2026-08-30",
-        "time_filed": "10:30:52",
-        "date_display": "Aug 30, 2026",
-        "description": "Notice of Deposition of Oriel Bachar in Connection with Chapter 15 Petition for Recognition of a Foreign Proceeding Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/30/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 92,
+        "date_filed": "2026-09-02",
+        "time_filed": "13:06:32",
+        "date_display": "Sep 2, 2026",
+        "description": "Order Granting, in Part, Skillz Platform Inc.'s Motion to Compel Production of Documents and Witness for Deposition (Related Doc [73], [78], [91]) Signed on 9/2/2026. (LMC)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.92.0.pdf"
+      },
       {
         "entry_number": 91,
         "date_filed": "2026-09-01",
