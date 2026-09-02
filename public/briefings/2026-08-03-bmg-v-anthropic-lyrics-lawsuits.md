@@ -27,14 +27,6 @@ Watch three things: (1) whether the BMG actions get related or coordinated with 
 
 If these cases resolve the way the book case did, the result would be payment rights attached to catalogs of works — the same kind of rights the Bartz settlement created for authors, [which can already be sold or advanced against](/briefings/2026-08-03-sell-your-anthropic-settlement-claim). Catalog owners who want to understand their potential exposure and position early can [reach our desk here](/contact); the conversation costs nothing.
 
-## Sources
-
-- [BMG AI Song Copyright Lawsuit: Music Giant Sues Claude Maker Anthropic](https://www.billboard.com/pro/bmg-ai-song-copyright-lawsuit-sues-claude-maker-anthropic/) — Billboard Pro
-- [BMG sues Anthropic for infringement, alleging AI firm's valuation was built on 'stolen copyrighted works'](https://www.musicbusinessworldwide.com/bmg-sues-anthropic-alleging-ai-giants-380b-valuation-was-built-on-stolen-copyrighted-works/) — Music Business Worldwide
-- [BMG Files Massive Infringement Lawsuit Against Anthropic](https://www.digitalmusicnews.com/2026/03/18/bmg-anthropic-lawsuit/) — Digital Music News, March 2026
-- [Manatt Represents BMG in Copyright Infringement Suit](https://www.manatt.com/insights/news/2026/manatt-represents-bmg-in-copyright-infringement-suit) — Manatt, Phelps & Phillips
-- [BMG sues Anthropic over alleged use of copyrighted lyrics in AI training](https://ra.co/news/84811) — Resident Advisor
-
 ---
 
 *Turnpage Digital Markets is an independent claims desk — not a party to, or counsel in, any case discussed. Damages figures are allegations from public filings and reporting, not predictions. This briefing is market intelligence, not legal or financial advice.*

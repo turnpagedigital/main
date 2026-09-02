@@ -14,9 +14,21 @@
       ]
     },
     {
+      "slug": "2026-08-03-sell-your-anthropic-settlement-claim",
+      "date": "2026-09-02",
+      "type": "briefing",
+      "title": "Can I Sell My Bartz v. Anthropic Class Action Settlement Claim?",
+      "summary": "A right to payment from a class action settlement is a property right that can generally be sold. The Bartz v. Anthropic case is no exception.",
+      "tags": [
+        "Bartz",
+        "Anthropic",
+        "Claims Trading"
+      ]
+    },
+    {
       "slug": "2026-09-01-an-introduction-to-claims-trading",
       "date": "2026-09-01",
-      "type": "briefing",
+      "type": "announcement",
       "title": "Turnpage — Why were here and what we trade",
       "summary": "Courts are ordering compensation at a scale that would have been hard to imagine a decade ago. A single Supreme Court decision, Learning Resources v. Trump, unlocked roughly $166 billion in tariff refunds owed to U.S. importers. Crypto exchange bankruptcies are returning tens of billions of dollars to customers. Class actions against payment networks, sports leagues and AI developers are settling in the billions.",
       "author": "Andrew Glantz"
@@ -83,18 +95,6 @@
       ]
     },
     {
-      "slug": "2026-08-03-sell-your-anthropic-settlement-claim",
-      "date": "2026-08-03",
-      "type": "briefing",
-      "title": "Can I Sell My Bartz v. Anthropic Settlement Claim?",
-      "summary": "A settlement payment right is property and can generally be sold. The Bartz v. Anthropic case has no anti-assignment clause that would prevent a sale.",
-      "tags": [
-        "Bartz",
-        "Anthropic",
-        "Claims Trading"
-      ]
-    },
-    {
       "slug": "2026-08-03-anthropic-settlement-cash-advance",
       "date": "2026-08-03",
       "title": "Anthropic Settlement Advances: What They Are and How They Work",
@@ -139,16 +139,14 @@
     {
       "slug": "2026-08-03-bmg-v-anthropic-lyrics-lawsuits",
       "date": "2026-08-03",
-      "title": "BMG v. Anthropic: The Lawsuits Over 20,000 Songs",
+      "type": "briefing",
+      "title": "BMG v. Anthropic: 20,000 songs and counting",
       "summary": "BMG opened a second music front against Anthropic in 2026: one suit over roughly 500 identified works, another covering 20,000+ songs with a reported $3 billion-plus demand.",
       "tags": [
         "BMG",
         "Anthropic",
         "Music"
-      ],
-      "author": "Turnpage Intelligence",
-      "active": true,
-      "type": "briefing"
+      ]
     },
     {
       "slug": "2026-06-12-bankruptcy-advisory",
