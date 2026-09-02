@@ -5298,6 +5298,13 @@
       "summary": "Major publishers Hachette, Cengage, and Elsevier, joined by Scott Turow, sued Google in the Southern District of New York alleging Gemini was trained on millions of copyrighted works obtained without permission or payment. The complaint argues Gemini can generate AI substitutes — such as a 100-page murder mystery in 20 minutes for $0.39 — that directly compete with and undercut the original works."
     },
     {
+      "headline": "Authors, publishers sue Google over alleged AI copyright infringement",
+      "url": "https://www.aljazeera.com/economy/2026/7/15/authors-publishers-sue-google-over-alleged-ai-copyright-infringement",
+      "source": "Al Jazeera",
+      "date": "2026-07-15",
+      "summary": "Al Jazeera reported that Hachette, Cengage, Elsevier, and Scott Turow filed a nearly 60-page complaint accusing Google of willfully sidestepping copyright protections to develop Gemini. An IP attorney quoted in the piece noted that Google's alleged unlawful acquisition of training data could undermine any fair-use defense."
+    },
+    {
       "headline": "Google Faces Another AI Training Lawsuit From Major Publishers",
       "url": "https://techcrunch.com/2026/07/14/google-faces-another-ai-training-lawsuit-from-major-publishers/",
       "source": "TechCrunch",
@@ -5324,6 +5331,13 @@
       "source": "Adweek",
       "date": "2026-07-14",
       "summary": "The suit, first reported by Publishers Weekly, seeks an injunction and statutory damages on behalf of a proposed class of authors and publishers, adding legal pressure to a broader publisher revolt against AI companies' use of copyrighted content."
+    },
+    {
+      "headline": "U.S. Publishers Sue Google, Alleging Massive Copyright Infringement Behind Its Gemini AI Service",
+      "url": "https://publishingperspectives.com/2026/07/u-s-publishers-sue-google-alleging-massive-copyright-infringement-behind-its-gemini-ai-service/",
+      "source": "Publishing Perspectives",
+      "date": "2026-07-14",
+      "summary": "Publishing Perspectives reported on the lawsuit's central market-harm theory: that Gemini is already flooding the book marketplace with 'AI-generated substitutes' built on allegedly stolen works, directly undercutting publishers and authors commercially."
     },
     {
       "headline": "Publishers and Authors File Class Action Lawsuit Against Google for Willful Copyright Infringement to Develop Gemini AI Models",
@@ -5359,6 +5373,13 @@
       "source": "Law360",
       "date": "2026-07-10",
       "summary": "Law360 is tracking the case docket for Hachette Book Group et al. v. Google LLC, the copyright infringement suit alleging Google used publisher works to train Gemini, filed following a similar earlier action the same plaintiffs brought against Meta."
+    },
+    {
+      "headline": "Publishers seek to join lawsuit against Google over AI training",
+      "url": "https://www.marketscreener.com/news/publishers-seek-to-join-lawsuit-against-google-over-ai-training-ce7e58ded889f02c",
+      "source": "Reuters",
+      "date": "2026-01-15",
+      "summary": "Reuters reported that Hachette Book Group and Cengage Group asked a California federal court for permission to intervene in the existing consolidated authors' class action against Google, alleging Google 'engaged in one of the most prolific infringements of copyrighted materials in history.' The publishers later withdrew that bid and filed the standalone New York action in July 2026."
     }
   ],
   "events": []
