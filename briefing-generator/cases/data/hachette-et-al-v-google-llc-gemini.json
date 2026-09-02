@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
-    "date_last_filing": "2026-08-31",
-    "meta_fetched_at": "2026-08-31T23:55:19.771686+00:00",
-    "fetched_at": "2026-09-01T14:58:51.035412+00:00",
-    "as_of": "Sep 1, 2026",
+    "date_last_filing": "2026-09-01",
+    "meta_fetched_at": "2026-09-02T04:43:29.578922+00:00",
+    "fetched_at": "2026-09-02T04:43:29.578922+00:00",
+    "as_of": "Sep 2, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 34,
+        "date_filed": "2026-09-01",
+        "time_filed": "20:38:28",
+        "date_display": "Sep 1, 2026",
+        "description": "Extension of Time",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 33,
         "date_filed": "2026-08-31",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.668114/gov.uscourts.nysd.668114.32.0.pdf"
-      },
-      {
-        "entry_number": 31,
-        "date_filed": "2026-08-26",
-        "time_filed": "20:27:31",
-        "date_display": "Aug 26, 2026",
-        "description": "Response (non-motion)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 34,
+        "date_filed": "2026-09-01",
+        "time_filed": "20:38:28",
+        "date_display": "Sep 1, 2026",
+        "description": "Extension of Time",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 33,
         "date_filed": "2026-08-31",

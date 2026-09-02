@@ -15,16 +15,16 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-09-01",
-    "meta_fetched_at": "2026-09-01T18:36:59.484801+00:00",
-    "fetched_at": "2026-09-01T18:36:59.484801+00:00",
-    "as_of": "Sep 1, 2026",
+    "meta_fetched_at": "2026-09-02T04:43:41.270335+00:00",
+    "fetched_at": "2026-09-02T04:43:41.270335+00:00",
+    "as_of": "Sep 2, 2026",
     "backfilled": true,
-    "new_in_72h": 8,
+    "new_in_72h": 10,
     "recent": [
       {
-        "entry_number": 1285,
+        "entry_number": 1288,
         "date_filed": "2026-09-01",
-        "time_filed": "12:35:42",
+        "time_filed": "15:45:27",
         "date_display": "Sep 1, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
         "is_new": true,
@@ -32,20 +32,20 @@
         "doc_url": ""
       },
       {
-        "entry_number": null,
+        "entry_number": 1287,
         "date_filed": "2026-09-01",
-        "time_filed": "12:37:58",
+        "time_filed": "15:36:49",
         "date_display": "Sep 1, 2026",
-        "description": "none",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1284,
-        "date_filed": "2026-08-31",
-        "time_filed": "10:59:27",
-        "date_display": "Aug 31, 2026",
+        "entry_number": 1286,
+        "date_filed": "2026-09-01",
+        "time_filed": "15:25:56",
+        "date_display": "Sep 1, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
         "is_new": true,
         "landmark": "",
@@ -54,6 +54,36 @@
     ],
     "entries": [
       {
+        "entry_number": 1288,
+        "date_filed": "2026-09-01",
+        "time_filed": "15:45:27",
+        "date_display": "Sep 1, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1287,
+        "date_filed": "2026-09-01",
+        "time_filed": "15:36:49",
+        "date_display": "Sep 1, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1286,
+        "date_filed": "2026-09-01",
+        "time_filed": "15:25:56",
+        "date_display": "Sep 1, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 1285,
         "date_filed": "2026-09-01",
         "time_filed": "12:35:42",
@@ -66,9 +96,19 @@
       {
         "entry_number": null,
         "date_filed": "2026-09-01",
-        "time_filed": "12:37:58",
+        "time_filed": "16:10:16",
         "date_display": "Sep 1, 2026",
         "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-01",
+        "time_filed": "16:10:15",
+        "date_display": "Sep 1, 2026",
+        "description": "none AND none",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -119,7 +159,7 @@
         "time_filed": "23:26:42",
         "date_display": "Aug 30, 2026",
         "description": "BNC certificate of mailing - PDF document",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -129,7 +169,7 @@
         "time_filed": "23:26:42",
         "date_display": "Aug 30, 2026",
         "description": "BNC certificate of mailing - PDF document",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

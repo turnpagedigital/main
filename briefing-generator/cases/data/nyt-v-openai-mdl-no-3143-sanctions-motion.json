@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
-    "date_last_filing": "2026-08-31",
-    "meta_fetched_at": "2026-09-01T05:18:21.966522+00:00",
-    "fetched_at": "2026-09-01T21:51:16.027835+00:00",
-    "as_of": "Sep 1, 2026",
+    "date_last_filing": "2026-09-01",
+    "meta_fetched_at": "2026-09-02T04:44:10.679279+00:00",
+    "fetched_at": "2026-09-02T04:44:10.679279+00:00",
+    "as_of": "Sep 2, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 4,
     "recent": [
+      {
+        "entry_number": 1682,
+        "date_filed": "2026-09-01",
+        "time_filed": "21:52:52",
+        "date_display": "Sep 1, 2026",
+        "description": "Letter",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1682.0.pdf"
+      },
       {
         "entry_number": 1681,
         "date_filed": "2026-08-31",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1680.0.pdf"
-      },
-      {
-        "entry_number": 1679,
-        "date_filed": "2026-08-31",
-        "time_filed": "11:42:10",
-        "date_display": "Aug 31, 2026",
-        "description": "ORDER: Plaintiff is ordered to show cause in writing on or before September 11, 2026, why this action should not be stayed pending resolution of summary judgment motions in the other active cases in this multidistrict litigation. Defendants' response, if any, shall be filed by September 18, 2026. SO ORDERED. Show Cause Response due by 9/11/2026. (Signed by Judge Sidney H. Stein on 8/28/2026) Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:26-cv-07171-SHS (jca) (Entered: 08/31/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1682,
+        "date_filed": "2026-09-01",
+        "time_filed": "21:52:52",
+        "date_display": "Sep 1, 2026",
+        "description": "Letter",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1682.0.pdf"
+      },
       {
         "entry_number": 1681,
         "date_filed": "2026-08-31",
@@ -129,7 +139,7 @@
         "date_filed": "2026-08-18",
         "time_filed": "",
         "date_display": "Aug 18, 2026",
-        "description": "***NOTICE TO ATTORNEY REGARDING DEFICIENT PLEADING. Notice to Attorney Lacy Herman Koonce, III to RE-FILE re: Document No. 1675 Amended Complaint. The filing is deficient for the following reason(s): all of the parties listed on the pleading were not entered on CM ECF; Mashable, Inc. is not listed on docket; the wrong filer/filers were selected for the pleading;. Docket the event type Add Party to Pleading found under the event list Complaints and Other Initiating Documents. Re-file the pleading using the event type Amended Complaint found under the event list Complaints and Other Initiating Documents - attach the correct signed PDF - select the individually named filer/filers - select the individually named party/parties the pleading is against. (sj)",
+        "description": "***NOTICE TO ATTORNEY REGARDING DEFICIENT PLEADING. Notice to Attorney Lacy Herman Koonce, III to RE-FILE re: Document No. 1675 Amended Complaint. The filing is deficient for the following reason(s): Not all the filers were selected .Re-file the pleading using the event type Amended Complaint found under the event list Complaints and Other Initiating Documents - attach the correct signed PDF - select the individually named filer/filers - select the individually named party/parties the pleading is against. (sj) Modified on 8/19/2026 (gp).",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
