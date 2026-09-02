@@ -15,12 +15,32 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-09-02",
-    "meta_fetched_at": "2026-09-02T17:45:16.847353+00:00",
-    "fetched_at": "2026-09-02T17:45:16.847353+00:00",
+    "meta_fetched_at": "2026-09-02T18:46:57.949888+00:00",
+    "fetched_at": "2026-09-02T18:46:57.949888+00:00",
     "as_of": "Sep 2, 2026",
     "backfilled": true,
-    "new_in_72h": 32,
+    "new_in_72h": 34,
     "recent": [
+      {
+        "entry_number": 225,
+        "date_filed": "2026-09-02",
+        "time_filed": "14:17:32",
+        "date_display": "Sep 2, 2026",
+        "description": "Exhibit",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 224,
+        "date_filed": "2026-09-02",
+        "time_filed": "",
+        "date_display": "Sep 2, 2026",
+        "description": "Minute Sheet 341 Meeting Held and Continued Held on September 2, 2026, and Continued to a Date To Be Determined Filed by U.S. Trustee. (Hackman, Benjamin) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 223,
         "date_filed": "2026-09-02",
@@ -30,29 +50,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.223.0.pdf"
-      },
+      }
+    ],
+    "entries": [
       {
-        "entry_number": 222,
+        "entry_number": 225,
         "date_filed": "2026-09-02",
-        "time_filed": "13:06:33",
+        "time_filed": "14:17:32",
         "date_display": "Sep 2, 2026",
-        "description": "Notice of Perfection of Mechanics Lien. Filed by Industrial Accessories Company. (Hitchings, Jarret) (Entered: 09/02/2026)",
+        "description": "Exhibit",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 221,
+        "entry_number": 224,
         "date_filed": "2026-09-02",
-        "time_filed": "12:36:22",
+        "time_filed": "",
         "date_display": "Sep 2, 2026",
-        "description": "Motion to Appear pro hac vice for Theodore S. Heckel, Sr.. Receipt Number 5056665, Filed by Angela Chen (f/k/a Angela Chen Sabella), Harmony Trust, Dynamic HC Co (d/b/a Dynamic Holdings Corporation), and Dynamic Finance Corporation. (Jones, Laura Davis) (Entered: 09/02/2026)",
+        "description": "Minute Sheet 341 Meeting Held and Continued Held on September 2, 2026, and Continued to a Date To Be Determined Filed by U.S. Trustee. (Hackman, Benjamin) (Entered: 09/02/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.221.0.pdf"
-      }
-    ],
-    "entries": [
+        "doc_url": ""
+      },
       {
         "entry_number": 223,
         "date_filed": "2026-09-02",
