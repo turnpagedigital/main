@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
-    "date_last_filing": "2026-09-01",
-    "meta_fetched_at": "2026-09-02T17:44:40.918797+00:00",
-    "fetched_at": "2026-09-02T17:44:40.918797+00:00",
+    "date_last_filing": "2026-09-02",
+    "meta_fetched_at": "2026-09-02T18:46:09.697901+00:00",
+    "fetched_at": "2026-09-02T18:46:09.697901+00:00",
     "as_of": "Sep 2, 2026",
     "backfilled": false,
-    "new_in_72h": 2,
+    "new_in_72h": 3,
     "recent": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-02",
+        "time_filed": "11:22:31",
+        "date_display": "Sep 2, 2026",
+        "description": "Electronic Filing Error",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 687,
         "date_filed": "2026-09-01",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.686.0.pdf"
-      },
-      {
-        "entry_number": 685,
-        "date_filed": "2026-08-24",
-        "time_filed": "",
-        "date_display": "Aug 24, 2026",
-        "description": "USCA Case Number 26-5455 Court of Appeals for the Ninth Circuit for 683 Notice of Appeal to the Ninth Circuit filed by Cowan DeBaets Abrahams & Sheppard LLP. (kmg, COURT STAFF) (Filed on 8/24/2026) (Entered: 08/25/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.685.0_2.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-02",
+        "time_filed": "11:22:31",
+        "date_display": "Sep 2, 2026",
+        "description": "Electronic Filing Error",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 687,
         "date_filed": "2026-09-01",
@@ -7570,7 +7580,7 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=17"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=23"
   },
   "claims_administrator": {
     "name": "JND Legal Administration",

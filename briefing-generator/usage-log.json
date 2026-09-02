@@ -878,6 +878,16 @@
       "tokens_out": 5933,
       "ok": true,
       "model": "claude-sonnet-4-6"
+    },
+    {
+      "ts": "2026-09-02T18:49:04Z",
+      "date": "2026-09-02",
+      "task": "docket-sync",
+      "provider": "courtlistener",
+      "requests": 21,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ok": false
     }
   ]
 }
