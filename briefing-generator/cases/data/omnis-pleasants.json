@@ -15,53 +15,133 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-09-02",
-    "meta_fetched_at": "2026-09-02T18:46:57.949888+00:00",
-    "fetched_at": "2026-09-02T18:46:57.949888+00:00",
+    "meta_fetched_at": "2026-09-02T21:53:18.219456+00:00",
+    "fetched_at": "2026-09-02T21:53:18.219456+00:00",
     "as_of": "Sep 2, 2026",
     "backfilled": true,
-    "new_in_72h": 34,
+    "new_in_72h": 42,
     "recent": [
       {
-        "entry_number": 225,
+        "entry_number": 233,
         "date_filed": "2026-09-02",
-        "time_filed": "14:17:32",
+        "time_filed": "16:58:27",
         "date_display": "Sep 2, 2026",
-        "description": "Exhibit",
+        "description": "Pro Hac Vice Admission - Motion",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 224,
+        "entry_number": 232,
         "date_filed": "2026-09-02",
-        "time_filed": "",
+        "time_filed": "16:57:22",
         "date_display": "Sep 2, 2026",
-        "description": "Minute Sheet 341 Meeting Held and Continued Held on September 2, 2026, and Continued to a Date To Be Determined Filed by U.S. Trustee. (Hackman, Benjamin) (Entered: 09/02/2026)",
+        "description": "Pro Hac Vice Admission - Motion",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 223,
+        "entry_number": 231,
         "date_filed": "2026-09-02",
-        "time_filed": "13:13:54",
+        "time_filed": "16:09:29",
         "date_display": "Sep 2, 2026",
-        "description": "Motion to Appear pro hac vice for John A. Morris. Receipt Number 5056769, Filed by Angela Chen (f/k/a Angela Chen Sabella), Harmony Trust, Dynamic HC Co (d/b/a Dynamic Holdings Corporation), and Dynamic Finance Corporation. (Jones, Laura Davis) (Entered: 09/02/2026)",
+        "description": "Order Granting Motion for Admission pro hac vice of John A. Morris, Esquire (Related Doc # 223) Order Signed on 9/2/2026. (CEB) (Entered: 09/02/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.223.0.pdf"
+        "doc_url": ""
       }
     ],
     "entries": [
       {
+        "entry_number": 233,
+        "date_filed": "2026-09-02",
+        "time_filed": "16:58:27",
+        "date_display": "Sep 2, 2026",
+        "description": "Pro Hac Vice Admission - Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 232,
+        "date_filed": "2026-09-02",
+        "time_filed": "16:57:22",
+        "date_display": "Sep 2, 2026",
+        "description": "Pro Hac Vice Admission - Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 231,
+        "date_filed": "2026-09-02",
+        "time_filed": "16:09:29",
+        "date_display": "Sep 2, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of John A. Morris, Esquire (Related Doc # 223) Order Signed on 9/2/2026. (CEB) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 230,
+        "date_filed": "2026-09-02",
+        "time_filed": "16:08:31",
+        "date_display": "Sep 2, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Theodore S. Heckel, Sr., Esquire (Related Doc # 221) Order Signed on 9/2/2026. (CEB) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 229,
+        "date_filed": "2026-09-02",
+        "time_filed": "16:07:36",
+        "date_display": "Sep 2, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Ira D. Kharasch, Esquire (Related Doc # 219) Order Signed on 9/2/2026. (CEB) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 228,
+        "date_filed": "2026-09-02",
+        "time_filed": "16:05:37",
+        "date_display": "Sep 2, 2026",
+        "description": "Order Granting Motion of the Prepetition Secured Parties for Leave to File Reply of the Prepetition Secured Parties to Objections to the Debtor's Bidding Procedures Motion and Reservation of Rights With Respect to Cash Collateral (Related Doc # 213, 214) Order Signed on 9/2/2026. (Mml) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 227,
+        "date_filed": "2026-09-02",
+        "time_filed": "16:03:48",
+        "date_display": "Sep 2, 2026",
+        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing (related document(s)208, 217) Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 11:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Faris, S. Alexander) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.227.0.pdf"
+      },
+      {
+        "entry_number": 226,
+        "date_filed": "2026-09-02",
+        "time_filed": "14:30:20",
+        "date_display": "Sep 2, 2026",
+        "description": "Request for Service of Notices Filed by Oracle America, Inc.. (Christianson, Shawn) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 225,
         "date_filed": "2026-09-02",
         "time_filed": "14:17:32",
         "date_display": "Sep 2, 2026",
-        "description": "Exhibit",
+        "description": "Exhibit(s) - Debtor's Witness and Exhibit List for Hearing Scheduled for September 3, 2026 at 11:30 a.m. (ET) Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 09/02/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.225.0.pdf"
       },
       {
         "entry_number": 224,
@@ -111,7 +191,7 @@
         "description": "Order Granting Debtor Leave and Permission to File Omnibus Reply of the Debtor in Support of Its (I) Bidding Procedures Motion and (II) Retention Applications (Related Doc # 211, 212) Order Signed on 9/2/2026. (Mml) (Entered: 09/02/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.220.0.pdf"
       },
       {
         "entry_number": 219,
