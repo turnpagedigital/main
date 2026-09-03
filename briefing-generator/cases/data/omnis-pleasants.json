@@ -15,12 +15,32 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-09-02",
-    "meta_fetched_at": "2026-09-03T00:20:41.781779+00:00",
-    "fetched_at": "2026-09-03T00:20:41.781779+00:00",
+    "meta_fetched_at": "2026-09-03T04:40:55.494287+00:00",
+    "fetched_at": "2026-09-03T04:40:55.494287+00:00",
     "as_of": "Sep 3, 2026",
     "backfilled": true,
-    "new_in_72h": 38,
+    "new_in_72h": 40,
     "recent": [
+      {
+        "entry_number": 236,
+        "date_filed": "2026-09-02",
+        "time_filed": "20:11:53",
+        "date_display": "Sep 2, 2026",
+        "description": "Motion to Appear pro hac vice of Nicole M. Fulfree of Lowenstein Sandler LLP. Receipt Number 5057241, Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 235,
+        "date_filed": "2026-09-02",
+        "time_filed": "20:04:24",
+        "date_display": "Sep 2, 2026",
+        "description": "Letter to Chief Judge Karen B. Owens from Michael A. Kaplan of Lowenstein Sandler LLP re: Schedule for Proceedings in Connection with Motion to Dismiss (related document(s)93) Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.235.0.pdf"
+      },
       {
         "entry_number": 234,
         "date_filed": "2026-09-02",
@@ -30,29 +50,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.234.0.pdf"
-      },
-      {
-        "entry_number": 233,
-        "date_filed": "2026-09-02",
-        "time_filed": "16:58:27",
-        "date_display": "Sep 2, 2026",
-        "description": "Motion to Appear pro hac vice of Jackson T. Garvey of Sidley Austin LLP. Receipt Number 5057164, Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 09/02/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 232,
-        "date_filed": "2026-09-02",
-        "time_filed": "16:57:22",
-        "date_display": "Sep 2, 2026",
-        "description": "Motion to Appear pro hac vice of Kenneth W. Irvin of Sidley Austin LLP. Receipt Number 5057164, Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 09/02/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 236,
+        "date_filed": "2026-09-02",
+        "time_filed": "20:11:53",
+        "date_display": "Sep 2, 2026",
+        "description": "Motion to Appear pro hac vice of Nicole M. Fulfree of Lowenstein Sandler LLP. Receipt Number 5057241, Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 235,
+        "date_filed": "2026-09-02",
+        "time_filed": "20:04:24",
+        "date_display": "Sep 2, 2026",
+        "description": "Letter to Chief Judge Karen B. Owens from Michael A. Kaplan of Lowenstein Sandler LLP re: Schedule for Proceedings in Connection with Motion to Dismiss (related document(s)93) Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.235.0.pdf"
+      },
       {
         "entry_number": 234,
         "date_filed": "2026-09-02",
