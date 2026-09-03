@@ -41,6 +41,12 @@
           "id": "faq",
           "label": "FAQ",
           "href": "/faq"
+        },
+        {
+          "id": "ai-guide",
+          "label": "AI Guide",
+          "href": "/ai-guide",
+          "labelKey": "footer.resources.aiGuide"
         }
       ],
       "titleKey": "footer.col.resources"

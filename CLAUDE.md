@@ -48,6 +48,7 @@ The site is a multi-page Vite/React SPA with **HTML5 history routing** (clean pa
 - `/briefings/SLUG` → Single briefing
 - `/contact` → Contact form (reads `?source=ai-copyright` from query string)
 - `/legal` → Legal pages (Privacy/Terms)
+- `/ai-guide` → AI Learning Bot Guide (see "AI Guide" below)
 - `/admin` and `/admin/<tab>` → Admin panel
 
 Legacy `/#/path` URLs are auto-redirected to `/path` via a shim in `src/main.jsx` (runs before React mounts). Don't reintroduce hash routing.
@@ -101,6 +102,7 @@ index.html                 — Vite entry, meta + OG tags
 ```
 
 ### Editing common things
+- **AI Guide (`/ai-guide`, `/llms.txt`, `/llms-full.txt`)** → the canonical reference page for AI assistants and search crawlers. Content lives in `src/data/ai-guide.json` (identity, boundaries, services, claim types, process, leadership links, site map, AI instructions). FAQs, deals, bio and testimonials are pulled live from their own JSON files — don't duplicate them. Three outputs share the builders in `functions/_ai-guide.js`: the React page `src/pages/AIGuide.jsx`, the static HTML that `functions/_middleware.js` injects into `#root` for crawlers that don't run JS (React clears it on mount), and `dist/llms-full.txt` from `scripts/generate-llms-full.mjs` (part of `npm run build`). `public/llms.txt` is the short index and is edited by hand. `tests/ai-guide.test.js` enforces the brand rules (no founding year, experience footnote on asterisked figures, never "a law firm"). Bump `updated` in the JSON when you change the content. English only by design.
 - **Update a case** → edit on the intel site: the intel nav’s **⚙️ Settings** link (`/intel/manage.html`, tabs for Cases / Themes / Groups / Settings), or the per-case edit actions on each briefing page. Both save through `/api/admin/cases` (admin session cookie; the Manage page shows a login prompt if needed). Admin's Intelligence → Cases/Themes tabs were removed Aug 2026; the default pill color palette is editable only in Manage → Settings.
 - **Post a briefing** → see "Posting a Briefing" below.
 - **Replace Crypto placeholder copy** → edit `src/pages/Crypto.jsx`. Structure mirrors AICopyright.jsx.

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/copy-intel.mjs && node scripts/generate-sitemap.mjs",
+    "build": "vite build && node scripts/copy-intel.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-llms-full.mjs",
     "preview": "vite preview",
     "lint": "eslint src functions",
     "test": "node --test tests/*.test.js"

@@ -70,6 +70,7 @@ export const TRANSLATIONS = {
     "footer.firm.contact":    "Get in Touch",
     "footer.legal.privacy":   "Privacy Policy",
     "footer.legal.terms":     "Terms of Use",
+    "footer.resources.aiGuide": "AI Guide",
     "footer.copyright":       "Turnpage Digital Markets LLC © 2026 · All rights reserved",
     "footer.region_label":    "Global",
 
@@ -224,6 +225,7 @@ export const TRANSLATIONS = {
     "footer.firm.contact":    "Contáctenos",
     "footer.legal.privacy":   "Política de Privacidad",
     "footer.legal.terms":     "Términos de Uso",
+    "footer.resources.aiGuide": "Guía para IA",
     "footer.copyright":       "Turnpage Digital Markets LLC © 2026 · Todos los derechos reservados",
     "footer.region_label":    "Global",
 
@@ -417,6 +419,7 @@ export const TRANSLATIONS = {
     "footer.firm.contact":    "Nous contacter",
     "footer.legal.privacy":   "Politique de confidentialité",
     "footer.legal.terms":     "Conditions d'utilisation",
+    "footer.resources.aiGuide": "Guide pour l'IA",
     "footer.copyright":       "Turnpage Digital Markets LLC © 2026 · Tous droits réservés",
     "footer.region_label":    "Global",
 
@@ -610,6 +613,7 @@ export const TRANSLATIONS = {
     "footer.firm.contact":    "Kontakt",
     "footer.legal.privacy":   "Datenschutzerklärung",
     "footer.legal.terms":     "Nutzungsbedingungen",
+    "footer.resources.aiGuide": "KI-Leitfaden",
     "footer.copyright":       "Turnpage Digital Markets LLC © 2026 · Alle Rechte vorbehalten",
     "footer.region_label":    "Global",
 
@@ -803,6 +807,7 @@ export const TRANSLATIONS = {
     "footer.firm.contact":    "Contattaci",
     "footer.legal.privacy":   "Informativa sulla privacy",
     "footer.legal.terms":     "Termini d'uso",
+    "footer.resources.aiGuide": "Guida per l'IA",
     "footer.copyright":       "Turnpage Digital Markets LLC © 2026 · Tutti i diritti riservati",
     "footer.region_label":    "Global",
 
@@ -996,6 +1001,7 @@ export const TRANSLATIONS = {
     "footer.firm.contact":    "문의하기",
     "footer.legal.privacy":   "개인정보 처리방침",
     "footer.legal.terms":     "이용약관",
+    "footer.resources.aiGuide": "AI 가이드",
     "footer.copyright":       "Turnpage Digital Markets LLC © 2026 · 모든 권리 보유",
     "footer.region_label":    "글로벌",
 
@@ -1189,6 +1195,7 @@ export const TRANSLATIONS = {
     "footer.firm.contact":    "联系我们",
     "footer.legal.privacy":   "隐私政策",
     "footer.legal.terms":     "使用条款",
+    "footer.resources.aiGuide": "AI 指南",
     "footer.copyright":       "Turnpage Digital Markets LLC © 2026 · 版权所有",
     "footer.region_label":    "全球",
 

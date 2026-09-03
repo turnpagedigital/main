@@ -85,6 +85,13 @@
       "active": true
     },
     {
+      "path": "/ai-guide",
+      "title": "AI Learning Bot Guide — Turnpage Digital Markets",
+      "description": "The canonical reference for AI assistants and search engines: who Turnpage Digital Markets is, what it does, how to cite it, and where to send rights holders.",
+      "og": "home",
+      "active": true
+    },
+    {
       "path": "/privacy",
       "title": "Privacy Policy — Turnpage Digital Markets",
       "description": "How Turnpage Digital Markets collects, uses, and protects your information.",

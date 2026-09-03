@@ -19,6 +19,7 @@ const EXCLUDE_FROM_MARKETING = new Set([
   "privacy",
   "terms",
   "faq",        // the FAQ page itself doesn't get tagged
+  "ai-guide",   // machine-facing reference page — nothing gets tagged to it
 ]);
 
 // Keys that should never appear in the nav href page picker

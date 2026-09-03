@@ -102,6 +102,13 @@
       "title": "Bankruptcy Claims"
     },
     {
+      "path": "/ai-guide",
+      "key": "ai-guide",
+      "component": "AIGuide",
+      "dynamic": false,
+      "title": "AI Learning Bot Guide"
+    },
+    {
       "path": "/partners",
       "key": "partners",
       "component": "Partners",
