@@ -1,6 +1,21 @@
 {
   "items": [
     {
+      "id": "leslies-out-of-their-depth",
+      "kind": "news",
+      "source": "Petition",
+      "source_id": "petition",
+      "show": "both",
+      "title": "💥Out of their depth💥",
+      "url": "https://www.petition11.com/p/leslies-out-of-their-depth",
+      "date": "2026-09-03",
+      "published_at": "2026-09-03T12:04:24+00:00",
+      "excerpt": "Leslie&#8217;s Inc&#8217;s recently reported Q3 portends bad things to come.",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=dailydacs-market-summary-explainer-f",
       "kind": "article",
       "source": "Daily DAC",
@@ -4404,7 +4419,8 @@
       "published_at": "2026-08-03T07:58:14+00:00",
       "excerpt": "Dow jumps 500 points; U.S.-Japan intervention props up yen",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "jpmorgan-chase-to-invest-750-billion-to-boost-u-s-housing-supply-homeownership-1",
@@ -4417,7 +4433,8 @@
       "published_at": "2026-08-03T14:56:00+00:00",
       "excerpt": "The bank aims to finance one million affordable housing units and provide loans to 200,000 first-time home buyers through 2035.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "law-firm-jackson-walker-to-pay-15-million-to-settle-government-claims-over-ex-ju",
@@ -4431,7 +4448,8 @@
       "excerpt": "The Texas firm didn’t admit fault in its settlement with the civil division of the Justice Department regarding an ex-partner’s undisclosed relationship with former bankruptcy judge David R. Jones.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": "bankruptcy-creditor-rights"
+      "theme_slug": "bankruptcy-creditor-rights",
+      "archived": true
     },
     {
       "id": "the-buffett-indicator-keeps-flashing-red-is-it-broken-d5dd359e?mod=rss_markets_m",
@@ -4444,7 +4462,8 @@
       "published_at": "2026-08-03T10:28:00+00:00",
       "excerpt": "Plus, the yen soars and oil tumbles.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "struggling-colleges-tap-restricted-donor-funds-to-keep-the-lights-on-83243eb5?mo",
@@ -4457,7 +4476,8 @@
       "published_at": "2026-08-03T10:01:00+00:00",
       "excerpt": "Plus, Big Tech earnings send valuations in wildly different directions, and the Kremlin bullies more Russians into fighting in Ukraine.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "how-to-play-the-flood-of-ai-bonds-279f6ba5?mod=rss_markets_main",
@@ -4470,7 +4490,8 @@
       "published_at": "2026-08-03T09:30:00+00:00",
       "excerpt": "Big tech wants to borrow money for decades, but investors have better options.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "the-worries-that-drove-uncle-sam-to-buy-yen-4ff554f1?mod=rss_markets_main",
@@ -4483,7 +4504,8 @@
       "published_at": "2026-08-03T09:03:00+00:00",
       "excerpt": "The U.S. and Japan are seeking to contain tremors that could be triggered by a cratering Japanese currency.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "visa-to-buy-fraud-defense-platform-biocatch-in-2-4-billion-deal-5e36f6e3?mod=rss",
@@ -4496,7 +4518,8 @@
       "published_at": "2026-08-03T15:45:00+00:00",
       "excerpt": "Visa is acquiring BioCatch, a fraud-reduction platform that uses artificial intelligence , for $2.4 billion in cash.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "lantheus-holdings-to-be-acquired-for-initial-6-7-billion-d7a18bdf?mod=rss_market",
@@ -4510,7 +4533,8 @@
       "excerpt": "Curium said it would pay $102.50 a share in cash for Lantheus, a 2.9% premium to Friday’s closing price of $99.64 and 8.5% above Lantheus’s closing price of $94.47 on May 21, before Bloomberg reported that Curium was circling the company.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "short-dated-jgbs-fall-on-growing-boj-rate-increase-expectations-c0bac28f?mod=rss",
@@ -4523,7 +4547,8 @@
       "published_at": "2026-08-03T12:57:00+00:00",
       "excerpt": "Ten-year and two-year Treasury yields declined amid renewed hopes of an agreement to reopen the Strait of Hormuz.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "financial-services-roundup-market-talk-310674da?mod=rss_markets_main",
@@ -4536,7 +4561,8 @@
       "published_at": "2026-08-03T11:02:00+00:00",
       "excerpt": "Find insight on Bank of Indonesia, Malaysia’s banking sector, and more in the latest Market Talks covering financial services.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "health-care-roundup-market-talk-743726ce?mod=rss_markets_main",
@@ -4549,7 +4575,8 @@
       "published_at": "2026-08-03T10:52:00+00:00",
       "excerpt": "Find insight on AstraZeneca , Bristol Myers Squibb, Hartalega and more in the latest Market Talks covering health care.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "energy-utilities-roundup-market-talk-25004551?mod=rss_markets_main",
@@ -4562,7 +4589,8 @@
       "published_at": "2026-08-03T10:47:00+00:00",
       "excerpt": "Find insight on Fluence, Origin Energy, and more in the latest Market Talks covering energy and utilities.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "auto-transport-roundup-market-talk-226d8148?mod=rss_markets_main",
@@ -4575,7 +4603,8 @@
       "published_at": "2026-08-03T10:42:00+00:00",
       "excerpt": "Find insight on Renault, Ferrari, MISC and more in the latest Market Talks covering auto and transport.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "nikkei-falls-1-4-dragged-by-electronics-auto-stocks-e85119b4?mod=rss_markets_mai",
@@ -4588,7 +4617,8 @@
       "published_at": "2026-08-03T07:54:00+00:00",
       "excerpt": "European energy stocks opened lower on slumping oil prices as President Trump prioritizes diplomacy and says new talks with Iran will begin Monday.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "tech-company-earnings-stock-market-5c4179d8?mod=rss_markets_main",
@@ -4601,7 +4631,8 @@
       "published_at": "2026-08-03T01:00:00+00:00",
       "excerpt": "Reports from tech giants drove big gains and losses, while the Fed-fueled bond selloff adds to market pressures.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "u-s-natural-gas-futures-steady-to-start-the-week-4dbabb5c?mod=rss_markets_main",
@@ -4614,7 +4645,8 @@
       "published_at": "2026-08-03T19:20:00+00:00",
       "excerpt": "U.S. natural gas futures made a modest advance with temperatures expected to heat up into next week, favoring power-sector demand.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "oil-prices-fall-amid-hopes-of-possible-u-s-iran-deal-9a3f0ff4?mod=rss_markets_ma",
@@ -4627,7 +4659,8 @@
       "published_at": "2026-08-03T19:18:00+00:00",
       "excerpt": "Oil futures fell after the U.S. suspended plans for major attacks against Iran, while expectations of a negotiated solution to the conflict remain in question.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "gold-rises-on-technical-rebound-e221dd67?mod=rss_markets_main",
@@ -4640,7 +4673,8 @@
       "published_at": "2026-08-03T07:58:00+00:00",
       "excerpt": "Gold prices edge higher as renewed Middle East diplomacy pushed oil prices lower.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "yen-weakens-slightly-on-likely-technical-correction-cda7c245?mod=rss_markets_mai",
@@ -4653,7 +4687,8 @@
       "published_at": "2026-08-03T21:26:00+00:00",
       "excerpt": "The WSJ Dollar Index edged up 0.1%, snapping a four-trading-day losing streak.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "japan-intervened-to-support-yen-together-with-u-s-treasury-4627741f?mod=rss_mark",
@@ -4666,7 +4701,8 @@
       "published_at": "2026-08-03T08:30:00+00:00",
       "excerpt": "The intervention comes after the yen touched a 40-year low against the dollar late last month",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "the-paper-in-your-paper-towel-is-a-candidate-for-a-radical-overhaul-4b90898c?mod",
@@ -4679,7 +4715,8 @@
       "published_at": "2026-08-03T12:45:00+00:00",
       "excerpt": "Kimberly-Clark says it is developing a fiber that holds the promise to revolutionize paper-based products.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "financial-services-roundup-market-talk-310674da?mod=pls_whats_news_us_business_f",
@@ -4692,7 +4729,8 @@
       "published_at": "2026-08-03T16:23:00+00:00",
       "excerpt": "Find insight on Bitcoin, Banco BPM and more in the latest Market Talks covering financial services.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "the-morning-risk-report-trump-adds-to-china-forced-labor-blacklist-3499a306?mod=",
@@ -4705,7 +4743,8 @@
       "published_at": "2026-08-03T10:45:00+00:00",
       "excerpt": "Plus: AI chatbot, deepfake labeling rules kick off in Europe, and FinCEN director leaves for Citigroup",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "zach-dell-is-raising-money-to-put-a-battery-in-your-backyard-cd7e52e8?mod=pls_wh",
@@ -4718,7 +4757,8 @@
       "published_at": "2026-08-03T10:00:00+00:00",
       "excerpt": "Base Power, co-founded by Michael Dell’s son, lands a $13 billion valuation as electricity demand and battery storage are booming.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "how-servicenows-ceo-weighs-long-term-bets-dfbcb86a?mod=pls_whats_news_us_busines",
@@ -4731,7 +4771,8 @@
       "published_at": "2026-08-03T09:45:00+00:00",
       "excerpt": "The corporate world has taken more than just algorithms and platforms from the tech world. It has absorbed some of the tech mindset, too.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "acting-ice-chief-divests-detention-stocks-and-recuses-from-contracts-589f10db?mo",
@@ -4744,7 +4785,8 @@
       "published_at": "2026-08-03T09:00:00+00:00",
       "excerpt": "David Venturella previously worked at Geo Group, one of the nation’s largest private prison operators.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "lantheus-holdings-to-be-acquired-for-initial-6-7-billion-d7a18bdf?mod=pls_whats_",
@@ -4758,7 +4800,8 @@
       "excerpt": "Curium said it would pay $102.50 a share in cash for Lantheus, a 2.9% premium to Friday’s closing price of $99.64 and 8.5% above Lantheus’s closing price of $94.47 on May 21, before Bloomberg reported that Curium was circling the company.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "kkr-to-buy-integer-holdings-for-4-3-billion-a80f2560?mod=pls_whats_news_us_busin",
@@ -4771,7 +4814,8 @@
       "published_at": "2026-08-03T14:48:00+00:00",
       "excerpt": "Investment firm KKR has struck a deal to acquire medical-device outsourcing company Integer Holdings for $127 a share.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "visa-to-buy-fraud-defense-platform-biocatch-in-2-4-billion-deal-5e36f6e3?mod=pls",
@@ -4784,7 +4828,8 @@
       "published_at": "2026-08-03T15:45:00+00:00",
       "excerpt": "Visa is acquiring BioCatch, a fraud-reduction platform that uses artificial intelligence , for $2.4 billion in cash.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "easyjet-extends-castlelake-bid-deadline-to-align-with-apollo-4461ca46?mod=pls_wh",
@@ -4797,7 +4842,8 @@
       "published_at": "2026-08-03T08:14:00+00:00",
       "excerpt": "The low-cost airline said Castlelake has until Friday to align its bid with that of rival Apollo.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "totalenergies-sells-stake-in-european-renewable-assets-to-kkr-c0d8e65c?mod=pls_w",
@@ -4810,7 +4856,8 @@
       "published_at": "2026-08-03T07:49:00+00:00",
       "excerpt": "TotalEnergies said it agreed to sell a 50% stake in European onshore solar and wind assets to private-equity firm KKR.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "can-fast-fashion-fit-into-secondhand-clothes-af2dc483?mod=pls_whats_news_us_busi",
@@ -4823,7 +4870,8 @@
       "published_at": "2026-08-03T12:54:00+00:00",
       "excerpt": "Plus, America’s lettuce crisis has shoppers ditching supermarkets for farmers markets—for now.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "rising-beef-costs-pressure-tysons-bottom-line-0ec3ff4b?mod=pls_whats_news_us_bus",
@@ -4836,7 +4884,8 @@
       "published_at": "2026-08-03T12:25:00+00:00",
       "excerpt": "A shortage of cattle in the U.S. has been driving up costs for meatpackers like Tyson and JBS in recent years, leading to steep financial losses.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "energy-utilities-roundup-market-talk-25004551?mod=pls_whats_news_us_business_f",
@@ -4849,7 +4898,8 @@
       "published_at": "2026-08-03T21:02:00+00:00",
       "excerpt": "Find insight on oil futures, Origin Energy, Fluence and more in the latest Market Talks covering energy and utilities.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "big-fashion-brands-try-on-a-new-trend-selling-secondhand-clothes-219839b7?mod=pl",
@@ -4862,7 +4912,8 @@
       "published_at": "2026-08-03T09:30:00+00:00",
       "excerpt": "Retailers are investing in ‘preloved’ apparel drops, partly to offset the environmental cost of churning out a seemingly endless array of styles.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "aperol-can-tap-into-beer-market-at-sports-and-music-events-campari-ceo-says-24a6",
@@ -4875,7 +4926,8 @@
       "published_at": "2026-08-03T06:21:00+00:00",
       "excerpt": "EXCLUSIVE: Aperitif maker Davide Campari-Milano believes Aperol Spritz, a cocktail that mixes the crimson bitters with sparkling wine and soda, can replace beer as the go-to drink for some concertgoers and sports fans.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "marriott-says-middle-east-conflict-weighed-on-sales-7b2ec4cb?mod=pls_whats_news_",
@@ -4888,7 +4940,8 @@
       "published_at": "2026-08-03T15:03:00+00:00",
       "excerpt": "The hotel company’s second-quarter revenue rose 5% but fell short of analysts’ estimates, as sales were weighed down by a drop in revenue per available room in the Middle East.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "nissan-reports-first-quarterly-profit-in-two-years-42e8543b?mod=pls_whats_news_u",
@@ -4901,7 +4954,8 @@
       "published_at": "2026-08-03T13:23:00+00:00",
       "excerpt": "The Japanese carmaker kept its annual earnings forecasts unchanged, even as it lowered its vehicle sales projection.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "echostars-hughes-network-files-for-bankruptcy-as-1-5b-debt-comes-due-918be906?mo",
@@ -4915,7 +4969,8 @@
       "excerpt": "Hughes Network Systems, owned by Charlie Ergen’s EchoStar, filed for Chapter 11 bankruptcy on Sunday.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": "bankruptcy-creditor-rights"
+      "theme_slug": "bankruptcy-creditor-rights",
+      "archived": true
     },
     {
       "id": "auto-transport-roundup-market-talk-226d8148?mod=pls_whats_news_us_business_f",
@@ -4928,7 +4983,8 @@
       "published_at": "2026-08-03T10:42:00+00:00",
       "excerpt": "Find insight on Renault, Ferrari, MISC and more in the latest Market Talks covering auto and transport.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "ai-companies-need-to-drill-baby-drill-3294837c?mod=pls_whats_news_us_business_f",
@@ -4941,7 +4997,8 @@
       "published_at": "2026-08-03T14:10:00+00:00",
       "excerpt": "That’s the only apparent way they can keep energy costs from exploding.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "gold-rises-on-technical-rebound-e221dd67?mod=pls_whats_news_us_business_f",
@@ -4954,7 +5011,8 @@
       "published_at": "2026-08-03T07:58:00+00:00",
       "excerpt": "Gold prices edge higher as renewed Middle East diplomacy pushed oil prices lower.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "something-was-wrong-hasbros-lessons-from-a-cyberattack-3fd08584?mod=pls_whats_ne",
@@ -4967,7 +5025,8 @@
       "published_at": "2026-08-03T10:45:00+00:00",
       "excerpt": "How companies manage crises sometimes can be the source of the greatest lessons for leaders. For toy maker Hasbro, a cybersecurity breach earlier this year served as one of those moments.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "sandoz-to-pay-around-480-million-to-settle-u-s-antitrust-pricing-litigations-ec9",
@@ -4980,7 +5039,8 @@
       "published_at": "2026-08-03T07:02:00+00:00",
       "excerpt": "The agreements mean the remaining claims against the Swiss maker of generic drugs in the U.S. generic antitrust litigation are those from individual plaintiffs.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "spider-man-box-office-record-2026-3640f9fc?mod=pls_whats_news_us_business_f",
@@ -4993,7 +5053,8 @@
       "published_at": "2026-08-03T15:33:00+00:00",
       "excerpt": "The Sony film grossed $932 million through Sunday, topped only by 2019’s ‘Avengers: Endgame.’",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "archived": true
     },
     {
       "id": "hughes-filing-alert",
@@ -5008,7 +5069,8 @@
       "case_slug": null,
       "group_name": null,
       "theme_slug": null,
-      "show": "both"
+      "show": "both",
+      "archived": true
     },
     {
       "id": "vijon",
@@ -5023,7 +5085,8 @@
       "case_slug": null,
       "group_name": null,
       "theme_slug": null,
-      "show": "both"
+      "show": "both",
+      "archived": true
     },
     {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
@@ -5038,7 +5101,8 @@
       "case_slug": null,
       "group_name": null,
       "theme_slug": null,
-      "show": "news"
+      "show": "news",
+      "archived": true
     },
     {
       "id": "global-stocks-markets-dow-news-08-03-2026-a91fee80?mod=rss_markets_main",
@@ -5052,7 +5116,8 @@
       "excerpt": "The currency has rallied since the joint move by the U.S. and Japan.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "u-s-stocks-rally-while-oil-slides-on-middle-east-diplomacy-hopes-5a2d3f06?mod=rs",
@@ -5066,7 +5131,8 @@
       "excerpt": "U.S. stocks jumped and oil prices fell sharply as President Trump signaled a return to diplomacy with Iran.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "stocks-rally-as-oil-drops-on-hormuz-diplomatic-hopes-75cf4ce1?mod=rss_markets_ma",
@@ -5080,7 +5146,8 @@
       "excerpt": "Plus, Amazon tops $3 trillion market value and Alibaba releases a new AI model.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "this-high-powered-real-estate-fund-is-run-by-college-students-11ad5ebb?mod=rss_m",
@@ -5094,7 +5161,8 @@
       "excerpt": "Indiana University undergrads operate Sample Gates Management, a commercial private-equity fund that just sold its first investment and earned a 65% gross profit.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "unions-are-coming-for-your-uber-driver-990dc3a5?mod=pls_whats_news_us_business_f",
@@ -5108,7 +5176,8 @@
       "excerpt": "Massachusetts imposes ‘sectoral bargaining’ on ride-share workers, who may find themselves governed by agreements they never signed up for.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "diamondback-energy-lifts-production-guidance-reports-surging-profit-on-high-oil-",
@@ -5122,7 +5191,8 @@
       "excerpt": "The company benefited from the run-up in oil prices following the start of the war in Iran.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "people-inc-profit-more-than-doubles-on-gains-from-mgm-investment-e2f534a6?mod=pl",
@@ -5136,7 +5206,8 @@
       "excerpt": "The company posted a quarterly profit of $506.9 million, boosted by an unrealized gain on the company’s investment in MGM.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "tom-holland-zendaya-the-odyssey-spiderman-brand-new-day-2439a700?mod=pls_whats_n",
@@ -5150,7 +5221,8 @@
       "excerpt": "The married stars of “Spider-Man: Brand New Day” and “The Odyssey” have achieved an unprecedented level of success as a pair.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "vcs-are-asking-founders-will-you-quit-on-me-f77de4d2?mod=pls_whats_news_us_busin",
@@ -5164,7 +5236,8 @@
       "excerpt": "The AI race has fueled a wave of founder poaching and startup acquisitions, sometimes leaving venture investors in the lurch.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "trump-blasts-big-oil-companies-for-making-too-much-money-e113c41b?mod=pls_whats_",
@@ -5178,7 +5251,8 @@
       "excerpt": "The president called out ExxonMobil and Chevron for record profits amid high oil prices.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "palantir-lifts-guidance-as-revenue-nearly-doubles-f4d79fa7?mod=pls_whats_news_us",
@@ -5192,7 +5266,8 @@
       "excerpt": "Chief Executive Alex Karp told investors that “demand for AI sovereignty has now been unleashed.”",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "crap-cases-crash-into-court",

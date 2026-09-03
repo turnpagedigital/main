@@ -1589,6 +1589,13 @@
   "claims_administrator": null,
   "coverage": [
     {
+      "headline": "Hendrix, Apple Propose Schedule for AI Copyright Lawsuit — Runs to 2028",
+      "url": "https://chatgptiseatingtheworld.com/2026/04/22/hendrix-apple-propose-schedule-for-ai-copyright-lawsuit/",
+      "source": "Chat GPT Is Eating the World",
+      "date": "2026-04-22",
+      "summary": "Parties in Hendrix v. Apple filed a proposed case schedule on April 17, 2026, with disputed provisions, projecting litigation to extend through 2028. The blog, which tracks AI copyright dockets in real time, published the proposed schedule document."
+    },
+    {
       "headline": "Judge Picks Co-Lead Counsel in Apple AI Copyright Class Action",
       "url": "https://news.bloomberglaw.com/ip-law/judge-picks-co-lead-counsel-in-apple-ai-copyright-class-action",
       "source": "Bloomberg Law",
@@ -1622,6 +1629,13 @@
       "source": "Law360",
       "date": "2025-09-05",
       "summary": "Law360's case tracker for Hendrix v. Apple covers the proposed class action alleging Apple used unlicensed copyrighted books, including from the Books3 dataset, to build its AI models, warning Apple Intelligence will compete directly with human authors."
+    },
+    {
+      "headline": "Apple Sued by Authors Over Use of Books in AI Training",
+      "url": "https://www.yahoo.com/news/articles/apple-sued-authors-over-books-220524616.html",
+      "source": "Reuters (via Yahoo News)",
+      "date": "2025-09-05",
+      "summary": "Reuters reported that authors Grady Hendrix and Jennifer Roberson filed a proposed class action in N.D. Cal. alleging Apple copied their copyrighted works without consent or compensation to train its OpenELM large language models, on the same day Anthropic disclosed its $1.5 billion author-copyright settlement. Apple and plaintiffs' counsel did not immediately respond to comment requests."
     }
   ],
   "events": []
