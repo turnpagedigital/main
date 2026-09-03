@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
     "date_last_filing": "2026-09-01",
     "meta_fetched_at": "2026-09-02T04:43:12.819246+00:00",
-    "fetched_at": "2026-09-02T21:55:51.646486+00:00",
-    "as_of": "Sep 2, 2026",
+    "fetched_at": "2026-09-03T09:55:40.465714+00:00",
+    "as_of": "Sep 3, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 1,
     "recent": [
       {
         "entry_number": 792,
@@ -38,7 +38,7 @@
         "time_filed": "15:39:54",
         "date_display": "Aug 31, 2026",
         "description": "MOTION to Relate Case filed by Sony Music Publishing (US) LLC, Warner Chappell Music, Inc.. (Attachments: # 1 Declaration of Bret Matera in support of Adminstrative Motion to Consider whether Cases should be related, # 2 Exhibit A, # 3 Proposed Order Granting Administrative Motion To Consider Whether Cases Should Be Related)(Akley, Benjamin) (Filed on 8/31/2026) (Entered: 08/31/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.791.0.pdf"
       },
@@ -70,7 +70,7 @@
         "time_filed": "15:39:54",
         "date_display": "Aug 31, 2026",
         "description": "MOTION to Relate Case filed by Sony Music Publishing (US) LLC, Warner Chappell Music, Inc.. (Attachments: # 1 Declaration of Bret Matera in support of Adminstrative Motion to Consider whether Cases should be related, # 2 Exhibit A, # 3 Proposed Order Granting Administrative Motion To Consider Whether Cases Should Be Related)(Akley, Benjamin) (Filed on 8/31/2026) (Entered: 08/31/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.791.0.pdf"
       },
