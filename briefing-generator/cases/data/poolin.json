@@ -14,13 +14,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
-    "date_last_filing": "2026-09-02",
-    "meta_fetched_at": "2026-09-02T14:34:03.418633+00:00",
-    "fetched_at": "2026-09-03T12:15:28.519528+00:00",
+    "date_last_filing": "2026-09-03",
+    "meta_fetched_at": "2026-09-03T14:38:26.974064+00:00",
+    "fetched_at": "2026-09-03T14:38:26.974064+00:00",
     "as_of": "Sep 3, 2026",
     "backfilled": true,
-    "new_in_72h": 5,
+    "new_in_72h": 6,
     "recent": [
+      {
+        "entry_number": 199,
+        "date_filed": "2026-09-03",
+        "time_filed": "10:08:21",
+        "date_display": "Sep 3, 2026",
+        "description": "Document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 198,
         "date_filed": "2026-09-02",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
+      }
+    ],
+    "entries": [
       {
-        "entry_number": 196,
-        "date_filed": "2026-09-02",
-        "time_filed": "09:46:58",
-        "date_display": "Sep 2, 2026",
+        "entry_number": 199,
+        "date_filed": "2026-09-03",
+        "time_filed": "10:08:21",
+        "date_display": "Sep 3, 2026",
         "description": "Document",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      }
-    ],
-    "entries": [
+      },
       {
         "entry_number": 198,
         "date_filed": "2026-09-02",
