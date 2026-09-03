@@ -15,13 +15,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
-    "date_last_filing": "2026-09-02",
-    "meta_fetched_at": "2026-09-03T14:36:57.583370+00:00",
-    "fetched_at": "2026-09-03T14:36:57.583370+00:00",
+    "date_last_filing": "2026-09-03",
+    "meta_fetched_at": "2026-09-03T17:40:29.015226+00:00",
+    "fetched_at": "2026-09-03T17:40:29.015226+00:00",
     "as_of": "Sep 3, 2026",
     "backfilled": false,
-    "new_in_72h": 3,
+    "new_in_72h": 5,
     "recent": [
+      {
+        "entry_number": 690,
+        "date_filed": "2026-09-03",
+        "time_filed": "10:29:23",
+        "date_display": "Sep 3, 2026",
+        "description": "Letter",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-03",
+        "time_filed": "08:18:59",
+        "date_display": "Sep 3, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 688,
         "date_filed": "2026-09-02",
@@ -31,29 +51,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.688.0.pdf"
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-09-02",
-        "time_filed": "11:22:31",
-        "date_display": "Sep 2, 2026",
-        "description": "Electronic Filing Error",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-09-02",
-        "time_filed": "",
-        "date_display": "Sep 2, 2026",
-        "description": "Electronic filing error. Please use the correct form to file Notice of Appeal. The correct form can be found at; https://cand.uscourts.gov/rules-forms-fees/forms?combine=appeal&field_category_target_id=All Please use the following event when filing the Notice of Appeal:Civil Events > Other Filings > Appeal Documents > Notice of Appeal to the Ninth Circuit Re: 687 Objector's Request to Appeal/Intervene in Appeal by Stacy Lynn Werner, Esq. (kxo, COURT STAFF) (Filed on 9/2/2026) Modified on 9/2/2026 (kxo, COURT STAFF).",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 690,
+        "date_filed": "2026-09-03",
+        "time_filed": "10:29:23",
+        "date_display": "Sep 3, 2026",
+        "description": "Letter",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-03",
+        "time_filed": "08:18:59",
+        "date_display": "Sep 3, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 688,
         "date_filed": "2026-09-02",
@@ -7600,7 +7620,7 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=13"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=17"
   },
   "claims_administrator": {
     "name": "JND Legal Administration",

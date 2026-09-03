@@ -3,6 +3,54 @@
   "case_name": "Poolin",
   "items": [
     {
+      "date": "2026-09-03",
+      "updated": "2026-09-03",
+      "lede": "Today, six documents — Dkts. 194 through 199 — appeared on the Poolin docket, five filed September 2 and one filed September 3, with no publicly indexed metadata identifying their content, filer, or title.",
+      "body_md": "Today, six documents — Dkts. 194 through 199 — appeared on the Poolin docket, five filed September 2 and one filed September 3, with no publicly indexed metadata identifying their content, filer, or title. None of the available secondary sources describe these filings, and CM/ECF and __[Verita Global](https://veritaglobal.net/poolin)__ are the only routes to confirm their classification. Until those pleadings are retrieved directly, classification is impossible: if any of the six constitutes a bid submission, a sale objection, a motion to adjourn the auction, or any supplemental filing tied to the Rule 9019 compromise at Dkt. 190, it would be substantive and material. Any creditor tracking recovery exposure must pull them before tomorrow's close of business — the qualified bid deadline is September 8, five calendar days away.\n\nThe sale process is now in its final approach. \nThe August 17 order set September 8 as the deadline for qualified bids, with an auction scheduled for September 10 if competing offers emerge.\n \nThe auction, if triggered, is to be held at 10:00 a.m. Eastern, either at the offices of Archer & Greiner in Voorhees, New Jersey, virtually, or at another time and place designated by the debtors.\n \nThor CALAP LLC has agreed to serve as stalking-horse bidder with a $52 million offer, allocating $37 million to the Tarbush power rights and equipment and $15 million to the Pyote property.\n That floor represents roughly 32 cents on the dollar against the $163.7 million IOU pool, before administrative and priority claims. \nAI infrastructure operators drove meaningful interest during marketing because of the sites' existing grid connections and electrical capacity\n — which is the strongest argument for a bid above the stalking-horse floor, but 28 NDAs, seven LOIs, and three additional indications of interest during marketing did not produce a disclosed competing bid before today. Whether any of Dkts. 194–199 changes that picture is the central unknown.\n\nThe Rule 9019 compromise at Dkt. 190 (filed August 28) remains unresolved: its counterparty, subject matter, and dollar amount are not disclosed in public metadata, and the objection deadline running approximately 21 days from filing ripens around September 18 — the same date as the \nsale hearing following the September 10 auction.\n Separately, \nthe Bondoro case summary lists the sale hearing as September 16 and an outside closing date of November 30, 2026\n — the September 16 date conflicts with the September 18 date appearing in multiple other sources; creditors should confirm against the operative scheduling order on the docket. The October 21 trustee hearing remains the case's largest structural overhang: a creditor's motion alleging that the company's principal absconded from China to the U.S. with customer funds, if granted, would displace existing management and the CRO, transfer control of the § 363 sale and the 9019 settlement to a court-appointed fiduciary, and restructure who makes distributions to the 11,700 IOU holders. The next hard deadline is September 8.\n\n## Sources\n\n- [Case Summary: Poolin Chapter 11](https://bondoro.com/poolin/) — Bondoro, July 2026\n- [Poolin Technology Case Information](https://veritaglobal.net/poolin) — Verita Global (case administrator)\n- [Poolin Auction Set With $52M Floor Bid](https://www.coininsider.org/news/poolin-auction-set-with-52m-floor-bid/) — CoinInsider, August 2026\n- [Poolin Auction Set for September 10 as Objection Deadline Bars Late Creditors](https://www.cryptotimes.io/2026/08/21/poolin-auction-set-for-september-10-as-objection-deadline-bars-late-creditors/) — CryptoTimes, August 21, 2026\n- [Poolin Chapter 11 Bankruptcy Puts $52M Texas Auction in Play](https://www.cryptonexa.com/poolin-chapter-11-bankruptcy-puts-52m-texas-auction-in-play) — CryptoNexa, August 2026\n- [Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process](https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/) — CryptoNomist, August 21, 2026\n- [Crypto mining pool Poolin files for bankruptcy in New Jersey](https://crypto.news/crypto-mining-pool-poolin-files-for-bankruptcy-in-new-jersey/) — Crypto News, August 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Case Summary: Poolin Chapter 11",
+          "url": "https://bondoro.com/poolin/",
+          "note": "Bondoro, July 2026"
+        },
+        {
+          "title": "Poolin Technology Case Information",
+          "url": "https://veritaglobal.net/poolin",
+          "note": "Verita Global (case administrator)"
+        },
+        {
+          "title": "Poolin Auction Set With $52M Floor Bid",
+          "url": "https://www.coininsider.org/news/poolin-auction-set-with-52m-floor-bid/",
+          "note": "CoinInsider, August 2026"
+        },
+        {
+          "title": "Poolin Auction Set for September 10 as Objection Deadline Bars Late Creditors",
+          "url": "https://www.cryptotimes.io/2026/08/21/poolin-auction-set-for-september-10-as-objection-deadline-bars-late-creditors/",
+          "note": "CryptoTimes, August 21, 2026"
+        },
+        {
+          "title": "Poolin Chapter 11 Bankruptcy Puts $52M Texas Auction in Play",
+          "url": "https://www.cryptonexa.com/poolin-chapter-11-bankruptcy-puts-52m-texas-auction-in-play",
+          "note": "CryptoNexa, August 2026"
+        },
+        {
+          "title": "Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process",
+          "url": "https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/",
+          "note": "CryptoNomist, August 21, 2026"
+        },
+        {
+          "title": "Crypto mining pool Poolin files for bankruptcy in New Jersey",
+          "url": "https://crypto.news/crypto-mining-pool-poolin-files-for-bankruptcy-in-new-jersey/",
+          "note": "Crypto News, August 2026"
+        }
+      ],
+      "activity": {
+        "filings": 6,
+        "articles": 0,
+        "latest": "2026-09-03"
+      }
+    },
+    {
       "date": "2026-09-02",
       "updated": "2026-09-02",
       "lede": "Today, five documents — Dkts. 194 through 198 — landed on the Poolin docket, all filed September 2, with no publicly available metadata describing their content or filer.",

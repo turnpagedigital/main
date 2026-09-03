@@ -15,44 +15,84 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-09-03",
-    "meta_fetched_at": "2026-09-03T14:37:44.285324+00:00",
-    "fetched_at": "2026-09-03T14:37:44.285324+00:00",
+    "meta_fetched_at": "2026-09-03T17:41:09.295070+00:00",
+    "fetched_at": "2026-09-03T17:41:09.295070+00:00",
     "as_of": "Sep 3, 2026",
-    "backfilled": false,
-    "new_in_72h": 42,
+    "backfilled": true,
+    "new_in_72h": 46,
     "recent": [
       {
-        "entry_number": 238,
+        "entry_number": 242,
         "date_filed": "2026-09-03",
-        "time_filed": "08:59:50",
+        "time_filed": "13:27:23",
         "date_display": "Sep 3, 2026",
-        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing (related document(s)208, 217, 227) Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 11:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Faris, S. Alexander) (Entered: 09/03/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.238.0.pdf"
-      },
-      {
-        "entry_number": 237,
-        "date_filed": "2026-09-02",
-        "time_filed": "20:15:01",
-        "date_display": "Sep 2, 2026",
-        "description": "Motion to Appear pro hac vice of Lauren M. Laino of Lowenstein Sandler LLP. Receipt Number 5057241, Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/02/2026)",
+        "description": "Order Granting Motion for Admission pro hac vice of Lauren M. Laino, Esquire (Related Doc # 237) Order Signed on 9/3/2026. (Mml) (Entered: 09/03/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 236,
-        "date_filed": "2026-09-02",
-        "time_filed": "20:11:53",
-        "date_display": "Sep 2, 2026",
-        "description": "Motion to Appear pro hac vice of Nicole M. Fulfree of Lowenstein Sandler LLP. Receipt Number 5057241, Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/02/2026)",
+        "entry_number": 241,
+        "date_filed": "2026-09-03",
+        "time_filed": "13:14:19",
+        "date_display": "Sep 3, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Nicole M. Fulfree, Esquire (Related Doc # 236) Order Signed on 9/3/2026. (Mml) (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 240,
+        "date_filed": "2026-09-03",
+        "time_filed": "12:27:50",
+        "date_display": "Sep 3, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Jackson T. Garvey, Esquire (Related Doc # 233) Order Signed on 9/3/2026. (Mml) (Entered: 09/03/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 242,
+        "date_filed": "2026-09-03",
+        "time_filed": "13:27:23",
+        "date_display": "Sep 3, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Lauren M. Laino, Esquire (Related Doc # 237) Order Signed on 9/3/2026. (Mml) (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 241,
+        "date_filed": "2026-09-03",
+        "time_filed": "13:14:19",
+        "date_display": "Sep 3, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Nicole M. Fulfree, Esquire (Related Doc # 236) Order Signed on 9/3/2026. (Mml) (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 240,
+        "date_filed": "2026-09-03",
+        "time_filed": "12:27:50",
+        "date_display": "Sep 3, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Jackson T. Garvey, Esquire (Related Doc # 233) Order Signed on 9/3/2026. (Mml) (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 239,
+        "date_filed": "2026-09-03",
+        "time_filed": "12:07:33",
+        "date_display": "Sep 3, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Kenneth W. Irvin, Esquire (Related Doc # 232) Order Signed on 9/3/2026. (Mml) (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 238,
         "date_filed": "2026-09-03",
@@ -2643,8 +2683,7 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=13"
+    ]
   },
   "claims_administrator": {
     "name": "Stretto",
