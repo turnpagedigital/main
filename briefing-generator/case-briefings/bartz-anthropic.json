@@ -3,6 +3,44 @@
   "case_name": "Bartz v. Anthropic",
   "items": [
     {
+      "date": "2026-09-03",
+      "updated": "2026-09-03",
+      "lede": "On September 2, plaintiffs Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, and MJ + KJ, Inc. filed a Status Report — Dkt. 688 — the first substantive filing from the plaintiff class since the July 20 final approval order. The specific contents of the status report are not yet available through RECAP/CourtListener, which reflects a last-updated timestamp of September 1 and has not ingested…",
+      "body_md": "On September 2, plaintiffs Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, and MJ + KJ, Inc. filed a Status Report — Dkt. 688 — the first substantive filing from the plaintiff class since the July 20 final approval order. The specific contents of the status report are not yet available through RECAP/CourtListener, which reflects a last-updated timestamp of September 1 and has not ingested the September 2 and September 3 entries; the filing's subject matter and any positions taken are therefore unconfirmed and will require direct PACER access to assess. A status report at this stage — post-final-approval, with two fee appeals pending at the Ninth Circuit and the first $450 million installment due September 25 — is most likely keyed to one or more of those live issues: the payment timeline, the class distribution mechanics, or the posture of the objector/intervenor activity described below. Its classification turns on content not yet visible, so it is flagged here for immediate follow-up rather than characterized.\n\nAlso on September 3, Dkt. 690 — a Letter — appeared on the district docket. A letter to the court at this stage of a post-judgment, post-approval proceeding can range from ministerial to substantive depending on who sent it and what it requests; the docket entry supplies no party attribution or subject matter, and RECAP has not captured the document. It cannot be classified without the underlying text. Both Dkt. 688 and Dkt. 690 should be pulled directly from PACER before any inference is drawn about their bearing on recovery posture or the payment schedule. Separately, the September 2 docket also reflects an electronic filing error tied to objector Stacy Lynn Werner's Dkt. 687 — the notice of appeal/request to intervene filed August 31. The clerk's error notation directed Werner's counsel to refile using the correct Notice of Appeal form for the Ninth Circuit. That correction is procedural and carries no legal consequence for Werner's appeal on its merits; what matters is whether a conforming notice of appeal is subsequently filed and whether the Ninth Circuit opens a docket number for Werner's intervention effort alongside Nos. 26-5391 and 26-5455.\n\nThe two fee appeals — No. 26-5391 (Edelson PC / Oppenheim + Zebrak) and No. 26-5455 (Cowan DeBaets Abrahams & Sheppard LLP), both appealing the July 20 judgment's attorney's fees allocation — remain the substantive spine of the post-approval docket, as covered by __[Scrivener's Error](https://scrivenerserror.blogspot.com/)__ and confirmed by the district docket. Neither appeal affects Anthropic's payment obligations; no party has moved for a stay. The Ninth Circuit has not yet issued scheduling orders setting opening-brief deadlines in either appeal, an open question from prior briefings that remains unresolved. The next concrete milestone is Anthropic's $450 million Scheduled Payment 1, due September 25, 2026. The content of Dkt. 688 and Dkt. 690 — once accessible via PACER — is the most immediate priority for assessing whether anything filed this week bears on that deadline or the class distribution posture.\n\n## Sources\n\n- [Bartz v. Anthropic PBC — CourtListener Docket (N.D. Cal. 3:24-cv-05417)](https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/) — CourtListener (PACER/RECAP), last updated Sept. 1, 2026\n- [Scrivener's Error — Bartz Appeal Analysis](https://scrivenerserror.blogspot.com/) — Scrivener's Error, August 2026\n- [Firms Cut From $101M Anthropic Atty Fees Appeal To 9th Circ.](https://www.law360.com/ip/articles/2515634) — Law360, August 20, 2026\n- [Firms Appeal After Exclusion From Fees Award in Anthropic Case](https://news.bloomberglaw.com/legal-ops-and-tech/firms-appeal-after-exclusion-from-fees-award-in-anthropic-case) — Bloomberg Law, August 19, 2026\n- [The Bartz Settlement Is in the Books — Payouts to Class Should Take Place by Sept. 17, 2026](https://chatgptiseatingtheworld.com/2026/08/27/the-bartz-settlement-is-in-the-books-payouts-to-class-should-take-place-by-sept-17-2026/) — Chat GPT Is Eating the World, August 27, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Bartz v. Anthropic PBC — CourtListener Docket (N.D. Cal. 3:24-cv-05417)",
+          "url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
+          "note": "CourtListener (PACER/RECAP), last updated Sept. 1, 2026"
+        },
+        {
+          "title": "Scrivener's Error — Bartz Appeal Analysis",
+          "url": "https://scrivenerserror.blogspot.com/",
+          "note": "Scrivener's Error, August 2026"
+        },
+        {
+          "title": "Firms Cut From $101M Anthropic Atty Fees Appeal To 9th Circ.",
+          "url": "https://www.law360.com/ip/articles/2515634",
+          "note": "Law360, August 20, 2026"
+        },
+        {
+          "title": "Firms Appeal After Exclusion From Fees Award in Anthropic Case",
+          "url": "https://news.bloomberglaw.com/legal-ops-and-tech/firms-appeal-after-exclusion-from-fees-award-in-anthropic-case",
+          "note": "Bloomberg Law, August 19, 2026"
+        },
+        {
+          "title": "The Bartz Settlement Is in the Books — Payouts to Class Should Take Place by Sept. 17, 2026",
+          "url": "https://chatgptiseatingtheworld.com/2026/08/27/the-bartz-settlement-is-in-the-books-payouts-to-class-should-take-place-by-sept-17-2026/",
+          "note": "Chat GPT Is Eating the World, August 27, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 5,
+        "articles": 0,
+        "latest": "2026-09-03"
+      }
+    },
+    {
       "date": "2026-09-02",
       "updated": "2026-09-02",
       "lede": "On September 1, the district court clerk entered Dkt. 687 — a \"Remark\" — the only new filing since yesterday's briefing. A CM/ECF Remark is a clerk's administrative notation, not a filing by any party; it carries no legal consequence and resolves nothing contested.",

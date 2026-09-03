@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
     "date_last_filing": "2026-09-03",
-    "meta_fetched_at": "2026-09-03T09:56:34.733470+00:00",
-    "fetched_at": "2026-09-03T14:39:09.253359+00:00",
+    "meta_fetched_at": "2026-09-03T17:42:01.895402+00:00",
+    "fetched_at": "2026-09-03T17:42:01.895402+00:00",
     "as_of": "Sep 3, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 4,
     "recent": [
+      {
+        "entry_number": 1685,
+        "date_filed": "2026-09-03",
+        "time_filed": "13:00:25",
+        "date_display": "Sep 3, 2026",
+        "description": "STIPULATED OMNIBUS SEALING ORDER FOR SUMMARY JUDGMENT AND DAUBERT BRIEFING: IT IS HEREBY ORDERED that sealing issues relating to summary judgment and Daubert briefing will be handled as follows: 1. The Parties may provisionally seal portions of briefing and exhibits (including expert reports and declarations) relating to Daubert briefing that contain or refer to material produced in this case that is designated Protected Discovery Material. 2. The Parties may provisionally seal exhibits ( or portions thereof) relating to summary judgment briefing (including expert reports and declarations) that contain or refer to material produced in this case that is designated Protected Discovery Material. 3. For the material addressed in paragraphs 1 and 2 above (the \"Provisionally Sealed Material\"), the Parties are relieved from the requirement set forth in paragraph 5(8) of Judge Stein's…",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1684,
         "date_filed": "2026-09-03",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1683.0.pdf"
-      },
-      {
-        "entry_number": 1682,
-        "date_filed": "2026-09-01",
-        "time_filed": "21:52:52",
-        "date_display": "Sep 1, 2026",
-        "description": "LETTER addressed to Judge Sidney H. Stein from United States of America dated September 1, 2026 re: STATEMENT OF INTEREST OF UNITED STATES OF AMERICA. Document filed by United States of America.Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Weisbuch, Michael) (Entered: 09/01/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1682.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 1685,
+        "date_filed": "2026-09-03",
+        "time_filed": "13:00:25",
+        "date_display": "Sep 3, 2026",
+        "description": "STIPULATED OMNIBUS SEALING ORDER FOR SUMMARY JUDGMENT AND DAUBERT BRIEFING: IT IS HEREBY ORDERED that sealing issues relating to summary judgment and Daubert briefing will be handled as follows: 1. The Parties may provisionally seal portions of briefing and exhibits (including expert reports and declarations) relating to Daubert briefing that contain or refer to material produced in this case that is designated Protected Discovery Material. 2. The Parties may provisionally seal exhibits ( or portions thereof) relating to summary judgment briefing (including expert reports and declarations) that contain or refer to material produced in this case that is designated Protected Discovery Material. 3. For the material addressed in paragraphs 1 and 2 above (the \"Provisionally Sealed Material\"), the Parties are relieved from the requirement set forth in paragraph 5(8) of Judge Stein's…",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1684,
         "date_filed": "2026-09-03",
