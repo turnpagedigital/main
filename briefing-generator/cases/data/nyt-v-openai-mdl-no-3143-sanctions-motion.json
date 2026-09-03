@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
     "date_last_filing": "2026-09-01",
     "meta_fetched_at": "2026-09-02T04:44:10.679279+00:00",
-    "fetched_at": "2026-09-02T21:54:46.359595+00:00",
-    "as_of": "Sep 2, 2026",
+    "fetched_at": "2026-09-03T00:21:46.231625+00:00",
+    "as_of": "Sep 3, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 1,
     "recent": [
       {
         "entry_number": 1682,
@@ -38,7 +38,7 @@
         "time_filed": "21:52:52",
         "date_display": "Aug 31, 2026",
         "description": "PROPOSED STIPULATION AND ORDER. Document filed by Microsoft Corporation, Microsoft Corporation, Microsoft Corporation..(Silverstein, Brianna) (Entered: 08/31/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1681.0.pdf"
       },
@@ -48,7 +48,7 @@
         "time_filed": "16:53:52",
         "date_display": "Aug 31, 2026",
         "description": "ANSWER to 1677 Amended Complaint, with JURY DEMAND. Document filed by Microsoft Corporation..(Hurst, Annette) (Entered: 08/31/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1680.0.pdf"
       }
@@ -70,7 +70,7 @@
         "time_filed": "21:52:52",
         "date_display": "Aug 31, 2026",
         "description": "PROPOSED STIPULATION AND ORDER. Document filed by Microsoft Corporation, Microsoft Corporation, Microsoft Corporation..(Silverstein, Brianna) (Entered: 08/31/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1681.0.pdf"
       },
@@ -80,7 +80,7 @@
         "time_filed": "16:53:52",
         "date_display": "Aug 31, 2026",
         "description": "ANSWER to 1677 Amended Complaint, with JURY DEMAND. Document filed by Microsoft Corporation..(Hurst, Annette) (Entered: 08/31/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1680.0.pdf"
       },
@@ -90,7 +90,7 @@
         "time_filed": "11:42:10",
         "date_display": "Aug 31, 2026",
         "description": "ORDER: Plaintiff is ordered to show cause in writing on or before September 11, 2026, why this action should not be stayed pending resolution of summary judgment motions in the other active cases in this multidistrict litigation. Defendants' response, if any, shall be filed by September 18, 2026. SO ORDERED. Show Cause Response due by 9/11/2026. (Signed by Judge Sidney H. Stein on 8/28/2026) Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:26-cv-07171-SHS (jca) (Entered: 08/31/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

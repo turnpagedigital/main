@@ -15,18 +15,28 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-09-02",
-    "meta_fetched_at": "2026-09-02T21:53:18.219456+00:00",
-    "fetched_at": "2026-09-02T21:53:18.219456+00:00",
-    "as_of": "Sep 2, 2026",
+    "meta_fetched_at": "2026-09-03T00:20:41.781779+00:00",
+    "fetched_at": "2026-09-03T00:20:41.781779+00:00",
+    "as_of": "Sep 3, 2026",
     "backfilled": true,
-    "new_in_72h": 42,
+    "new_in_72h": 38,
     "recent": [
+      {
+        "entry_number": 234,
+        "date_filed": "2026-09-02",
+        "time_filed": "19:06:57",
+        "date_display": "Sep 2, 2026",
+        "description": "Exhibit(s) / Amended Witness and Exhibit List of Omnis Fuel Technologies, LLC and Quantum Pleasants LLC for Hearing Set for September 3, 2026 at 11:30 a.m. (ET) (related document(s)83, 205) Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.234.0.pdf"
+      },
       {
         "entry_number": 233,
         "date_filed": "2026-09-02",
         "time_filed": "16:58:27",
         "date_display": "Sep 2, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "description": "Motion to Appear pro hac vice of Jackson T. Garvey of Sidley Austin LLP. Receipt Number 5057164, Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 09/02/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -36,17 +46,7 @@
         "date_filed": "2026-09-02",
         "time_filed": "16:57:22",
         "date_display": "Sep 2, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 231,
-        "date_filed": "2026-09-02",
-        "time_filed": "16:09:29",
-        "date_display": "Sep 2, 2026",
-        "description": "Order Granting Motion for Admission pro hac vice of John A. Morris, Esquire (Related Doc # 223) Order Signed on 9/2/2026. (CEB) (Entered: 09/02/2026)",
+        "description": "Motion to Appear pro hac vice of Kenneth W. Irvin of Sidley Austin LLP. Receipt Number 5057164, Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 09/02/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -54,11 +54,21 @@
     ],
     "entries": [
       {
+        "entry_number": 234,
+        "date_filed": "2026-09-02",
+        "time_filed": "19:06:57",
+        "date_display": "Sep 2, 2026",
+        "description": "Exhibit(s) / Amended Witness and Exhibit List of Omnis Fuel Technologies, LLC and Quantum Pleasants LLC for Hearing Set for September 3, 2026 at 11:30 a.m. (ET) (related document(s)83, 205) Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.234.0.pdf"
+      },
+      {
         "entry_number": 233,
         "date_filed": "2026-09-02",
         "time_filed": "16:58:27",
         "date_display": "Sep 2, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "description": "Motion to Appear pro hac vice of Jackson T. Garvey of Sidley Austin LLP. Receipt Number 5057164, Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 09/02/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -68,7 +78,7 @@
         "date_filed": "2026-09-02",
         "time_filed": "16:57:22",
         "date_display": "Sep 2, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "description": "Motion to Appear pro hac vice of Kenneth W. Irvin of Sidley Austin LLP. Receipt Number 5057164, Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 09/02/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -429,7 +439,7 @@
         "time_filed": "16:06:02",
         "date_display": "Aug 31, 2026",
         "description": "Affidavit/Declaration of Service Supplemental re: Notice of Zoom-based Section 341 Meeting (Docket No. 75), Notice of Chapter 11 Bankruptcy Case (Docket No. 76), Debtors Motion for Entry of an Order (I) Approving the Auction and Bidding Procedures for the Sale of the Debtors Assets, (II) Scheduling Certain Dates and Deadlines Related Thereto, (III) Approving the Form and Manner of Notice Thereof, (IV) Authorizing the Debtor to Designate a Stalking Horse Bidder and Offer Bid Protections Related Thereto, (V) Establishing Notice and Procedures for the Assumption and Assignment of Contracts and Leases, (VI) Approving the Sale of Assets, and (VII) Granting Related Relief (Docket No. 86). Filed by Stretto, Inc.. (related document(s)75, 76, 86) (Betance, Sheryl) (Entered: 08/31/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -439,7 +449,7 @@
         "time_filed": "13:16:17",
         "date_display": "Aug 31, 2026",
         "description": "Order Authorizing the Employment of Stretto, Inc. as Administrative Advisor Effective as of the Petition Date (Related Doc # 79, 192) Order Signed on 8/31/2026. (Mml) (Entered: 08/31/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -449,7 +459,7 @@
         "time_filed": "13:07:18",
         "date_display": "Aug 31, 2026",
         "description": "Order (I) Establishing Procedures for Interim Compensation and Reimbursement of Expenses of Professionals and (II) Granting Related Relief (Related Doc # 78, 191) Order Signed on 8/31/2026. (Mml) (Entered: 08/31/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -459,7 +469,7 @@
         "time_filed": "13:00:25",
         "date_display": "Aug 31, 2026",
         "description": "Order (I) Extending the Time for the Debtor to File Its Schedules of Assets and Liabilities and Statements of Financial Affairs and (II) Granting Related Relief (Related Doc # 133, 190) Order Signed on 8/31/2026. (Mml) (Entered: 08/31/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -469,7 +479,7 @@
         "time_filed": "09:27:13",
         "date_display": "Aug 31, 2026",
         "description": "Notice of Service of Discovery Filed by Hodson Investments, LLC, Omnis Global Technologies, LLC, Simon K. Hodson, Element H Data, LLC, StarSource, LLC, Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 08/31/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
