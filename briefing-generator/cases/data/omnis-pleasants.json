@@ -14,13 +14,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
-    "date_last_filing": "2026-09-02",
-    "meta_fetched_at": "2026-09-03T12:14:08.744953+00:00",
-    "fetched_at": "2026-09-03T12:14:08.744953+00:00",
+    "date_last_filing": "2026-09-03",
+    "meta_fetched_at": "2026-09-03T14:37:44.285324+00:00",
+    "fetched_at": "2026-09-03T14:37:44.285324+00:00",
     "as_of": "Sep 3, 2026",
     "backfilled": false,
-    "new_in_72h": 40,
+    "new_in_72h": 42,
     "recent": [
+      {
+        "entry_number": 238,
+        "date_filed": "2026-09-03",
+        "time_filed": "08:59:50",
+        "date_display": "Sep 3, 2026",
+        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing (related document(s)208, 217, 227) Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 11:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Faris, S. Alexander) (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.238.0.pdf"
+      },
+      {
+        "entry_number": 237,
+        "date_filed": "2026-09-02",
+        "time_filed": "20:15:01",
+        "date_display": "Sep 2, 2026",
+        "description": "Motion to Appear pro hac vice of Lauren M. Laino of Lowenstein Sandler LLP. Receipt Number 5057241, Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 236,
         "date_filed": "2026-09-02",
@@ -30,29 +50,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 235,
-        "date_filed": "2026-09-02",
-        "time_filed": "20:04:24",
-        "date_display": "Sep 2, 2026",
-        "description": "Letter to Chief Judge Karen B. Owens from Michael A. Kaplan of Lowenstein Sandler LLP re: Schedule for Proceedings in Connection with Motion to Dismiss (related document(s)93) Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/02/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.235.0.pdf"
-      },
-      {
-        "entry_number": 234,
-        "date_filed": "2026-09-02",
-        "time_filed": "19:06:57",
-        "date_display": "Sep 2, 2026",
-        "description": "Exhibit(s) / Amended Witness and Exhibit List of Omnis Fuel Technologies, LLC and Quantum Pleasants LLC for Hearing Set for September 3, 2026 at 11:30 a.m. (ET) (related document(s)83, 205) Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/02/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.234.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 238,
+        "date_filed": "2026-09-03",
+        "time_filed": "08:59:50",
+        "date_display": "Sep 3, 2026",
+        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing (related document(s)208, 217, 227) Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 11:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Faris, S. Alexander) (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.238.0.pdf"
+      },
+      {
+        "entry_number": 237,
+        "date_filed": "2026-09-02",
+        "time_filed": "20:15:01",
+        "date_display": "Sep 2, 2026",
+        "description": "Motion to Appear pro hac vice of Lauren M. Laino of Lowenstein Sandler LLP. Receipt Number 5057241, Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 236,
         "date_filed": "2026-09-02",
@@ -111,7 +131,7 @@
         "description": "Order Granting Motion for Admission pro hac vice of John A. Morris, Esquire (Related Doc # 223) Order Signed on 9/2/2026. (CEB) (Entered: 09/02/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.231.0.pdf"
       },
       {
         "entry_number": 230,
@@ -141,7 +161,7 @@
         "description": "Order Granting Motion of the Prepetition Secured Parties for Leave to File Reply of the Prepetition Secured Parties to Objections to the Debtor's Bidding Procedures Motion and Reservation of Rights With Respect to Cash Collateral (Related Doc # 213, 214) Order Signed on 9/2/2026. (Mml) (Entered: 09/02/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.228.0.pdf"
       },
       {
         "entry_number": 227,
@@ -2624,7 +2644,7 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=13"
   },
   "claims_administrator": {
     "name": "Stretto",
