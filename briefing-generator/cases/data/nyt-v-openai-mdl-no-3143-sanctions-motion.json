@@ -18279,6 +18279,13 @@
   "claims_administrator": null,
   "coverage": [
     {
+      "headline": "Trump Administration Backs OpenAI in NY Times Copyright Suit",
+      "url": "https://news.bloomberglaw.com/ip-law/trump-administration-backs-openai-in-ny-times-copyright-suit",
+      "source": "Bloomberg Law",
+      "date": "2026-09-02",
+      "summary": "The Trump administration filed a statement of interest in the Southern District of New York urging the court to rule in favor of OpenAI's fair-use defense, arguing the U.S. has a strong interest in developing a competitive AI industry; this intervention arrives as the news organizations are still pressing their sanctions motion against OpenAI for alleged discovery misconduct."
+    },
+    {
       "headline": "OpenAI Says NY Times Seeks Sanctions Due to Lack of Evidence",
       "url": "https://news.bloomberglaw.com/ip-law/openai-says-ny-times-seeks-sanctions-due-to-lack-of-evidence",
       "source": "Bloomberg Law",
@@ -18333,6 +18340,13 @@
       "source": "Benzinga",
       "date": "2026-07-10",
       "summary": "The publishers' filing alleged that 'OpenAI misled the Court and News Plaintiffs regarding its existing technical capacity all while continuing to compress and delete billions of conversation logs,' while OpenAI denied the allegations, citing user privacy concerns."
+    },
+    {
+      "headline": "New York Times and other publishers ask court to penalize OpenAI",
+      "url": "https://www.inquirer.com/business/openai-new-york-times-media-companies-lawsuits-withhold-evidence-20260710.html",
+      "source": "The Philadelphia Inquirer",
+      "date": "2026-07-10",
+      "summary": "The New York Times, the New York Daily News, and 15 other media organizations filed a federal court sanctions motion accusing OpenAI of violating court rules and acting in bad faith during the litigation's fact-discovery phase. Publishers said OpenAI refused to provide information showing how its AI systems were trained and used."
     },
     {
       "headline": "New York Times Seeks Sanctions Against OpenAI in Copyright Case",
