@@ -206,7 +206,10 @@
           "jamsadr.com"
         ]
       },
-      "key_focus_cases": [],
+      "key_focus_cases": [
+        "in-re-multiplan-health-insurance-provider-antitrust-litigati",
+        "keller-postman-v-google-alphabet-ad-tech-mass-arbitration"
+      ],
       "guidance_prompt": "Track mega-settlements (>$1B) across all class-action verticals plus mass arbitration, mass torts and major multi-district litigation. Settlement lenses: notice & claims rate (lower filing rates = higher per-claim recovery for filers), objector campaigns and appellate exposure, fee-award trajectory (percentage-of-fund vs. lodestar cross-check), distribution timing, and opt-out vs. claims-made structure (the denominator math for valuing tradeable claims). Catch pre-settlement signals (mediator appointments, stayed trial dates, joint status reports), watch the AAA Mass Arbitration Supplementary Rules, bellwether/batching rulings, and the pivot from fighting every claim to global settlement. Anchors: FRCP 23, CAFA, PSLRA; Sherman Act §§ 1-2, Clayton Act § 4 (treble), FAA (Concepcion, Monitor Cornerstone/NERA reports and the Stanford Securities Class Action Clearinghouse. "
     },
     {
