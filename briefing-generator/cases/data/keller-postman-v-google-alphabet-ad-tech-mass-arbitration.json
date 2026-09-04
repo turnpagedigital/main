@@ -1,0 +1,23 @@
+{
+  "case": {
+    "slug": "keller-postman-v-google-alphabet-ad-tech-mass-arbitration",
+    "display_name": "Keller Postman v. Google/Alphabet (Ad Tech Mass Arbitration)",
+    "case_name": "Keller Postman (on behalf of claimants) v. Google LLC / Alphabet Inc.",
+    "court": "AAA Mass Arbitration (filed April 2026)",
+    "case_number": "",
+    "judge": "",
+    "docket_id": null,
+    "status": "active",
+    "sync": "active"
+  },
+  "docket": {
+    "source": "seed",
+    "awaiting_sync": true,
+    "docket_url": null,
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": []
+}
