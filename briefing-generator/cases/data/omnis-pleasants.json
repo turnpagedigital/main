@@ -15,12 +15,32 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-09-04",
-    "meta_fetched_at": "2026-09-04T18:29:03.325130+00:00",
-    "fetched_at": "2026-09-04T18:29:03.325130+00:00",
+    "meta_fetched_at": "2026-09-04T21:33:26.187897+00:00",
+    "fetched_at": "2026-09-04T21:33:26.187897+00:00",
     "as_of": "Sep 4, 2026",
     "backfilled": true,
-    "new_in_72h": 34,
+    "new_in_72h": 36,
     "recent": [
+      {
+        "entry_number": 252,
+        "date_filed": "2026-09-04",
+        "time_filed": "14:50:09",
+        "date_display": "Sep 4, 2026",
+        "description": "Affidavit/Declaration of Service re: Notice of Filing of Revised Order Authorizing the (I) Retention of AP Services, LLC, (II) Designation of David Hindman as Chief Executive Officer, Effective as of the Petition Date, and (III) Granting Related Relief (Docket No. 201), Notice of Filing of Revised Order, Pursuant to 11 U.S.C. §§ 327 and 328(a), Fed. R. Bankr. P. 2014, and Local Rules 2014-1 and 2016-2, Authorizing Retention and Employment of Houlihan Lokey Capital, Inc. as Investment Banker to the Debtor, Effective as of August 3, 2026 (Docket No. 202), Notice of Filing of Revised Order Pursuant to Section 327(e) of the Bankruptcy Code (I) Authorizing the Retention and Employment of Sidley Austin LLP as Special Regulatory Counsel for the Debtor and Debtor in Possession Effective as of the Petition Date and (II) Granting Related Relief (Docket No. 204), Notice of Agenda of Matters…",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 251,
+        "date_filed": "2026-09-04",
+        "time_filed": "14:46:51",
+        "date_display": "Sep 4, 2026",
+        "description": "Affidavit/Declaration of Service re: Order (I) Extending the Time for the Debtor to File Its Schedules of Assets and Liabilities and Statements of Financial Affairs and (II) Granting Related Relief (Docket No. 194), Order (I) Establishing Procedures for Interim Compensation and Reimbursement of Expenses of Professionals and (II) Granting Related Relief (Docket No. 195), Order Authorizing the Employment of Stretto, Inc. as Administrative Advisor Effective as of the Petition Date (Docket No. 196). Filed by Stretto, Inc.. (related document(s)194, 195, 196) (Betance, Sheryl) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 250,
         "date_filed": "2026-09-04",
@@ -30,29 +50,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 249,
-        "date_filed": "2026-09-04",
-        "time_filed": "13:07:43",
-        "date_display": "Sep 4, 2026",
-        "description": "Order (I) Authorizing the Retention and Employment of Sidley Austin LLP as Special Regulatory Counsel for the Debtor and Debtor in Possession Effective as of the Petition Date and (II) Granting Related Relief (Related Doc # 85, 204) Order Signed on 9/4/2026. (Attachments: # 1 Exhibit 1) (Mml) (Entered: 09/04/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 248,
-        "date_filed": "2026-09-04",
-        "time_filed": "12:50:24",
-        "date_display": "Sep 4, 2026",
-        "description": "Order Authorizing the Retention and Employment of Young Conaway Stargatt & Taylor, LLP as Co-Counsel for the Debtor, Effective as of the Petition Date (Related Doc # 82) Order Signed on 9/4/2026. (Mml) (Entered: 09/04/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 252,
+        "date_filed": "2026-09-04",
+        "time_filed": "14:50:09",
+        "date_display": "Sep 4, 2026",
+        "description": "Affidavit/Declaration of Service re: Notice of Filing of Revised Order Authorizing the (I) Retention of AP Services, LLC, (II) Designation of David Hindman as Chief Executive Officer, Effective as of the Petition Date, and (III) Granting Related Relief (Docket No. 201), Notice of Filing of Revised Order, Pursuant to 11 U.S.C. §§ 327 and 328(a), Fed. R. Bankr. P. 2014, and Local Rules 2014-1 and 2016-2, Authorizing Retention and Employment of Houlihan Lokey Capital, Inc. as Investment Banker to the Debtor, Effective as of August 3, 2026 (Docket No. 202), Notice of Filing of Revised Order Pursuant to Section 327(e) of the Bankruptcy Code (I) Authorizing the Retention and Employment of Sidley Austin LLP as Special Regulatory Counsel for the Debtor and Debtor in Possession Effective as of the Petition Date and (II) Granting Related Relief (Docket No. 204), Notice of Agenda of Matters…",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 251,
+        "date_filed": "2026-09-04",
+        "time_filed": "14:46:51",
+        "date_display": "Sep 4, 2026",
+        "description": "Affidavit/Declaration of Service re: Order (I) Extending the Time for the Debtor to File Its Schedules of Assets and Liabilities and Statements of Financial Affairs and (II) Granting Related Relief (Docket No. 194), Order (I) Establishing Procedures for Interim Compensation and Reimbursement of Expenses of Professionals and (II) Granting Related Relief (Docket No. 195), Order Authorizing the Employment of Stretto, Inc. as Administrative Advisor Effective as of the Petition Date (Docket No. 196). Filed by Stretto, Inc.. (related document(s)194, 195, 196) (Betance, Sheryl) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 250,
         "date_filed": "2026-09-04",

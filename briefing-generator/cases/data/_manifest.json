@@ -1,5 +1,20 @@
 [
   {
+    "slug": "andersen-v-stability-ai-nd-cal",
+    "added": "2026-09-04",
+    "display_name": "Andersen v. Stability AI (N.D. Cal.)",
+    "short_name": "Andersen v. Stability AI (N.D. Cal.)",
+    "docket_url": "https://www.courtlistener.com/docket/66732129/andersen-v-stability-ai-ltd/",
+    "default_color": "#1B3A4B",
+    "category": "class-action",
+    "topics": [
+      "llm-class-action"
+    ],
+    "court": "N.D. Cal.",
+    "sync": "active",
+    "docket_history": "full"
+  },
+  {
     "slug": "bartz-anthropic",
     "added": "2026-06-11",
     "display_name": "Bartz v. Anthropic",
@@ -351,19 +366,5 @@
     "court": "C.I.T.",
     "sync": "active",
     "docket_history": "full"
-  },
-  {
-    "slug": "andersen-v-stability-ai-nd-cal",
-    "display_name": "Andersen v. Stability AI (N.D. Cal.)",
-    "short_name": "Andersen v. Stability AI (N.D. Cal.)",
-    "docket_url": "https://www.courtlistener.com/docket/66732129/andersen-v-stability-ai-ltd/",
-    "court": "N.D. Cal.",
-    "topics": [
-      "llm-class-action"
-    ],
-    "sync": "active",
-    "docket_history": "full",
-    "added": "2026-09-04",
-    "default_color": "#1B3A4B"
   }
 ]
