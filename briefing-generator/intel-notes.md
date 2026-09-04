@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-19 13:48 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-09-04 22:46 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -169,6 +169,10 @@ hi
 > New Chapter 11 Bankruptcy Filing — Poolin Technology PTE LTD — Petition's legal trade newsletter covers the July 22 Chapter 11 filing before Judge O'Hagan in the District of New Jersey, noting that Po
 
 ## Terraform Labs
+
+### (no docket number) — 2026-08-19
+
+> Terraform Ch. 11 Trust Gets OK For $45M Crypto Deal — A Delaware bankruptcy judge approved a settlement among Terraform Labs' Chapter 11 wind-down trust, co-founder Do Kwon's Luna Foundation Guard, an
 
 ### Dkt. 1305 — 2026-07-30 ★
 
