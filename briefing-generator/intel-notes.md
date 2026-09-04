@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-09-04 22:46 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-09-04 22:47 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -189,6 +189,10 @@ hi
 > Thomson Reuters Lifts Revenue Guidance After Growth — Thomson Reuters bumped up its revenue targets for the year after logging double-digit growth across its three big business segments in the latest 
 
 ## Uncategorized
+
+### (no docket number) — 2026-09-03
+
+> Filing Alert: Geospan Corporation Chapter 11 — Geospan Corporation Files Chapter 11 in Southern District of California
 
 ### (no docket number) — 2026-08-17
 
