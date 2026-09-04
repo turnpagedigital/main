@@ -626,7 +626,8 @@
       "source_name": "CoinDesk",
       "date": "2026-03-15",
       "first_seen": "2026-08-17",
-      "status": "new"
+      "status": "dismissed",
+      "triaged_at": "2026-09-04T20:54:59.192Z"
     },
     {
       "id": "ab48db3a72",
