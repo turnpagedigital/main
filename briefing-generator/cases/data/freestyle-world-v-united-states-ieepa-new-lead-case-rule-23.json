@@ -1,0 +1,23 @@
+{
+  "case": {
+    "slug": "freestyle-world-v-united-states-ieepa-new-lead-case-rule-23",
+    "display_name": "Freestyle World v. United States (IEEPA — New Lead Case / Rule 23 Class Cert)",
+    "case_name": "Freestyle World, Inc. v. United States of America",
+    "court": "U.S. Court of International Trade",
+    "case_number": "26-01088",
+    "judge": "",
+    "docket_id": null,
+    "status": "active",
+    "sync": "active"
+  },
+  "docket": {
+    "source": "seed",
+    "awaiting_sync": true,
+    "docket_url": null,
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": []
+}
