@@ -169,7 +169,11 @@
           "fticonsulting.com"
         ]
       },
-      "key_focus_cases": [],
+      "key_focus_cases": [
+        "in-re-cashcall-inc",
+        "goliath",
+        "power-block-coin"
+      ],
       "guidance_prompt": "Tracks active receiverships, clawback litigation, and cross-border asset recovery from the claims-buying perspective — recovery trajectory, distribution timing, and clawback risk for net winners. Key ongoing dockets: Madoff / Picard SIPC trustee (16+ years distributing; fee disputes continue), Stanford receiver (US/UK/Antigua coordination), BitConnect international tracing, OneCoin / Ruja Ignatova, and SEC-enforcement-driven receiverships. Recurring themes: clawback exposure under 11 U.S.C. § 548 and state UFTA/UVTA (net winners face real risk; Ponzi-presumption rulings); multi-jurisdictional distribution timing (cases routinely take 5-15 years; claim trading prices the time value); and fee creep (major receiver/counsel fee orders are signal events for claim pricing). Watch new SEC/DOJ enforcement + receiver appointments, whistleblower awards (an early signal of the next wave, often months before charges), cross-border tracing tools (Mareva injunctions, Norwich Pharmacal / Bankers Trust orders, 28 U.S.C. § 1782, MLAT requests), and crypto/digital-asset tracing with victim-restitution components. Anchors: § 548, state UFTA/UVTA, SEC Act § 21, FRCP 66; UK § 423 Insolvency Act 1986, CPR 25 (Mareva). Voice: recovery-grade — between a Kobre & Kim asset-recovery alert and a Quinn Emanuel distressed memo; audience is sophisticated claims investors and fund LPs."
     },
     {
