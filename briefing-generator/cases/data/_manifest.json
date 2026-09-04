@@ -379,5 +379,19 @@
     "docket_history": "full",
     "added": "2026-09-04",
     "default_color": "#D4FF00"
+  },
+  {
+    "slug": "freestyle-world-v-united-states-ieepa-new-lead-case-rule-23",
+    "display_name": "Freestyle World v. United States (IEEPA — New Lead Case / Rule 23 Class Cert)",
+    "short_name": "Freestyle World v. United States (IEEPA — New Lead Case / Rule 23 Class Cert)",
+    "docket_url": "",
+    "court": "U.S. Court of International Trade",
+    "topics": [
+      "rewind-tariffs"
+    ],
+    "sync": "active",
+    "docket_history": "full",
+    "added": "2026-09-04",
+    "default_color": "#94C6F8"
   }
 ]
