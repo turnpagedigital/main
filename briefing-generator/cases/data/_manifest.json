@@ -365,5 +365,19 @@
     "docket_history": "full",
     "added": "2026-09-04",
     "default_color": "#1B3A4B"
+  },
+  {
+    "slug": "umg-sony-music-v-suno-ai-d-mass-motion-to-add-61-026-recordi",
+    "display_name": "UMG/Sony Music v. Suno AI (D. Mass.) — Motion to Add 61,026 Recordings",
+    "short_name": "UMG/Sony Music v. Suno AI (D. Mass.) — Motion to Add 61,026 Recordings",
+    "docket_url": "",
+    "court": "D. Mass. (Judge Saylor)",
+    "topics": [
+      "llm-class-action"
+    ],
+    "sync": "active",
+    "docket_history": "full",
+    "added": "2026-09-04",
+    "default_color": "#D4FF00"
   }
 ]
