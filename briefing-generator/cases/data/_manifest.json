@@ -46,6 +46,21 @@
     "docket_history": "full"
   },
   {
+    "slug": "disney-universal-warner-bros-v-midjourney-cd-cal",
+    "added": "2026-09-04",
+    "display_name": "Disney/Universal/Warner Bros. v. Midjourney (C.D. Cal.)",
+    "short_name": "Disney/Universal/Warner Bros. v. Midjourney (C.D. Cal.)",
+    "docket_url": "https://www.courtlistener.com/docket/70513159/disney-enterprises-inc-v-midjourney-inc/",
+    "default_color": "#F2AAEC",
+    "category": "class-action",
+    "topics": [
+      "llm-class-action"
+    ],
+    "court": "C.D. Cal. (Judge Kronstadt)",
+    "sync": "active",
+    "docket_history": "full"
+  },
+  {
     "slug": "getty-images-us-v-stability-ai-nd-cal",
     "added": "2026-08-07",
     "display_name": "Getty Images (US) v. Stability AI (N.D. Cal.)",
@@ -336,19 +351,5 @@
     "court": "C.I.T.",
     "sync": "active",
     "docket_history": "full"
-  },
-  {
-    "slug": "disney-universal-warner-bros-v-midjourney-cd-cal",
-    "display_name": "Disney/Universal/Warner Bros. v. Midjourney (C.D. Cal.)",
-    "short_name": "Disney/Universal/Warner Bros. v. Midjourney (C.D. Cal.)",
-    "docket_url": "https://www.courtlistener.com/docket/70513159/disney-enterprises-inc-v-midjourney-inc/",
-    "court": "C.D. Cal. (Judge Kronstadt)",
-    "topics": [
-      "llm-class-action"
-    ],
-    "sync": "active",
-    "docket_history": "full",
-    "added": "2026-09-04",
-    "default_color": "#F2AAEC"
   }
 ]
