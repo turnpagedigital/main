@@ -16,6 +16,51 @@
       "theme_slug": null
     },
     {
+      "id": "bioxcel-therapeutics",
+      "kind": "summaries",
+      "source": "Bondoro",
+      "source_id": "bondoro-summaries",
+      "show": "both",
+      "title": "Case Summary: BioXcel Therapeutics Chapter 11",
+      "url": "https://bondoro.com/bioxcel-therapeutics/",
+      "date": "2026-09-03",
+      "published_at": "2026-09-03T18:09:22+00:00",
+      "excerpt": "BioXcel Therapeutics filed for Chapter 11 after its sole approved product, IGALMI, never reached commercial scale and revenue could not support roughly $112 million of secured debt, pursuing a 363 sale to stalking horse Teva for $57.5 million cash plus up to $67.5 million in milestone payments.",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "geospan-corporation-filing-alert",
+      "kind": "alert",
+      "source": "Bondoro",
+      "source_id": "bondoro-alert",
+      "show": "both",
+      "title": "Filing Alert: Geospan Corporation Chapter 11",
+      "url": "https://bondoro.com/geospan-corporation-filing-alert/",
+      "date": "2026-09-03",
+      "published_at": "2026-09-03T18:12:12+00:00",
+      "excerpt": "Geospan Corporation Files Chapter 11 in Southern District of California",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "?utm_source=rss&utm_medium=rss&utm_campaign=they-called-a-fairness-opinion-not-p",
+      "kind": "article",
+      "source": "Daily DAC",
+      "source_id": "daily-dac-article",
+      "show": "news",
+      "title": "They Called a Fairness Opinion “Not Prudent.” The Estate Wants $180 Million of the $222 Million Deal Back.",
+      "url": "https://www.dailydac.com/they-called-a-fairness-opinion-not-prudent-the-estate-wants-180-million-of-the-222-million-deal-back/?utm_source=rss&utm_medium=rss&utm_campaign=they-called-a-fairness-opinion-not-prudent-the-estate-wants-180-million-of-the-222-million-deal-back",
+      "date": "2026-09-03",
+      "published_at": "2026-09-03T17:30:02+00:00",
+      "excerpt": "Editors’ Note: In March 2026, the Chapter 7 trustee for Polished.com sued former chief executive Albert Fouerti and 12 other former officers and directors in the United States Bankruptcy Court for the District of Delaware, seeking more than $200 million. At the center of the complaint is one payment",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=dailydacs-market-summary-explainer-f",
       "kind": "article",
       "source": "Daily DAC",
@@ -3267,7 +3312,8 @@
       "excerpt": "Treasury Secretary says deal with Iran may be near; Nasdaq advances more than 1%",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "five-charts-that-show-why-the-u-s-and-japan-teamed-up-to-buy-yen-a1ed9bbb?mod=rs",
@@ -3281,7 +3327,8 @@
       "excerpt": "A rundown of why Friday’s historic intervention in currency markets happened.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "wells-fargo-to-roll-out-tokenized-deposits-for-corporate-clients-75c5d2cc?mod=rs",
@@ -3295,7 +3342,8 @@
       "excerpt": "The bank is the latest to embrace blockchain to make payments and transfers faster and more efficient.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "the-morning-risk-report-ubs-fined-125-million-over-alleged-aml-failures-fa2c6fd0",
@@ -3309,7 +3357,8 @@
       "excerpt": "Plus: Capital One’s Trump money-laundering concerns and drought slowing European shipping.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "we-love-betting-on-fallen-investing-stars-c4e6d033?mod=rss_markets_main",
@@ -3323,7 +3372,8 @@
       "excerpt": "Plus, SpaceX reports.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "only-the-bank-of-japan-can-arrest-the-yens-decline-dc351568?mod=rss_markets_main",
@@ -3337,7 +3387,8 @@
       "excerpt": "Higher interest rates are needed to address a growing yield gap with the U.S.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "hsbc-posts-sharply-higher-quarterly-profit-plans-1-bln-share-buyback-00845c03?mo",
@@ -3351,7 +3402,8 @@
       "excerpt": "Pretax profit increased across the bank’s four key segments, rising especially sharply in the business of supporting affluent clients with their finances.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "jgbs-edge-higher-tracking-gains-in-u-s-treasurys-89af7200?mod=rss_markets_main",
@@ -3365,7 +3417,8 @@
       "excerpt": "Treasury yields fell as oil cheapens on hopes of a Hormuz deal.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "tech-media-telecom-roundup-market-talk-bfd93275?mod=rss_markets_main",
@@ -3379,7 +3432,8 @@
       "excerpt": "Find insight on Nvidia, Micron, Tencent and more in the latest Market Talks covering technology, media and telecom.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "financial-services-roundup-market-talk-d1c533a2?mod=rss_markets_main",
@@ -3393,7 +3447,8 @@
       "excerpt": "Find insight on Adyen, Maybank, Banco BPM and more in the latest Market Talks covering financial services.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "health-care-roundup-market-talk-9a2fe984?mod=rss_markets_main",
@@ -3407,7 +3462,8 @@
       "excerpt": "Find insight on Bayer, Parkway Life, Fresenius Medical Care and more in the latest Market Talks covering health care.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "basic-materials-roundup-market-talk-33f3805e?mod=rss_markets_main",
@@ -3421,7 +3477,8 @@
       "excerpt": "Find insight on Fortescue, FireFly Metals, West African Resources and more in the latest Market Talks covering basic materials.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "u-s-stocks-look-to-extend-rally-oil-rebounds-on-uncertainty-be1b5842?mod=rss_mar",
@@ -3435,7 +3492,8 @@
       "excerpt": "U.S. stocks were rising as the Dow and Nasdaq made gains amid a flurry of earnings reports.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "auto-transport-roundup-market-talk-d56e7f43?mod=rss_markets_main",
@@ -3449,7 +3507,8 @@
       "excerpt": "Find insight on Continental, Lufthansa , Kia and more in the latest Market Talks covering auto and transport.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "nikkei-rises-0-4-led-by-chip-stocks-e1d183bc?mod=rss_markets_main",
@@ -3463,7 +3522,8 @@
       "excerpt": "European indexes rose strongly after the opening bell, with defense and AI-related stocks gaining.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "oil-falls-amid-prospects-for-reopening-of-strait-of-hormuz-79d7e674?mod=rss_mark",
@@ -3477,7 +3537,8 @@
       "excerpt": "Oil prices extended losses after U.S. Treasury Secretary Scott Bessent said there’s a chance the U.S. will have a deal to open the Strait of Hormuz Tuesday or Wednesday.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "u-s-natural-gas-futures-fall-in-up-and-down-trade-f779ada1?mod=rss_markets_main",
@@ -3491,7 +3552,8 @@
       "excerpt": "U.S. natural gas futures were lower, following their recent pattern of rising one day and falling the next as solid production and soft LNG feedgas offset high seasonal power-sector demand.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "gold-rises-focus-on-u-s-labor-data-239f754a?mod=rss_markets_main",
@@ -3505,7 +3567,8 @@
       "excerpt": "Gold prices rose in early European trading as investors weighed mixed signals on U.S.-Iran talks and awaited a U.S. jobs data this week.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "dollar-rising-vs-yen-in-possible-corrective-pattern-technical-analysis-shows-d48",
@@ -3519,7 +3582,8 @@
       "excerpt": "The WSJ Dollar Index edged lower — down five of the past six trading days.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "mcdonalds-mcd-q2-earnings-report-2026-stock-c7066898?mod=pls_whats_news_us_busin",
@@ -3533,7 +3597,8 @@
       "excerpt": "Skye Anderson takes over as U.S. president after growth in domestic business stalls. Joe Erlinger, who previously held the role, will depart.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "spotify-spot-q2-earnings-report-2026-stock-a9fdd162?mod=pls_whats_news_us_busine",
@@ -3547,7 +3612,8 @@
       "excerpt": "The Swedish audio streamer reported a 14% quarterly revenue increase from a year earlier.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "a-goldilocks-discovery-in-the-paper-aisle-313c74c2?mod=pls_whats_news_us_busines",
@@ -3561,7 +3627,8 @@
       "excerpt": "",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "bps-profits-surge-as-oil-traders-capitalize-on-middle-east-volatility-1cd07bc7?m",
@@ -3575,7 +3642,8 @@
       "excerpt": "The British oil major intends to sell its Archaea biogas business as its oil trading and higher energy prices lifted profits.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "ice-scours-social-media-to-unmask-critics-raising-free-speech-concerns-0a9573da?",
@@ -3589,7 +3657,8 @@
       "excerpt": "Plus, the AI boom is transforming the American economy, and flying private has never been easier, even without your own jet.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "the-brown-bag-ai-lunches-are-over-0d393fbd?mod=pls_whats_news_us_business_f",
@@ -3603,7 +3672,8 @@
       "excerpt": "",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "prologis-to-buy-u-k-s-segro-for-18-8-billion-50b0ddd5?mod=pls_whats_news_us_busi",
@@ -3617,7 +3687,8 @@
       "excerpt": "Segro’s directors intend to unanimously recommend the offer to shareholders who will be entitled to receive 0.0920 newly issued shares in Prologis for each Segro share held, with a partial cash alternative.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "caterpillar-posts-higher-profit-sales-on-increased-orders-990788a5?mod=pls_whats",
@@ -3631,7 +3702,8 @@
       "excerpt": "Caterpillar said the artificial intelligence boom continues to drive demand for its engines and generators, while healthy construction spending is spurring sales of its dump trucks, bulldozers and excavators.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "bayer-swings-to-net-profit-on-smaller-litigation-charges-61a78f82?mod=pls_whats_",
@@ -3645,7 +3717,8 @@
       "excerpt": "The German conglomerate is focused on containing litigation uncertainty, reducing debt and internal bureaucracy, strengthening the drug pipeline of its pharma business, and improving the profitability of its agriculture unit.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "wayfair-swings-to-loss-on-lower-international-sales-despite-u-s-growth-ca1471b0?",
@@ -3659,7 +3732,8 @@
       "excerpt": "Wayfair had a mixed second quarter, as its U.S. business grew while international sales fell.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "kimberly-clark-kmb-q2-earnings-report-2026-ec045afc?mod=pls_whats_news_us_busine",
@@ -3673,7 +3747,8 @@
       "excerpt": "A state-run newspaper said the diapers tested positive for a substance called formamide. Huggies maker Kimberly-Clark said the findings are false.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "archer-daniels-midland-again-raises-outlook-on-new-u-s-biofuels-policy-e6749e2f?",
@@ -3687,7 +3762,8 @@
       "excerpt": "Archer-Daniels-Midland once again raised its full-year adjusted earnings outlook, after the Trump administration earlier this year issued new rules requiring gas and diesel to contain more biofuels.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "cummins-raises-outlook-as-profit-sales-climb-a2a7de49?mod=pls_whats_news_us_busi",
@@ -3701,7 +3777,8 @@
       "excerpt": "Cummins raised its outlook for the year after reporting higher profit and sales in the second quarter, boosted by accelerating orders for standby power for data centers, as well as improving North American truck markets.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "pfizer-post-loss-on-higher-revenue-b1ec539e?mod=pls_whats_news_us_business_f",
@@ -3715,7 +3792,8 @@
       "excerpt": "Rising sales of drugs for cancer and heart disease helped offset steep declines for Pfizer’s Covid-19 products.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "merck-cuts-full-year-profit-forecast-as-acquisition-costs-weigh-on-bottom-line-2",
@@ -3729,7 +3807,8 @@
       "excerpt": "Merck slashed its profit outlook for the year due to charges tied to its acquisition of cancer biotech company Terns Pharmaceuticals.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "toyota-net-profit-surges-76-boosts-earnings-outlook-db362399?mod=pls_whats_news_",
@@ -3743,7 +3822,8 @@
       "excerpt": "The Japanese carmaker raised its annual earnings forecasts, citing a weaker yen and a smaller impact from the Iran war.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "dupont-reports-higher-profit-as-sales-rise-4536daff?mod=pls_whats_news_us_busine",
@@ -3757,7 +3837,8 @@
       "excerpt": "DuPont de Nemours reported a higher profit in the second quarter as sales rose across the chemicals and materials company’s segments.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "volvo-car-sales-slip-4-on-china-weakness-7148ae7e?mod=pls_whats_news_us_business",
@@ -3771,7 +3852,8 @@
       "excerpt": "Sales in the U.S. increased for the third consecutive month, rising by a double-digit percentage while European deliveries remained steady with moderate growth.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "saudi-aramco-profit-jumps-33-on-higher-oil-prices-amid-iran-war-3ae028ce?mod=pls",
@@ -3785,7 +3867,8 @@
       "excerpt": "Elevated crude prices lifted earnings despite disruption in the Strait of Hormuz pushing sales volumes lower.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "energy-utilities-roundup-market-talk-8a8294ee?mod=pls_whats_news_us_business_f",
@@ -3799,7 +3882,8 @@
       "excerpt": "Find insight on oil futures, BP, Origin Energy and more in the latest Market Talks covering energy and utilities.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "basic-materials-roundup-market-talk-33f3805e?mod=pls_whats_news_us_business_f",
@@ -3813,7 +3897,8 @@
       "excerpt": "Find insight on Fortescue, FireFly Metals, West African Resources and more in the latest Market Talks covering basic materials.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "its-easier-than-ever-to-fly-private-without-your-own-jet-a263d1f8?mod=pls_whats_",
@@ -3827,7 +3912,8 @@
       "excerpt": "The options are multiplying if you’re willing to pay a premium to avoid commercial travel",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "what-cfos-are-saying-about-the-iran-conflict-6bf4fccd?mod=pls_whats_news_us_busi",
@@ -3841,7 +3927,8 @@
       "excerpt": "Plus, Trump blasts Big Oil companies and rising beef costs pressure Tyson’s bottom line.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "anduril-weighs-baltimore-shipyard-investment-to-build-drone-boats-d7ae923d?mod=p",
@@ -3855,7 +3942,8 @@
       "excerpt": "The defense-tech company is in talks for a production site at historic Sparrows Point, as the Iran war has demonstrated the utility of unmanned surface vessels.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "financial-services-roundup-market-talk-d1c533a2?mod=pls_whats_news_us_business_f",
@@ -3869,7 +3957,8 @@
       "excerpt": "Find insight on Adyen, Maybank, Banco BPM and more in the latest Market Talks covering financial services.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "whirlpool-abandoned-its-global-ambitions-now-its-in-a-world-of-hurt-622ba54f?mod",
@@ -3883,7 +3972,8 @@
       "excerpt": "The company’s focus on North America has tied its fortunes to the slumping U.S. housing market.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "verandas-5455-filing-alert",
@@ -3898,7 +3988,8 @@
       "case_slug": null,
       "group_name": null,
       "theme_slug": null,
-      "show": "both"
+      "show": "both",
+      "archived": true
     },
     {
       "id": "employee-force-provider-filing-alert",
@@ -3913,7 +4004,8 @@
       "case_slug": null,
       "group_name": null,
       "theme_slug": null,
-      "show": "both"
+      "show": "both",
+      "archived": true
     },
     {
       "id": "hughes-satellite-systems",
@@ -3928,7 +4020,8 @@
       "case_slug": null,
       "group_name": null,
       "theme_slug": null,
-      "show": "both"
+      "show": "both",
+      "archived": true
     },
     {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
@@ -3944,7 +4037,8 @@
       "group_name": null,
       "theme_slug": null,
       "auto_matched": true,
-      "show": "news"
+      "show": "news",
+      "archived": true
     },
     {
       "id": "only-the-bank-of-japan-can-arrest-the-yens-decline-dc351568?mod=rss_marketsmain",
@@ -3958,7 +4052,8 @@
       "excerpt": "Higher interest rates are needed to address a growing yield gap with the U.S.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "bilt-cardholders-hit-with-mistaken-collections-notices-on-phantom-balances-a7e8c",
@@ -3972,7 +4067,8 @@
       "excerpt": "A Bilt spokesman said that roughly 1,850 cardholders were affected and that it moved quickly to correct the errors.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "wells-fargo-to-roll-out-tokenized-deposits-for-corporate-clients-75c5d2cc?mod=rs",
@@ -3986,7 +4082,8 @@
       "excerpt": "The bank is the latest to embrace blockchain to make payments and transfers faster and more efficient.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "hsbc-posts-sharply-higher-quarterly-profit-plans-1-bln-share-buyback-00845c03?mo",
@@ -4000,7 +4097,8 @@
       "excerpt": "Pretax profit increased across the bank’s four key segments, rising especially sharply in the business of supporting affluent clients with their finances.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "clarity-for-crypto-sort-of-3f5283a7?mod=rss_marketsmain",
@@ -4014,7 +4112,8 @@
       "excerpt": "The Senate bill to regulate the digital currency needs changes to reduce risks to the financial system.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "do-you-know-who-pays-if-your-ai-agent-goes-rogue-f9fb7e77?mod=rss_marketsmain",
@@ -4028,7 +4127,8 @@
       "excerpt": "Though businesses are increasingly adopting the technology, too few are covering potential risks.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "basic-materials-roundup-market-talk-33f3805e?mod=rss_marketsmain",
@@ -4042,7 +4142,8 @@
       "excerpt": "Find insight on gold futures, Fortescue, FireFly Metals, West African Resources and more in the latest Market Talks covering basic materials.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "oil-falls-amid-prospects-for-reopening-of-strait-of-hormuz-79d7e674?mod=rss_mark",
@@ -4056,7 +4157,8 @@
       "excerpt": "Crude futures fell to a three-week low after Treasury Secretary Scott Bessent said the U.S. could be close to an agreement with Iran to reopen the Strait of Hormuz, while Qatar reported progress in diplomatic efforts.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "dollar-rising-vs-yen-in-possible-corrective-pattern-technical-analysis-shows-d48",
@@ -4070,7 +4172,8 @@
       "excerpt": "The WSJ Dollar Index edged lower — down five of the past six trading days.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "five-charts-that-show-why-the-u-s-and-japan-teamed-up-to-buy-yen-a1ed9bbb?mod=rs",
@@ -4084,7 +4187,8 @@
       "excerpt": "A rundown of why Friday’s historic intervention in currency markets happened.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "the-morning-risk-report-ubs-fined-125-million-over-alleged-aml-failures-fa2c6fd0",
@@ -4098,7 +4202,8 @@
       "excerpt": "Plus: Capital One’s Trump money-laundering concerns and drought slowing European shipping.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "even-big-profits-arent-enough-to-keep-chip-investors-happy-36acfc66?mod=rss_mark",
@@ -4112,7 +4217,8 @@
       "excerpt": "The semiconductor index fell into a bear market despite “unprecedented” profit increases.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "stocks-rally-oil-drops-after-bessent-signals-iran-deal-on-hormuz-90126823?mod=rs",
@@ -4126,7 +4232,8 @@
       "excerpt": "Plus, Palantir shares surge and the AI trade roars back.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "we-love-betting-on-fallen-investing-stars-c4e6d033?mod=rss_marketsmain",
@@ -4140,7 +4247,8 @@
       "excerpt": "Plus, SpaceX reports.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "auto-transport-roundup-market-talk-d56e7f43?mod=pls_whats_news_us_business_f",
@@ -4154,7 +4262,8 @@
       "excerpt": "Find insight on U.S. auto shoppers, Continental, Lufthansa and more in the latest Market Talks covering auto and transport.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "trump-big-oil-and-too-much-money-12cac79a?mod=pls_whats_news_us_business_f",
@@ -4168,7 +4277,8 @@
       "excerpt": "The billionaire President offers an odd critique of companies.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "where-are-you-taking-me-waymo-475f919f?mod=pls_whats_news_us_business_f",
@@ -4182,7 +4292,8 @@
       "excerpt": "En route to our hotel, the car steered itself into wrong lanes, and we had to bail out.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "u-s-stocks-look-to-extend-rally-oil-rebounds-on-uncertainty-be1b5842?mod=pls_wha",
@@ -4196,7 +4307,8 @@
       "excerpt": "Stocks were rallying amid strong earnings and comments by Treasury Secretary Scott Bessent that a deal with Iran to reopen the Strait of Hormuz could come “today or tomorrow.”",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "basic-materials-roundup-market-talk-39b1ba36?mod=pls_whats_news_us_business_f",
@@ -4210,7 +4322,8 @@
       "excerpt": "Find insight on Johnson Matthey, Aluminum Corp. of China, Fortescue and more in the latest Market Talks covering basic materials..",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "health-officials-probe-salmonella-cases-tied-to-jalapeno-peppers-served-at-chipo",
@@ -4224,7 +4337,8 @@
       "excerpt": "Minnesota health authorities are investigating an illness in people who ate at quick-service Mexican-style chains.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "disney-to-sell-its-stake-in-a-e-global-media-to-hearst-for-about-1-2-billion-e04",
@@ -4238,7 +4352,8 @@
       "excerpt": "The deal will give Hearst full ownership of prominent brands such as Lifetime and The History Channel.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "mattel-is-stuck-in-the-toy-aisle-despite-big-hollywood-ambitions-d1b77dcc?mod=pl",
@@ -4252,7 +4367,8 @@
       "excerpt": "Mattel has spent years trying to transform into a toy and entertainment company, partnering with movie studios to bring its brands to the big screen. But as it stands, the majority of its revenue still comes from toy sales.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "antitrust-trial-over-paramount-warner-merger-set-for-march-b17fedcb?mod=pls_what",
@@ -4266,7 +4382,8 @@
       "excerpt": "A dozen states sued to block the $81 billion deal. The trial is expected to last 12 court days.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "rocketing-cloud-and-starlink-demand-boosts-spacex-revenue-92-441540f3?mod=pls_wh",
@@ -4280,7 +4397,8 @@
       "excerpt": "Plus, the Strait of Hormuz opening is uncertain after a new strike, and one man’s cure for loneliness started a movement.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "paramounts-streaming-growth-continues-amid-legal-challenges-to-warner-deal-efb6d",
@@ -4294,7 +4412,8 @@
       "excerpt": "Paramount’s streaming service continued to grow in the latest quarter, helping to narrowly offset another sales decline for its television unit.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "new-jersey-sues-amazon-alleging-delivery-network-illegally-suppresses-wages-f6d6",
@@ -4308,7 +4427,8 @@
       "excerpt": "The lawsuit alleges Amazon violated federal and state antitrust laws through its Delivery Service Partner program, arguing the company exercises unlawful “monopsony,” or a dominant buyer’s ability to dictate prices and terms-over the small businesses that deliver Amazon packages and the drivers they",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "fintech-billionaire-sued-over-400-million-superyacht-deal-d12d926d?mod=pls_whats",
@@ -4322,7 +4442,8 @@
       "excerpt": "Revolut co-founder Nik Storonsky allegedly went behind his yacht broker’s back to avoid paying around $20 million in commission.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "amd-earnings-q2-2026-stock-03fe0b09?mod=pls_whats_news_us_business_f",
@@ -4336,7 +4457,8 @@
       "excerpt": "The company’s sales to data centers doubled in the latest quarter, but its revenue only narrowly beat analysts’ estimates.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "author-whose-2-million-book-deal-was-derailed-by-ai-concerns-says-hes-innocent-c",
@@ -4350,7 +4472,8 @@
       "excerpt": "Jerry Falade said in an interview that he wrote the debut novel himself and that claims against him were racially motivated.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "best-small-business-loans?mod=pls_whats_news_us_business_f",
@@ -4364,7 +4487,8 @@
       "excerpt": "The best small-business lenders have flexible business requirements, competitive rates and various loan options.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "bilt-cardholders-hit-with-mistaken-collections-notices-on-phantom-balances-a7e8c",
@@ -4378,7 +4502,8 @@
       "excerpt": "A Bilt spokesman said that roughly 1,850 cardholders were affected and that it moved quickly to correct the errors.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "clarity-for-crypto-sort-of-3f5283a7?mod=rss_markets_main",
@@ -4392,7 +4517,8 @@
       "excerpt": "The Senate bill to regulate the digital currency needs changes to reduce risks to the financial system.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "do-you-know-who-pays-if-your-ai-agent-goes-rogue-f9fb7e77?mod=rss_markets_main",
@@ -4406,7 +4532,8 @@
       "excerpt": "Though businesses are increasingly adopting the technology, too few are covering potential risks.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "stock-market-today-dow-sp-500-nasdaq-08-03-2026?mod=rss_markets_main",
