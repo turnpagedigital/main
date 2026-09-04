@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-19 13:48 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-09-04 22:47 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -170,6 +170,10 @@ hi
 
 ## Terraform Labs
 
+### (no docket number) — 2026-08-19
+
+> Terraform Ch. 11 Trust Gets OK For $45M Crypto Deal — A Delaware bankruptcy judge approved a settlement among Terraform Labs' Chapter 11 wind-down trust, co-founder Do Kwon's Luna Foundation Guard, an
+
 ### Dkt. 1305 — 2026-07-30 ★
 
 > Chapter 11 Post-Confirmation Report
@@ -185,6 +189,10 @@ hi
 > Thomson Reuters Lifts Revenue Guidance After Growth — Thomson Reuters bumped up its revenue targets for the year after logging double-digit growth across its three big business segments in the latest 
 
 ## Uncategorized
+
+### (no docket number) — 2026-09-03
+
+> Filing Alert: Geospan Corporation Chapter 11 — Geospan Corporation Files Chapter 11 in Southern District of California
 
 ### (no docket number) — 2026-08-17
 

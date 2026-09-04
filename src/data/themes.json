@@ -40,7 +40,12 @@
           "https://www.hklaw.com/en/general-pages/tariff-task-force"
         ]
       },
-      "key_focus_cases": [],
+      "key_focus_cases": [
+        "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",
+        "freestyle-world-v-united-states-ieepa-new-lead-case-rule-23",
+        "tariff-refund-act-of-2026-s-3905-legislative-watch",
+        "vos-selections-v-trump"
+      ],
       "guidance_prompt": "Cover the full IEEPA tariff-refund landscape and anything that could accelerate, delay, or eliminate refunds: the CBP CAPE refund pipeline, the Section 122 surcharge (hard expiration July 24, 2026), duty-drawback mechanics, and appellate posture on BOTH sides of CIT rulings. Watch government/DOJ appeal signals especially — they use different language than importer challenges (search 'emergency stay Federal Circuit tariff', officials saying they 'strongly disagree' or 'will challenge' a ruling, which often precedes a filing by days). Tariff-rate changes, bilateral deals, and product-exclusion grants can reset the refund math and matter as much as court rulings. Key dockets: V.O.S. Selections v. Trump (Fed. Cir. en banc), Learning Resources v. Trump (S. Ct.), Burlap and Barrel and State of Oregon (Section 122), Atmus Filtration and Euro-Notions (IEEPA refund orders). Statutory anchors: 19 U.S.C. § 2132 (§122), § 1514 (protests), § 1581(i) (CIT jurisdiction), § 1520(d), § 1313 (drawback). Voice: trade-law-grade — a Holland & Knight / Torres Trade Law client alert for GCs, compliance officers, and CFOs who want to know when their money comes back and whether the refund is still happening. Lead with the most consequential development; weave statutory cites into prose."
     },
     {
@@ -78,8 +83,21 @@
         ]
       },
       "key_focus_cases": [
+        "andersen-v-stability-ai-nd-cal",
         "bartz-anthropic",
-        "concord-anthropic"
+        "bmg-rights-management-v-anthropic-pbc-nd-cal",
+        "britannica-merriam-webster-v-openai",
+        "concord-anthropic",
+        "disney-universal-warner-bros-v-midjourney-cd-cal",
+        "getty-images-us-v-stability-ai-nd-cal",
+        "hachette-et-al-v-google-llc-gemini",
+        "hachette-et-al-v-meta-platforms-llama",
+        "hendrix-roberson-v-apple-inc-ai-book-training-class-action",
+        "kadrey-v-meta-contributory-infringement-amendment",
+        "nyt-v-openai-mdl-no-3143-sanctions-motion",
+        "publishers-v-google-llc-gemini-books",
+        "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153",
+        "umg-sony-music-v-suno-ai-d-mass-motion-to-add-61-026-recordi"
       ],
       "guidance_prompt": "Flagship matter: Bartz v. Anthropic PBC, 3:24-cv-05417 (N.D. Cal., Judge Martínez-Olguín) — the $1.5B settlement, the largest copyright settlement in U.S. history. Track the parallel AI-copyright docket as a SYSTEM, not isolated cases: Kadrey v. Meta, In re OpenAI Copyright MDL (No. 3143), Authors Guild v. OpenAI, NYT v. OpenAI/Microsoft, Concord/UMG v. Anthropic, Getty v. Stability AI, Thomson Reuters v. Ross, Disney/Universal v. Midjourney, Elsevier v. Meta — cross-references matter most when fair-use frameworks transfer or diverge. Watch settlement administration (claims processing, distribution timeline, publisher-vs-author allocation, fee award, any 9th Cir. objector appeal), new filings, discovery / training-data disclosure orders, and AI licensing deals (comparator pricing is § 107(4) market-harm evidence). International: UK Getty v. Stability appeal, EU AI Act / DSM Directive Art. 4 TDM exception. Statutory anchors: 17 U.S.C. § 107 (fair-use four factors), § 504 (statutory damages), § 411 (registration prerequisite). Voice: litigation-grade — a Davis Polk / Paul Weiss client alert, not a marketing post. Audience: creditor-side claims investors and rights-holder counsel, not retail authors."
     },
@@ -188,7 +206,10 @@
           "jamsadr.com"
         ]
       },
-      "key_focus_cases": [],
+      "key_focus_cases": [
+        "in-re-multiplan-health-insurance-provider-antitrust-litigati",
+        "keller-postman-v-google-alphabet-ad-tech-mass-arbitration"
+      ],
       "guidance_prompt": "Track mega-settlements (>$1B) across all class-action verticals plus mass arbitration, mass torts and major multi-district litigation. Settlement lenses: notice & claims rate (lower filing rates = higher per-claim recovery for filers), objector campaigns and appellate exposure, fee-award trajectory (percentage-of-fund vs. lodestar cross-check), distribution timing, and opt-out vs. claims-made structure (the denominator math for valuing tradeable claims). Catch pre-settlement signals (mediator appointments, stayed trial dates, joint status reports), watch the AAA Mass Arbitration Supplementary Rules, bellwether/batching rulings, and the pivot from fighting every claim to global settlement. Anchors: FRCP 23, CAFA, PSLRA; Sherman Act §§ 1-2, Clayton Act § 4 (treble), FAA (Concepcion, Monitor Cornerstone/NERA reports and the Stanford Securities Class Action Clearinghouse. "
     },
     {
