@@ -14,52 +14,72 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
-    "date_last_filing": "2026-09-01",
-    "meta_fetched_at": "2026-09-02T04:43:41.270335+00:00",
-    "fetched_at": "2026-09-03T14:38:47.944229+00:00",
-    "as_of": "Sep 3, 2026",
+    "date_last_filing": "2026-09-03",
+    "meta_fetched_at": "2026-09-04T00:10:58.980033+00:00",
+    "fetched_at": "2026-09-04T00:10:58.980033+00:00",
+    "as_of": "Sep 4, 2026",
     "backfilled": true,
-    "new_in_72h": 6,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 1289,
+        "date_filed": "2026-09-03",
+        "time_filed": "12:42:10",
+        "date_display": "Sep 3, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-03",
+        "time_filed": "12:45:19",
+        "date_display": "Sep 3, 2026",
+        "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1288,
         "date_filed": "2026-09-01",
         "time_filed": "15:45:27",
         "date_display": "Sep 1, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 1287,
-        "date_filed": "2026-09-01",
-        "time_filed": "15:36:49",
-        "date_display": "Sep 1, 2026",
-        "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 1286,
-        "date_filed": "2026-09-01",
-        "time_filed": "15:25:56",
-        "date_display": "Sep 1, 2026",
-        "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
       {
+        "entry_number": 1289,
+        "date_filed": "2026-09-03",
+        "time_filed": "12:42:10",
+        "date_display": "Sep 3, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-03",
+        "time_filed": "12:45:19",
+        "date_display": "Sep 3, 2026",
+        "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 1288,
         "date_filed": "2026-09-01",
         "time_filed": "15:45:27",
         "date_display": "Sep 1, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -69,7 +89,7 @@
         "time_filed": "15:36:49",
         "date_display": "Sep 1, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -79,7 +99,7 @@
         "time_filed": "15:25:56",
         "date_display": "Sep 1, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -89,7 +109,7 @@
         "time_filed": "12:35:42",
         "date_display": "Sep 1, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -99,7 +119,7 @@
         "time_filed": "16:10:16",
         "date_display": "Sep 1, 2026",
         "description": "none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -109,7 +129,7 @@
         "time_filed": "16:10:15",
         "date_display": "Sep 1, 2026",
         "description": "none AND none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

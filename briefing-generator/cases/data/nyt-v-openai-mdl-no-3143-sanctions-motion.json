@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
     "date_last_filing": "2026-09-03",
     "meta_fetched_at": "2026-09-03T17:42:01.895402+00:00",
-    "fetched_at": "2026-09-03T18:44:26.020905+00:00",
-    "as_of": "Sep 3, 2026",
+    "fetched_at": "2026-09-04T00:11:41.167869+00:00",
+    "as_of": "Sep 4, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 3,
     "recent": [
       {
         "entry_number": 1685,
@@ -90,7 +90,7 @@
         "time_filed": "21:52:52",
         "date_display": "Sep 1, 2026",
         "description": "LETTER addressed to Judge Sidney H. Stein from United States of America dated September 1, 2026 re: STATEMENT OF INTEREST OF UNITED STATES OF AMERICA. Document filed by United States of America.Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Weisbuch, Michael) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1682.0.pdf"
       },

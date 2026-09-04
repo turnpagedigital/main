@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
     "date_last_filing": "2026-09-02",
     "meta_fetched_at": "2026-09-02T17:46:34.437228+00:00",
-    "fetched_at": "2026-09-03T17:41:51.571487+00:00",
-    "as_of": "Sep 3, 2026",
+    "fetched_at": "2026-09-04T00:11:26.659369+00:00",
+    "as_of": "Sep 4, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 1,
     "recent": [
       {
         "entry_number": 824,
@@ -38,7 +38,7 @@
         "time_filed": "22:52:28",
         "date_display": "Sep 1, 2026",
         "description": "STATUS REPORT Jointly Filed by BCP Literary, Inc., Ta-Nehisi Coates, Daring Greatly Corporation, Junot Diaz, Eleven Eleven O' Clock Corporation, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Attachments: # 1 Exhibit A, # 2 Exhibit B, # 3 Exhibit C)(Pritt, Maxwell) (Filed on 9/1/2026) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.823.0.pdf"
       },
@@ -48,7 +48,7 @@
         "time_filed": "",
         "date_display": "Sep 1, 2026",
         "description": "NOTICE of Withdrawal filed by Kathleen R. Hartnett, no longer appearing on behalf of Meta Platforms, Inc. in this case (Hartnett, Kathleen) (Filed on 9/1/2026) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -70,7 +70,7 @@
         "time_filed": "22:52:28",
         "date_display": "Sep 1, 2026",
         "description": "STATUS REPORT Jointly Filed by BCP Literary, Inc., Ta-Nehisi Coates, Daring Greatly Corporation, Junot Diaz, Eleven Eleven O' Clock Corporation, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Attachments: # 1 Exhibit A, # 2 Exhibit B, # 3 Exhibit C)(Pritt, Maxwell) (Filed on 9/1/2026) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.823.0.pdf"
       },
@@ -80,7 +80,7 @@
         "time_filed": "",
         "date_display": "Sep 1, 2026",
         "description": "NOTICE of Withdrawal filed by Kathleen R. Hartnett, no longer appearing on behalf of Meta Platforms, Inc. in this case (Hartnett, Kathleen) (Filed on 9/1/2026) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -90,7 +90,7 @@
         "time_filed": "14:42:49",
         "date_display": "Sep 1, 2026",
         "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
