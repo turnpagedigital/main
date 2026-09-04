@@ -14,45 +14,75 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
-    "date_last_filing": "2026-09-03",
-    "meta_fetched_at": "2026-09-04T14:24:56.403151+00:00",
-    "fetched_at": "2026-09-04T14:24:56.403151+00:00",
+    "date_last_filing": "2026-09-04",
+    "meta_fetched_at": "2026-09-04T17:29:16.407389+00:00",
+    "fetched_at": "2026-09-04T17:29:16.407389+00:00",
     "as_of": "Sep 4, 2026",
-    "backfilled": false,
-    "new_in_72h": 29,
+    "backfilled": true,
+    "new_in_72h": 32,
     "recent": [
       {
-        "entry_number": 245,
-        "date_filed": "2026-09-03",
-        "time_filed": "18:11:58",
-        "date_display": "Sep 3, 2026",
-        "description": "In-Person/Zoom Hearing Held/Court Sign-In Sheet (related document(s)238) (Mml) (Entered: 09/03/2026)",
+        "entry_number": 248,
+        "date_filed": "2026-09-04",
+        "time_filed": "12:50:24",
+        "date_display": "Sep 4, 2026",
+        "description": "Employ (Application)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 244,
-        "date_filed": "2026-09-03",
-        "time_filed": "17:35:05",
-        "date_display": "Sep 3, 2026",
-        "description": "Court Date & Time [09/03/2026 11:35:06 AM]. File Size [ 146736 KB ]. Run Time [ 05:49:55 ]. (admin). (Entered: 09/03/2026)",
+        "entry_number": 247,
+        "date_filed": "2026-09-04",
+        "time_filed": "12:38:51",
+        "date_display": "Sep 4, 2026",
+        "description": "Employ (Application)",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.244.0.pdf"
+        "doc_url": ""
       },
       {
-        "entry_number": 243,
-        "date_filed": "2026-09-03",
-        "time_filed": "14:41:13",
-        "date_display": "Sep 3, 2026",
-        "description": "Certificate of Service (related document(s)173) Filed by Pleasants, LLC. (Franchi, Nicholas) (Entered: 09/03/2026)",
+        "entry_number": 246,
+        "date_filed": "2026-09-04",
+        "time_filed": "12:27:35",
+        "date_display": "Sep 4, 2026",
+        "description": "Exhibit A - B",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 248,
+        "date_filed": "2026-09-04",
+        "time_filed": "12:50:24",
+        "date_display": "Sep 4, 2026",
+        "description": "Employ (Application)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 247,
+        "date_filed": "2026-09-04",
+        "time_filed": "12:38:51",
+        "date_display": "Sep 4, 2026",
+        "description": "Employ (Application)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 246,
+        "date_filed": "2026-09-04",
+        "time_filed": "12:27:35",
+        "date_display": "Sep 4, 2026",
+        "description": "Exhibit A - B",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 245,
         "date_filed": "2026-09-03",
@@ -2713,8 +2743,7 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=13"
+    ]
   },
   "claims_administrator": {
     "name": "Stretto",

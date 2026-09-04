@@ -3,6 +3,44 @@
   "case_name": "Bartz v. Anthropic",
   "items": [
     {
+      "date": "2026-09-04",
+      "updated": "2026-09-04",
+      "lede": "On September 2, the Bartz plaintiffs filed a Status Report — Dkt. 688 — disclosing the class distribution mechanics and timeline. Class counsel filed the Status Report outlining the distribution plan; per that filing, claimants were to receive a consolidated form listing their works and percentage share of the settlement by September 4.",
+      "body_md": "On September 2, the Bartz plaintiffs filed a Status Report — Dkt. 688 — disclosing the class distribution mechanics and timeline. \nClass counsel filed the Status Report outlining the distribution plan; per that filing, claimants were to receive a consolidated form listing their works and percentage share of the settlement by September 4.\n \nA second payment of approximately $930 per work is projected after Anthropic's next installment of $450 million deposits, due September 25, 2027, bringing the estimated total to just over $3,100 per work — figures the report characterizes as estimates, not guaranteed amounts.\n The Status Report is now the primary reference point for class members and the court on distribution mechanics; its content confirms that the September 25, 2026 first-installment deadline is the operative near-term trigger for the initial payment tranche. No party has moved to modify, stay, or object to the payment schedule as reflected in the filing.\n\nAlso on September 3, Kathleen R. Hartnett of Cooley LLP filed a Notice of Withdrawal — Dkt. 689 — terminating her appearance on behalf of Anthropic PBC. Hartnett had been Cooley's lead attorney of record for Anthropic through the pre-settlement litigation phase, including the motion-to-stay briefing in mid-2025. The withdrawal is procedural on its face: the case is post-judgment, both pending Ninth Circuit appeals (No. 26-5391, Edelson PC / Oppenheim + Zebrak; No. 26-5455, Cowan DeBaets Abrahams & Sheppard LLP) are fee-only disputes with no effect on Anthropic's payment obligations, and Douglas Winthrop and other Anthropic counsel remain on the docket. It is worth flagging as context, however, that \nAnthropic appointed a new general counsel in late August 2026, with her predecessor moving into a role coordinating with international governments\n — a corporate-side transition that may account for the rationalization of outside counsel appearances, though no causal link is confirmed on the district docket. The withdrawal has no bearing on the payment schedule or class recovery.\n\nDkt. 690 — a letter from Karen S. Gordon dated August 20, filed August 20 but docketed September 3 — remains unclassified. The docket supplies no subject matter or relief requested; RECAP has not captured the document. It cannot be characterized without the underlying text and should be pulled directly from PACER. The electronic filing error flagged on September 2 in connection with objector Stacy Lynn Werner's Dkt. 687 remains uncorrected on the visible docket: the clerk directed Werner's counsel to refile using the proper Ninth Circuit Notice of Appeal form, and no conforming notice has appeared. Until a corrected notice is filed and the Ninth Circuit opens a case number for Werner's intervention effort, her appellate posture is in procedural limbo alongside the two fee appeals already docketed as Nos. 26-5391 and 26-5455. Neither of those appeals has drawn a Ninth Circuit scheduling order setting opening-brief deadlines, an open question from prior briefings that remains unresolved. The next concrete milestone is Anthropic's $450 million Scheduled Payment 1, due September 25, 2026; the contents of Dkt. 688 now confirm that first payment is tied directly to that deposit.\n\n## Sources\n\n- [Bartz v. Anthropic PBC — CourtListener Docket (N.D. Cal. 3:24-cv-05417)](https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/) — CourtListener (PACER/RECAP), last updated Sept. 1, 2026\n- [Anthropic v. Bartz: The Final Ruling!](https://www.alliemccormack.com/post/anthropic-v-bartz-the-final-ruling) — Allie McCormack, September 4, 2026\n- [Anthropic Appoints New General Counsel](https://www.law360.com/articles/2517654/anthropic-appoints-new-general-counsel) — Law360, August 25, 2026\n- [Firms Cut From $101M Anthropic Atty Fees Appeal To 9th Circ.](https://www.law360.com/ip/articles/2515634) — Law360, August 20, 2026\n- [The Bartz Settlement Is in the Books — Payouts to Class Should Take Place by Sept. 17, 2026](https://chatgptiseatingtheworld.com/2026/08/27/the-bartz-settlement-is-in-the-books-payouts-to-class-should-take-place-by-sept-17-2026/) — Chat GPT Is Eating the World, August 27, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Bartz v. Anthropic PBC — CourtListener Docket (N.D. Cal. 3:24-cv-05417)",
+          "url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
+          "note": "CourtListener (PACER/RECAP), last updated Sept. 1, 2026"
+        },
+        {
+          "title": "Anthropic v. Bartz: The Final Ruling!",
+          "url": "https://www.alliemccormack.com/post/anthropic-v-bartz-the-final-ruling",
+          "note": "Allie McCormack, September 4, 2026"
+        },
+        {
+          "title": "Anthropic Appoints New General Counsel",
+          "url": "https://www.law360.com/articles/2517654/anthropic-appoints-new-general-counsel",
+          "note": "Law360, August 25, 2026"
+        },
+        {
+          "title": "Firms Cut From $101M Anthropic Atty Fees Appeal To 9th Circ.",
+          "url": "https://www.law360.com/ip/articles/2515634",
+          "note": "Law360, August 20, 2026"
+        },
+        {
+          "title": "The Bartz Settlement Is in the Books — Payouts to Class Should Take Place by Sept. 17, 2026",
+          "url": "https://chatgptiseatingtheworld.com/2026/08/27/the-bartz-settlement-is-in-the-books-payouts-to-class-should-take-place-by-sept-17-2026/",
+          "note": "Chat GPT Is Eating the World, August 27, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 5,
+        "articles": 0,
+        "latest": "2026-09-03"
+      }
+    },
+    {
       "date": "2026-09-03",
       "updated": "2026-09-03",
       "lede": "On September 2, plaintiffs Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, and MJ + KJ, Inc. filed a Status Report — Dkt. 688 — the first substantive filing from the plaintiff class since the July 20 final approval order. The specific contents of the status report are not yet available through RECAP/CourtListener, which reflects a last-updated timestamp of September 1 and has not ingested…",

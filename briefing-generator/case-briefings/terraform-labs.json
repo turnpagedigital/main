@@ -3,6 +3,24 @@
   "case_name": "Terraform Labs",
   "items": [
     {
+      "date": "2026-09-04",
+      "updated": "2026-09-04",
+      "lede": "On September 3, a federal judge in the U.S. District Court for the Northern District of California ruled that Jump Trading LLC and its subsidiaries must face the bulk of a proposed securities class action from investors who claim it misled them and manipulated the market for Terraform Labs' stablecoins in the lead-up to the collapse of the Terraform ecosystem, per Law360. The ruling is an order surviving a motion to…",
+      "body_md": "On September 3, a federal judge in the U.S. District Court for the Northern District of California ruled that \nJump Trading LLC and its subsidiaries must face the bulk of a proposed securities class action from investors who claim it misled them and manipulated the market for Terraform Labs' stablecoins in the lead-up to the collapse of the Terraform ecosystem\n, per __[Law360](https://www.law360.com/classaction/articles/2521162)__. The ruling is an order surviving a motion to dismiss (or the equivalent threshold challenge); the Law360 report does not specify the precise procedural vehicle denied, and the full order has not been confirmed on the public docket — treat the substance as accurate per a credible outlet but flag that the underlying order itself has not been independently verified. Judge P. Casey Pitts is identified in the Law360 metadata as the presiding judge. This is a separate proceeding from the plan administrator's $4-billion-plus suit against Jump in the Northern District of Illinois; both tracks run in parallel to the Chapter 11 in Bankr. D. Del.\n\nThe significance to recovery posture is indirect but meaningful. The investor class action preserves a separate pressure vector on Jump that may accelerate settlement discussions in the plan administrator's suit — Jump now faces coordinated litigation exposure on both the securities-fraud and the contract/unjust-enrichment theories the administrator is pursuing. A settlement in either proceeding that produces cash for the estate would be the most direct near-term recovery catalyst for Class 5 Crypto Loss claimants, whose pool continues to see secondary-market activity: Dkt. 1312 (filed August 3) reflected a $3,454,036.42 Class 5 claim transferred to Serrur Investment Partners, LP, consistent with ongoing claim trading ahead of any distribution.\n\nDkts. 1329 and 1330, both filed September 3, are listed as \"Exhibit\" with no further docket description — almost certainly exhibit attachments to a prior substantive filing rather than independent substantive filings, but without full text they cannot be classified up. The authorization motion filed August 19 (Dkt. 1321) still shows no corresponding order on the public record and remains the open near-term item in the bankruptcy itself. The next fixed milestone remains December 31, 2026 — the court-extended wind-down deadline — with resolution of the Jump litigation and *Chang v. Terraform Labs Wind Down Trust* (Adv. Proc. 26-50229) the primary substantive triggers between now and that date.\n\n## Sources\n\n- [Jump Trading Must Face Terraform Stablecoin Fraud Claims](https://www.law360.com/classaction/articles/2521162) — Law360, September 3, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Jump Trading Must Face Terraform Stablecoin Fraud Claims",
+          "url": "https://www.law360.com/classaction/articles/2521162",
+          "note": "Law360, September 3, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 2,
+        "articles": 1,
+        "latest": "2026-09-03"
+      }
+    },
+    {
       "date": "2026-09-02",
       "updated": "2026-09-02",
       "lede": "On September 1, the clerk docketed two certificates of mailing, Dkts. 1327 and 1328 — ministerial, with no bearing on recovery or claim allowance.",
