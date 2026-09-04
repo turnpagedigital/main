@@ -379,17 +379,21 @@
     @media (max-width: 1200px) { .ih-theme-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
     @media (max-width: 980px) { .ih-theme-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     /* minmax(0,…) like the wider breakpoints — a bare 1fr's auto minimum lets
-       the cards' nowrap header row push the track past the viewport on phones.
-       A long case-name pill is the actual overflow culprit (it won't shrink
-       below its full nowrap width by default) — let IT shrink and wrap onto
-       a second line instead of squeezing the count/icon cluster, which stays
-       fixed-size and readable. */
+       the cards' nowrap header row push the track past the viewport on phones. */
     @media (max-width: 640px) {
       .ih-theme-grid { grid-template-columns: minmax(0, 1fr); }
-      .ih-tc-head > a:first-child { min-width: 0; }
-      .ih-tc-head .ih-pill { white-space: normal; overflow-wrap: break-word; }
-      .ih-tc-right { flex: 0 0 auto; }
     }
+    /* A long case-name pill won't shrink below its full nowrap width by
+       default, which pushes the header row's count/icon cluster past the
+       edge of whatever column width the grid happens to give the card —
+       this bites at 4-, 3-, 2- and 1-column widths alike (not just phones:
+       e.g. a 3-column layout around 1100px gives each card ~330px, well
+       under a long case name's unwrapped width). Unconditional, not gated
+       to a breakpoint: the pill always gets to wrap onto a second line
+       instead of overflowing, while the count/icons stay fixed-size and
+       fully visible. */
+    .ih-tc-head > a:first-child { min-width: 0; }
+    .ih-tc-head .ih-pill { white-space: normal; overflow-wrap: break-word; }
     .ih-theme-card { flex: none; padding: 18px 20px 16px; }
     .ih-tc-head { align-items: baseline; }
     .ih-tc-count { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-60); }
