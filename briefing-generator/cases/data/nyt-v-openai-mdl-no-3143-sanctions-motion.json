@@ -15,54 +15,114 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
-    "date_last_filing": "2026-09-03",
-    "meta_fetched_at": "2026-09-04T09:43:30.228846+00:00",
-    "fetched_at": "2026-09-04T12:17:14.334183+00:00",
+    "date_last_filing": "2026-09-04",
+    "meta_fetched_at": "2026-09-04T14:27:32.386228+00:00",
+    "fetched_at": "2026-09-04T14:27:32.386228+00:00",
     "as_of": "Sep 4, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 10,
     "recent": [
       {
-        "entry_number": 1686,
-        "date_filed": "2026-09-03",
-        "time_filed": "23:46:02",
-        "date_display": "Sep 3, 2026",
-        "description": "Answer to Complaint",
+        "entry_number": 1692,
+        "date_filed": "2026-09-04",
+        "time_filed": "",
+        "date_display": "Sep 4, 2026",
+        "description": "***SEALED*** MEMORANDUM OF LAW in Support re: (777 in 1:23-cv-10211-SHS-OTW) MOTION for Summary Judgment in Books Plaintiffs' Consolidated Cases. . Document filed by Microsoft Corporation. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW, 1:23-cv-10211-SHS-OTWMotion or Order to File Under Seal: 1689 .(Hurst, Annette) (Entered: 09/04/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1685,
-        "date_filed": "2026-09-03",
-        "time_filed": "13:00:25",
-        "date_display": "Sep 3, 2026",
-        "description": "STIPULATED OMNIBUS SEALING ORDER FOR SUMMARY JUDGMENT AND DAUBERT BRIEFING: IT IS HEREBY ORDERED that sealing issues relating to summary judgment and Daubert briefing will be handled as follows: 1. The Parties may provisionally seal portions of briefing and exhibits (including expert reports and declarations) relating to Daubert briefing that contain or refer to material produced in this case that is designated Protected Discovery Material. 2. The Parties may provisionally seal exhibits ( or portions thereof) relating to summary judgment briefing (including expert reports and declarations) that contain or refer to material produced in this case that is designated Protected Discovery Material. 3. For the material addressed in paragraphs 1 and 2 above (the \"Provisionally Sealed Material\"), the Parties are relieved from the requirement set forth in paragraph 5(8) of Judge Stein's…",
+        "entry_number": 1691,
+        "date_filed": "2026-09-04",
+        "time_filed": "",
+        "date_display": "Sep 4, 2026",
+        "description": "DECLARATION of Demetri Blaisdell in Support re: (1468 in 1:23-cv-11195-SHS-OTW) MOTION to Seal and Redact Portions of News Plaintiffs' Combined Summary Judgment Brief and Rule 56.1 Statement of Material Undisputed Facts.. Document filed by The New York Times Company. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW.(Brook, Davida) (Entered: 09/04/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1685.0.pdf"
+        "doc_url": ""
       },
       {
-        "entry_number": 1684,
-        "date_filed": "2026-09-03",
-        "time_filed": "01:10:05",
-        "date_display": "Sep 3, 2026",
-        "description": "ANSWER to 1677 Amended Complaint,. Document filed by OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI Foundation, OpenAI Foundation (f/k/a OpenAI Inc.), OpenAI GP LLC, OpenAI GP, LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Global, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo, L.L.C., OpenAI OpCo, LLC, OpenAI, Inc., OpenAI, Inc., OpenAI, LLC..(Gratz, Joseph) (Entered: 09/03/2026)",
+        "entry_number": 1690,
+        "date_filed": "2026-09-04",
+        "time_filed": "",
+        "date_display": "Sep 4, 2026",
+        "description": "MEMORANDUM OF LAW in Support re: (777 in 1:23-cv-10211-SHS-OTW) MOTION for Summary Judgment in Books Plaintiffs' Consolidated Cases. . Document filed by Microsoft Corporation. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW, 1:23-cv-10211-SHS-OTW.(Hurst, Annette) (Entered: 09/04/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1684.0.pdf"
+        "doc_url": ""
       }
     ],
     "entries": [
       {
+        "entry_number": 1692,
+        "date_filed": "2026-09-04",
+        "time_filed": "",
+        "date_display": "Sep 4, 2026",
+        "description": "***SEALED*** MEMORANDUM OF LAW in Support re: (777 in 1:23-cv-10211-SHS-OTW) MOTION for Summary Judgment in Books Plaintiffs' Consolidated Cases. . Document filed by Microsoft Corporation. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW, 1:23-cv-10211-SHS-OTWMotion or Order to File Under Seal: 1689 .(Hurst, Annette) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1691,
+        "date_filed": "2026-09-04",
+        "time_filed": "",
+        "date_display": "Sep 4, 2026",
+        "description": "DECLARATION of Demetri Blaisdell in Support re: (1468 in 1:23-cv-11195-SHS-OTW) MOTION to Seal and Redact Portions of News Plaintiffs' Combined Summary Judgment Brief and Rule 56.1 Statement of Material Undisputed Facts.. Document filed by The New York Times Company. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW.(Brook, Davida) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1690,
+        "date_filed": "2026-09-04",
+        "time_filed": "",
+        "date_display": "Sep 4, 2026",
+        "description": "MEMORANDUM OF LAW in Support re: (777 in 1:23-cv-10211-SHS-OTW) MOTION for Summary Judgment in Books Plaintiffs' Consolidated Cases. . Document filed by Microsoft Corporation. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTW, 1:23-cv-10211-SHS-OTW.(Hurst, Annette) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1689,
+        "date_filed": "2026-09-04",
+        "time_filed": "",
+        "date_display": "Sep 4, 2026",
+        "description": "MOTION to Seal . Document filed by Microsoft Corporation. (Attachments: # 1 Exhibit A - Declaration of Lucky Vidmar in Support)Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Hurst, Annette) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1688,
+        "date_filed": "2026-09-04",
+        "time_filed": "",
+        "date_display": "Sep 4, 2026",
+        "description": "MOTION to Seal and Redact Portions of News Plaintiffs' Combined Summary Judgment Brief and Rule 56.1 Statement of Material Undisputed Facts. Document filed by The New York Times Company, Daily News LP, Ziff Davis, LLC. (Attachments: # 1 Exhibit News Plaintiffs' Memorandum of Law in Support of Motion for Leave to File Under Seal)Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW, 1:24-cv-03285-SHS-OTW, 1:25-cv-04315-SHS-OTW.(Crosby, Ian) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1687,
+        "date_filed": "2026-09-04",
+        "time_filed": "",
+        "date_display": "Sep 4, 2026",
+        "description": "MOTION to Seal and Redact Portions of News Plaintiffs' Combined Summary Judgment Brief and Rule 56.1 Statement of Material Undisputed Facts. Document filed by The New York Times Company, Daily News LP, Ziff Davis, LLC. (Attachments: # 1 Exhibit News Plaintiffs' Memorandum of Law in Support of Motion for Leave to File Under Seal)Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-11195-SHS-OTW, 1:24-cv-03285-SHS-OTW, 1:25-cv-04315-SHS-OTW.(Crosby, Ian) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 1686,
         "date_filed": "2026-09-03",
         "time_filed": "23:46:02",
         "date_display": "Sep 3, 2026",
-        "description": "Answer to Complaint",
+        "description": "ANSWER to Complaint. Document filed by OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo, L.L.C., OpenAI OpCo, LLC, OpenAI, Inc., OpenAI, Inc., OpenAI, LLC..(Gratz, Joseph) (Entered: 09/03/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1686.0.pdf"
       },
       {
         "entry_number": 1685,
@@ -179,7 +239,7 @@
         "date_filed": "2026-08-18",
         "time_filed": "",
         "date_display": "Aug 18, 2026",
-        "description": "***NOTICE TO ATTORNEY REGARDING DEFICIENT PLEADING. Notice to Attorney Lacy Herman Koonce, III to RE-FILE re: Document No. 1675 Amended Complaint. The filing is deficient for the following reason(s): all of the parties listed on the pleading were not entered on CM ECF; Mashable, Inc. is not listed on docket; the wrong filer/filers were selected for the pleading;. Docket the event type Add Party to Pleading found under the event list Complaints and Other Initiating Documents. Re-file the pleading using the event type Amended Complaint found under the event list Complaints and Other Initiating Documents - attach the correct signed PDF - select the individually named filer/filers - select the individually named party/parties the pleading is against. (sj)",
+        "description": "***NOTICE TO ATTORNEY REGARDING DEFICIENT PLEADING. Notice to Attorney Lacy Herman Koonce, III to RE-FILE re: Document No. 1675 Amended Complaint. The filing is deficient for the following reason(s): Not all the filers were selected .Re-file the pleading using the event type Amended Complaint found under the event list Complaints and Other Initiating Documents - attach the correct signed PDF - select the individually named filer/filers - select the individually named party/parties the pleading is against. (sj) Modified on 8/19/2026 (gp).",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
