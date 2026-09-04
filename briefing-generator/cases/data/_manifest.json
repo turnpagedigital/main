@@ -435,5 +435,19 @@
     "docket_history": "full",
     "added": "2026-09-04",
     "default_color": "#F2AAEC"
+  },
+  {
+    "slug": "bmg-rights-management-v-anthropic-pbc-nd-cal",
+    "display_name": "BMG Rights Management v. Anthropic PBC (N.D. Cal.)",
+    "short_name": "BMG Rights Management v. Anthropic PBC (N.D. Cal.)",
+    "docket_url": "https://www.courtlistener.com/docket/72505829/bmg-rights-management-us-llc-v-anthropic-pbc/",
+    "court": "N.D. Cal.",
+    "topics": [
+      "llm-class-action"
+    ],
+    "sync": "active",
+    "docket_history": "full",
+    "added": "2026-09-04",
+    "default_color": "#1B3A4B"
   }
 ]
