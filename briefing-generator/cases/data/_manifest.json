@@ -393,5 +393,19 @@
     "docket_history": "full",
     "added": "2026-09-04",
     "default_color": "#94C6F8"
+  },
+  {
+    "slug": "keller-postman-v-google-alphabet-ad-tech-mass-arbitration",
+    "display_name": "Keller Postman v. Google/Alphabet (Ad Tech Mass Arbitration)",
+    "short_name": "Keller Postman v. Google/Alphabet (Ad Tech Mass Arbitration)",
+    "docket_url": "",
+    "court": "AAA Mass Arbitration (filed April 2026)",
+    "topics": [
+      "billion-dollar-class-actions"
+    ],
+    "sync": "active",
+    "docket_history": "full",
+    "added": "2026-09-04",
+    "default_color": "#B3A8F0"
   }
 ]
