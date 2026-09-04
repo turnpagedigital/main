@@ -343,7 +343,10 @@
             (c.status && c.status !== "active" ? '<div class="mg-slug">' + esc(c.status) + "</div>" : "") + "</td>" +
           '<td title="' + esc((c.topics || []).map(themeName).join(", ")) + '">' + (THEMES_SHOW_EMOJIS ? (c.topics || []).map(themeEmoji).join(" ") : esc((c.topics || []).map(themeName).join(", "))) + "</td>" +
           '<td class="mg-right">' +
-            (dockUrl ? '<a class="mg-btn mg-btn-ghost" href="' + esc(dockUrl) + '" target="_blank" rel="noopener">Docket ↗</a> ' : "") +
+            (dockUrl ? '<a class="mg-btn mg-btn-ghost" href="' + esc(dockUrl) + '" target="_blank" rel="noopener">Docket ↗</a> '
+                     : (c.docket_source && c.docket_source.type === "watch")
+                       ? '<span class="mg-slug" style="display:inline-block;margin-right:6px" title="Followed by the news scan only — no docket">Web search</span>'
+                       : "") +
             (sync !== "archived" ? '<button type="button" class="mg-btn" data-sync="' + esc(c.slug) + '" title="Sync now — fresh docket entries + a news search; the briefing refreshes if it’s older than 12 hours">Sync now</button> ' : "") +
             '<button type="button" class="mg-btn" data-export="' + esc(c.slug) + '">Export</button> ' +
             (CASES_LITE ? "" :
@@ -482,7 +485,12 @@
     var form = c || defaultCase();
     if (!form.case) form.case = { parties: "", court: "", case_number: "", judge: "" };
     if (!form.docket_source) form.docket_source = { type: "courtlistener", docket_id: null, url: "", awaiting_sync: false };
-    var isCL = form.docket_source.type !== "claims_agent";
+    // Three tracking sources. "watch" has no docket at all: the case is followed
+    // by the news scan alone, which is how you follow a situation that has no
+    // filed docket yet (or one CourtListener doesn't carry).
+    var srcType = form.docket_source.type === "claims_agent" ? "claims_agent"
+                : form.docket_source.type === "watch" ? "watch" : "courtlistener";
+    var isCL = srcType === "courtlistener";
 
     var themeChecks = THEMES.map(function (t) {
       var on = (form.topics || []).indexOf(t.slug) >= 0;
@@ -524,10 +532,11 @@
 
         "<h3>Tracking source</h3>" +
         '<div class="mg-field" style="max-width:360px"><label>Source type</label><select id="cf-srctype">' +
-          '<option value="courtlistener"' + (isCL ? " selected" : "") + ">Court docket (CourtListener)</option>" +
-          '<option value="claims_agent"' + (isCL ? "" : " selected") + ">Claims agent</option>" +
+          '<option value="courtlistener"' + (srcType === "courtlistener" ? " selected" : "") + ">Court docket (CourtListener)</option>" +
+          '<option value="claims_agent"' + (srcType === "claims_agent" ? " selected" : "") + ">Claims agent (administrator)</option>" +
+          '<option value="watch"' + (srcType === "watch" ? " selected" : "") + ">Web search only (no docket)</option>" +
         "</select></div>" +
-        '<div id="cf-src-cl" style="display:' + (isCL ? "block" : "none") + '">' +
+        '<div id="cf-src-cl" style="display:' + (srcType === "courtlistener" ? "block" : "none") + '">' +
           '<div class="mg-field"><label>Docket ID *</label>' +
             '<div style="display:flex;gap:8px"><input type="text" id="cf-docketid" value="' + esc(form.docket_source.docket_id || "") + '" placeholder="e.g. 69058235">' +
             '<button type="button" class="mg-btn" id="cf-lookup">Look up</button></div>' +
@@ -539,9 +548,16 @@
           '</select><div class="mg-note">Full walks the entire docket history over time — thorough, but it spends CourtListener quota (heavy on monster dockets like FTX). Prospective only pulls filings from now on.</div></div>' +
           '<label class="mg-check" style="max-width:420px"><input type="checkbox" id="cf-awaiting"' + (form.docket_source.awaiting_sync ? " checked" : "") + "> Awaiting sync (dormant until docket refresh)</label>" +
         "</div>" +
-        '<div id="cf-src-ca" style="display:' + (isCL ? "none" : "block") + '">' +
+        '<div id="cf-src-ca" style="display:' + (srcType === "claims_agent" ? "block" : "none") + '">' +
           '<div class="mg-field"><label>Claims-agent URL *</label><input type="url" id="cf-claimsurl" value="' + esc((form.claims_administrator && form.claims_administrator.url) || "") + '" placeholder="https://www.examplesettlement.com/"></div>' +
           '<div class="mg-field"><label>Key dates URL</label><input type="url" id="cf-keydates" value="' + esc((form.claims_administrator && form.claims_administrator.key_dates_url) || "") + '" placeholder="https://…/dates"></div>' +
+        "</div>" +
+        '<div id="cf-src-watch" style="display:' + (srcType === "watch" ? "block" : "none") + '">' +
+          '<div class="mg-note">No docket is pulled. The twice-daily news scan follows this one on the web alone, ' +
+          "and a briefing is written whenever new coverage lands \u2014 same as a docketed case, minus the filings. " +
+          "It costs no CourtListener quota. Court, case number and judge are optional; " +
+          "<strong>Scan guidance below is what the search actually runs on</strong>, so name the parties, " +
+          "the venue, and the words coverage would use.</div>" +
         "</div>" +
 
         "<h3>Case details</h3>" +
@@ -572,9 +588,11 @@
     $("mg-back").addEventListener("click", renderCases);
     $("cf-cancel").addEventListener("click", renderCases);
     $("cf-srctype").addEventListener("change", function () {
-      var cl = $("cf-srctype").value === "courtlistener";
+      var v = $("cf-srctype").value;
+      var cl = v === "courtlistener";
       $("cf-src-cl").style.display = cl ? "block" : "none";
-      $("cf-src-ca").style.display = cl ? "none" : "block";
+      $("cf-src-ca").style.display = v === "claims_agent" ? "block" : "none";
+      $("cf-src-watch").style.display = v === "watch" ? "block" : "none";
     });
     root.querySelectorAll("#cf-topics .mg-check").forEach(function (l) {
       l.querySelector("input").addEventListener("change", function (e) {
@@ -656,7 +674,9 @@
     });
 
     $("cf-save").addEventListener("click", function () {
-      var isCLNow = $("cf-srctype").value === "courtlistener";
+      var srcNow = $("cf-srctype").value;
+      var isCLNow = srcNow === "courtlistener";
+      var isWatchNow = srcNow === "watch";
       var topics = [];
       root.querySelectorAll("#cf-topics input:checked").forEach(function (i) { topics.push(i.getAttribute("data-topic")); });
       var slug = isNew ? slugify($("cf-slug").value || $("cf-name").value) : form.slug;
@@ -677,8 +697,12 @@
         },
         docket_source: isCLNow
           ? { type: "courtlistener", docket_id: $("cf-docketid").value.trim() || null, url: $("cf-docketurl").value.trim(), awaiting_sync: $("cf-awaiting").checked }
-          : { type: "claims_agent", docket_id: null, url: "", awaiting_sync: false },
-        claims_administrator: isCLNow
+          : isWatchNow
+            ? { type: "watch", docket_id: null, url: "", awaiting_sync: false }
+            : { type: "claims_agent", docket_id: null, url: "", awaiting_sync: false },
+        // A watch case keeps any administrator link it already had, but never
+        // requires one — there is nothing to administer yet.
+        claims_administrator: isCLNow || isWatchNow
           ? form.claims_administrator || null
           : { name: "", url: $("cf-claimsurl").value.trim(), key_dates_url: $("cf-keydates").value.trim() },
         scan_guidance: $("cf-guidance").value,
@@ -690,10 +714,15 @@
       if (isNew && CASES.some(function (x) { return x.slug === payload.slug; })) { err.textContent = "That slug already exists."; return; }
       if (!payload.display_name) { err.textContent = "Display name is required."; return; }
       if (!payload.topics.length) { err.textContent = "Tag at least one theme."; return; }
-      if (!payload.case.parties) { err.textContent = "Parties are required."; return; }
+      // A watch case may not have parties yet (a situation, not a filed case),
+      // so the docket-shaped fields are all optional there. What it DOES need is
+      // scan guidance, because that is the only thing steering the search.
+      if (!isWatchNow && !payload.case.parties) { err.textContent = "Parties are required."; return; }
       if (isCLNow) {
         if (!payload.docket_source.docket_id) { err.textContent = "Docket ID is required for a CourtListener docket."; return; }
         if (!payload.case.court || !payload.case.case_number || !payload.case.judge) { err.textContent = "Court, case number, and judge are required."; return; }
+      } else if (isWatchNow) {
+        if (!payload.scan_guidance.trim()) { err.textContent = "Scan guidance is required for a web-search case — it is what the search runs on."; return; }
       } else if (!payload.claims_administrator.url) { err.textContent = "A claims-agent URL is required."; return; }
 
       var priorityOn = $("cf-priority").checked;
