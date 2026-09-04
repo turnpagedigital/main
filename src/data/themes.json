@@ -83,8 +83,21 @@
         ]
       },
       "key_focus_cases": [
+        "andersen-v-stability-ai-nd-cal",
         "bartz-anthropic",
-        "concord-anthropic"
+        "bmg-rights-management-v-anthropic-pbc-nd-cal",
+        "britannica-merriam-webster-v-openai",
+        "concord-anthropic",
+        "disney-universal-warner-bros-v-midjourney-cd-cal",
+        "getty-images-us-v-stability-ai-nd-cal",
+        "hachette-et-al-v-google-llc-gemini",
+        "hachette-et-al-v-meta-platforms-llama",
+        "hendrix-roberson-v-apple-inc-ai-book-training-class-action",
+        "kadrey-v-meta-contributory-infringement-amendment",
+        "nyt-v-openai-mdl-no-3143-sanctions-motion",
+        "publishers-v-google-llc-gemini-books",
+        "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153",
+        "umg-sony-music-v-suno-ai-d-mass-motion-to-add-61-026-recordi"
       ],
       "guidance_prompt": "Flagship matter: Bartz v. Anthropic PBC, 3:24-cv-05417 (N.D. Cal., Judge Martínez-Olguín) — the $1.5B settlement, the largest copyright settlement in U.S. history. Track the parallel AI-copyright docket as a SYSTEM, not isolated cases: Kadrey v. Meta, In re OpenAI Copyright MDL (No. 3143), Authors Guild v. OpenAI, NYT v. OpenAI/Microsoft, Concord/UMG v. Anthropic, Getty v. Stability AI, Thomson Reuters v. Ross, Disney/Universal v. Midjourney, Elsevier v. Meta — cross-references matter most when fair-use frameworks transfer or diverge. Watch settlement administration (claims processing, distribution timeline, publisher-vs-author allocation, fee award, any 9th Cir. objector appeal), new filings, discovery / training-data disclosure orders, and AI licensing deals (comparator pricing is § 107(4) market-harm evidence). International: UK Getty v. Stability appeal, EU AI Act / DSM Directive Art. 4 TDM exception. Statutory anchors: 17 U.S.C. § 107 (fair-use four factors), § 504 (statutory damages), § 411 (registration prerequisite). Voice: litigation-grade — a Davis Polk / Paul Weiss client alert, not a marketing post. Audience: creditor-side claims investors and rights-holder counsel, not retail authors."
     },
