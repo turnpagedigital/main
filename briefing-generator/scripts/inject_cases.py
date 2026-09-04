@@ -614,7 +614,10 @@ def render_case_page(case):
                      'Docket entries are research-seeded and switch to live CourtListener data the '
                      'moment a free <code>COURTLISTENER_TOKEN</code> is added.</div></div>')
 
-    src_label = "via CourtListener" if cfg["docket_source"]["type"] == "courtlistener" else "manual entry"
+    _dstype = cfg["docket_source"]["type"]
+    src_label = ("via CourtListener" if _dstype == "courtlistener"
+                 else "web coverage only" if _dstype == "watch"
+                 else "manual entry")
     rows = render_docket_rows(d.get("entries") or [])
     docket_foot = ""
     if d.get("docket_url") or cfg["docket_source"].get("url"):
@@ -622,6 +625,9 @@ def render_case_page(case):
         docket_foot = (f'<div class="panel-foot"><a href="{href}" target="_blank" rel="noopener">'
                        'View full docket on CourtListener →</a></div>')
 
+    # A watch case has no docket by definition; an empty Docket table reads as a
+    # broken sync rather than a deliberate choice.
+    watch_only = _dstype == "watch" and not (d.get("entries") or [])
     docket_panel = (
         '<div class="panel">'
         '<div class="panel-head"><h2>Docket</h2>'
@@ -630,6 +636,14 @@ def render_case_page(case):
         '<th>Entry</th></tr></thead><tbody>\n' + rows + '\n</tbody></table>'
         + docket_foot + '</div>'
     )
+    if watch_only:
+        docket_panel = (
+            '<div class="panel">'
+            '<div class="panel-head"><h2>Coverage-tracked</h2>'
+            f'<div class="meta"><span class="src">{src_label}</span></div></div>'
+            '<div class="empty">Followed by the news scan rather than a docket \u2014 '
+            'updates come from published coverage.</div></div>'
+        )
 
     coverage_html = render_coverage((data or {}).get("coverage") or [])
 
