@@ -380,11 +380,15 @@
     @media (max-width: 980px) { .ih-theme-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     /* minmax(0,…) like the wider breakpoints — a bare 1fr's auto minimum lets
        the cards' nowrap header row push the track past the viewport on phones.
-       The right cluster (count · star) also gets leave to shrink + wrap there. */
+       A long case-name pill is the actual overflow culprit (it won't shrink
+       below its full nowrap width by default) — let IT shrink and wrap onto
+       a second line instead of squeezing the count/icon cluster, which stays
+       fixed-size and readable. */
     @media (max-width: 640px) {
       .ih-theme-grid { grid-template-columns: minmax(0, 1fr); }
-      .ih-tc-right { flex-shrink: 1; min-width: 0; }
-      .ih-tc-count { white-space: normal; text-align: right; }
+      .ih-tc-head > a:first-child { min-width: 0; }
+      .ih-tc-head .ih-pill { white-space: normal; overflow-wrap: break-word; }
+      .ih-tc-right { flex: 0 0 auto; }
     }
     .ih-theme-card { flex: none; padding: 18px 20px 16px; }
     .ih-tc-head { align-items: baseline; }
