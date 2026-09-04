@@ -6667,6 +6667,14 @@
     ]
   },
   "claims_administrator": null,
-  "coverage": [],
+  "coverage": [
+    {
+      "headline": "Crypto CEO Says Investors Lack Proof In Refund Fraud Suit",
+      "url": "https://www.law360.com/securities/articles/2518085",
+      "source": "Law360",
+      "date": "2026-08-26",
+      "summary": "The CEO of Power Block Coin LLC (d/b/a SmartFi) sought summary judgment in a Pennsylvania federal court suit alleging he refused to fulfill a 'buyback guarantee' of SmartFi tokens, arguing that investors cannot show they personally purchased the tokens."
+    }
+  ],
   "events": []
 }
