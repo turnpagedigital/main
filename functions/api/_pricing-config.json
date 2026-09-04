@@ -2,7 +2,7 @@
   "_comment": "PRIVATE pricing inputs for the Bartz author offer. Edited only via /admin/content/pricing (login required) and committed here by /api/admin/pricing. This file lives under functions/ and is imported ONLY by server functions (quote.js, register.js), so its values never ship to the browser. base = (payoutRatePct/100) × (selfRecovery × selfWorks + publisherRecovery × publisherWorks); offer = eligibleWorks > volumePremiumThreshold ? base × (1 + volumePremiumPct/100) : base.",
   "selfRecovery": 3000,
   "publisherRecovery": 1500,
-  "payoutRatePct": 65,
+  "payoutRatePct": 35,
   "volumePremiumThreshold": 10,
   "volumePremiumPct": 5
 }
