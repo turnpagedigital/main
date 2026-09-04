@@ -1,0 +1,23 @@
+{
+  "case": {
+    "slug": "disney-universal-warner-bros-v-midjourney-cd-cal",
+    "display_name": "Disney/Universal/Warner Bros. v. Midjourney (C.D. Cal.)",
+    "case_name": "Disney Enterprises, Inc.; Universal City Studios LLC; Warner Bros. Entertainment Inc. et al. v. Midjourney, Inc.",
+    "court": "C.D. Cal. (Judge Kronstadt)",
+    "case_number": "2:25-cv-05275",
+    "judge": "John Arnold Kronstadt",
+    "docket_id": "70513159",
+    "status": "active",
+    "sync": "active"
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/70513159/disney-enterprises-inc-v-midjourney-inc/",
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": []
+}
