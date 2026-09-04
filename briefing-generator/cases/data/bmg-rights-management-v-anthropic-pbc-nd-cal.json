@@ -1,0 +1,23 @@
+{
+  "case": {
+    "slug": "bmg-rights-management-v-anthropic-pbc-nd-cal",
+    "display_name": "BMG Rights Management v. Anthropic PBC (N.D. Cal.)",
+    "case_name": "BMG Rights Management (US) LLC v. Anthropic PBC",
+    "court": "N.D. Cal.",
+    "case_number": "5:26-cv-02334",
+    "judge": "Eumi K. Lee",
+    "docket_id": "72505829",
+    "status": "active",
+    "sync": "active"
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/72505829/bmg-rights-management-us-llc-v-anthropic-pbc/",
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": []
+}
