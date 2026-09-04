@@ -67,7 +67,8 @@
         "Anthropic",
         "Settlement",
         "Guide"
-      ]
+      ],
+      "active": false
     },
     {
       "slug": "2026-08-03-ai-copyright-lawsuit-tracker",
