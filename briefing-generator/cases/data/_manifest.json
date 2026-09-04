@@ -421,5 +421,19 @@
     "docket_history": "full",
     "added": "2026-09-04",
     "default_color": "#7EF4C2"
+  },
+  {
+    "slug": "in-re-bitmart-exchange-wind-down-customer-fund-watch",
+    "display_name": "In re BitMart Exchange (Wind-Down / Customer-Fund Watch)",
+    "short_name": "In re BitMart Exchange (Wind-Down / Customer-Fund Watch)",
+    "docket_url": "",
+    "court": "No formal insolvency proceeding filed as of Aug 7, 2026 — monitoring for receivership or Ch. 11 filing",
+    "topics": [
+      "crypto-insolvency"
+    ],
+    "sync": "active",
+    "docket_history": "full",
+    "added": "2026-09-04",
+    "default_color": "#F2AAEC"
   }
 ]
