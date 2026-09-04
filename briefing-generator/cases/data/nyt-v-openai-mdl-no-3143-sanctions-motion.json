@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
     "date_last_filing": "2026-09-03",
-    "meta_fetched_at": "2026-09-03T17:42:01.895402+00:00",
-    "fetched_at": "2026-09-04T04:42:09.949396+00:00",
+    "meta_fetched_at": "2026-09-04T09:43:30.228846+00:00",
+    "fetched_at": "2026-09-04T09:43:30.228846+00:00",
     "as_of": "Sep 4, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 4,
     "recent": [
+      {
+        "entry_number": 1686,
+        "date_filed": "2026-09-03",
+        "time_filed": "23:46:02",
+        "date_display": "Sep 3, 2026",
+        "description": "Answer to Complaint",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1685,
         "date_filed": "2026-09-03",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1684.0.pdf"
-      },
-      {
-        "entry_number": 1683,
-        "date_filed": "2026-09-03",
-        "time_filed": "00:46:07",
-        "date_display": "Sep 3, 2026",
-        "description": "ANSWER to 1676 Amended Complaint,. Document filed by OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI Foundation, OpenAI Foundation (f/k/a OpenAI Inc.), OpenAI GP LLC, OpenAI GP, LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Global, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo, L.L.C., OpenAI OpCo, LLC, OpenAI, Inc., OpenAI, Inc., OpenAI, LLC..(Gratz, Joseph) (Entered: 09/03/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1683.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 1686,
+        "date_filed": "2026-09-03",
+        "time_filed": "23:46:02",
+        "date_display": "Sep 3, 2026",
+        "description": "Answer to Complaint",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1685,
         "date_filed": "2026-09-03",
