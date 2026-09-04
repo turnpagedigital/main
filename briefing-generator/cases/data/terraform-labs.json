@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
     "date_last_filing": "2026-09-03",
     "meta_fetched_at": "2026-09-03T18:44:11.779793+00:00",
-    "fetched_at": "2026-09-03T21:45:40.827745+00:00",
-    "as_of": "Sep 3, 2026",
+    "fetched_at": "2026-09-04T00:10:16.493776+00:00",
+    "as_of": "Sep 4, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 2,
     "recent": [
       {
         "entry_number": 1330,
@@ -48,7 +48,7 @@
         "time_filed": "14:19:31",
         "date_display": "Sep 1, 2026",
         "description": "Certificate of Mailing",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -80,7 +80,7 @@
         "time_filed": "14:19:31",
         "date_display": "Sep 1, 2026",
         "description": "Certificate of Mailing",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -90,7 +90,7 @@
         "time_filed": "13:38:30",
         "date_display": "Sep 1, 2026",
         "description": "Certificate of Mailing",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

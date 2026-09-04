@@ -15,12 +15,32 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-09-03",
-    "meta_fetched_at": "2026-09-03T21:45:15.921665+00:00",
-    "fetched_at": "2026-09-03T21:45:15.921665+00:00",
-    "as_of": "Sep 3, 2026",
+    "meta_fetched_at": "2026-09-04T00:09:48.741537+00:00",
+    "fetched_at": "2026-09-04T00:09:48.741537+00:00",
+    "as_of": "Sep 4, 2026",
     "backfilled": true,
-    "new_in_72h": 47,
+    "new_in_72h": 29,
     "recent": [
+      {
+        "entry_number": 245,
+        "date_filed": "2026-09-03",
+        "time_filed": "18:11:58",
+        "date_display": "Sep 3, 2026",
+        "description": "In-Person/Zoom Hearing Held/Court Sign-In Sheet (related document(s)238) (Mml) (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 244,
+        "date_filed": "2026-09-03",
+        "time_filed": "17:35:05",
+        "date_display": "Sep 3, 2026",
+        "description": "Court Date & Time [09/03/2026 11:35:06 AM]. File Size [ 146736 KB ]. Run Time [ 05:49:55 ]. (admin). (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.244.0.pdf"
+      },
       {
         "entry_number": 243,
         "date_filed": "2026-09-03",
@@ -30,29 +50,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 242,
-        "date_filed": "2026-09-03",
-        "time_filed": "13:27:23",
-        "date_display": "Sep 3, 2026",
-        "description": "Order Granting Motion for Admission pro hac vice of Lauren M. Laino, Esquire (Related Doc # 237) Order Signed on 9/3/2026. (Mml) (Entered: 09/03/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 241,
-        "date_filed": "2026-09-03",
-        "time_filed": "13:14:19",
-        "date_display": "Sep 3, 2026",
-        "description": "Order Granting Motion for Admission pro hac vice of Nicole M. Fulfree, Esquire (Related Doc # 236) Order Signed on 9/3/2026. (Mml) (Entered: 09/03/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 245,
+        "date_filed": "2026-09-03",
+        "time_filed": "18:11:58",
+        "date_display": "Sep 3, 2026",
+        "description": "In-Person/Zoom Hearing Held/Court Sign-In Sheet (related document(s)238) (Mml) (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 244,
+        "date_filed": "2026-09-03",
+        "time_filed": "17:35:05",
+        "date_display": "Sep 3, 2026",
+        "description": "Court Date & Time [09/03/2026 11:35:06 AM]. File Size [ 146736 KB ]. Run Time [ 05:49:55 ]. (admin). (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.244.0.pdf"
+      },
       {
         "entry_number": 243,
         "date_filed": "2026-09-03",
@@ -329,7 +349,7 @@
         "time_filed": "17:19:38",
         "date_display": "Sep 1, 2026",
         "description": "Amended Notice of Agenda of Matters Scheduled for Hearing (related document(s)208) Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 11:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Faris, S. Alexander) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.217.0.pdf"
       },
@@ -339,7 +359,7 @@
         "time_filed": "16:49:06",
         "date_display": "Sep 1, 2026",
         "description": "Declaration of John Dempsey in Support of Debtor's Application for Entry of an Order Authorizing the (I) Retention of AP Services, LLC, (II) Designation of David Hindman as Chief Executive Officer Effective as of the Petition Date, and (III) Granting Related Relief (related document(s)81) Filed by Omnis Pleasants, LLC. (Faris, S. Alexander) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -349,7 +369,7 @@
         "time_filed": "16:46:40",
         "date_display": "Sep 1, 2026",
         "description": "Supplemental Declaration of David R. Hindman of AP Services, LLC (related document(s)81) Filed by Omnis Pleasants, LLC. (Faris, S. Alexander) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -359,7 +379,7 @@
         "time_filed": "16:33:27",
         "date_display": "Sep 1, 2026",
         "description": "Motion for Leave - Motion of the Prepetition Secured Parties for Leave to File Reply of the Prepetition Secured Parties to Objections to the Debtor's Bidding Procedures Motion and Reservation of Rights with Respect to Cash Collateral (related document(s)86, 168, 169, 171, 173, 182, 213) Filed by RG Energy LLC, TRAG LLC. Hearing scheduled for 9/3/2026 at 11:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Martin, R.) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.214.0.pdf"
       },
@@ -369,7 +389,7 @@
         "time_filed": "16:25:55",
         "date_display": "Sep 1, 2026",
         "description": "Reply of the Prepetition Secured Parties to Objections to the Debtor's Bidding Procedures Motion and Reservation of Rights with Respect to Cash Collateral (related document(s)86, 168, 169, 171, 173, 182) Filed by RG Energy LLC, TRAG LLC (Attachments: # 1 Exhibit 1) (Martin, R.) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.213.0.pdf"
       },
@@ -379,7 +399,7 @@
         "time_filed": "15:43:08",
         "date_display": "Sep 1, 2026",
         "description": "Motion for Leave - Debtor's Motion for Entry of an Order, Pursuant to Local Rule 9006-1(d), Granting Debtor Leave and Permission to File Omnibus Reply of the Debtor in Support of Its (I) Bidding Procedures Motion and (II) Retention Applications (related document(s)211) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A) (Faris, S. Alexander) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.212.0.pdf"
       },
@@ -389,7 +409,7 @@
         "time_filed": "15:29:57",
         "date_display": "Sep 1, 2026",
         "description": "Reply - Omnibus Reply of the Debtor in Support of Its (I) Bidding Procedures Motion and (II) Retention Applications (related document(s)83, 84, 86, 169, 171, 175, 182, 188) Filed by Omnis Pleasants, LLC (Attachments: # 1 Exhibit A - E) (Faris, S. Alexander) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.211.0.pdf"
       },
@@ -399,7 +419,7 @@
         "time_filed": "12:26:40",
         "date_display": "Sep 1, 2026",
         "description": "Order Granting Motion for Admission pro hac vice of Elisa Hyder, Esquire (Related Doc # 207) Order Signed on 9/1/2026. (CEB) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -409,7 +429,7 @@
         "time_filed": "12:25:53",
         "date_display": "Sep 1, 2026",
         "description": "Order Granting Motion for Admission pro hac vice of Jared M. Tully, Esquire (Related Doc # 206) Order Signed on 9/1/2026. (CEB) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -419,7 +439,7 @@
         "time_filed": "12:09:35",
         "date_display": "Sep 1, 2026",
         "description": "Notice of Agenda of Matters Scheduled for Hearing Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 11:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Faris, S. Alexander) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.208.0.pdf"
       },
@@ -429,7 +449,7 @@
         "time_filed": "11:53:43",
         "date_display": "Sep 1, 2026",
         "description": "Motion to Appear pro hac vice of Elisa Hyder of Lowenstein Sandler LLP. Receipt Number 5055340, Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -439,7 +459,7 @@
         "time_filed": "11:43:48",
         "date_display": "Sep 1, 2026",
         "description": "Motion to Appear pro hac vice of Jared M. Tully of FBT Gibbons LLP. Receipt Number 5055312, Filed by West Virginia Economic Development Authority. (Patterson, Morgan) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -449,7 +469,7 @@
         "time_filed": "11:29:34",
         "date_display": "Sep 1, 2026",
         "description": "Exhibit(s) / Witness and Exhibit List of Omnis Fuel Technologies, LLC and Quantum Pleasants LLC for Hearing Set for September 3, 2026 at 11:30 a.m. (ET) (related document(s)83, 86) Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.205.0.pdf"
       },
@@ -459,7 +479,7 @@
         "time_filed": "11:22:23",
         "date_display": "Sep 1, 2026",
         "description": "Exhibit(s) - Notice of Filing of Revised Order Pursuant to Section 327(e) of the Bankruptcy Code (I) Authorizing the Retention and Employment of Sidley Austin LLP as Special Regulatory Counsel for the Debtor and Debtor in Possession Effective as of the Petition Date and (II) Granting Related Relief (related document(s)85) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Faris, S. Alexander) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -469,7 +489,7 @@
         "time_filed": "11:20:26",
         "date_display": "Sep 1, 2026",
         "description": "Exhibit(s) United States Trustee's Witness and Exhibit List (related document(s)175) Filed by U.S. Trustee. (Hackman, Benjamin) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.203.0.pdf"
       },
@@ -479,7 +499,7 @@
         "time_filed": "11:10:20",
         "date_display": "Sep 1, 2026",
         "description": "Exhibit(s) - Notice of Filing of Revised Order, Pursuant to 11 U.S.C. §§ 327 and 328(a), Fed. R. Bankr. P. 2014, and Local Rules 2014-1 and 2016-2, Authorizing Retention and Employment of Houlihan Lokey Capital, Inc. as Investment Banker to the Debtor, Effective as of August 3, 2026 (related document(s)84) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Faris, S. Alexander) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -489,7 +509,7 @@
         "time_filed": "11:06:06",
         "date_display": "Sep 1, 2026",
         "description": "Exhibit(s) - Notice of Filing of Revised Order Authorizing the (I) Retention of AP Services, LLC, (II) Designation of David Hindman as Chief Executive Officer, Effective as of the Petition Date, and (III) Granting Related Relief (related document(s)81) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Faris, S. Alexander) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -499,7 +519,7 @@
         "time_filed": "09:58:35",
         "date_display": "Sep 1, 2026",
         "description": "Order Granting Motion for Admission pro hac vice of Jennifer R. Sharret, Esquire (Related Doc # 198) Order Signed on 9/1/2026. (CEB) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -509,7 +529,7 @@
         "time_filed": "09:35:25",
         "date_display": "Sep 1, 2026",
         "description": "Certificate of No Objection Regarding Debtor's Motion for Entry of an Order Authorizing the Debtor to Retain and Compensate Certain Professionals Utilized by the Debtor in the Ordinary Course of Business (related document(s)77) Filed by Omnis Pleasants, LLC. (Faris, S. Alexander) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -519,7 +539,7 @@
         "time_filed": "09:32:56",
         "date_display": "Sep 1, 2026",
         "description": "Motion to Appear pro hac vice of Jennifer R. Sharret of Herbert Smith Freehills Kramer (US) LLP. Receipt Number 5055121, Filed by Omnis Pleasants, LLC. (Faris, S. Alexander) (Entered: 09/01/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

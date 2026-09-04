@@ -15,20 +15,30 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/",
-    "date_last_filing": "2026-09-01",
-    "meta_fetched_at": "2026-09-02T09:43:29.695308+00:00",
-    "fetched_at": "2026-09-03T09:55:33.921575+00:00",
-    "as_of": "Sep 3, 2026",
+    "date_last_filing": "2026-09-03",
+    "meta_fetched_at": "2026-09-04T00:10:21.895760+00:00",
+    "fetched_at": "2026-09-04T00:10:21.895760+00:00",
+    "as_of": "Sep 4, 2026",
     "backfilled": true,
     "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 61,
+        "date_filed": "2026-09-03",
+        "time_filed": "13:00:25",
+        "date_display": "Sep 3, 2026",
+        "description": "Stipulation and Order AND ~Util - Set Deadlines",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.61.0.pdf"
+      },
       {
         "entry_number": 60,
         "date_filed": "2026-09-01",
         "time_filed": "21:52:52",
         "date_display": "Sep 1, 2026",
         "description": "Letter",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.60.0.pdf"
       },
@@ -41,26 +51,26 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.59.0.pdf"
-      },
-      {
-        "entry_number": 58,
-        "date_filed": "2026-08-07",
-        "time_filed": "17:54:46",
-        "date_display": "Aug 7, 2026",
-        "description": "Order AND ~Util - Set Deadlines",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.58.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 61,
+        "date_filed": "2026-09-03",
+        "time_filed": "13:00:25",
+        "date_display": "Sep 3, 2026",
+        "description": "Stipulation and Order AND ~Util - Set Deadlines",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.61.0.pdf"
+      },
       {
         "entry_number": 60,
         "date_filed": "2026-09-01",
         "time_filed": "21:52:52",
         "date_display": "Sep 1, 2026",
         "description": "Letter",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.60.0.pdf"
       },

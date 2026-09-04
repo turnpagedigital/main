@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/71279155/hendrix-v-apple-inc/",
     "date_last_filing": "2026-09-02",
     "meta_fetched_at": "2026-09-03T09:56:14.939497+00:00",
-    "fetched_at": "2026-09-03T14:38:53.664610+00:00",
-    "as_of": "Sep 3, 2026",
+    "fetched_at": "2026-09-04T00:11:18.860412+00:00",
+    "as_of": "Sep 4, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 1,
     "recent": [
       {
         "entry_number": 128,
@@ -38,7 +38,7 @@
         "time_filed": "07:21:04",
         "date_display": "Sep 1, 2026",
         "description": "Transcript",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -70,7 +70,7 @@
         "time_filed": "07:21:04",
         "date_display": "Sep 1, 2026",
         "description": "Transcript",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

@@ -15,20 +15,30 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
-    "date_last_filing": "2026-09-01",
-    "meta_fetched_at": "2026-09-02T04:43:29.578922+00:00",
-    "fetched_at": "2026-09-03T12:15:54.344556+00:00",
-    "as_of": "Sep 3, 2026",
+    "date_last_filing": "2026-09-03",
+    "meta_fetched_at": "2026-09-04T00:10:48.452409+00:00",
+    "fetched_at": "2026-09-04T00:10:48.452409+00:00",
+    "as_of": "Sep 4, 2026",
     "backfilled": true,
     "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 35,
+        "date_filed": "2026-09-03",
+        "time_filed": "18:02:48",
+        "date_display": "Sep 3, 2026",
+        "description": "Order on Motion for Extension of Time",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 34,
         "date_filed": "2026-09-01",
         "time_filed": "20:38:28",
         "date_display": "Sep 1, 2026",
         "description": "Extension of Time",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -41,26 +51,26 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 32,
-        "date_filed": "2026-08-27",
-        "time_filed": "19:33:54",
-        "date_display": "Aug 27, 2026",
-        "description": "Reply to Response to Motion",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.668114/gov.uscourts.nysd.668114.32.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 35,
+        "date_filed": "2026-09-03",
+        "time_filed": "18:02:48",
+        "date_display": "Sep 3, 2026",
+        "description": "Order on Motion for Extension of Time",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 34,
         "date_filed": "2026-09-01",
         "time_filed": "20:38:28",
         "date_display": "Sep 1, 2026",
         "description": "Extension of Time",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -249,7 +259,7 @@
         "date_filed": "2026-08-05",
         "time_filed": "",
         "date_display": "Aug 5, 2026",
-        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 19 MOTION for Paul J. Sampson to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number ANYSDC-33241859. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (bc)",
+        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 18 MOTION for Derek William Loeser to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number ANYSDC-33241839. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (bc)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
