@@ -331,7 +331,7 @@
             "steps": [
               {
                 "id": "tl-1",
-                "when": "July 2026",
+                "when": "Jul 2026",
                 "heading": "Final approval granted",
                 "body": "Judge Martínez-Olguín approved the $1.5 billion settlement on July 20, 2026 and cut class counsel’s fees to $101.6 million from the $187.5 million sought. No payments until the Effective Date.",
                 "state": "done",
@@ -340,7 +340,7 @@
               },
               {
                 "id": "tl-2",
-                "when": "August 2026",
+                "when": "AUG 2026",
                 "heading": "Appeal window",
                 "body": "Objectors have 30 days from judgment to notice an appeal to the Ninth Circuit — closing on or about August 19, 2026. Most fairness-hearing objections came from non-class members, who lack standing. Class-member objectors do not.",
                 "state": "done",
@@ -349,7 +349,7 @@
               },
               {
                 "id": "tl-4",
-                "when": "August 2026 – 2027",
+                "when": "AUG 2026 – 2027",
                 "heading": "Appeal freezes the payout",
                 "body": "One notice of appeal suspends the Effective Date. Ninth Circuit briefing, argument, and decision typically run 12–18 months — while Anthropic’s installments keep filling the fund: $450 million by September 25, 2026, the final $450 million by September 25, 2027.",
                 "state": "here",
@@ -358,20 +358,20 @@
               },
               {
                 "id": "tl-5",
-                "when": "2027 – 2028",
-                "heading": "Distributions begin",
-                "body": "Approval order affirmed on appeal; first payments arrive: $3,000 gross per claimed work before fees and costs, split 50/50 between author and publisher on most trade titles, paid in up to three installments.",
+                "when": "Nov - Dec 2026",
+                "heading": "First distributions begin",
+                "body": "Approval order affirmed on appeal; first payments arrive late 2026: $3,000 gross per claimed work before fees and costs, split 50/50 between author and publisher on most trade titles, paid in up to three installments.",
                 "state": "",
-                "pillLabel": "Best case scenario",
+                "pillLabel": "Up Next",
                 "pillStyle": "ink"
               },
               {
                 "id": "tl-mt06q3yl",
                 "when": "2028+",
-                "heading": "Distributions delayed",
-                "body": "En banc rehearing or Supreme Court cert petition extends review after the appellate panel rules. Each layer of review adds months to years before any distribution. ",
+                "heading": "Later distributions delayed",
+                "body": "En banc rehearing or Supreme Court cert petition extends review after the appellate panel rules on the legal fee appeal. Each layer of review adds months to years before a final distribution. ",
                 "state": "",
-                "pillLabel": "Worst case scenario",
+                "pillLabel": "Extended Timeline",
                 "pillStyle": "light-gray"
               }
             ],
