@@ -856,8 +856,10 @@
       "source_name": "CryptoTimes",
       "date": "2026-07-27",
       "first_seen": "2026-08-07",
-      "status": "new",
-      "snooze_until": "2026-08-21T13:00:00.000Z"
+      "status": "tracked",
+      "snooze_until": "2026-08-21T13:00:00.000Z",
+      "triaged_at": "2026-09-04T20:54:19.163Z",
+      "tracked_slug": "in-re-bitmart-exchange-wind-down-customer-fund-watch"
     },
     {
       "id": "0acfc1ac25",
