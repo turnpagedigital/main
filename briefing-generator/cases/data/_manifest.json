@@ -336,5 +336,19 @@
     "court": "C.I.T.",
     "sync": "active",
     "docket_history": "full"
+  },
+  {
+    "slug": "disney-universal-warner-bros-v-midjourney-cd-cal",
+    "display_name": "Disney/Universal/Warner Bros. v. Midjourney (C.D. Cal.)",
+    "short_name": "Disney/Universal/Warner Bros. v. Midjourney (C.D. Cal.)",
+    "docket_url": "https://www.courtlistener.com/docket/70513159/disney-enterprises-inc-v-midjourney-inc/",
+    "court": "C.D. Cal. (Judge Kronstadt)",
+    "topics": [
+      "llm-class-action"
+    ],
+    "sync": "active",
+    "docket_history": "full",
+    "added": "2026-09-04",
+    "default_color": "#F2AAEC"
   }
 ]
