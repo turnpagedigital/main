@@ -77,7 +77,8 @@
       "source_name": "SEC.gov",
       "date": "2026-08-18",
       "first_seen": "2026-08-24",
-      "status": "new"
+      "status": "new",
+      "snooze_until": "2026-09-11T13:00:00.000Z"
     },
     {
       "id": "2771302142",
