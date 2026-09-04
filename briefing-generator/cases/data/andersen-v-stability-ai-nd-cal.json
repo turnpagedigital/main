@@ -1,0 +1,23 @@
+{
+  "case": {
+    "slug": "andersen-v-stability-ai-nd-cal",
+    "display_name": "Andersen v. Stability AI (N.D. Cal.)",
+    "case_name": "Sarah Andersen; Kelly McKernan; Karla Ortiz et al. v. Stability AI Ltd.; Midjourney, Inc.; DeviantArt, Inc.",
+    "court": "N.D. Cal.",
+    "case_number": "3:23-cv-00201",
+    "judge": "William H. Orrick",
+    "docket_id": "66732129",
+    "status": "active",
+    "sync": "active"
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/66732129/andersen-v-stability-ai-ltd/",
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": []
+}

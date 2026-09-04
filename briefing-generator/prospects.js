@@ -646,12 +646,14 @@
     wrap.innerHTML =
       '<div class="pr-box">' +
         "<h2>Track this case</h2>" +
-        '<div class="sub">Creates a tracked case (same as Admin → Intelligence → Cases): the docket syncs on the next hourly run, the case joins the unified docket/calendar, and it gets its own daily briefing when it moves. A CourtListener docket is required for live syncing — paste the docket URL if you have it, or switch to a claims-agent source.</div>' +
+        '<div class="sub">Creates a tracked case (same as Admin → Intelligence → Cases): the docket syncs on the next hourly run, the case joins the unified docket/calendar, and it gets its own daily briefing when it moves. A CourtListener docket is required for live syncing — paste the docket URL if you have it, switch to a claims-agent source, or pick <strong>Web search only</strong> to follow it on news coverage alone (no docket, no CourtListener quota).</div>' +
         '<div class="pr-grid">' +
           field("Display name", "tk-name", p.case_name, { wide: true }) +
           field("Slug", "tk-slug", slugify(p.case_name), { hint: "(kebab-case id)" }) +
           '<label>Docket source' +
-            '<select id="tk-type"><option value="courtlistener">CourtListener docket</option><option value="claims_agent">Claims agent / no docket</option></select>' +
+            '<select id="tk-type"><option value="courtlistener">CourtListener docket</option>' +
+              '<option value="claims_agent">Claims agent (administrator)</option>' +
+              '<option value="watch">Web search only (no docket)</option></select>' +
           "</label>" +
           field("Parties", "tk-parties", p.parties || p.case_name, { wide: true }) +
           '<label class="pr-wide">CourtListener docket URL or ID' +
@@ -683,6 +685,24 @@
     $("tk-name").addEventListener("input", function () {
       $("tk-slug").value = slugify($("tk-name").value);
     });
+    // Dim the fields that don't apply to the chosen source, so the three tracks
+    // read as genuinely different rather than one form with optional bits.
+    function syncSourceFields() {
+      var v = $("tk-type").value;
+      var clRow = $("tk-docket") && $("tk-docket").closest("label");
+      var caIn = $("tk-claims");
+      var caRow = caIn && caIn.closest("label");
+      function dim(el, off) {
+        if (!el) return;
+        el.style.opacity = off ? "0.42" : "";
+        el.style.pointerEvents = off ? "none" : "";
+      }
+      dim(clRow, v !== "courtlistener");
+      dim(caRow, v !== "claims_agent");
+    }
+    $("tk-type").addEventListener("change", syncSourceFields);
+    syncSourceFields();
+
     $("tk-cancel").addEventListener("click", closeModal);
     wrap.addEventListener("click", function (ev) {
       if (ev.target === wrap) closeModal();
@@ -795,11 +815,13 @@
           case_number: $("tk-number").value.trim(),
           judge: $("tk-judge").value.trim(),
         },
-        docket_source: {
-          type: type,
-          docket_id: docketId || null,
-          url: docketId ? (docketUrlRaw.indexOf("http") === 0 ? docketUrlRaw : "https://www.courtlistener.com/docket/" + docketId + "/-/") : "",
-        },
+        docket_source: type === "watch"
+          ? { type: "watch", docket_id: null, url: "", awaiting_sync: false }
+          : {
+              type: type,
+              docket_id: docketId || null,
+              url: docketId ? (docketUrlRaw.indexOf("http") === 0 ? docketUrlRaw : "https://www.courtlistener.com/docket/" + docketId + "/-/") : "",
+            },
         claims_administrator: $("tk-claims").value.trim()
           ? { name: "", url: $("tk-claims").value.trim(), key_dates_url: "" }
           : null,
@@ -811,10 +833,13 @@
       if (!payload.slug) err = "A slug is required.";
       else if (!payload.display_name) err = "A display name is required.";
       else if (!topics.length) err = "Tag at least one theme.";
-      else if (!payload.case.parties) err = "Parties are required.";
-      else if (type === "courtlistener" && !docketId) err = "Paste the CourtListener docket URL (or ID) — or switch to the claims-agent source.";
+      else if (type !== "watch" && !payload.case.parties) err = "Parties are required.";
+      else if (type === "courtlistener" && !docketId) err = "Paste the CourtListener docket URL (or ID) — or switch to the claims-agent or web-search source.";
       else if (type === "courtlistener" && (!payload.case.court || !payload.case.case_number || !payload.case.judge)) err = "Court, case number, and judge are required for a CourtListener docket.";
       else if (type === "claims_agent" && !payload.claims_administrator) err = "A claims-agent URL is required for that source type.";
+      // Nothing steers a web-search case except its guidance, so that is the
+      // one field this track insists on.
+      else if (type === "watch" && !payload.scan_guidance) err = "Scan guidance is required for a web-search case — it is what the search runs on.";
       if (err) {
         status.className = "pr-modal-status err";
         status.textContent = err;
