@@ -1,0 +1,23 @@
+{
+  "case": {
+    "slug": "in-re-multiplan-health-insurance-provider-antitrust-litigati",
+    "display_name": "In re MultiPlan Health Insurance Provider Antitrust Litigation",
+    "case_name": "Healthcare Providers et al. v. MultiPlan (Claritev), UnitedHealth Group, Aetna, Cigna, Elevance et al.",
+    "court": "S.D.N.Y.",
+    "case_number": "MDL No. 3121",
+    "judge": "Matthew F. Kennelly",
+    "docket_id": "68810146",
+    "status": "active",
+    "sync": "active"
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/68810146/in-re-multiplan-health-insurance-provider-litigation/",
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": []
+}
