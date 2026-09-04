@@ -1,0 +1,23 @@
+{
+  "case": {
+    "slug": "in-re-bitmart-exchange-wind-down-customer-fund-watch",
+    "display_name": "In re BitMart Exchange (Wind-Down / Customer-Fund Watch)",
+    "case_name": "BitMart (operator entity unconfirmed); millions of retail users across 180 jurisdictions",
+    "court": "No formal insolvency proceeding filed as of Aug 7, 2026 — monitoring for receivership or Ch. 11 filing",
+    "case_number": "",
+    "judge": "",
+    "docket_id": null,
+    "status": "active",
+    "sync": "active"
+  },
+  "docket": {
+    "source": "seed",
+    "awaiting_sync": true,
+    "docket_url": null,
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": []
+}

@@ -62,7 +62,9 @@
       "source_name": "Axis Intelligence AI Lawsuits Tracker (updated Aug 19, 2026)",
       "date": "2026-08-19",
       "first_seen": "2026-08-24",
-      "status": "new"
+      "status": "tracked",
+      "triaged_at": "2026-09-04T20:34:41.120Z",
+      "tracked_slug": "umg-sony-music-v-suno-ai-d-mass-motion-to-add-61-026-recordi"
     },
     {
       "id": "3a2679b4bb",
@@ -108,7 +110,8 @@
       "source_name": "The Penny Hoarder",
       "date": "2026-08-18",
       "first_seen": "2026-08-24",
-      "status": "new"
+      "status": "dismissed",
+      "triaged_at": "2026-09-04T20:56:03.953Z"
     },
     {
       "id": "2402117604",
@@ -155,7 +158,8 @@
       "source_name": "Bondoro",
       "date": "2026-08-18",
       "first_seen": "2026-08-24",
-      "status": "new"
+      "status": "dismissed",
+      "triaged_at": "2026-09-04T20:56:09.713Z"
     },
     {
       "id": "19b90f3cbd",
@@ -204,7 +208,9 @@
       "source_name": "Troutman Pepper Locke",
       "date": "2026-08-14",
       "first_seen": "2026-08-24",
-      "status": "new"
+      "status": "tracked",
+      "triaged_at": "2026-09-04T20:35:14.809Z",
+      "tracked_slug": "freestyle-world-v-united-states-ieepa-new-lead-case-rule-23"
     },
     {
       "id": "e335ad3dcf",
@@ -234,7 +240,9 @@
       "source_name": "Sidley Austin LLP",
       "date": "2026-08-14",
       "first_seen": "2026-08-24",
-      "status": "new"
+      "status": "tracked",
+      "triaged_at": "2026-09-04T20:55:54.121Z",
+      "tracked_slug": "tariff-refund-act-of-2026-s-3905-legislative-watch"
     },
     {
       "id": "04204910fa",
@@ -249,7 +257,8 @@
       "source_name": "Phillips Lytle LLP",
       "date": "2026-08-10",
       "first_seen": "2026-08-24",
-      "status": "new"
+      "status": "dismissed",
+      "triaged_at": "2026-09-04T20:35:57.862Z"
     },
     {
       "id": "5f7ef4ec4f",
@@ -264,7 +273,8 @@
       "source_name": "RV PRO / RVIA",
       "date": "2026-08-10",
       "first_seen": "2026-08-24",
-      "status": "new"
+      "status": "dismissed",
+      "triaged_at": "2026-09-04T20:36:02.542Z"
     },
     {
       "id": "164ce31b98",
@@ -279,7 +289,8 @@
       "source_name": "Foley & Lardner",
       "date": "2026-08-10",
       "first_seen": "2026-08-24",
-      "status": "new"
+      "status": "dismissed",
+      "triaged_at": "2026-09-04T20:36:07.645Z"
     },
     {
       "id": "742026a3c3",
@@ -294,7 +305,8 @@
       "source_name": "Outten & Golden",
       "date": "2026-08-05",
       "first_seen": "2026-08-24",
-      "status": "new"
+      "status": "dismissed",
+      "triaged_at": "2026-09-04T20:36:14.097Z"
     },
     {
       "id": "2ce14f4fe5",
@@ -388,7 +400,9 @@
       "source_name": "Rolling Stone / Manatt law firm",
       "date": "2026-03-18",
       "first_seen": "2026-08-24",
-      "status": "new"
+      "status": "tracked",
+      "triaged_at": "2026-09-04T20:55:21.588Z",
+      "tracked_slug": "bmg-rights-management-v-anthropic-pbc-nd-cal"
     },
     {
       "id": "1bff6a9587",
@@ -601,7 +615,9 @@
       "source_name": "Mass Arbitration Claims",
       "date": "2026-04-01",
       "first_seen": "2026-08-17",
-      "status": "new"
+      "status": "tracked",
+      "triaged_at": "2026-09-04T20:37:26.454Z",
+      "tracked_slug": "keller-postman-v-google-alphabet-ad-tech-mass-arbitration"
     },
     {
       "id": "df50811916",
@@ -616,7 +632,8 @@
       "source_name": "CoinDesk",
       "date": "2026-03-15",
       "first_seen": "2026-08-17",
-      "status": "new"
+      "status": "dismissed",
+      "triaged_at": "2026-09-04T20:54:59.192Z"
     },
     {
       "id": "ab48db3a72",
@@ -631,7 +648,8 @@
       "source_name": "Bondoro (BlockFills Case Summary)",
       "date": "2026-03-15",
       "first_seen": "2026-08-17",
-      "status": "new"
+      "status": "dismissed",
+      "triaged_at": "2026-09-04T20:37:31.882Z"
     },
     {
       "id": "e640f32845",
@@ -661,7 +679,8 @@
       "source_name": "Law360 Bankruptcy Authority",
       "date": "2025-08-12",
       "first_seen": "2026-08-17",
-      "status": "new"
+      "status": "dismissed",
+      "triaged_at": "2026-09-04T20:54:41.331Z"
     },
     {
       "id": "0f27e00816",
@@ -759,9 +778,11 @@
       "source_name": "Seeger Weiss LLP",
       "date": "2026-08-01",
       "first_seen": "2026-08-07",
-      "status": "new",
+      "status": "tracked",
       "note": "Talk to Asher Ehrman",
-      "snooze_until": "2026-08-21T13:00:00.000Z"
+      "snooze_until": "2026-08-21T13:00:00.000Z",
+      "triaged_at": "2026-09-04T20:54:05.078Z",
+      "tracked_slug": "in-re-multiplan-health-insurance-provider-antitrust-litigati"
     },
     {
       "id": "4cfea0ef4d",
@@ -843,8 +864,10 @@
       "source_name": "CryptoTimes",
       "date": "2026-07-27",
       "first_seen": "2026-08-07",
-      "status": "new",
-      "snooze_until": "2026-08-21T13:00:00.000Z"
+      "status": "tracked",
+      "snooze_until": "2026-08-21T13:00:00.000Z",
+      "triaged_at": "2026-09-04T20:54:19.163Z",
+      "tracked_slug": "in-re-bitmart-exchange-wind-down-customer-fund-watch"
     },
     {
       "id": "0acfc1ac25",

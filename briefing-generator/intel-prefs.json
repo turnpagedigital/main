@@ -131,26 +131,29 @@
     {
       "name": "AI Copyright",
       "slugs": [
+        "andersen-v-stability-ai-nd-cal",
         "bartz-anthropic",
+        "bmg-rights-management-v-anthropic-pbc-nd-cal",
         "britannica-merriam-webster-v-openai",
-        "concord-anthropic",
+        "disney-universal-warner-bros-v-midjourney-cd-cal",
         "getty-images-us-v-stability-ai-nd-cal",
         "hachette-et-al-v-google-llc-gemini",
         "hachette-et-al-v-meta-platforms-llama",
+        "hendrix-roberson-v-apple-inc-ai-book-training-class-action",
         "kadrey-v-meta-contributory-infringement-amendment",
+        "nyt-v-openai-mdl-no-3143-sanctions-motion",
         "publishers-v-google-llc-gemini-books",
-        "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153"
+        "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153",
+        "umg-sony-music-v-suno-ai-d-mass-motion-to-add-61-026-recordi"
       ]
     },
     {
       "name": "Crypto Distress",
       "slugs": [
-        "blockfills",
-        "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026",
         "goliath",
+        "in-re-bitmart-exchange-wind-down-customer-fund-watch",
         "kahan",
         "poolin",
-        "power-block-coin",
         "terraform-labs"
       ]
     },
@@ -158,6 +161,7 @@
       "name": "Tariffs",
       "slugs": [
         "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",
+        "freestyle-world-v-united-states-ieepa-new-lead-case-rule-23",
         "vos-selections-v-trump"
       ]
     }
