@@ -15,38 +15,38 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-09-04",
-    "meta_fetched_at": "2026-09-04T17:29:16.407389+00:00",
-    "fetched_at": "2026-09-04T17:29:16.407389+00:00",
+    "meta_fetched_at": "2026-09-04T18:29:03.325130+00:00",
+    "fetched_at": "2026-09-04T18:29:03.325130+00:00",
     "as_of": "Sep 4, 2026",
     "backfilled": true,
-    "new_in_72h": 32,
+    "new_in_72h": 34,
     "recent": [
+      {
+        "entry_number": 250,
+        "date_filed": "2026-09-04",
+        "time_filed": "13:20:34",
+        "date_display": "Sep 4, 2026",
+        "description": "Order Authorizing Retention and Employment of Houlihan Lokey Capital, Inc. as Investment Banker to the Debtor, Effective as of August 3, 2026 (Related Doc # 84, 202) Order Signed on 9/4/2026. (Attachments: # 1 Exhibit 1) (Mml) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 249,
+        "date_filed": "2026-09-04",
+        "time_filed": "13:07:43",
+        "date_display": "Sep 4, 2026",
+        "description": "Order (I) Authorizing the Retention and Employment of Sidley Austin LLP as Special Regulatory Counsel for the Debtor and Debtor in Possession Effective as of the Petition Date and (II) Granting Related Relief (Related Doc # 85, 204) Order Signed on 9/4/2026. (Attachments: # 1 Exhibit 1) (Mml) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 248,
         "date_filed": "2026-09-04",
         "time_filed": "12:50:24",
         "date_display": "Sep 4, 2026",
-        "description": "Employ (Application)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 247,
-        "date_filed": "2026-09-04",
-        "time_filed": "12:38:51",
-        "date_display": "Sep 4, 2026",
-        "description": "Employ (Application)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 246,
-        "date_filed": "2026-09-04",
-        "time_filed": "12:27:35",
-        "date_display": "Sep 4, 2026",
-        "description": "Exhibit A - B",
+        "description": "Order Authorizing the Retention and Employment of Young Conaway Stargatt & Taylor, LLP as Co-Counsel for the Debtor, Effective as of the Petition Date (Related Doc # 82) Order Signed on 9/4/2026. (Mml) (Entered: 09/04/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -54,11 +54,31 @@
     ],
     "entries": [
       {
+        "entry_number": 250,
+        "date_filed": "2026-09-04",
+        "time_filed": "13:20:34",
+        "date_display": "Sep 4, 2026",
+        "description": "Order Authorizing Retention and Employment of Houlihan Lokey Capital, Inc. as Investment Banker to the Debtor, Effective as of August 3, 2026 (Related Doc # 84, 202) Order Signed on 9/4/2026. (Attachments: # 1 Exhibit 1) (Mml) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 249,
+        "date_filed": "2026-09-04",
+        "time_filed": "13:07:43",
+        "date_display": "Sep 4, 2026",
+        "description": "Order (I) Authorizing the Retention and Employment of Sidley Austin LLP as Special Regulatory Counsel for the Debtor and Debtor in Possession Effective as of the Petition Date and (II) Granting Related Relief (Related Doc # 85, 204) Order Signed on 9/4/2026. (Attachments: # 1 Exhibit 1) (Mml) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 248,
         "date_filed": "2026-09-04",
         "time_filed": "12:50:24",
         "date_display": "Sep 4, 2026",
-        "description": "Employ (Application)",
+        "description": "Order Authorizing the Retention and Employment of Young Conaway Stargatt & Taylor, LLP as Co-Counsel for the Debtor, Effective as of the Petition Date (Related Doc # 82) Order Signed on 9/4/2026. (Mml) (Entered: 09/04/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -68,7 +88,7 @@
         "date_filed": "2026-09-04",
         "time_filed": "12:38:51",
         "date_display": "Sep 4, 2026",
-        "description": "Employ (Application)",
+        "description": "Order Authorizing Debtor to (I) Retain AP Services, LLC, (II) Designate David Hindman as Chief Executive Officer, Effective as of the Petition Date, and (III) Granting Related Relief (Related Doc # 81, 201) Order Signed on 9/4/2026. (Mml) (Entered: 09/04/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -78,7 +98,7 @@
         "date_filed": "2026-09-04",
         "time_filed": "12:27:35",
         "date_display": "Sep 4, 2026",
-        "description": "Exhibit A - B",
+        "description": "Exhibit(s) - Notice of Filing of Further Revised Order Authorizing the Retention and Employment of Herbert Smith Freehill Kramer (US) LLP as Attorneys for the Debtor and Debtor in Possession Effective as of the Petition Date (related document(s)83, 175, 188) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Diver, James) (Entered: 09/04/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
