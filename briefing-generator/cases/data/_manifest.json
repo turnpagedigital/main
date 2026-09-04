@@ -449,5 +449,19 @@
     "docket_history": "full",
     "added": "2026-09-04",
     "default_color": "#1B3A4B"
+  },
+  {
+    "slug": "tariff-refund-act-of-2026-s-3905-legislative-watch",
+    "display_name": "Tariff Refund Act of 2026 (S. 3905) — Legislative Watch",
+    "short_name": "Tariff Refund Act of 2026 (S. 3905) — Legislative Watch",
+    "docket_url": "",
+    "court": "U.S. Senate / Legislative",
+    "topics": [
+      "rewind-tariffs"
+    ],
+    "sync": "active",
+    "docket_history": "full",
+    "added": "2026-09-04",
+    "default_color": "#D4FF00"
   }
 ]
