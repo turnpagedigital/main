@@ -1,5 +1,20 @@
 [
   {
+    "slug": "andersen-v-stability-ai-nd-cal",
+    "added": "2026-09-04",
+    "display_name": "Andersen v. Stability AI (N.D. Cal.)",
+    "short_name": "Andersen v. Stability AI (N.D. Cal.)",
+    "docket_url": "https://www.courtlistener.com/docket/66732129/andersen-v-stability-ai-ltd/",
+    "default_color": "#1B3A4B",
+    "category": "class-action",
+    "topics": [
+      "llm-class-action"
+    ],
+    "court": "N.D. Cal.",
+    "sync": "active",
+    "docket_history": "full"
+  },
+  {
     "slug": "bartz-anthropic",
     "added": "2026-06-11",
     "display_name": "Bartz v. Anthropic",
@@ -351,117 +366,5 @@
     "court": "C.I.T.",
     "sync": "active",
     "docket_history": "full"
-  },
-  {
-    "slug": "andersen-v-stability-ai-nd-cal",
-    "display_name": "Andersen v. Stability AI (N.D. Cal.)",
-    "short_name": "Andersen v. Stability AI (N.D. Cal.)",
-    "docket_url": "https://www.courtlistener.com/docket/66732129/andersen-v-stability-ai-ltd/",
-    "court": "N.D. Cal.",
-    "topics": [
-      "llm-class-action"
-    ],
-    "sync": "active",
-    "docket_history": "full",
-    "added": "2026-09-04",
-    "default_color": "#1B3A4B"
-  },
-  {
-    "slug": "umg-sony-music-v-suno-ai-d-mass-motion-to-add-61-026-recordi",
-    "display_name": "UMG/Sony Music v. Suno AI (D. Mass.) — Motion to Add 61,026 Recordings",
-    "short_name": "UMG/Sony Music v. Suno AI (D. Mass.) — Motion to Add 61,026 Recordings",
-    "docket_url": "",
-    "court": "D. Mass. (Judge Saylor)",
-    "topics": [
-      "llm-class-action"
-    ],
-    "sync": "active",
-    "docket_history": "full",
-    "added": "2026-09-04",
-    "default_color": "#D4FF00"
-  },
-  {
-    "slug": "freestyle-world-v-united-states-ieepa-new-lead-case-rule-23",
-    "display_name": "Freestyle World v. United States (IEEPA — New Lead Case / Rule 23 Class Cert)",
-    "short_name": "Freestyle World v. United States (IEEPA — New Lead Case / Rule 23 Class Cert)",
-    "docket_url": "",
-    "court": "U.S. Court of International Trade",
-    "topics": [
-      "rewind-tariffs"
-    ],
-    "sync": "active",
-    "docket_history": "full",
-    "added": "2026-09-04",
-    "default_color": "#94C6F8"
-  },
-  {
-    "slug": "keller-postman-v-google-alphabet-ad-tech-mass-arbitration",
-    "display_name": "Keller Postman v. Google/Alphabet (Ad Tech Mass Arbitration)",
-    "short_name": "Keller Postman v. Google/Alphabet (Ad Tech Mass Arbitration)",
-    "docket_url": "",
-    "court": "AAA Mass Arbitration (filed April 2026)",
-    "topics": [
-      "billion-dollar-class-actions"
-    ],
-    "sync": "active",
-    "docket_history": "full",
-    "added": "2026-09-04",
-    "default_color": "#B3A8F0"
-  },
-  {
-    "slug": "in-re-multiplan-health-insurance-provider-antitrust-litigati",
-    "display_name": "In re MultiPlan Health Insurance Provider Antitrust Litigation",
-    "short_name": "In re MultiPlan Health Insurance Provider Antitrust Litigation",
-    "docket_url": "https://www.courtlistener.com/docket/68810146/in-re-multiplan-health-insurance-provider-litigation/",
-    "court": "S.D.N.Y.",
-    "topics": [
-      "billion-dollar-class-actions"
-    ],
-    "sync": "active",
-    "docket_history": "full",
-    "added": "2026-09-04",
-    "default_color": "#7EF4C2"
-  },
-  {
-    "slug": "in-re-bitmart-exchange-wind-down-customer-fund-watch",
-    "display_name": "In re BitMart Exchange (Wind-Down / Customer-Fund Watch)",
-    "short_name": "In re BitMart Exchange (Wind-Down / Customer-Fund Watch)",
-    "docket_url": "",
-    "court": "No formal insolvency proceeding filed as of Aug 7, 2026 — monitoring for receivership or Ch. 11 filing",
-    "topics": [
-      "crypto-insolvency"
-    ],
-    "sync": "active",
-    "docket_history": "full",
-    "added": "2026-09-04",
-    "default_color": "#F2AAEC"
-  },
-  {
-    "slug": "bmg-rights-management-v-anthropic-pbc-nd-cal",
-    "display_name": "BMG Rights Management v. Anthropic PBC (N.D. Cal.)",
-    "short_name": "BMG Rights Management v. Anthropic PBC (N.D. Cal.)",
-    "docket_url": "https://www.courtlistener.com/docket/72505829/bmg-rights-management-us-llc-v-anthropic-pbc/",
-    "court": "N.D. Cal.",
-    "topics": [
-      "llm-class-action"
-    ],
-    "sync": "active",
-    "docket_history": "full",
-    "added": "2026-09-04",
-    "default_color": "#1B3A4B"
-  },
-  {
-    "slug": "tariff-refund-act-of-2026-s-3905-legislative-watch",
-    "display_name": "Tariff Refund Act of 2026 (S. 3905) — Legislative Watch",
-    "short_name": "Tariff Refund Act of 2026 (S. 3905) — Legislative Watch",
-    "docket_url": "",
-    "court": "U.S. Senate / Legislative",
-    "topics": [
-      "rewind-tariffs"
-    ],
-    "sync": "active",
-    "docket_history": "full",
-    "added": "2026-09-04",
-    "default_color": "#D4FF00"
   }
 ]
