@@ -123,7 +123,8 @@
       "source_name": "Bloomberg",
       "date": "2026-08-18",
       "first_seen": "2026-08-24",
-      "status": "new"
+      "status": "dismissed",
+      "triaged_at": "2026-09-04T18:04:06.480Z"
     },
     {
       "id": "e8417eea6e",
