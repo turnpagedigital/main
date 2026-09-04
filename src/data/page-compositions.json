@@ -559,14 +559,14 @@
         {
           "id": "sec-1780973311793-kxeo",
           "type": "cta",
-          "visible": false,
+          "visible": true,
           "layout": "layout-2-banner",
           "colorScheme": "photo",
           "content": {
             "layout": "layout-2-banner",
             "colorScheme": "photo",
             "eyebrow": "Get in Touch",
-            "title": "Follow along as we track the latest developments.",
+            "title": "Have a claim in another copyright class action?",
             "accent": "Talk to us.",
             "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
             "primary": {
@@ -574,10 +574,10 @@
               "href": "/contact"
             },
             "secondary": null,
-            "cta": "Read our briefings",
-            "href": "/press?topic=copyright&type=briefings",
+            "cta": "Contact us for a quote",
+            "href": "/contact",
             "image": "/pawel-czerwinski-T5VUBvCYqKk-unsplash.jpg",
-            "_bookmark": "briefings"
+            "_bookmark": "other claims"
           }
         },
         {
