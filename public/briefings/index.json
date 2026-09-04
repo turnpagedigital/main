@@ -67,7 +67,8 @@
         "Anthropic",
         "Settlement",
         "Guide"
-      ]
+      ],
+      "active": false
     },
     {
       "slug": "2026-08-03-ai-copyright-lawsuit-tracker",
@@ -92,7 +93,8 @@
         "Bartz",
         "Anthropic",
         "Settlement"
-      ]
+      ],
+      "active": false
     },
     {
       "slug": "2026-08-03-anthropic-settlement-cash-advance",
@@ -105,7 +107,7 @@
         "Claims Trading"
       ],
       "author": "Turnpage Intelligence",
-      "active": true,
+      "active": false,
       "type": "briefing"
     },
     {
@@ -119,7 +121,7 @@
         "Settlement"
       ],
       "author": "Turnpage Intelligence",
-      "active": true,
+      "active": false,
       "type": "briefing"
     },
     {
@@ -133,7 +135,7 @@
         "Music"
       ],
       "author": "Turnpage Intelligence",
-      "active": true,
+      "active": false,
       "type": "briefing"
     },
     {
@@ -146,7 +148,8 @@
         "BMG",
         "Anthropic",
         "Music"
-      ]
+      ],
+      "active": false
     },
     {
       "slug": "2026-06-12-bankruptcy-advisory",
