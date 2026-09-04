@@ -3,6 +3,29 @@
   "case_name": "Papaya Gaming",
   "items": [
     {
+      "date": "2026-09-04",
+      "updated": "2026-09-04",
+      "lede": "On September 4, Skillz Platform Inc. filed a sealed letter with the court (Dkt. 93, Neiburg), accompanied by a second letter filed the same day that has not yet received a docket number.",
+      "body_md": "On September 4, Skillz Platform Inc. filed a sealed letter with the court (Dkt. 93, Neiburg), accompanied by a second letter filed the same day that has not yet received a docket number.\n\nBoth filings land the day the compel order (Dkt. 92) ripens as the controlling instrument in this proceeding, and their timing is not incidental. Sealed letters to a bankruptcy judge in an actively contested Chapter 15, submitted by the creditor that just prevailed on a motion to compel, typically serve one of a narrow set of purposes: reporting a compliance dispute with the court-ordered production and deposition deadlines; raising a privilege or confidentiality issue that has emerged from the newly compelled discovery; or surfacing a related development — in Tel Aviv or on the Second Circuit appeal docket — that Skillz wants the court to have before any scheduling ruling. The content is not on the public record, and no secondary reporting has confirmed what the letters address; any characterization beyond their timing and authorship would be speculation. What can be said with precision: Skillz chose to go to Judge Walrath directly and under seal within 48 hours of the compel order's entry, which signals either an urgent compliance issue or a sensitive factual matter that Skillz did not want to brief in the ordinary course on the public docket. The companion unnumbered letter — filed the same day without an assigned docket number as of this writing — may be a chambers copy, a cover transmission, or a separate communication from another party; the docket entry does not identify the filer, and that ambiguity should be tracked when the entry is numbered and the filer is identified.\n\nFor recovery posture, the immediate question is whether Dkt. 93 reflects a dispute over Papaya's compliance with Dkt. 92's production and deposition directives. If Skillz is already reporting non-compliance or asserting that Papaya has interposed new privilege objections to compelled materials, that would accelerate the contested discovery timeline and potentially put Papaya before Judge Walrath on a sanctions or further-compel motion before the recognition hearing is even scheduled. That trajectory matters directly to Skillz's ability to build a factual record on its recognition challenges — the same challenges noted in the __[Firy/FIRY Business Wire release carried by Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/israeli-court-says-papaya-gaming-120000588.html)__ as actively contesting recognition \"on numerous grounds.\" The Israeli-side parallel pressure remains: \nJudge Lushi-Abudi rejected Papaya's motion to convene creditors' meetings to vote on its proposed debt settlement, stating that Papaya should strengthen its proposed creditor repayment plan that currently relies only on operating profits, with the risks thereto, without any securities or equity contribution.\n A Papaya that is simultaneously resisting document production in Delaware and unable to satisfy the Israeli court that its repayment plan is adequately secured is a weaker petitioner for recognition on both fronts. The next concrete milestone is the public docketing and, where possible, unsealing of the substance of Dkt. 93, together with Papaya's compliance with whatever production and deposition deadlines Dkt. 92 imposed — those deadlines have not appeared on the public docket and must be confirmed from the order itself.\n\n## Sources\n\n- [Israeli Court Says Papaya Gaming Should Improve Its Debt Settlement Proposal to Repay $730 Million to Skillz](https://finance.yahoo.com/markets/stocks/articles/israeli-court-says-papaya-gaming-120000588.html) — Business Wire / Yahoo Finance, August 31, 2026\n- [Israeli court says Papaya Gaming should improve its debt settlement plan](https://www.stocktitan.net/news/FIRY/israeli-court-says-papaya-gaming-should-improve-its-debt-settlement-81are4y0jeia.html) — StockTitan (Firy/FIRY press release), August 26, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Israeli Court Says Papaya Gaming Should Improve Its Debt Settlement Proposal to Repay $730 Million to Skillz",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/israeli-court-says-papaya-gaming-120000588.html",
+          "note": "Business Wire / Yahoo Finance, August 31, 2026"
+        },
+        {
+          "title": "Israeli court says Papaya Gaming should improve its debt settlement plan",
+          "url": "https://www.stocktitan.net/news/FIRY/israeli-court-says-papaya-gaming-should-improve-its-debt-settlement-81are4y0jeia.html",
+          "note": "StockTitan (Firy/FIRY press release), August 26, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 3,
+        "articles": 0,
+        "latest": "2026-09-04"
+      }
+    },
+    {
       "date": "2026-09-02",
       "updated": "2026-09-02",
       "lede": "On September 2, Judge Walrath signed an order granting in part Skillz Platform Inc.'s motion to compel production of documents and a witness for deposition (Dkt. 92, resolving Dkts. 73, 78, and 91).",

@@ -3,6 +3,49 @@
   "case_name": "Poolin",
   "items": [
     {
+      "date": "2026-09-04",
+      "updated": "2026-09-04",
+      "lede": "On September 3, the Poolin docket recorded a Certification of No Objection at Dkt. 200 — procedural in classification and, standing alone, of limited independent weight. The six unidentified documents at Dkts.",
+      "body_md": "On September 3, the Poolin docket recorded a Certification of No Objection at Dkt. 200 — procedural in classification and, standing alone, of limited independent weight. The six unidentified documents at Dkts. 194–199 (five filed September 2, one filed September 3) remain the outstanding classification problem: public metadata discloses no filer, title, or nature for any of them, and no secondary source has reported on their content. CM/ECF and __[Verita Global](https://veritaglobal.net/poolin)__ are the only routes to retrieve and classify these filings before the September 8 bid deadline four days from now. If any of the six constitutes a qualified bid submission, a sale objection, a motion to adjourn or modify the auction, a supplement to the Rule 9019 compromise at Dkt. 190, or any filing that alters the sale process or its timeline, it is substantive and material — and would require immediate attention from any creditor tracking recovery exposure. The Certification of No Objection at Dkt. 200, absent knowledge of the underlying motion it resolves, cannot be classified with precision; a CNO typically signals an uncontested order about to enter, which could be consequential or routine depending entirely on what motion it closes out.\n\n\nThe next hard dates are September 8 (qualified bid deadline), September 10 (auction, if competing bids are received), and September 16 (sale hearing per Bondoro).\n \nA separate source places the sale hearing on September 18 before Judge O'Hagan.\n The September 16 versus September 18 conflict noted in yesterday's briefing remains unresolved in public sources; the operative scheduling order on the docket is the only authoritative reference. \nThe auction, if triggered, is scheduled for 10:00 a.m. Eastern, either at the offices of Archer & Greiner in Voorhees, New Jersey, virtually, or at another time and place designated by the debtors.\n \nThe properties may be sold separately if that structure produces greater value for creditors than transferring the portfolio together; the sale follows a marketing campaign that contacted more than 335 potential purchasers, resulting in 28 confidentiality agreements and seven letters of intent.\n No competing bid above the $52 million stalking-horse floor has been publicly disclosed, and whether any of Dkts. 194–199 changes that picture is the case's central unknown entering the final weekend before the bid deadline.\n\nThe Rule 9019 compromise at Dkt. 190 (filed August 28) remains unresolved in public metadata — counterparty, subject matter, and dollar amount are all undisclosed. The trustee motion, with a hearing scheduled for October 21, remains the structural overhang behind the sale: appointment of a Chapter 11 trustee would displace existing management and the CRO, transfer control of the § 363 sale process to a court-appointed fiduciary, and alter who directs distributions to the approximately 11,700 IOU holders. \nChief Restructuring Officer Michael DuFrayne has placed prepetition obligations at approximately $173.1 million, of which roughly $163.7 million consists of unsecured IOUs issued to Poolin Wallet customers after the company suspended withdrawals during the 2022 market downturn.\n The next concrete milestone is September 8 — the qualified bid deadline, and the first hard data point on whether any bidder is prepared to exceed the stalking-horse floor.\n\n## Sources\n\n- [Case Summary: Poolin Chapter 11](https://bondoro.com/poolin/) — Bondoro, July 2026\n- [Poolin Technology Case Information](https://veritaglobal.net/poolin) — Verita Global (case administrator)\n- [Poolin Auction Set for September 10 as Objection Deadline Bars Late Creditors](https://www.cryptotimes.io/2026/08/21/poolin-auction-set-for-september-10-as-objection-deadline-bars-late-creditors/) — CryptoTimes, August 21, 2026\n- [Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process](https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/) — CryptoNomist, August 21, 2026\n- [Poolin Files Chapter 11 With $52M Asset Sale and 163M in Debt](https://www.tftc.io/poolin-chapter-11-bankruptcy-52-million-west-texas-sale) — TFTC, July 2026\n- [Poolin Files for Chapter 11 and Moves to Sell $52M in West Texas Mining Sites](https://crypto-economy.com/bitcoin-mining-pool-poolin-files-for-chapter-11/) — Crypto Economy, July 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Case Summary: Poolin Chapter 11",
+          "url": "https://bondoro.com/poolin/",
+          "note": "Bondoro, July 2026"
+        },
+        {
+          "title": "Poolin Technology Case Information",
+          "url": "https://veritaglobal.net/poolin",
+          "note": "Verita Global (case administrator)"
+        },
+        {
+          "title": "Poolin Auction Set for September 10 as Objection Deadline Bars Late Creditors",
+          "url": "https://www.cryptotimes.io/2026/08/21/poolin-auction-set-for-september-10-as-objection-deadline-bars-late-creditors/",
+          "note": "CryptoTimes, August 21, 2026"
+        },
+        {
+          "title": "Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process",
+          "url": "https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/",
+          "note": "CryptoNomist, August 21, 2026"
+        },
+        {
+          "title": "Poolin Files Chapter 11 With $52M Asset Sale and 163M in Debt",
+          "url": "https://www.tftc.io/poolin-chapter-11-bankruptcy-52-million-west-texas-sale",
+          "note": "TFTC, July 2026"
+        },
+        {
+          "title": "Poolin Files for Chapter 11 and Moves to Sell $52M in West Texas Mining Sites",
+          "url": "https://crypto-economy.com/bitcoin-mining-pool-poolin-files-for-chapter-11/",
+          "note": "Crypto Economy, July 2026"
+        }
+      ],
+      "activity": {
+        "filings": 7,
+        "articles": 0,
+        "latest": "2026-09-03"
+      }
+    },
+    {
       "date": "2026-09-03",
       "updated": "2026-09-03",
       "lede": "Today, six documents — Dkts. 194 through 199 — appeared on the Poolin docket, five filed September 2 and one filed September 3, with no publicly indexed metadata identifying their content, filer, or title.",
