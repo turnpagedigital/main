@@ -351,5 +351,19 @@
     "court": "C.I.T.",
     "sync": "active",
     "docket_history": "full"
+  },
+  {
+    "slug": "andersen-v-stability-ai-nd-cal",
+    "display_name": "Andersen v. Stability AI (N.D. Cal.)",
+    "short_name": "Andersen v. Stability AI (N.D. Cal.)",
+    "docket_url": "https://www.courtlistener.com/docket/66732129/andersen-v-stability-ai-ltd/",
+    "court": "N.D. Cal.",
+    "topics": [
+      "llm-class-action"
+    ],
+    "sync": "active",
+    "docket_history": "full",
+    "added": "2026-09-04",
+    "default_color": "#1B3A4B"
   }
 ]
