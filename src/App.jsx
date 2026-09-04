@@ -27,6 +27,7 @@ const Partners         = React.lazy(() => import("./pages/Partners.jsx"));
 const Admin            = React.lazy(() => import("./pages/Admin.jsx"));
 const Press            = React.lazy(() => import("./pages/Press.jsx"));
 const LitigationFunding = React.lazy(() => import("./pages/LitigationFunding.jsx"));
+const AIGuide          = React.lazy(() => import("./pages/AIGuide.jsx"));
 
 function LoadingFallback() {
   return (
@@ -57,6 +58,7 @@ const TITLES = {
   "faq": "FAQ — Turnpage Digital Markets",
   "privacy": "Privacy Policy — Turnpage Digital Markets",
   "terms": "Terms of Use — Turnpage Digital Markets",
+  "ai-guide": "AI Learning Bot Guide — Turnpage Digital Markets",
   "admin": "Admin — Turnpage Digital Markets",
 };
 
@@ -209,6 +211,7 @@ const COMPONENT_MAP = {
   "Admin":              Admin,
   "Press":              Press,
   "LitigationFunding":  LitigationFunding,
+  "AIGuide":            AIGuide,
 };
 
 // Build PAGE_MAP dynamically from routes.json at import time.

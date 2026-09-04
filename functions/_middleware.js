@@ -11,6 +11,9 @@
  *    a per-briefing OG image, and NewsArticle + BreadcrumbList JSON-LD.
  *    Drafts (active: false) fall back to the site defaults.
  *  - /faq — FAQPage JSON-LD from src/data/faqs.json.
+ *  - /ai-guide — Organization/WebPage JSON-LD PLUS the full guide as static
+ *    HTML inside #root, so LLM crawlers that don't execute JavaScript read
+ *    the whole page. React clears it on mount (createRoot().render()).
  *
  * Resolution + JSON-LD building live in functions/_meta.js (pure, unit-tested
  * in tests/meta-resolver.test.js).
@@ -21,6 +24,10 @@ import briefingsIndex from "../public/briefings/index.json";
 import faqs from "../src/data/faqs.json";
 import routesData from "../src/data/routes.json";
 import partnersData from "../src/data/referral-partners.json";
+import aiGuide from "../src/data/ai-guide.json";
+import dealsData from "../src/data/deals.json";
+import bioData from "../src/data/bio.json";
+import testimonialsData from "../src/data/testimonials.json";
 import {
   resolveMeta,
   jsonLdScript,
@@ -29,6 +36,7 @@ import {
   buildFaqJsonLd,
   isKnownPath,
 } from "./_meta.js";
+import { assembleGuide, buildAiGuideJsonLd, buildAiGuideHtml } from "./_ai-guide.js";
 
 /* Canonical/OG URLs always point at the apex host, so www and preview
  * deployments never compete with production in Google's index. A www→apex
@@ -54,6 +62,17 @@ for (const p of partnersData.partners || []) {
     if (!STATIC_PATHS.includes(`/${token}`)) VANITY_TO_CODE.set(token, p.code);
   }
 }
+
+/* AI Learning Bot Guide — assembled once per isolate from the same data
+ * files the admin edits (FAQs, deals, bio, testimonials). */
+const AI_GUIDE_PATH = aiGuide.path || "/ai-guide";
+const AI_GUIDE = assembleGuide({
+  guide: aiGuide,
+  faqs,
+  deals: dealsData,
+  bio: bioData,
+  testimonials: testimonialsData,
+});
 
 const SITE_NAME = pageMeta.site.name;
 /* Optional "@handle" in page-meta.json's site block; empty → tag not emitted. */
@@ -99,6 +118,13 @@ export async function onRequest(context) {
   /* The /intel mount (briefing dashboards + their login gate) carries its
    * own titles and is noindex by robots.txt — never rewrite it. */
   if (url.pathname === "/intel" || url.pathname.startsWith("/intel/")) {
+    return context.next();
+  }
+
+  /* /ai-guide is a static file (public/ai-guide.html), not an SPA route —
+   * it carries its own meta/JSON-LD, so the rewriter and 404 logic below
+   * must never touch it. */
+  if (url.pathname === "/ai-guide" || url.pathname === "/ai-guide.html") {
     return context.next();
   }
 
@@ -170,6 +196,12 @@ export async function onRequest(context) {
       headExtras.push(`<script type="application/ld+json">${jsonLdScript(faqLd)}</script>`);
     }
   }
+  const isAiGuide = url.pathname === AI_GUIDE_PATH || url.pathname === `${AI_GUIDE_PATH}/`;
+  if (isAiGuide) {
+    headExtras.push(
+      `<script type="application/ld+json">${jsonLdScript(buildAiGuideJsonLd(AI_GUIDE, CANONICAL_ORIGIN))}</script>`,
+    );
+  }
 
   const setContent = (value) => ({
     element(el) {
@@ -188,6 +220,12 @@ export async function onRequest(context) {
         el.onEndTag((end) => {
           end.before(headExtras.join("\n"), { html: true });
         });
+      },
+    })
+    .on("#root", {
+      element(el) {
+        /* Static guide for non-JS crawlers; React replaces it on mount. */
+        if (isAiGuide) el.setInnerContent(buildAiGuideHtml(AI_GUIDE, CANONICAL_ORIGIN), { html: true });
       },
     })
     .on('meta[name="description"]', setContent(meta.description))
