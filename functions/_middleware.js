@@ -121,6 +121,13 @@ export async function onRequest(context) {
     return context.next();
   }
 
+  /* /ai-guide is a static file (public/ai-guide.html), not an SPA route —
+   * it carries its own meta/JSON-LD, so the rewriter and 404 logic below
+   * must never touch it. */
+  if (url.pathname === "/ai-guide" || url.pathname === "/ai-guide.html") {
+    return context.next();
+  }
+
   const response = await context.next();
 
   /* Hashed-asset 404s (deploy-transition windows) must never be cached:
