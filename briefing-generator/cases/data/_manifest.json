@@ -407,5 +407,19 @@
     "docket_history": "full",
     "added": "2026-09-04",
     "default_color": "#B3A8F0"
+  },
+  {
+    "slug": "in-re-multiplan-health-insurance-provider-antitrust-litigati",
+    "display_name": "In re MultiPlan Health Insurance Provider Antitrust Litigation",
+    "short_name": "In re MultiPlan Health Insurance Provider Antitrust Litigation",
+    "docket_url": "https://www.courtlistener.com/docket/68810146/in-re-multiplan-health-insurance-provider-litigation/",
+    "court": "S.D.N.Y.",
+    "topics": [
+      "billion-dollar-class-actions"
+    ],
+    "sync": "active",
+    "docket_history": "full",
+    "added": "2026-09-04",
+    "default_color": "#7EF4C2"
   }
 ]
