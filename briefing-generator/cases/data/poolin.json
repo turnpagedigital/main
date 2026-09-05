@@ -15,12 +15,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-09-04",
-    "meta_fetched_at": "2026-09-04T21:33:43.395442+00:00",
-    "fetched_at": "2026-09-05T00:10:28.258437+00:00",
+    "meta_fetched_at": "2026-09-05T04:37:07.354227+00:00",
+    "fetched_at": "2026-09-05T04:37:07.354227+00:00",
     "as_of": "Sep 5, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 4,
     "recent": [
+      {
+        "entry_number": 202,
+        "date_filed": "2026-09-04",
+        "time_filed": "20:52:48",
+        "date_display": "Sep 4, 2026",
+        "description": "Missing Document(s) Filed",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 201,
         "date_filed": "2026-09-04",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 199,
-        "date_filed": "2026-09-03",
-        "time_filed": "10:08:21",
-        "date_display": "Sep 3, 2026",
-        "description": "Document",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 202,
+        "date_filed": "2026-09-04",
+        "time_filed": "20:52:48",
+        "date_display": "Sep 4, 2026",
+        "description": "Missing Document(s) Filed",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 201,
         "date_filed": "2026-09-04",
