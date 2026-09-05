@@ -15,45 +15,335 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
-    "date_last_filing": "2026-09-04",
-    "meta_fetched_at": "2026-09-04T18:31:17.825701+00:00",
-    "fetched_at": "2026-09-05T04:38:42.293782+00:00",
+    "date_last_filing": "2026-09-05",
+    "meta_fetched_at": "2026-09-05T09:09:15.712593+00:00",
+    "fetched_at": "2026-09-05T09:09:15.712593+00:00",
     "as_of": "Sep 5, 2026",
     "backfilled": true,
-    "new_in_72h": 26,
+    "new_in_72h": 55,
     "recent": [
       {
-        "entry_number": 1715,
-        "date_filed": "2026-09-04",
-        "time_filed": "13:01:23",
-        "date_display": "Sep 4, 2026",
-        "description": "Summary Judgment",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1715.0.pdf"
-      },
-      {
-        "entry_number": 1714,
-        "date_filed": "2026-09-04",
-        "time_filed": "12:59:03",
-        "date_display": "Sep 4, 2026",
+        "entry_number": 1908,
+        "date_filed": "2026-09-05",
+        "time_filed": "03:00:02",
+        "date_display": "Sep 5, 2026",
         "description": "Declaration in Support of Motion",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1706,
-        "date_filed": "2026-09-04",
-        "time_filed": "11:45:09",
-        "date_display": "Sep 4, 2026",
-        "description": "DECLARATION of Jordan Usdan in Support re: (1473 in 1:23-cv-11195-SHS-OTW) MOTION for Summary Judgment in News Plaintiffs' Consolidated Cases., (777 in 1:23-cv-10211-SHS-OTW) MOTION for Summary Judgment in Books Plaintiffs' Consolidated Cases.. Document filed by Microsoft Corporation. Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Hurst, Annette) (Entered: 09/04/2026)",
+        "entry_number": 1907,
+        "date_filed": "2026-09-05",
+        "time_filed": "02:58:06",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1706.0.pdf"
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1906,
+        "date_filed": "2026-09-05",
+        "time_filed": "02:40:50",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1908,
+        "date_filed": "2026-09-05",
+        "time_filed": "03:00:02",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1907,
+        "date_filed": "2026-09-05",
+        "time_filed": "02:58:06",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1906,
+        "date_filed": "2026-09-05",
+        "time_filed": "02:40:50",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1905,
+        "date_filed": "2026-09-05",
+        "time_filed": "02:36:45",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1904,
+        "date_filed": "2026-09-05",
+        "time_filed": "02:29:41",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1903,
+        "date_filed": "2026-09-05",
+        "time_filed": "02:23:12",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1902,
+        "date_filed": "2026-09-05",
+        "time_filed": "02:22:26",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1901,
+        "date_filed": "2026-09-05",
+        "time_filed": "02:20:28",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1900,
+        "date_filed": "2026-09-05",
+        "time_filed": "02:19:28",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1899,
+        "date_filed": "2026-09-05",
+        "time_filed": "02:13:35",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1898,
+        "date_filed": "2026-09-05",
+        "time_filed": "02:08:57",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1897,
+        "date_filed": "2026-09-05",
+        "time_filed": "01:59:08",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1893,
+        "date_filed": "2026-09-05",
+        "time_filed": "01:42:42",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1892,
+        "date_filed": "2026-09-05",
+        "time_filed": "01:40:44",
+        "date_display": "Sep 5, 2026",
+        "description": "Redacted Document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1890,
+        "date_filed": "2026-09-05",
+        "time_filed": "01:33:10",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1889,
+        "date_filed": "2026-09-05",
+        "time_filed": "01:26:22",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1886,
+        "date_filed": "2026-09-05",
+        "time_filed": "01:18:24",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1885,
+        "date_filed": "2026-09-05",
+        "time_filed": "01:09:36",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1883,
+        "date_filed": "2026-09-05",
+        "time_filed": "01:06:30",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1882,
+        "date_filed": "2026-09-05",
+        "time_filed": "00:56:21",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1881,
+        "date_filed": "2026-09-05",
+        "time_filed": "00:51:29",
+        "date_display": "Sep 5, 2026",
+        "description": "Redacted Document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1880,
+        "date_filed": "2026-09-05",
+        "time_filed": "00:44:53",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1879,
+        "date_filed": "2026-09-05",
+        "time_filed": "00:33:30",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1878,
+        "date_filed": "2026-09-05",
+        "time_filed": "00:32:42",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1877,
+        "date_filed": "2026-09-05",
+        "time_filed": "00:31:49",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1876,
+        "date_filed": "2026-09-05",
+        "time_filed": "00:20:23",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1875,
+        "date_filed": "2026-09-05",
+        "time_filed": "00:17:48",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1874,
+        "date_filed": "2026-09-05",
+        "time_filed": "00:15:40",
+        "date_display": "Sep 5, 2026",
+        "description": "Declaration in Support of Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1723,
+        "date_filed": "2026-09-04",
+        "time_filed": "13:33:54",
+        "date_display": "Sep 4, 2026",
+        "description": "***SEALED***DECLARATION of John D. Lafferty in Support re: (1473 in 1:23-cv-11195-SHS-OTW) MOTION for Summary Judgment in News Plaintiffs' Consolidated Cases., (777 in 1:23-cv-10211-SHS-OTW) MOTION for Summary Judgment in Books Plaintiffs' Consolidated Cases.. Document filed by Microsoft Corporation. Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al.Motion or Order to File Under Seal: 1685 .(Hurst, Annette) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1715,
         "date_filed": "2026-09-04",
