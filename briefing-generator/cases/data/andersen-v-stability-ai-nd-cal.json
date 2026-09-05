@@ -16,8 +16,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/66732129/andersen-v-stability-ai-ltd/",
     "date_last_filing": "2026-09-04",
-    "meta_fetched_at": "2026-09-05T20:30:27.918486+00:00",
-    "fetched_at": "2026-09-05T20:30:27.918486+00:00",
+    "meta_fetched_at": "2026-09-05T22:59:04.285891+00:00",
+    "fetched_at": "2026-09-05T22:59:04.285891+00:00",
     "as_of": "Sep 5, 2026",
     "backfilled": false,
     "new_in_72h": 6,
@@ -2375,6 +2375,66 @@
         "doc_url": ""
       },
       {
+        "entry_number": 519,
+        "date_filed": "2026-04-28",
+        "time_filed": "17:26:08",
+        "date_display": "Apr 28, 2026",
+        "description": "Letter from Evan Creutz Regarding Plaintiffs Administrative Motion to Consider Whether Another Partys Materials Should Be Sealed Regarding Surovenko Participation in the Development of the DreamUp Product . (Attachments: # 1 Exhibit 1 (Filed Under Seal), # 2 Exhibit 2 (Filed Under Seal), # 3 Exhibit 3 (Filed Under Seal), # 4 Exhibit 4 (Filed Under Seal), # 5 Exhibit 5 (Filed Under Seal), # 6 Exhibit 6 (Filed Under Seal), # 7 Exhibit 7 (Filed Under Seal), # 8 Exhibit 8 (Filed Under Seal), # 9 Exhibit 9 (Filed Under Seal), # 10 Exhibit 10 (Filed Under Seal), # 11 Exhibit 11 (Filed Under Seal), # 12 Exhibit 12 (Filed Under Seal), # 13 Exhibit 13 (Filed Under Seal), # 14 Exhibit 14 (Filed Under Seal), # 15 Exhibit 15 (Filed Under Seal), # 16 Exhibit 16 (Filed Under Seal))(Saveri, Joseph) (Filed on 4/28/2026) (Entered: 04/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.519.0.pdf"
+      },
+      {
+        "entry_number": 518,
+        "date_filed": "2026-04-28",
+        "time_filed": "17:17:09",
+        "date_display": "Apr 28, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Surovenkos Participation in the Development of the DreamUp Product, filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Proposed Order, # 2 Exhibit 1 (Sealed), # 3 Exhibit 2 (Sealed), # 4 Exhibit 3 (Sealed), # 5 Exhibit 4 (Sealed), # 6 Exhibit 5 (Sealed), # 7 Exhibit 6 (Sealed), # 8 Exhibit 7 (Sealed), # 9 Exhibit 8 (Sealed), # 10 Exhibit 9 (Sealed), # 11 Exhibit 10 (Sealed), # 12 Exhibit 11 (Sealed), # 13 Exhibit 12 (Sealed), # 14 Exhibit 13 (Sealed), # 15 Exhibit 14 (Sealed), # 16 Exhibit 15 (Sealed), # 17 Exhibit 16 (Sealed))(Saveri, Joseph) (Filed on 4/28/2026) (Entered: 04/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 517,
+        "date_filed": "2026-04-28",
+        "time_filed": "16:55:34",
+        "date_display": "Apr 28, 2026",
+        "description": "*Erroneous Entry - please refer to document 518 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Proposed Order)(Saveri, Joseph) (Filed on 4/28/2026) Modified on 5/5/2026 (slh, COURT STAFF). (Entered: 04/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 516,
+        "date_filed": "2026-04-28",
+        "time_filed": "15:54:48",
+        "date_display": "Apr 28, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 4/28/2026 before Magistrate Judge Lisa J. Cisneros by DeviantArt, Inc., for Recorded Proceeding - San Francisco. (Botwinick, Simeon) (Filed on 4/28/2026) (Entered: 04/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 515,
+        "date_filed": "2026-04-28",
+        "time_filed": "15:45:26",
+        "date_display": "Apr 28, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 4/23/2028 before Magistrate Judge Lisa J. Cisneros by DeviantArt, Inc., for Recorded Proceeding - San Francisco. (Botwinick, Simeon) (Filed on 4/28/2026) (Entered: 04/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 514,
+        "date_filed": "2026-04-28",
+        "time_filed": "14:31:46",
+        "date_display": "Apr 28, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 04/23/2026 before Magistrate Judge Lisa J. Cisneros by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang, for Recorded Proceeding - San Francisco. (Saveri, Joseph) (Filed on 4/28/2026) (Entered: 04/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 512,
         "date_filed": "2026-04-28",
         "time_filed": "12:14:30",
@@ -2383,9 +2443,1089 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.512.0.pdf"
+      },
+      {
+        "entry_number": 511,
+        "date_filed": "2026-04-27",
+        "time_filed": "",
+        "date_display": "Apr 27, 2026",
+        "description": "Order by Judge William H. Orrick granting 459 Administrative Motion to File Under Seal for compelling justifications shown. (This is a text-only entry generated by the court. There is no document associated with this entry.) (wholc3, COURT STAFF) (Filed on 4/27/2026) (Entered: 04/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-27",
+        "time_filed": "09:20:17",
+        "date_display": "Apr 27, 2026",
+        "description": "Order on Administrative Motion to File Under Seal",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 510,
+        "date_filed": "2026-04-24",
+        "time_filed": "23:24:38",
+        "date_display": "Apr 24, 2026",
+        "description": "CERTIFICATE OF SERVICE by DeviantArt, Inc. re 509 Administrative Motion to File Under Seal Portions of its Opposition to Plaintiffs Motion in Support of Request for Issuance of Letters Rogatory and Declarations in Support Thereof (Botwinick, Simeon) (Filed on 4/24/2026) (Entered: 04/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 509,
+        "date_filed": "2026-04-24",
+        "time_filed": "23:18:30",
+        "date_display": "Apr 24, 2026",
+        "description": "Administrative Motion to File Under Seal Portions of its Opposition to Plaintiffs Motion in Support of Request for Issuance of Letters Rogatory and Declarations in Support Thereof filed by DeviantArt, Inc.. (Attachments: # 1 Declaration of Simeon Botwinick, # 2 Proposed Order, # 3 DeviantArt's Opposition to Plaintiffs' Motion in Support of Request for Issuance of Letters Rogatory, # 4 Declaration of Simeon Botwinick, # 5 Declaration of Peter Gorniak)(Botwinick, Simeon) (Filed on 4/24/2026) (Entered: 04/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 508,
+        "date_filed": "2026-04-24",
+        "time_filed": "23:05:05",
+        "date_display": "Apr 24, 2026",
+        "description": "OPPOSITION/RESPONSE (re 473 MOTION for Issuance of Letters Rogatory ) [Redacted] filed byDeviantArt, Inc.. (Attachments: # 1 Declaration of Simeon Botwinick [Redacted], # 2 Exhibit 1 to Botwinick Decl., # 3 Exhibit 2 to Botwinick Decl., # 4 Exhibit 3 to Botwinick Decl., # 5 Exhibit 4 to Botwinick Decl., # 6 Declaration of Peter Gorniak [Redacted])(Lovejoy, Brittany) (Filed on 4/24/2026) (Entered: 04/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.508.0.pdf"
+      },
+      {
+        "entry_number": 507,
+        "date_filed": "2026-04-24",
+        "time_filed": "21:14:06",
+        "date_display": "Apr 24, 2026",
+        "description": "NOTICE by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang re 493 Exhibits to an Administrative Motion to File Under Seal, 502 Opposition/Response to Motion, 472 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed (Attachments: # 1 Declaration of Aaron Cera in Support of)(Saveri, Joseph) (Filed on 4/24/2026) (Entered: 04/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.507.0.pdf"
+      },
+      {
+        "entry_number": 522,
+        "date_filed": "2026-04-23",
+        "time_filed": "",
+        "date_display": "Apr 23, 2026",
+        "description": "Minute Entry for proceedings held before Magistrate Judge Lisa J. Cisneros: Discovery Hearing held regarding the letter brief at ECF No. 465 . on 4/23/2026.Total Time in Court: 16 minutesRecorded via Zoom: 2:03 p.m.- 2:19 p.m. Plaintiff Attorney: Holden J. Benon, Saveri Law Firm, LLP.. Defendant DeviantArt: Brittany Lovejoy, Sarah Mitchell and Simeon Botwinick, Latham and Watkins LLP. Proceedings: DeviantArt shall produce users' email addresses and usernames associated with a sample of 55,000 images. Plaintiffs and DeviantArt shall meet and confer regarding how the sample will be selected and what information Plaintiffs will provide to DeviantArt regarding the selection methodology by May 1, 2026. The parties shall file a stipulation confirming that this matter has been resolved or joint letter briefing any remaining issues, no later than May 6, 2026.(bns, COURT STAFF) (Date Filed:…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.522.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-23",
+        "time_filed": "07:42:53",
+        "date_display": "Apr 23, 2026",
+        "description": "Set/Reset Hearings AND ~Util - Teleconference Zoom",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-23",
+        "time_filed": "",
+        "date_display": "Apr 23, 2026",
+        "description": "Set Hearing, See Docket No. 506 : Discovery Hearing set for 4/28/2026 at 10:30 AM in San Francisco, - Videoconference Only before Magistrate Judge Lisa J. Cisneros. This proceeding will be held via a Zoom webinar.Webinar Access: All counsel, members of the public, and media may access the webinar information at https://www.cand.uscourts.gov/lisa-j-cisneros/Civ LR 77-3(d). Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited.Zoom Guidance and Setup: https://cand.uscourts.gov/zoom. (bns, COURT STAFF) (Filed on 4/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 506,
+        "date_filed": "2026-04-22",
+        "time_filed": "",
+        "date_display": "Apr 22, 2026",
+        "description": "ORDER by Magistrate Judge Lisa J. Cisneros: The Court hereby sets a hearing on Plaintiffs' pending 473 Motion for Issuance of Letters Rogatory for April 28, 2026 at 10:30 am via Zoom. This resolves the stipulations at ECF Nos. 501 and 505 . (This is a text-only entry generated by the court. There is no document associated with this entry.) (ljclc1, COURT STAFF) (Filed on 4/22/2026) (Entered: 04/22/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 505,
+        "date_filed": "2026-04-22",
+        "time_filed": "15:57:51",
+        "date_display": "Apr 22, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER re 503 Order, to Conduct Hearing via Zoom on Plaintiffs Motion for Issuance of Letters Rogatory filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 4/22/2026) (Entered: 04/22/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.505.0.pdf"
+      },
+      {
+        "entry_number": 504,
+        "date_filed": "2026-04-22",
+        "time_filed": "11:06:49",
+        "date_display": "Apr 22, 2026",
+        "description": "Transcript of Proceedings held on 04/16/26, before Judge Lisa J. Cisneros. Court Reporter/Transcriber Echo Reporting, Inc., telephone number echoreporting@yahoo.com. Tape Number: 3:11 - 4:13. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 484 Transcript Order, 492 Transcript Order, 488 Transcript Order, 490 Transcript Order, 494 Transcript Order ) Redaction Request due 5/13/2026. Redacted Transcript Deadline set for 5/26/2026. Release of Transcript Restriction set for 7/21/2026. (Related documents(s) 484, 492, 488,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 503,
+        "date_filed": "2026-04-22",
+        "time_filed": "",
+        "date_display": "Apr 22, 2026",
+        "description": "ORDER by Magistrate Judge Lisa J. Cisneros: By April 22, 2026, Plaintiffs and DeviantArt shall file a status report or stipulation specifying if they would prefer that the hearing on the pending Motion for Issuance of Letters Rogatory take place in person or via Zoom. (This is a text-only entry generated by the court. There is no document associated with this entry.) (ljclc1, COURT STAFF) (Filed on 4/22/2026) (Entered: 04/22/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-22",
+        "time_filed": "08:04:03",
+        "date_display": "Apr 22, 2026",
+        "description": "Order",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 502,
+        "date_filed": "2026-04-21",
+        "time_filed": "18:52:08",
+        "date_display": "Apr 21, 2026",
+        "description": "OPPOSITION/RESPONSE (re 472 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed ) Re Plaintiffs' Motion in Support of Request for Issuance of Letters Rogatory filed bySarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 4/21/2026) (Entered: 04/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.502.0.pdf"
+      },
+      {
+        "entry_number": 501,
+        "date_filed": "2026-04-21",
+        "time_filed": "17:32:02",
+        "date_display": "Apr 21, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER REGARDING PROPOSED HEARING DATE FOR PLAINTIFFS MOTION FOR ISSUANCE OF LETTERS ROGATORY filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 4/21/2026) (Entered: 04/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.501.0.pdf"
+      },
+      {
+        "entry_number": 500,
+        "date_filed": "2026-04-21",
+        "time_filed": "",
+        "date_display": "Apr 21, 2026",
+        "description": "The parties shall appear for a joint discovery status conference on May 14, 2026 at 3:00 pm via Zoom. If, however, the parties wish to have an earlier joint discovery status conference, they may stipulate to advance the conference to May 7, 2026 at 3:00 pm. The parties joint discovery status report is due no later than seven days before the next joint discovery status conference. (This is a text-only entry generated by the court. There is no document associated with this entry.) (ljclc1, COURT STAFF) (Filed on 4/21/2026) (Entered: 04/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 499,
+        "date_filed": "2026-04-21",
+        "time_filed": "10:58:37",
+        "date_display": "Apr 21, 2026",
+        "description": "Order by Judge William H. Orrick granting in part 474 Plaintiff's Motion to Modify Case Schedule. Close of Fact Discovery: 7/1/2026; Cutoff for depositions only: 8/15/2026. (jmd, COURT STAFF) (Filed on 4/21/2026) (Entered: 04/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.499.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-21",
+        "time_filed": "12:52:11",
+        "date_display": "Apr 21, 2026",
+        "description": "Set/Reset Hearings AND ~Util - Teleconference Zoom",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-21",
+        "time_filed": "",
+        "date_display": "Apr 21, 2026",
+        "description": "Set Hearing, See Docket No. 500 : Discovery Hearing set for 5/14/2026 at 03:00 PM in San Francisco, - Videoconference Only before Magistrate Judge Lisa J. Cisneros. This proceeding will be held via a Zoom webinar.Webinar Access: All counsel, members of the public, and media may access the webinar information at https://www.cand.uscourts.gov/lisa-j-cisneros/Civ LR 77-3(d). Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited.Zoom Guidance and Setup: https://cand.uscourts.gov/zoom. (bns, COURT STAFF) (Filed on 4/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-21",
+        "time_filed": "12:41:06",
+        "date_display": "Apr 21, 2026",
+        "description": "Order",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 498,
+        "date_filed": "2026-04-20",
+        "time_filed": "",
+        "date_display": "Apr 20, 2026",
+        "description": "NOTICE of Appearance filed by Catherina Xu on behalf of Runway AI, Inc. (Xu, Catherina) (Filed on 4/20/2026) (Entered: 04/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 497,
+        "date_filed": "2026-04-20",
+        "time_filed": "12:03:26",
+        "date_display": "Apr 20, 2026",
+        "description": "OPPOSITION/RESPONSE (re 474 MOTION TO MODIFY CASE SCHEDULE PURSUANT TO LOCAL RULE 6-3 ) filed byDeviantArt, Inc., Stability AI Ltd., Stability AI, Inc.. (Attachments: # 1 Declaration of Simeon Botwinick, # 2 Declaration of Aditya V. Kamdar)(Lovejoy, Brittany) (Filed on 4/20/2026) (Entered: 04/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.497.0.pdf"
+      },
+      {
+        "entry_number": 496,
+        "date_filed": "2026-04-20",
+        "time_filed": "11:47:32",
+        "date_display": "Apr 20, 2026",
+        "description": "OPPOSITION/RESPONSE (re 474 MOTION TO MODIFY CASE SCHEDULE PURSUANT TO LOCAL RULE 6-3 ) filed byMidjourney, Inc.. (Attachments: # 1 Declaration of Angela L. Dunning)(Dunning, Angela) (Filed on 4/20/2026) (Entered: 04/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.496.0.pdf"
+      },
+      {
+        "entry_number": 495,
+        "date_filed": "2026-04-20",
+        "time_filed": "11:38:45",
+        "date_display": "Apr 20, 2026",
+        "description": "OPPOSITION/RESPONSE (re 474 MOTION TO MODIFY CASE SCHEDULE PURSUANT TO LOCAL RULE 6-3 ) filed byRunway AI, Inc.. (Attachments: # 1 Declaration of David Silbert, # 2 Proposed Order)(Silbert, David) (Filed on 4/20/2026) (Entered: 04/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.495.0_1.pdf"
+      },
+      {
+        "entry_number": 494,
+        "date_filed": "2026-04-20",
+        "time_filed": "09:41:12",
+        "date_display": "Apr 20, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 04/16/2026 before Magistrate Judge Lisa J. Cisneros by Runway AI, Inc., for Recorded Proceeding - San Francisco. (Von Autenried, Paul) (Filed on 4/20/2026) (Entered: 04/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-20",
+        "time_filed": "14:26:30",
+        "date_display": "Apr 20, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 493,
+        "date_filed": "2026-04-17",
+        "time_filed": "18:06:40",
+        "date_display": "Apr 17, 2026",
+        "description": "EXHIBITS re 472 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed (Declaration of Simeon Botwinick in Support) filed byDeviantArt, Inc.. (Attachments: # 1 Exhibit 1 (Plaintiffs' Motion in Support of Request for Issuance of Letters Rogatory - Unredacted), # 2 Proposed Order)(Related document(s) 472 ) (Botwinick, Simeon) (Filed on 4/17/2026) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 492,
+        "date_filed": "2026-04-17",
+        "time_filed": "16:33:46",
+        "date_display": "Apr 17, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 04/16/2026 before Magistrate Judge Lisa J. Cisneros by Stability AI Ltd., Stability AI, Inc., for Recorded Proceeding - San Francisco. (Adler, Christopher) (Filed on 4/17/2026) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 490,
+        "date_filed": "2026-04-17",
+        "time_filed": "13:20:32",
+        "date_display": "Apr 17, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 4/16/2026 before Magistrate Judge Lisa J. Cisneros by Midjourney, Inc., for Recorded Proceeding - San Francisco. (Dunning, Angela) (Filed on 4/17/2026) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 489,
+        "date_filed": "2026-04-17",
+        "time_filed": "12:58:19",
+        "date_display": "Apr 17, 2026",
+        "description": "TRANSCRIPT ORDER for Future Trial with Daily Transcripts by Stability AI Ltd., Stability AI, Inc.. (Adler, Christopher) (Filed on 4/17/2026) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 487,
+        "date_filed": "2026-04-17",
+        "time_filed": "",
+        "date_display": "Apr 17, 2026",
+        "description": "CLERK'S NOTICE CONTIUING DISCOVERY HEARING. Notice is hereby given that the Discovery Hearing set for April 17, 2026 is CONTINUED to April 23, 2026 at 2:00 p.m. Videoconference Only before Magistrate Judge Lisa J. Cisneros. This proceeding will be held via a Zoom webinar.Webinar Access: All counsel, members of the public, and media may access the webinar information at https://www.cand.uscourts.gov/lisa-j-cisneros/Civ LR 77-3(d). Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited.Zoom Guidance and Setup: https://cand.uscourts.gov/judges/remote-access-court-proceedings/participating-court-proceedings-zoo. (This is a text-only entry generated by the court. There is no document associated with…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 484,
+        "date_filed": "2026-04-17",
+        "time_filed": "09:40:58",
+        "date_display": "Apr 17, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 04/16/2026 before Magistrate Judge Lisa J. Cisneros by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang, for Recorded Proceeding - San Francisco. (Saveri, Joseph) (Filed on 4/17/2026) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-17",
+        "time_filed": "10:30:51",
+        "date_display": "Apr 17, 2026",
+        "description": "Clerk's Notice AND ~Util - Teleconference Zoom",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-17",
+        "time_filed": "13:46:26",
+        "date_display": "Apr 17, 2026",
+        "description": "Electronic Filing Error",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 491,
+        "date_filed": "2026-04-16",
+        "time_filed": "",
+        "date_display": "Apr 16, 2026",
+        "description": "Minute Entry for proceedings held before Magistrate Judge Lisa J. Cisneros: Discovery Status Conference held on 4/16/2026.Zoom Recording Time: 3:11 p.m.- 4:13 p.m. Plaintiff Attorney: Even Cruetz and Alexandra Fernandez, Saveri Law Firm, LLP.For Defendant Stability AI Ltd. and Stability AI, Inc.: Timothy Chen Saulsbury, Morrison & Foerster LLP.For Defendant Midjourney Inc.: Angela Dunning, Cleary Gottlieb Steen & Hamilton LLP.For Defendant Runway AI, Inc: Paven Malhotra, Keker Van Nest and Peters LLP.For Defendant DeviantArt: Simeon Botwinick, Latham and Watkins LLP.Proceedings: See Attached. (bns, COURT STAFF) (Date Filed: 4/16/2026) Proceedings transcribed by Tara Jauregui of Echo Reporting (Echoreporting@yahoo.com) Modified on 4/20/2026 (bxl, COURT STAFF). (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 483,
+        "date_filed": "2026-04-16",
+        "time_filed": "19:03:46",
+        "date_display": "Apr 16, 2026",
+        "description": "Declaration of Sarah F. Mitchell in Support of 469 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed byDeviantArt, Inc.. (Attachments: # 1 Proposed Order)(Related document(s) 469 ) (Mitchell, Sarah) (Filed on 4/16/2026) (Entered: 04/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 482,
+        "date_filed": "2026-04-15",
+        "time_filed": "19:24:53",
+        "date_display": "Apr 15, 2026",
+        "description": "ADMINISTRATIVE MOTION Leave to File Reply Brief re 464 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by DeviantArt, Inc.. Responses due by 4/20/2026. (Attachments: # 1 Declaration of Sarah F. Mitchell, # 2 Exhibit A, # 3 Exhibit B, # 4 Proposed Order)(Mitchell, Sarah) (Filed on 4/15/2026) (Entered: 04/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 481,
+        "date_filed": "2026-04-15",
+        "time_filed": "",
+        "date_display": "Apr 15, 2026",
+        "description": "ORDER by Magistrate Judge Lisa J. Cisneros: The Court has reviewed Plaintiffs' and Midjourney's Letter Brief at ECF No. 471 . Midjourney has shown that there is good cause to extend the depositions of Plaintiffs Andersen, Brom, Kaye and Ortiz for an additional two hours. Fed. R. Civ. P. 26(b)(2). Their requested extension is reasonable in scope and is not overly burdensome. Defendants accordingly may depose Plaintiffs Andersen, Brom, Kaye, and Ortiz each for up to nine hours on the record. The parties shall cooperate in good faith to schedule the depositions across one or two days to minimize the burden on the Plaintiffs. (This is a text-only entry generated by the court. There is no document associated with this entry.) (ljclc1, COURT STAFF) (Filed on 4/15/2026) (Entered: 04/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-15",
+        "time_filed": "13:11:04",
+        "date_display": "Apr 15, 2026",
+        "description": "Order on Discovery Letter Brief",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 480,
+        "date_filed": "2026-04-14",
+        "time_filed": "",
+        "date_display": "Apr 14, 2026",
+        "description": "In light of Judge Orrick's Order 478, the undersigned provides the following instructions to Plaintiffs and DeviantArt. There is no need to refile the referred motion in joint-letter brief format. DeviantArt shall file an opposition, not to exceed ten pages, by April 24, 2026. No reply brief is permitted. The parties shall meet and confer regarding whether a hearing date will be requested and, if they parties are able to reach an agreement, shall file a stipulation as to their proposed hearing date(s). Plaintiffs may otherwise file a request for a hearing. To expedite resolution of this matter, Civil Local Rule 7-2(a)'s requirement that hearings must be set not less than 35 days after the filing of the motion shall not apply. (This is a text-only entry generated by the court. There is no document associated with this entry.) (ljclc1, COURT STAFF) (Filed on 4/14/2026) (Entered:…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-14",
+        "time_filed": "13:17:21",
+        "date_display": "Apr 14, 2026",
+        "description": "Order",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 479,
+        "date_filed": "2026-04-13",
+        "time_filed": "17:53:56",
+        "date_display": "Apr 13, 2026",
+        "description": "OPPOSITION/RESPONSE (re 464 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed ) filed bySarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 4/13/2026) (Entered: 04/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.479.0.pdf"
+      },
+      {
+        "entry_number": 478,
+        "date_filed": "2026-04-13",
+        "time_filed": "15:41:56",
+        "date_display": "Apr 13, 2026",
+        "description": "ORDER REGARDING 473 MOTION FOR ISSUANCE OF LETTERS ROGATORY. Signed by Judge William H. Orrick on 04/13/2026. (jmd, COURT STAFF) (Filed on 4/13/2026) (Entered: 04/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.478.0.pdf"
+      },
+      {
+        "entry_number": 477,
+        "date_filed": "2026-04-13",
+        "time_filed": "",
+        "date_display": "Apr 13, 2026",
+        "description": "Order by Judge William H. Orrick granting 476 Stipulation to shorten time. Responses by defendants due by 12:00 PM 4/20/2026. Motion Hearing set for 4/22/2026 02:00 PM in San Francisco, - Videoconference Only before Judge William H. Orrick. (This is a text-only entry generated by the court. There is no document associated with this entry.) (wholc3, COURT STAFF) (Filed on 4/13/2026) (Entered: 04/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-13",
+        "time_filed": "",
+        "date_display": "Apr 13, 2026",
+        "description": "Order by Judge William H. Orrick finding as moot 475 Stipulation. (This is a text-only entry generated by the court. There is no document associated with this entry.) (wholc3, COURT STAFF) (Filed on 4/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-13",
+        "time_filed": "09:58:37",
+        "date_display": "Apr 13, 2026",
+        "description": "Order on Stipulation",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 476,
+        "date_filed": "2026-04-11",
+        "time_filed": "15:42:05",
+        "date_display": "Apr 11, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER re 474 MOTION TO MODIFY CASE SCHEDULE PURSUANT TO LOCAL RULE 6-3 CORRECTION OF DOCKET # 475 filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 4/11/2026) (Entered: 04/11/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.476.0.pdf"
+      },
+      {
+        "entry_number": 475,
+        "date_filed": "2026-04-11",
+        "time_filed": "00:10:48",
+        "date_display": "Apr 11, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER re 474 MOTION TO MODIFY CASE SCHEDULE PURSUANT TO LOCAL RULE 6-3 filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 4/11/2026) (Entered: 04/11/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.475.0.pdf"
+      },
+      {
+        "entry_number": 474,
+        "date_filed": "2026-04-10",
+        "time_filed": "23:56:02",
+        "date_display": "Apr 10, 2026",
+        "description": "MOTION TO MODIFY CASE SCHEDULE PURSUANT TO LOCAL RULE 6-3 filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. Responses due by 4/14/2026. Replies due by 4/21/2026. (Attachments: # 1 Declaration OF EVAN CREUTZ IN SUPPORT OF PLAINTIFFS MOTION TO MODIFY CASE SCHEDULE PURSUANT TO LOCAL RULE 6-3, # 2 Proposed Order)(Saveri, Joseph) (Filed on 4/10/2026) (Entered: 04/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.474.0.pdf"
+      },
+      {
+        "entry_number": 473,
+        "date_filed": "2026-04-10",
+        "time_filed": "23:31:39",
+        "date_display": "Apr 10, 2026",
+        "description": "MOTION for Issuance of Letters Rogatory filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Declaration OF AARON CERA IN SUPPORT OF PLAINTIFFS MOTION IN SUPPORT OF REQUEST FOR ISSUANCE OF LETTERS ROGATORY)(Saveri, Joseph) (Filed on 4/10/2026) (Entered: 04/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.473.0.pdf"
+      },
+      {
+        "entry_number": 472,
+        "date_filed": "2026-04-10",
+        "time_filed": "23:24:14",
+        "date_display": "Apr 10, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Supplement PLAINTIFFS MOTION IN SUPPORT OF REQUEST FOR ISSUANCE OF LETTERS ROGATORY, # 2 Declaration AARON CERA IN SUPPORT OF PLAINTIFFS MOTION IN SUPPORT OF REQUEST FOR ISSUANCE OF LETTERS ROGATORY, # 3 Proposed Order GRANTING PLAINTIFFS ADMINISTRATIVE MOTION TO CONSIDER WHETHER ANOTHER PARTYS MATERIAL SHOULD BE SEALED)(Saveri, Joseph) (Filed on 4/10/2026) (Entered: 04/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 471,
+        "date_filed": "2026-04-10",
+        "time_filed": "17:34:40",
+        "date_display": "Apr 10, 2026",
+        "description": "Joint Discovery Letter Briefre: Plaintiff Deposition Extensions filed by Midjourney, Inc.. (Attachments: # 1 Declaration of Angela L. Dunning, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Exhibit 3, # 5 Proposed Order)(Dunning, Angela) (Filed on 4/10/2026) (Entered: 04/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.471.0.pdf"
+      },
+      {
+        "entry_number": 470,
+        "date_filed": "2026-04-09",
+        "time_filed": "23:08:13",
+        "date_display": "Apr 9, 2026",
+        "description": "STATUS REPORT (Redacted) by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 4/9/2026) (Entered: 04/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.470.0.pdf"
+      },
+      {
+        "entry_number": 469,
+        "date_filed": "2026-04-09",
+        "time_filed": "23:05:28",
+        "date_display": "Apr 9, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Joint Status Report, # 2 Proposed Order Regarding Administrative Motion to Consider Whether Another Party's Material Should Be Sealed)(Saveri, Joseph) (Filed on 4/9/2026) (Entered: 04/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 468,
+        "date_filed": "2026-04-09",
+        "time_filed": "16:45:25",
+        "date_display": "Apr 9, 2026",
+        "description": "Declaration of Sarah F. Mitchell in Support of 464 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed byDeviantArt, Inc.. (Attachments: # 1 Proposed Order)(Related document(s) 464 ) (Mitchell, Sarah) (Filed on 4/9/2026) (Entered: 04/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 467,
+        "date_filed": "2026-04-06",
+        "time_filed": "15:52:29",
+        "date_display": "Apr 6, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 3/19/2026 before Magistrate Judge Lisa J. Cisneros by Midjourney, Inc., for Recorded Proceeding - San Francisco. (Dunning, Angela) (Filed on 4/6/2026) (Entered: 04/06/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 466,
+        "date_filed": "2026-04-03",
+        "time_filed": "16:53:16",
+        "date_display": "Apr 3, 2026",
+        "description": "Order by Judge William H. Orrick granting 462 Motion for Pro Hac Vice byEvan Gourvitz. (jmd, COURT STAFF) (Filed on 4/3/2026) (Entered: 04/03/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 465,
+        "date_filed": "2026-04-02",
+        "time_filed": "21:13:27",
+        "date_display": "Apr 2, 2026",
+        "description": "Joint Discovery Letter Brief filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Exhibit A, # 2 Exhibit B - Filed Under Seal)(Saveri, Joseph) (Filed on 4/2/2026) (Entered: 04/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.465.0.pdf"
+      },
+      {
+        "entry_number": 464,
+        "date_filed": "2026-04-02",
+        "time_filed": "21:10:15",
+        "date_display": "Apr 2, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Supplement Joint Statement regarding the dispute over pre-certification absent class member discovery., # 2 Exhibit B, # 3 Proposed Order Regarding Administrative Motion to Consider Whether Another Party's Material Should Be Sealed)(Saveri, Joseph) (Filed on 4/2/2026) (Entered: 04/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 463,
+        "date_filed": "2026-04-01",
+        "time_filed": "16:55:29",
+        "date_display": "Apr 1, 2026",
+        "description": "EXHIBITS re 462 MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21824600.) Certificate of Good Standing filed byStability AI Ltd., Stability AI, Inc.. (Related document(s) 462 ) (Gourvitz, Evan) (Filed on 4/1/2026) (Entered: 04/01/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 462,
+        "date_filed": "2026-04-01",
+        "time_filed": "16:24:22",
+        "date_display": "Apr 1, 2026",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21824600.) filed by Stability AI Ltd., Stability AI, Inc.. (Gourvitz, Evan) (Filed on 4/1/2026) (Entered: 04/01/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 461,
+        "date_filed": "2026-03-30",
+        "time_filed": "",
+        "date_display": "Mar 30, 2026",
+        "description": "ORDER by Magistrate Judge Lisa J. Cisneros: The Court grants Plaintiffs' request at ECF No. 454 and ORDERS Defendant Stability AI to respond to Plaintiffs' Interrogatory No. 14. The Court agrees with Plaintiffs' argument that this interrogatory seeks information relevant to fair use, which turns on (among other things), the nature and extent of commerciality of the allegedly infringing use, the public benefit resulting from the use, and the impact of widespread copying on the potential market for the copyrighted work. McGucken v. Pub Ocean Ltd., 42 F.4th 1149, 1163 (9th Cir. 2022); see Sega Enters. Ltd. v. Accolade, Inc., 977 F.2d 1510, 1523 (9th Cir. 1992), as amended (Jan. 6, 1993); 17 U.S.C. § 107. Relevance for discovery purposes is broad, and given that fair use in the context of generative AI is an unsettled area of law, the Court (within reason) is disinclined to prematurely…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 460,
+        "date_filed": "2026-03-30",
+        "time_filed": "13:52:37",
+        "date_display": "Mar 30, 2026",
+        "description": "Order by Magistrate Judge Lisa J. Cisneros granting 370 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed.(bns, COURT STAFF) (Filed on 3/30/2026) (Entered: 03/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.460.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-30",
+        "time_filed": "15:45:13",
+        "date_display": "Mar 30, 2026",
+        "description": "Order on Discovery Letter Brief",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 459,
+        "date_filed": "2026-03-27",
+        "time_filed": "15:23:39",
+        "date_display": "Mar 27, 2026",
+        "description": "Administrative Motion to File Under Seal Certain Materials in Stability AI's Answer to Third Amended Complaint filed by Stability AI Ltd., Stability AI, Inc.. (Attachments: # 1 Declaration of Christopher R. Adler, # 2 Proposed Order, # 3 Unredacted Version of Stability AI's Answer to Third Amended Complaint, # 4 Redacted Version of Stability AI's Answer to Third Amended Complaint)(Gratz, Joseph) (Filed on 3/27/2026) (Entered: 03/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 458,
+        "date_filed": "2026-03-26",
+        "time_filed": "10:22:36",
+        "date_display": "Mar 26, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 3/19/2026 before Magistrate Judge Lisa J. Cisneros by DeviantArt, Inc., for Recorded Proceeding - San Francisco. (Botwinick, Simeon) (Filed on 3/26/2026) (Entered: 03/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 457,
+        "date_filed": "2026-03-26",
+        "time_filed": "09:42:46",
+        "date_display": "Mar 26, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 3/19/2026 before Magistrate Judge Lisa J. Cisneros by Stability AI Ltd., Stability AI, Inc., for Recorded Proceeding - San Francisco. (Kamdar, Aditya) (Filed on 3/26/2026) (Entered: 03/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 455,
+        "date_filed": "2026-03-25",
+        "time_filed": "12:04:44",
+        "date_display": "Mar 25, 2026",
+        "description": "Transcript of Proceedings held on 03/19/26, before Judge Lisa J. Cisneros. Court Reporter/Transcriber Echo Reporting, Inc., telephone number echoreporting@yahoo.com. Tape Number: 2:40 - 3:13. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 453 Transcript Order, ) Redaction Request due 4/15/2026. Redacted Transcript Deadline set for 4/27/2026. Release of Transcript Restriction set for 6/23/2026. (Related documents(s) 453 ) (Jauregui, Tara) (Filed on 3/25/2026) (Entered: 03/25/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 456,
+        "date_filed": "2026-03-19",
+        "time_filed": "",
+        "date_display": "Mar 19, 2026",
+        "description": "Minute Entry for proceedings held before Magistrate Judge Lisa J. Cisneros: Discovery Status Conference held on 3/19/2026.Zoom Recording Time: 2:40 p.m.- 3:14 p.m. Plaintiff Attorney: Even Cruetz and Holden Benon, Joseph Saveri Law Firm, LLP. For Defendant Stability AI Ltd. and Stability AI, Inc.: Joe Gratz, Morrison & Foerster LLP.For Defendant Midjourney Inc.: Angela Dunning, Cleary Gottlieb Steen & Hamilton LLP.For Defendant Runway AI, Inc: Paven Malhotra and Yegina Whang Van Nest and Peters LLP.For Defendant DeviantArt: Simeon Botwinick and Britt Lovejoy, Latham and Watkins LLP.Proceedings: See Attached. Joint Status Report due by 4/9/2026. Status Conference set for 4/16/2026 at 03:00 PM in San Francisco, - Videoconference Only before Magistrate Judge Lisa J. Cisneros. (bns, COURT STAFF) (Date Filed: 3/19/2026) Proceedings transcribed by Tara Jauregui of Echo Reporting…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.456.0.pdf"
+      },
+      {
+        "entry_number": 454,
+        "date_filed": "2026-03-19",
+        "time_filed": "18:55:04",
+        "date_display": "Mar 19, 2026",
+        "description": "Joint Discovery Letter Brief filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 3/19/2026) (Entered: 03/19/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.454.0_5.pdf"
+      },
+      {
+        "entry_number": 453,
+        "date_filed": "2026-03-19",
+        "time_filed": "17:22:20",
+        "date_display": "Mar 19, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 3/19/2026 before Magistrate Judge Lisa J. Cisneros by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang, for Recorded Proceeding - San Francisco. (Saveri, Joseph) (Filed on 3/19/2026) Modified on 3/24/2026 (amg, COURT STAFF). Proceedings transcribed by Tara Jauregui of Echo Reporting (Echoreporting@yahoo.com) (Entered: 03/19/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.453.0_5.pdf"
+      },
+      {
+        "entry_number": 452,
+        "date_filed": "2026-03-18",
+        "time_filed": "",
+        "date_display": "Mar 18, 2026",
+        "description": "NOTICE of Appearance filed by Yegina Whang on behalf of Runway AI, Inc. (Whang, Yegina) (Filed on 3/18/2026) (Entered: 03/18/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 451,
+        "date_filed": "2026-03-18",
+        "time_filed": "",
+        "date_display": "Mar 18, 2026",
+        "description": "NOTICE of Appearance filed by Matan Shacham on behalf of Runway AI, Inc. (Shacham, Matan) (Filed on 3/18/2026) (Entered: 03/18/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-18",
+        "time_filed": "13:30:45",
+        "date_display": "Mar 18, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 450,
+        "date_filed": "2026-03-16",
+        "time_filed": "",
+        "date_display": "Mar 16, 2026",
+        "description": "Order by Judge William H. Orrick granting 447 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed, consistent with Order allowing sealing at Dkt. No. 429. (This is a text-only entry generated by the court. There is no document associated with this entry.) (wholc3, COURT STAFF) (Filed on 3/16/2026) (Entered: 03/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "time_filed": "13:58:43",
+        "date_display": "Mar 16, 2026",
+        "description": "Order on Administrative Motion to Consider Whether Another Partys Material Should Be Sealed",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 449,
+        "date_filed": "2026-03-13",
+        "time_filed": "15:46:28",
+        "date_display": "Mar 13, 2026",
+        "description": "Answer to Amended Complaint 431 Amended Complaint, (Third) by DeviantArt, Inc.. (Lovejoy, Brittany) (Filed on 3/13/2026) (Entered: 03/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.449.0_1.pdf"
+      },
+      {
+        "entry_number": 448,
+        "date_filed": "2026-03-13",
+        "time_filed": "15:31:08",
+        "date_display": "Mar 13, 2026",
+        "description": "Answer to Amended Complaint 431 Amended Complaint, Third by Midjourney, Inc.. (Dunning, Angela) (Filed on 3/13/2026) (Entered: 03/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.448.0.pdf"
+      },
+      {
+        "entry_number": 447,
+        "date_filed": "2026-03-13",
+        "time_filed": "15:19:15",
+        "date_display": "Mar 13, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Midjourney, Inc.. (Attachments: # 1 Midjourney's Unredacted Answer to the Third Amended Complaint, # 2 Proposed Order, # 3 Certificate/Proof of Service)(Dunning, Angela) (Filed on 3/13/2026) (Entered: 03/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 446,
+        "date_filed": "2026-03-13",
+        "time_filed": "15:12:59",
+        "date_display": "Mar 13, 2026",
+        "description": "Answer to Amended Complaint Third by Runway AI, Inc.. (Silbert, David) (Filed on 3/13/2026) (Entered: 03/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.446.0.pdf"
+      },
+      {
+        "entry_number": 445,
+        "date_filed": "2026-03-12",
+        "time_filed": "21:57:42",
+        "date_display": "Mar 12, 2026",
+        "description": "STATUS REPORT by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 3/12/2026) (Entered: 03/12/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.445.0.pdf"
+      },
+      {
+        "entry_number": 444,
+        "date_filed": "2026-03-12",
+        "time_filed": "11:41:10",
+        "date_display": "Mar 12, 2026",
+        "description": "ORDER by Judge Lisa J. Cisneros granting 443 Stipulation. (ljclc1, COURT STAFF) (Filed on 3/12/2026) (Entered: 03/12/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 443,
+        "date_filed": "2026-03-12",
+        "time_filed": "11:06:23",
+        "date_display": "Mar 12, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER Extending Deadline to File Joint Letter Brief Regarding Additional Midjourney Custodians filed by Midjourney, Inc.. (Dunning, Angela) (Filed on 3/12/2026) (Entered: 03/12/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.443.0.pdf"
+      },
+      {
+        "entry_number": 442,
+        "date_filed": "2026-03-11",
+        "time_filed": "16:40:28",
+        "date_display": "Mar 11, 2026",
+        "description": "STIPULATION ENLARGING TIME FOR DEFENDANTS STABILITY AI LTD. AND STABILITY AI, INC.'S DEADLINE TO RESPOND TO PLAINTIFFS' THIRD AMENDED COMPLAINT filed by Stability AI Ltd., Stability AI, Inc.. (Adler, Christopher) (Filed on 3/11/2026) (Entered: 03/11/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.442.0.pdf"
+      },
+      {
+        "entry_number": 441,
+        "date_filed": "2026-03-11",
+        "time_filed": "15:02:10",
+        "date_display": "Mar 11, 2026",
+        "description": "ORDER by Judge Lisa J. Cisneros granting 440 Stipulated Order for Enlargement of Time for Third Parties to Seek Protective Orders regarding Materials Produced to Runway. (bns, COURT STAFF) (Filed on 3/11/2026) (Entered: 03/11/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.441.0.pdf"
+      },
+      {
+        "entry_number": 440,
+        "date_filed": "2026-03-09",
+        "time_filed": "18:19:51",
+        "date_display": "Mar 9, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER [Third] Stipulated Order for Enlargement of Time for Third Parties to Seek Protective Orders regarding Materials Produced to Runway filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 3/9/2026) (Entered: 03/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.440.0.pdf"
+      },
+      {
+        "entry_number": 439,
+        "date_filed": "2026-03-09",
+        "time_filed": "10:52:55",
+        "date_display": "Mar 9, 2026",
+        "description": "ORDER by Judge Lisa J. Cisneros granting 438 STIPULATION EXTENDING DEADLINE TO FILE JOINT LETTER BRIEF REGARDING STABILITY AI'S TRAINING-DATA PRODUCTION. (bns, COURT STAFF) (Filed on 3/9/2026) (Entered: 03/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.439.0.pdf"
+      },
+      {
+        "entry_number": 438,
+        "date_filed": "2026-03-06",
+        "time_filed": "18:30:56",
+        "date_display": "Mar 6, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER EXTENDING DEADLINE TO FILE JOINT LETTER BRIEF REGARDING STABILITY AI'S TRAINING-DATA PRODUCTION filed by Stability AI Ltd., Stability AI, Inc.. (Adler, Christopher) (Filed on 3/6/2026) (Entered: 03/06/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 437,
+        "date_filed": "2026-03-06",
+        "time_filed": "13:40:20",
+        "date_display": "Mar 6, 2026",
+        "description": "Order by Magistrate Judge Lisa J. Cisneros granting 435 STIPULATION EXTENDING DEADLINE TO FILE JOINT LETTER BRIEF REGARDING STABILITY AI CUSTODIANS.(bns, COURT STAFF) (Filed on 3/6/2026) (Entered: 03/06/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.437.0.pdf"
+      },
+      {
+        "entry_number": 436,
+        "date_filed": "2026-03-06",
+        "time_filed": "13:35:13",
+        "date_display": "Mar 6, 2026",
+        "description": "Order by Magistrate Judge Lisa J. Cisneros granting 433 Stipulation Extending deadline to file Joint Letter Brief regarding Additional Midjourney Custodians.(bns, COURT STAFF) (Filed on 3/6/2026) (Entered: 03/06/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.436.0.pdf"
+      },
+      {
+        "entry_number": 435,
+        "date_filed": "2026-03-04",
+        "time_filed": "16:06:55",
+        "date_display": "Mar 4, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER EXTENDING DEADLINE TO FILE JOINT LETTER BRIEF REGARDING STABILITY AI CUSTODIANS filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 3/4/2026) (Entered: 03/04/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 434,
+        "date_filed": "2026-03-04",
+        "time_filed": "15:37:48",
+        "date_display": "Mar 4, 2026",
+        "description": "NOTICE of Change of Address by Joseph R. Saveri Change of Firm Name and Address (Saveri, Joseph) (Filed on 3/4/2026) (Entered: 03/04/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 433,
+        "date_filed": "2026-03-03",
+        "time_filed": "18:48:18",
+        "date_display": "Mar 3, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER Extending deadline to file Joint Letter Brief regarding Additional Midjourney Custodians filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 3/3/2026) (Entered: 03/03/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.433.0.pdf"
+      },
+      {
+        "entry_number": 432,
+        "date_filed": "2026-02-27",
+        "time_filed": "15:31:02",
+        "date_display": "Feb 27, 2026",
+        "description": "ORDER by Judge Lisa J. Cisneros granting 430 Stipulation Extending deadline to file Joint Letter Brief regarding Stability AI's training-data production. (bns, COURT STAFF) (Filed on 2/27/2026) (Entered: 02/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.432.0_6.pdf"
+      },
+      {
+        "entry_number": 431,
+        "date_filed": "2026-02-27",
+        "time_filed": "15:14:48",
+        "date_display": "Feb 27, 2026",
+        "description": "AMENDED COMPLAINT [THIRD] (redacted) against Julia Kaye, Gerald Brom, Adam Ellis, Grzegorz Rutkowski, Sarah Andersen, Gregory Manchess, Karla Ortiz, Jingna Zhang. Filed by Julia Kaye, Gerald Brom, Adam Ellis, Grzegorz Rutkowski, Sarah Andersen, Gregory Manchess, Karla Ortiz, Jingna Zhang. (Attachments: # 1 Exhibit A, # 2 Exhibit B, # 3 Exhibit C, # 4 Exhibit D (redacted), # 5 Exhibit E, # 6 Exhibit F)(Saveri, Joseph) (Filed on 2/27/2026) (Entered: 02/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.431.0.pdf"
+      },
+      {
+        "entry_number": 430,
+        "date_filed": "2026-02-27",
+        "time_filed": "13:43:53",
+        "date_display": "Feb 27, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER Extending deadline to file Joint Letter Brief regarding Stability AI's training-data production filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 2/27/2026) (Entered: 02/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.430.0.pdf"
+      },
+      {
+        "entry_number": 429,
+        "date_filed": "2026-02-25",
+        "time_filed": "07:38:46",
+        "date_display": "Feb 25, 2026",
+        "description": "ORDER GRANTING UNOPPOSED 376 MOTION FOR LEAVE TO FILE THIRD AMENDED CLASS ACTION COMPLAINT AND GRANTING IN PART 375 MOTIONS TO SEAL by Judge William H. Orrick. (jmd, COURT STAFF) (Filed on 2/25/2026) (Entered: 02/25/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.429.0.pdf"
+      },
+      {
+        "entry_number": 428,
+        "date_filed": "2026-02-24",
+        "time_filed": "",
+        "date_display": "Feb 24, 2026",
+        "description": "CLERKS NOTICE RE ZOOM HEARING - The Hearing on 376 Motion for Leave to File Third Amended Complaint set for 2/25/2026 at 2:00 PM will be held via Zoom webinar (public hearing).Webinar Access: All counsel, members of the public, and media may access the webinar information at https://www.cand.uscourts.gov/who Civ LR 77-3(d). Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited.Zoom Guidance and Setup: https://www.cand.uscourts.gov/zoom/. (This is a text-only entry generated by the court. There is no document associated with this entry.) (jmd, COURT STAFF) (Filed on 2/24/2026) (Entered: 02/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 427,
+        "date_filed": "2026-02-24",
+        "time_filed": "",
+        "date_display": "Feb 24, 2026",
+        "description": "NOTICE of Withdrawal filed by Margaux Poueymirou, no longer appearing on behalf of Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang in this case (Poueymirou, Margaux) (Filed on 2/24/2026) (Entered: 02/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-02-24",
+        "time_filed": "14:28:38",
+        "date_display": "Feb 24, 2026",
+        "description": "Clerk's Notice Setting Zoom Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-02-24",
+        "time_filed": "13:57:51",
+        "date_display": "Feb 24, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 426,
+        "date_filed": "2026-02-23",
+        "time_filed": "",
+        "date_display": "Feb 23, 2026",
+        "description": "NOTICE of Withdrawal filed by Mariah Joelle Noah, no longer appearing on behalf of Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang in this case (Noah, Mariah) (Filed on 2/23/2026) (Entered: 02/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 425,
+        "date_filed": "2026-02-23",
+        "time_filed": "",
+        "date_display": "Feb 23, 2026",
+        "description": "NOTICE of Withdrawal filed by Joshua Michelangelo Stein, no longer appearing on behalf of Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang in this case (Stein, Joshua) (Filed on 2/23/2026) (Entered: 02/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 424,
+        "date_filed": "2026-02-23",
+        "time_filed": "",
+        "date_display": "Feb 23, 2026",
+        "description": "NOTICE of Withdrawal filed by Maxwell V. Pritt, no longer appearing on behalf of Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang in this case (Pritt, Maxwell) (Filed on 2/23/2026) (Entered: 02/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 423,
+        "date_filed": "2026-02-23",
+        "time_filed": "10:03:20",
+        "date_display": "Feb 23, 2026",
+        "description": "Transcript of Proceedings held on 02/19/26, before Judge Lisa J. Cisneros. Court Reporter/Transcriber Echo Reporting, Inc., telephone number echoreporting@yahoo.com. Tape Number: 2:39 - 3:00. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 420 Transcript Order, 419 Transcript Order, 421 Transcript Order ) Redaction Request due 3/16/2026. Redacted Transcript Deadline set for 3/26/2026. Release of Transcript Restriction set for 5/26/2026. (Related documents(s) 420, 419, 421 ) (Jauregui, Tara) (Filed on 2/23/2026)…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 422,
+        "date_filed": "2026-02-23",
+        "time_filed": "09:52:49",
+        "date_display": "Feb 23, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 2/19/2026 before Magistrate Judge Lisa J. Cisneros by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang, for Recorded Proceeding - San Francisco. (Saveri, Joseph) (Filed on 2/23/2026) (Entered: 02/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-02-23",
+        "time_filed": "15:18:01",
+        "date_display": "Feb 23, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=66732129&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=13"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=66732129&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=19"
   },
   "claims_administrator": null,
   "coverage": []
