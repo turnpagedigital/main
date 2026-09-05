@@ -16,11 +16,11 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70513159/disney-enterprises-inc-v-midjourney-inc/",
     "date_last_filing": "2026-09-04",
-    "meta_fetched_at": "2026-09-05T00:12:28.579201+00:00",
-    "fetched_at": "2026-09-05T00:12:28.579201+00:00",
+    "meta_fetched_at": "2026-09-05T04:37:27.837559+00:00",
+    "fetched_at": "2026-09-05T04:37:27.837559+00:00",
     "as_of": "Sep 5, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
       {
         "entry_number": 182,
@@ -28,6 +28,16 @@
         "time_filed": "11:49:41",
         "date_display": "Sep 4, 2026",
         "description": "Joint STIPULATION for Order to Modify Briefing Schedule on Remaining Dispute as to Production of Training Data filed by Plaintiffs DC Comics, Disney Enterprises Inc., DreamWorks Animation L.L.C., Hanna-Barbera Productions, Inc., Lucasfilm Ltd. LLC, MVL Film Finance LLC, Marvel Characters Inc., The Cartoon Network, Inc., Turner Entertainment Co., Twentieth Century Fox Film Corporation, Universal City Studios Productions LLLP, Warner Bros. Entertainment Inc.. (Attachments: # 1 Declaration of K. Brandeisky in Support, # 2 Proposed Order)(Singer, David) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-04",
+        "time_filed": "19:27:35",
+        "date_display": "Sep 4, 2026",
+        "description": "Generic Text Only Entry",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -41,16 +51,6 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 179,
-        "date_filed": "2026-09-02",
-        "time_filed": "16:01:49",
-        "date_display": "Sep 2, 2026",
-        "description": "SEALED DECLARATION IN SUPPORT OF APPLICATION to file document JULY 31, 2026 IDC TRANSCRIPT under seal 178 filed by Defendant Midjourney Inc.. (Attachments: # 1 Unredacted Document July 31, 2026 IDC Transcript)(Sharma, Aastha) (Entered: 09/02/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
@@ -60,6 +60,16 @@
         "time_filed": "11:49:41",
         "date_display": "Sep 4, 2026",
         "description": "Joint STIPULATION for Order to Modify Briefing Schedule on Remaining Dispute as to Production of Training Data filed by Plaintiffs DC Comics, Disney Enterprises Inc., DreamWorks Animation L.L.C., Hanna-Barbera Productions, Inc., Lucasfilm Ltd. LLC, MVL Film Finance LLC, Marvel Characters Inc., The Cartoon Network, Inc., Turner Entertainment Co., Twentieth Century Fox Film Corporation, Universal City Studios Productions LLLP, Warner Bros. Entertainment Inc.. (Attachments: # 1 Declaration of K. Brandeisky in Support, # 2 Proposed Order)(Singer, David) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-04",
+        "time_filed": "19:27:35",
+        "date_display": "Sep 4, 2026",
+        "description": "Generic Text Only Entry",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
