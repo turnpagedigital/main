@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/71279155/hendrix-v-apple-inc/",
     "date_last_filing": "2026-09-02",
     "meta_fetched_at": "2026-09-03T09:56:14.939497+00:00",
-    "fetched_at": "2026-09-04T18:30:58.937992+00:00",
-    "as_of": "Sep 4, 2026",
+    "fetched_at": "2026-09-05T00:13:41.786506+00:00",
+    "as_of": "Sep 5, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 128,
@@ -28,7 +28,7 @@
         "time_filed": "17:25:19",
         "date_display": "Sep 2, 2026",
         "description": "Stipulation and Proposed Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -60,7 +60,7 @@
         "time_filed": "17:25:19",
         "date_display": "Sep 2, 2026",
         "description": "Stipulation and Proposed Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

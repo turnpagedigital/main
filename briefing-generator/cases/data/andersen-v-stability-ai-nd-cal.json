@@ -2,21 +2,1230 @@
   "case": {
     "slug": "andersen-v-stability-ai-nd-cal",
     "display_name": "Andersen v. Stability AI (N.D. Cal.)",
-    "case_name": "Sarah Andersen; Kelly McKernan; Karla Ortiz et al. v. Stability AI Ltd.; Midjourney, Inc.; DeviantArt, Inc.",
+    "case_name": "Andersen v. Stability AI Ltd.",
     "court": "N.D. Cal.",
     "case_number": "3:23-cv-00201",
     "judge": "William H. Orrick",
     "docket_id": "66732129",
     "status": "active",
-    "sync": "active"
+    "sync": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/66732129/andersen-v-stability-ai-ltd/",
-    "new_in_72h": 0,
-    "recent": [],
-    "entries": []
+    "date_last_filing": "2026-09-04",
+    "meta_fetched_at": "2026-09-05T00:10:51.897176+00:00",
+    "fetched_at": "2026-09-05T00:10:51.897176+00:00",
+    "as_of": "Sep 5, 2026",
+    "backfilled": false,
+    "new_in_72h": 6,
+    "recent": [
+      {
+        "entry_number": 735,
+        "date_filed": "2026-09-04",
+        "time_filed": "14:50:07",
+        "date_display": "Sep 4, 2026",
+        "description": "Pro Hac Vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-04",
+        "time_filed": "11:43:25",
+        "date_display": "Sep 4, 2026",
+        "description": "Order on Discovery Letter Brief",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 733,
+        "date_filed": "2026-09-03",
+        "time_filed": "22:22:12",
+        "date_display": "Sep 3, 2026",
+        "description": "Joint Discovery Letter Brief (Redacted) filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Declaration Louis A. Kessler Declaration in Support of Plaintiffs Position, # 2 Kessler Exhibit A, # 3 Kessler Exhibit B, # 4 Kessler Exhibit C, # 5 Kessler Exhibit D, # 6 Angela A. Dunning Declaration in Support of Midjourney Inc.s Position, # 7 Dunning Exhibit A, # 8 of Max Sills in Support of Midjourney Inc.s Position in the Joint Letter Brief (filed under seal))(Saveri, Joseph) (Filed on 9/3/2026) (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 735,
+        "date_filed": "2026-09-04",
+        "time_filed": "14:50:07",
+        "date_display": "Sep 4, 2026",
+        "description": "Pro Hac Vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-04",
+        "time_filed": "11:43:25",
+        "date_display": "Sep 4, 2026",
+        "description": "Order on Discovery Letter Brief",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 733,
+        "date_filed": "2026-09-03",
+        "time_filed": "22:22:12",
+        "date_display": "Sep 3, 2026",
+        "description": "Joint Discovery Letter Brief (Redacted) filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Declaration Louis A. Kessler Declaration in Support of Plaintiffs Position, # 2 Kessler Exhibit A, # 3 Kessler Exhibit B, # 4 Kessler Exhibit C, # 5 Kessler Exhibit D, # 6 Angela A. Dunning Declaration in Support of Midjourney Inc.s Position, # 7 Dunning Exhibit A, # 8 of Max Sills in Support of Midjourney Inc.s Position in the Joint Letter Brief (filed under seal))(Saveri, Joseph) (Filed on 9/3/2026) (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 732,
+        "date_filed": "2026-09-03",
+        "time_filed": "22:22:05",
+        "date_display": "Sep 3, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Proposed Order, # 2 Joint Letter Brief Regarding Midjourneys Clawback of a Certain Document at the Deposition of Midjourneys Founder and CEO, David Holz (sealed), # 3 Declaration Louis A. Kessler Declaration in Support of Plaintiffs Position (sealed), # 4 Kessler Exhibit A (sealed), # 5 Kessler Exhibit B (sealed), # 6 Kessler Exhibit C (sealed), # 7 Kessler Exhibit D (sealed), # 8 Dunning Exhibit A (sealed), # 9 Declaration Max Sills Declaration in Support of Midjourney Inc.s Position (sealed))(Saveri, Joseph) (Filed on 9/3/2026) (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 731,
+        "date_filed": "2026-09-03",
+        "time_filed": "",
+        "date_display": "Sep 3, 2026",
+        "description": "ORDER REFERRING MOTIONS to Hon. Lisa J. Cisneros for a Report and Recommendation: 729 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Plaintiffs' Motion for Discovery Sanctions filed by Karla Ortiz, Gerald Brom, Sarah Andersen, Julia Kaye, Adam Ellis, Jingna Zhang, Grzegorz Rutkowski, Gregory Manchess, 730 MOTION for Sanctions Against DeviantArt, Inc. filed by Karla Ortiz, Gerald Brom, Sarah Andersen, Julia Kaye, Adam Ellis, Jingna Zhang, Grzegorz Rutkowski, Gregory Manchess. Signed by Judge William H. Orrick on 09/03/2026. (This is a text-only entry generated by the court. There is no document associated with this entry.) (wholc3, COURT STAFF) (Filed on 9/3/2026) (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-03",
+        "time_filed": "14:28:13",
+        "date_display": "Sep 3, 2026",
+        "description": "Order Referring Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 730,
+        "date_filed": "2026-09-01",
+        "time_filed": "21:48:21",
+        "date_display": "Sep 1, 2026",
+        "description": "MOTION for Sanctions Against DeviantArt, Inc. filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. Motion Hearing set for 10/7/2026 02:00 PM in San Francisco, Courtroom 02, 17th Floor before Judge William H. Orrick. Responses due by 9/15/2026. Replies due by 9/22/2026. (Attachments: # 1 Declaration of Holden Benon in Support of, # 2 Exhibit A (Filed Under Seal), # 3 Exhibit B (Filed Under Seal), # 4 Exhibit C (Filed Under Seal), # 5 Exhibit D (Public), # 6 Proposed Order)(Saveri, Joseph) (Filed on 9/1/2026) (Entered: 09/01/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.730.0.pdf"
+      },
+      {
+        "entry_number": 729,
+        "date_filed": "2026-09-01",
+        "time_filed": "21:39:14",
+        "date_display": "Sep 1, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Plaintiffs' Motion for Discovery Sanctions filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Proposed Order, # 2 Plaintiffs' Motion for Discovery Sanctions Against DeviantArt (Sealed), # 3 Exhibit A (Sealed), # 4 Exhibit B (Sealed), # 5 Exhibit C (Sealed))(Saveri, Joseph) (Filed on 9/1/2026) (Entered: 09/01/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 728,
+        "date_filed": "2026-09-01",
+        "time_filed": "",
+        "date_display": "Sep 1, 2026",
+        "description": "ORDER by Magistrate Judge Lisa J. Cisneros: The 725 Stipulation is GRANTED. Plaintiffs and DeviantArt will have through September 1, 2026 to file a joint discovery dispute letter related to fact discovery. The parties have submitted near-daily requests for extension and the Court will not consider further extension requests. This will be the final extension of the deadline. (This is a text-only entry generated by the court. There is no document associated with this entry.) (ljclc1, COURT STAFF) (Filed on 9/1/2026) (Entered: 09/01/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-01",
+        "time_filed": "10:16:09",
+        "date_display": "Sep 1, 2026",
+        "description": "Order on Stipulation",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 727,
+        "date_filed": "2026-08-31",
+        "time_filed": "20:57:13",
+        "date_display": "Aug 31, 2026",
+        "description": "EXHIBITS re 707 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Joint Letter Brief Re Stability AI's 30(b)(6) Designees, 712 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Stability AI's Failure to Preserve Evidence Declaration of Chad Fawcett in Support of Plaintiffs' Administrative Motions to Consider Whether Another Party's Material Should be Sealed Regarding Stability AI's Failure to Preserve Evidence and Stability AI's 30(b)(6) Designees [Dkts. 707, 712] filed byStability AI Ltd., Stability AI, Inc.. (Attachments: # 1 Redacted Ex. 1, # 2 Unredacted Ex. 1, # 3 Redacted Ex. 2, # 4 Unredacted Ex. 2, # 5 Redacted Ex. 3, # 6 Unredacted Ex. 3, # 7 Redacted Ex. 4, # 8 Unredacted Ex. 4, # 9 Redacted Ex. 5, # 10 Unredacted Ex. 5, # 11 Redacted Ex. 6, # 12 Unredacted Ex. 6, # 13 Redacted Ex. 7, # 14…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 726,
+        "date_filed": "2026-08-31",
+        "time_filed": "20:39:17",
+        "date_display": "Aug 31, 2026",
+        "description": "Declaration of Aaron Cera in Support of 705 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed bySarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Related document(s) 705 ) (Saveri, Joseph) (Filed on 8/31/2026) (Entered: 08/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 725,
+        "date_filed": "2026-08-31",
+        "time_filed": "19:55:50",
+        "date_display": "Aug 31, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER Regarding Limited Extension of Deadline for Plaintiffs and DeviantArt to Resolve a Certain Dispute filed by DeviantArt, Inc.. (Botwinick, Simeon) (Filed on 8/31/2026) (Entered: 08/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 724,
+        "date_filed": "2026-08-31",
+        "time_filed": "16:16:34",
+        "date_display": "Aug 31, 2026",
+        "description": "Declaration of Yegina Whang in Support of 710 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Joint Letter Brief Re Runway AI's Discovery Violations filed byRunway AI, Inc.. (Related document(s) 710 ) (Whang, Yegina) (Filed on 8/31/2026) (Entered: 08/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 723,
+        "date_filed": "2026-08-28",
+        "time_filed": "",
+        "date_display": "Aug 28, 2026",
+        "description": "Order granting 720 Stipulation entered by Magistrate Judge Lisa J. Cisneros. (This is a text-only entry generated by the court. There is no document associated with this entry.) (Entered: 08/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-28",
+        "time_filed": "17:51:36",
+        "date_display": "Aug 28, 2026",
+        "description": "Order on Stipulation",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 722,
+        "date_filed": "2026-08-27",
+        "time_filed": "",
+        "date_display": "Aug 27, 2026",
+        "description": "NOTICE of Withdrawal filed by Aditya Vijay Kamdar, no longer appearing on behalf of Stability AI Ltd., Stability AI, Inc. in this case (Kamdar, Aditya) (Filed on 8/27/2026) (Entered: 08/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 721,
+        "date_filed": "2026-08-27",
+        "time_filed": "",
+        "date_display": "Aug 27, 2026",
+        "description": "ORDER REFERRING MOTION to Magistrate Judge Lisa J. Cisneros: 720 STIPULATION WITH PROPOSED ORDER Regarding Limited Extension of Deadline for Plaintiffs and DeviantArt to Resolve a Certain Dispute filed by DeviantArt, Inc.. Signed by Judge William H. Orrick on 08/27/2026. (This is a text-only entry generated by the court. There is no document associated with this entry.) (wholc3, COURT STAFF) (Filed on 8/27/2026) (Entered: 08/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-27",
+        "time_filed": "15:31:12",
+        "date_display": "Aug 27, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-27",
+        "time_filed": "10:21:49",
+        "date_display": "Aug 27, 2026",
+        "description": "Order Referring Motion",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 720,
+        "date_filed": "2026-08-26",
+        "time_filed": "19:15:49",
+        "date_display": "Aug 26, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER Regarding Limited Extension of Deadline for Plaintiffs and DeviantArt to Resolve a Certain Dispute filed by DeviantArt, Inc.. (Mitchell, Sarah) (Filed on 8/26/2026) (Entered: 08/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.720.0.pdf"
+      },
+      {
+        "entry_number": 718,
+        "date_filed": "2026-08-26",
+        "time_filed": "",
+        "date_display": "Aug 26, 2026",
+        "description": "Order granting 715 Stipulation entered by Magistrate Judge Lisa J. Cisneros. (This is a text-only entry generated by the court. There is no document associated with this entry.) (Entered: 08/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 717,
+        "date_filed": "2026-08-26",
+        "time_filed": "",
+        "date_display": "Aug 26, 2026",
+        "description": "Order granting 704 Stipulation entered by Magistrate Judge Lisa J. Cisneros. (This is a text-only entry generated by the court. There is no document associated with this entry.) (Entered: 08/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 716,
+        "date_filed": "2026-08-26",
+        "time_filed": "",
+        "date_display": "Aug 26, 2026",
+        "description": "ORDER REFERRING matters to Magistrate Judge Lisa J. Cisneros: 715 STIPULATION WITH PROPOSED ORDER Regarding Limited Extension of Deadline for Plaintiffs and DeviantArt to Resolve a Certain Dispute filed by DeviantArt, Inc., 704 STIPULATION WITH PROPOSED ORDER re 597 Order on Stipulation, Extending Deadline to File Joint Letter Brief Regarding a Certain Dispute filed by Karla Ortiz, Gerald Brom, Sarah Andersen, Julia Kaye, Adam Ellis, Jingna Zhang, Grzegorz Rutkowski, Gregory Manchess. Signed by Judge William H. Orrick on 08/26/2026. (This is a text-only entry generated by the court. There is no document associated with this entry.) (wholc3, COURT STAFF) (Filed on 8/26/2026) (Entered: 08/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-26",
+        "time_filed": "10:39:44",
+        "date_display": "Aug 26, 2026",
+        "description": "Order Referring Motion",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-26",
+        "time_filed": "11:57:50",
+        "date_display": "Aug 26, 2026",
+        "description": "Order on Stipulation",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 715,
+        "date_filed": "2026-08-25",
+        "time_filed": "18:52:50",
+        "date_display": "Aug 25, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER Regarding Limited Extension of Deadline for Plaintiffs and DeviantArt to Resolve a Certain Dispute filed by DeviantArt, Inc.. (Mitchell, Sarah) (Filed on 8/25/2026) (Entered: 08/25/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.715.0.pdf"
+      },
+      {
+        "entry_number": 714,
+        "date_filed": "2026-08-25",
+        "time_filed": "08:37:29",
+        "date_display": "Aug 25, 2026",
+        "description": "Order by Magistrate Judge Lisa J. Cisneros granting 632 Administrative Motion to File Under Seal to Maintain Under Seal Portions of the Court's June 30, 2026 Order (ECF 619 ).(bns, COURT STAFF) (Filed on 8/25/2026) (Entered: 08/25/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.714.0.pdf"
+      },
+      {
+        "entry_number": 713,
+        "date_filed": "2026-08-25",
+        "time_filed": "00:27:35",
+        "date_display": "Aug 25, 2026",
+        "description": "Joint Discovery Letter Brief Regarding Stability AI's Failure to Preserve Evidence filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Declaration of Alexandra Fernandez in Support of Plaintiffs' Position, # 2 Fernandez Exhibit A (Filed Under Seal), # 3 Fernandez Exhibit B (Filed Under Seal), # 4 Fernandez Exhibit C (Filed Under Seal), # 5 Fernandez Exhibit D (Filed Under Seal), # 6 Declaration of Christopher Adler in Support of Stability AI's Position, # 7 Adler Exhibit A (Filed Under Seal), # 8 Adler Exhibit B (Filed Under Seal), # 9 Adler Exhibit C (Filed Under Seal), # 10 Adler Exhibit D (Filed Under Seal), # 11 Adler Exhibit E (Filed Under Seal))(Young, Christopher) (Filed on 8/25/2026) (Entered: 08/25/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 712,
+        "date_filed": "2026-08-24",
+        "time_filed": "",
+        "date_display": "Aug 24, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Stability AI's Failure to Preserve Evidence filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Proposed Order, # 2 Joint Letter Brief Regarding Stability AI's Failure to Preserve Evidence (sealed), # 3 Fernandez Exhibit A (sealed), # 4 Fernandez Exhibit B (sealed), # 5 Fernandez Exhibit C (sealed), # 6 Fernandez Exhibit D (sealed), # 7 Adler Exhibit A (sealed), # 8 Adler Exhibit B (sealed), # 9 Adler Exhibit C (sealed), # 10 Adler Exhibit D (sealed), # 11 Adler Exhibit E (sealed))(Young, Christopher) (Filed on 8/24/2026) (Entered: 08/25/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 711,
+        "date_filed": "2026-08-24",
+        "time_filed": "23:56:30",
+        "date_display": "Aug 24, 2026",
+        "description": "Joint Discovery Letter Brief Regarding Runway AI's Discovery Violations filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Kelly McKernan, Karla Ortiz, Grzegorz Rutkowski, H Southworth, Jingna Zhang. (Attachments: # 1 Declaration of Aaron Cera in Support of Plaintiffs' Position, # 2 Cera Exhibit A (Public), # 3 Cera Exhibit B (Public), # 4 Cera Exhibit C (Public), # 5 Cera Exhibit D (Filed Under Seal), # 6 Cera Exhibit E (Filed Under Seal), # 7 Declaration of David Silbert in Support of Runway AI's Position, # 8 Silbert Exhibit A (Filed Under Seal))(Young, Christopher) (Filed on 8/24/2026) (Entered: 08/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 710,
+        "date_filed": "2026-08-24",
+        "time_filed": "23:54:52",
+        "date_display": "Aug 24, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Joint Letter Brief Re Runway AI's Discovery Violations filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Proposed Order, # 2 Joint Letter Brief Re Runway's Discovery Violations (Sealed), # 3 Cera Exhibit D (Sealed), # 4 Cera Exhibit E (Sealed), # 5 Silbert Exhibit A (Sealed))(Young, Christopher) (Filed on 8/24/2026) (Entered: 08/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 709,
+        "date_filed": "2026-08-24",
+        "time_filed": "23:24:50",
+        "date_display": "Aug 24, 2026",
+        "description": "Joint Discovery Letter Brief Concerning Plaintiffs' Deficient Productions filed by Midjourney, Inc.. (Attachments: # 1 Declaration of Angela L. Dunning, # 2 Exhibit A, # 3 Exhibit B, # 4 Exhibit C, # 5 Exhibit D, # 6 Exhibit E, # 7 Declaration of Alexander Zeng)(Dunning, Angela) (Filed on 8/24/2026) (Entered: 08/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 708,
+        "date_filed": "2026-08-24",
+        "time_filed": "22:46:22",
+        "date_display": "Aug 24, 2026",
+        "description": "Joint Discovery Letter Brief regarding Stability AI's 30(b)(6) Designees (Filed Under Seal) filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Declaration of Alexandra Fernandez in Support of Plaintiffs' Position, # 2 Fernandez Exhibit A (Filed Under Seal), # 3 Fernandez Exhibit B (Filed Under Seal), # 4 Fernandez Exhibit C (Filed Under Seal), # 5 Declaration of Christopher adler in Support of Stability AI's Position, # 6 Adler Exhibit A (Filed Under Seal), # 7 Adler Exhibit B (Filed Under Seal))(Young, Christopher) (Filed on 8/24/2026) (Entered: 08/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 707,
+        "date_filed": "2026-08-24",
+        "time_filed": "22:39:47",
+        "date_display": "Aug 24, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Joint Letter Brief Re Stability AI's 30(b)(6) Designees filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Proposed Order, # 2 Joint Letter Brief Re preparation of Stability AIs 30(b)(6) designees (Filed Under Seal), # 3 Fernandez Exhibit A (Filed Under Seal), # 4 Fernandez Exhibit B (Filed Under Seal), # 5 Fernandez Exhibit C (Filed Under Seal), # 6 Adler Exhibit A (Filed Under Seal), # 7 Adler Exhibit B (Filed Under Seal))(Young, Christopher) (Filed on 8/24/2026) (Entered: 08/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 706,
+        "date_filed": "2026-08-24",
+        "time_filed": "21:41:13",
+        "date_display": "Aug 24, 2026",
+        "description": "Joint Discovery Letter Brief Concerning Privilege Disputes Arising from Plaintiff Sarah Andersen's Deposition [REDACTED] filed by Midjourney, Inc.. (Attachments: # 1 Declaration of Angela L. Dunning, # 2 Exhibit A [REDACTED-Filed Under Seal at Docket Entry 705.2], # 3 Declaration of Aaron Cera, # 4 Exhibit B [REDACTED- Filed Under Seal at Docket Entry 705.3])(Dunning, Angela) (Filed on 8/24/2026) (Entered: 08/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 705,
+        "date_filed": "2026-08-24",
+        "time_filed": "21:24:40",
+        "date_display": "Aug 24, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Midjourney, Inc.. (Attachments: # 1 Exhibit : Joint Letter Brief Concerning Privilege Disputes Arising from Plaintiff Sarah Andersen's Deposition [FILED UNDER SEAL], # 2 Exhibit : Exhibit A [FILED UNDER SEAL], # 3 Exhibit : Exhibit B [FILED UNDER SEAL], # 4 Proposed Order, # 5 Certificate/Proof of Service)(Dunning, Angela) (Filed on 8/24/2026) (Entered: 08/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 704,
+        "date_filed": "2026-08-24",
+        "time_filed": "20:05:13",
+        "date_display": "Aug 24, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER re 597 Order on Stipulation, Extending Deadline to File Joint Letter Brief Regarding a Certain Dispute filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 8/24/2026) (Entered: 08/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 703,
+        "date_filed": "2026-08-19",
+        "time_filed": "13:13:33",
+        "date_display": "Aug 19, 2026",
+        "description": "ORDER RE SUROVENKO AND TROFIMOV DEPOSITIONS by Judge William H. Orrick granting 701 Stipulation. (jmd, COURT STAFF) (Filed on 8/19/2026) (Entered: 08/19/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.703.0.pdf"
+      },
+      {
+        "entry_number": 702,
+        "date_filed": "2026-08-17",
+        "time_filed": "16:40:38",
+        "date_display": "Aug 17, 2026",
+        "description": "Declaration of Alexander Zeng in Support of 697 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed bySarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Related document(s) 697 ) (Saveri, Joseph) (Filed on 8/17/2026) (Entered: 08/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 701,
+        "date_filed": "2026-08-14",
+        "time_filed": "19:40:02",
+        "date_display": "Aug 14, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER re 534 Order on Motion for Issuance of Letters Rogatory filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 8/14/2026) (Entered: 08/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.701.0.pdf"
+      },
+      {
+        "entry_number": 700,
+        "date_filed": "2026-08-14",
+        "time_filed": "13:41:24",
+        "date_display": "Aug 14, 2026",
+        "description": "Declaration of Charity E. Lee in Support of 695 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed byMidjourney, Inc.. (Related document(s) 695 ) (Lee, Charity) (Filed on 8/14/2026) (Entered: 08/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 699,
+        "date_filed": "2026-08-12",
+        "time_filed": "10:56:57",
+        "date_display": "Aug 12, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on July 23, 2026 before Magistrate Judge Lisa J. Cisneros by Midjourney, Inc., for Recorded Proceeding - San Francisco. (Dunning, Angela) (Filed on 8/12/2026) (Entered: 08/12/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 698,
+        "date_filed": "2026-08-10",
+        "time_filed": "20:19:31",
+        "date_display": "Aug 10, 2026",
+        "description": "Joint Discovery Letter Brief filed by Runway AI, Inc.. (Attachments: # 1 Declaration of Paul von Autenried, # 2 Declaration of Alexander Zeng)(Shacham, Matan) (Filed on 8/10/2026) (Entered: 08/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.698.0.pdf"
+      },
+      {
+        "entry_number": 697,
+        "date_filed": "2026-08-10",
+        "time_filed": "20:06:21",
+        "date_display": "Aug 10, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Runway AI, Inc.. (Attachments: # 1 Exhibit 1 [under seal], # 2 Proposed Order)(Shacham, Matan) (Filed on 8/10/2026) (Entered: 08/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 696,
+        "date_filed": "2026-08-07",
+        "time_filed": "21:24:12",
+        "date_display": "Aug 7, 2026",
+        "description": "REPLY (re 672 MOTION for Relief from Nondispositive Pretrial Order of Magistrate Judge re 638 Order on Discovery Letter Brief,,, ) filed bySarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Declaration of Louis A. Kessler in Support of Plaintiffs Reply in Support of Motion for Relief from Nondispositive Pretrial Order (ECF 638) of Magistrate Judge, # 2 Exhibit A to Declaration of Louis A. Kessler)(Saveri, Joseph) (Filed on 8/7/2026) (Entered: 08/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.696.0.pdf"
+      },
+      {
+        "entry_number": 695,
+        "date_filed": "2026-08-07",
+        "time_filed": "21:22:08",
+        "date_display": "Aug 7, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Proposed Order, # 2 Plaintiffs Reply in Support of Motion for Relief from Nondispositive Pretrial Order (ECF 638) of Magistrate Judge (sealed), # 3 Exhibit A to Declaration of Louis A. Kessler (sealed))(Saveri, Joseph) (Filed on 8/7/2026) (Entered: 08/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 694,
+        "date_filed": "2026-08-04",
+        "time_filed": "18:03:58",
+        "date_display": "Aug 4, 2026",
+        "description": "OPPOSITION/RESPONSE (re 672 MOTION for Relief from Nondispositive Pretrial Order of Magistrate Judge re 638 Order on Discovery Letter Brief,,, ) [REDACTED] filed byMidjourney, Inc.. (Attachments: # 1 Declaration of Sam Blankenship)(Dunning, Angela) (Filed on 8/4/2026) (Entered: 08/04/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.694.0.pdf"
+      },
+      {
+        "entry_number": 693,
+        "date_filed": "2026-08-04",
+        "time_filed": "17:54:45",
+        "date_display": "Aug 4, 2026",
+        "description": "Administrative Motion to File Under Seal filed by Midjourney, Inc.. (Attachments: # 1 Declaration of Angela L. Dunning, # 2 Exhibit : Midjourney, Inc.'s Opposition to Plaintiffs' Motion for Relief from Nondispositive Pretrial Order (ECF 638) of Magistrate Judge [FILED UNDER SEAL], # 3 Proposed Order, # 4 Certificate/Proof of Service)(Dunning, Angela) (Filed on 8/4/2026) (Entered: 08/04/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 692,
+        "date_filed": "2026-07-31",
+        "time_filed": "",
+        "date_display": "Jul 31, 2026",
+        "description": "ORDER by Magistrate Judge Lisa J. Cisneros: Having reviewed Plaintiffs' unilateral discovery letter 643 and Stability's Response 681 Plaintiffs' request that the Court \"order Plaintiffs and Stability to finalize all meet-and-confers over the pending discovery disputes identified\" in Plaintiffs' unilateral discovery brief \"by a date certain and file any briefing on a date certain shortly thereafter\" is DENIED. The Court agrees with Stability that Plaintiffs are effectively requesting an extension to the case schedule and have not demonstrated the requisite diligence in seeking this extension. See Johnson v. Mammoth Recreations, Inc., 975 F.2d 604, 609 (9th Cir. 1992). (This is a text-only entry generated by the court. There is no document associated with this entry.) (Entered: 07/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-31",
+        "time_filed": "16:26:26",
+        "date_display": "Jul 31, 2026",
+        "description": "Order on Discovery Letter Brief",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 691,
+        "date_filed": "2026-07-30",
+        "time_filed": "21:10:26",
+        "date_display": "Jul 30, 2026",
+        "description": "CERTIFICATE OF SERVICE by Stability AI Ltd., Stability AI, Inc. re 688 Administrative Motion to File Under Seal (Lane, Jackson) (Filed on 7/30/2026) (Entered: 07/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 690,
+        "date_filed": "2026-07-30",
+        "time_filed": "20:53:02",
+        "date_display": "Jul 30, 2026",
+        "description": "Declaration of Adam Roy per Court Order ECF 662 filed byStability AI Ltd., Stability AI, Inc.. (Lane, Jackson) (Filed on 7/30/2026) (Entered: 07/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 689,
+        "date_filed": "2026-07-30",
+        "time_filed": "20:51:06",
+        "date_display": "Jul 30, 2026",
+        "description": "Declaration of Jackson Lane per Court Order ECF 662 filed byStability AI Ltd., Stability AI, Inc.. (Lane, Jackson) (Filed on 7/30/2026) (Entered: 07/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 688,
+        "date_filed": "2026-07-30",
+        "time_filed": "20:43:55",
+        "date_display": "Jul 30, 2026",
+        "description": "Administrative Motion to File Under Seal filed by Stability AI Ltd., Stability AI, Inc.. (Attachments: # 1 Declaration of Jackson Lane, # 2 Proposed Order, # 3 Declaration of Jackson Lane, # 4 Declaration of Adam Roy)(Lane, Jackson) (Filed on 7/30/2026) (Entered: 07/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 687,
+        "date_filed": "2026-07-30",
+        "time_filed": "09:58:19",
+        "date_display": "Jul 30, 2026",
+        "description": "Order on Administrative Motion per Civil Local Rule 7-11 AND Order on Administrative Motion to Consider Whether Another Partys Material Should Be Sealed AND Order on Administrative Motion to Consider Whether Another Partys Material Should Be Sealed AND Order on Administrative Motion to Consider Whether Another Partys Material Should Be Sealed AND Order on Administrative Motion to Consider Whether Another Partys Material Should Be Sealed AND Order on Administrative Motion to Consider Whether Another Partys Material Should Be Sealed AND Order on Administrative Motion to Consider Whether Another Partys Material Should Be Sealed AND Order on Administrative Motion to Consider Whether Another Partys Material Should Be Sealed AND Order on Administrative Motion to File Under Seal AND Order on Administrative Motion to File Under Seal",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.687.0.pdf"
+      },
+      {
+        "entry_number": 686,
+        "date_filed": "2026-07-29",
+        "time_filed": "20:40:06",
+        "date_display": "Jul 29, 2026",
+        "description": "REPLY (re 656 MOTION For Relief From Nondispositive Pretrial Order (ECF 619) of Magistrate Judge ) filed bySarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 7/29/2026) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.686.0.pdf"
+      },
+      {
+        "entry_number": 685,
+        "date_filed": "2026-07-29",
+        "time_filed": "20:39:59",
+        "date_display": "Jul 29, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Proposed Order, # 2 Plaintiffs Reply in Support of Motion for Relief from Nondispositive Pretrial Order (ECF619) of Magistrate Judge (sealed))(Saveri, Joseph) (Filed on 7/29/2026) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 684,
+        "date_filed": "2026-07-29",
+        "time_filed": "16:36:30",
+        "date_display": "Jul 29, 2026",
+        "description": "Declaration of Angela L. Dunning in Support of 671 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Plaintiffs' Motion for Relief from Nondispositive Pretrial Order (ECF 638) of Magistrate Judge filed byMidjourney, Inc.. (Related document(s) 671 ) (Dunning, Angela) (Filed on 7/29/2026) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 683,
+        "date_filed": "2026-07-28",
+        "time_filed": "14:41:06",
+        "date_display": "Jul 28, 2026",
+        "description": "ORDER REQUIRING RESPONSE re 672 MOTION for Relief. Response due by 8/4/2026. Reply due by 8/7/2026. Signed by Judge William H. Orrick on 07/28/2026. (jmd, COURT STAFF) (Filed on 7/28/2026) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.683.0.pdf"
+      },
+      {
+        "entry_number": 681,
+        "date_filed": "2026-07-27",
+        "time_filed": "13:59:43",
+        "date_display": "Jul 27, 2026",
+        "description": "OPPOSITION/RESPONSE (re 643 Discovery Letter Brief Regarding Discovery Disputes with Defendants Stability AI, Ltd. and Stability AI, Inc. ) filed byStability AI Ltd., Stability AI, Inc.. (Attachments: # 1 Declaration of Jackson Lane, # 2 Exhibit A to Declaration of Jackson Lane)(Kamdar, Aditya) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.681.0.pdf"
+      },
+      {
+        "entry_number": 680,
+        "date_filed": "2026-07-27",
+        "time_filed": "08:57:01",
+        "date_display": "Jul 27, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 7/23/2026 before Magistrate Judge Lisa J. Cisneros by DeviantArt, Inc., for Recorded Proceeding - San Francisco. (Botwinick, Simeon) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 679,
+        "date_filed": "2026-07-24",
+        "time_filed": "16:01:19",
+        "date_display": "Jul 24, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 7/23/2026 before Magistrate Judge Lisa J. Cisneros by Runway AI, Inc., for Recorded Proceeding - San Francisco. (Whang, Yegina) (Filed on 7/24/2026) (Entered: 07/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 678,
+        "date_filed": "2026-07-24",
+        "time_filed": "",
+        "date_display": "Jul 24, 2026",
+        "description": "ORDER by Magistrate Judge Lisa J. Cisneros: Based on the parties' representations in the most recent joint status report and at yesterday's discovery status conference, the Court orders as follows: with respect to Plaintiff Andersen, where Defendants have identified specific gaps in her production regarding art-related revenue, Andersen shall respond in writing no later than July 28, 2026 explaining the reasonable steps she has undertaken to investigate and identify responsive information, including what, if any, contact she has had with third-parties. To the extent that she has objected to third-party discovery requests served by Defendants which might have otherwise revealed similar responsive information, the parties shall meet and confer to determine whether it is appropriate for Plaintiff Andersen to withdraw those objections on certain terms, such as a first look process or some…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-24",
+        "time_filed": "09:08:55",
+        "date_display": "Jul 24, 2026",
+        "description": "Order",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 677,
+        "date_filed": "2026-07-23",
+        "time_filed": "",
+        "date_display": "Jul 23, 2026",
+        "description": "Minute Entry for proceedings held before Magistrate Judge Lisa J. Cisneros: Status Conference held on 7/23/2026. Zoom Recording Time: 3:06 - 3:42. (shy, COURT STAFF) (Date Filed: 7/23/2026) Modified on 7/24/2026 (amg, COURT STAFF). Proceedings transcribed by Tara Jauregui of Echo Reporting (Echoreporting@yahoo.com) (Entered: 07/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 676,
+        "date_filed": "2026-07-23",
+        "time_filed": "20:37:09",
+        "date_display": "Jul 23, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 7/23/2026 before Magistrate Judge Lisa J. Cisneros by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang, for Recorded Proceeding - San Francisco. (Saveri, Joseph) (Filed on 7/23/2026) (Entered: 07/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 675,
+        "date_filed": "2026-07-23",
+        "time_filed": "17:21:12",
+        "date_display": "Jul 23, 2026",
+        "description": "CERTIFICATE OF SERVICE by Stability AI Ltd., Stability AI, Inc. re 674 Administrative Motion to File Under Seal (Kamdar, Aditya) (Filed on 7/23/2026) (Entered: 07/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 674,
+        "date_filed": "2026-07-23",
+        "time_filed": "15:52:17",
+        "date_display": "Jul 23, 2026",
+        "description": "Administrative Motion to File Under Seal filed by Stability AI Ltd., Stability AI, Inc.. (Attachments: # 1 Declaration of Jackson Lane, # 2 Proposed Order, # 3 PROVISIONALLY FILED UNDER SEAL AMENDED ORDER RESOLVING PLAINTIFFS AND STABILITY AIS DISPUTES REGARDING SOURCE CODE PRODUCTION [ECF NO. 662])(Kamdar, Aditya) (Filed on 7/23/2026) (Entered: 07/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 673,
+        "date_filed": "2026-07-23",
+        "time_filed": "",
+        "date_display": "Jul 23, 2026",
+        "description": "ORDER by Magistrate Judge Lisa J. Cisneros: As the Court resolved Plaintiffs and Runway's dispute regarding Runway's interrogatory responses in its 648 Order, the corrected docket entry at 652 is resolved. The Court GRANTS the 651 administrative sealing motion. (This is a text-only entry generated by the court. There is no document associated with this entry.) (ljclc1, COURT STAFF) (Filed on 7/23/2026) (Entered: 07/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-23",
+        "time_filed": "09:41:53",
+        "date_display": "Jul 23, 2026",
+        "description": "Electronic Filing Error",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-23",
+        "time_filed": "13:58:11",
+        "date_display": "Jul 23, 2026",
+        "description": "Order on Administrative Motion to Consider Whether Another Partys Material Should Be Sealed AND Order on Discovery Letter Brief",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-23",
+        "time_filed": "",
+        "date_display": "Jul 23, 2026",
+        "description": "Electronic filing error. Incorrect PDF attached. Only a title page attached. Re: 667 Opposition/Response to Motion filed by Midjourney, Inc. (anj, COURT STAFF) (Filed on 7/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 672,
+        "date_filed": "2026-07-22",
+        "time_filed": "20:25:45",
+        "date_display": "Jul 22, 2026",
+        "description": "MOTION for Relief from Nondispositive Pretrial Order of Magistrate Judge re 638 Order on Discovery Letter Brief,,, filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. Responses due by 7/22/2026. Replies due by 7/22/2026. (Attachments: # 1 Proposed Order)(Saveri, Joseph) (Filed on 7/22/2026) (Entered: 07/22/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.672.0.pdf"
+      },
+      {
+        "entry_number": 670,
+        "date_filed": "2026-07-22",
+        "time_filed": "19:45:35",
+        "date_display": "Jul 22, 2026",
+        "description": "CERTIFICATE OF SERVICE by Stability AI Ltd., Stability AI, Inc. re 668 Administrative Motion to File Under Seal (Kamdar, Aditya) (Filed on 7/22/2026) (Entered: 07/22/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 669,
+        "date_filed": "2026-07-22",
+        "time_filed": "19:22:46",
+        "date_display": "Jul 22, 2026",
+        "description": "OPPOSITION/RESPONSE (re 642 Discovery Letter Brief Regarding Stability AI Dataset Discovery ) filed byStability AI Ltd., Stability AI, Inc.. (Attachments: # 1 Declaration of Christopher R. Adler in Support of SAIs Letter Reply to ECF No. 642, # 2 Exhibit A to Declaration of Christopher R. Adler, # 3 Exhibit B to Declaration of Christopher R. Adler, # 4 Exhibit C to Declaration of Christopher R. Adler, # 5 Exhibit D to Declaration of Christopher R. Adler (Filed Entirely Under Seal))(Kamdar, Aditya) (Filed on 7/22/2026) (Entered: 07/22/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.669.0.pdf"
+      },
+      {
+        "entry_number": 668,
+        "date_filed": "2026-07-22",
+        "time_filed": "18:56:17",
+        "date_display": "Jul 22, 2026",
+        "description": "Administrative Motion to File Under Seal filed by Stability AI Ltd., Stability AI, Inc.. (Attachments: # 1 Declaration of Christopher R. Adler in Support of SAIs Administrative Motion to Seal, # 2 Unredacted-Highlighted Version of SAI's Letter Reply to ECF No. 642 (Filed Under Seal), # 3 Unredacted Version of Exhibit D to Declaration of Christopher R. Adler in Support of SAI's Letter Reply to ECF No. 642 (Filed Under Seal), # 4 Proposed Order)(Kamdar, Aditya) (Filed on 7/22/2026) (Entered: 07/22/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 667,
+        "date_filed": "2026-07-22",
+        "time_filed": "16:08:31",
+        "date_display": "Jul 22, 2026",
+        "description": "OPPOSITION/RESPONSE- Public Version of docket no. 666 (re 656 MOTION For Relief From Non-dispositive Pretrial Order (ECF 619) of Magistrate Judge ) filed byMidjourney, Inc.. (Dunning, Angela) (Filed on 7/22/2026) Modified on 7/23/2026 (anj, COURT STAFF). (Entered: 07/22/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 666,
+        "date_filed": "2026-07-22",
+        "time_filed": "16:02:07",
+        "date_display": "Jul 22, 2026",
+        "description": "Administrative Motion to File Under Seal filed by Midjourney, Inc.. (Attachments: # 1 Declaration of Angela L. Dunning, # 2 Exhibit Midjourney, Inc.s Opposition to Plaintiffs Motion for Relief from Nondispositive Pretrial Order [ECF 619] of Magistrate Judge, # 3 Proposed Order, # 4 Certificate/Proof of Service)(Dunning, Angela) (Filed on 7/22/2026) (Entered: 07/22/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 665,
+        "date_filed": "2026-07-21",
+        "time_filed": "18:23:44",
+        "date_display": "Jul 21, 2026",
+        "description": "Declaration of Angela L. Dunning in Support of 655 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Plaintiffs' Motion for Relief From Nondispositive Pretrial Order (Ecf No. 619) of Magistrate Judge filed byMidjourney, Inc.. (Related document(s) 655 ) (Dunning, Angela) (Filed on 7/21/2026) (Entered: 07/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 664,
+        "date_filed": "2026-07-17",
+        "time_filed": "",
+        "date_display": "Jul 17, 2026",
+        "description": "NOTICE of Appearance filed by Deeva V Shah on behalf of Runway AI, Inc. (Shah, Deeva) (Filed on 7/17/2026) (Entered: 07/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-17",
+        "time_filed": "10:19:35",
+        "date_display": "Jul 17, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 663,
+        "date_filed": "2026-07-16",
+        "time_filed": "20:16:04",
+        "date_display": "Jul 16, 2026",
+        "description": "STATUS REPORT Jointly Filed Pursuant to ECF No. 608 by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 7/16/2026) (Entered: 07/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.663.0.pdf"
+      },
+      {
+        "entry_number": 660,
+        "date_filed": "2026-07-16",
+        "time_filed": "",
+        "date_display": "Jul 16, 2026",
+        "description": "ORDER by Magistrate Judge Lisa J. Cisneros: The Court has reviewed Plaintiffs and Midjourney's 621 discovery brief regarding Midjourney's clawback of documents and rules as follows: the Court agrees with Midjourney that the substance of Ms. Ali's responses to CFC's questions in Exhibit D and E reflect work product and may remain redacted. However, CFC's questions in Exhibits A, B, D, and E are not work product and not covered by the attorney-client privilege and must be produced in unredacted form. The Court agrees with Plaintiffs that Midjourney's redactions of its communications with Zyte were improper, as these communications were made \"to further a commercial transaction\" between Midjourney and Zyte and were not \"made in the course of formulating a common legal strategy.\" Nidec Corp. v. Victor Co. of Japan, 249 F.R.D. 575, 579-89 (N.D. Cal. 2007) (emphasis removed, internal…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 659,
+        "date_filed": "2026-07-16",
+        "time_filed": "",
+        "date_display": "Jul 16, 2026",
+        "description": "ORDER by Magistrate Judge Lisa J. Cisneros: Plaintiffs are admonished for failing to comply with Judge Cisneros's Civil Standing Order, which requires parties to file joint discovery letter briefs, or, \"[i]n the rare instance that a joint letter is not possible,\" requires the party filing a unilateral letter to \"include an explanation of why a joint letter was not possible.\" Future discovery briefs that do not comply with the Standing Order may be stricken or denied as procedurally improper. That being said, the Court concludes that it will best serve the overall progression of this case to resolve the issue raised in Plaintiffs' 642 letter brief on the merits, and accordingly ORDERS Stability to file its response to Plaintiffs' portion of the 642 letter brief by July 22, 2026. (This is a text-only entry generated by the court. There is no document associated with this entry.) (ljclc1,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-16",
+        "time_filed": "10:02:41",
+        "date_display": "Jul 16, 2026",
+        "description": "Order on Discovery Letter Brief",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-16",
+        "time_filed": "09:53:54",
+        "date_display": "Jul 16, 2026",
+        "description": "Order",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 658,
+        "date_filed": "2026-07-15",
+        "time_filed": "13:38:43",
+        "date_display": "Jul 15, 2026",
+        "description": "ORDER REQUIRING RESPONSE 656 MOTION For Relief From Nondispositive Pretrial Order (ECF 619) of Magistrate Judge. Response due by 7/22/2026. Reply due by 7/29/2026. Signed by Judge William H. Orrick on 06/15/2026. (jmd, COURT STAFF) (Filed on 7/15/2026) (Entered: 07/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.658.0.pdf"
+      },
+      {
+        "entry_number": 657,
+        "date_filed": "2026-07-15",
+        "time_filed": "10:37:44",
+        "date_display": "Jul 15, 2026",
+        "description": "Declaration of Yegina Whang in Support of 651 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed CORRECTION OF DOCKET #s 640, [640-1], [640-2], and [640-3] filed byRunway AI, Inc.. (Related document(s) 651 ) (Whang, Yegina) (Filed on 7/15/2026) (Entered: 07/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 656,
+        "date_filed": "2026-07-14",
+        "time_filed": "23:40:13",
+        "date_display": "Jul 14, 2026",
+        "description": "MOTION For Relief From Nondispositive Pretrial Order (ECF 619) of Magistrate Judge filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. Responses due by 7/14/2026. Replies due by 7/14/2026. (Attachments: # 1 Proposed Order)(Saveri, Joseph) (Filed on 7/14/2026) (Entered: 07/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.656.0.pdf"
+      },
+      {
+        "entry_number": 655,
+        "date_filed": "2026-07-14",
+        "time_filed": "23:35:23",
+        "date_display": "Jul 14, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Proposed Order, # 2 Plaintiffs Motion for Relief From Nondispositive Pretrial Order (ECF 619) of Magistrate Judge (Sealed))(Saveri, Joseph) (Filed on 7/14/2026) (Entered: 07/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 654,
+        "date_filed": "2026-07-14",
+        "time_filed": "17:22:19",
+        "date_display": "Jul 14, 2026",
+        "description": "Declaration of Angela L. Dunning in Support of 635 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed byMidjourney, Inc.. (Related document(s) 635 ) (Dunning, Angela) (Filed on 7/14/2026) (Entered: 07/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 653,
+        "date_filed": "2026-07-14",
+        "time_filed": "",
+        "date_display": "Jul 14, 2026",
+        "description": "ORDER by Magistrate Judge Lisa J. Cisneros: The Court has reviewed Plaintiffs and Runway's 645 letter brief regarding Plaintiffs' responses to Interrogatory No. 13. Broadly speaking, the Court agrees with Runway that Plaintiffs must do more to identify their customers and update their interrogatories accordingly. A party has \"an obligation to conduct a reasonable inquiry into the factual basis of its discovery responses,\" and is \"generally charged with knowledge of what its agents know, or what is in records available to it.\" Nat'l Acad. of Recording Arts & Scis., Inc. v. On Point Events, LP, 256 F.R.D. 678, 680 (C.D. Cal. 2009); F.D.I.C. v. Halpern, 271 F.R.D. 191, 193 (D. Nev. 2010). \"A party cannot limit its interrogatory answers to matters within its own knowledge and ignore information immediately available to it or under its control.\" Halpern, 271 F.R.D. at 193. Consistent with…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-14",
+        "time_filed": "09:49:21",
+        "date_display": "Jul 14, 2026",
+        "description": "Order",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 652,
+        "date_filed": "2026-07-13",
+        "time_filed": "16:49:49",
+        "date_display": "Jul 13, 2026",
+        "description": "Joint Discovery Letter Brief Regarding Disputes Over Runway AI Inc.'s Interrogatory Responses (Redacted) CORRECTION OF DOCKET #s 641 and [641-2] filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Exhibit A (Redacted))(Saveri, Joseph) (Filed on 7/13/2026) (Entered: 07/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 651,
+        "date_filed": "2026-07-13",
+        "time_filed": "16:45:04",
+        "date_display": "Jul 13, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed CORRECTION OF DOCKET #s 640, [640-1], [640-2], and [640-3] filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Proposed Order, # 2 Joint Letter Brief Regarding Disputes Over Runway's Interrogatory Responses (Sealed), # 3 Exhibit A (Sealed))(Saveri, Joseph) (Filed on 7/13/2026) (Entered: 07/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 650,
+        "date_filed": "2026-07-13",
+        "time_filed": "10:37:00",
+        "date_display": "Jul 13, 2026",
+        "description": "Order by Judge William H. Orrick granting 647 Motion for Pro Hac Vice by Michael M. Buchman. (jmd, COURT STAFF) (Filed on 7/13/2026) Modified on 7/16/2026 to correct spelling of attorney's name (jmd, COURT STAFF). (Entered: 07/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 649,
+        "date_filed": "2026-07-09",
+        "time_filed": "20:57:55",
+        "date_display": "Jul 9, 2026",
+        "description": "RESPONSE re 646 Order on Discovery Letter Brief,,, by Runway AI, Inc.. (Heaps, Bailey) (Filed on 7/9/2026) (Entered: 07/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.649.0.pdf"
+      },
+      {
+        "entry_number": 647,
+        "date_filed": "2026-07-09",
+        "time_filed": "14:20:59",
+        "date_display": "Jul 9, 2026",
+        "description": "MOTION for leave to appear in Pro Hac Vice for Michael Buchman ( Filing fee $ 328, receipt number ACANDC-22196280.) filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Certificate of Good Standing)(Buchman, Michael) (Filed on 7/9/2026) (Entered: 07/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 646,
+        "date_filed": "2026-07-09",
+        "time_filed": "",
+        "date_display": "Jul 9, 2026",
+        "description": "ORDER by Magistrate Judge Lisa J. Cisneros: Per the request at ECF No. 644, the Court clarifies that Section 11 of the ESI Protocol permits Plaintiffs to make up to 200 hyperlink requests per each of the four Defendants. For the avoidance of doubt, this does not in any way authorize Plaintiffs to make additional requests for hyperlinked documents, but does require Defendants to produce documents in response to Plaintiffs' requests for \"a further round of hyperlinked documents\" Plaintiffs requested \"before the end of fact discovery,\" assuming Plaintiffs' requests did not exceed 200 hyperlinks per Defendant. ECF No. 644 at 2. (This is a text-only entry generated by the court. There is no document associated with this entry.) (ljclc1, COURT STAFF) (Filed on 7/9/2026) (Entered: 07/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-09",
+        "time_filed": "14:42:24",
+        "date_display": "Jul 9, 2026",
+        "description": "Order on Discovery Letter Brief",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 645,
+        "date_filed": "2026-07-08",
+        "time_filed": "23:15:13",
+        "date_display": "Jul 8, 2026",
+        "description": "Letter Brief (Joint) Regarding Runway Interrogatory No. 13 filed byRunway AI, Inc.. (Attachments: # 1 Declaration of Matan Shacham, # 2 Declaration of Evan Creutz)(Shacham, Matan) (Filed on 7/8/2026) (Entered: 07/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 644,
+        "date_filed": "2026-07-08",
+        "time_filed": "22:53:45",
+        "date_display": "Jul 8, 2026",
+        "description": "Discovery Letter Brief Regarding Hyperlink Requests filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 7/8/2026) (Entered: 07/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.644.0.pdf"
+      },
+      {
+        "entry_number": 643,
+        "date_filed": "2026-07-08",
+        "time_filed": "22:31:03",
+        "date_display": "Jul 8, 2026",
+        "description": "Discovery Letter Brief Regarding Discovery Disputes with Defendants Stability AI, Ltd. and Stability AI, Inc. filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Saveri, Joseph) (Filed on 7/8/2026) (Entered: 07/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.643.0.pdf"
+      },
+      {
+        "entry_number": 642,
+        "date_filed": "2026-07-08",
+        "time_filed": "22:27:34",
+        "date_display": "Jul 8, 2026",
+        "description": "Discovery Letter Brief Regarding Stability AI Dataset Discovery filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Declaration of A. Fernandez in Support of, # 2 Exhibit A, # 3 Exhibit B, # 4 Exhibit C)(Saveri, Joseph) (Filed on 7/8/2026) (Entered: 07/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.642.0.pdf"
+      },
+      {
+        "entry_number": 641,
+        "date_filed": "2026-07-08",
+        "time_filed": "22:18:16",
+        "date_display": "Jul 8, 2026",
+        "description": "Joint Discovery Letter BriefRegarding Disputes Over Runway AI Inc.'s Interrogatory Responses filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Declaration of Paul von Autenried In Support of Runway AI Inc.s Portion of Joint Letter Brief Regarding Plaintiffs Interrogatories, # 2 Exhibit A (Slipsheet))(Saveri, Joseph) (Filed on 7/8/2026) (Entered: 07/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 640,
+        "date_filed": "2026-07-08",
+        "time_filed": "22:13:40",
+        "date_display": "Jul 8, 2026",
+        "description": "***ERRONEOUS ENTRY, DISREGARD. PLEASE SEE 651 FOR CORRECTED DOCUMENTS*** Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Proposed Order Granting Plaintiffs Administrative Motion To Consider Whether Another Partys Material Should Be Sealed Regarding Runways Interrogatory Responses, # 2 Joint Letter Brief Regarding Disputes Over Runway's Interrogatory Responses, # 3 Exhibit A (Sealed))(Saveri, Joseph) (Filed on 7/8/2026) Modified on 7/14/2026 (exl, COURT STAFF). (Entered: 07/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 639,
+        "date_filed": "2026-07-08",
+        "time_filed": "19:29:59",
+        "date_display": "Jul 8, 2026",
+        "description": "Declaration of Alexander Zeng in Support of 626 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Re: Joint Discovery Letter Brief Concerning Plaintiffs' Withholding and Claw-back of Documents filed bySarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Related document(s) 626 ) (Saveri, Joseph) (Filed on 7/8/2026) (Entered: 07/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 638,
+        "date_filed": "2026-07-08",
+        "time_filed": "",
+        "date_display": "Jul 8, 2026",
+        "description": "ORDER by Magistrate Judge Lisa J. Cisneros: Plaintiffs' 636 request that Midjourney produce curated \"art\" and \"artist\" datasets is DENIED. For the reasons explained in its 314 prior Order denying production of non-LAION datasets, discovery is limited to information relevant to the parties' claims and defenses. Fed. R. Civ. P. 26(b). Discovery regarding Plaintiffs' copyright infringement claims and Midjourney's anticipated fair use defense is thus limited to the datasets at issue in Plaintiffs' Third Amended Complaint. Plaintiffs have not explained how discovery regarding datasets not at issue here would be relevant or proportional to the needs of the case. (This is a text-only entry generated by the court. There is no document associated with this entry.) (ljclc1, COURT STAFF) (Filed on 7/8/2026) (Entered: 07/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 637,
+        "date_filed": "2026-07-08",
+        "time_filed": "07:42:25",
+        "date_display": "Jul 8, 2026",
+        "description": "ORDER by Judge Lisa J. Cisneros granting 629 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Disputes Over Runway's 30(B)(1) witnesses. (bns, COURT STAFF) (Filed on 7/8/2026) (Entered: 07/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.637.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-08",
+        "time_filed": "11:44:27",
+        "date_display": "Jul 8, 2026",
+        "description": "Order on Discovery Letter Brief",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 635,
+        "date_filed": "2026-07-07",
+        "time_filed": "21:29:09",
+        "date_display": "Jul 7, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Karla Ortiz, Grzegorz Rutkowski, Jingna Zhang. (Attachments: # 1 Proposed Order Granting Plaintiffs administrative motion To consider whether another Partys material should be Sealed regarding the production Of midjourney, inc.s art datasets, # 2 Joint letter brief regarding Plaintiffs request that Midjourney produce art and artist datasets (Filed Under Seal), # 3 Declaration of Louis Kessler in Support of Plaintiffs position In the joint letter brief Regarding the production of Midjourney, inc.s art datasets, # 4 Exhibit A to Declaration of Louis Kessler in Support of Plaintiffs position In the joint letter brief Regarding the production of Midjourney, inc.s art datasets (Filed Under Seal), # 5 Exhibit B to Declaration of…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 634,
+        "date_filed": "2026-07-07",
+        "time_filed": "19:28:36",
+        "date_display": "Jul 7, 2026",
+        "description": "Declaration of Angela L. Dunning in Support of 620 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Re Joint Letter Brief regarding Midjourney's Clawback of Documents filed byMidjourney, Inc.. (Related document(s) 620 ) (Dunning, Angela) (Filed on 7/7/2026) (Entered: 07/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 633,
+        "date_filed": "2026-07-07",
+        "time_filed": "",
+        "date_display": "Jul 7, 2026",
+        "description": "ORDER by Judge Lisa J. Cisneros: Having considered Plaintiffs and Runway's 630 joint discovery letter and the accompanying record, as well as the relevant legal authorities, Plaintiffs' request to depose Yining Shi and Naveen Venkat pursuant to the deposition notices served on July 2, 2026 is DENIED as Plaintiffs have not shown they acted with the requisite reasonable diligence. See Johnson v. Mammoth Recreations, Inc., 975 F.2d 604, 609 (9th Cir. 1992). (This is a text-only entry generated by the court. There is no document associated with this entry.) (ljclc1, COURT STAFF) (Filed on 7/7/2026) (Entered: 07/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 632,
+        "date_filed": "2026-07-07",
+        "time_filed": "15:09:00",
+        "date_display": "Jul 7, 2026",
+        "description": "Administrative Motion to File Under Seal /Maintain Under Seal Portions of the Court's June 30, 2026 Order (ECF 619) filed by Midjourney, Inc.. (Attachments: # 1 Declaration of Angela L. Dunning in Support, # 2 Exhibit 1 - Highlighted Order Resolving Plaintiffs' and Midjourney's Source Code Dispute, # 3 Proposed Order, # 4 Certificate/Proof of Service)(Dunning, Angela) (Filed on 7/7/2026) (Entered: 07/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 631,
+        "date_filed": "2026-07-07",
+        "time_filed": "14:02:40",
+        "date_display": "Jul 7, 2026",
+        "description": "Declaration of Paven Malhotra in Support of 629 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed byRunway AI, Inc.. (Related document(s) 629 ) (Malhotra, Paven) (Filed on 7/7/2026) (Entered: 07/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-07",
+        "time_filed": "15:33:43",
+        "date_display": "Jul 7, 2026",
+        "description": "Order on Discovery Letter Brief",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=66732129&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": null,
   "coverage": []
