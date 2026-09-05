@@ -8,15 +8,593 @@
     "judge": "Eumi K. Lee",
     "docket_id": "72505829",
     "status": "active",
-    "sync": "active"
+    "sync": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72505829/bmg-rights-management-us-llc-v-anthropic-pbc/",
-    "new_in_72h": 0,
-    "recent": [],
-    "entries": []
+    "date_last_filing": "2026-09-03",
+    "meta_fetched_at": "2026-09-05T00:11:47.626269+00:00",
+    "fetched_at": "2026-09-05T00:11:47.626269+00:00",
+    "as_of": "Sep 5, 2026",
+    "backfilled": true,
+    "new_in_72h": 2,
+    "recent": [
+      {
+        "entry_number": 42,
+        "date_filed": "2026-09-03",
+        "time_filed": "13:40:48",
+        "date_display": "Sep 3, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 9/2/2026 before Judge Eumi K. Lee by BMG Rights Management (US) LLC, for Court Reporter Irene Rodriguez. (Cooper, Evan) (Filed on 9/3/2026) (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-03",
+        "time_filed": "09:47:00",
+        "date_display": "Sep 3, 2026",
+        "description": "Status Conference",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 41,
+        "date_filed": "2026-09-02",
+        "time_filed": "",
+        "date_display": "Sep 2, 2026",
+        "description": "Minute Entry for proceedings held before Judge Eumi K. Lee: Status Conference held on 9/2/2026. The Court adopted its tentative ruling regarding phased discovery. The Court ordered the parties to meet and confer and file a proposed coordination and case management order by 9/23/2026. The Court ordered the parties to meet and confer regarding discovery relating to book scanning and allowed each side to file an issue statement of no more than three (3) pages by 9/11/2026. The Court ordered the parties to meet and confer regarding which of the pending Daubert motions must be addressed in connection with the pending motions for summary judgment. The parties are to notify the Court by filing a joint status report or by emailing the Courtroom Deputy by 9/11/2026. Plaintiffs' Attorneys: Matthew Oppenheim, Corey Miller, Michelle Gomez-Reichman; Robert Jacobs, Nathaniel Bach, Prana Topper, Evan…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 42,
+        "date_filed": "2026-09-03",
+        "time_filed": "13:40:48",
+        "date_display": "Sep 3, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 9/2/2026 before Judge Eumi K. Lee by BMG Rights Management (US) LLC, for Court Reporter Irene Rodriguez. (Cooper, Evan) (Filed on 9/3/2026) (Entered: 09/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-03",
+        "time_filed": "09:47:00",
+        "date_display": "Sep 3, 2026",
+        "description": "Status Conference",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 41,
+        "date_filed": "2026-09-02",
+        "time_filed": "",
+        "date_display": "Sep 2, 2026",
+        "description": "Minute Entry for proceedings held before Judge Eumi K. Lee: Status Conference held on 9/2/2026. The Court adopted its tentative ruling regarding phased discovery. The Court ordered the parties to meet and confer and file a proposed coordination and case management order by 9/23/2026. The Court ordered the parties to meet and confer regarding discovery relating to book scanning and allowed each side to file an issue statement of no more than three (3) pages by 9/11/2026. The Court ordered the parties to meet and confer regarding which of the pending Daubert motions must be addressed in connection with the pending motions for summary judgment. The parties are to notify the Court by filing a joint status report or by emailing the Courtroom Deputy by 9/11/2026. Plaintiffs' Attorneys: Matthew Oppenheim, Corey Miller, Michelle Gomez-Reichman; Robert Jacobs, Nathaniel Bach, Prana Topper, Evan…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 40,
+        "date_filed": "2026-09-01",
+        "time_filed": "",
+        "date_display": "Sep 1, 2026",
+        "description": "NOTICE of Appearance filed by Savannah Levin on behalf of BMG Rights Management (US) LLC (Levin, Savannah) (Filed on 9/1/2026) (Entered: 09/01/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-01",
+        "time_filed": "10:02:33",
+        "date_display": "Sep 1, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 39,
+        "date_filed": "2026-08-31",
+        "time_filed": "16:04:09",
+        "date_display": "Aug 31, 2026",
+        "description": "NOTICE by Sony Music Publishing (US) LLC, Warner Chappell Music, Inc. re Administrative Motion To Consider Whether Cases Should Be Related (Attachments: # 1 Exhibit A)(Akley, Benjamin) (Filed on 8/31/2026) (Entered: 08/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 38,
+        "date_filed": "2026-08-28",
+        "time_filed": "16:18:09",
+        "date_display": "Aug 28, 2026",
+        "description": "NOTICE by GFP Co-Invest, LP, RH Carlin Holdings LLC, Round Hill Music LP, Round Hill Music Royalty Fund II, LP, Round Hill Music Royalty Fund III Plus, LP, Round Hill Music Royalty Fund III, LP of Filing Opposition to Civil Local Rule 7-11 Administrative Motion to Consider Whether Cases Should Be Related (Attachments: # 1 Exhibit A)(Busch, Richard) (Filed on 8/28/2026) (Entered: 08/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 37,
+        "date_filed": "2026-08-28",
+        "time_filed": "",
+        "date_display": "Aug 28, 2026",
+        "description": "NOTICE of Appearance filed by Richard Steven Busch on behalf of Round Hill Music LP, Round Hill Music Royalty Fund II, LP, Round Hill Music Royalty Fund III Plus, LP, Round Hill Music Royalty Fund III, LP, GFP Co-Invest, LP, RH Carlin Holdings LLC (Busch, Richard) (Filed on 8/28/2026) (Entered: 08/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-28",
+        "time_filed": "15:58:58",
+        "date_display": "Aug 28, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 36,
+        "date_filed": "2026-08-26",
+        "time_filed": "13:03:16",
+        "date_display": "Aug 26, 2026",
+        "description": "ORDER Granting 35 Motion for Pro Hac Vice as to attorney Alex W. Miller. Signed by Judge Eumi K. Lee. (lrt, COURT STAFF) (Filed on 8/26/2026) (Entered: 08/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35,
+        "date_filed": "2026-08-25",
+        "time_filed": "18:06:56",
+        "date_display": "Aug 25, 2026",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-22381474.) filed by Anthropic PBC. (Miller, Alex) (Filed on 8/25/2026) (Entered: 08/25/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 34,
+        "date_filed": "2026-08-25",
+        "time_filed": "18:01:18",
+        "date_display": "Aug 25, 2026",
+        "description": "NOTICE by Anthropic PBC of Filing of Administrative Motion to Consider Whether Cases Should be Related (Attachments: # 1 Exhibit A)(Mehta, Sonal) (Filed on 8/25/2026) (Entered: 08/25/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 33,
+        "date_filed": "2026-08-11",
+        "time_filed": "",
+        "date_display": "Aug 11, 2026",
+        "description": "CLERK'S NOTICE RESETTING ZOOM HEARING (Time Change Only). Case Management Conference reset for 9/2/2026 at 04:00 PM in San Jose, - Videoconference Only before Judge Eumi K. Lee. This proceeding will be held via a Zoom meeting.Court Appearances: Advanced notice is required of counsel or parties who will be present at the hearing. A list of names and emails must be sent to the CRD at eklcrd@cand.uscourts.gov no later than 8/31/2026 at 5:00 PM.Civ LR 77-3(d). Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited. (This is a text-only entry generated by the court. There is no document associated with this entry.)(lrt, COURT STAFF) (Filed on 8/11/2026) (Entered: 08/11/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-11",
+        "time_filed": "14:20:47",
+        "date_display": "Aug 11, 2026",
+        "description": "Clerk's Notice AND Clerk's Notice Setting Zoom Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 32,
+        "date_filed": "2026-08-04",
+        "time_filed": "08:17:54",
+        "date_display": "Aug 4, 2026",
+        "description": "ORDER Granting 31 Joint Stipulation Setting Schedule for Filing of Amended Complaint and Response. Signed by Judge Eumi K. Lee.(lrt, COURT STAFF) (Filed on 8/4/2026) (Entered: 08/04/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.466061/gov.uscourts.cand.466061.32.0.pdf"
+      },
+      {
+        "entry_number": 31,
+        "date_filed": "2026-07-31",
+        "time_filed": "17:29:06",
+        "date_display": "Jul 31, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER Setting Schedule for Filing of Amended Complaint and Response filed by BMG Rights Management (US) LLC. (Attachments: # 1 Declaration of Nathaniel Bach)(Bach, Nathaniel) (Filed on 7/31/2026) (Entered: 07/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.466061/gov.uscourts.cand.466061.31.0.pdf"
+      },
+      {
+        "entry_number": 30,
+        "date_filed": "2026-07-20",
+        "time_filed": "",
+        "date_display": "Jul 20, 2026",
+        "description": "CLERK'S NOTICE SETTING ZOOM HEARING. Case Management Conference set for 9/2/2026 at 03:00 PM before Judge Eumi K. Lee. This proceeding will be held via a Zoom meeting. No further status reports needed at this time for this hearing.Court Appearances: Advanced notice is required of counsel or parties who will be present at the hearing. A list of names and emails must be sent to the CRD at eklcrd@cand.uscourts.gov no later than 8/31/2026 at 5:00 PM.Civ LR 77-3(d). Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited. (This is a text-only entry generated by the court. There is no document associated with this entry.) (lrt, COURT STAFF) (Filed on 7/20/2026) (Entered: 07/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-20",
+        "time_filed": "08:58:35",
+        "date_display": "Jul 20, 2026",
+        "description": "Clerk's Notice Setting Zoom Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 29,
+        "date_filed": "2026-04-24",
+        "time_filed": "16:37:37",
+        "date_display": "Apr 24, 2026",
+        "description": "ORDER REGARDING TEMPORARY STAY OF RELATED ACTIONS. All case deadlines and hearing dates are CONTINUED for approximately 90 days. Anthropic's motion (ECF No. 59 in 5:26-cv-00880-EKL) is DENIED, and the May 20, 2026 hearing is VACATED. Signed by Judge Eumi K. Lee on 4/24/2026. (lrt, COURT STAFF) (Filed on 4/24/2026) (Entered: 04/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.466061/gov.uscourts.cand.466061.29.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-24",
+        "time_filed": "16:49:15",
+        "date_display": "Apr 24, 2026",
+        "description": "Set Deadlines/Hearings",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 28,
+        "date_filed": "2026-04-15",
+        "time_filed": "11:47:55",
+        "date_display": "Apr 15, 2026",
+        "description": "ORDER granting 22 Joint Stipulation Regarding Schedule for Response to Complaint and Briefing Schedule. Signed by Judge Eumi K. Lee.(lrt, COURT STAFF) (Filed on 4/15/2026) (Entered: 04/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.466061/gov.uscourts.cand.466061.28.0.pdf"
+      },
+      {
+        "entry_number": 27,
+        "date_filed": "2026-04-15",
+        "time_filed": "11:40:18",
+        "date_display": "Apr 15, 2026",
+        "description": "ORDER granting 20 Motion for Pro Hac Vice as to attorney Robin C. Burrell. Signed by Judge Eumi K. Lee. (lrt, COURT STAFF) (Filed on 4/15/2026) (Entered: 04/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 26,
+        "date_filed": "2026-04-15",
+        "time_filed": "11:38:32",
+        "date_display": "Apr 15, 2026",
+        "description": "ORDER granting 19 Motion for Pro Hac Vice as to Jared Vasconcellos Grubow. Signed by Judge Eumi K. Lee. (lrt, COURT STAFF) (Filed on 4/15/2026) (Entered: 04/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 25,
+        "date_filed": "2026-04-15",
+        "time_filed": "11:36:17",
+        "date_display": "Apr 15, 2026",
+        "description": "ORDER granting 18 Motion for Pro Hac Vice as to attorney Louis W. Tompros. Signed by Judge Eumi K. Lee. (lrt, COURT STAFF) (Filed on 4/15/2026) (Entered: 04/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 24,
+        "date_filed": "2026-04-15",
+        "time_filed": "",
+        "date_display": "Apr 15, 2026",
+        "description": "ORDER REASSIGNING CASE IT IS ORDERED that this case is directly assigned to Judge Eumi K. Lee. Magistrate Judge Alex G. Tse no longer assigned to the case. Counsel are instructed that all future filings shall bear the updated judicial initials immediately after the case number. Counsel are reminded to verify the location of the judge on the court website. All hearing and trial dates presently scheduled are vacated. However, existing briefing schedules for motions remain unchanged. Motions must be renoticed for hearing before the judge to whom the case has been reassigned, but the renoticing of the hearing does not affect the prior briefing schedule. Other deadlines such as those for ADR compliance and discovery cutoff also remain unchanged. Mark B. Busby Clerk, United States District Court (This is a text-only entry generated by the court. There is no document associated with this…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-15",
+        "time_filed": "08:45:32",
+        "date_display": "Apr 15, 2026",
+        "description": "Case Referred to Magistrate Judge for Discovery",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-15",
+        "time_filed": "08:44:20",
+        "date_display": "Apr 15, 2026",
+        "description": "Case Assigned/Reassigned",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-15",
+        "time_filed": "",
+        "date_display": "Apr 15, 2026",
+        "description": "CASE REFERRED to Magistrate Judge Susan van Keulen for Discovery. (mxg, COURT STAFF) (Filed on 4/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 23,
+        "date_filed": "2026-04-14",
+        "time_filed": "17:48:16",
+        "date_display": "Apr 14, 2026",
+        "description": "RELATED CASE ORDER. Case No. 3:26-cv-02334-AGT is related to Case No. 5:24-cv-03811-EKL and shall be reassigned to Judge Eumi K. Lee. Signed by Judge Eumi K. Lee on 4/14/2026. (lrt, COURT STAFF) (Filed on 4/14/2026) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.466061/gov.uscourts.cand.466061.23.0.pdf"
+      },
+      {
+        "entry_number": 22,
+        "date_filed": "2026-04-07",
+        "time_filed": "17:22:28",
+        "date_display": "Apr 7, 2026",
+        "description": "STIPULATION WITH PROPOSED ORDER Regarding Schedule for Response to Complaint and Briefing Schedule (Joint) filed by Anthropic PBC. (Attachments: # 1 Declaration of Robin C. Burrell in Support)(Mehta, Sonal) (Filed on 4/7/2026) (Entered: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.466061/gov.uscourts.cand.466061.22.0.pdf"
+      },
+      {
+        "entry_number": 21,
+        "date_filed": "2026-04-07",
+        "time_filed": "17:05:16",
+        "date_display": "Apr 7, 2026",
+        "description": "Corporate Disclosure Statement by Anthropic PBC identifying Other Affiliate Amazon.com Inc., Other Affiliate Alphabet, Inc., Other Affiliate Google LLC, Other Affiliate Amazon Web Services, Inc. for Anthropic PBC., (Mehta, Sonal) (Filed on 4/7/2026) (Entered: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 20,
+        "date_filed": "2026-04-07",
+        "time_filed": "16:54:59",
+        "date_display": "Apr 7, 2026",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21843844.) filed by Anthropic PBC. (Burrell, Robin) (Filed on 4/7/2026) (Entered: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 19,
+        "date_filed": "2026-04-07",
+        "time_filed": "16:47:49",
+        "date_display": "Apr 7, 2026",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21843804.) filed by Anthropic PBC. (Grubow, Jared) (Filed on 4/7/2026) (Entered: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 18,
+        "date_filed": "2026-04-07",
+        "time_filed": "16:39:12",
+        "date_display": "Apr 7, 2026",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21843752.) filed by Anthropic PBC. (Tompros, Louis) (Filed on 4/7/2026) (Entered: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 17,
+        "date_filed": "2026-04-07",
+        "time_filed": "",
+        "date_display": "Apr 7, 2026",
+        "description": "NOTICE of Appearance filed by Ari Holtzblatt on behalf of Anthropic PBC (Holtzblatt, Ari) (Filed on 4/7/2026) (Entered: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 16,
+        "date_filed": "2026-04-07",
+        "time_filed": "",
+        "date_display": "Apr 7, 2026",
+        "description": "NOTICE of Appearance filed by Sonal N. Mehta on behalf of Anthropic PBC (Mehta, Sonal) (Filed on 4/7/2026) (Entered: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-07",
+        "time_filed": "16:31:33",
+        "date_display": "Apr 7, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 15,
+        "date_filed": "2026-04-06",
+        "time_filed": "15:34:16",
+        "date_display": "Apr 6, 2026",
+        "description": "ADMINISTRATIVE MOTION TO CONSIDER WHETHER CASES SHOULD BE RELATED PURSUANT TO CIVIL LOCAL RULES 3-12 AND 7-11 filed by BMG Rights Management (US) LLC. Responses due by 4/10/2026. (Attachments: # 1 Exhibit Exhibt A, # 2 Exhibit Exhibit B, # 3 Exhibit Exhibit C)(Jacobs, Robert) (Filed on 4/6/2026) (Entered: 04/06/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.466061/gov.uscourts.cand.466061.15.0.pdf"
+      },
+      {
+        "entry_number": 14,
+        "date_filed": "2026-03-30",
+        "time_filed": "14:47:10",
+        "date_display": "Mar 30, 2026",
+        "description": "CONSENT/DECLINATION to Proceed Before a US Magistrate Judge by BMG Rights Management (US) LLC.. (Jacobs, Robert) (Filed on 3/30/2026) (Entered: 03/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 13,
+        "date_filed": "2026-03-24",
+        "time_filed": "14:26:30",
+        "date_display": "Mar 24, 2026",
+        "description": "SUMMONS Returned Executed by BMG Rights Management (US) LLC. Anthropic PBC served on 3/20/2026, answer due 4/10/2026. (Jacobs, Robert) (Filed on 3/24/2026) (Entered: 03/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 12,
+        "date_filed": "2026-03-19",
+        "time_filed": "10:06:03",
+        "date_display": "Mar 19, 2026",
+        "description": "ORDER Granting Application for Admission of Attorney Pro Hac Vice signed by Magistrate Judge Alex G. Tse: granting 8 Application. (shy, COURT STAFF) (Filed on 3/19/2026) (Entered: 03/19/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 11,
+        "date_filed": "2026-03-19",
+        "time_filed": "10:05:15",
+        "date_display": "Mar 19, 2026",
+        "description": "ORDER Granting Application for Admission of Attorney Pro Hac Vice signed by Magistrate Judge Alex G. Tse: granting 7 Application. (shy, COURT STAFF) (Filed on 3/19/2026) (Entered: 03/19/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 10,
+        "date_filed": "2026-03-19",
+        "time_filed": "08:14:17",
+        "date_display": "Mar 19, 2026",
+        "description": "Summons Issued as to Anthropic PBC. (kam2, COURT STAFF) (Filed on 3/19/2026) (Entered: 03/19/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 9,
+        "date_filed": "2026-03-19",
+        "time_filed": "08:11:06",
+        "date_display": "Mar 19, 2026",
+        "description": "Initial Case Management Scheduling Order with ADR Deadlines: Case Management Statement due by 6/19/2026. Initial Case Management Conference set for 6/26/2026 02:00 PM in San Francisco, - Videoconference Only. (kam2, COURT STAFF) (Filed on 3/19/2026) (Entered: 03/19/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 8,
+        "date_filed": "2026-03-18",
+        "time_filed": "13:31:33",
+        "date_display": "Mar 18, 2026",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21770256.) filed by BMG Rights Management (US) LLC. (Attachments: # 1 Certificate of Good Standing)(Cooper, Evan) (Filed on 3/18/2026) (Entered: 03/18/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 7,
+        "date_filed": "2026-03-18",
+        "time_filed": "13:06:06",
+        "date_display": "Mar 18, 2026",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21770049.) filed by BMG Rights Management (US) LLC. (Attachments: # 1 Certificate of Good Standing)(Topper, Prana) (Filed on 3/18/2026) (Entered: 03/18/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 6,
+        "date_filed": "2026-03-18",
+        "time_filed": "",
+        "date_display": "Mar 18, 2026",
+        "description": "Case assigned to Magistrate Judge Alex G. Tse. Counsel for plaintiff or the removing party is responsible for serving the Complaint or Notice of Removal, Summons and the assigned judge's standing orders and all other new case documents upon the opposing parties. For information, visit E-Filing A New Civil Case at http://cand.uscourts.gov/ecf/caseopening.Standing orders can be downloaded from the court's web page at www.cand.uscourts.gov/judges. Upon receipt, the summons will be issued and returned electronically. A scheduling order will be sent by Notice of Electronic Filing (NEF) within two business days. Consent/Declination due by 4/1/2026. (jnk, COURT STAFF) (Filed on 3/18/2026) (Entered: 03/18/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-18",
+        "time_filed": "08:49:55",
+        "date_display": "Mar 18, 2026",
+        "description": "~Util - Case Assigned by Intake",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 5,
+        "date_filed": "2026-03-17",
+        "time_filed": "17:25:01",
+        "date_display": "Mar 17, 2026",
+        "description": "Corporate Disclosure Statement by BMG Rights Management (US) LLC identifying Corporate Parent Bertelsmann, Inc., Corporate Parent Bertelsmann SE & Co. KGaA for BMG Rights Management (US) LLC. (Jacobs, Robert) (Filed on 3/17/2026) (Entered: 03/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 4,
+        "date_filed": "2026-03-17",
+        "time_filed": "",
+        "date_display": "Mar 17, 2026",
+        "description": "NOTICE of Appearance filed by Robert Allan Jacobs on behalf of BMG Rights Management (US) LLC (Jacobs, Robert) (Filed on 3/17/2026) (Entered: 03/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 3,
+        "date_filed": "2026-03-17",
+        "time_filed": "",
+        "date_display": "Mar 17, 2026",
+        "description": "NOTICE of Appearance filed by Nathaniel L Bach on behalf of BMG Rights Management (US) LLC (Bach, Nathaniel) (Filed on 3/17/2026) (Entered: 03/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 2,
+        "date_filed": "2026-03-17",
+        "time_filed": "17:08:59",
+        "date_display": "Mar 17, 2026",
+        "description": "Proposed Summons. (Jacobs, Robert) (Filed on 3/17/2026) (Entered: 03/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1,
+        "date_filed": "2026-03-17",
+        "time_filed": "16:21:25",
+        "date_display": "Mar 17, 2026",
+        "description": "COMPLAINT and Demand for Jury Trial against Anthropic PBC ( Filing fee $ 405, receipt number ACANDC-21766584.). Filed by BMG Rights Management (US) LLC. (Attachments: # 1 Exhibit A, # 2 Exhibit B)(Jacobs, Robert) (Filed on 3/17/2026) (Entered: 03/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.466061/gov.uscourts.cand.466061.1.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-17",
+        "time_filed": "17:15:41",
+        "date_display": "Mar 17, 2026",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ]
   },
   "claims_administrator": null,
   "coverage": []

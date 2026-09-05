@@ -16,9 +16,9 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
     "date_last_filing": "2026-09-03",
-    "meta_fetched_at": "2026-09-04T00:10:28.981638+00:00",
-    "fetched_at": "2026-09-04T14:26:19.872618+00:00",
-    "as_of": "Sep 4, 2026",
+    "meta_fetched_at": "2026-09-05T00:12:22.310341+00:00",
+    "fetched_at": "2026-09-05T00:12:22.310341+00:00",
+    "as_of": "Sep 5, 2026",
     "backfilled": true,
     "new_in_72h": 4,
     "recent": [
@@ -27,7 +27,7 @@
         "date_filed": "2026-09-03",
         "time_filed": "14:14:48",
         "date_display": "Sep 3, 2026",
-        "description": "Transcript Order",
+        "description": "TRANSCRIPT ORDER for proceedings held on 09/02/2026 before Judge Eumi K. Lee by Anthropic PBC, for Court Reporter Irene Rodriguez. (Mehta, Sonal) (Filed on 9/3/2026) (Entered: 09/03/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -37,7 +37,7 @@
         "date_filed": "2026-09-03",
         "time_filed": "09:29:26",
         "date_display": "Sep 3, 2026",
-        "description": "Transcript Order",
+        "description": "*DISREGARD* See Transcript Order at Dkt. 796 . (Mehta, Sonal) (Filed on 9/3/2026) Modified on 9/3/2026 (lmh, COURT STAFF). (Entered: 09/03/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -59,7 +59,7 @@
         "date_filed": "2026-09-03",
         "time_filed": "14:14:48",
         "date_display": "Sep 3, 2026",
-        "description": "Transcript Order",
+        "description": "TRANSCRIPT ORDER for proceedings held on 09/02/2026 before Judge Eumi K. Lee by Anthropic PBC, for Court Reporter Irene Rodriguez. (Mehta, Sonal) (Filed on 9/3/2026) (Entered: 09/03/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -69,7 +69,7 @@
         "date_filed": "2026-09-03",
         "time_filed": "09:29:26",
         "date_display": "Sep 3, 2026",
-        "description": "Transcript Order",
+        "description": "*DISREGARD* See Transcript Order at Dkt. 796 . (Mehta, Sonal) (Filed on 9/3/2026) Modified on 9/3/2026 (lmh, COURT STAFF). (Entered: 09/03/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -91,6 +91,16 @@
         "date_display": "Sep 3, 2026",
         "description": "Status Conference",
         "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 795,
+        "date_filed": "2026-09-02",
+        "time_filed": "",
+        "date_display": "Sep 2, 2026",
+        "description": "Minute Entry for proceedings held before Judge Eumi K. Lee: Status Conference held on 9/2/2026. The Court adopted its tentative ruling regarding phased discovery. The Court ordered the parties to meet and confer and file a proposed coordination and case management order by 9/23/2026. The Court ordered the parties to meet and confer regarding discovery relating to book scanning and allowed each side to file an issue statement of no more than three (3) pages by 9/11/2026. The Court ordered the parties to meet and confer regarding which of the pending Daubert motions must be addressed in connection with the pending motions for summary judgment. The parties are to notify the Court by filing a joint status report or by emailing the Courtroom Deputy by 9/11/2026. Plaintiffs' Attorneys: Matthew Oppenheim, Corey Miller, Michelle Gomez-Reichman; Robert Jacobs, Nathaniel Bach, Prana Topper, Evan…",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-09-04",
     "meta_fetched_at": "2026-09-04T17:29:37.056208+00:00",
-    "fetched_at": "2026-09-04T21:33:37.857903+00:00",
-    "as_of": "Sep 4, 2026",
+    "fetched_at": "2026-09-05T00:10:21.603434+00:00",
+    "as_of": "Sep 5, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 2,
     "recent": [
       {
         "entry_number": 93,
@@ -48,7 +48,7 @@
         "time_filed": "13:06:32",
         "date_display": "Sep 2, 2026",
         "description": "Order Granting, in Part, Skillz Platform Inc.'s Motion to Compel Production of Documents and Witness for Deposition (Related Doc [73], [78], [91]) Signed on 9/2/2026. (LMC)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.92.0.pdf"
       }
@@ -80,7 +80,7 @@
         "time_filed": "13:06:32",
         "date_display": "Sep 2, 2026",
         "description": "Order Granting, in Part, Skillz Platform Inc.'s Motion to Compel Production of Documents and Witness for Deposition (Related Doc [73], [78], [91]) Signed on 9/2/2026. (LMC)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.92.0.pdf"
       },

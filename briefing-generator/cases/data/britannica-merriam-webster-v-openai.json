@@ -15,19 +15,29 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/",
-    "date_last_filing": "2026-09-03",
-    "meta_fetched_at": "2026-09-04T00:10:21.895760+00:00",
-    "fetched_at": "2026-09-04T14:26:13.329058+00:00",
-    "as_of": "Sep 4, 2026",
+    "date_last_filing": "2026-09-04",
+    "meta_fetched_at": "2026-09-05T00:12:16.843735+00:00",
+    "fetched_at": "2026-09-05T00:12:16.843735+00:00",
+    "as_of": "Sep 5, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 62,
+        "date_filed": "2026-09-04",
+        "time_filed": "12:32:22",
+        "date_display": "Sep 4, 2026",
+        "description": "REDACTION to (1700 in 1:25-md-03143-SHS-OTW) MOTION for Summary Judgment . by Daily News LP, The New York Times Company, Ziff Davis Inc.Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Crosby, Ian) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 61,
         "date_filed": "2026-09-03",
         "time_filed": "13:00:25",
         "date_display": "Sep 3, 2026",
-        "description": "Stipulation and Order AND ~Util - Set Deadlines",
+        "description": "STIPULATED OMNIBUS SEALING ORDER FOR SUMMARY JUDGMENT AND DAUBERT BRIEFING: IT IS HEREBY ORDERED that sealing issues relating to summary judgment and Daubert briefing will be handled as follows: 1. The Parties may provisionally seal portions of briefing and exhibits (including expert reports and declarations) relating to Daubert briefing that contain or refer to material produced in this case that is designated Protected Discovery Material. 2. The Parties may provisionally seal exhibits ( or portions thereof) relating to summary judgment briefing (including expert reports and declarations) that contain or refer to material produced in this case that is designated Protected Discovery Material. 3. For the material addressed in paragraphs 1 and 2 above (the \"Provisionally Sealed Material\"), the Parties are relieved from the requirement set forth in paragraph 5(8) of Judge Stein's…",
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.61.0.pdf"
@@ -37,29 +47,29 @@
         "date_filed": "2026-09-01",
         "time_filed": "21:52:52",
         "date_display": "Sep 1, 2026",
-        "description": "Letter",
+        "description": "LETTER addressed to Judge Sidney H. Stein from United States of America dated September 1, 2026 re: STATEMENT OF INTEREST OF UNITED STATES OF AMERICA. Document filed by United States of America.Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Weisbuch, Michael) (Entered: 09/01/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.60.0.pdf"
-      },
-      {
-        "entry_number": 59,
-        "date_filed": "2026-08-12",
-        "time_filed": "11:58:14",
-        "date_display": "Aug 12, 2026",
-        "description": "Memo Endorsement",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.59.0.pdf"
       }
     ],
     "entries": [
       {
+        "entry_number": 62,
+        "date_filed": "2026-09-04",
+        "time_filed": "12:32:22",
+        "date_display": "Sep 4, 2026",
+        "description": "REDACTION to (1700 in 1:25-md-03143-SHS-OTW) MOTION for Summary Judgment . by Daily News LP, The New York Times Company, Ziff Davis Inc.Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Crosby, Ian) (Entered: 09/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 61,
         "date_filed": "2026-09-03",
         "time_filed": "13:00:25",
         "date_display": "Sep 3, 2026",
-        "description": "Stipulation and Order AND ~Util - Set Deadlines",
+        "description": "STIPULATED OMNIBUS SEALING ORDER FOR SUMMARY JUDGMENT AND DAUBERT BRIEFING: IT IS HEREBY ORDERED that sealing issues relating to summary judgment and Daubert briefing will be handled as follows: 1. The Parties may provisionally seal portions of briefing and exhibits (including expert reports and declarations) relating to Daubert briefing that contain or refer to material produced in this case that is designated Protected Discovery Material. 2. The Parties may provisionally seal exhibits ( or portions thereof) relating to summary judgment briefing (including expert reports and declarations) that contain or refer to material produced in this case that is designated Protected Discovery Material. 3. For the material addressed in paragraphs 1 and 2 above (the \"Provisionally Sealed Material\"), the Parties are relieved from the requirement set forth in paragraph 5(8) of Judge Stein's…",
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.61.0.pdf"
@@ -69,17 +79,17 @@
         "date_filed": "2026-09-01",
         "time_filed": "21:52:52",
         "date_display": "Sep 1, 2026",
-        "description": "Letter",
+        "description": "LETTER addressed to Judge Sidney H. Stein from United States of America dated September 1, 2026 re: STATEMENT OF INTEREST OF UNITED STATES OF AMERICA. Document filed by United States of America.Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Weisbuch, Michael) (Entered: 09/01/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.60.0.pdf"
       },
       {
         "entry_number": 59,
-        "date_filed": "2026-08-12",
-        "time_filed": "11:58:14",
-        "date_display": "Aug 12, 2026",
-        "description": "Memo Endorsement",
+        "date_filed": "2026-08-11",
+        "time_filed": "",
+        "date_display": "Aug 11, 2026",
+        "description": "MEMO ENDORSEMENT granting on re: (1383 in 1:23-cv-11195-SHS-OTW, 1162 in 1:23-cv-08292-SHS-OTW, 527 in 1:25-cv-04315-SHS-OTW) MOTION for Rose S. Lee to Withdraw as Attorney . filed by OpenAI, Inc., OpenAI GP LLC, OpenAI Startup Fund GP I LLC, OpenAI LP, OAI Corporation LLC, OpenAI Group PBC, OpenAI OpCo, L.L.C., OpenAI Startup Fund I LP, OpenAI GP, LLC, OpenAI Holdings LLC, OpenAI OpCo LLC, OpenAI, LLC, OpenAI Holdings, LLC, OpenAI Global LLC, OpenAI Inc., OpenAI LLC, OpenAI Startup Fund Management LLC, OpenAI Global, L.L.C., OAI Corporation, OAI Corporation, LLC. ENDORSEMENT: Accordingly, Rose S. Lee requests that her withdrawal as counsel be granted and that she be removed from this actions electronic case filing (ECF) service list. Application GRANTED. SO ORDERED. (Signed by Magistrate Judge Ona T. Wang on 8/11/2026) (jjc) (Entered: 08/12/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.59.0.pdf"
@@ -89,7 +99,7 @@
         "date_filed": "2026-08-07",
         "time_filed": "17:54:46",
         "date_display": "Aug 7, 2026",
-        "description": "Order AND ~Util - Set Deadlines",
+        "description": "ORDER: The following word limits shall apply to summary judgment motions in the News Cases: Opening Briefs: 8,750 words for Microsoft; 8,750 words for OpenAI; 17,500 words for News Plaintiffs/ divided as they see fit. Opposition Briefs: 17,500 words for defendants, divided as they see fit; 17,500 words for News Plaintiffs, divided as they see fit. Reply Briefs: 8,750 words for defendants, divided as they see fit; 8,750 words for News Plaintiffs, divided as they see fit. The following limits shall apply to summary judgment motions in the consolidated class cases: Class plaintiffs, OpenAI, and Microsoft may each make only one motion for summary judgment. Class plaintiffs, OpenAI, and Microsoft shall each have 12,500 words for opening and opposition briefs, and 7,500 words each for replies. The following limits and schedule shall apply for Daubert motions in all cases: The Court adopts…",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.58.0.pdf"
@@ -99,7 +109,7 @@
         "date_filed": "2026-08-07",
         "time_filed": "17:50:04",
         "date_display": "Aug 7, 2026",
-        "description": "Order AND ~Util - Set Deadlines",
+        "description": "ORDER: Anyone wishing to file an amicus brief in connection with the summary judgment motions in this multidistrict litigation shall file a motion requesting leave to file an amicus brief no later than October 16, 2026. The motion requesting such leave shall include the proposed amicus brief, which shall be no more than 6,000 words. SO ORDERED. (Motions due by 10/16/2026.) (Signed by Judge Sidney H. Stein on 8/7/2026) Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al. (jca) (Entered: 08/07/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.57.0.pdf"
@@ -109,7 +119,7 @@
         "date_filed": "2026-08-05",
         "time_filed": "17:34:43",
         "date_display": "Aug 5, 2026",
-        "description": "Proposed Stipulation and Order",
+        "description": "PROPOSED STIPULATION AND ORDER. Document filed by The New York Times Company..(Brook, Davida) (Entered: 08/05/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.56.0.pdf"
@@ -119,7 +129,7 @@
         "date_filed": "2026-08-05",
         "time_filed": "17:23:30",
         "date_display": "Aug 5, 2026",
-        "description": "Letter",
+        "description": "JOINT LETTER addressed to Judge Sidney H. Stein from Davida Brook, Justin A. Nelson, Lisa T. Simpson & R. James Slaughter dated 08/05/2026 re: word limits for summary judgment briefs on class plaintiffs' claims and limitations on Daubert briefs. Document filed by The New York Times Company.Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Brook, Davida) (Entered: 08/05/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.55.0.pdf"
@@ -129,7 +139,7 @@
         "date_filed": "2026-07-24",
         "time_filed": "22:12:03",
         "date_display": "Jul 24, 2026",
-        "description": "Summons Returned Executed",
+        "description": "SUMMONS RETURNED EXECUTED Summons and Complaint,, served. Service was accepted by Elias Green, Authorized to Accept Service for The Corporation Trust Company, Agent for Service of Process for OPENAI, LLC. Document filed by Merriam-Webster, Inc., Encyclopaedia Britannica, Inc...(Park, Yoonhee) (Entered: 07/24/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -139,7 +149,7 @@
         "date_filed": "2026-07-24",
         "time_filed": "22:07:52",
         "date_display": "Jul 24, 2026",
-        "description": "Summons Returned Executed",
+        "description": "SUMMONS RETURNED EXECUTED Summons and Complaint,, served. Service was accepted by Elias Green, Authorized to Accept Service for The Corporation Trust Company, Agent for Service of Process for OPENAI, INC.. Document filed by Merriam-Webster, Inc., Encyclopaedia Britannica, Inc...(Park, Yoonhee) (Entered: 07/24/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -149,7 +159,7 @@
         "date_filed": "2026-07-24",
         "time_filed": "22:05:00",
         "date_display": "Jul 24, 2026",
-        "description": "Summons Returned Executed",
+        "description": "SUMMONS RETURNED EXECUTED Summons and Complaint,, served. Service was accepted by Robin Hutt-Banks, Authorized to Accept Service for The Corporation Trust Company, Agent for Service of Process for OpenAl OpCo LLC. Document filed by Merriam-Webster, Inc., Encyclopaedia Britannica, Inc...(Park, Yoonhee) (Entered: 07/24/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -159,7 +169,7 @@
         "date_filed": "2026-07-24",
         "time_filed": "22:02:12",
         "date_display": "Jul 24, 2026",
-        "description": "Summons Returned Executed",
+        "description": "SUMMONS RETURNED EXECUTED Summons and Complaint,, served. Service was accepted by Robin Hutt-Banks, Authorized to Accept Service for The Corporation Trust Company, Agent for Service of Process for OpenAl LP. Document filed by Merriam-Webster, Inc., Encyclopaedia Britannica, Inc...(Park, Yoonhee) (Entered: 07/24/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -169,7 +179,7 @@
         "date_filed": "2026-07-24",
         "time_filed": "21:58:30",
         "date_display": "Jul 24, 2026",
-        "description": "Summons Returned Executed",
+        "description": "SUMMONS RETURNED EXECUTED Summons and Complaint,, served. Service was accepted by Robin Hutt-Banks, Authorized to Accept Service for The Corporation Trust Company, Agent for Service of Process for OpenAl Holdings LLC. Document filed by Merriam-Webster, Inc., Encyclopaedia Britannica, Inc...(Park, Yoonhee) (Entered: 07/24/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -179,7 +189,7 @@
         "date_filed": "2026-07-24",
         "time_filed": "21:52:38",
         "date_display": "Jul 24, 2026",
-        "description": "Summons Returned Executed",
+        "description": "SUMMONS RETURNED EXECUTED Summons and Complaint,, served. Service was accepted by Robin Hutt-Banks, Authorized to Accept Service for The Corporation Trust Company, Agent for Service of Process for OpenAl Group PBC. Document filed by Merriam-Webster, Inc., Encyclopaedia Britannica, Inc...(Park, Yoonhee) (Entered: 07/24/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -189,7 +199,7 @@
         "date_filed": "2026-07-24",
         "time_filed": "21:41:56",
         "date_display": "Jul 24, 2026",
-        "description": "Summons Returned Executed",
+        "description": "SUMMONS RETURNED EXECUTED Summons and Complaint,, served. Service was accepted by Robin Hutt-Banks, Authorized to Accept Service for The Corporation Trust Company, Agent for Service of Process. Document filed by Merriam-Webster, Inc., Encyclopaedia Britannica, Inc...(Park, Yoonhee) (Entered: 07/24/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -199,7 +209,7 @@
         "date_filed": "2026-07-24",
         "time_filed": "21:08:27",
         "date_display": "Jul 24, 2026",
-        "description": "Summons Returned Executed",
+        "description": "SUMMONS RETURNED EXECUTED Summons and Complaint,, served. Service was accepted by Robin Hutt-Banks, Authorized to Accept Service for The Corporation Trust Company, Agent for Service of Process. Document filed by Merriam-Webster, Inc., Encyclopaedia Britannica, Inc...(Park, Yoonhee) (Entered: 07/24/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -209,7 +219,7 @@
         "date_filed": "2026-07-24",
         "time_filed": "21:02:56",
         "date_display": "Jul 24, 2026",
-        "description": "Summons Returned Executed",
+        "description": "SUMMONS RETURNED EXECUTED Summons and Complaint,, served. Service was accepted by Robin Hutt-Banks, Authorized to Accept Service for The Corporation Trust Company, Agent for Service of Process. Document filed by Merriam-Webster, Inc., Encyclopaedia Britannica, Inc...(Park, Yoonhee) (Entered: 07/24/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -219,10 +229,20 @@
         "date_filed": "2026-07-14",
         "time_filed": "17:21:39",
         "date_display": "Jul 14, 2026",
-        "description": "Order",
+        "description": "ORDER: The Court is in receipt of News Plaintiffs' motion for sanctions against Defendant OpenAI at ECF 1618. Parties are directed to meet and confer and file a proposed briefing schedule for the reply and response briefs by Friday, July 17, 2026. (Signed by Magistrate Judge Ona T. Wang on 7/14/2026) Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al. (rro) (Entered: 07/14/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.45.0.pdf"
+      },
+      {
+        "entry_number": 44,
+        "date_filed": "2026-07-14",
+        "time_filed": "",
+        "date_display": "Jul 14, 2026",
+        "description": "ORDER in case 1:23-cv-08292-SHS-OTW; granting (1617) Letter Motion for Leave to File Document in case 1:25-md-03143-SHS-OTW. Leave to file excess pages in regards to the motion for sanctions is GRANTED. (HEREBY ORDERED by Magistrate Judge Ona T. Wang)(Text Only Order) Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al. (Entered: 07/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       },
       {
         "entry_number": null,

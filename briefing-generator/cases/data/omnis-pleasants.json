@@ -16,10 +16,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-09-04",
     "meta_fetched_at": "2026-09-04T21:33:26.187897+00:00",
-    "fetched_at": "2026-09-04T21:33:26.187897+00:00",
-    "as_of": "Sep 4, 2026",
+    "fetched_at": "2026-09-05T00:10:13.520900+00:00",
+    "as_of": "Sep 5, 2026",
     "backfilled": true,
-    "new_in_72h": 36,
+    "new_in_72h": 15,
     "recent": [
       {
         "entry_number": 252,
@@ -209,7 +209,7 @@
         "time_filed": "20:15:01",
         "date_display": "Sep 2, 2026",
         "description": "Motion to Appear pro hac vice of Lauren M. Laino of Lowenstein Sandler LLP. Receipt Number 5057241, Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -219,7 +219,7 @@
         "time_filed": "20:11:53",
         "date_display": "Sep 2, 2026",
         "description": "Motion to Appear pro hac vice of Nicole M. Fulfree of Lowenstein Sandler LLP. Receipt Number 5057241, Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -229,7 +229,7 @@
         "time_filed": "20:04:24",
         "date_display": "Sep 2, 2026",
         "description": "Letter to Chief Judge Karen B. Owens from Michael A. Kaplan of Lowenstein Sandler LLP re: Schedule for Proceedings in Connection with Motion to Dismiss (related document(s)93) Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.235.0.pdf"
       },
@@ -239,7 +239,7 @@
         "time_filed": "19:06:57",
         "date_display": "Sep 2, 2026",
         "description": "Exhibit(s) / Amended Witness and Exhibit List of Omnis Fuel Technologies, LLC and Quantum Pleasants LLC for Hearing Set for September 3, 2026 at 11:30 a.m. (ET) (related document(s)83, 205) Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.234.0.pdf"
       },
@@ -249,7 +249,7 @@
         "time_filed": "16:58:27",
         "date_display": "Sep 2, 2026",
         "description": "Motion to Appear pro hac vice of Jackson T. Garvey of Sidley Austin LLP. Receipt Number 5057164, Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -259,7 +259,7 @@
         "time_filed": "16:57:22",
         "date_display": "Sep 2, 2026",
         "description": "Motion to Appear pro hac vice of Kenneth W. Irvin of Sidley Austin LLP. Receipt Number 5057164, Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -269,7 +269,7 @@
         "time_filed": "16:09:29",
         "date_display": "Sep 2, 2026",
         "description": "Order Granting Motion for Admission pro hac vice of John A. Morris, Esquire (Related Doc # 223) Order Signed on 9/2/2026. (CEB) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.231.0.pdf"
       },
@@ -279,7 +279,7 @@
         "time_filed": "16:08:31",
         "date_display": "Sep 2, 2026",
         "description": "Order Granting Motion for Admission pro hac vice of Theodore S. Heckel, Sr., Esquire (Related Doc # 221) Order Signed on 9/2/2026. (CEB) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -289,7 +289,7 @@
         "time_filed": "16:07:36",
         "date_display": "Sep 2, 2026",
         "description": "Order Granting Motion for Admission pro hac vice of Ira D. Kharasch, Esquire (Related Doc # 219) Order Signed on 9/2/2026. (CEB) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -299,7 +299,7 @@
         "time_filed": "16:05:37",
         "date_display": "Sep 2, 2026",
         "description": "Order Granting Motion of the Prepetition Secured Parties for Leave to File Reply of the Prepetition Secured Parties to Objections to the Debtor's Bidding Procedures Motion and Reservation of Rights With Respect to Cash Collateral (Related Doc # 213, 214) Order Signed on 9/2/2026. (Mml) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.228.0.pdf"
       },
@@ -309,7 +309,7 @@
         "time_filed": "16:03:48",
         "date_display": "Sep 2, 2026",
         "description": "Amended Notice of Agenda of Matters Scheduled for Hearing (related document(s)208, 217) Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 11:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Faris, S. Alexander) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.227.0.pdf"
       },
@@ -319,7 +319,7 @@
         "time_filed": "14:30:20",
         "date_display": "Sep 2, 2026",
         "description": "Request for Service of Notices Filed by Oracle America, Inc.. (Christianson, Shawn) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -329,7 +329,7 @@
         "time_filed": "14:17:32",
         "date_display": "Sep 2, 2026",
         "description": "Exhibit(s) - Debtor's Witness and Exhibit List for Hearing Scheduled for September 3, 2026 at 11:30 a.m. (ET) Filed by Omnis Pleasants, LLC. (Diver, James) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.225.0.pdf"
       },
@@ -339,7 +339,7 @@
         "time_filed": "",
         "date_display": "Sep 2, 2026",
         "description": "Minute Sheet 341 Meeting Held and Continued Held on September 2, 2026, and Continued to a Date To Be Determined Filed by U.S. Trustee. (Hackman, Benjamin) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -349,7 +349,7 @@
         "time_filed": "13:13:54",
         "date_display": "Sep 2, 2026",
         "description": "Motion to Appear pro hac vice for John A. Morris. Receipt Number 5056769, Filed by Angela Chen (f/k/a Angela Chen Sabella), Harmony Trust, Dynamic HC Co (d/b/a Dynamic Holdings Corporation), and Dynamic Finance Corporation. (Jones, Laura Davis) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.223.0.pdf"
       },
@@ -359,7 +359,7 @@
         "time_filed": "13:06:33",
         "date_display": "Sep 2, 2026",
         "description": "Notice of Perfection of Mechanics Lien. Filed by Industrial Accessories Company. (Hitchings, Jarret) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -369,7 +369,7 @@
         "time_filed": "12:36:22",
         "date_display": "Sep 2, 2026",
         "description": "Motion to Appear pro hac vice for Theodore S. Heckel, Sr.. Receipt Number 5056665, Filed by Angela Chen (f/k/a Angela Chen Sabella), Harmony Trust, Dynamic HC Co (d/b/a Dynamic Holdings Corporation), and Dynamic Finance Corporation. (Jones, Laura Davis) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.221.0.pdf"
       },
@@ -379,7 +379,7 @@
         "time_filed": "12:35:23",
         "date_display": "Sep 2, 2026",
         "description": "Order Granting Debtor Leave and Permission to File Omnibus Reply of the Debtor in Support of Its (I) Bidding Procedures Motion and (II) Retention Applications (Related Doc # 211, 212) Order Signed on 9/2/2026. (Mml) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.220.0.pdf"
       },
@@ -389,7 +389,7 @@
         "time_filed": "12:20:51",
         "date_display": "Sep 2, 2026",
         "description": "Motion to Appear pro hac vice for Ira D. Kharasch. Receipt Number 5056645, Filed by Angela Chen (f/k/a Angela Chen Sabella), Harmony Trust, Dynamic HC Co (d/b/a Dynamic Holdings Corporation), and Dynamic Finance Corporation. (Jones, Laura Davis) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.219.0.pdf"
       },
@@ -399,7 +399,7 @@
         "time_filed": "12:07:48",
         "date_display": "Sep 2, 2026",
         "description": "Order Authorizing the Debtor to Retain and Compensate Certain Professionals Utilized by the Debtor in the Ordinary Course of Business (Related Doc # 77, 199) Order Signed on 9/2/2026. (Attachments: # 1 Exhibit 1) (Mml) (Entered: 09/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -409,7 +409,7 @@
         "time_filed": "13:29:29",
         "date_display": "Sep 2, 2026",
         "description": "341 Meeting Held and Continued",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

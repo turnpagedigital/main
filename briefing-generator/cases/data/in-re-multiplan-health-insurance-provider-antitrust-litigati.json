@@ -2,21 +2,1170 @@
   "case": {
     "slug": "in-re-multiplan-health-insurance-provider-antitrust-litigati",
     "display_name": "In re MultiPlan Health Insurance Provider Antitrust Litigation",
-    "case_name": "Healthcare Providers et al. v. MultiPlan (Claritev), UnitedHealth Group, Aetna, Cigna, Elevance et al.",
+    "case_name": "IN RE: MultiPlan Health Insurance Provider Litigation",
     "court": "S.D.N.Y.",
     "case_number": "MDL No. 3121",
     "judge": "Matthew F. Kennelly",
     "docket_id": "68810146",
     "status": "active",
-    "sync": "active"
+    "sync": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68810146/in-re-multiplan-health-insurance-provider-litigation/",
+    "date_last_filing": "2026-06-25",
+    "meta_fetched_at": "2026-09-05T00:13:52.251077+00:00",
+    "fetched_at": "2026-09-05T00:13:52.251077+00:00",
+    "as_of": "Sep 5, 2026",
+    "backfilled": false,
     "new_in_72h": 0,
-    "recent": [],
-    "entries": []
+    "recent": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-25",
+        "time_filed": "",
+        "date_display": "Jun 25, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 6/25/26 via NEF. -- Illinois Northern District Court (1:26-cv-07404) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-23",
+        "time_filed": "",
+        "date_display": "Jun 23, 2026",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 06/18/26 via NEF. -- Illinois Northern District Court (1:26-cv-07137,1:26-cv-07166) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-23",
+        "time_filed": "",
+        "date_display": "Jun 23, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 06/15/26 via NEF. -- Illinois Northern District Court (1:26-cv-06992) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-25",
+        "time_filed": "",
+        "date_display": "Jun 25, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 6/25/26 via NEF. -- Illinois Northern District Court (1:26-cv-07404) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-23",
+        "time_filed": "",
+        "date_display": "Jun 23, 2026",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 06/18/26 via NEF. -- Illinois Northern District Court (1:26-cv-07137,1:26-cv-07166) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-23",
+        "time_filed": "",
+        "date_display": "Jun 23, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 06/15/26 via NEF. -- Illinois Northern District Court (1:26-cv-06992) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-22",
+        "time_filed": "",
+        "date_display": "Jun 22, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 6/22/26 via NEF. -- Illinois Northern District Court (1:26-cv-07231) (JL)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-11",
+        "time_filed": "",
+        "date_display": "Jun 11, 2026",
+        "description": "XYZ CASES ENTERED -- 6 related action(s) originating in the transferee district. JPML notified on 06/03/26-06/05/26 via NEF. -- Illinois Northern District Court (1:26-cv-06538,1:26-cv-06497,1:26-cv-06587,1:26-cv-06588,1:26-cv-06624,1:26-cv-06663) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-11",
+        "time_filed": "",
+        "date_display": "Jun 11, 2026",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 6/11/26 via NEF. -- Illinois Northern District Court (1:26-cv-06869,1:26-cv-06849) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-11",
+        "time_filed": "",
+        "date_display": "Jun 11, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 06/10/26 via NEF. -- Illinois Northern District Court (1:26-cv-06450) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-10",
+        "time_filed": "",
+        "date_display": "Jun 10, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 6/10/26 via NEF. -- Illinois Northern District Court (1:26-cv-06460) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-09",
+        "time_filed": "",
+        "date_display": "Jun 9, 2026",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 6/9/26 via NEF. -- Illinois Northern District Court (1:26-cv-06767,1:26-cv-06773) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-05",
+        "time_filed": "",
+        "date_display": "Jun 5, 2026",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 6/5/26 via NEF. -- Illinois Northern District Court (1:26-cv-06653,1:26-cv-06623) (JL)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-05",
+        "time_filed": "",
+        "date_display": "Jun 5, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 6/5/26 via NEF. -- Illinois Northern District Court (1:26-cv-06620) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-04",
+        "time_filed": "",
+        "date_display": "Jun 4, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 6/4/26 via NEF. -- Illinois Northern District Court (1:26-cv-06555) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-01",
+        "time_filed": "",
+        "date_display": "Jun 1, 2026",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 06/01/26 via NEF. -- Illinois Northern District Court (1:26-cv-06314,1:26-cv-06337) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-01",
+        "time_filed": "",
+        "date_display": "Jun 1, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 05/29/26 via NEF. -- Illinois Northern District Court (1:26-cv-06289) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-28",
+        "time_filed": "",
+        "date_display": "May 28, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 05/26/26 via NEF. -- Illinois Northern District Court (1:26-cv-05911) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-28",
+        "time_filed": "",
+        "date_display": "May 28, 2026",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 5/27/26 - 5/28/26 via NEF. -- Illinois Northern District Court (1:26-cv-06150,1:26-cv-06217) (JL)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-27",
+        "time_filed": "",
+        "date_display": "May 27, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 5/27/26 via NEF. -- Illinois Northern District Court (1:26-cv-06051) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-26",
+        "time_filed": "",
+        "date_display": "May 26, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 05/26/26 via e-mail. -- Illinois Northern District Court (1:26-cv-06057) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-21",
+        "time_filed": "",
+        "date_display": "May 21, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 5/21/26 via NEF. -- Illinois Northern District Court (1:26-cv-05454) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-20",
+        "time_filed": "",
+        "date_display": "May 20, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 5/20/26 via NEF. -- Illinois Northern District Court (1:26-cv-05825) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-19",
+        "time_filed": "",
+        "date_display": "May 19, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 5/18/26 via NEF. -- Illinois Northern District Court (1:26-cv-05747) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-18",
+        "time_filed": "",
+        "date_display": "May 18, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 05/15/26 via NEF. -- Illinois Northern District Court (1:26-cv-05538) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-15",
+        "time_filed": "",
+        "date_display": "May 15, 2026",
+        "description": "XYZ CASES ENTERED -- 6 related action(s) originating in the transferee district. JPML notified on 05/14/26-05/15/26 via NEF. -- Illinois Northern District Court (1:26-cv-05525,1:26-cv-05528,1:26-cv-05545,1:26-cv-05546,1:26-cv-05520,1:26-cv-05562) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-15",
+        "time_filed": "",
+        "date_display": "May 15, 2026",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 5/15/26 via NEF. -- Illinois Northern District Court (1:26-cv-05587,1:26-cv-05599) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-15",
+        "time_filed": "",
+        "date_display": "May 15, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 5/15/26 via NEF. -- Illinois Northern District Court (1:26-cv-05585) (JL)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-14",
+        "time_filed": "",
+        "date_display": "May 14, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 5/14/26 via NEF. -- Illinois Northern District Court (1:26-cv-05420) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-14",
+        "time_filed": "",
+        "date_display": "May 14, 2026",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 5/14/26 via NEF. -- Illinois Northern District Court (1:26-cv-05541,1:26-cv-05566) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-12",
+        "time_filed": "",
+        "date_display": "May 12, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 05/12/26 via NEF. -- Illinois Northern District Court (1:26-cv-05419) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-04",
+        "time_filed": "",
+        "date_display": "May 4, 2026",
+        "description": "XYZ CASES ENTERED -- 3 related action(s) originating in the transferee district. JPML notified on 04/29/26-05/01/26 via NEF. -- Illinois Northern District Court (1:26-cv-04869,1:26-cv-04880,1:26-cv-04881) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-01",
+        "time_filed": "",
+        "date_display": "May 1, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 4/30/26 via NEF. -- Illinois Northern District Court (1:26-cv-04860) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-29",
+        "time_filed": "",
+        "date_display": "Apr 29, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 4/29/26 via NEF. -- Illinois Northern District Court (1:26-cv-04875) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-17",
+        "time_filed": "",
+        "date_display": "Apr 17, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 4/15/26 via NEF. -- Illinois Northern District Court (1:26-cv-02524) (JL)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-10",
+        "time_filed": "",
+        "date_display": "Apr 10, 2026",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 4/9/26 via NEF. -- Illinois Northern District Court (1:26-cv-03863,1:26-cv-03805) (JL)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 125,
+        "date_filed": "2026-04-01",
+        "time_filed": "",
+        "date_display": "Apr 1, 2026",
+        "description": "***TEXT ONLY ENTRY***NOTICE TO COUNSEL - The Clerk of the Panel has determined the listed action(s) is not appropriate for inclusion in this MDL. See Rule 7.1(b)(i). -- NJ/2:26-cv-02347Signed by Acting Clerk of the Panel Josh R. Bullock on 4/1/2026. Associated Cases: MDL No. 3121, NJ/2:26-cv-02347 (TO) (Entered: 04/01/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-01",
+        "time_filed": "",
+        "date_display": "Apr 1, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 4/1/26 via NEF. -- Illinois Northern District Court (1:26-cv-03571) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 124,
+        "date_filed": "2026-03-20",
+        "time_filed": "",
+        "date_display": "Mar 20, 2026",
+        "description": "NOTICE OF POTENTIAL TAG-ALONG -- 1 Action(s) -- Filed by attorney Sadik Huseny, counsel for Defendants MultiPlan, Inc., Claritev Corporation, Medical Audit & Review Solutions, Inc., National Care Network, LLC, Viant Payment Systems, Inc., and Viant, Inc. -- New Jersey District Court (2:26-cv-02347) (Attachments: # 1 Schedule of Actions, # 2 Proof of Service, # 3 Complaint NJ 2:26-cv-02347) (Huseny, Sadik) (Entered: 03/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-11",
+        "time_filed": "",
+        "date_display": "Mar 11, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 3/10/26 via NEF. -- Illinois Northern District Court (1:26-cv-00764) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-10",
+        "time_filed": "",
+        "date_display": "Mar 10, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 3/9/26 via NEF. -- Illinois Northern District Court (1:26-cv-02569) (JL)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-09",
+        "time_filed": "",
+        "date_display": "Mar 9, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 03/09/26 via NEF. -- Illinois Northern District Court (1:26-cv-02515) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-02-27",
+        "time_filed": "",
+        "date_display": "Feb 27, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 2/27/26 via NEF. -- Illinois Northern District Court (1:26-cv-02167) (CDA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-02-18",
+        "time_filed": "",
+        "date_display": "Feb 18, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 02/17/26 via NEF. -- Illinois Northern District Court (1:26-cv-01679) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-30",
+        "time_filed": "",
+        "date_display": "Jan 30, 2026",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 01/29/26-01/30/26 via NEF. -- Illinois Northern District Court (1:26-cv-00806,1:26-cv-00766) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-27",
+        "time_filed": "",
+        "date_display": "Jan 27, 2026",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 01/26/26 via NEF. -- Illinois Northern District Court (1:26-cv-00769) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-26",
+        "time_filed": "",
+        "date_display": "Jan 26, 2026",
+        "description": "XYZ CASES ENTERED -- 3 related action(s) originating in the transferee district. JPML notified on 01/23/26-01/26/26 via NEF. -- Illinois Northern District Court (1:26-cv-00743,1:26-cv-00725,1:26-cv-00742) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-23",
+        "time_filed": "",
+        "date_display": "Jan 23, 2026",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 01/14/26-01/21/26 via NEF. -- Illinois Northern District Court (1:25-cv-14760,1:26-cv-00621) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-24",
+        "time_filed": "",
+        "date_display": "Nov 24, 2025",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 11/14/25-11/17/25 via NEF. -- Illinois Northern District Court (1:25-cv-13781,1:25-cv-14014) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-10-28",
+        "time_filed": "",
+        "date_display": "Oct 28, 2025",
+        "description": "XYZ CASES ENTERED -- 3 related action(s) originating in the transferee district. JPML notified on 10/24/25-10/27/25 via NEF. -- Illinois Northern District Court (1:25-cv-12958,1:25-cv-12982,1:25-cv-13010) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-10-27",
+        "time_filed": "",
+        "date_display": "Oct 27, 2025",
+        "description": "XYZ CASES ENTERED -- 3 related action(s) originating in the transferee district. JPML notified on 9/30/2025 to 10/2/2025 via NEF. -- Illinois Northern District Court (1:25-cv-09597,1:25-cv-09596,1:25-cv-09594) (LH)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-10-16",
+        "time_filed": "",
+        "date_display": "Oct 16, 2025",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 10/09/25 via NEF. -- Illinois Northern District Court (1:25-cv-12341,1:25-cv-12339) (TO)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-10-10",
+        "time_filed": "",
+        "date_display": "Oct 10, 2025",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 9/8/2025 via NEF. -- Illinois Northern District Court (1:25-cv-09349,1:25-cv-09421) (LH)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-10-07",
+        "time_filed": "",
+        "date_display": "Oct 7, 2025",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 9/23/25 via NEF. -- Illinois Northern District Court (1:25-cv-09586,1:25-cv-09583) (DLD)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-10-07",
+        "time_filed": "",
+        "date_display": "Oct 7, 2025",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 9/23/25 via NEF. -- Illinois Northern District Court (1:25-cv-09601) (DLD)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-08-13",
+        "time_filed": "",
+        "date_display": "Aug 13, 2025",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 8/13/2025 via NEF. -- Illinois Northern District Court (1:25-cv-09599,1:25-cv-09598) (LH)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-08-05",
+        "time_filed": "",
+        "date_display": "Aug 5, 2025",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 8/1/2025 via NEF. -- Illinois Northern District Court (1:25-cv-09075) (LH)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 123,
+        "date_filed": "2025-04-14",
+        "time_filed": "",
+        "date_display": "Apr 14, 2025",
+        "description": "CONDITIONAL TRANSFER ORDER FINALIZED (CTO-6) - 1 action(s) re: pldg. ( 121 in MDL No. 3121, 2 in NJ/2:23-cv-20716) Inasmuch as no objection is pending at this time, the stay is lifted. Signed by Clerk of the Panel James V. Ingold on 4/14/2025. Associated Cases: MDL No. 3121, NJ/2:23-cv-20716 (LH) (Entered: 04/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 122,
+        "date_filed": "2025-04-04",
+        "time_filed": "",
+        "date_display": "Apr 4, 2025",
+        "description": "***TEXT ONLY NOTICE******A PROOF OF SERVICE IS REQUIRED FOR ALL FILINGS***NOTICE OF FILING OF CTO AND PUBLICATION OF BRIEFING SCHEDULE (CTO-6) re: pldg. ( 121 in MDL No. 3121, 2 in NJ/2:23-cv-20716) BRIEFING SCHEDULE IS SET AS FOLLOWS: Oppositions due on or before 4/11/2025. Signed by Clerk of the Panel James V. Ingold on 4/4/2025. Associated Cases: MDL No. 3121, NJ/2:23-cv-20716 (Miller, Ajonee) (Entered: 04/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 121,
+        "date_filed": "2025-04-04",
+        "time_filed": "",
+        "date_display": "Apr 4, 2025",
+        "description": "CONDITIONAL TRANSFER ORDER FILED TODAY (CTO-6) - 1 action(s) Signed by Clerk of the Panel James V. Ingold on 4/4/2025. Associated Cases: MDL No. 3121, NJ/2:23-cv-20716 (Miller, Ajonee) (Entered: 04/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 120,
+        "date_filed": "2025-03-18",
+        "time_filed": "",
+        "date_display": "Mar 18, 2025",
+        "description": "ERRATA - to ( 119 in MDL No. 3121) - Filed by Defendants MEDICAL AUDIT & REVIEW SOLUTIONS, INC., et al.MULTIPLAN CORP., MULTIPLAN, INC., NATIONAL CARE NETWORK, LLC, VIANT PAYMENT SYSTEMS, INC., VIANT, INC. [Suppress List] (Attachments: # 1 Corrected Notice of Potential Tag Along Action, # 2 Corrected Proof of Service, # 3 Proof of Service- Errata) Associated Cases: MDL No. 3121, NJ/2:23-cv-20716 (Huseny, Sadik) (Entered: 03/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 119,
+        "date_filed": "2025-03-13",
+        "time_filed": "",
+        "date_display": "Mar 13, 2025",
+        "description": "NOTICE OF POTENTIAL TAG-ALONG -- 1 Action(s) -- Filed by attorney Sadik Huseny, counsel for Defendants Multiplan Inc., Multiplan Corporation, National Care Network, LLC, Viant Payment Systems, Inc., and Viant, Inc., Medical Audit & Review Solutions, Inc. -- New Jersey District Court (2:23-cv-20716) (Attachments: # 1 Schedule of Actions, # 2 Proof of Service, # 3 Complaint NJ 2:23-20716) (Huseny, Sadik) Modified on 3/19/2025 (LH). ADDED ADDITIONAL FILING PARTY (Entered: 03/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-02-19",
+        "time_filed": "",
+        "date_display": "Feb 19, 2025",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 1/15/2025 via NEF. -- Illinois Northern District Court (1:25-cv-00413) (LH)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-01-31",
+        "time_filed": "",
+        "date_display": "Jan 31, 2025",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 1/8/2025 via NEF. -- Illinois Northern District Court (1:25-cv-00080) (LH)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-01-08",
+        "time_filed": "",
+        "date_display": "Jan 8, 2025",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 12/19/2024 via NEF. -- Illinois Northern District Court (1:24-cv-10950) (LH)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-01-08",
+        "time_filed": "",
+        "date_display": "Jan 8, 2025",
+        "description": "XYZ CASES ENTERED -- 4 related action(s) originating in the transferee district. JPML notified on 12/18/2024 via NEF. -- Illinois Northern District Court (1:24-cv-10951,1:24-cv-10959,1:24-cv-10961,1:24-cv-12517) (LH)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-11-14",
+        "time_filed": "",
+        "date_display": "Nov 14, 2024",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 11/12/24 via NEF. -- Illinois Northern District Court (1:24-cv-11234) (CT)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-11-13",
+        "time_filed": "",
+        "date_display": "Nov 13, 2024",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 11/6/24 via NEF. -- Illinois Northern District Court (1:24-cv-10945,1:24-cv-10939) (CT)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 118,
+        "date_filed": "2024-11-05",
+        "time_filed": "",
+        "date_display": "Nov 5, 2024",
+        "description": "CONDITIONAL TRANSFER ORDER FINALIZED (CTO-5) - 2 action(s) re: pldg. (2 in LAW/2:24-cv-01361, 2 in LAW/2:24-cv-01363, 116 in MDL No. 3121) Inasmuch as no objection is pending at this time, the stay is lifted. Signed by Acting Clerk of the Panel Marcella R. Lockert on 11/5/2024. Associated Cases: MDL No. 3121, LAW/2:24-cv-01361, LAW/2:24-cv-01363 (CT) (Entered: 11/05/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-10-30",
+        "time_filed": "",
+        "date_display": "Oct 30, 2024",
+        "description": "XYZ CASES ENTERED -- 2 related action(s) originating in the transferee district. JPML notified on 10/25/24 via NEF. -- Illinois Northern District Court (1:24-cv-10947,1:24-cv-10943) (CT)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 117,
+        "date_filed": "2024-10-28",
+        "time_filed": "",
+        "date_display": "Oct 28, 2024",
+        "description": "***TEXT ONLY NOTICE***NOTICE OF FILING OF CTO AND PUBLICATION OF BRIEFING SCHEDULE (CTO-5) re: pldg. (2 in LAW/2:24-cv-01361, 2 in LAW/2:24-cv-01363, 116 in MDL No. 3121) BRIEFING SCHEDULE IS SET AS FOLLOWS: Oppositions due on or before 11/4/2024. Signed by Acting Clerk of the Panel Marcella R. Lockert on 10/28/2024. Associated Cases: MDL No. 3121, LAW/2:24-cv-01361, LAW/2:24-cv-01363 (CT) (Entered: 10/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 116,
+        "date_filed": "2024-10-28",
+        "time_filed": "",
+        "date_display": "Oct 28, 2024",
+        "description": "CONDITIONAL TRANSFER ORDER FILED TODAY (CTO-5) - 2 action(s) Signed by Acting Clerk of the Panel Marcella R. Lockert on 10/28/2024. Associated Cases: MDL No. 3121, LAW/2:24-cv-01361, LAW/2:24-cv-01363 (CT) (Entered: 10/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 115,
+        "date_filed": "2024-10-23",
+        "time_filed": "",
+        "date_display": "Oct 23, 2024",
+        "description": "ERRATA - to ( 114 in MDL No. 3121) - Filed by Defendants MultiPlan Inc, Multiplan Corp, Viant Inc (Attachments: # 1 Proof of Service) Associated Cases: MDL No. 3121, LAW/2:24-cv-01361, LAW/2:24-cv-01363 (Huseny, Sadik) (Entered: 10/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 114,
+        "date_filed": "2024-10-22",
+        "time_filed": "",
+        "date_display": "Oct 22, 2024",
+        "description": "NOTICE OF POTENTIAL TAG-ALONG -- 2 Action(s) -- Filed by attorney Sadik Huseny, counsel for Defendants MultiPlan, Inc., MultiPlan Corporation, National Care Network, LLC, Viant Payment Systems, Inc., and Viant, Inc. -- Louisiana Western District Court (2:24-cv-01361,2:24-cv-01363) (Attachments: # 1 Schedule of Actions, # 2 Proof of Service, # 3 Complaint LAW 2:24-cv-01361; LAW 2:24-cv-01363) (Huseny, Sadik) Modified on 10/25/2024 (CT). ADDED PARTY TYPE. (Entered: 10/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-09-19",
+        "time_filed": "",
+        "date_display": "Sep 19, 2024",
+        "description": "XYZ CASES ENTERED -- 3 related action(s) originating in the transferee district. JPML notified on 9/4/24-9/6/24 via NEF. -- Illinois Northern District Court (1:24-cv-06776,1:24-cv-08109,1:24-cv-07941) (TF)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 113,
+        "date_filed": "2024-09-17",
+        "time_filed": "",
+        "date_display": "Sep 17, 2024",
+        "description": "CONDITIONAL TRANSFER ORDER FINALIZED (CTO-4) - 7 action(s) re: pldg. ( 111 in MDL No. 3121, 1 in NYS/1:24-cv-06714, 1 in NYS/1:24-cv-06715, 1 in NYS/1:24-cv-06716, 1 in NYS/1:24-cv-06717, 1 in NYS/1:24-cv-06718, 1 in NYS/1:24-cv-06719, 1 in NYS/1:24-cv-06720) Inasmuch as no objection is pending at this time, the stay is lifted. Signed by Acting Clerk of the Panel Marcella R. Lockert on 9/17/2024. Associated Cases: MDL No. 3121, NYS/1:24-cv-06714, NYS/1:24-cv-06715, NYS/1:24-cv-06716, NYS/1:24-cv-06717, NYS/1:24-cv-06718, NYS/1:24-cv-06719, NYS/1:24-cv-06720 (TF) (Entered: 09/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-09-16",
+        "time_filed": "",
+        "date_display": "Sep 16, 2024",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 8/29/24 via NEF. -- Illinois Northern District Court (1:24-cv-07825) (TF)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 112,
+        "date_filed": "2024-09-09",
+        "time_filed": "",
+        "date_display": "Sep 9, 2024",
+        "description": "***TEXT ONLY NOTICE***NOTICE OF FILING OF CTO AND PUBLICATION OF BRIEFING SCHEDULE (CTO-4) re: pldg. ( 111 in MDL No. 3121, 1 in NYS/1:24-cv-06714, 1 in NYS/1:24-cv-06715, 1 in NYS/1:24-cv-06716, 1 in NYS/1:24-cv-06717, 1 in NYS/1:24-cv-06718, 1 in NYS/1:24-cv-06719, 1 in NYS/1:24-cv-06720) BRIEFING SCHEDULE IS SET AS FOLLOWS: Oppositions due on or before 9/16/2024. Signed by Acting Clerk of the Panel Marcella R. Lockert on 9/9/2024. Associated Cases: MDL No. 3121, NYS/1:24-cv-06714, NYS/1:24-cv-06715, NYS/1:24-cv-06716, NYS/1:24-cv-06717, NYS/1:24-cv-06718, NYS/1:24-cv-06719, NYS/1:24-cv-06720 (TF) (Entered: 09/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 111,
+        "date_filed": "2024-09-09",
+        "time_filed": "",
+        "date_display": "Sep 9, 2024",
+        "description": "CONDITIONAL TRANSFER ORDER FILED TODAY (CTO-4) - 7 action(s) Signed by Acting Clerk of the Panel Marcella R. Lockert on 9/9/2024. Associated Cases: MDL No. 3121, NYS/1:24-cv-06714, NYS/1:24-cv-06715, NYS/1:24-cv-06716, NYS/1:24-cv-06717, NYS/1:24-cv-06718, NYS/1:24-cv-06719, NYS/1:24-cv-06720 (TF) (Entered: 09/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.jpml.1688882/gov.uscourts.jpml.1688882.111.0.pdf"
+      },
+      {
+        "entry_number": 110,
+        "date_filed": "2024-09-06",
+        "time_filed": "",
+        "date_display": "Sep 6, 2024",
+        "description": "NOTICE OF POTENTIAL TAG-ALONG -- 7 Action(s) -- Filed by attorney Hunter Shkolnik, counsel for Plaintiffs American Surgical Arts, P.C., Cusimano Plastic Surgery, LLC, Edward P. Miranda, M.D. A Medical Corporation dba Pacific Plastic Surgery Group, PAC Neuro, Inc., Ross Cooperman, M.D. L.L.C., Taylor Theunissen, MD, LLC dba Theunissen Plastic Surgery, LLC, and Tucson Plastic Surgery, LLC -- New York Southern District Court (1:24-cv-06714,1:24-cv-06715,1:24-cv-06716,1:24-cv-06717,1:24-cv-06718,1:24-cv-06719, 1:24-cv-06720) (Attachments: # 1 Schedule of Actions, # 2 Proof of Service, # 3 Complaint) (Shkolnik, Hunter) Modified on 9/6/2024 (TF). ADDED PARTY TYPE. (Entered: 09/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 109,
+        "date_filed": "2024-09-03",
+        "time_filed": "",
+        "date_display": "Sep 3, 2024",
+        "description": "CONDITIONAL TRANSFER ORDER FINALIZED (CTO-3) - 1 action(s) re: pldg. ( 107 in MDL No. 3121, 1 in NYS/1:24-cv-06293) Inasmuch as no objection is pending at this time, the stay is lifted. Signed by Acting Clerk of the Panel Marcella R. Lockert on 9/3/2024. Associated Cases: MDL No. 3121, NYS/1:24-cv-06293 (TF) (Entered: 09/03/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 108,
+        "date_filed": "2024-08-23",
+        "time_filed": "",
+        "date_display": "Aug 23, 2024",
+        "description": "***TEXT ONLY NOTICE***NOTICE OF FILING OF CTO AND PUBLICATION OF BRIEFING SCHEDULE (CTO-3) re: pldg. ( 107 in MDL No. 3121, 1 in NYS/1:24-cv-06293) BRIEFING SCHEDULE IS SET AS FOLLOWS: Oppositions due on or before 8/30/2024. Signed by Acting Clerk of the Panel Marcella R. Lockert on 8/23/2024. Associated Cases: MDL No. 3121, NYS/1:24-cv-06293 (TF) (Entered: 08/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 107,
+        "date_filed": "2024-08-23",
+        "time_filed": "",
+        "date_display": "Aug 23, 2024",
+        "description": "CONDITIONAL TRANSFER ORDER FILED TODAY (CTO-3) - 1 action(s) Signed by Acting Clerk of the Panel Marcella R. Lockert on 8/23/2024. Associated Cases: MDL No. 3121, NYS/1:24-cv-06293 (TF) (Entered: 08/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 106,
+        "date_filed": "2024-08-21",
+        "time_filed": "",
+        "date_display": "Aug 21, 2024",
+        "description": "NOTICE OF POTENTIAL TAG-ALONG -- 1 Action(s) -- Filed by attorney Hunter Shkolnik, counsel for Plaintiffs Alter Management LLC d.b.a. Alter Behavioral Health, Awakening Behavioral Health d.b.a. Renaissance Ranch Treatment Centers, Guardian Health Care Service, Inc. d.b.a. DAmore Healthcare and PCI Westlake Centers -- New York Southern District Court (1:24-cv-06293) (Attachments: # 1 Schedule of Actions, # 2 Proof of Service, # 3 Complaint - SDNY 1:24-06293) (Shkolnik, Hunter) Modified on 8/22/2024 (TF). REMOVED DUPLICATE ATTACHMENTS. (Entered: 08/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.jpml.1688882/gov.uscourts.jpml.1688882.106.0.pdf"
+      },
+      {
+        "entry_number": 105,
+        "date_filed": "2024-08-20",
+        "time_filed": "",
+        "date_display": "Aug 20, 2024",
+        "description": "CONDITIONAL TRANSFER ORDER FINALIZED (CTO-2) - 1 action(s) re: pldg. (1 in CAN/5:24-cv-04508, 103 in MDL No. 3121) Inasmuch as no objection is pending at this time, the stay is lifted. Signed by Acting Clerk of the Panel Marcella R. Lockert on 8/20/2024. Associated Cases: MDL No. 3121, CAN/5:24-cv-04508 (TF) (Entered: 08/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 104,
+        "date_filed": "2024-08-12",
+        "time_filed": "",
+        "date_display": "Aug 12, 2024",
+        "description": "***TEXT ONLY NOTICE***NOTICE OF FILING OF CTO AND PUBLICATION OF BRIEFING SCHEDULE (CTO-2) re: pldg. (1 in CAN/5:24-cv-04508, 103 in MDL No. 3121) BRIEFING SCHEDULE IS SET AS FOLLOWS: Oppositions due on or before 8/19/2024. Signed by Acting Clerk of the Panel Marcella R. Lockert on 8/12/2024. Associated Cases: MDL No. 3121, CAN/5:24-cv-04508 (TF) (Entered: 08/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 103,
+        "date_filed": "2024-08-12",
+        "time_filed": "",
+        "date_display": "Aug 12, 2024",
+        "description": "CONDITIONAL TRANSFER ORDER FILED TODAY (CTO-2) - 1 action(s) Signed by Acting Clerk of the Panel Marcella R. Lockert on 8/12/2024. Associated Cases: MDL No. 3121, CAN/5:24-cv-04508 (TF) (Entered: 08/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 102,
+        "date_filed": "2024-08-12",
+        "time_filed": "",
+        "date_display": "Aug 12, 2024",
+        "description": "CONDITIONAL TRANSFER ORDER FINALIZED (CTO-1) - 15 action(s) re: pldg. ( 99 in MDL No. 3121, 11 in NYS/1:24-cv-04381, 11 in NYS/1:24-cv-04387, 11 in NYS/1:24-cv-04388, 11 in NYS/1:24-cv-04389, 11 in NYS/1:24-cv-04394, 11 in NYS/1:24-cv-04396, 11 in NYS/1:24-cv-04398, 11 in NYS/1:24-cv-04400, 11 in NYS/1:24-cv-04403, 11 in NYS/1:24-cv-04404, 11 in NYS/1:24-cv-04405, 11 in NYS/1:24-cv-04406, 11 in NYS/1:24-cv-04407, 11 in NYS/1:24-cv-04408, 7 in NYS/1:24-cv-04656) Inasmuch as no objection is pending at this time, the stay is lifted. Signed by Acting Clerk of the Panel Marcella R. Lockert on 8/12/2024. Associated Cases: MDL No. 3121, NYS/1:24-cv-04381, NYS/1:24-cv-04387, NYS/1:24-cv-04388, NYS/1:24-cv-04389, NYS/1:24-cv-04394, NYS/1:24-cv-04396, NYS/1:24-cv-04398, NYS/1:24-cv-04400, NYS/1:24-cv-04403, NYS/1:24-cv-04404, NYS/1:24-cv-04405, NYS/1:24-cv-04406, NYS/1:24-cv-04407,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-12",
+        "time_filed": "",
+        "date_display": "Aug 12, 2024",
+        "description": "XYZ CASES ENTERED -- 1 related action(s) originating in the transferee district. JPML notified on 8/6/24 via NEF. -- Illinois Northern District Court (1:24-cv-06825) (TF)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 101,
+        "date_filed": "2024-08-08",
+        "time_filed": "",
+        "date_display": "Aug 8, 2024",
+        "description": "NOTICE OF POTENTIAL TAG-ALONG -- 1 Action(s) -- Filed by attorney Shinae Kim-Helms, counsel for Plaintiff Mehrnaz Jamali MD, Inc. -- California Northern District Court (5:24-cv-04508) (Attachments: # 1 Schedule of Actions, # 2 Proof of Service, # 3 Complaint - CAN/5:24-4508) (Kim-Helms, Shinae) Modified on 8/8/2024 (TF). MODIFIED ATTACHMENT DESCRIPTION. (Entered: 08/08/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.jpml.1688882/gov.uscourts.jpml.1688882.101.0_1.pdf"
+      },
+      {
+        "entry_number": 100,
+        "date_filed": "2024-08-02",
+        "time_filed": "",
+        "date_display": "Aug 2, 2024",
+        "description": "***TEXT ONLY NOTICE***NOTICE OF FILING OF CTO AND PUBLICATION OF BRIEFING SCHEDULE (CTO-1) re: pldg. ( 99 in MDL No. 3121, 11 in NYS/1:24-cv-04381, 11 in NYS/1:24-cv-04387, 11 in NYS/1:24-cv-04388, 11 in NYS/1:24-cv-04389, 11 in NYS/1:24-cv-04394, 11 in NYS/1:24-cv-04396, 11 in NYS/1:24-cv-04398, 11 in NYS/1:24-cv-04400, 11 in NYS/1:24-cv-04403, 11 in NYS/1:24-cv-04404, 11 in NYS/1:24-cv-04405, 11 in NYS/1:24-cv-04406, 11 in NYS/1:24-cv-04407, 11 in NYS/1:24-cv-04408, 7 in NYS/1:24-cv-04656) BRIEFING SCHEDULE IS SET AS FOLLOWS: Oppositions due on or before 8/9/2024. Signed by Acting Clerk of the Panel Marcella R. Lockert on 8/2/2024. Associated Cases: MDL No. 3121, NYS/1:24-cv-04381, NYS/1:24-cv-04387, NYS/1:24-cv-04388, NYS/1:24-cv-04389, NYS/1:24-cv-04394, NYS/1:24-cv-04396, NYS/1:24-cv-04398, NYS/1:24-cv-04400, NYS/1:24-cv-04403, NYS/1:24-cv-04404, NYS/1:24-cv-04405,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 99,
+        "date_filed": "2024-08-02",
+        "time_filed": "",
+        "date_display": "Aug 2, 2024",
+        "description": "CONDITIONAL TRANSFER ORDER FILED TODAY (CTO-1) - 15 action(s) Signed by Acting Clerk of the Panel Marcella R. Lockert on 8/2/2024. Associated Cases: MDL No. 3121, NYS/1:24-cv-04381, NYS/1:24-cv-04387, NYS/1:24-cv-04388, NYS/1:24-cv-04389, NYS/1:24-cv-04394, NYS/1:24-cv-04396, NYS/1:24-cv-04398, NYS/1:24-cv-04400, NYS/1:24-cv-04403, NYS/1:24-cv-04404, NYS/1:24-cv-04405, NYS/1:24-cv-04406, NYS/1:24-cv-04407, NYS/1:24-cv-04408, NYS/1:24-cv-04656 (TF) (Entered: 08/02/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 98,
+        "date_filed": "2024-08-01",
+        "time_filed": "",
+        "date_display": "Aug 1, 2024",
+        "description": "TRANSFER ORDER re: pldg. ( 1 in MDL No. 3121) Transferring 3 action(s) to Judge Matthew F. Kennelly in the N.D. Illinois.Signed by Judge Nathaniel M. Gorton, Acting Chair, PANEL ON MULTIDISTRICT LITIGATION, on 8/1/2024. Associated Cases: MDL No. 3121, CAN/3:24-cv-02993, ILN/1:24-cv-03223, ILN/1:24-cv-03680, ILN/1:24-cv-03900, NYS/1:23-cv-07031, NYS/1:24-cv-03544 (TF) (Entered: 08/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.jpml.1688882/gov.uscourts.jpml.1688882.98.0.pdf"
+      },
+      {
+        "entry_number": 97,
+        "date_filed": "2024-08-01",
+        "time_filed": "",
+        "date_display": "Aug 1, 2024",
+        "description": "CONSENT ORDER re: pldg(s). 1 Consenting to transfer of litigation to Judge Matthew F. Kennelly in the Illinois Northern District Court for coordinated or consolidated pretrial proceedings. Signed by Chief Judge, USDC Rebecca R. Pallmeyer on 07/26/24. (TF) (Entered: 08/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 96,
+        "date_filed": "2024-07-31",
+        "time_filed": "",
+        "date_display": "Jul 31, 2024",
+        "description": "OFFICIAL TRANSCRIPT of Hearing held on 7/25/2024 before the Panel at Portland, ME. Court Reporter/Transcriber Lori D. Dunbar, 156 Federal Street, Room 220, Portland, ME 04101, lori_dunbar@med.uscourts.gov. Transcript may be viewed at the Panel's office or purchased through the Court Reporter/Transcriber before the deadline for Release of Transcript Restriction. After that date it may be obtained through PACER. Notice of Redaction due 8/7/2024. Redaction Request due 8/21/2024. Redacted Transcript Deadline set for 9/3/2024. Release of Transcript Restriction set for 10/29/2024.Signed by Acting Clerk of the Panel Marcella R. Lockert on 7/31/2024. Associated Cases: MDL No. 3121, CAN/3:24-cv-02993, ILN/1:24-cv-03223, ILN/1:24-cv-03900, NYS/1:23-cv-07031, NYS/1:24-cv-03544 (RH) (Entered: 07/31/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 95,
+        "date_filed": "2024-07-24",
+        "time_filed": "",
+        "date_display": "Jul 24, 2024",
+        "description": "NOTICE OF RELATED ACTION -- 1 Action(s) -- Filed by attorney Deborah Elman, Counsel for Plaintiff Peak Chiropractic Health and Wellness LLC -- Illinois Northern District Court (1:24-cv-06284) (Attachments: # 1 Schedule of Actions, # 2 Proof of Service, # 3 Complaint - ILN/1:24-6284) (Elman, Deborah) Modified on 7/25/2024 (TF). MODIFIED ATTACHMENT DESCRIPTION. (Entered: 07/24/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.jpml.1688882/gov.uscourts.jpml.1688882.95.0_1.pdf"
+      },
+      {
+        "entry_number": 94,
+        "date_filed": "2024-07-24",
+        "time_filed": "",
+        "date_display": "Jul 24, 2024",
+        "description": "SUPPLEMENTAL INFORMATION -- re: pldg(s). ( 1 in MDL No. 3121) -- Filed by Defendant Blue Shield of California, Inc.. (Attachments: # 1 Exhibit A.Notice of Voluntary Dismissal, # 2 Exhibit B.2024.07.17 128 Minute Order, # 3 Proof of Service) Associated Cases: MDL No. 3121, ILN/1:24-cv-03680 (Libowsky, Stephen) (Entered: 07/24/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 93,
+        "date_filed": "2024-07-24",
+        "time_filed": "",
+        "date_display": "Jul 24, 2024",
+        "description": "SEE CORRECTED PLEADING 94 IN MDL NO. 3121 SUPPLEMENTAL INFORMATION -- re: pldg(s). ( 1 in MDL No. 3121) -- Filed by Defendant Blue Shield of California, Inc.. (Attachments: # 1 Exhibit A.Notice of Voluntary Dismissal, # 2 Exhibit B.2024.07.17 128 Minute Order, # 3 Proof of Service) Associated Cases: MDL No. 3121, ILN/1:24-cv-03680 (Libowsky, Stephen) Modified on 7/25/2024 (TF). (Entered: 07/24/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 92,
+        "date_filed": "2024-07-24",
+        "time_filed": "",
+        "date_display": "Jul 24, 2024",
+        "description": "SUPPLEMENTAL INFORMATION -- re: pldg(s). ( 1 in MDL No. 3121) -- Filed by Defendant Blue Cross and Blue Shield of Florida, Inc.. (Attachments: # 1 Exhibit A, # 2 Exhibit B, # 3 Proof of Service) Associated Cases: MDL No. 3121, ILN/1:24-cv-03680 (DeMasi, Karin) (Entered: 07/24/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 91,
+        "date_filed": "2024-07-23",
+        "time_filed": "",
+        "date_display": "Jul 23, 2024",
+        "description": "SEE CORRECTED PLEADING 92 IN MDL NO. 3121 SUPPLEMENTAL INFORMATION -- re: pldg(s). ( 1 in MDL No. 3121) -- Filed by Defendant Blue Cross and Blue Shield of Florida, Inc.. (Attachments: # 1 Exhibit A, # 2 Exhibit B, # 3 Proof of Service) Associated Cases: MDL No. 3121, ILN/1:24-cv-03680 (DeMasi, Karin) Modified on 7/24/2024 (TF). (Entered: 07/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90,
+        "date_filed": "2024-07-17",
+        "time_filed": "",
+        "date_display": "Jul 17, 2024",
+        "description": "INTERESTED PARTY RESPONSE IN SUPPORT -- (re: pldg. ( 1 in MDL No. 3121) ) Filed by Plaintiff Steven Shoshany (Attachments: # 1 Proof of Service) Associated Cases: MDL No. 3121, ILN/1:24-cv-05201 (Flannery, Michael) (Entered: 07/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 89,
+        "date_filed": "2024-07-02",
+        "time_filed": "",
+        "date_display": "Jul 2, 2024",
+        "description": "NOTICE OF APPEARANCE re: pldg.( 83 in MDL No. 3121) Filed by Michael J. Flannery on behalf of Plaintiff Steven Shoshany (Attachments: # 1 Proof of Service) Associated Cases: MDL No. 3121, ILN/1:24-cv-05201 (Flannery, Michael) Modified on 7/2/2024 (TF). REMOVED MDL LINK. (Entered: 07/02/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 88,
+        "date_filed": "2024-07-02",
+        "time_filed": "",
+        "date_display": "Jul 2, 2024",
+        "description": "CERTIFICATE OF SERVICE (AMENDED) re: pldg. ( 83 in MDL No. 3121) Filed by Plaintiff Steven Shoshany -- Associated Cases: MDL No. 3121, ILN/1:24-cv-05201 (Flannery, Michael) (Entered: 07/02/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 87,
+        "date_filed": "2024-07-01",
+        "time_filed": "",
+        "date_display": "Jul 1, 2024",
+        "description": "NOTICE OF PRESENTATION OF ORAL ARGUMENT re: pldg. (18 in CAN/3:24-cv-02993, 30 in ILN/1:24-cv-03223, 40 in ILN/1:24-cv-03680, 13 in ILN/1:24-cv-03900, 59 in MDL No. 3121, 10 in NYS/1:23-cv-07031, 10 in NYS/1:24-cv-03544) Filed by Sadik Huseny on behalf of Defendants Blue Cross Blue Shield of Michigan Mutual Insurance Co., et al.Blue Cross and Blue Shield of Florida, Inc., Blue Shield of California, Inc., CIGNA Group, Centene Corporation, Elevance Health, Inc., Health Alliance Medical Plans, Inc., Health Care Service Corp., Humana Inc., Multiplan Corp., Multiplan, Inc., National Care Network, LLC, Viant Inc., Viant Payment Systems, Inc., Aetna, Inc., Kaiser Foundation Health Plan, Inc., Kaiser Permanente LLC, UnitedHealth Group, Inc. [Suppress List] (Attachments: # 1 Attachment A, # 2 Attachment B- Schedule of Actions, # 3 Proof of Service) Associated Cases: MDL No. 3121,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 86,
+        "date_filed": "2024-07-01",
+        "time_filed": "",
+        "date_display": "Jul 1, 2024",
+        "description": "NOTICE OF PRESENTATION OF ORAL ARGUMENT re: pldg. (18 in CAN/3:24-cv-02993, 59 in MDL No. 3121), (23 in CAN/3:24-cv-02993, 77 in MDL No. 3121) Filed by Natasha Fernandez-Silber on behalf of Plaintiff Curtis F. Robinson M.D., Inc. (Attachments: # 1 Proof of Service) Associated Cases: MDL No. 3121, CAN/3:24-cv-02993 (Fernandez-Silber, Natasha) (Entered: 07/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 85,
+        "date_filed": "2024-07-01",
+        "time_filed": "",
+        "date_display": "Jul 1, 2024",
+        "description": "NOTICE OF PRESENTATION OF ORAL ARGUMENT re: pldg. ( 59 in MDL No. 3121) Filed by Thomas Boardman on behalf of Plaintiff Advanced Orthopedic Center, Inc. (Attachments: # 1 Proof of Service) Associated Cases: MDL No. 3121, NYS/1:24-cv-04656 (Boardman, Thomas) (Entered: 07/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 84,
+        "date_filed": "2024-07-01",
+        "time_filed": "",
+        "date_display": "Jul 1, 2024",
+        "description": "NOTICE OF PRESENTATION OF ORAL ARGUMENT re: pldg. (30 in ILN/1:24-cv-03223, 40 in ILN/1:24-cv-03680, 13 in ILN/1:24-cv-03900, 59 in MDL No. 3121) Filed by Warren T Burns on behalf of Plaintiffs Live Well Chiropractic PLLC, et al.Allegiance Health Management, Inc., Ivy Creek of Tallapoosa LLC [Suppress List] (Attachments: # 1 Schedule of Actions, # 2 Proof of Service) Associated Cases: MDL No. 3121, ILN/1:24-cv-03223, ILN/1:24-cv-03680, ILN/1:24-cv-03900 (Burns, Warren) (Entered: 07/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 83,
+        "date_filed": "2024-06-28",
+        "time_filed": "",
+        "date_display": "Jun 28, 2024",
+        "description": "NOTICE OF RELATED ACTION -- 1 Action(s) -- Filed by attorney Michael J. Flannery, Counsel for Plaintiff Steven Shoshany -- Illinois Northern District Court (1:24-cv-05201) (Attachments: # 1 Schedule of Actions, # 2 Proof of Service, # 3 Complaint N.D. Ill. 1:24-cv-05201) (Flannery, Michael) Modified on 7/1/2024 (TF). ADDED PARTY TYPE. (Entered: 06/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 82,
+        "date_filed": "2024-06-28",
+        "time_filed": "",
+        "date_display": "Jun 28, 2024",
+        "description": "NOTICE OF PRESENTATION OF ORAL ARGUMENT re: pldg. ( 59 in MDL No. 3121, 10 in NYS/1:23-cv-07031, 10 in NYS/1:24-cv-03544), ( 73 in MDL No. 3121, 13 in NYS/1:23-cv-07031, 13 in NYS/1:24-cv-03544) Filed by Stephen M. Medlock on behalf of Plaintiffs Adventist Health System Sunbelt Healthcare Corporation, et al.CHS/Community Health Systems, Inc. [Suppress List] (Attachments: # 1 Schedule of Actions, # 2 Proof of Service) Associated Cases: MDL No. 3121, NYS/1:23-cv-07031, NYS/1:24-cv-03544 (Medlock, Stephen) (Entered: 06/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 81,
+        "date_filed": "2024-06-27",
+        "time_filed": "",
+        "date_display": "Jun 27, 2024",
+        "description": "CERTIFICATE OF SERVICE re: pldg. ( 76 in MDL No. 3121, 1 in NYS/1:24-cv-04656) Filed by Plaintiff Advanced Orthopedic Center, Inc. -- Associated Cases: MDL No. 3121, NYS/1:24-cv-04656 (Boardman, Thomas) (Entered: 06/27/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 80,
+        "date_filed": "2024-06-26",
+        "time_filed": "",
+        "date_display": "Jun 26, 2024",
+        "description": "MINUTE ORDER CLOSING BRIEFING re: pldg. ( 1 in MDL No. 3121) Briefing in this matter is now closed. The parties to actions on the motion(s) remain under a duty, pursuant to Panel Rules 6.1(f) and 6.2(d), to notify the Clerk of the Panel promptly of potential tag-along actions, as well as any development that moots the motion or fully disposes of any action on the motion. Parties in any potential tag-along action may file an Interested Party response, but must do so promptly, and in any event, no later than the Thursday prior to the hearing session at which the motion for transfer is to be heard by the Panel.Signed by Acting Clerk of the Panel Marcella R. Lockert on 6/26/2024. Associated Cases: MDL No. 3121, ILN/1:24-cv-04919, NYS/1:24-cv-04381, NYS/1:24-cv-04387, NYS/1:24-cv-04388, NYS/1:24-cv-04389, NYS/1:24-cv-04394, NYS/1:24-cv-04396, NYS/1:24-cv-04398, NYS/1:24-cv-04400,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 79,
+        "date_filed": "2024-06-26",
+        "time_filed": "",
+        "date_display": "Jun 26, 2024",
+        "description": "MINUTE ORDER CLOSING BRIEFING re: pldg. ( 1 in MDL No. 3121) Briefing in this matter is now closed. The parties to actions on the motion(s) remain under a duty, pursuant to Panel Rules 6.1(f) and 6.2(d), to notify the Clerk of the Panel promptly of potential tag-along actions, as well as any development that moots the motion or fully disposes of any action on the motion. Parties in any potential tag-along action may file an Interested Party response, but must do so promptly, and in any event, no later than the Thursday prior to the hearing session at which the motion for transfer is to be heard by the Panel.Signed by Acting Clerk of the Panel Marcella R. Lockert on 6/26/2024. Associated Cases: MDL No. 3121, CAN/3:24-cv-02993, ILN/1:24-cv-03223, ILN/1:24-cv-03680, ILN/1:24-cv-03900, NYS/1:23-cv-07031, NYS/1:24-cv-03544 (TF) (Entered: 06/26/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 78,
+        "date_filed": "2024-06-25",
+        "time_filed": "",
+        "date_display": "Jun 25, 2024",
+        "description": "REPLY TO RESPONSE TO MOTION FOR TRANSFER (JOINT) re: pldgs. ( 1 in MDL No. 3121),( 70 in MDL No. 3121),( 71 in MDL No. 3121),( 73 in MDL No. 3121),( 77 in MDL No. 3121) Filed by Plaintiffs Live Well Chiropractic PLLC, et al.Allegiance Health Management, Inc., Elmore Community Hospital Rural Health Association, Ivy Creek of Tallapoosa LLC [Suppress List] (Attachments: # 1 Proof of Service, # 2 Schedule of Actions) Associated Cases: MDL No. 3121, CAN/3:24-cv-02993, ILN/1:24-cv-03223, ILN/1:24-cv-03680, ILN/1:24-cv-03900, NYS/1:23-cv-07031, NYS/1:24-cv-03544 (Burns, Warren) Modified on 6/26/2024 (TF). ADDED MDL LINKS. (Entered: 06/25/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 76,
+        "date_filed": "2024-06-21",
+        "time_filed": "",
+        "date_display": "Jun 21, 2024",
+        "description": "NOTICE OF APPEARANCE re: pldg.( 1 in MDL No. 3121) Filed by Thomas Boardman on behalf of Plaintiff Advanced Orthopedic Center, Inc. Associated Cases: MDL No. 3121, NYS/1:24-cv-04656 (Boardman, Thomas) (Entered: 06/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68810146&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": null,
   "coverage": []

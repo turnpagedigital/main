@@ -31,6 +31,21 @@
     "docket_history": "full"
   },
   {
+    "slug": "bmg-rights-management-v-anthropic-pbc-nd-cal",
+    "added": "2026-09-04",
+    "display_name": "BMG Rights Management v. Anthropic PBC (N.D. Cal.)",
+    "short_name": "BMG Rights Management v. Anthropic PBC (N.D. Cal.)",
+    "docket_url": "https://www.courtlistener.com/docket/72505829/bmg-rights-management-us-llc-v-anthropic-pbc/",
+    "default_color": "#B3A8F0",
+    "category": "class-action",
+    "topics": [
+      "llm-class-action"
+    ],
+    "court": "N.D. Cal.",
+    "sync": "active",
+    "docket_history": "full"
+  },
+  {
     "slug": "britannica-merriam-webster-v-openai",
     "added": "2026-08-07",
     "display_name": "Britannica v. OpenAI",
@@ -72,6 +87,21 @@
       "llm-class-action"
     ],
     "court": "C.D. Cal. (Judge Kronstadt)",
+    "sync": "active",
+    "docket_history": "full"
+  },
+  {
+    "slug": "freestyle-world-v-united-states-ieepa-new-lead-case-rule-23",
+    "added": "2026-09-04",
+    "display_name": "Freestyle World v. United States (IEEPA — New Lead Case / Rule 23 Class Cert)",
+    "short_name": "Freestyle World v. United States (IEEPA — New Lead Case / Rule 23 Class Cert)",
+    "docket_url": "",
+    "default_color": "#D4FF00",
+    "category": "other",
+    "topics": [
+      "rewind-tariffs"
+    ],
+    "court": "U.S. Court of International Trade",
     "sync": "active",
     "docket_history": "full"
   },
@@ -167,6 +197,21 @@
     "docket_history": "full"
   },
   {
+    "slug": "in-re-bitmart-exchange-wind-down-customer-fund-watch",
+    "added": "2026-09-04",
+    "display_name": "In re BitMart Exchange (Wind-Down / Customer-Fund Watch)",
+    "short_name": "In re BitMart Exchange (Wind-Down / Customer-Fund Watch)",
+    "docket_url": "",
+    "default_color": "#94C6F8",
+    "category": "bankruptcy",
+    "topics": [
+      "crypto-insolvency"
+    ],
+    "court": "No formal insolvency proceeding filed as of Aug 7, 2026 — monitoring for receivership or Ch. 11 filing",
+    "sync": "active",
+    "docket_history": "full"
+  },
+  {
     "slug": "in-re-cashcall-inc",
     "added": "2026-08-07",
     "display_name": "CashCall",
@@ -178,6 +223,21 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "To be confirmed (financials sector Ch. 11, filed ~July 21, 2026)",
+    "sync": "active",
+    "docket_history": "full"
+  },
+  {
+    "slug": "in-re-multiplan-health-insurance-provider-antitrust-litigati",
+    "added": "2026-09-04",
+    "display_name": "In re MultiPlan Health Insurance Provider Antitrust Litigation",
+    "short_name": "In re MultiPlan Health Insurance Provider Antitrust Litigation",
+    "docket_url": "https://www.courtlistener.com/docket/68810146/in-re-multiplan-health-insurance-provider-litigation/",
+    "default_color": "#7EF4C2",
+    "category": "class-action",
+    "topics": [
+      "billion-dollar-class-actions"
+    ],
+    "court": "S.D.N.Y.",
     "sync": "active",
     "docket_history": "full"
   },
@@ -209,6 +269,21 @@
       "crypto-insolvency"
     ],
     "court": "Bankr. D. Mass",
+    "sync": "active",
+    "docket_history": "full"
+  },
+  {
+    "slug": "keller-postman-v-google-alphabet-ad-tech-mass-arbitration",
+    "added": "2026-09-04",
+    "display_name": "Keller Postman v. Google/Alphabet (Ad Tech Mass Arbitration)",
+    "short_name": "Keller Postman v. Google/Alphabet (Ad Tech Mass Arbitration)",
+    "docket_url": "",
+    "default_color": "#D4FF00",
+    "category": "class-action",
+    "topics": [
+      "billion-dollar-class-actions"
+    ],
+    "court": "AAA Mass Arbitration (filed April 2026)",
     "sync": "active",
     "docket_history": "full"
   },
@@ -322,6 +397,21 @@
     "docket_history": "full"
   },
   {
+    "slug": "tariff-refund-act-of-2026-s-3905-legislative-watch",
+    "added": "2026-09-04",
+    "display_name": "Tariff Refund Act of 2026 (S. 3905) — Legislative Watch",
+    "short_name": "Tariff Refund Act of 2026 (S. 3905) — Legislative Watch",
+    "docket_url": "",
+    "default_color": "#B3A8F0",
+    "category": "other",
+    "topics": [
+      "rewind-tariffs"
+    ],
+    "court": "U.S. Senate / Legislative",
+    "sync": "active",
+    "docket_history": "full"
+  },
+  {
     "slug": "terraform-labs",
     "added": "2026-07-30",
     "display_name": "Terraform Labs",
@@ -349,6 +439,21 @@
       "llm-class-action"
     ],
     "court": "U.S. Court of Appeals for the Third Circuit",
+    "sync": "active",
+    "docket_history": "full"
+  },
+  {
+    "slug": "umg-sony-music-v-suno-ai-d-mass-motion-to-add-61-026-recordi",
+    "added": "2026-09-04",
+    "display_name": "UMG/Sony Music v. Suno AI (D. Mass.) — Motion to Add 61,026 Recordings",
+    "short_name": "UMG/Sony Music v. Suno AI (D. Mass.) — Motion to Add 61,026 Recordings",
+    "docket_url": "",
+    "default_color": "#1B3A4B",
+    "category": "class-action",
+    "topics": [
+      "llm-class-action"
+    ],
+    "court": "D. Mass. (Judge Saylor)",
     "sync": "active",
     "docket_history": "full"
   },
