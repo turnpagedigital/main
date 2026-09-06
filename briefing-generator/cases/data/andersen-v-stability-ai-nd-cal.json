@@ -16,8 +16,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/66732129/andersen-v-stability-ai-ltd/",
     "date_last_filing": "2026-09-04",
-    "meta_fetched_at": "2026-09-06T11:46:58.361085+00:00",
-    "fetched_at": "2026-09-06T11:46:58.361085+00:00",
+    "meta_fetched_at": "2026-09-06T21:26:16.388387+00:00",
+    "fetched_at": "2026-09-06T21:26:16.388387+00:00",
     "as_of": "Sep 6, 2026",
     "backfilled": false,
     "new_in_72h": 2,
@@ -4703,9 +4703,1209 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.315.0.pdf"
+      },
+      {
+        "entry_number": 314,
+        "date_filed": "2025-06-27",
+        "time_filed": "17:28:28",
+        "date_display": "Jun 27, 2025",
+        "description": "ORDER by Judge Lisa J. Cisneros denying 307 Plaintiffs' request for non-LAION training datasets.(ljclc1, COURT STAFF) (Filed on 6/27/2025) (Entered: 06/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.314.0.pdf"
+      },
+      {
+        "entry_number": 313,
+        "date_filed": "2025-06-20",
+        "time_filed": "07:46:45",
+        "date_display": "Jun 20, 2025",
+        "description": "ORDER by Judge Lisa J. Cisneros granting 311 Stipulation for Enlargement of Time for Midjourney's Production of Training Data. (bns, COURT STAFF) (Filed on 6/20/2025) (Entered: 06/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.313.0.pdf"
+      },
+      {
+        "entry_number": 312,
+        "date_filed": "2025-06-20",
+        "time_filed": "07:44:37",
+        "date_display": "Jun 20, 2025",
+        "description": "Order by Magistrate Judge Lisa J. Cisneros granting 310 Stipulation for Enlargement of Time for Runway's Production of Training Data.(bns, COURT STAFF) (Filed on 6/20/2025) (Entered: 06/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.312.0.pdf"
+      },
+      {
+        "entry_number": 311,
+        "date_filed": "2025-06-18",
+        "time_filed": "15:31:09",
+        "date_display": "Jun 18, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER for Enlargement of Time for Midjourney's Production of Training Data filed by Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz. (Saveri, Joseph) (Filed on 6/18/2025) (Entered: 06/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 310,
+        "date_filed": "2025-06-18",
+        "time_filed": "10:35:47",
+        "date_display": "Jun 18, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER for Enlargement of Time for Runway's Production of Training Data filed by Runway AI, Inc.. (Malhotra, Paven) (Filed on 6/18/2025) (Entered: 06/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.310.0.pdf"
+      },
+      {
+        "entry_number": 309,
+        "date_filed": "2025-06-16",
+        "time_filed": "22:51:53",
+        "date_display": "Jun 16, 2025",
+        "description": "JOINT STATUS REPORT Re: the Suitability of Dr. Emily Wenger pursuant to ECF No. 305 by Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz. (Saveri, Joseph) (Filed on 6/16/2025) Modified on 6/17/2025 (kmm2, COURT STAFF). (Entered: 06/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.309.0.pdf"
+      },
+      {
+        "entry_number": 307,
+        "date_filed": "2025-06-13",
+        "time_filed": "17:07:18",
+        "date_display": "Jun 13, 2025",
+        "description": "Joint Discovery Letter Brief Re: Training Dataset Production filed by Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz, Midjourney, Inc.. (Attachments: # 1 Exhibit A - Plaintiffs' First Set of Requests For Production of Documents to Defendant Midjourney, Inc.)(Saveri, Joseph) (Filed on 6/13/2025) (Entered: 06/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.307.0.pdf"
+      },
+      {
+        "entry_number": 306,
+        "date_filed": "2025-06-11",
+        "time_filed": "12:35:35",
+        "date_display": "Jun 11, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on June 10, 2025 before Magistrate Judge Lisa J. Cisneros by Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz, for Recorded Proceeding - San Francisco. (Stein, Joshua) (Filed on 6/11/2025) (Entered: 06/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 308,
+        "date_filed": "2025-06-10",
+        "time_filed": "",
+        "date_display": "Jun 10, 2025",
+        "description": "Minute Entry for proceedings held before Magistrate Judge Lisa J. Cisneros: Discovery Hearing held on 6/10/2025.Total Time in Court: 33 minutes. Court Reporter: Recorded via Zoom: 9:16 a.m.- 9:49 a.m. Plaintiff Attorney: Joshua Michelangelo Stein, Bois Schiller Flexner LLP. For Defendant Stability AI Ltd.:Joseph Charles Gratz, Morrison & Foerster LLP. For Defendant Midjourney Inc.: Arminda Bepko, Cleary Gottlieb Steen & Hamilton LLP. For Defendant Runway AI, Inc: Luke Apfeld, Keker, Van Nest and Peters LLP. For Defendant Deviant Art: Sarah Mitchell, Latham and Watkins LLP. (bns, COURT STAFF) (Date Filed: 6/10/2025) Proceedings transcribed by tara Jauregui of Echo Reporting (echoreporting@yahoo.com) Modified on 7/1/2025 (jaf, COURT STAFF). (Entered: 06/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.308.0.pdf"
+      },
+      {
+        "entry_number": 305,
+        "date_filed": "2025-06-10",
+        "time_filed": "",
+        "date_display": "Jun 10, 2025",
+        "description": "ORDER by Judge Lisa J. Cisneros: In their 303 supplemental brief, Defendants reference Dr. Emily Wenger, disclosed as an expert in In re Google Generative AI Copyright Litigation, 23-cv-03440-EKL, to illustrate that there are alternative, qualified experts who do not share Dr. Ben Zhao's alleged \"focus on studying and developing tools that sabotage Defendants' models.\" The Court recognizes that Plaintiffs have not disclosed Dr. Wenger pursuant to 7.4 of the Protective Order and that Defendants have not had the opportunity to object to her potential inclusion as an expert. In order to evaluate if Dr. Wenger could be an alternative to Dr. Zhao, Plaintiffs shall provide Defendants with the information listed in 7.4(a)(2) of the Protective Order for Dr. Wenger by June 12, 2025. The parties shall then meet and confer regarding whether Dr. Wenger may serve as a suitable alternative to Dr.…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-06-10",
+        "time_filed": "18:26:10",
+        "date_display": "Jun 10, 2025",
+        "description": "Order",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 304,
+        "date_filed": "2025-06-05",
+        "time_filed": "",
+        "date_display": "Jun 5, 2025",
+        "description": "CLERK'S NOTICE CONTINUING DISCOVERY HEARING. Notice is hereby given that the Discovery Hearing previously set for June 6, 2025 is CONTINUED to June 10, 2025 at 9:00 a.m. via Zoom Webinar before Magistrate Judge Lisa J. Cisneros. (This is a text-only entry generated by the court. There is no document associated with this entry.) (bns, COURT STAFF) (Filed on 6/5/2025) (Entered: 06/05/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-06-05",
+        "time_filed": "09:29:06",
+        "date_display": "Jun 5, 2025",
+        "description": "Clerk's Notice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 303,
+        "date_filed": "2025-06-04",
+        "time_filed": "20:26:08",
+        "date_display": "Jun 4, 2025",
+        "description": "Supplemental Brief re 301 Order filed byStability AI Ltd., Stability AI, Inc. (Attachments: # 1 Declaration of Joseph C. Gratz, # 2 Exhibit A, # 3 Exhibit B, # 4 Exhibit C, # 5 Exhibit D)(Related document(s) 301 ) (Gratz, Joseph) (Filed on 6/4/2025) (Entered: 06/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.303.0.pdf"
+      },
+      {
+        "entry_number": 302,
+        "date_filed": "2025-06-02",
+        "time_filed": "18:49:26",
+        "date_display": "Jun 2, 2025",
+        "description": "Supplemental Brief re 301 Order filed bySarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz. (Attachments: # 1 Declaration of Joshua Michelangelo Stein, # 2 Exhibit A, # 3 Exhibit B, # 4 Exhibit C, # 5 Exhibit D, # 6 Exhibit E)(Related document(s) 301 ) (Stein, Joshua) (Filed on 6/2/2025) (Entered: 06/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.302.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-05-29",
+        "time_filed": "07:16:59",
+        "date_display": "May 29, 2025",
+        "description": "Set/Reset Hearings",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-05-29",
+        "time_filed": "",
+        "date_display": "May 29, 2025",
+        "description": "Set Hearing, See Docket No. 301 : Discovery Hearing set for 6/6/2025 at 09:00 AM in San Francisco, - Videoconference Only before Magistrate Judge Lisa J. Cisneros. (bns, COURT STAFF) (Filed on 5/29/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 301,
+        "date_filed": "2025-05-28",
+        "time_filed": "",
+        "date_display": "May 28, 2025",
+        "description": "The Court has received the parties' 300 letter brief regarding Dr. Zhao and sets a remote hearing on June 6, 2025, at 9:00am to address this dispute. The hearing will be held via Judge Cisneros's public Zoom webinar. Plaintiffs contend that Dr. Zhao is uniquely qualified to serve as an expert and they would be severely prejudiced by his disqualification. ECF No. 300 at 4. Defendants contend that \"Plaintiffs have already offered\" an alternative AI expert \"to whom Defendants did not object to disclosing the very same Highly Confidential information\" and that Plaintiffs' claims of prejudice are thus exaggerated. Id. at 6. Plaintiffs shall file, by June 2, 2025, supplemental briefing not to exceed three pages responding to Defendants' contention that Plaintiffs have already \"identified\" a \"non-conflicted alternative\" to Dr. Zhao and thus Plaintiffs would not be severely prejudiced by Dr.…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-05-28",
+        "time_filed": "16:54:35",
+        "date_display": "May 28, 2025",
+        "description": "Order",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 300,
+        "date_filed": "2025-05-23",
+        "time_filed": "17:04:49",
+        "date_display": "May 23, 2025",
+        "description": "Joint Discovery Letter Brief Re: Defendants Objections to Plaintiffs Disclosure of Dr. Ben Yanbin Zhao filed by Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz. (Attachments: # 1 Declaration of Dr. Ben Yanbin Zhao)(Saveri, Joseph) (Filed on 5/23/2025) (Entered: 05/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.300.0.pdf"
+      },
+      {
+        "entry_number": 299,
+        "date_filed": "2025-05-23",
+        "time_filed": "07:26:06",
+        "date_display": "May 23, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on April 29, 2025 before Magistrate Judge Lisa J. Cisneros by Runway AI, Inc., for Recorded Proceeding - San Francisco. (Greenberg, Julia) (Filed on 5/23/2025) (Entered: 05/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.299.0.pdf"
+      },
+      {
+        "entry_number": 298,
+        "date_filed": "2025-05-22",
+        "time_filed": "13:26:03",
+        "date_display": "May 22, 2025",
+        "description": "Transcript of Proceedings held on 04/29/25, before Judge Lisa J. Cisneros. Court Reporter/Transcriber Echo Reporting, Inc., telephone number echoreporting@yahoo.com. Tape Number: 2:11 - 2:54. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 294 Transcript Order, ) Redaction Request due 6/12/2025. Redacted Transcript Deadline set for 6/23/2025. Release of Transcript Restriction set for 8/20/2025. (Related documents(s) 294 ) (Jauregui, Tara) (Filed on 5/22/2025) (Entered: 05/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 297,
+        "date_filed": "2025-05-21",
+        "time_filed": "",
+        "date_display": "May 21, 2025",
+        "description": "NOTICE of Appearance filed by Alexander Zeng on behalf of Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz (Zeng, Alexander) (Filed on 5/21/2025) (Entered: 05/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 296,
+        "date_filed": "2025-05-21",
+        "time_filed": "13:05:16",
+        "date_display": "May 21, 2025",
+        "description": "ORDER by Judge Lisa J. Cisneros granting 295 STIPULATION FOR ENLARGEMENT OF TIME FOR PRODUCTION OF TRAINING DATA. (bns, COURT STAFF) (Filed on 5/21/2025) Modified on 5/27/2025 (bns, COURT STAFF). (Entered: 05/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.296.0.pdf"
+      },
+      {
+        "entry_number": 295,
+        "date_filed": "2025-05-21",
+        "time_filed": "11:42:16",
+        "date_display": "May 21, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER for Enlargement of Time for Production of Training Data filed by Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz. (Saveri, Joseph) (Filed on 5/21/2025) (Entered: 05/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.295.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-05-21",
+        "time_filed": "13:11:56",
+        "date_display": "May 21, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 294,
+        "date_filed": "2025-05-20",
+        "time_filed": "17:18:26",
+        "date_display": "May 20, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on April 29, 2025 before Magistrate Judge Lisa J. Cisneros by Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz, for Recorded Proceeding - San Francisco. (Pritt, Maxwell) (Filed on 5/20/2025) (Entered: 05/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.294.0.pdf"
+      },
+      {
+        "entry_number": 293,
+        "date_filed": "2025-05-20",
+        "time_filed": "17:14:09",
+        "date_display": "May 20, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on October 29, 2024 before Judge William H. Orrick by Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz, for Court Reporter Beth Krupa. (Pritt, Maxwell) (Filed on 5/20/2025) (Entered: 05/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.293.0.pdf"
+      },
+      {
+        "entry_number": 292,
+        "date_filed": "2025-05-15",
+        "time_filed": "13:12:27",
+        "date_display": "May 15, 2025",
+        "description": "Order by Judge William H. Orrick granting 291 Motion for Pro Hac Vice by Charity E. Lee. (jmd, COURT STAFF) (Filed on 5/15/2025) (Entered: 05/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 291,
+        "date_filed": "2025-05-13",
+        "time_filed": "13:23:32",
+        "date_display": "May 13, 2025",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-20672143.) filed by Midjourney, Inc.. (Attachments: # 1 Certificate of Good Standing)(Lee, Charity) (Filed on 5/13/2025) (Entered: 05/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 290,
+        "date_filed": "2025-05-09",
+        "time_filed": "",
+        "date_display": "May 9, 2025",
+        "description": "NOTICE of Appearance filed by Aaron Cera on behalf of Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz (Cera, Aaron) (Filed on 5/9/2025) (Entered: 05/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 289,
+        "date_filed": "2025-05-09",
+        "time_filed": "12:00:16",
+        "date_display": "May 9, 2025",
+        "description": "Transcript of Proceedings held on 10/29/2024, before Judge WILLIAM H. ORRICK. Court Reporter/Transcriber Beth A. Krupa, RPR, RMR, CRR, EMAIL beth_krupa@hid.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 277 Transcript Order ) Redaction Request due 5/30/2025. Redacted Transcript Deadline set for 6/9/2025. Release of Transcript Restriction set for 8/7/2025. (Related documents(s) 277 ) (Krupa, Beth) (Filed on 5/9/2025) (Entered: 05/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-05-09",
+        "time_filed": "13:21:28",
+        "date_display": "May 9, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 288,
+        "date_filed": "2025-05-08",
+        "time_filed": "",
+        "date_display": "May 8, 2025",
+        "description": "NOTICE of Appearance filed by Mariah Joelle Noah on behalf of Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz (Noah, Mariah) (Filed on 5/8/2025) (Entered: 05/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-05-08",
+        "time_filed": "17:19:36",
+        "date_display": "May 8, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 287,
+        "date_filed": "2025-05-06",
+        "time_filed": "",
+        "date_display": "May 6, 2025",
+        "description": "Minute Entry for proceedings held before Judge William H. Orrick: Case Management Conference held on 5/6/2025. Case Management Statement due by 10/28/2025. Further Case Management Conference set for 11/4/2025 02:00 PM via Videoconference. Total Time in Court: 1 minute. Court Reporter: April Brott. (jmd, COURT STAFF) (Date Filed: 5/6/2025) (Entered: 05/07/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.287.0.pdf"
+      },
+      {
+        "entry_number": 286,
+        "date_filed": "2025-05-02",
+        "time_filed": "",
+        "date_display": "May 2, 2025",
+        "description": "CLERKS NOTICE RE ZOOM HEARING - The Case Management Conference set for 5/6/2025 at 2:00 p.m. will be held via Zoom webinar.Webinar Access: All counsel, members of the public, and media may access the webinar information at https://www.cand.uscourts.gov/who General Order 58. Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited.Zoom Guidance and Setup: https://www.cand.uscourts.gov/zoom/. (This is a text-only entry generated by the court. There is no document associated with this entry.) (jmd, COURT STAFF) (Filed on 5/2/2025) (Entered: 05/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 285,
+        "date_filed": "2025-05-02",
+        "time_filed": "",
+        "date_display": "May 2, 2025",
+        "description": "NOTICE of Withdrawal filed by Melissa Tribble, no longer appearing on behalf of Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz in this case (Tribble, Melissa) (Filed on 5/2/2025) (Entered: 05/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 284,
+        "date_filed": "2025-05-02",
+        "time_filed": "",
+        "date_display": "May 2, 2025",
+        "description": "NOTICE of Withdrawal filed by Amira Perryman, no longer appearing on behalf of Midjourney, Inc. in this case (Perryman, Amira) (Filed on 5/2/2025) (Entered: 05/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-05-02",
+        "time_filed": "16:33:29",
+        "date_display": "May 2, 2025",
+        "description": "Clerk's Notice Setting Zoom Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-05-02",
+        "time_filed": "10:02:50",
+        "date_display": "May 2, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 283,
+        "date_filed": "2025-04-29",
+        "time_filed": "20:50:12",
+        "date_display": "Apr 29, 2025",
+        "description": "JOINT CASE MANAGEMENT STATEMENT filed by Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz. (Saveri, Joseph) (Filed on 4/29/2025) (Entered: 04/29/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.283.0_1.pdf"
+      },
+      {
+        "entry_number": 282,
+        "date_filed": "2025-04-29",
+        "time_filed": "15:48:38",
+        "date_display": "Apr 29, 2025",
+        "description": "Minute Entry for proceedings held before Magistrate Judge Lisa J. Cisneros: Discovery Status Conference held on 4/29/2025 via Zoom. Total Time in Court: 43 minutes. Court Reporter: Recorded via Zoom: 2:11 p.m. - 2:54 p.m.<p.Plaintiff Attorney: Joseph R. Saveri, Christopher K.L. Young and Evan Creutz, Joseph Saveri Law Firm, LLP, counsel for Plaintiffs. For Defendant Stability Al Ltd and Stability Al Inc.: Joseph Charles Gratz, Morrison & Foerster LLP. For Defendant Midjourney, Inc.: Angela Dunning, Cleary Gottlieb Steen & Hamilton LLP. For Defendant DeviantArt, Inc.: Brittany Lovejoy, Latham & Watkins LLP. For Defendant Runway AI, Inc.: Julia Greenberg and Bailey Heaps. Keker, Van Nest and Peters LLP. Results: See Attachment. (bns, COURT STAFF) (Date Filed: 4/29/2025) Transcriber - Tara Jauregui, email: echoreporting@yahoo.com 5/21/2025 (bns, COURT STAFF). (Entered: 04/29/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.282.0.pdf"
+      },
+      {
+        "entry_number": 281,
+        "date_filed": "2025-04-29",
+        "time_filed": "",
+        "date_display": "Apr 29, 2025",
+        "description": "NOTICE of Appearance filed by Sarah F Mitchell on behalf of DeviantArt, Inc. (Mitchell, Sarah) (Filed on 4/29/2025) (Entered: 04/29/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-04-29",
+        "time_filed": "12:19:31",
+        "date_display": "Apr 29, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 280,
+        "date_filed": "2025-04-28",
+        "time_filed": "",
+        "date_display": "Apr 28, 2025",
+        "description": "NOTICE of Appearance filed by Christopher Adler on behalf of Stability AI Ltd., Stability AI, Inc. (Adler, Christopher) (Filed on 4/28/2025) (Entered: 04/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-04-28",
+        "time_filed": "12:26:38",
+        "date_display": "Apr 28, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 279,
+        "date_filed": "2025-04-25",
+        "time_filed": "15:27:57",
+        "date_display": "Apr 25, 2025",
+        "description": "Certificate of Interested Entities by Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz (Saveri, Joseph) (Filed on 4/25/2025) (Entered: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 278,
+        "date_filed": "2025-04-24",
+        "time_filed": "20:47:22",
+        "date_display": "Apr 24, 2025",
+        "description": "JOINT STATUS REPORT by Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz. (Saveri, Joseph) (Filed on 4/24/2025) Modified on 4/25/2025 (kmm2, COURT STAFF). (Entered: 04/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.278.0.pdf"
+      },
+      {
+        "entry_number": 277,
+        "date_filed": "2025-04-15",
+        "time_filed": "15:34:37",
+        "date_display": "Apr 15, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on October 29, 2024 before Judge William H. Orrick by DeviantArt, Inc., for Court Reporter Beth Krupa. (Gass, Andrew) (Filed on 4/15/2025) (Entered: 04/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.277.0.pdf"
+      },
+      {
+        "entry_number": 276,
+        "date_filed": "2025-04-15",
+        "time_filed": "14:37:13",
+        "date_display": "Apr 15, 2025",
+        "description": "STIPULATED PROTECTIVE ORDER FOR LITIGATION INVOLVING HIGHLY SENSITIVE CONFIDENTIAL INFORMATION AND/OR TRADE SECRETS re Docket No. 264 by Magistrate Judge Lisa J. Cisneros. (bns, COURT STAFF) (Filed on 4/15/2025) (Entered: 04/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.276.0.pdf"
+      },
+      {
+        "entry_number": 275,
+        "date_filed": "2025-04-15",
+        "time_filed": "14:32:53",
+        "date_display": "Apr 15, 2025",
+        "description": "Order by Magistrate Judge Lisa J. Cisneros granting 272 Stipulation Re: Discovery of Electronically Stored Information.(bns, COURT STAFF) (Filed on 4/15/2025) (Entered: 04/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.275.0.pdf"
+      },
+      {
+        "entry_number": 274,
+        "date_filed": "2025-04-15",
+        "time_filed": "14:31:00",
+        "date_display": "Apr 15, 2025",
+        "description": "Order by Magistrate Judge Lisa J. Cisneros granting 271 Stipulation Entering Deposition Protocol.(bns, COURT STAFF) (Filed on 4/15/2025) (Entered: 04/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.274.0_1.pdf"
+      },
+      {
+        "entry_number": 273,
+        "date_filed": "2025-04-15",
+        "time_filed": "14:29:08",
+        "date_display": "Apr 15, 2025",
+        "description": "Order by Magistrate Judge Lisa J. Cisneros granting 270 Stipulation for Enlargement of Time for Production of Training Data. (bns, COURT STAFF) (Filed on 4/15/2025) (Entered: 04/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.273.0.pdf"
+      },
+      {
+        "entry_number": 272,
+        "date_filed": "2025-04-11",
+        "time_filed": "18:06:06",
+        "date_display": "Apr 11, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER Re: Discovery of Electronically Stored Information re 268 Order filed by Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz. (Saveri, Joseph) (Filed on 4/11/2025) Modified on 4/14/2025 (kmm2, COURT STAFF). (Entered: 04/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.272.0.pdf"
+      },
+      {
+        "entry_number": 271,
+        "date_filed": "2025-04-11",
+        "time_filed": "17:55:00",
+        "date_display": "Apr 11, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER Entering Deposition Protocol re 268 Order filed by Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz. (Saveri, Joseph) (Filed on 4/11/2025) Modified on 4/14/2025 (kmm2, COURT STAFF). (Entered: 04/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.271.0.pdf"
+      },
+      {
+        "entry_number": 270,
+        "date_filed": "2025-04-11",
+        "time_filed": "17:50:10",
+        "date_display": "Apr 11, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER for Enlargement of Time for Production of Training Data filed by Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz. (Saveri, Joseph) (Filed on 4/11/2025) (Entered: 04/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.270.0.pdf"
+      },
+      {
+        "entry_number": 269,
+        "date_filed": "2025-04-11",
+        "time_filed": "",
+        "date_display": "Apr 11, 2025",
+        "description": "NOTICE of Withdrawal filed by Laura Gilbert Remus, no longer appearing on behalf of Stability AI Ltd., Stability AI, Inc. in this case (Remus, Laura) (Filed on 4/11/2025) (Entered: 04/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-04-11",
+        "time_filed": "17:32:32",
+        "date_display": "Apr 11, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-04-10",
+        "time_filed": "08:23:16",
+        "date_display": "Apr 10, 2025",
+        "description": "Set/Reset Hearings",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-04-10",
+        "time_filed": "",
+        "date_display": "Apr 10, 2025",
+        "description": "Set Hearing: Discovery Status Conference set for 4/29/2025 02:00 PM, - Videoconference Only before Magistrate Judge Lisa J. Cisneros. (shy, COURT STAFF) (Filed on 4/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 268,
+        "date_filed": "2025-04-09",
+        "time_filed": "",
+        "date_display": "Apr 9, 2025",
+        "description": "ORDER by Judge Lisa J. Cisneros: The parties shall file a final Stipulated and Proposed ESI Protocol and final Stipulated and Proposed Deposition Protocol, consistent with the orders at 260 and 267, no later than April 11, 2025. A discovery status conference will occur on April 29, 2025 at 2:00 PM over Judge Cisneros's public Zoom webinar. By April 24, 2025, the parties shall submit a joint status report, not to exceed three pages, providing the Court with their anticipated schedule for conducting discovery and a proposed agenda for the conference. The parties should be prepared to discuss the same at the discovery status conference. (This is a text-only entry generated by the court. There is no document associated with this entry.) (ljclc1, COURT STAFF) (Filed on 4/9/2025) (Entered: 04/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-04-09",
+        "time_filed": "18:12:44",
+        "date_display": "Apr 9, 2025",
+        "description": "Order",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 267,
+        "date_filed": "2025-04-08",
+        "time_filed": "09:34:05",
+        "date_display": "Apr 8, 2025",
+        "description": "ORDER DENYING RELIEF FROM NON-DISPOSITIVE PRETRIAL ORDER by Judge William H. Orrick denying 265, 266 Motions. (jmd, COURT STAFF) (Filed on 4/8/2025) (Entered: 04/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.267.0.pdf"
+      },
+      {
+        "entry_number": 266,
+        "date_filed": "2025-04-02",
+        "time_filed": "21:31:00",
+        "date_display": "Apr 2, 2025",
+        "description": "MOTION for Relief from Non-Dispositive Pre-Trial Order re 260 Order filed by Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz. Responses due by 4/16/2025. Replies due by 4/23/2025. (Attachments: # 1 Proposed Order)(Saveri, Joseph) (Filed on 4/2/2025) (Entered: 04/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.266.0.pdf"
+      },
+      {
+        "entry_number": 265,
+        "date_filed": "2025-04-02",
+        "time_filed": "20:19:04",
+        "date_display": "Apr 2, 2025",
+        "description": "MOTION for Relief from Non-Dispositive Pre-Trial Order re 260 Order filed by Midjourney, Inc.. Responses due by 4/16/2025. (Attachments: # 1 Proposed Order)(Dunning, Angela) (Filed on 4/2/2025) (Entered: 04/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.265.0.pdf"
+      },
+      {
+        "entry_number": 264,
+        "date_filed": "2025-03-31",
+        "time_filed": "21:10:58",
+        "date_display": "Mar 31, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER re 260 Order and Joint Letter Regarding ESI Protocol; Protective Order; Deposition Protocol filed by Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz. (Attachments: # 1 Exhibit A Proposed Protective Order, # 2 Exhibit B Proposed ESI Order, # 3 Exhibit C Proposed Deposition Protocol)(Saveri, Joseph) (Filed on 3/31/2025) Modified on 4/1/2025 (kmm2, COURT STAFF). (Entered: 03/31/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.264.0.pdf"
+      },
+      {
+        "entry_number": 263,
+        "date_filed": "2025-03-25",
+        "time_filed": "",
+        "date_display": "Mar 25, 2025",
+        "description": "NOTICE of Appearance filed by Margaux Poueymirou on behalf of Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz (Poueymirou, Margaux) (Filed on 3/25/2025) (Entered: 03/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 262,
+        "date_filed": "2025-03-25",
+        "time_filed": "",
+        "date_display": "Mar 25, 2025",
+        "description": "NOTICE of Appearance filed by Joshua Michelangelo Stein on behalf of Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz (Stein, Joshua) (Filed on 3/25/2025) (Entered: 03/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 261,
+        "date_filed": "2025-03-25",
+        "time_filed": "",
+        "date_display": "Mar 25, 2025",
+        "description": "NOTICE of Appearance filed by Maxwell V. Pritt on behalf of Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz (Pritt, Maxwell) (Filed on 3/25/2025) (Entered: 03/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-03-25",
+        "time_filed": "16:11:42",
+        "date_display": "Mar 25, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 260,
+        "date_filed": "2025-03-19",
+        "time_filed": "21:36:10",
+        "date_display": "Mar 19, 2025",
+        "description": "ORDER on ESI Protocol; Protective Order; Deposition Protocol, ECF Nos. 248, 249, 257. Signed by Judge Lisa J. Cisneros on 3/19/2025. (Cisneros, Lisa) (Filed on 3/19/2025) (Entered: 03/19/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.260.0_2.pdf"
+      },
+      {
+        "entry_number": 259,
+        "date_filed": "2025-03-18",
+        "time_filed": "",
+        "date_display": "Mar 18, 2025",
+        "description": "NOTICE of Withdrawal filed by Eura Chang, no longer appearing on behalf of Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, H Southworth, Jingna Zhang, Karla Ortiz in this case (Chang, Eura) (Filed on 3/18/2025) (Entered: 03/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-03-18",
+        "time_filed": "13:50:09",
+        "date_display": "Mar 18, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 258,
+        "date_filed": "2025-02-28",
+        "time_filed": "",
+        "date_display": "Feb 28, 2025",
+        "description": "NOTICE of Appearance filed by Melissa Tribble on behalf of Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz (Tribble, Melissa) (Filed on 2/28/2025) (Entered: 02/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-02-28",
+        "time_filed": "15:32:07",
+        "date_display": "Feb 28, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 257,
+        "date_filed": "2025-02-12",
+        "time_filed": "16:50:02",
+        "date_display": "Feb 12, 2025",
+        "description": "Joint Letter Brief Regarding Deposition Protocol filed bySarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz. (Attachments: # 1 Exhibit A)(Saveri, Joseph) (Filed on 2/12/2025) Modified on 2/13/2025 (kmm2, COURT STAFF). (Entered: 02/12/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.257.0.pdf"
+      },
+      {
+        "entry_number": 256,
+        "date_filed": "2025-02-06",
+        "time_filed": "",
+        "date_display": "Feb 6, 2025",
+        "description": "NOTICE of Withdrawal filed by David William Lerch, no longer appearing on behalf of Sarah Andersen, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, Jingna Zhang, Karla Ortiz in this case (Lerch, David) (Filed on 2/6/2025) (Entered: 02/06/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-02-06",
+        "time_filed": "10:09:37",
+        "date_display": "Feb 6, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 255,
+        "date_filed": "2025-01-31",
+        "time_filed": "15:54:45",
+        "date_display": "Jan 31, 2025",
+        "description": "Order by Judge William H. Orrick granting 254 Stipulation. The Parties shall have until February 12, 2025 to submit a stipulated deposition protocol to the Court or file a joint letter brief (of up to three pages per side) regarding disputed issues. (jmd, COURT STAFF) (Filed on 1/31/2025) (Entered: 01/31/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.255.0.pdf"
+      },
+      {
+        "entry_number": 254,
+        "date_filed": "2025-01-31",
+        "time_filed": "14:15:59",
+        "date_display": "Jan 31, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER filed by Runway AI, Inc.. (Attachments: # 1 Declaration, # 2 Proposed Order)(Silbert, David) (Filed on 1/31/2025) (Entered: 01/31/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.254.0_1.pdf"
+      },
+      {
+        "entry_number": 253,
+        "date_filed": "2024-12-16",
+        "time_filed": "",
+        "date_display": "Dec 16, 2024",
+        "description": "CLERKS NOTICE RESETTING ZOOM HEARING - Case Management Conference reset for 5/6/2025 02:00 PM via Videoconference. Case Management Statement due by 4/29/2025. This proceeding will be held via Zoom webinar.Webinar Access: All counsel, members of the public, and media may access the webinar information at https://www.cand.uscourts.gov/who General Order 58. Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited.Zoom Guidance and Setup: https://www.cand.uscourts.gov/zoom/. (This is a text-only entry generated by the court. There is no document associated with this entry.) (jmd, COURT STAFF) (Filed on 12/16/2024) (Entered: 12/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-12-16",
+        "time_filed": "14:17:09",
+        "date_display": "Dec 16, 2024",
+        "description": "Clerk's Notice Setting Zoom Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 252,
+        "date_filed": "2024-12-10",
+        "time_filed": "16:07:01",
+        "date_display": "Dec 10, 2024",
+        "description": "JOINT CASE MANAGEMENT STATEMENT AND RULE 26(f) REPORT filed by Sarah Andersen, Getty Images (US), Inc., Kelly McKernan, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, H Southworth, Jingna Zhang, Runway AI, Inc., Karla Ortiz, Stability AI Ltd., Stability AI, Inc., Midjourney, Inc., DeviantArt, Inc.. (Saveri, Joseph) (Filed on 12/10/2024) (Entered: 12/10/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.252.0_1.pdf"
+      },
+      {
+        "entry_number": 251,
+        "date_filed": "2024-12-10",
+        "time_filed": "14:41:39",
+        "date_display": "Dec 10, 2024",
+        "description": "NOTICE OF REFERRAL FOR DISCOVERY. Signed by Judge Lisa J. Cisneros on 12/10/2024. (bns, COURT STAFF) (Filed on 12/10/2024) (Entered: 12/10/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.251.0.pdf"
+      },
+      {
+        "entry_number": 250,
+        "date_filed": "2024-12-10",
+        "time_filed": "11:29:32",
+        "date_display": "Dec 10, 2024",
+        "description": "ORDER OF REFERENCE TO MAGISTRATE JUDGE FOR DISCOVERY. Signed by Judge William H. Orrick on 12/10/2024. (jmd, COURT STAFF) (Filed on 12/10/2024) (Entered: 12/10/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.250.0.pdf"
+      },
+      {
+        "entry_number": 249,
+        "date_filed": "2024-12-09",
+        "time_filed": "22:16:35",
+        "date_display": "Dec 9, 2024",
+        "description": "Plaintiffs' Position Brief Regarding ESI Order and Protective Order, re 243 Order on Stipulation filed bySarah Andersen, Kelly McKernan, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, H Southworth, Jingna Zhang, Karla Ortiz. (Attachments: # 1 Declaration of Joseph Saveri, # 2 Exhibit A, # 3 Exhibit B, # 4 Exhibit C, # 5 Exhibit D)(Related document(s) 243 ) (Saveri, Joseph) (Filed on 12/9/2024) Modified on 12/11/2024 (kmm2, COURT STAFF). (Entered: 12/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.249.0.pdf"
+      },
+      {
+        "entry_number": 248,
+        "date_filed": "2024-12-09",
+        "time_filed": "21:23:03",
+        "date_display": "Dec 9, 2024",
+        "description": "Defendants' Position Brief Regarding ESI Order and Protective Order, re 243 Order on Stipulation filed byRunway AI, Inc., Stability AI Ltd., Stability AI, Inc., Midjourney, Inc., DeviantArt, Inc. (Attachments: # 1 Exhibit A, # 2 Exhibit B, # 3 Exhibit C, # 4 Exhibit D, # 5 Exhibit E, # 6 Exhibit F)(Related document(s) 243 ) (Dunning, Angela) (Filed on 12/9/2024) Modified on 12/11/2024 (kmm2, COURT STAFF). (Entered: 12/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.248.0.pdf"
+      },
+      {
+        "entry_number": 247,
+        "date_filed": "2024-12-06",
+        "time_filed": "17:17:48",
+        "date_display": "Dec 6, 2024",
+        "description": "Answer to Second Amended Complaint 238 by DeviantArt, Inc.. (Gass, Andrew) (Filed on 12/6/2024) Modified on 12/9/2024 (kmm2, COURT STAFF). (Entered: 12/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.247.0.pdf"
+      },
+      {
+        "entry_number": 246,
+        "date_filed": "2024-12-06",
+        "time_filed": "16:23:18",
+        "date_display": "Dec 6, 2024",
+        "description": "ANSWER to Second Amended Complaint /i> by Midjourney, Inc. (Dunning, Angela) (Filed on 12/6/2024) Modified on 12/9/2024 (kmm2, COURT STAFF). (Entered: 12/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.246.0.pdf"
+      },
+      {
+        "entry_number": 245,
+        "date_filed": "2024-12-06",
+        "time_filed": "15:30:31",
+        "date_display": "Dec 6, 2024",
+        "description": "ANSWER to Second Amended Class Action Complaint by Runway AI, Inc. (Silbert, David) (Filed on 12/6/2024) Modified on 12/6/2024 (kmm2, COURT STAFF). (Entered: 12/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.245.0.pdf"
+      },
+      {
+        "entry_number": 244,
+        "date_filed": "2024-12-06",
+        "time_filed": "14:03:54",
+        "date_display": "Dec 6, 2024",
+        "description": "ANSWER to Second Amended Complaint by Stability AI Ltd., Stability AI, Inc. (Gratz, Joseph) (Filed on 12/6/2024) Modified on 12/6/2024 (kmm2, COURT STAFF). (Entered: 12/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.244.0.pdf"
+      },
+      {
+        "entry_number": 243,
+        "date_filed": "2024-12-02",
+        "time_filed": "",
+        "date_display": "Dec 2, 2024",
+        "description": "Order by Judge William H. Orrick granting 242 Stipulation. The Parties have until December 9, 2024 to submit a stipulated electronically stored information protocol (ESI Protocol) and a stipulated protective order (PO) to the Court or each file a brief of up to 5 single-spaced pages explaining their positions. (This is a text-only entry generated by the court. There is no document associated with this entry.) (wholc3, COURT STAFF) (Filed on 12/2/2024) (Entered: 12/02/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-12-02",
+        "time_filed": "10:25:01",
+        "date_display": "Dec 2, 2024",
+        "description": "Order on Stipulation",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 242,
+        "date_filed": "2024-11-27",
+        "time_filed": "15:08:19",
+        "date_display": "Nov 27, 2024",
+        "description": "STIPULATION WITH PROPOSED ORDER Regarding Case Deadlines filed by Runway AI, Inc. (Attachments: # 1 Declaration, # 2 Proposed Order)(Silbert, David) (Filed on 11/27/2024) Modified on 12/2/2024 (kmm2, COURT STAFF). (Entered: 11/27/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.242.0.pdf"
+      },
+      {
+        "entry_number": 241,
+        "date_filed": "2024-11-21",
+        "time_filed": "19:35:26",
+        "date_display": "Nov 21, 2024",
+        "description": "NOTICE of Voluntary Dismissal by Sarah Andersen, Kelly McKernan, Gregory Manchess, Adam Ellis, Gerald Brom, Grzegorz Rutkowski, Julia Kaye, H Southworth, Jingna Zhang, Karla Ortiz (Saveri, Joseph) (Filed on 11/21/2024) (Entered: 11/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.241.0.pdf"
+      },
+      {
+        "entry_number": 239,
+        "date_filed": "2024-11-01",
+        "time_filed": "",
+        "date_display": "Nov 1, 2024",
+        "description": "NOTICE of Withdrawal filed by Vishakha Joshi, no longer appearing on behalf of Midjourney, Inc. in this case (Joshi, Vishakha) (Filed on 11/1/2024) (Entered: 11/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-11-01",
+        "time_filed": "11:01:14",
+        "date_display": "Nov 1, 2024",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 238,
+        "date_filed": "2024-10-31",
+        "time_filed": "19:16:48",
+        "date_display": "Oct 31, 2024",
+        "description": "SECOND AMENDED COMPLAINT against DeviantArt, Inc., Midjourney, Inc., Runway AI, Inc., Stability AI Ltd., Stability AI, Inc.. Filed by Julia Kaye, Gerald Brom, Adam Ellis, Grzegorz Rutkowski, Kelly McKernan, Sarah Andersen, Gregory Manchess, Karla Ortiz, Jingna Zhang, H Southworth. (Attachments: # 1 Exhibit A, # 2 Exhibit B, # 3 Exhibit C, # 4 Exhibit D, # 5 Exhibit E, # 6 Exhibit F, # 7 Exhibit G, # 8 Exhibit H, # 9 Exhibit I, # 10 Exhibit J, # 11 Exhibit K, # 12 Exhibit L, # 13 Exhibit M, # 14 Exhibit N, # 15 Redline)(Saveri, Joseph) (Filed on 10/31/2024) Modified on 11/1/2024 (kmm2, COURT STAFF). (Entered: 10/31/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.238.0_1.pdf"
+      },
+      {
+        "entry_number": 240,
+        "date_filed": "2024-10-29",
+        "time_filed": "",
+        "date_display": "Oct 29, 2024",
+        "description": "Minute Entry for proceedings held before Judge William H. Orrick: Case Management Conference held on 10/29/2024. Further Case Management Conference set for 12/17/2024 02:00 PM via Videoconference (Case Management Statement due by 12/10/2024). Class Certification Motion and Motions for Summary Judgment to be heard on 11/4/2026. Pretrial Conference set for 3/1/2027 02:00 PM abd Jury Trial set for 4/5/2027 08:30 AM, both in San Francisco, Courtroom 02, 17th Floor before Judge William H. Orrick. Total Time in Court: 21 minutes. Court Reporter: Beth Krupa. (jmd, COURT STAFF) (Date Filed: 10/29/2024) (Entered: 11/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.240.0_1.pdf"
+      },
+      {
+        "entry_number": 237,
+        "date_filed": "2024-10-29",
+        "time_filed": "",
+        "date_display": "Oct 29, 2024",
+        "description": "NOTICE of Withdrawal filed by Eoin Paul Connolly, no longer appearing on behalf of Stability AI Ltd., Stability AI, Inc. in this case (Connolly, Eoin) (Filed on 10/29/2024) (Entered: 10/29/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-10-29",
+        "time_filed": "14:16:11",
+        "date_display": "Oct 29, 2024",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 236,
+        "date_filed": "2024-10-28",
+        "time_filed": "",
+        "date_display": "Oct 28, 2024",
+        "description": "CLERKS NOTICE RE ZOOM HEARING - The Case Management Conference set for 10/29/2024 at 2:00 p.m. will be held via Zoom webinar.Webinar Access: All counsel, members of the public, and media may access the webinar information at https://www.cand.uscourts.gov/who General Order 58. Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited.Zoom Guidance and Setup: https://www.cand.uscourts.gov/zoom/. (This is a text-only entry generated by the court. There is no document associated with this entry.) (jmd, COURT STAFF) (Filed on 10/28/2024) (Entered: 10/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-10-28",
+        "time_filed": "15:33:32",
+        "date_display": "Oct 28, 2024",
+        "description": "Clerk's Notice Setting Zoom Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 235,
+        "date_filed": "2024-10-22",
+        "time_filed": "21:37:52",
+        "date_display": "Oct 22, 2024",
+        "description": "JOINT CASE MANAGEMENT STATEMENT AND RULE 26(f) REPORT filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Kelly McKernan, Karla Ortiz, Grzegorz Rutkowski, H Southworth, Jingna Zhang. (Saveri, Joseph) (Filed on 10/22/2024) (Entered: 10/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.235.0.pdf"
+      },
+      {
+        "entry_number": 234,
+        "date_filed": "2024-10-21",
+        "time_filed": "10:31:45",
+        "date_display": "Oct 21, 2024",
+        "description": "ADR Certification (ADR L.R. 3-5 b) of discussion of ADR options (Dunning, Angela) (Filed on 10/21/2024) (Entered: 10/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.234.0.pdf"
+      },
+      {
+        "entry_number": 233,
+        "date_filed": "2024-10-15",
+        "time_filed": "13:04:52",
+        "date_display": "Oct 15, 2024",
+        "description": "ADR Certification (ADR L.R. 3-5 b) of discussion of ADR options by defendant Runway AI, Inc. (Heaps, Bailey) (Filed on 10/15/2024) (Entered: 10/15/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.233.0.pdf"
+      },
+      {
+        "entry_number": 232,
+        "date_filed": "2024-09-30",
+        "time_filed": "12:15:13",
+        "date_display": "Sep 30, 2024",
+        "description": "ORDER DENYING 225 MOTION FOR CLARIFICATION OR RECONSIDERATION by Judge William H. Orrick. 228 Motion to Strike denied as moot. (jmd, COURT STAFF) (Filed on 9/30/2024) (Entered: 09/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.232.0_1.pdf"
+      },
+      {
+        "entry_number": 231,
+        "date_filed": "2024-09-30",
+        "time_filed": "12:03:15",
+        "date_display": "Sep 30, 2024",
+        "description": "ORDER RE: CASE MANAGEMENT CONFERENCE by Judge William H. Orrick granting 230 Stipulation. Case Management Conference set for 10/29/2024 02:00 PM via Videoconference (Case Management Statement due by 10/22/2024). (jmd, COURT STAFF) (Filed on 9/30/2024) (Entered: 09/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.231.0.pdf"
+      },
+      {
+        "entry_number": 230,
+        "date_filed": "2024-09-27",
+        "time_filed": "16:31:59",
+        "date_display": "Sep 27, 2024",
+        "description": "STIPULATION WITH PROPOSED ORDER Re: Case Management Conference filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Kelly McKernan, Karla Ortiz, Grzegorz Rutkowski, H Southworth, Jingna Zhang. (Saveri, Joseph) (Filed on 9/27/2024) Modified on 9/30/2024 (kmm2, COURT STAFF). (Entered: 09/27/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.230.0.pdf"
+      },
+      {
+        "entry_number": 229,
+        "date_filed": "2024-09-17",
+        "time_filed": "",
+        "date_display": "Sep 17, 2024",
+        "description": "NOTICE of Withdrawal filed by Allyson Roz Bennett, no longer appearing on behalf of Stability AI Ltd., Stability AI, Inc. in this case (Bennett, Allyson) (Filed on 9/17/2024) (Entered: 09/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-09-17",
+        "time_filed": "19:44:03",
+        "date_display": "Sep 17, 2024",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 228,
+        "date_filed": "2024-09-13",
+        "time_filed": "15:51:30",
+        "date_display": "Sep 13, 2024",
+        "description": "MOTION to Strike 227 Reply in Support of 225 ADMINISTRATIVE MOTION for Clarification (Civ. L.R. 7-11) or, in the Alternative, Leave to Seek Reconsideration of Order Granting in Part and Denying in Part Midjourney's Motion to Dismiss (Civ. L.R. 7-9) re 223 Order on Motion to Dismiss filed by Sarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Kelly McKernan, Karla Ortiz, Grzegorz Rutkowski, H Southworth, Jingna Zhang. Responses due by 9/27/2024. Replies due by 10/4/2024. (Saveri, Joseph) (Filed on 9/13/2024) Modified on 9/13/2024 (kmm2, COURT STAFF). Modified on 9/13/2024 (kmm2, COURT STAFF). (Entered: 09/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.228.0.pdf"
+      },
+      {
+        "entry_number": 227,
+        "date_filed": "2024-09-12",
+        "time_filed": "15:08:59",
+        "date_display": "Sep 12, 2024",
+        "description": "REPLY (re 225 ADMINISTRATIVE MOTION for Clarification (Civ. L.R. 7-11) or, in the Alternative, Leave to Seek Reconsideration of Order Granting in Part and Denying in Part Midjourney's Motion to Dismiss (Civ. L.R. 7-9) re 223 Order on Motion to Dismiss,,,, ) filed byMidjourney, Inc.. (Dunning, Angela) (Filed on 9/12/2024) (Entered: 09/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.227.0.pdf"
+      },
+      {
+        "entry_number": 226,
+        "date_filed": "2024-09-09",
+        "time_filed": "20:07:04",
+        "date_display": "Sep 9, 2024",
+        "description": "OPPOSITION/RESPONSE (re 225 ADMINISTRATIVE MOTION for Clarification (Civ. L.R. 7-11) or, in the Alternative, Leave to Seek Reconsideration of Order Granting in Part and Denying in Part Midjourney's Motion to Dismiss (Civ. L.R. 7-9) re 223 Order on Motion to Dismiss) filed bySarah Andersen, Gerald Brom, Adam Ellis, Julia Kaye, Gregory Manchess, Kelly McKernan, Karla Ortiz, Grzegorz Rutkowski, H Southworth, Jingna Zhang. (Saveri, Joseph) (Filed on 9/9/2024) (Entered: 09/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.226.0.pdf"
+      },
+      {
+        "entry_number": 225,
+        "date_filed": "2024-09-05",
+        "time_filed": "15:39:21",
+        "date_display": "Sep 5, 2024",
+        "description": "ADMINISTRATIVE MOTION for Clarification (Civ. L.R. 7-11) or, in the Alternative, Leave to Seek Reconsideration of Order Granting in Part and Denying in Part Midjourney's Motion to Dismiss (Civ. L.R. 7-9) re 223 Order on Motion to Dismiss,,,, filed by Midjourney, Inc.. Responses due by 9/9/2024. (Dunning, Angela) (Filed on 9/5/2024) (Entered: 09/05/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.225.0.pdf"
+      },
+      {
+        "entry_number": 224,
+        "date_filed": "2024-08-12",
+        "time_filed": "16:35:27",
+        "date_display": "Aug 12, 2024",
+        "description": "NOTICE of Change In Counsel by Joseph R. Saveri Withdrawal of Counsel - Kathleen J. McMahon (Saveri, Joseph) (Filed on 8/12/2024) (Entered: 08/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.224.0.pdf"
+      },
+      {
+        "entry_number": 223,
+        "date_filed": "2024-08-12",
+        "time_filed": "14:42:59",
+        "date_display": "Aug 12, 2024",
+        "description": "ORDER GRANTING IN PART AND DENYING IN PART MOTIONS TO DISMISS FIRST AMENDED COMPLAINT by Judge William H. Orrick re: 160, 162, 163, 164, 169 Motions to Dismiss. (jmd, COURT STAFF) (Filed on 8/12/2024) (Entered: 08/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.223.0_3.pdf"
+      },
+      {
+        "entry_number": 222,
+        "date_filed": "2024-08-06",
+        "time_filed": "14:54:49",
+        "date_display": "Aug 6, 2024",
+        "description": "NOTICE of Appearance by Evan Creutz (Creutz, Evan) (Filed on 8/6/2024) (Entered: 08/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.222.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-06",
+        "time_filed": "14:32:06",
+        "date_display": "Aug 6, 2024",
+        "description": "Electronic filing error. NOTICE TO COUNSEL [err102] Re: 221 Notice of Appearance of Evan Creutz: Counsel must file their own Notice of Appearance using their own ECF Profile to appear on the docket. Please re-file in its entirety. (kmm2, COURT STAFF) (Filed on 8/6/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=66732129&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=25"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=66732129&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=31"
   },
   "claims_administrator": null,
   "coverage": []

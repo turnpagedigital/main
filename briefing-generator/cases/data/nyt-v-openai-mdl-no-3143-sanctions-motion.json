@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
-    "date_last_filing": "2026-09-05",
-    "meta_fetched_at": "2026-09-05T16:08:36.320091+00:00",
-    "fetched_at": "2026-09-06T17:08:27.192917+00:00",
+    "date_last_filing": "2026-09-06",
+    "meta_fetched_at": "2026-09-06T21:28:29.884931+00:00",
+    "fetched_at": "2026-09-06T21:28:29.884931+00:00",
     "as_of": "Sep 6, 2026",
     "backfilled": true,
-    "new_in_72h": 55,
+    "new_in_72h": 56,
     "recent": [
+      {
+        "entry_number": 1924,
+        "date_filed": "2026-09-06",
+        "time_filed": "14:04:19",
+        "date_display": "Sep 6, 2026",
+        "description": "Certificate of Service Other",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1908,
         "date_filed": "2026-09-05",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 1906,
-        "date_filed": "2026-09-05",
-        "time_filed": "02:40:50",
-        "date_display": "Sep 5, 2026",
-        "description": "***SEALED***DECLARATION of Justin A. Nelson, Vol. 17 in Support re: (1759 in 1:25-md-03143-SHS-OTW) MOTION for Summary Judgment .. Document filed by David Baldacci. (Attachments: # 1 Exhibit 651, # 2 Exhibit 652, # 3 Exhibit 653, # 4 Exhibit 654, # 5 Exhibit 655, # 6 Exhibit 656, # 7 Exhibit 657, # 8 Exhibit 658, # 9 Exhibit 661, # 10 Exhibit 662, # 11 Exhibit 664, # 12 Exhibit 665, # 13 Exhibit 666, # 14 Exhibit 668, # 15 Exhibit 670, # 16 Exhibit 671, # 17 Exhibit 672, # 18 Exhibit 673, # 19 Exhibit 674, # 20 Exhibit 675, # 21 Exhibit 676, # 22 Exhibit 677, # 23 Exhibit 680, # 24 Exhibit 681, # 25 Exhibit 682, # 26 Exhibit 684, # 27 Exhibit 687, # 28 Exhibit 688, # 29 Exhibit 689, # 30 Exhibit 690, # 31 Exhibit 691, # 32 Exhibit 692)Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:23-cv-08292-SHS-OTWMotion or Order to File Under Seal: 1685 .(Smyser, Craig) (Entered: 09/05/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1924,
+        "date_filed": "2026-09-06",
+        "time_filed": "14:04:19",
+        "date_display": "Sep 6, 2026",
+        "description": "Certificate of Service Other",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1908,
         "date_filed": "2026-09-05",
