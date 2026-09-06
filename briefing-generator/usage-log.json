@@ -1264,6 +1264,16 @@
       "tokens_in": 0,
       "tokens_out": 0,
       "ok": false
+    },
+    {
+      "ts": "2026-09-06T19:16:59Z",
+      "date": "2026-09-06",
+      "task": "docket-sync",
+      "provider": "courtlistener",
+      "requests": 13,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ok": false
     }
   ]
 }
