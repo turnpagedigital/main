@@ -16,10 +16,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-09-03",
-    "meta_fetched_at": "2026-09-06T01:02:02.651615+00:00",
-    "fetched_at": "2026-09-06T01:02:02.651615+00:00",
+    "meta_fetched_at": "2026-09-06T11:43:37.564311+00:00",
+    "fetched_at": "2026-09-06T11:43:37.564311+00:00",
     "as_of": "Sep 6, 2026",
-    "backfilled": true,
+    "backfilled": false,
     "new_in_72h": 0,
     "recent": [
       {
@@ -99,7 +99,7 @@
         "date_filed": "2026-09-02",
         "time_filed": "",
         "date_display": "Sep 2, 2026",
-        "description": "Electronic filing error. Please use the correct form to file Notice of Appeal. The correct form can be found at; https://cand.uscourts.gov/rules-forms-fees/forms?combine=appeal&field_category_target_id=All Please use the following event when filing the Notice of Appeal:Civil Events > Other Filings > Appeal Documents > Notice of Appeal to the Ninth Circuit Per Chambers- No need to pay filing fee Re: 687 Objector's Request to Appeal/Intervene in Appeal by Stacy Lynn Werner, Esq. (kxo, COURT STAFF) (Filed on 9/2/2026)",
+        "description": "Electronic filing error. Please use the correct form to file Notice of Appeal. The correct form can be found at; https://cand.uscourts.gov/rules-forms-fees/forms?combine=appeal&field_category_target_id=All Please use the following event when filing the Notice of Appeal:Civil Events > Other Filings > Appeal Documents > Notice of Appeal to the Ninth Circuit Re: 687 Objector's Request to Appeal/Intervene in Appeal by Stacy Lynn Werner, Esq. (kxo, COURT STAFF) (Filed on 9/2/2026) Modified on 9/2/2026 (kxo, COURT STAFF).",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -7629,7 +7629,8 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": {
     "name": "JND Legal Administration",
