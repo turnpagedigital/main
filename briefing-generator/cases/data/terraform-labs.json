@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
     "date_last_filing": "2026-09-03",
     "meta_fetched_at": "2026-09-03T18:44:11.779793+00:00",
-    "fetched_at": "2026-09-05T22:58:44.294390+00:00",
-    "as_of": "Sep 5, 2026",
+    "fetched_at": "2026-09-06T01:02:52.328810+00:00",
+    "as_of": "Sep 6, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 1330,
@@ -28,7 +28,7 @@
         "time_filed": "14:07:30",
         "date_display": "Sep 3, 2026",
         "description": "Exhibit",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -38,7 +38,7 @@
         "time_filed": "14:05:44",
         "date_display": "Sep 3, 2026",
         "description": "Exhibit",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -60,7 +60,7 @@
         "time_filed": "14:07:30",
         "date_display": "Sep 3, 2026",
         "description": "Exhibit",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -70,7 +70,7 @@
         "time_filed": "14:05:44",
         "date_display": "Sep 3, 2026",
         "description": "Exhibit",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

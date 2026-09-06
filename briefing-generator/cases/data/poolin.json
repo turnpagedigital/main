@@ -16,10 +16,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-09-04",
     "meta_fetched_at": "2026-09-05T04:37:07.354227+00:00",
-    "fetched_at": "2026-09-05T22:58:33.899810+00:00",
-    "as_of": "Sep 5, 2026",
+    "fetched_at": "2026-09-06T01:02:41.111186+00:00",
+    "as_of": "Sep 6, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 2,
     "recent": [
       {
         "entry_number": 202,
@@ -47,7 +47,7 @@
         "time_filed": "14:19:16",
         "date_display": "Sep 3, 2026",
         "description": "Certification of No Objection (Chapter 11)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -79,7 +79,7 @@
         "time_filed": "14:19:16",
         "date_display": "Sep 3, 2026",
         "description": "Certification of No Objection (Chapter 11)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -89,7 +89,7 @@
         "time_filed": "10:08:21",
         "date_display": "Sep 3, 2026",
         "description": "Document",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
     "date_last_filing": "2026-09-03",
     "meta_fetched_at": "2026-09-04T00:10:48.452409+00:00",
-    "fetched_at": "2026-09-05T23:00:34.893448+00:00",
-    "as_of": "Sep 5, 2026",
+    "fetched_at": "2026-09-06T01:03:35.416491+00:00",
+    "as_of": "Sep 6, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 35,
@@ -28,7 +28,7 @@
         "time_filed": "18:02:48",
         "date_display": "Sep 3, 2026",
         "description": "Order on Motion for Extension of Time",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -60,7 +60,7 @@
         "time_filed": "18:02:48",
         "date_display": "Sep 3, 2026",
         "description": "Order on Motion for Extension of Time",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
