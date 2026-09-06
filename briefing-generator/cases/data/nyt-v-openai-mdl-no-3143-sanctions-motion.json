@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
     "date_last_filing": "2026-09-05",
     "meta_fetched_at": "2026-09-05T16:08:36.320091+00:00",
-    "fetched_at": "2026-09-05T23:01:26.135328+00:00",
-    "as_of": "Sep 5, 2026",
+    "fetched_at": "2026-09-06T01:04:23.322082+00:00",
+    "as_of": "Sep 6, 2026",
     "backfilled": true,
-    "new_in_72h": 59,
+    "new_in_72h": 55,
     "recent": [
       {
         "entry_number": 1908,
@@ -610,7 +610,7 @@
         "time_filed": "23:46:02",
         "date_display": "Sep 3, 2026",
         "description": "ANSWER to Complaint. Document filed by OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo, L.L.C., OpenAI OpCo, LLC, OpenAI, Inc., OpenAI, Inc., OpenAI, LLC..(Gratz, Joseph) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1686.0.pdf"
       },
@@ -620,7 +620,7 @@
         "time_filed": "13:00:25",
         "date_display": "Sep 3, 2026",
         "description": "STIPULATED OMNIBUS SEALING ORDER FOR SUMMARY JUDGMENT AND DAUBERT BRIEFING: IT IS HEREBY ORDERED that sealing issues relating to summary judgment and Daubert briefing will be handled as follows: 1. The Parties may provisionally seal portions of briefing and exhibits (including expert reports and declarations) relating to Daubert briefing that contain or refer to material produced in this case that is designated Protected Discovery Material. 2. The Parties may provisionally seal exhibits ( or portions thereof) relating to summary judgment briefing (including expert reports and declarations) that contain or refer to material produced in this case that is designated Protected Discovery Material. 3. For the material addressed in paragraphs 1 and 2 above (the \"Provisionally Sealed Material\"), the Parties are relieved from the requirement set forth in paragraph 5(8) of Judge Stein's…",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1685.0.pdf"
       },
@@ -630,7 +630,7 @@
         "time_filed": "01:10:05",
         "date_display": "Sep 3, 2026",
         "description": "ANSWER to 1677 Amended Complaint,. Document filed by OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI Foundation, OpenAI Foundation (f/k/a OpenAI Inc.), OpenAI GP LLC, OpenAI GP, LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Global, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo, L.L.C., OpenAI OpCo, LLC, OpenAI, Inc., OpenAI, Inc., OpenAI, LLC..(Gratz, Joseph) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1684.0.pdf"
       },
@@ -640,7 +640,7 @@
         "time_filed": "00:46:07",
         "date_display": "Sep 3, 2026",
         "description": "ANSWER to 1676 Amended Complaint,. Document filed by OAI Corporation, OAI Corporation LLC, OAI Corporation, LLC, OpenAI Foundation, OpenAI Foundation (f/k/a OpenAI Inc.), OpenAI GP LLC, OpenAI GP, LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Global, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo, L.L.C., OpenAI OpCo, LLC, OpenAI, Inc., OpenAI, Inc., OpenAI, LLC..(Gratz, Joseph) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1683.0.pdf"
       },

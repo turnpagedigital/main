@@ -16,11 +16,11 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-09-03",
-    "meta_fetched_at": "2026-09-05T22:57:20.522193+00:00",
-    "fetched_at": "2026-09-05T22:57:20.522193+00:00",
-    "as_of": "Sep 5, 2026",
-    "backfilled": false,
-    "new_in_72h": 2,
+    "meta_fetched_at": "2026-09-06T01:02:02.651615+00:00",
+    "fetched_at": "2026-09-06T01:02:02.651615+00:00",
+    "as_of": "Sep 6, 2026",
+    "backfilled": true,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 689,
@@ -28,7 +28,7 @@
         "time_filed": "",
         "date_display": "Sep 3, 2026",
         "description": "NOTICE of Withdrawal filed by Kathleen R. Hartnett, no longer appearing on behalf of Anthropic PBC in this case (Hartnett, Kathleen) (Filed on 9/3/2026) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -38,7 +38,7 @@
         "time_filed": "08:18:59",
         "date_display": "Sep 3, 2026",
         "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -60,7 +60,7 @@
         "time_filed": "",
         "date_display": "Sep 3, 2026",
         "description": "NOTICE of Withdrawal filed by Kathleen R. Hartnett, no longer appearing on behalf of Anthropic PBC in this case (Hartnett, Kathleen) (Filed on 9/3/2026) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -70,7 +70,7 @@
         "time_filed": "08:18:59",
         "date_display": "Sep 3, 2026",
         "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -7629,8 +7629,7 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=37"
+    ]
   },
   "claims_administrator": {
     "name": "JND Legal Administration",

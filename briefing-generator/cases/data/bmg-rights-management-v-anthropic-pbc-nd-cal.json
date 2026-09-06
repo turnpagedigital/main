@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/72505829/bmg-rights-management-us-llc-v-anthropic-pbc/",
     "date_last_filing": "2026-09-03",
     "meta_fetched_at": "2026-09-05T00:11:47.626269+00:00",
-    "fetched_at": "2026-09-05T22:59:52.067889+00:00",
-    "as_of": "Sep 5, 2026",
+    "fetched_at": "2026-09-06T01:02:57.951068+00:00",
+    "as_of": "Sep 6, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 42,
@@ -28,7 +28,7 @@
         "time_filed": "13:40:48",
         "date_display": "Sep 3, 2026",
         "description": "TRANSCRIPT ORDER for proceedings held on 9/2/2026 before Judge Eumi K. Lee by BMG Rights Management (US) LLC, for Court Reporter Irene Rodriguez. (Cooper, Evan) (Filed on 9/3/2026) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -38,7 +38,7 @@
         "time_filed": "09:47:00",
         "date_display": "Sep 3, 2026",
         "description": "Status Conference",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -60,7 +60,7 @@
         "time_filed": "13:40:48",
         "date_display": "Sep 3, 2026",
         "description": "TRANSCRIPT ORDER for proceedings held on 9/2/2026 before Judge Eumi K. Lee by BMG Rights Management (US) LLC, for Court Reporter Irene Rodriguez. (Cooper, Evan) (Filed on 9/3/2026) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -70,7 +70,7 @@
         "time_filed": "09:47:00",
         "date_display": "Sep 3, 2026",
         "description": "Status Conference",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

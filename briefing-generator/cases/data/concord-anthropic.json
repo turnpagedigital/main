@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
     "date_last_filing": "2026-09-03",
     "meta_fetched_at": "2026-09-05T00:12:22.310341+00:00",
-    "fetched_at": "2026-09-05T23:00:03.473542+00:00",
-    "as_of": "Sep 5, 2026",
+    "fetched_at": "2026-09-06T01:03:08.681429+00:00",
+    "as_of": "Sep 6, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 796,
@@ -28,7 +28,7 @@
         "time_filed": "14:14:48",
         "date_display": "Sep 3, 2026",
         "description": "TRANSCRIPT ORDER for proceedings held on 09/02/2026 before Judge Eumi K. Lee by Anthropic PBC, for Court Reporter Irene Rodriguez. (Mehta, Sonal) (Filed on 9/3/2026) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -38,7 +38,7 @@
         "time_filed": "09:29:26",
         "date_display": "Sep 3, 2026",
         "description": "*DISREGARD* See Transcript Order at Dkt. 796 . (Mehta, Sonal) (Filed on 9/3/2026) Modified on 9/3/2026 (lmh, COURT STAFF). (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -48,7 +48,7 @@
         "time_filed": "06:58:21",
         "date_display": "Sep 3, 2026",
         "description": "TRANSCRIPT ORDER for proceedings held on September 2, 2026 before Judge Eumi K. Lee by Abkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp., for Recorded Proceeding - San Jose. (Chung, Timothy) (Filed on 9/3/2026) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -60,7 +60,7 @@
         "time_filed": "14:14:48",
         "date_display": "Sep 3, 2026",
         "description": "TRANSCRIPT ORDER for proceedings held on 09/02/2026 before Judge Eumi K. Lee by Anthropic PBC, for Court Reporter Irene Rodriguez. (Mehta, Sonal) (Filed on 9/3/2026) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -70,7 +70,7 @@
         "time_filed": "09:29:26",
         "date_display": "Sep 3, 2026",
         "description": "*DISREGARD* See Transcript Order at Dkt. 796 . (Mehta, Sonal) (Filed on 9/3/2026) Modified on 9/3/2026 (lmh, COURT STAFF). (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -80,7 +80,7 @@
         "time_filed": "06:58:21",
         "date_display": "Sep 3, 2026",
         "description": "TRANSCRIPT ORDER for proceedings held on September 2, 2026 before Judge Eumi K. Lee by Abkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp., for Recorded Proceeding - San Jose. (Chung, Timothy) (Filed on 9/3/2026) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -90,7 +90,7 @@
         "time_filed": "09:47:00",
         "date_display": "Sep 3, 2026",
         "description": "Status Conference",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

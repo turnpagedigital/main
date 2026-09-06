@@ -16,10 +16,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-09-04",
     "meta_fetched_at": "2026-09-05T16:07:45.204807+00:00",
-    "fetched_at": "2026-09-05T22:58:18.500760+00:00",
-    "as_of": "Sep 5, 2026",
+    "fetched_at": "2026-09-06T01:02:30.368209+00:00",
+    "as_of": "Sep 6, 2026",
     "backfilled": true,
-    "new_in_72h": 15,
+    "new_in_72h": 7,
     "recent": [
       {
         "entry_number": 252,
@@ -129,7 +129,7 @@
         "time_filed": "18:11:58",
         "date_display": "Sep 3, 2026",
         "description": "In-Person/Zoom Hearing Held/Court Sign-In Sheet (related document(s)238) (Mml) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -139,7 +139,7 @@
         "time_filed": "17:35:05",
         "date_display": "Sep 3, 2026",
         "description": "Court Date & Time [09/03/2026 11:35:06 AM]. File Size [ 146736 KB ]. Run Time [ 05:49:55 ]. (admin). (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.244.0.pdf"
       },
@@ -149,7 +149,7 @@
         "time_filed": "14:41:13",
         "date_display": "Sep 3, 2026",
         "description": "Certificate of Service (related document(s)173) Filed by Pleasants, LLC. (Franchi, Nicholas) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -159,7 +159,7 @@
         "time_filed": "13:27:23",
         "date_display": "Sep 3, 2026",
         "description": "Order Granting Motion for Admission pro hac vice of Lauren M. Laino, Esquire (Related Doc # 237) Order Signed on 9/3/2026. (Mml) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -169,7 +169,7 @@
         "time_filed": "13:14:19",
         "date_display": "Sep 3, 2026",
         "description": "Order Granting Motion for Admission pro hac vice of Nicole M. Fulfree, Esquire (Related Doc # 236) Order Signed on 9/3/2026. (Mml) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -179,7 +179,7 @@
         "time_filed": "12:27:50",
         "date_display": "Sep 3, 2026",
         "description": "Order Granting Motion for Admission pro hac vice of Jackson T. Garvey, Esquire (Related Doc # 233) Order Signed on 9/3/2026. (Mml) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -189,7 +189,7 @@
         "time_filed": "12:07:33",
         "date_display": "Sep 3, 2026",
         "description": "Order Granting Motion for Admission pro hac vice of Kenneth W. Irvin, Esquire (Related Doc # 232) Order Signed on 9/3/2026. (Mml) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -199,7 +199,7 @@
         "time_filed": "08:59:50",
         "date_display": "Sep 3, 2026",
         "description": "Amended Notice of Agenda of Matters Scheduled for Hearing (related document(s)208, 217, 227) Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 11:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Faris, S. Alexander) (Entered: 09/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.238.0.pdf"
       },

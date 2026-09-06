@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/",
     "date_last_filing": "2026-09-04",
     "meta_fetched_at": "2026-09-05T00:12:16.843735+00:00",
-    "fetched_at": "2026-09-05T22:59:57.396942+00:00",
-    "as_of": "Sep 5, 2026",
+    "fetched_at": "2026-09-06T01:03:03.317589+00:00",
+    "as_of": "Sep 6, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 1,
     "recent": [
       {
         "entry_number": 62,
@@ -38,7 +38,7 @@
         "time_filed": "13:00:25",
         "date_display": "Sep 3, 2026",
         "description": "STIPULATED OMNIBUS SEALING ORDER FOR SUMMARY JUDGMENT AND DAUBERT BRIEFING: IT IS HEREBY ORDERED that sealing issues relating to summary judgment and Daubert briefing will be handled as follows: 1. The Parties may provisionally seal portions of briefing and exhibits (including expert reports and declarations) relating to Daubert briefing that contain or refer to material produced in this case that is designated Protected Discovery Material. 2. The Parties may provisionally seal exhibits ( or portions thereof) relating to summary judgment briefing (including expert reports and declarations) that contain or refer to material produced in this case that is designated Protected Discovery Material. 3. For the material addressed in paragraphs 1 and 2 above (the \"Provisionally Sealed Material\"), the Parties are relieved from the requirement set forth in paragraph 5(8) of Judge Stein's…",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.61.0.pdf"
       },
@@ -70,7 +70,7 @@
         "time_filed": "13:00:25",
         "date_display": "Sep 3, 2026",
         "description": "STIPULATED OMNIBUS SEALING ORDER FOR SUMMARY JUDGMENT AND DAUBERT BRIEFING: IT IS HEREBY ORDERED that sealing issues relating to summary judgment and Daubert briefing will be handled as follows: 1. The Parties may provisionally seal portions of briefing and exhibits (including expert reports and declarations) relating to Daubert briefing that contain or refer to material produced in this case that is designated Protected Discovery Material. 2. The Parties may provisionally seal exhibits ( or portions thereof) relating to summary judgment briefing (including expert reports and declarations) that contain or refer to material produced in this case that is designated Protected Discovery Material. 3. For the material addressed in paragraphs 1 and 2 above (the \"Provisionally Sealed Material\"), the Parties are relieved from the requirement set forth in paragraph 5(8) of Judge Stein's…",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.61.0.pdf"
       },
