@@ -3,6 +3,49 @@
   "case_name": "Poolin",
   "items": [
     {
+      "date": "2026-09-07",
+      "updated": "2026-09-07",
+      "lede": "On September 4, the Poolin docket recorded two new filings — a Missing Document(s) Filed entry at Dkt. 202 and a Retention application at Dkt. 201 — neither of which alters the sale timeline or recovery posture ahead of tomorrow's bid deadline. Dkt. 201, a retention application, is procedural in classification; it falls within the family of professional-retention filings that earn no more than a clause absent a…",
+      "body_md": "On September 4, the Poolin docket recorded two new filings — a Missing Document(s) Filed entry at Dkt. 202 and a Retention application at Dkt. 201 — neither of which alters the sale timeline or recovery posture ahead of tomorrow's bid deadline. Dkt. 201, a retention application, is procedural in classification; it falls within the family of professional-retention filings that earn no more than a clause absent a contest on grounds touching estate value or conduct, and nothing in the public metadata suggests it is opposed. Dkt. 202, a \"Missing Document(s) Filed\" entry, is administrative by nature — a corrective supplement to a prior filing — and carries no independent weight on its own terms. The classification problem flagged in last Thursday's briefing remains live: Dkts. 194–199 are still publicly opaque, with no filer, title, or nature disclosed in accessible metadata, and no secondary source has reported on their content. Those six filings are the outstanding unknown entering the final hours before the qualified bid deadline.\n\nTomorrow, September 8, is the hard deadline by which all qualified bids must be submitted under the court-approved bidding procedures. \nThor CALAP LLC has agreed to serve as stalking-horse bidder with a $52 million offer, allocating $37 million to the Tarbush power rights and equipment and $15 million to the Pyote property.\n \nThe bankruptcy court approved bidding procedures to sell substantially all assets, with an auction scheduled for September 10, 2026, if competing bids are received, followed by a sale hearing on September 18.\n Whether any of Dkts. 194–199 constitutes a qualified bid submission, a motion to modify or adjourn the sale process, a sale objection, or any filing that alters the economics of the § 363 transaction is the case's central open question and cannot be answered from public docket metadata alone; CM/ECF or __[Verita Global](https://veritaglobal.net/poolin)__ are the only routes to retrieve and classify those filings before the deadline closes. \nAny creditor wishing to contest the proposed asset disposition must file formal objections by 5:00 p.m. Eastern Time on September 16; failure to meet that deadline results in forfeiture of objection rights regarding the transaction.\n\n\nThe September 16 versus September 18 conflict in sale-hearing dates noted in prior briefings is partially resolved: __[CryptoNomist](https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/)__ and __[Crypto.news](https://crypto.news/crypto-mining-pool-poolin-files-for-bankruptcy-in-new-jersey/)__ place the sale hearing on September 18 at 11:00 a.m. Eastern before Judge O'Hagan in Trenton, while __[Bondoro](https://bondoro.com/poolin/)__ and __[MoneyCheck](https://moneycheck.com/poolin-bitcoin-mining-assets-head-to-bankruptcy-auction-with-52m-opening-bid)__ place a creditor objection deadline on September 16 — consistent with the two dates being distinct events rather than competing versions of the same one. The operative scheduling order on the docket remains the authoritative reference; this resolution is from secondary sources only. The trustee motion, with a hearing scheduled for October 21, remains the structural overhang behind the sale process and is unaffected by the filings this weekend. The next concrete milestone is September 8 at the close of business — the qualified bid deadline, and the first hard data point on whether any bidder is prepared to exceed the $52 million stalking-horse floor.\n\n## Sources\n\n- [Poolin Auction Set for September 10 as Objection Deadline Bars Late Creditors](https://www.cryptotimes.io/2026/08/21/poolin-auction-set-for-september-10-as-objection-deadline-bars-late-creditors/) — CryptoTimes, August 21, 2026\n- [Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process](https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/) — CryptoNomist, August 21, 2026\n- [Crypto Mining Pool Poolin Files for Bankruptcy in New Jersey](https://crypto.news/crypto-mining-pool-poolin-files-for-bankruptcy-in-new-jersey/) — Crypto.news, August 21, 2026\n- [Poolin Bitcoin Mining Assets Head to Bankruptcy Auction with $52M Opening Bid](https://moneycheck.com/poolin-bitcoin-mining-assets-head-to-bankruptcy-auction-with-52m-opening-bid) — MoneyCheck, August 2026\n- [Case Summary: Poolin Chapter 11](https://bondoro.com/poolin/) — Bondoro, July 2026\n- [Poolin Technology Case Information](https://veritaglobal.net/poolin) — Verita Global (case administrator)\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Poolin Auction Set for September 10 as Objection Deadline Bars Late Creditors",
+          "url": "https://www.cryptotimes.io/2026/08/21/poolin-auction-set-for-september-10-as-objection-deadline-bars-late-creditors/",
+          "note": "CryptoTimes, August 21, 2026"
+        },
+        {
+          "title": "Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process",
+          "url": "https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/",
+          "note": "CryptoNomist, August 21, 2026"
+        },
+        {
+          "title": "Crypto Mining Pool Poolin Files for Bankruptcy in New Jersey",
+          "url": "https://crypto.news/crypto-mining-pool-poolin-files-for-bankruptcy-in-new-jersey/",
+          "note": "Crypto.news, August 21, 2026"
+        },
+        {
+          "title": "Poolin Bitcoin Mining Assets Head to Bankruptcy Auction with $52M Opening Bid",
+          "url": "https://moneycheck.com/poolin-bitcoin-mining-assets-head-to-bankruptcy-auction-with-52m-opening-bid",
+          "note": "MoneyCheck, August 2026"
+        },
+        {
+          "title": "Case Summary: Poolin Chapter 11",
+          "url": "https://bondoro.com/poolin/",
+          "note": "Bondoro, July 2026"
+        },
+        {
+          "title": "Poolin Technology Case Information",
+          "url": "https://veritaglobal.net/poolin",
+          "note": "Verita Global (case administrator)"
+        }
+      ],
+      "activity": {
+        "filings": 2,
+        "articles": 0,
+        "latest": "2026-09-04"
+      }
+    },
+    {
       "date": "2026-09-04",
       "updated": "2026-09-04",
       "lede": "On September 3, the Poolin docket recorded a Certification of No Objection at Dkt. 200 — procedural in classification and, standing alone, of limited independent weight. The six unidentified documents at Dkts.",
