@@ -5284,18 +5284,18 @@
       "summary": "Tracker article confirms the case was filed July 10, 2026 in the S.D.N.Y. with no class certification or settlement yet, and notes the complaint was structured with the $1.5 billion Anthropic settlement and two 2025 California fair-use rulings squarely in mind. Plaintiffs are represented by Oppenheim + Zebrak and Keller Rohrback."
     },
     {
+      "headline": "Google Faces Fresh Copyright Lawsuit Over Gemini AI Training",
+      "url": "https://www.techrepublic.com/article/news-google-gemini-ai-training-publishers-lawsuit/",
+      "source": "TechRepublic",
+      "date": "2026-07-16",
+      "summary": "A coalition of major publishers and author Scott Turow sued Google, alleging it exceeded permissions granted through Google Books, Google Play Books, and Google Scholar by repurposing copyrighted works to develop commercial AI systems. The complaint specifically names works including books by N.K. Jemisin and Lemony Snicket as allegedly used without permission."
+    },
+    {
       "headline": "Publishers Sue Google Over Copyrighted Books Allegedly Used to Train Gemini",
       "url": "https://betanews.com/article/publishers-sue-google-gemini-book-training/",
       "source": "BetaNews",
       "date": "2026-07-15",
       "summary": "BetaNews detailed the proposed class structure, noting it would cover owners of registered copyrights in books identified by ISBNs and journal articles identified by DOIs or ISSNs, provided Google copied those works from one of its services or used them for Gemini training. Plaintiffs seek statutory damages, destruction of infringing datasets, and an accounting of all works and methods used in Gemini's development."
-    },
-    {
-      "headline": "Book Publishers Sue Google For Copyright Infringement Over Gemini AI Training",
-      "url": "https://yro.slashdot.org/story/26/07/15/2113245/book-publishers-sue-google-for-copyright-infringement-over-gemini-ai-training",
-      "source": "Slashdot",
-      "date": "2026-07-15",
-      "summary": "Slashdot aggregated Guardian reporting that publishers argue Google repurposed books supplied for limited services—such as displaying searchable snippets or selling ebooks via Google Play—not for copying into commercial AI training. The complaint illustrates market-harm claims by noting Gemini can generate a 100-page novel in 20 minutes for 39 cents, directly substituting for original works."
     },
     {
       "headline": "Hatchette and Elsevier Sue Google for Using Their Work to Train AI",
@@ -5352,6 +5352,13 @@
       "source": "AI Chat Daily",
       "date": "2026-07-14",
       "summary": "The complaint alleges Google trained Gemini on books obtained through scope-limited publishing programs including Google Books and Google Play, and cites an internal Google document warning that using copyrighted books for AI training could be 'highly problematic' with potential exposure of '$10Bs-$100Bs in potential fines.' The suit also accuses Google of stripping or altering copyright management information to hide the source of its training data."
+    },
+    {
+      "headline": "Hachette, Scott Turow Sue Google for Using Books to Train Gemini AI",
+      "url": "https://www.thewrap.com/industry-news/tech/hachette-scott-turow-google-gemini-ai-copyright-lawsuit/",
+      "source": "The Wrap",
+      "date": "2026-07-14",
+      "summary": "Major publishers Hachette, Elsevier, and Cengage, along with bestselling author Scott Turow, sued Google alleging it copied millions of copyrighted books and journal articles from Google Books, online libraries, and pirated websites to build its Gemini AI without paying or obtaining permission. The lawsuit argues Gemini now competes directly with the original books by generating detailed summaries and textbook-style explanations that could reduce demand for those works."
     },
     {
       "headline": "Publishers and Authors File Class Action Lawsuit Against Google for Willful Copyright Infringement to Develop Gemini AI Models",

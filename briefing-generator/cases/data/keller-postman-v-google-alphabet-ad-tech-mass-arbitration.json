@@ -19,5 +19,28 @@
     "entries": []
   },
   "claims_administrator": null,
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "Google's Mass Arbitration Problem",
+      "url": "https://www.adexchanger.com/adexchanger-talks/googles-mass-arbitration-problem/",
+      "source": "AdExchanger",
+      "date": "2026-08-18",
+      "summary": "Ashley Keller of Keller Postman appeared on AdExchanger Talks discussing the firm's arbitration demands against Google over alleged $218 billion in advertiser overpayments, the status of proceedings, and the firm's background in prior mass arbitration campaigns including Amazon Alexa. Keller said the firm has already filed thousands of demands and expects the total to reach tens of thousands."
+    },
+    {
+      "headline": "Google Faces Mass Arbitration by Advertisers Seeking Billions",
+      "url": "https://www.claimsjournal.com/news/national/2026/04/14/336866.htm",
+      "source": "Claims Journal",
+      "date": "2026-04-14",
+      "summary": "Claims Journal covered Keller Postman's mass arbitration filing against Google, noting it may be the first such proceeding to represent corporate rather than consumer or labor plaintiffs, with Keller estimating potential claims of $218 billion based on an economist's calculations. Google denied the claims, with a spokesperson saying advertisers choose its tools voluntarily in a competitive market."
+    },
+    {
+      "headline": "Google Faces Billions in Mass Arbitration Over Illegal Monopoly Rulings",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/google-faces-mass-arbitration-by-advertisers-seeking-billions",
+      "source": "Bloomberg",
+      "date": "2026-04-13",
+      "summary": "Bloomberg reported that Alphabet's Google faces billions in potential damage claims through mass arbitration tied to its online search and advertising technology businesses, which two federal courts have ruled were illegal monopolies. Keller Postman's Ashley Keller said he had already signed up a significant number of advertisers and expected to file the first claims imminently, with potential damages pegged at $218 billion or more."
+    }
+  ],
+  "events": []
 }

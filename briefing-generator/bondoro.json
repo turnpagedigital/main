@@ -1,6 +1,36 @@
 {
   "items": [
     {
+      "id": "noble-supply-logistics",
+      "kind": "summaries",
+      "source": "Bondoro",
+      "source_id": "bondoro-summaries",
+      "show": "both",
+      "title": "Case Summary: Noble Supply & Logistics Chapter 11",
+      "url": "https://bondoro.com/noble-supply-logistics/",
+      "date": "2026-09-05",
+      "published_at": "2026-09-05T11:37:02+00:00",
+      "excerpt": "Noble Supply & Logistics, a longtime U.S. government supply and logistics contractor, filed for Chapter 11 after DLA contract non-renewals, a capital-intensive ramp-up and a government shutdown drained liquidity, pursuing a dual-track going-concern sale or orderly wind-down.",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-article-9-sale-fari",
+      "kind": "Asset Sale",
+      "source": "Daily DAC",
+      "source_id": "daily-dac-article",
+      "show": "news",
+      "title": "PUBLIC NOTICE OF ARTICLE 9 SALE: Faris Prototypes and Printing LLC",
+      "url": "https://www.dailydac.com/public-notice-of-article-9-sale-faris-prototypes-and-printing-llc/?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-article-9-sale-faris-prototypes-and-printing-llc",
+      "date": "2026-09-04",
+      "published_at": "2026-09-04T15:59:19+00:00",
+      "excerpt": "NOTIFICATION OF DISPOSITION OF COLLATERAL We will sell the collateral being substantially all of the personal property assets and tangible property of Faris Prototypes and Printing LLC, including without limitation, (i) inventory, (ii) trade fixtures (iii) all machinery and equipment, and (iv) all a",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
       "id": "leslies-out-of-their-depth",
       "kind": "news",
       "source": "Petition",
@@ -1091,7 +1121,8 @@
       "excerpt": "We analyzed everything from advisor credentials to fees to portfolio options at some of the larger and more well-known registered investment advisor firms to help you select a firm that could best connect you with a fiduciary financial advisor.",
       "case_slug": null,
       "group_name": null,
-      "source_id": "wsj-markets"
+      "source_id": "wsj-markets",
+      "archived": true
     },
     {
       "id": "stock-market-today-dow-sp-500-nasdaq-08-06-2026?mod=rss_markets_main",
@@ -1105,7 +1136,8 @@
       "excerpt": "Oil prices gain amid talks to reopen the Strait of Hormuz",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "perps-are-the-risky-new-derivatives-that-could-amplify-stock-blowups-f29b2df1?mo",
@@ -1119,7 +1151,8 @@
       "excerpt": "Plus, computer memory stocks slump",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "deal-or-no-deal-astrazeneca-stock-is-a-bargain-b9ce6b31?mod=rss_markets_main",
@@ -1133,7 +1166,8 @@
       "excerpt": "The logic of a pharma megamerger is questionable, but AstraZeneca’s record isn’t.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "spacex-ipo-spv-investors-2698a174?mod=rss_markets_main",
@@ -1147,7 +1181,8 @@
       "excerpt": "One bought in to an SPV fund touting pre-IPO “exposure” to the rocket company. He was told later the shares were sold before trading began.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": "fraud-recovery"
+      "theme_slug": "fraud-recovery",
+      "archived": true
     },
     {
       "id": "financial-services-roundup-market-talk-c3299b1d?mod=rss_markets_main",
@@ -1161,7 +1196,8 @@
       "excerpt": "Find insight on home sales, Apollo Global Management, Gulf stock markets, offshore insurance policies and more in the latest Market Talks covering financial services.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "retirees-love-dividends-but-the-stock-market-surge-is-making-them-think-again-0e",
@@ -1175,7 +1211,8 @@
       "excerpt": "With the S&P 500 dividend yield near generational lows, chasing income in the stock market is getting tougher.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "reit-investors-returns-548343b8?mod=rss_markets_main",
@@ -1189,7 +1226,8 @@
       "excerpt": "The U.S. market has been best for real-estate investment trusts over the past 10 years, led by funds focused on data centers.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "jgbs-rise-tracking-gains-in-u-s-treasurys-297e6f42?mod=rss_markets_main",
@@ -1203,7 +1241,8 @@
       "excerpt": "Treasury yields rose ahead of Friday’s U.S. payrolls report, as job-cut plans remained calm in July alongside low weekly jobless-claims figures.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "hedge-fund-turning-up-pressure-on-voya-financial-to-sell-itself-1f2b98ab?mod=rss",
@@ -1217,7 +1256,8 @@
       "excerpt": "Toms Capital Investment Management is bringing its push for the asset manager to explore a sale directly to shareholders.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "basic-materials-roundup-market-talk-8f493d0f?mod=rss_markets_main",
@@ -1231,7 +1271,8 @@
       "excerpt": "Find insight on Glencore, Henkel and more in the latest Market Talks covering basic materials.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "chip-stocks-weaken-oil-steady-as-investors-await-hormuz-progress-919a2cec?mod=rs",
@@ -1245,7 +1286,8 @@
       "excerpt": "The Dow industrials led U.S. stocks mostly lower as oil prices rose amid uncertainty in the Middle East.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "tech-media-telecom-roundup-market-talk-11ca1081?mod=rss_markets_main",
@@ -1259,7 +1301,8 @@
       "excerpt": "Find insight on AppLovin, Warner Bros. Discovery and more in the latest Market Talks covering technology, media and telecom.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "health-care-roundup-market-talk-3921cbba?mod=rss_markets_main",
@@ -1273,7 +1316,8 @@
       "excerpt": "Find insight on Hikma Pharmaceuticals, Novo Nordisk and more in the latest Market Talks covering health care.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "nikkei-falls-1-3-dragged-by-electronics-stocks-1458be31?mod=rss_markets_main",
@@ -1287,7 +1331,8 @@
       "excerpt": "Corporate earnings drove European stock indexes higher in early trade, with the Europe-wide Stoxx 600 index up and led by consumer-facing stocks and healthcare.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "u-s-natural-gas-futures-fall-ahead-of-storage-data-f6fef08c?mod=rss_markets_main",
@@ -1301,7 +1346,8 @@
       "excerpt": "U.S. natural gas futures settled lower after a weekly inventory build came in slightly above expectations while increasing the storage surplus over the five-year average.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "oil-declines-amid-growing-optimism-over-reopening-of-strait-of-hormuz-274b0ea9?m",
@@ -1315,7 +1361,8 @@
       "excerpt": "Oil futures recovered ground as the market is left waiting for a deal between the U.S. and Iran to reopen the Strait of Hormuz after Iran and Oman agreed on a shipping route for the waterway.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "gold-gains-as-markets-track-mideast-developments-rethink-rate-views-6c4f3d56?mod",
@@ -1329,7 +1376,8 @@
       "excerpt": "Gold and silver prices dropped, snapping two- and three-day winning streaks, respectively.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "asian-currencies-consolidate-amid-wait-and-see-mood-on-possible-hormuz-reopening",
@@ -1343,7 +1391,8 @@
       "excerpt": "The WSJ Dollar Index rose 0.2%, snapping a two-trading-day losing streak.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "scott-bessents-yen-trade-has-unintended-consequences-for-the-markets-5297044b?mo",
@@ -1357,7 +1406,8 @@
       "excerpt": "The way it’s being done should make us worry that the Federal Reserve is being roped into easing monetary conditions.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "conocophillips-ceo-ryan-lance-to-retire-as-finance-chief-takes-the-helm-28e421be",
@@ -1371,7 +1421,8 @@
       "excerpt": "CFO Andy O’Brien will take on the lead role at the U.S. oil giant in September.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "versant-media-shares-jump-after-raising-outlook-on-strong-viewership-18f091a0?mo",
@@ -1385,7 +1436,8 @@
       "excerpt": "Versant Media shares climbed after the company raised its full-year outlook despite recording lower sales in its third earnings report since being spun off from Comcast.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "u-k-waves-through-81-billion-paramount-warner-bros-deal-fcec108c?mod=pls_whats_n",
@@ -1399,7 +1451,8 @@
       "excerpt": "The deal still faces substantial legal challenges in the U.S., where state attorneys general have sued to block the purchase.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "hedge-fund-turning-up-pressure-on-voya-financial-to-sell-itself-1f2b98ab?mod=pls",
@@ -1413,7 +1466,8 @@
       "excerpt": "Toms Capital Investment Management is bringing its push for the asset manager to explore a sale directly to shareholders.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "commerzbank-ceo-calls-for-dialogue-with-unicredit-503462b1?mod=pls_whats_news_us",
@@ -1427,7 +1481,8 @@
       "excerpt": "Bettina Orlopp appealed for constructive dialogue with UniCredit after the Italian bank achieved a near majority stake in its German rival.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "the-morning-risk-report-u-s-to-halt-key-metal-waste-exports-in-push-to-break-chi",
@@ -1441,7 +1496,8 @@
       "excerpt": "Plus: White House AI guidelines exempt U.S. open models from government review, and U.K. regulator eases listing rules",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "budget-carrier-easyjet-agrees-to-7-68-billion-takeover-by-apollo-fbe3f046?mod=pl",
@@ -1455,7 +1511,8 @@
       "excerpt": "The deal for the British airline caps a weekslong bidding war with American private equity and aircraft leasing group Castlelake.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "partners-group-in-talks-to-buy-aroma-zone-stake-at-2-3-billion-valuation-fbcad9f",
@@ -1469,7 +1526,8 @@
       "excerpt": "Exclusive talks are underway with Eurazeo about a majority stake in France’s Aroma-Zone, which sells beauty and wellness products.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "krispy-kreme-narrows-loss-despite-lower-revenue-1932fb97?mod=pls_whats_news_us_b",
@@ -1483,7 +1541,8 @@
       "excerpt": "Krispy Kreme once again narrowed its loss and expanded margins during its latest quarter, as the doughnut chain continued to make progress with its turnaround plan.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "papa-johns-cuts-outlook-suspends-dividend-as-u-s-business-continues-to-struggle-",
@@ -1497,7 +1556,8 @@
       "excerpt": "Papa John’s cut its outlook for the year and suspended its dividend, as the pizza chain’s North American business continues to face a soft consumer environment.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "diageo-eyes-1-billion-in-savings-as-part-of-turnaround-plan-69337a3f?mod=pls_wha",
@@ -1511,7 +1571,8 @@
       "excerpt": "The group said the $1 billion in savings will begin in the current fiscal year, and will be achieved from work on operations and on its supply chain.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "conocophillips-profit-boosted-by-climbing-oil-prices-fa43bea2?mod=pls_whats_news",
@@ -1525,7 +1586,8 @@
       "excerpt": "ConocoPhillips recorded higher profit in the second quarter, driven by a 36% jump in average oil and gas prices, as it promoted its finance chief, Andy O’Brien, to become its new chief executive.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "keurig-dr-pepper-posts-higher-sales-as-separation-work-continues-75483c5c?mod=pl",
@@ -1539,7 +1601,8 @@
       "excerpt": "Keurig Dr Pepper logged higher sales in the second quarter and said it continues work to separate into two companies.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "restaurant-brands-international-profit-rises-on-burger-king-u-s-growth-8c86e403?",
@@ -1553,7 +1616,8 @@
       "excerpt": "Restaurant Brands International’s profit rose in the second quarter, driven by a standout performance at Burger King U.S. that bucked a broader trend of slowing fast-food demand across other major chains.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "datadog-says-lower-usage-from-major-ai-customer-could-dent-growth-8b8904c9?mod=p",
@@ -1567,7 +1631,8 @@
       "excerpt": "The data-security company still posted growth in the second quarter, but shared a full-year sales outlook that was below Wall Street estimates.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "warner-bros-revenue-falls-amid-legal-snags-to-paramount-deal-68f11008?mod=pls_wh",
@@ -1581,7 +1646,8 @@
       "excerpt": "Streaming revenue improves as HBO Max expands its subscriber and advertising base.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "softbank-group-reports-lower-quarterly-profit-2bca0889?mod=pls_whats_news_us_bus",
@@ -1595,7 +1661,8 @@
       "excerpt": "The Japanese technology investment company has vowed to become a leading builder of AI data centers and a major investor in AI-powered robotics.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "fox-sales-climb-after-world-cup-juices-ad-revenue-cb7494b0?mod=pls_whats_news_us",
@@ -1609,7 +1676,8 @@
       "excerpt": "The league had been trying to renegotiate its rights deals before opt-out clause.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "suncor-to-promote-peter-zebedee-to-ceo-3fe510b3?mod=pls_whats_news_us_business_f",
@@ -1623,7 +1691,8 @@
       "excerpt": "The Canadian energy company said current President and CEO Rich Kruger will transition to the role of executive vice chair in April next year.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "energy-utilities-roundup-market-talk-f98c67ae?mod=pls_whats_news_us_business_f",
@@ -1637,7 +1706,8 @@
       "excerpt": "Find insight on crude futures, Harbour Energy and more in the latest Market Talks covering energy and utilities.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "airlines-push-back-against-ice-enforcement-at-airports-50a49ff0?mod=pls_whats_ne",
@@ -1651,7 +1721,8 @@
       "excerpt": "Federal agents are using flight manifests to arrest travelers with lapsed visas, drawing objections over safety and protocol.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "outback-steakhouse-owner-sees-diners-buying-pricier-steaks-googles-ai-leadership",
@@ -1665,7 +1736,8 @@
       "excerpt": "",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "how-much-ai-can-thought-leadership-take-96dae9dc?mod=pls_whats_news_us_business_",
@@ -1679,7 +1751,8 @@
       "excerpt": "",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "lumber-prices-surge-despite-housing-slump-c9432793?mod=pls_whats_news_us_busines",
@@ -1693,7 +1766,8 @@
       "excerpt": "Plus: The U.S. is banning exports of lithium ion battery and tungsten waste",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "tech-media-telecom-roundup-market-talk-11ca1081?mod=pls_whats_news_us_business_f",
@@ -1707,7 +1781,8 @@
       "excerpt": "Find insight on AppLovin, Warner Bros. Discovery and more in the latest Market Talks covering technology, media and telecom.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "startup-raises-700-million-to-replace-data-center-wires-with-light-adc74358?mod=",
@@ -1721,7 +1796,8 @@
       "excerpt": "Lumilens, which makes optical gear to speed up data flowing between AI servers, is valued at $5.5 billion in new funding.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "financial-services-roundup-market-talk-c3299b1d?mod=pls_whats_news_us_business_f",
@@ -1735,7 +1811,8 @@
       "excerpt": "Find insight on home sales, Apollo Global Management, Gulf stock markets, offshore insurance policies and more in the latest Market Talks covering financial services.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "how-novo-nordisks-ceo-says-he-is-shifting-the-companys-perspective-44451656?mod=",
@@ -1749,7 +1826,8 @@
       "excerpt": "",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "spacex-ipo-spv-investors-2698a174?mod=pls_whats_news_us_business_f",
@@ -1763,7 +1841,8 @@
       "excerpt": "One bought in to an SPV fund touting pre-IPO “exposure” to the rocket company. He was told later the shares were sold before trading began.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
@@ -1778,7 +1857,8 @@
       "case_slug": null,
       "group_name": null,
       "theme_slug": null,
-      "show": "news"
+      "show": "news",
+      "archived": true
     },
     {
       "id": "shares-of-memory-giants-drop-on-soft-guidance-505f1796?mod=rss_markets_main",
@@ -1792,7 +1872,8 @@
       "excerpt": "Plus, oil prices jump and the Dow breaks its winning streak.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "crypto-trader-wintermute-steps-onto-regulated-wall-street-with-broker-license-cb",
@@ -1820,7 +1901,8 @@
       "excerpt": "Find insight on Wizz Air, DHL Group and more in the latest Market Talks covering auto and transport.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "u-s-stocks-down-on-hormuz-deal-doubts-37f55a6a?mod=rss_markets_main",
@@ -1834,7 +1916,8 @@
       "excerpt": "U.S. stocks fell in a jittery session amid doubts about the reopening of the Strait of Hormuz.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "spacex-true-believers-propel-shares-past-end-of-epic-lockup-271ffc59?mod=rss_mar",
@@ -1848,7 +1931,8 @@
       "excerpt": "Some analysts are raising an eyebrow. Retail sees an ‘insane opportunity’ to buy.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "crypto-lobby-stable-coins-clarity-act-d3943e04?mod=rss_markets_main",
@@ -1862,7 +1946,8 @@
       "excerpt": "They say it closes a payment loophole. It doesn’t.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "defending-the-senates-clarity-act-for-crypto-f678f428?mod=rss_markets_main",
@@ -1876,7 +1961,8 @@
       "excerpt": "The legislation provides clear jurisdictional lines, consumer protections and safeguards against illicit finance.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "spacex-true-believers-propel-shares-past-end-of-epic-lockup-271ffc59?mod=pls_wha",
@@ -1890,7 +1976,8 @@
       "excerpt": "Some analysts are raising an eyebrow. Retail sees an ‘insane opportunity’ to buy.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "burger-kings-new-whopper-strikes-a-blow-in-fast-food-burger-wars-3e4a47b5?mod=pl",
@@ -1904,7 +1991,8 @@
       "excerpt": "Company president said the revamped burger was helping win market share; McDonald’s recently overhauled the Big Mac.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "fcc-votes-to-repeal-national-tv-ownership-limit-750c28dc?mod=pls_whats_news_us_b",
@@ -1918,7 +2006,8 @@
       "excerpt": "In a 2-1 split, the agency voted to eliminate the cap and said it would instead review proposed station acquisitions on a case-by-case basis.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "nielsen-to-buy-doubleverify-7dd13c40?mod=pls_whats_news_us_business_f",
@@ -1932,7 +2021,8 @@
       "excerpt": "Nielsen Holdings agreed to buy DoubleVerify in a deal with an enterprise value of about $2.15 billion.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "auto-transport-roundup-market-talk-0c7a6d21?mod=pls_whats_news_us_business_f",
@@ -1946,7 +2036,8 @@
       "excerpt": "Find insight on Wizz Air, DHL Group and more in the latest Market Talks covering auto and transport.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "instacart-revenue-gains-as-gross-transaction-value-orders-increase-8f27cfe7?mod=",
@@ -1960,7 +2051,8 @@
       "excerpt": "The company reported revenue increased to $1.04 billion from $914 million. Wall Street expected $1.03 billion.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "monster-beverage-sales-rise-on-international-growth-f0955113?mod=pls_whats_news_",
@@ -1974,7 +2066,8 @@
       "excerpt": "The company’s 20% rise in second-quarter sales was driven by growth among customers outside the U.S.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "molson-coors-sales-fall-amid-demand-challenges-supply-costs-70211a8a?mod=pls_wha",
@@ -1988,7 +2081,8 @@
       "excerpt": "Molson Coors Beverage said second-quarter sales fell as the company tries to balance sluggish customer demand with higher supply costs.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "sweetgreen-lowers-full-year-outlook-due-to-cyclosporiasis-outbreak-as-loss-widen",
@@ -2002,7 +2096,8 @@
       "excerpt": "The company now expects same-store sales to drop between 7% and 8% due to lower demand from the multistate cyclosporiasis outbreak..",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "draftkings-second-quarter-revenue-falls-hurt-by-promotions-708731e8?mod=pls_what",
@@ -2016,7 +2111,8 @@
       "excerpt": "The online sports betting company posted a loss of $67.6 million for the second quarter, compared with a profit of $157.9 million a year earlier.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "rocket-revenue-surges-on-mortgage-market-share-gains-884a0bfe?mod=pls_whats_news",
@@ -2030,7 +2126,8 @@
       "excerpt": "Rocket Companies reported higher second-quarter revenue as its market share in both purchase mortgages and refinancings rose.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "lyfts-bookings-climb-but-expects-growth-to-moderate-b5a40307?mod=pls_whats_news_",
@@ -2044,7 +2141,8 @@
       "excerpt": "Though its second-quarter gross bookings rose to $5.5 billion, the rideshare company expects bookings in the current quarter to rise at a slower pace of 15% to 19%.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "we-cant-afford-to-ignore-chinas-auto-threat-7e669653?mod=pls_whats_news_us_busin",
@@ -2058,7 +2156,8 @@
       "excerpt": "Beijing’s ambitions don’t just mean industrial competition; they endanger national security.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "basic-materials-roundup-market-talk-8f493d0f?mod=pls_whats_news_us_business_f",
@@ -2072,7 +2171,8 @@
       "excerpt": "Find insight on Glencore, Henkel and more in the latest Market Talks covering basic materials.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "airbnb-boosts-forecast-on-strong-demand-across-regions-a380e010?mod=pls_whats_ne",
@@ -2086,7 +2186,8 @@
       "excerpt": "The short-term rental company said it now expects revenue to increase by at least a mid-teens rate this year, up from its prior projection for growth in the low- to mid-teens.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "the-race-to-come-up-with-the-next-big-sleep-drug-473a4a5e?mod=pls_whats_news_us_",
@@ -2100,7 +2201,8 @@
       "excerpt": "The FDA approved the first drug to treat a root cause of narcolepsy, which could help other sleep conditions as well.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "amazon-to-offer-glp-1-weight-loss-drugs-to-medicare-part-d-patients-2b049915?mod",
@@ -2114,7 +2216,8 @@
       "excerpt": "Novo Nordisk’s Wegovy and Eli Lilly’s Zepbound and Foundayo will be available at a cost of $50 a month.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "quality-fresca-i-filing-alert",
@@ -2129,7 +2232,8 @@
       "case_slug": null,
       "group_name": null,
       "theme_slug": null,
-      "show": "both"
+      "show": "both",
+      "archived": true
     },
     {
       "id": "1240-edward-grant-filing-alert",
@@ -2144,7 +2248,8 @@
       "case_slug": null,
       "group_name": null,
       "theme_slug": null,
-      "show": "both"
+      "show": "both",
+      "archived": true
     },
     {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=dailydacs-market-summary-explainer-f",
@@ -2159,7 +2264,8 @@
       "case_slug": null,
       "group_name": null,
       "theme_slug": null,
-      "show": "news"
+      "show": "news",
+      "archived": true
     },
     {
       "id": "stock-market-today-dow-sp-500-nasdaq-08-05-2026?mod=rss_marketsmain",
@@ -2173,7 +2279,8 @@
       "excerpt": "Optimism around Mideast talks and strong earnings from a slew of other companies help stocks",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "spacex-needs-to-make-its-bigger-rockets-work-c800f9c2?mod=rss_marketsmain",
@@ -2187,7 +2294,8 @@
       "excerpt": "None of the company’s most ambitious plans are possible without the success of its Starship rockets.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "financial-services-roundup-market-talk-d5acb429?mod=rss_marketsmain",
@@ -2201,7 +2309,8 @@
       "excerpt": "Find insight on United Overseas Bank, HSBC, L&G and more in the latest Market Talks covering financial services.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "the-dividend-mind-trick-f330526f?mod=rss_marketsmain",
@@ -2215,7 +2324,8 @@
       "excerpt": "Plus, SpaceX loses more altitude.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "citadels-purchase-of-situationals-stocks-at-discount-is-already-paying-off-62cef",
@@ -2229,7 +2339,8 @@
       "excerpt": "Ken Griffin’s firm gained about 14% in its stock-focused hedge fund in July.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "bankers-are-betting-on-supersize-bonuses-this-year-with-profits-surging-91c9395d",
@@ -2243,7 +2354,8 @@
       "excerpt": "Volatile markets and huge stock offerings have been fueling profits on Wall Street.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "the-investing-heavyweights-that-backed-situational-awareness-before-it-blew-up-d",
@@ -2257,7 +2369,8 @@
       "excerpt": "The hedge fund behind aggressive AI bets tapped into a roster of big-name investors. Some warned the founder that he was taking big risks.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "jgbs-mixed-may-track-gains-in-u-s-treasurys-bdedc242?mod=rss_marketsmain",
@@ -2271,7 +2384,8 @@
       "excerpt": "Treasury yields were mixed as mediators in the Middle East worked on reopening the Strait of Hormuz.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "basic-materials-roundup-market-talk-9bc8f0f4?mod=rss_marketsmain",
@@ -2285,7 +2399,8 @@
       "excerpt": "Find insight on Glencore, Rio Tinto, Nickel Industries and more in the latest Market Talks covering basic materials.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "auto-transport-roundup-market-talk-054bdd7a?mod=rss_marketsmain",
@@ -2299,7 +2414,8 @@
       "excerpt": "Find insight on Thai Airways, Continental, Kia and more in the latest Market Talks covering auto and transport.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "u-k-regulator-eases-listing-rules-in-bid-to-revive-london-market-c7052b8c?mod=rs",
@@ -2313,7 +2429,8 @@
       "excerpt": "The U.K.’s top financial regulator is changing its rules around information sharing tied to initial public offerings, as London seeks to become a more attractive listing destination.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "energy-utilities-roundup-market-talk-b0021b1a?mod=rss_marketsmain",
@@ -2327,7 +2444,8 @@
       "excerpt": "Find insight on Seatrium, BP and more in the latest Market Talks covering energy and utilities.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "u-s-futures-higher-oil-holds-around-80-on-hopes-for-imminent-hormuz-reopening-6e",
@@ -2341,7 +2459,8 @@
       "excerpt": "The Dow industrials led U.S. stocks higher, boosted by optimism around Mideast talks and a strong round of corporate earnings, despite slumping SpaceX shares.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "health-care-roundup-market-talk-e658bc9c?mod=rss_marketsmain",
@@ -2355,7 +2474,8 @@
       "excerpt": "Find insight on Fresenius, Sandoz, Novo Nordisk and more in the latest Market Talks covering health care.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "glencore-targets-secondary-listing-of-shares-in-australia-f966a6ef?mod=rss_marke",
@@ -2369,7 +2489,8 @@
       "excerpt": "The London-listed miner said the move would broaden its shareholder base, improve trading liquidity and enhance its flexibility.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "sandoz-shares-climb-after-biosimilar-sales-drive-growth-598f57f6?mod=rss_markets",
@@ -2383,7 +2504,8 @@
       "excerpt": "Sandoz Group reported higher sales for the second quarter, driven by a strong performance in its biosimilar segment and a return to growth in generics.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "nikkei-rises-2-3-led-by-electronics-stocks-c7f7f21e?mod=rss_marketsmain",
@@ -2397,7 +2519,8 @@
       "excerpt": "European stock indexes rose at the open, extending a raft of record highs, with the Stoxx 600 index up and industrial and retail stocks gaining.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "u-s-natural-gas-futures-start-session-little-changed-1dd6928c?mod=rss_marketsmai",
@@ -2411,7 +2534,8 @@
       "excerpt": "U.S. natural gas futures inched up in early trading.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "oil-falls-amid-prospects-of-u-s-iran-deal-to-reopen-strait-of-hormuz-47e592e5?mo",
@@ -2425,7 +2549,8 @@
       "excerpt": "Oil futures edged higher as the market waited to see if an agreement would be reached to reopen the Strait of Hormuz.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "gold-rises-as-markets-weigh-middle-east-uncertainty-bd032b9b?mod=rss_marketsmain",
@@ -2439,7 +2564,8 @@
       "excerpt": "Gold prices climbed above $4,200 as signs of diplomatic progress in the Middle East temper fears over inflation and interest-rate hikes.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "asian-currencies-consolidate-may-gain-on-hopes-for-hormuz-reopening-72be347e?mod",
@@ -2453,7 +2579,8 @@
       "excerpt": "The dollar was steady as uncertainty over the Iran war remained elevated.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "the-morning-risk-report-how-trumps-financial-windfall-stiffened-opposition-to-la",
@@ -2467,7 +2594,8 @@
       "excerpt": "Plus: SEC climate rule rescission faces investor opposition, OpenAI settles with Justice Department over U.S. worker discrimination claims",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "best-financial-advisors?mod=rss_marketsmain",
@@ -2481,7 +2609,8 @@
       "excerpt": "We analyzed everything from advisor credentials to fees to portfolio options at some of the larger and more well-known registered investment advisor firms to help you select a firm that could best connect you with a fiduciary financial advisor.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "disney-earnings-q3-2026-dis-stock-bc2fa875?mod=pls_whats_news_us_business_f",
@@ -2495,7 +2624,8 @@
       "excerpt": "Third-quarter revenue increased 7% to $25.2 billion, driven by growth from the company’s experiences unit.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "spacex-needs-to-make-its-bigger-rockets-work-c800f9c2?mod=pls_whats_news_us_busi",
@@ -2509,7 +2639,8 @@
       "excerpt": "None of the company’s most ambitious plans are possible without the success of its Starship rockets.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "spacex-says-spending-spree-is-supercharging-ai-revenues-ea750ff3?mod=pls_whats_n",
@@ -2523,7 +2654,8 @@
       "excerpt": "The Elon Musk-led rocket company spent $15.8 billion on AI projects in the second quarter and doesn’t plan to slow down.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "u-s-to-ban-exports-of-recycled-battery-metals-and-tungsten-e2d38838?mod=pls_what",
@@ -2537,7 +2669,8 @@
       "excerpt": "The move comes as Washington races to secure the raw materials that are crucial for defense and other industries.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "financial-services-roundup-market-talk-d5acb429?mod=pls_whats_news_us_business_f",
@@ -2551,7 +2684,8 @@
       "excerpt": "Find insight on home sales, interest rates, HSBC Holdings and more in the latest Market Talks covering financial services.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "the-morning-risk-report-how-trumps-financial-windfall-stiffened-opposition-to-la",
@@ -2565,7 +2699,8 @@
       "excerpt": "Plus: SEC climate rule rescission faces investor opposition, OpenAI settles with Justice Department over U.S. worker discrimination claims",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "bloomin-brands-raises-earnings-view-on-higher-profit-check-size-eccfc062?mod=pls",
@@ -2579,7 +2714,8 @@
       "excerpt": "Bloomin’ Brands raised its adjusted earnings outlook, as customers at its Outback Steakhouse chain are paying more for pricier steaks.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "frenzied-auctions-and-swipe-right-bidding-send-live-commerce-mainstream-381a4965",
@@ -2593,7 +2729,8 @@
       "excerpt": "",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "shake-shack-revenue-climbs-profit-slips-on-higher-costs-2a0a0230?mod=pls_whats_n",
@@ -2607,7 +2744,8 @@
       "excerpt": "Shake Shack reported higher second-quarter sales, but profit slipped as operating expenses increased.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "flutter-ceo-to-step-down-as-u-s-sports-betting-business-falters-profit-outlook-c",
@@ -2621,7 +2759,8 @@
       "excerpt": "Flutter Entertainment said Chief Executive Peter Jackson is stepping down, while lowering its profit outlook and swinging to a loss as its U.S. business continues to struggle.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "thomson-reuters-lifts-revenue-guidance-after-growth-83f613af?mod=pls_whats_news_",
@@ -2650,7 +2789,8 @@
       "excerpt": "Uber Technologies notched higher revenue in the second quarter but issued a soft outlook as it continues to invest heavily in autonomous vehicles.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "new-york-times-posts-higher-revenue-as-subscriber-growth-slows-545cc6a0?mod=pls_",
@@ -2664,7 +2804,8 @@
       "excerpt": "The media company’s total revenue climbed 11% to $762.5 million in the second quarter.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "shopify-profit-jumps-as-subscriptions-merchant-services-boost-revenues-73693ff6?",
@@ -2678,7 +2819,8 @@
       "excerpt": "Shopify quieted fears of a midyear slowdown, forecasting accelerating third-quarter sales growth as artificial intelligence-driven search and broad merchant expansion fuel market-share gains.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "dine-brands-sales-rise-as-ihop-growth-offsets-applebees-decline-86bf4d3c?mod=pls",
@@ -2692,7 +2834,8 @@
       "excerpt": "Dine Brands recorded higher sales and lower profit in the second quarter, as IHOP’s growth helped offset a decline at Applebee’s.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "kraft-heinz-raises-sales-view-amid-efforts-to-offset-higher-costs-7cb71d9b?mod=p",
@@ -2706,7 +2849,8 @@
       "excerpt": "Kraft Heinz had narrower loss and lower sales in the second quarter, but raised its sales outlook as it aims to mitigate higher supply costs by raising prices.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "honda-doubles-profit-boosts-guidance-on-weaker-yen-390a8285?mod=pls_whats_news_u",
@@ -2720,7 +2864,8 @@
       "excerpt": "The Japanese automaker is aiming to improve its hybrid EV offerings to shore up its car business’s profitability.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "auto-transport-roundup-market-talk-054bdd7a?mod=pls_whats_news_us_business_f",
@@ -2734,7 +2879,8 @@
       "excerpt": "Find insight on Uber, Thai Airways, Continental, Kia and more in the latest Market Talks covering auto and transport.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "wayve-uber-win-approval-for-supervised-robotaxi-rides-in-london-96dca1ca?mod=pls",
@@ -2748,7 +2894,8 @@
       "excerpt": "Transport for London granted private-hire vehicle licenses to a number of Wayve’s autonomous vehicles, which will operate with a private-hire driver behind the wheel to take control when necessary.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "gm-chinas-saic-extend-joint-venture-partnership-for-20-years-8829807a?mod=pls_wh",
@@ -2762,7 +2909,8 @@
       "excerpt": "The partnership plans to launch at least 30 new-energy vehicles by 2030 and deploy tech solutions developed in China for the Chinese market.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "oil-falls-amid-prospects-of-u-s-iran-deal-to-reopen-strait-of-hormuz-47e592e5?mo",
@@ -2776,7 +2924,8 @@
       "excerpt": "Oil futures ended mixed after Iran said it has agreed with Oman on a shipping route through the Strait of Hormuz, but that safe passage will depend on third parties not obstructing the process, an apparent reference to the U.S.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "glencore-targets-secondary-listing-of-shares-in-australia-f966a6ef?mod=pls_whats",
@@ -2790,7 +2939,8 @@
       "excerpt": "The London-listed miner said the move would broaden its shareholder base, improve trading liquidity and enhance its flexibility.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "cathay-pacific-first-half-profit-jumps-on-strong-passenger-cargo-traffic-539bffe",
@@ -2804,7 +2954,8 @@
       "excerpt": "Increased passenger and cargo traffic more than offset a surge in fuel prices.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "faa-investigates-marine-one-safety-incident-in-washington-e95d6ed2?mod=pls_whats",
@@ -2818,7 +2969,8 @@
       "excerpt": "The president’s helicopter took off from the White House despite commercial traffic flying at Reagan National Airport.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "u-k-regulator-eases-listing-rules-in-bid-to-revive-london-market-c7052b8c?mod=pl",
@@ -2832,7 +2984,8 @@
       "excerpt": "The U.K.’s top financial regulator is changing its rules around information sharing tied to initial public offerings, as London seeks to become a more attractive listing destination.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "wayfair-sees-recovery-in-u-s-furniture-demand-spacex-is-eyeing-1-trillion-in-rev",
@@ -2846,7 +2999,8 @@
       "excerpt": "",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "spacex-earnings-q2-2026-spcx-stock-5b3d782b?mod=pls_whats_news_us_business_f",
@@ -2860,7 +3014,8 @@
       "excerpt": "The company’s first earnings report as a public company shows a surge in revenue and the tab for capital expenditures.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "the-wall-street-and-silicon-valley-investors-who-got-burned-by-situational-aware",
@@ -2874,7 +3029,8 @@
       "excerpt": "Plus, Iran stakes everything on controlling the Strait of Hormuz, and our travel columnist explains basic economy’s changing rules before you book your next flight.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "ted-lasso-is-a-leadership-masterclass-380c6bce?mod=pls_whats_news_us_business_f",
@@ -2888,7 +3044,8 @@
       "excerpt": "The way Ted, played by Jason Sudeikis, lifts others up resonated with me immediately.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "whatnot-live-shopping-app-48b67987?mod=pls_whats_news_us_business_f",
@@ -2902,7 +3059,8 @@
       "excerpt": "Whatnot’s fast-moving auctions and feverish ‘breaks’ hook users hoping to buy prized sports cards—plus fashion, tools, food and nearly anything else.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "mamdani-is-shunning-new-york-business-leaders-who-are-used-to-calling-the-shots-",
@@ -2916,7 +3074,8 @@
       "excerpt": "The mayor fired corporate leaders from a city fund’s advisory board in the latest sign that he is changing the way such power brokers access City Hall.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "revere-capital-advisors-filing-alert",
@@ -2931,7 +3090,8 @@
       "case_slug": null,
       "group_name": null,
       "theme_slug": null,
-      "show": "both"
+      "show": "both",
+      "archived": true
     },
     {
       "id": "salad-and-go-filing-alert",
@@ -2946,7 +3106,8 @@
       "case_slug": null,
       "group_name": null,
       "theme_slug": null,
-      "show": "both"
+      "show": "both",
+      "archived": true
     },
     {
       "id": "prosecutors-probed-whistleblower-claims-that-jpmorgan-mishandled-fraud-cases-3f9",
@@ -2960,7 +3121,8 @@
       "excerpt": "A former executive alleged JPMorgan improperly denied reimbursements of more than $100 million to customers who were victims of financial scams.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "strong-earnings-power-dow-to-another-record-00bf7f81?mod=rss_markets_main",
@@ -2974,7 +3136,8 @@
       "excerpt": "Blue-chip average notches 24th high of the year, while Nasdaq slips.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "financial-services-roundup-market-talk-d5acb429?mod=rss_markets_main",
@@ -2988,7 +3151,8 @@
       "excerpt": "Find insight on home sales, interest rates, HSBC Holdings and more in the latest Market Talks covering financial services.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "spacex-needs-to-make-its-bigger-rockets-work-c800f9c2?mod=rss_markets_main",
@@ -3002,7 +3166,8 @@
       "excerpt": "None of the company’s most ambitious plans are possible without the success of its Starship rockets.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "health-care-roundup-market-talk-e658bc9c?mod=rss_markets_main",
@@ -3016,7 +3181,8 @@
       "excerpt": "Find insight on Eli Lilly, Novo Nordisk, Fresenius and more in the latest Market Talks covering health care.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "warshs-silence-manufactures-market-noise-9132a01f?mod=rss_markets_main",
@@ -3030,7 +3196,8 @@
       "excerpt": "Investors aren’t asking for rate guarantees. They simply want to know how the Fed will react to changing economic data.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "energy-utilities-roundup-market-talk-b0021b1a?mod=rss_markets_main",
@@ -3044,7 +3211,8 @@
       "excerpt": "Find insight on oil futures, U.S. natural gas futures, Seatrium and more in the latest Market Talks covering energy and utilities.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "basic-materials-roundup-market-talk-9bc8f0f4?mod=rss_markets_main",
@@ -3058,7 +3226,8 @@
       "excerpt": "Find insight on the global chemicals sector, Glencore, Voestalpine and more in the latest Market Talks covering basic materials.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "asian-currencies-consolidate-may-gain-on-hopes-for-hormuz-reopening-72be347e?mod",
@@ -3072,7 +3241,8 @@
       "excerpt": "The WSJ Dollar Index fell 0.2% — down six of the past seven trading days.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "the-morning-risk-report-how-trumps-financial-windfall-stiffened-opposition-to-la",
@@ -3086,7 +3256,8 @@
       "excerpt": "Plus: SEC climate rule rescission faces investor opposition, OpenAI settles with Justice Department over U.S. worker discrimination claims",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "spacex-stock-drops-on-ballooning-ai-bill-d7bf57d7?mod=rss_markets_main",
@@ -3100,7 +3271,8 @@
       "excerpt": "Plus, Google reshuffles senior AI ranks and Shake Shack draws an activist.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "home-building-is-sputtering-but-lumber-prices-havent-been-so-high-in-years-a2ef1",
@@ -3114,7 +3286,8 @@
       "excerpt": "Steep duties on Canadian lumber, wildfires and sawmill closures have cut supply and pushed up prices.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "the-dividend-mind-trick-f330526f?mod=rss_markets_main",
@@ -3128,7 +3301,8 @@
       "excerpt": "Plus, SpaceX loses more altitude.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "citadels-purchase-of-situationals-stocks-at-discount-is-already-paying-off-62cef",
@@ -3142,7 +3316,8 @@
       "excerpt": "Ken Griffin’s firm gained about 14% in its stock-focused hedge fund in July.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "bankers-are-betting-on-supersize-bonuses-this-year-with-profits-surging-91c9395d",
@@ -3156,7 +3331,8 @@
       "excerpt": "Volatile markets and huge stock offerings have been fueling profits on Wall Street.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "the-investing-heavyweights-that-backed-situational-awareness-before-it-blew-up-d",
@@ -3170,7 +3346,8 @@
       "excerpt": "The hedge fund behind aggressive AI bets tapped into a roster of big-name investors. Some warned the founder that he was taking big risks.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "false-unanimity-at-the-national-academies-8b11e800?mod=pls_whats_news_us_busines",
@@ -3184,7 +3361,8 @@
       "excerpt": "A climate report spins an illusion of elite scientific consensus.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "energy-utilities-roundup-market-talk-b0021b1a?mod=pls_whats_news_us_business_f",
@@ -3198,7 +3376,8 @@
       "excerpt": "Find insight on oil futures, U.S. natural gas futures, Seatrium and more in the latest Market Talks covering energy and utilities.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "news-corp-revenue-rises-with-growth-across-all-segments-d5313004?mod=pls_whats_n",
@@ -3212,7 +3391,8 @@
       "excerpt": "Digital-only subscriptions to The Wall Street Journal averaged nearly 4.5 million in the quarter, compared with 4.33 million in the prior quarter.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "airtable-acquisition-is-kick-in-the-gut-for-software-unicorns-and-their-backers-",
@@ -3226,7 +3406,8 @@
       "excerpt": "Bending Spoons is buying Airtable for a fraction of its last private valuation.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "sandisk-revenue-soars-on-ai-data-storage-demand-1fe50937?mod=pls_whats_news_us_b",
@@ -3240,7 +3421,8 @@
       "excerpt": "The company posted a higher net income of $6.9 billion as the artificial-intelligence buildout continued to fuel demand for data storage.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "cvs-health-launches-eli-lilly-glp-1-partnership-lifts-outlook-as-profit-increase",
@@ -3254,7 +3436,8 @@
       "excerpt": "CVS Health said it will revamp its weight management program through a partnership with Eli Lilly as the company lifted its full-year outlook and reported a nearly threefold increase in its second-quarter profit.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "eyes-on-earnings",
@@ -3269,7 +3452,8 @@
       "case_slug": null,
       "group_name": null,
       "theme_slug": null,
-      "show": "both"
+      "show": "both",
+      "archived": true
     },
     {
       "id": "alkegen-chapter-11-bankruptcy-filing",
@@ -3284,7 +3468,8 @@
       "case_slug": null,
       "group_name": null,
       "theme_slug": null,
-      "show": "both"
+      "show": "both",
+      "archived": true
     },
     {
       "id": "airtable-acquisition-is-kick-in-the-gut-for-software-unicorns-and-their-backers-",
@@ -3298,7 +3483,8 @@
       "excerpt": "Bending Spoons is buying Airtable for a fraction of its last private valuation.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "stock-market-today-spacex-earnings-08-04-2026?mod=rss_markets_main",
