@@ -16,10 +16,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/66732129/andersen-v-stability-ai-ltd/",
     "date_last_filing": "2026-09-04",
-    "meta_fetched_at": "2026-09-07T20:38:51.819207+00:00",
-    "fetched_at": "2026-09-07T20:38:51.819207+00:00",
+    "meta_fetched_at": "2026-09-07T23:34:28.519593+00:00",
+    "fetched_at": "2026-09-07T23:34:28.519593+00:00",
     "as_of": "Sep 7, 2026",
-    "backfilled": false,
+    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -8273,9 +8273,28 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 2,
+        "date_filed": "2023-01-13",
+        "time_filed": "",
+        "date_display": "Jan 13, 2023",
+        "description": "Proposed Summons. (Saveri, Joseph) (Filed on 1/13/2023) (Entered: 01/13/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.2.0.pdf"
+      },
+      {
+        "entry_number": 1,
+        "date_filed": "2023-01-13",
+        "time_filed": "",
+        "date_display": "Jan 13, 2023",
+        "description": "COMPLAINT against All Defendants with jury demand ( Filing fee $ 402, receipt number ACANDC-17900289.). Filed by Sarah Andersen, Karla Ortiz, Kelly McKernan. (Attachments: # 1 Exhibit 1, # 2 Exhibit 2, # 3 Exhibit 3, # 4 Exhibit 4, # 5 Exhibit 5, # 6 Exhibit 6, # 7 Exhibit 7, # 8 Exhibit 8, # 9 Exhibit 9, # 10 Exhibit 10, # 11 Exhibit 11, # 12 Exhibit 12, # 13 Exhibit 13, # 14 Exhibit 14, # 15 Exhibit 15, # 16 Exhibit 16, # 17 Exhibit 17, # 18 Civil Cover Sheet)(Saveri, Joseph) (Filed on 1/13/2023) Modified on 1/17/2023 (jml, COURT STAFF). (Entered: 01/13/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.1.0.pdf"
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=66732129&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=43"
+    ]
   },
   "claims_administrator": null,
   "coverage": []
