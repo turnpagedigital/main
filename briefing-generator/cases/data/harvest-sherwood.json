@@ -16,10 +16,10 @@
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-09-04",
     "meta_fetched_at": "2026-09-05T00:13:26.017801+00:00",
-    "fetched_at": "2026-09-06T21:27:53.587435+00:00",
-    "as_of": "Sep 6, 2026",
+    "fetched_at": "2026-09-07T00:03:04.252652+00:00",
+    "as_of": "Sep 7, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 1290,
@@ -27,7 +27,7 @@
         "time_filed": "15:18:29",
         "date_display": "Sep 4, 2026",
         "description": "Certificate of service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -59,7 +59,7 @@
         "time_filed": "15:18:29",
         "date_display": "Sep 4, 2026",
         "description": "Certificate of service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
