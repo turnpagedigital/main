@@ -3,6 +3,39 @@
   "case_name": "Bartz v. Anthropic",
   "items": [
     {
+      "date": "2026-09-07",
+      "updated": "2026-09-07",
+      "lede": "On September 4, JND Legal — the settlement administrator — distributed consolidated claim notices to all claimants in the Bartz class, triggering a 30-day contest window that is now running. Each notice summarizes the claimant's submitted works, identifies any other party that filed a claim for the same title, and discloses what percentage of the award each party has claimed; it also provides a unique Claim Number…",
+      "body_md": "On September 4, JND Legal — the settlement administrator — distributed consolidated claim notices to all claimants in the Bartz class, triggering a 30-day contest window that is now running. \nEach notice summarizes the claimant's submitted works, identifies any other party that filed a claim for the same title, and discloses what percentage of the award each party has claimed; it also provides a unique Claim Number, PIN, and link to a secure review portal.\n \nMost claimants face no dispute and are asked only to confirm the details; they may also update payment information and address if those have changed since the original claim was filed.\n \nDisputed claims are those in which different claimants to a single work — typically an author and a publisher or co-author — have asserted competing percentage splits; when a claimant logs in, the portal shows what each party has claimed for that work.\n The 30-day response window controls the pace of the reconciliation phase and, by extension, the readiness of the distribution calculus ahead of the November 15 first-payment estimated deadline — making timely claimant action the operative variable between now and that date, per __[Authors Guild](https://authorsguild.org/news/important-information-regarding-anthropic-copyright-settlement-claim-notices/)__ and __[TAA](https://blog.taaonline.net/2026/09/next-steps-in-bartz-v-anthropic-settlement-resolving-claim-percentage-differences/)__.\n\n\nAuthors and publishers that have each filed claims for a given work in which the claimed percentages do not match are required to meet and confer with the other claimants for that work to attempt to agree on the split.\n \nDuring that process, the claimants and the settlement administrator will look to the underlying publishing contracts governing the disputed work for guidance on how the payout should be allocated.\n The dispute-resolution layer adds an indeterminate amount of time to the reconciliation process for contested titles; the extent of that friction across the 440,490 claimed works will determine whether the administrator can certify a clean distribution file in time to hit the November 15 target. Nothing on the district docket reflects any court involvement in resolving those disputes at this stage — the meet-and-confer obligation runs between claimants and the administrator, not through Judge Martínez-Olguín.\n\nThe district docket itself has been static since Dkt. 689 (Hartnett withdrawal, September 3). No new filings have appeared. The two fee-only Ninth Circuit appeals — No. 26-5391 (Edelson PC / Oppenheim + Zebrak) and No. 26-5455 (Cowan DeBaets Abrahams & Sheppard LLP) — remain without briefing schedules, and objector Stacy Lynn Werner's Dkt. 687 remains in procedural limbo pending a conforming refiled notice. None of those appellate tracks affect the payment timeline or the reconciliation process now underway. The next concrete case milestone is Anthropic's $450 million Scheduled Payment 1, due September 25, 2026, which funds the first distribution tranche estimated at approximately $2,203.56 per work; the 30-day claimant-contest window that opened September 4 will close on or around October 4 — before that installment lands — making it the more immediate operational deadline for class members.\n\n## Sources\n\n- [Important Information Regarding Anthropic Copyright Settlement Claim Notices](https://authorsguild.org/news/important-information-regarding-anthropic-copyright-settlement-claim-notices/) — Authors Guild, September 4, 2026\n- [Next Steps in Bartz v Anthropic Settlement: Resolving Claim Percentage Differences](https://blog.taaonline.net/2026/09/next-steps-in-bartz-v-anthropic-settlement-resolving-claim-percentage-differences/) — Textbook & Academic Authors Association (TAA), September 4, 2026\n- [Bartz v. Anthropic Copyright Case: Guidance to Anthropic Settlement Process for Educational Authors](https://blog.taaonline.net/2026/03/bartz-v-anthropic-copyright-case-guidance-to-anthropic-settlement-process-for-educational-authors/) — TAA, March 2026\n- [Anthropic v. Bartz: The Final Ruling!](https://www.alliemccormack.com/post/anthropic-v-bartz-the-final-ruling) — Allie McCormack, September 4, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Important Information Regarding Anthropic Copyright Settlement Claim Notices",
+          "url": "https://authorsguild.org/news/important-information-regarding-anthropic-copyright-settlement-claim-notices/",
+          "note": "Authors Guild, September 4, 2026"
+        },
+        {
+          "title": "Next Steps in Bartz v Anthropic Settlement: Resolving Claim Percentage Differences",
+          "url": "https://blog.taaonline.net/2026/09/next-steps-in-bartz-v-anthropic-settlement-resolving-claim-percentage-differences/",
+          "note": "Textbook & Academic Authors Association (TAA), September 4, 2026"
+        },
+        {
+          "title": "Bartz v. Anthropic Copyright Case: Guidance to Anthropic Settlement Process for Educational Authors",
+          "url": "https://blog.taaonline.net/2026/03/bartz-v-anthropic-copyright-case-guidance-to-anthropic-settlement-process-for-educational-authors/",
+          "note": "TAA, March 2026"
+        },
+        {
+          "title": "Anthropic v. Bartz: The Final Ruling!",
+          "url": "https://www.alliemccormack.com/post/anthropic-v-bartz-the-final-ruling",
+          "note": "Allie McCormack, September 4, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 0,
+        "articles": 2,
+        "latest": "2026-09-04"
+      }
+    },
+    {
       "date": "2026-09-04",
       "updated": "2026-09-04",
       "lede": "On September 2, the Bartz plaintiffs filed a Status Report — Dkt. 688 — disclosing the class distribution mechanics and timeline. Class counsel filed the Status Report outlining the distribution plan; per that filing, claimants were to receive a consolidated form listing their works and percentage share of the settlement by September 4.",
