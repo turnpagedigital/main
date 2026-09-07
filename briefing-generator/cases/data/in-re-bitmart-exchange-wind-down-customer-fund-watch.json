@@ -19,5 +19,58 @@
     "entries": []
   },
   "claims_administrator": null,
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "BitMart Creditors Form Claimholder Committee After $10 Million Rescue Offer Goes Unanswered",
+      "url": "https://pro.edgex.exchange/news/article/bitmart-creditors-committee-echo-base-rescue-offer",
+      "source": "EdgeX Pro",
+      "date": "2026-09-04",
+      "summary": "A detailed account of Echo Base's organizing of an ad hoc BitMart claimholder committee, covering the August 6 $10 million pre-negotiated bankruptcy proposal, the August 8 formal withdrawal demand after 15 unanswered contact attempts, and the committee's consideration of whether qualifying creditors could commence an involuntary insolvency proceeding. The piece notes that BitMart's own restructuring announcement on August 21 committed to no distribution timeline, no asset figures, and no claims mechanics."
+    },
+    {
+      "headline": "BitMart Creditors Organize After $10M Rescue Offer",
+      "url": "https://crypto.news/bitmart-creditors-organize-after-10m-rescue-offer/",
+      "source": "crypto.news",
+      "date": "2026-09-03",
+      "summary": "Special situations firm Echo Base announced on September 2 that it had organized an ad hoc claimholder committee of BitMart customers with frozen assets, after BitMart ignored a written proposal on August 6 offering up to $10 million to sponsor a pre-negotiated bankruptcy filing. The committee retained Young Conaway Stargatt & Taylor and Ashbury Legal, and is evaluating restructuring, regulatory, and involuntary insolvency remedies."
+    },
+    {
+      "headline": "Crypto Exchange BitMart Weighs Partial Restart and Creditor Payouts Weeks After Announcing Shutdown",
+      "url": "https://www.coindesk.com/business/2026/08/22/crypto-exchange-bitmart-weighs-partial-restart-and-creditor-payouts-weeks-after-announcing-shutdown",
+      "source": "CoinDesk",
+      "date": "2026-08-22",
+      "summary": "Less than four weeks after announcing a full wind-down, BitMart said on August 21 it is exploring a restructuring plan that could combine creditor distributions with a phased restart of select operations. The exchange appointed White & Case as restructuring counsel and committed to publishing a detailed roadmap by September 9, 2026."
+    },
+    {
+      "headline": "BitMart Weighs Phased Restart and Creditor Payouts",
+      "url": "https://crypto.news/bitmart-weighs-phased-restart-and-creditor-payouts/",
+      "source": "crypto.news",
+      "date": "2026-08-22",
+      "summary": "crypto.news flagged that BitMart's August 21 restructuring announcement marked the exchange's first public reference to 'creditors,' without explaining which customers or counterparties fall within that category, and that the September 9 roadmap deadline is a disclosure date — not a payout or plan-confirmation date. The piece also noted BitMart had not published creditor eligibility criteria, payout percentages, reserve data, or any court filing."
+    },
+    {
+      "headline": "BitMart Winds Down Trading as Exchange Closures Pile Up",
+      "url": "https://www.financemagnates.com/cryptocurrency/exchange/bitmart-winds-down-trading-as-exchange-closures-pile-up/",
+      "source": "Finance Magnates",
+      "date": "2026-07-26",
+      "summary": "Finance Magnates reported BitMart's July 26 halt of new registrations, deposits, and trading orders for its approximately 13 million users across 180+ jurisdictions, with all spot and futures trading scheduled to cease by August 26 and withdrawals remaining open — subject to enhanced compliance and identity checks — through January 31, 2027. The closure made BitMart the third established crypto exchange to announce a wind-down in weeks, following BitMEX and EXMO."
+    },
+    {
+      "headline": "Crypto Exchange BitMart to Shut Down After Nine Years, BMX Token Crashes 58%",
+      "url": "https://www.coindesk.com/markets/2026/07/26/crypto-exchange-bitmart-to-shut-down-after-nine-years-bmx-token-crashes-58",
+      "source": "CoinDesk",
+      "date": "2026-07-26",
+      "summary": "CoinDesk reported BitMart's abrupt wind-down announcement, noting the exchange cited 'operating conditions, market environment, and future strategic direction' without further detail, and that the BMX token fell approximately 58% in 24 hours on the news. The exchange had recently reported roughly $1.6 billion in 24-hour trading volume and warned users that withdrawal processing could be delayed by additional identity and security checks."
+    }
+  ],
+  "events": [
+    {
+      "title": "BitMart Restructuring Roadmap Publication Deadline",
+      "date": "2026-09-09",
+      "time": "",
+      "kind": "Deadline",
+      "url": "https://www.coindesk.com/business/2026/08/22/crypto-exchange-bitmart-weighs-partial-restart-and-creditor-payouts-weeks-after-announcing-shutdown",
+      "source": "BitMart (via White & Case / CoinDesk reporting)"
+    }
+  ]
 }

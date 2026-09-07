@@ -2047,5 +2047,35 @@
     ]
   },
   "claims_administrator": null,
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "Midjourney replies, supports judgment vs. Disney, Warner US copyright claims",
+      "url": "https://www.mlex.com/mlex/intellectual-property/articles/2517986",
+      "source": "MLex",
+      "date": "2026-08-25",
+      "summary": "Midjourney filed a reply brief backing its motion for judgment against Disney and Warner Bros.'s secondary copyright claims, arguing the studios' opposition relies on red herrings and mischaracterizations of its service. Midjourney contended the studios failed to plead 'clear' and 'affirmative' encouragement of infringement as required under Supreme Court precedent."
+    },
+    {
+      "headline": "Disney, Warner Fight AI Co.'s Bid To Trim Copyright Case",
+      "url": "https://www.law360.com/corporate/articles/2512690",
+      "source": "Law360",
+      "date": "2026-08-12",
+      "summary": "Disney, Warner Bros., and NBCUniversal urged a California federal court to reject Midjourney's bid to narrow the copyright lawsuit, arguing Midjourney misreads the Supreme Court's March ruling on secondary copyright liability for internet service providers. The studios contended the decision does not foreclose claims of intentionally promoting infringement."
+    },
+    {
+      "headline": "Midjourney strikes back: sued AI giant demands Hollywood's secrets",
+      "url": "https://www.theartnewspaper.com/2026/07/09/midjourney-demands-hollywood-AI-secrets",
+      "source": "The Art Newspaper",
+      "date": "2026-07-09",
+      "summary": "Midjourney filed a motion asking Judge Kronstadt to overturn a magistrate's June ruling that limited discovery into the studios' own internal AI use, arguing the studios' AI practices bear directly on its fair use and unclean-hands defenses. The studios countered that Midjourney's broad requests constitute a 'fishing expedition' irrelevant to whether Midjourney itself infringed their copyrights."
+    },
+    {
+      "headline": "Midjourney Seeks to Reveal Studios' Use of AI in High-Stakes Copyright Battle",
+      "url": "https://variety.com/2026/film/news/midjourney-studios-ai-copyright-discovery-1236800902/",
+      "source": "Variety",
+      "date": "2026-07-02",
+      "summary": "Midjourney moved before Judge Kronstadt to overturn Magistrate Judge Richlin's June 15 order limiting AI-use discovery to consumer-facing applications, seeking access to the studios' internal AI business plans, training datasets, model weights, and board presentations. Midjourney argued that if the studios train image-generating AI on unlicensed data internally, that constitutes industry custom supporting its fair-use defense."
+    }
+  ],
+  "events": []
 }
