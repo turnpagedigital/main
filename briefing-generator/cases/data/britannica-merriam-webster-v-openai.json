@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/",
     "date_last_filing": "2026-09-04",
     "meta_fetched_at": "2026-09-05T00:12:16.843735+00:00",
-    "fetched_at": "2026-09-06T21:27:09.395787+00:00",
-    "as_of": "Sep 6, 2026",
+    "fetched_at": "2026-09-07T00:01:50.544265+00:00",
+    "as_of": "Sep 7, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 62,
@@ -28,7 +28,7 @@
         "time_filed": "12:32:22",
         "date_display": "Sep 4, 2026",
         "description": "REDACTION to (1700 in 1:25-md-03143-SHS-OTW) MOTION for Summary Judgment . by Daily News LP, The New York Times Company, Ziff Davis Inc.Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Crosby, Ian) (Entered: 09/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -60,7 +60,7 @@
         "time_filed": "12:32:22",
         "date_display": "Sep 4, 2026",
         "description": "REDACTION to (1700 in 1:25-md-03143-SHS-OTW) MOTION for Summary Judgment . by Daily News LP, The New York Times Company, Ziff Davis Inc.Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Crosby, Ian) (Entered: 09/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

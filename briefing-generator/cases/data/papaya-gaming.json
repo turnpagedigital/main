@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-09-04",
     "meta_fetched_at": "2026-09-06T11:45:20.563248+00:00",
-    "fetched_at": "2026-09-06T21:25:35.312919+00:00",
-    "as_of": "Sep 6, 2026",
+    "fetched_at": "2026-09-07T00:00:23.342114+00:00",
+    "as_of": "Sep 7, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 93,
@@ -28,7 +28,7 @@
         "time_filed": "",
         "date_display": "Sep 4, 2026",
         "description": "[SEALED] Letter Filed by Skillz Platform Inc.. (Neiburg, Michael)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -38,7 +38,7 @@
         "time_filed": "12:07:29",
         "date_display": "Sep 4, 2026",
         "description": "Letter (Bk)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -60,7 +60,7 @@
         "time_filed": "",
         "date_display": "Sep 4, 2026",
         "description": "[SEALED] Letter Filed by Skillz Platform Inc.. (Neiburg, Michael)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -70,7 +70,7 @@
         "time_filed": "12:07:29",
         "date_display": "Sep 4, 2026",
         "description": "Letter (Bk)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
