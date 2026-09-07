@@ -1314,6 +1314,17 @@
       "tokens_in": 0,
       "tokens_out": 0,
       "ok": false
+    },
+    {
+      "ts": "2026-09-07T15:03:55Z",
+      "date": "2026-09-07",
+      "task": "prospect-scan",
+      "provider": "anthropic",
+      "requests": 6,
+      "tokens_in": 303684,
+      "tokens_out": 15305,
+      "ok": true,
+      "model": "claude-sonnet-4-6"
     }
   ]
 }
