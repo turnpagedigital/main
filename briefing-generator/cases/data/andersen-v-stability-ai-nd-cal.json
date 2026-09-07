@@ -16,8 +16,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/66732129/andersen-v-stability-ai-ltd/",
     "date_last_filing": "2026-09-04",
-    "meta_fetched_at": "2026-09-07T04:53:29.649713+00:00",
-    "fetched_at": "2026-09-07T04:53:29.649713+00:00",
+    "meta_fetched_at": "2026-09-07T20:38:51.819207+00:00",
+    "fetched_at": "2026-09-07T20:38:51.819207+00:00",
     "as_of": "Sep 7, 2026",
     "backfilled": false,
     "new_in_72h": 0,
@@ -7103,9 +7103,1179 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.110.0_1.pdf"
+      },
+      {
+        "entry_number": 109,
+        "date_filed": "2023-09-12",
+        "time_filed": "17:10:11",
+        "date_display": "Sep 12, 2023",
+        "description": "ADR Certification (ADR L.R. 3-5 b) of discussion of ADR options Adam Chen (Schoenhard, Paul) (Filed on 9/12/2023) (Entered: 09/12/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.109.0.pdf"
+      },
+      {
+        "entry_number": 108,
+        "date_filed": "2023-09-08",
+        "time_filed": "10:26:18",
+        "date_display": "Sep 8, 2023",
+        "description": "TRANSCRIPT ORDER for proceedings held on 7/19/2023, before Judge William H. Orrick, for Court Reporter Jennifer Coulthard, ordered by Ian Bensberg. (knm, COURT STAFF) (Filed on 9/8/2023) (Entered: 09/08/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.108.0_1.pdf"
+      },
+      {
+        "entry_number": 107,
+        "date_filed": "2023-08-30",
+        "time_filed": "15:48:57",
+        "date_display": "Aug 30, 2023",
+        "description": "TRANSCRIPT ORDER for proceedings held on 7/19/23 before Judge William H. Orrick for Court Reporter Jennifer Coulthard filed by Matthew Grillo, Pillsbury Winthrop. (notewarel, COURT STAFF) (Filed on 8/30/2023) (Entered: 08/30/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.107.0_1.pdf"
+      },
+      {
+        "entry_number": 106,
+        "date_filed": "2023-08-29",
+        "time_filed": "14:00:52",
+        "date_display": "Aug 29, 2023",
+        "description": "ADR Certification (ADR L.R. 3-5 b) of discussion of ADR options (Gass, Andrew) (Filed on 8/29/2023) (Entered: 08/29/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.106.0.pdf"
+      },
+      {
+        "entry_number": 105,
+        "date_filed": "2023-08-23",
+        "time_filed": "09:58:00",
+        "date_display": "Aug 23, 2023",
+        "description": "NOTICE by Stability AI Ltd., Stability AI, Inc. re: Joint Case Management Statement (Attachments: # 1 Declaration Paul M. Schoenhard In Support of Notice, # 2 Ex. A)(Schoenhard, Paul) (Filed on 8/23/2023) (Entered: 08/23/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.105.0_2.pdf"
+      },
+      {
+        "entry_number": 104,
+        "date_filed": "2023-08-22",
+        "time_filed": "18:55:10",
+        "date_display": "Aug 22, 2023",
+        "description": "REPORT of Rule 26(f) Planning Meeting Plaintiffs. (Saveri, Joseph) (Filed on 8/22/2023) (Entered: 08/22/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.104.0.pdf"
+      },
+      {
+        "entry_number": 103,
+        "date_filed": "2023-08-17",
+        "time_filed": "12:32:49",
+        "date_display": "Aug 17, 2023",
+        "description": "ERRATA re 100 ADR Certification (ADR L.R. 3-5 b)of discussion of ADR options by Karla Ortiz. (Saveri, Joseph) (Filed on 8/17/2023) (Entered: 08/17/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.103.0.pdf"
+      },
+      {
+        "entry_number": 102,
+        "date_filed": "2023-08-17",
+        "time_filed": "12:29:27",
+        "date_display": "Aug 17, 2023",
+        "description": "ERRATA re 99 ADR Certification (ADR L.R. 3-5 b)of discussion of ADR options by Kelly McKernan. (Saveri, Joseph) (Filed on 8/17/2023) (Entered: 08/17/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.102.0.pdf"
+      },
+      {
+        "entry_number": 101,
+        "date_filed": "2023-08-17",
+        "time_filed": "12:27:18",
+        "date_display": "Aug 17, 2023",
+        "description": "ERRATA re 98 ADR Certification (ADR L.R. 3-5 b)of discussion of ADR options by Sarah Andersen. (Saveri, Joseph) (Filed on 8/17/2023) (Entered: 08/17/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.101.0.pdf"
+      },
+      {
+        "entry_number": 100,
+        "date_filed": "2023-08-16",
+        "time_filed": "09:38:53",
+        "date_display": "Aug 16, 2023",
+        "description": "ADR Certification (ADR L.R. 3-5 b) of discussion of ADR options Karla Ortiz (Saveri, Joseph) (Filed on 8/16/2023) (Entered: 08/16/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.100.0.pdf"
+      },
+      {
+        "entry_number": 99,
+        "date_filed": "2023-08-16",
+        "time_filed": "09:35:33",
+        "date_display": "Aug 16, 2023",
+        "description": "ADR Certification (ADR L.R. 3-5 b) of discussion of ADR options Kelly McKernan (Saveri, Joseph) (Filed on 8/16/2023) (Entered: 08/16/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.99.0.pdf"
+      },
+      {
+        "entry_number": 98,
+        "date_filed": "2023-08-16",
+        "time_filed": "09:33:40",
+        "date_display": "Aug 16, 2023",
+        "description": "ADR Certification (ADR L.R. 3-5 b) of discussion of ADR options Sarah Andersen (Saveri, Joseph) (Filed on 8/16/2023) (Entered: 08/16/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.98.0.pdf"
+      },
+      {
+        "entry_number": 97,
+        "date_filed": "2023-08-15",
+        "time_filed": "14:57:10",
+        "date_display": "Aug 15, 2023",
+        "description": "Transcript of Proceedings held on 7/19/23, before Judge Orrick. Court Reporter/Transcriber Jennifer Coulthard, telephone number 5305379312. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. Redaction Request due 9/5/2023. Redacted Transcript Deadline set for 9/15/2023. Release of Transcript Restriction set for 11/13/2023. (Coulthard, Jennifer) (Filed on 8/15/2023) (Entered: 08/15/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.97.0.pdf"
+      },
+      {
+        "entry_number": 96,
+        "date_filed": "2023-08-09",
+        "time_filed": "15:22:03",
+        "date_display": "Aug 9, 2023",
+        "description": "TRANSCRIPT ORDER for proceedings held on 7/19/2023 before Judge William H. Orrick by Getty Images (US), Inc., for Court Reporter Jennifer Coulthard. (Marks, Benjamin) (Filed on 8/9/2023) (Entered: 08/09/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.96.0.pdf"
+      },
+      {
+        "entry_number": 95,
+        "date_filed": "2023-08-08",
+        "time_filed": "",
+        "date_display": "Aug 8, 2023",
+        "description": "Order by Judge William H. Orrick granting in part and denying in part 92 Administrative Motion continue Case Management Conference and continue attendant Rule 26 deadlines. Initial Case Management Conference is continued to 9/19/2023 02:00 PM in San Francisco, - Videoconference Only. Case Management Statement due by 9/12/2023. Attendant rule 26 deadlines are continued for defendants Midjourney and DeviantArt. Plaintiffs and Stability AI shall proceed with their Rule 26 obligations. (This is a text-only entry generated by the court. There is no document associated with this entry.) (wholc3, COURT STAFF) (Filed on 8/8/2023) (Entered: 08/08/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2023-08-08",
+        "time_filed": "14:34:58",
+        "date_display": "Aug 8, 2023",
+        "description": "Order on Administrative Motion per Civil Local Rule 7-11",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 94,
+        "date_filed": "2023-08-07",
+        "time_filed": "21:08:25",
+        "date_display": "Aug 7, 2023",
+        "description": "Response re 92 ADMINISTRATIVE MOTION to Continue Case Management Conference on Behalf of All defendants bySarah Andersen, Kelly McKernan, Karla Ortiz. (Saveri, Joseph) (Filed on 8/7/2023) (Entered: 08/07/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.94.0.pdf"
+      },
+      {
+        "entry_number": 93,
+        "date_filed": "2023-08-04",
+        "time_filed": "",
+        "date_display": "Aug 4, 2023",
+        "description": "TRANSCRIPT ORDER for proceedings held on 7/19/2023 before Judge William H. Orrick for Court Reporter Jennifer Coulthard. (bar, COURT STAFF) (Filed on 8/4/2023) (Entered: 08/07/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.93.0.pdf"
+      },
+      {
+        "entry_number": 92,
+        "date_filed": "2023-08-03",
+        "time_filed": "19:12:54",
+        "date_display": "Aug 3, 2023",
+        "description": "ADMINISTRATIVE MOTION to Continue Case Management Conference on Behalf of All defendants filed by DeviantArt, Inc.. Responses due by 8/7/2023. (Attachments: # 1 Declaration of Brittany Lovejoy in Support of Admin Motion, # 2 Exhibit A to Lovejoy Declaration, # 3 Proposed Order)(Lovejoy, Brittany) (Filed on 8/3/2023) (Entered: 08/03/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.92.0.pdf"
+      },
+      {
+        "entry_number": 91,
+        "date_filed": "2023-08-03",
+        "time_filed": "16:09:53",
+        "date_display": "Aug 3, 2023",
+        "description": "TRANSCRIPT ORDER for proceedings held on 7/19/2023, before Judge William H. Orrick, for Court Reporter Jennifer Coulthard, ordered by Robert Fernandez. (knm, COURT STAFF) (Filed on 8/3/2023) (Entered: 08/03/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.91.0.pdf"
+      },
+      {
+        "entry_number": 90,
+        "date_filed": "2023-07-26",
+        "time_filed": "11:40:34",
+        "date_display": "Jul 26, 2023",
+        "description": "TRANSCRIPT ORDER for proceedings held on 7/19/2023, before Judge William H. Orrick, for Court Reporter Jennifer Coulthard, ordered by Jacob Tracer. (knm, COURT STAFF) (Filed on 7/26/2023) (Entered: 07/26/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.90.0_1.pdf"
+      },
+      {
+        "entry_number": 89,
+        "date_filed": "2023-07-25",
+        "time_filed": "13:13:43",
+        "date_display": "Jul 25, 2023",
+        "description": "TRANSCRIPT ORDER for proceedings held on 7/19/2023, before Judge William H. Orrick, for Court Reporter Jennifer Coulthard, ordered by Cari Laufenberg. (knm, COURT STAFF) (Filed on 7/25/2023) (Entered: 07/25/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.89.0.pdf"
+      },
+      {
+        "entry_number": 88,
+        "date_filed": "2023-07-20",
+        "time_filed": "15:24:13",
+        "date_display": "Jul 20, 2023",
+        "description": "TRANSCRIPT ORDER for proceedings held on July 19, 2023 before Judge William H. Orrick by Midjourney, Inc., for Court Reporter not listed - San Francisco. (Dunning, Angela) (Filed on 7/20/2023) (Entered: 07/20/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.88.0.pdf"
+      },
+      {
+        "entry_number": 87,
+        "date_filed": "2023-07-20",
+        "time_filed": "12:25:26",
+        "date_display": "Jul 20, 2023",
+        "description": "TRANSCRIPT ORDER for proceedings held on July 19, 2023 before Judge William H. Orrick by Stability AI Ltd., Stability AI, Inc., for Court Reporter not listed - San Francisco. (Schoenhard, Paul) (Filed on 7/20/2023) (Entered: 07/20/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.87.0.pdf"
+      },
+      {
+        "entry_number": 86,
+        "date_filed": "2023-07-20",
+        "time_filed": "11:16:34",
+        "date_display": "Jul 20, 2023",
+        "description": "TRANSCRIPT ORDER for proceedings held on 7/19/2023 before Judge William H. Orrick by DeviantArt, Inc., for Court Reporter not listed - San Francisco. (Gass, Andrew) (Filed on 7/20/2023) (Entered: 07/20/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.86.0.pdf"
+      },
+      {
+        "entry_number": 85,
+        "date_filed": "2023-07-20",
+        "time_filed": "10:13:12",
+        "date_display": "Jul 20, 2023",
+        "description": "TRANSCRIPT ORDER for proceedings held on 7/19/2023 before Judge William H. Orrick by Sarah Andersen, Kelly McKernan, Karla Ortiz, for Court Reporter not listed - San Francisco. (Young, Christopher) (Filed on 7/20/2023) (Entered: 07/20/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.85.0.pdf"
+      },
+      {
+        "entry_number": 84,
+        "date_filed": "2023-07-19",
+        "time_filed": "20:03:55",
+        "date_display": "Jul 19, 2023",
+        "description": "Minute Entry for proceedings held before Judge William H. Orrick: Hearing on motions to dismiss held on 7/19/2023. Total Time in Court: 53 minutes. Court Reporter: Jennifer Coulthard. (jmd, COURT STAFF) (Date Filed: 7/19/2023) (Entered: 07/19/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.84.0.pdf"
+      },
+      {
+        "entry_number": 83,
+        "date_filed": "2023-07-10",
+        "time_filed": "",
+        "date_display": "Jul 10, 2023",
+        "description": "CLERK'S NOTICE - Pursuant to 81 Joint Motion, counsel planning to address the Court shall appear in person (with the exception of any person experiencing COVID-19 symptoms or recently exposed to COVID-19) on 07/19/2023 at 2:00 p.m.Webinar Access: All observing counsel, members of the public, and media may access the webinar information at https://www.cand.uscourts.gov/who General Order 58. Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited.Zoom Guidance and Setup: https://www.cand.uscourts.gov/zoom/. (This is a text-only entry generated by the court. There is no document associated with this entry.) (jmd, COURT STAFF) (Filed on 7/10/2023) . (Entered: 07/10/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2023-07-10",
+        "time_filed": "14:13:15",
+        "date_display": "Jul 10, 2023",
+        "description": "Clerk's Notice AND ~Util - In-Courtroom Zoom Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 82,
+        "date_filed": "2023-07-07",
+        "time_filed": "15:21:53",
+        "date_display": "Jul 7, 2023",
+        "description": "NOTICE of Appearance by Brittany Nichole Lovejoy (Corrected) (Lovejoy, Brittany) (Filed on 7/7/2023) (Entered: 07/07/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.82.0.pdf"
+      },
+      {
+        "entry_number": 81,
+        "date_filed": "2023-07-07",
+        "time_filed": "13:40:26",
+        "date_display": "Jul 7, 2023",
+        "description": "Joint MOTION for Leave to Appear in Person filed by Stability AI Ltd., Stability AI, Inc., Sarah Andersen, DeviantArt, Inc., Kelly McKernan, Midjourney, Inc., Karla Ortiz. (Schoenhard, Paul) (Filed on 7/7/2023) Modified on 7/10/2023 (cjl, COURT STAFF). (Entered: 07/07/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.81.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2023-07-05",
+        "time_filed": "",
+        "date_display": "Jul 5, 2023",
+        "description": "Electronic filing error. The email address listed on the Pleading is inconsistent with the email address shown in ECF. Please clarify. Re: 75 Notice of Appearance filed by DeviantArt, Inc. (jrs, COURT STAFF) (Filed on 7/5/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 80,
+        "date_filed": "2023-07-03",
+        "time_filed": "12:26:25",
+        "date_display": "Jul 3, 2023",
+        "description": "Joinder re 78 Reply to Opposition/Response in Support of DeviantArt, Inc.s Special Motion to Strike Under California Code of Civil Procedure § 425.16 by Stability AI Ltd., Stability AI, Inc.. (Schoenhard, Paul) (Filed on 7/3/2023) (Entered: 07/03/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.80.0.pdf"
+      },
+      {
+        "entry_number": 79,
+        "date_filed": "2023-07-03",
+        "time_filed": "12:03:24",
+        "date_display": "Jul 3, 2023",
+        "description": "Joinder re 78 Reply to Opposition/Response in Support of DeviantArt, Inc.'s Special Motion to Strike Under California Code of Civil Procedure § 425.16 by Midjourney, Inc.. (Dunning, Angela) (Filed on 7/3/2023) (Entered: 07/03/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.79.0.pdf"
+      },
+      {
+        "entry_number": 78,
+        "date_filed": "2023-07-03",
+        "time_filed": "11:27:18",
+        "date_display": "Jul 3, 2023",
+        "description": "REPLY (re 50 MOTION to Strike Under California Code of Civil Procedure § 425.16 ) filed byDeviantArt, Inc.. (Gass, Andrew) (Filed on 7/3/2023) (Entered: 07/03/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.78.0.pdf"
+      },
+      {
+        "entry_number": 77,
+        "date_filed": "2023-07-03",
+        "time_filed": "11:25:59",
+        "date_display": "Jul 3, 2023",
+        "description": "REPLY (re 49 MOTION to Dismiss ) filed byDeviantArt, Inc.. (Gass, Andrew) (Filed on 7/3/2023) (Entered: 07/03/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.77.0.pdf"
+      },
+      {
+        "entry_number": 76,
+        "date_filed": "2023-07-03",
+        "time_filed": "11:22:59",
+        "date_display": "Jul 3, 2023",
+        "description": "Request for Judicial Notice re 74 Reply to Opposition/Response filed byMidjourney, Inc.. (Related document(s) 74 ) (Dunning, Angela) (Filed on 7/3/2023) (Entered: 07/03/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.76.0.pdf"
+      },
+      {
+        "entry_number": 75,
+        "date_filed": "2023-07-03",
+        "time_filed": "11:22:59",
+        "date_display": "Jul 3, 2023",
+        "description": "NOTICE of Appearance by Brittany Nichole Lovejoy (Lovejoy, Brittany) (Filed on 7/3/2023) (Entered: 07/03/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.75.0.pdf"
+      },
+      {
+        "entry_number": 74,
+        "date_filed": "2023-07-03",
+        "time_filed": "11:21:25",
+        "date_display": "Jul 3, 2023",
+        "description": "REPLY (re 52 MOTION to Dismiss ) filed byMidjourney, Inc.. (Dunning, Angela) (Filed on 7/3/2023) (Entered: 07/03/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.74.0.pdf"
+      },
+      {
+        "entry_number": 73,
+        "date_filed": "2023-07-03",
+        "time_filed": "07:15:22",
+        "date_display": "Jul 3, 2023",
+        "description": "REPLY (re 58 Amended MOTION to Dismiss ) filed byStability AI Ltd., Stability AI, Inc.. (Schoenhard, Paul) (Filed on 7/3/2023) (Entered: 07/03/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.73.0_2.pdf"
+      },
+      {
+        "entry_number": 72,
+        "date_filed": "2023-06-09",
+        "time_filed": "15:08:04",
+        "date_display": "Jun 9, 2023",
+        "description": "Order by Judge William H. Orrick granting 71 Motion for Pro Hac Vice by Arielle S. Wagner. (jmd, COURT STAFF) (Filed on 6/9/2023) (Entered: 06/09/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.72.0.pdf"
+      },
+      {
+        "entry_number": 71,
+        "date_filed": "2023-06-06",
+        "time_filed": "14:09:49",
+        "date_display": "Jun 6, 2023",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 317, receipt number ACANDC-18334600.) filed by Sarah Andersen, Kelly McKernan, Karla Ortiz. (Wagner, Arielle) (Filed on 6/6/2023) (Entered: 06/06/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.71.0.pdf"
+      },
+      {
+        "entry_number": 70,
+        "date_filed": "2023-06-06",
+        "time_filed": "13:04:29",
+        "date_display": "Jun 6, 2023",
+        "description": "NOTICE of Appearance by Louis Andrew Kessler (Kessler, Louis) (Filed on 6/6/2023) (Entered: 06/06/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.70.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2023-06-06",
+        "time_filed": "",
+        "date_display": "Jun 6, 2023",
+        "description": "Electronic filing error. Counsel must file their own notice of appearance instead of updating their personal profile in ECF. Re: 64 Notice of Appearance filed by Karla Ortiz, Kelly McKernan, Sarah Andersen (jrs, COURT STAFF) (Filed on 6/6/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2023-06-05",
+        "time_filed": "",
+        "date_display": "Jun 5, 2023",
+        "description": "***Filed in Error*** Electronic filing error. REMINDER: Counsel must update personal profile in ECF for change of contact information to be in effect. Re: 64 Notice of Appearance filed by Karla Ortiz, Kelly McKernan, Sarah Andersen (jrs, COURT STAFF) (Filed on 6/5/2023) Modified on 6/6/2023 (jrs, COURT STAFF).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 69,
+        "date_filed": "2023-06-02",
+        "time_filed": "23:55:06",
+        "date_display": "Jun 2, 2023",
+        "description": "OPPOSITION/RESPONSE (re 50 MOTION to Strike Under California Code of Civil Procedure § 425.16 ) DeviantArt, Inc. filed by Sarah Andersen, Kelly McKernan, Karla Ortiz. (Saveri, Joseph) (Filed on 6/2/2023) Modified on 6/5/2023 (jrs, COURT STAFF). (Entered: 06/02/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.69.0.pdf"
+      },
+      {
+        "entry_number": 68,
+        "date_filed": "2023-06-02",
+        "time_filed": "23:35:26",
+        "date_display": "Jun 2, 2023",
+        "description": "RESPONSE re 53 Request for Judicial Notice, Midjourney, Inc. by Sarah Andersen, Kelly McKernan, Karla Ortiz. (Attachments: # 1 Affidavit of Joseph R. Saveri, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Exhibit 3)(Saveri, Joseph) (Filed on 6/2/2023) (Entered: 06/02/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.68.0.pdf"
+      },
+      {
+        "entry_number": 67,
+        "date_filed": "2023-06-02",
+        "time_filed": "23:34:28",
+        "date_display": "Jun 2, 2023",
+        "description": "OPPOSITION/RESPONSE (re 52 MOTION to Dismiss ) Midjourney, Inc. filed by Sarah Andersen, Kelly McKernan, Karla Ortiz. (Saveri, Joseph) (Filed on 6/2/2023) Modified on 6/5/2023 (jrs, COURT STAFF). (Entered: 06/02/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.67.0_1.pdf"
+      },
+      {
+        "entry_number": 66,
+        "date_filed": "2023-06-02",
+        "time_filed": "23:34:24",
+        "date_display": "Jun 2, 2023",
+        "description": "OPPOSITION/RESPONSE (re 58 Amended MOTION to Dismiss ) Stability AI Ltd., Stability AI, Inc. filed by Sarah Andersen, Kelly McKernan, Karla Ortiz. (Saveri, Joseph) (Filed on 6/2/2023) Modified on 6/5/2023 (jrs, COURT STAFF). (Entered: 06/02/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.66.0_1.pdf"
+      },
+      {
+        "entry_number": 65,
+        "date_filed": "2023-06-02",
+        "time_filed": "23:34:19",
+        "date_display": "Jun 2, 2023",
+        "description": "OPPOSITION/RESPONSE (re 49 MOTION to Dismiss ) DeviantArt, Inc. filed by Sarah Andersen, Kelly McKernan, Karla Ortiz. (Saveri, Joseph) (Filed on 6/2/2023) Modified on 6/5/2023 (jrs, COURT STAFF). (Entered: 06/02/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.65.0_1.pdf"
+      },
+      {
+        "entry_number": 64,
+        "date_filed": "2023-06-02",
+        "time_filed": "17:39:39",
+        "date_display": "Jun 2, 2023",
+        "description": "NOTICE of Appearance by Joseph R. Saveri [NOTICE OF APPEARANCE OF LOUIS A. KESSLER] (Saveri, Joseph) (Filed on 6/2/2023) (Entered: 06/02/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.64.0.pdf"
+      },
+      {
+        "entry_number": 63,
+        "date_filed": "2023-04-26",
+        "time_filed": "21:17:04",
+        "date_display": "Apr 26, 2023",
+        "description": "ORDER REGARDING REQUEST FOR DISCOVERY STAY re 62 Brief and 60 Joint ADMINISTRATIVE MOTION Continue Case Management Conference. Signed by Judge William H. Orrick on 04/26/2023. (jmd, COURT STAFF) (Filed on 4/26/2023) (Entered: 04/26/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.63.0.pdf"
+      },
+      {
+        "entry_number": 62,
+        "date_filed": "2023-04-24",
+        "time_filed": "18:49:04",
+        "date_display": "Apr 24, 2023",
+        "description": "Brief re 61 Clerk's Notice Setting Zoom Hearing, PLAINTIFFS OPPOSITION TO DEFENDANTS JOINT ADMINISTRATIVE MOTION TO CONTINUE CASE MANAGEMENT CONFERENCE 60 filed by Sarah Andersen, Kelly McKernan, Karla Ortiz. (Attachments: # 1 Declaration Joseph R. Saveri, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Proposed Order)(Related document(s) 61 ) (Saveri, Joseph) (Filed on 4/24/2023) Modified on 4/25/2023 (jrs, COURT STAFF). (Entered: 04/24/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.62.0.pdf"
+      },
+      {
+        "entry_number": 61,
+        "date_filed": "2023-04-20",
+        "time_filed": "",
+        "date_display": "Apr 20, 2023",
+        "description": "CLERKS NOTICE RESETTING ZOOM HEARING - Case Management Conference reset for 8/29/2023 02:00 PM (Case Management Statement due by 8/22/2023). This proceeding will be held via Zoom webinar.Webinar Access: All counsel, members of the public, and media may access the webinar information at https://www.cand.uscourts.gov/who General Order 58. Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited.Zoom Guidance and Setup: https://www.cand.uscourts.gov/zoom/. (This is a text-only entry generated by the court. There is no document associated with this entry.) (jmd, COURT STAFF) (Filed on 4/20/2023) (Entered: 04/20/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2023-04-20",
+        "time_filed": "13:01:17",
+        "date_display": "Apr 20, 2023",
+        "description": "Clerk's Notice Setting Zoom Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 60,
+        "date_filed": "2023-04-18",
+        "time_filed": "21:43:51",
+        "date_display": "Apr 18, 2023",
+        "description": "Joint ADMINISTRATIVE MOTION to Continue Case Management Conference re 31 Clerk's Notice Setting Zoom Hearing filed by Midjourney, Inc., DevianArt, Inc., Stability AI Ltd. and Stability AI, Inc. Responses due by 4/24/2023. (Attachments: # 1 Declaration of Angela Dunning, # 2 Proposed Order)(Dunning, Angela) (Filed on 4/18/2023) Modified on 4/19/2023 (jrs, COURT STAFF). Modified on 4/19/2023 (jrs, COURT STAFF). (Entered: 04/18/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.60.0.pdf"
+      },
+      {
+        "entry_number": 59,
+        "date_filed": "2023-04-18",
+        "time_filed": "18:36:33",
+        "date_display": "Apr 18, 2023",
+        "description": "Joinder re 50 MOTION to Strike Under California Code of Civil Procedure § 425.16 by Stability AI Ltd., Stability AI, Inc.. (Schoenhard, Paul) (Filed on 4/18/2023) (Entered: 04/18/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.59.0.pdf"
+      },
+      {
+        "entry_number": 58,
+        "date_filed": "2023-04-18",
+        "time_filed": "18:29:50",
+        "date_display": "Apr 18, 2023",
+        "description": "Amended MOTION to Dismiss filed by Stability AI Ltd., Stability AI, Inc.. Motion Hearing set for 7/19/2023 02:00 PM in San Francisco, Courtroom 02, 17th Floor before Judge William H. Orrick. Responses due by 5/2/2023. Replies due by 5/9/2023. (Attachments: # 1 Declaration Paul M. Schoenhard, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Proposed Order)(Schoenhard, Paul) (Filed on 4/18/2023) (Entered: 04/18/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.58.0_2.pdf"
+      },
+      {
+        "entry_number": 57,
+        "date_filed": "2023-04-18",
+        "time_filed": "17:22:31",
+        "date_display": "Apr 18, 2023",
+        "description": "Certificate of Interested Entities by Stability AI Ltd. (Schoenhard, Paul) (Filed on 4/18/2023) (Entered: 04/18/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.57.0_2.pdf"
+      },
+      {
+        "entry_number": 56,
+        "date_filed": "2023-04-18",
+        "time_filed": "17:17:11",
+        "date_display": "Apr 18, 2023",
+        "description": "Certificate of Interested Entities by Stability AI, Inc. (Schoenhard, Paul) (Filed on 4/18/2023) (Entered: 04/18/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.56.0.pdf"
+      },
+      {
+        "entry_number": 55,
+        "date_filed": "2023-04-18",
+        "time_filed": "17:13:22",
+        "date_display": "Apr 18, 2023",
+        "description": "Corporate Disclosure Statement by Stability AI Ltd. (Schoenhard, Paul) (Filed on 4/18/2023) (Entered: 04/18/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.55.0.pdf"
+      },
+      {
+        "entry_number": 54,
+        "date_filed": "2023-04-18",
+        "time_filed": "15:35:30",
+        "date_display": "Apr 18, 2023",
+        "description": "Joinder re 50 MOTION to Strike Under California Code of Civil Procedure § 425.16 by Midjourney, Inc.. (Dunning, Angela) (Filed on 4/18/2023) (Entered: 04/18/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.54.0.pdf"
+      },
+      {
+        "entry_number": 53,
+        "date_filed": "2023-04-18",
+        "time_filed": "15:28:51",
+        "date_display": "Apr 18, 2023",
+        "description": "Request for Judicial Notice re 52 MOTION to Dismiss and Consideration of Documents Incorporated by Reference in Support of filed byMidjourney, Inc.. (Attachments: # 1 Proposed Order)(Related document(s) 52 ) (Dunning, Angela) (Filed on 4/18/2023) (Entered: 04/18/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.53.0.pdf"
+      },
+      {
+        "entry_number": 52,
+        "date_filed": "2023-04-18",
+        "time_filed": "15:24:06",
+        "date_display": "Apr 18, 2023",
+        "description": "MOTION to Dismiss filed by Midjourney, Inc.. Motion Hearing set for 7/19/2023 02:00 PM in San Francisco, Courtroom 02, 17th Floor before Judge William H. Orrick. Responses due by 6/2/2023. Replies due by 7/3/2023. (Attachments: # 1 Declaration of Judd Lauter, # 2 Exhibit A to Declaration, # 3 Exhibit B to Declaration, # 4 Exhibit C to Declaration, # 5 Exhibit D to Declaration, # 6 Proposed Order)(Dunning, Angela) (Filed on 4/18/2023) (Entered: 04/18/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.52.0_1.pdf"
+      },
+      {
+        "entry_number": 51,
+        "date_filed": "2023-04-18",
+        "time_filed": "13:37:41",
+        "date_display": "Apr 18, 2023",
+        "description": "MOTION to Dismiss filed by Stability AI Ltd., Stability AI, Inc.. Motion Hearing set for 7/19/2024 02:00 PM in San Francisco, Courtroom 02, 17th Floor before Judge William H. Orrick. Responses due by 5/2/2023. Replies due by 5/9/2023. (Attachments: # 1 Declaration Paul M. Schoenhard, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Proposed Order)(Schoenhard, Paul) (Filed on 4/18/2023) (Entered: 04/18/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.51.0.pdf"
+      },
+      {
+        "entry_number": 50,
+        "date_filed": "2023-04-18",
+        "time_filed": "12:06:37",
+        "date_display": "Apr 18, 2023",
+        "description": "MOTION to Strike Under California Code of Civil Procedure § 425.16 filed by DeviantArt, Inc.. Motion Hearing set for 7/19/2023 02:00 PM in San Francisco, Courtroom 02, 17th Floor before Judge William H. Orrick. Responses due by 5/2/2023. Replies due by 5/9/2023. (Attachments: # 1 Proposed Order)(Gass, Andrew) (Filed on 4/18/2023) (Entered: 04/18/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.50.0.pdf"
+      },
+      {
+        "entry_number": 49,
+        "date_filed": "2023-04-18",
+        "time_filed": "12:03:57",
+        "date_display": "Apr 18, 2023",
+        "description": "MOTION to Dismiss filed by DeviantArt, Inc.. Motion Hearing set for 7/19/2023 02:00 PM in San Francisco, Courtroom 02, 17th Floor before Judge William H. Orrick. Responses due by 5/2/2023. Replies due by 5/9/2023. (Attachments: # 1 Proposed Order)(Gass, Andrew) (Filed on 4/18/2023) (Entered: 04/18/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.49.0.pdf"
+      },
+      {
+        "entry_number": 48,
+        "date_filed": "2023-02-23",
+        "time_filed": "16:28:27",
+        "date_display": "Feb 23, 2023",
+        "description": "Certificate of Interested Entities by Midjourney, Inc. identifying Other Affiliate David Holz for Midjourney, Inc.. (Lauter, Judd) (Filed on 2/23/2023) (Entered: 02/23/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.48.0.pdf"
+      },
+      {
+        "entry_number": 47,
+        "date_filed": "2023-02-16",
+        "time_filed": "",
+        "date_display": "Feb 16, 2023",
+        "description": "Corporate Disclosure Statement by Midjourney, Inc. (Lauter, Judd) (Filed on 2/16/2023) (Entered: 02/16/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.47.0.pdf"
+      },
+      {
+        "entry_number": 46,
+        "date_filed": "2023-02-08",
+        "time_filed": "",
+        "date_display": "Feb 8, 2023",
+        "description": "Order by Judge William H. Orrick granting 12 Motion for Pro Hac Vice by Paul M. Schoenbard. (jmd, COURT STAFF) (Filed on 2/8/2023) (Entered: 02/08/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.46.0.pdf"
+      },
+      {
+        "entry_number": 45,
+        "date_filed": "2023-02-08",
+        "time_filed": "",
+        "date_display": "Feb 8, 2023",
+        "description": "Order by Judge William H. Orrick granting 30 Motion for Pro Hac Vice by Laura M. Matson. (jmd, COURT STAFF) (Filed on 2/8/2023) (Entered: 02/08/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.45.0.pdf"
+      },
+      {
+        "entry_number": 44,
+        "date_filed": "2023-02-08",
+        "time_filed": "",
+        "date_display": "Feb 8, 2023",
+        "description": "Order by Judge William H. Orrick granting 15 Motion for Pro Hac Vice by Michael C. Keats. (jmd, COURT STAFF) (Filed on 2/8/2023) (Entered: 02/08/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.44.0.pdf"
+      },
+      {
+        "entry_number": 43,
+        "date_filed": "2023-02-08",
+        "time_filed": "",
+        "date_display": "Feb 8, 2023",
+        "description": "Order by Judge William H. Orrick granting 13 Motion for Pro Hac Vice by Nicole M. Jantzi. (jmd, COURT STAFF) (Filed on 2/8/2023) (Entered: 02/08/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.43.0.pdf"
+      },
+      {
+        "entry_number": 42,
+        "date_filed": "2023-02-08",
+        "time_filed": "",
+        "date_display": "Feb 8, 2023",
+        "description": "Order by Judge William H. Orrick granting 17 Motion for Pro Hac Vice by Amir R. Ghavi. (jmd, COURT STAFF) (Filed on 2/8/2023) (Entered: 02/08/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.42.0.pdf"
+      },
+      {
+        "entry_number": 41,
+        "date_filed": "2023-02-08",
+        "time_filed": "",
+        "date_display": "Feb 8, 2023",
+        "description": "Order by Judge William H. Orrick granting 38 Motion for Pro Hac Vice by Kayla Blaker. (jmd, COURT STAFF) (Filed on 2/8/2023) (Entered: 02/08/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.41.0.pdf"
+      },
+      {
+        "entry_number": 40,
+        "date_filed": "2023-02-08",
+        "time_filed": "",
+        "date_display": "Feb 8, 2023",
+        "description": "ORDER REGARDING DEVIANTART, INC.'S DEADLINE TO RESPOND TO COMPLAINT AND RELATED BRIEFING SCHEDULE by Judge William H. Orrick granting 39 Stipulation. (jmd, COURT STAFF) (Filed on 2/8/2023) (Entered: 02/08/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.40.0.pdf"
+      },
+      {
+        "entry_number": 39,
+        "date_filed": "2023-02-08",
+        "time_filed": "",
+        "date_display": "Feb 8, 2023",
+        "description": "STIPULATION WITH PROPOSED ORDER Regarding DeviantArt Inc.'s Deadline to Respond to Complaint and Related Briefing Schedule filed by Sarah Andersen, Kelly McKernan, Karla Ortiz, DeviantArt, Inc. (Saveri, Joseph) (Filed on 2/8/2023) Modified on 2/8/2023 (cjl, COURT STAFF). (Entered: 02/08/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.39.0.pdf"
+      },
+      {
+        "entry_number": 38,
+        "date_filed": "2023-02-08",
+        "time_filed": "",
+        "date_display": "Feb 8, 2023",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 317, receipt number ACANDC-17970376.) filed by Midjourney, Inc.. (Attachments: # 1 Certificate of Good Standing)(Blaker, Kayla) (Filed on 2/8/2023) (Entered: 02/08/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.38.0.pdf"
+      },
+      {
+        "entry_number": 37,
+        "date_filed": "2023-02-08",
+        "time_filed": "",
+        "date_display": "Feb 8, 2023",
+        "description": "Corporate Disclosure Statement by Stability AI, Inc. (Lemley, Mark) (Filed on 2/8/2023) (Entered: 02/08/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.37.0.pdf"
+      },
+      {
+        "entry_number": 36,
+        "date_filed": "2023-02-08",
+        "time_filed": "",
+        "date_display": "Feb 8, 2023",
+        "description": "Amended Notice of Appearance by Mark Alan Lemley. (Lemley, Mark) (Filed on 2/8/2023) Modified on 2/8/2023 (cjl, COURT STAFF). (Entered: 02/08/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.36.0.pdf"
+      },
+      {
+        "entry_number": 35,
+        "date_filed": "2023-02-06",
+        "time_filed": "",
+        "date_display": "Feb 6, 2023",
+        "description": "Corporate Disclosure Statement by DeviantArt, Inc. identifying Corporate Parent Wix.com, Inc. for DeviantArt, Inc.. (Gass, Andrew) (Filed on 2/6/2023) (Entered: 02/06/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.35.0.pdf"
+      },
+      {
+        "entry_number": 34,
+        "date_filed": "2023-02-06",
+        "time_filed": "",
+        "date_display": "Feb 6, 2023",
+        "description": "Certificate of Interested Entities by DeviantArt, Inc. identifying Corporate Parent Wix.com, Inc., Corporate Parent Wix.com, Ltd. for DeviantArt, Inc.. (Gass, Andrew) (Filed on 2/6/2023) (Entered: 02/06/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.34.0.pdf"
+      },
+      {
+        "entry_number": 33,
+        "date_filed": "2023-02-06",
+        "time_filed": "",
+        "date_display": "Feb 6, 2023",
+        "description": "NOTICE of Appearance by Andrew Michael Gass (Gass, Andrew) (Filed on 2/6/2023) (Entered: 02/06/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.33.0.pdf"
+      },
+      {
+        "entry_number": 32,
+        "date_filed": "2023-02-06",
+        "time_filed": "",
+        "date_display": "Feb 6, 2023",
+        "description": "NOTICE of Appearance by Michael H. Rubin (Rubin, Michael) (Filed on 2/6/2023) (Entered: 02/06/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.32.0.pdf"
+      },
+      {
+        "entry_number": 31,
+        "date_filed": "2023-02-06",
+        "time_filed": "",
+        "date_display": "Feb 6, 2023",
+        "description": "CLERKS NOTICE SETTING ZOOM HEARING - Case Management Conference set for 5/2/2023 02:00 PM. This proceeding will be held via Zoom webinar. Case Management Statement due by 4/25/2023. Webinar Access: All counsel, members of the public, and media may access the webinar information at https://www.cand.uscourts.gov/who General Order 58. Persons granted access to court proceedings held by telephone or vi deoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited.Zoom Guidance and Setup: https://www.cand.uscourts.gov/zoom/. (This is a text-only entry generated by the court. There is no document associated with this entry.) (jmd, COURT STAFF) (Filed on 2/6/2023) (Entered: 02/06/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 30,
+        "date_filed": "2023-02-06",
+        "time_filed": "",
+        "date_display": "Feb 6, 2023",
+        "description": "MOTION for leave to appear in Pro Hac Vice Laura M. Matson ( Filing fee $ 317, receipt number ACANDC-17962573.) filed by Sarah Andersen, Kelly McKernan, Karla Ortiz. (Matson, Laura) (Filed on 2/6/2023) (Entered: 02/06/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.30.0.pdf"
+      },
+      {
+        "entry_number": 29,
+        "date_filed": "2023-02-06",
+        "time_filed": "",
+        "date_display": "Feb 6, 2023",
+        "description": "Order by Judge William H. Orrick granting 28 Stipulation.Response to Complaint due by April 18, 2023. Opposition to any motion(s) due by June 2, 2023. Any reply due by July 3, 2023. (This is a text-only entry generated by the court. There is no document associated with this entry.) (wholc3, COURT STAFF) (Filed on 2/6/2023) (Entered: 02/06/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2023-02-06",
+        "time_filed": "",
+        "date_display": "Feb 6, 2023",
+        "description": "Clerk's Notice Setting Zoom Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2023-02-06",
+        "time_filed": "",
+        "date_display": "Feb 6, 2023",
+        "description": "Order on Stipulation",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 28,
+        "date_filed": "2023-02-03",
+        "time_filed": "",
+        "date_display": "Feb 3, 2023",
+        "description": "STIPULATION WITH PROPOSED ORDER Regarding Stability AI and Midjourney's Deadline to Respond to Complaint and Related Briefing Schedule filed by Sarah Andersen, Kelly McKernan, Karla Ortiz, Midjourney, Inc., Stability AI Ltd., Stability AI, Inc. (Saveri, Joseph) (Filed on 2/3/2023) Modified on 2/6/2023 (cjl, COURT STAFF). (Entered: 02/03/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.28.0.pdf"
+      },
+      {
+        "entry_number": 27,
+        "date_filed": "2023-02-03",
+        "time_filed": "",
+        "date_display": "Feb 3, 2023",
+        "description": "Order by Judge William H. Orrick granting 23 Motion for Pro Hac Vice by James Asheton Lemay. (jmd, COURT STAFF) (Filed on 2/3/2023) (Entered: 02/03/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.27.0.pdf"
+      },
+      {
+        "entry_number": 26,
+        "date_filed": "2023-02-03",
+        "time_filed": "",
+        "date_display": "Feb 3, 2023",
+        "description": "Order by Judge William H. Orrick granting 24 Motion for Pro Hac Vice by Eura Chang. (jmd, COURT STAFF) (Filed on 2/3/2023) (Entered: 02/03/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.26.0.pdf"
+      },
+      {
+        "entry_number": 25,
+        "date_filed": "2023-02-03",
+        "time_filed": "",
+        "date_display": "Feb 3, 2023",
+        "description": "Order by Judge William H. Orrick granting 20 Motion for Pro Hac Vice by Brian D. Clark. (jmd, COURT STAFF) (Filed on 2/3/2023) (Entered: 02/03/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.25.0.pdf"
+      },
+      {
+        "entry_number": 24,
+        "date_filed": "2023-02-03",
+        "time_filed": "",
+        "date_display": "Feb 3, 2023",
+        "description": "MOTION for leave to appear in Pro Hac Vice Eura Chang ( Filing fee $ 317, receipt number ACANDC-17958133.) filed by Sarah Andersen, Kelly McKernan, Karla Ortiz. (Chang, Eura) (Filed on 2/3/2023) (Entered: 02/03/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.24.0.pdf"
+      },
+      {
+        "entry_number": 23,
+        "date_filed": "2023-02-03",
+        "time_filed": "",
+        "date_display": "Feb 3, 2023",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 317, receipt number ACANDC-17957899.) filed by Midjourney, Inc.. (Attachments: # 1 Certificate of Good Standing)(Lemay, James) (Filed on 2/3/2023) (Entered: 02/03/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.23.0.pdf"
+      },
+      {
+        "entry_number": 22,
+        "date_filed": "2023-02-02",
+        "time_filed": "",
+        "date_display": "Feb 2, 2023",
+        "description": "NOTICE of Appearance by Judd D. Lauter (Lauter, Judd) (Filed on 2/2/2023) (Entered: 02/02/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.22.0.pdf"
+      },
+      {
+        "entry_number": 21,
+        "date_filed": "2023-02-02",
+        "time_filed": "",
+        "date_display": "Feb 2, 2023",
+        "description": "NOTICE of Appearance by Angela Lucille Dunning (Dunning, Angela) (Filed on 2/2/2023) (Entered: 02/02/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.21.0.pdf"
+      },
+      {
+        "entry_number": 20,
+        "date_filed": "2023-02-02",
+        "time_filed": "",
+        "date_display": "Feb 2, 2023",
+        "description": "MOTION for leave to appear in Pro Hac Vice Brian D. Clark ( Filing fee $ 317, receipt number ACANDC-17952939.) filed by Sarah Andersen, Kelly McKernan, Karla Ortiz. (Clark, Brian) (Filed on 2/2/2023) (Entered: 02/02/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.20.0.pdf"
+      },
+      {
+        "entry_number": 19,
+        "date_filed": "2023-02-01",
+        "time_filed": "",
+        "date_display": "Feb 1, 2023",
+        "description": "NOTICE of Appearance by Matthew Butterick (Butterick, Matthew) (Filed on 2/1/2023) (Entered: 02/01/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.19.0.pdf"
+      },
+      {
+        "entry_number": 18,
+        "date_filed": "2023-01-31",
+        "time_filed": "",
+        "date_display": "Jan 31, 2023",
+        "description": "ORDER REASSIGNING CASE. Case reassigned using a proportionate, random, and blind system pursuant to General Order No. 44 to Judge William H. Orrick for all further proceedings. Magistrate Judge Joseph C. Spero no longer assigned to case, Notice: The assigned judge participates in the Cameras in the Courtroom Pilot Project. See General Order No. 65 and http://cand.uscourts.gov/cameras. Signed by Clerk on 01/31/2023. (Attachments: # 1 Notice of Eligibility for Video Recording)(mbc, COURT STAFF) (Filed on 1/31/2023) (Entered: 01/31/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.18.0.pdf"
+      },
+      {
+        "entry_number": 17,
+        "date_filed": "2023-01-31",
+        "time_filed": "",
+        "date_display": "Jan 31, 2023",
+        "description": "MOTION for leave to appear in Pro Hac Vice for Amir Ghavi ( Filing fee $ 317, receipt number ACANDC-17945532.) filed by Stability AI, Inc.. (Ghavi, Amir) (Filed on 1/31/2023) (Entered: 01/31/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.17.0.pdf"
+      },
+      {
+        "entry_number": 16,
+        "date_filed": "2023-01-31",
+        "time_filed": "",
+        "date_display": "Jan 31, 2023",
+        "description": "CLERK'S NOTICE OF IMPENDING REASSIGNMENT TO A U.S. DISTRICT COURT JUDGE: The Clerk of this Court will now randomly reassign this case to a District Judge because either (1) a party has not consented to the jurisdiction of a Magistrate Judge, or (2) time is of the essence in deciding a pending judicial action for which the necessary consents to Magistrate Judge jurisdiction have not been secured. You will be informed by separate notice of the district judge to whom this case is reassigned. ALL HEARING DATES PRESENTLY SCHEDULED BEFORE THE CURRENT MAGISTRATE JUDGE ARE VACATED AND SHOULD BE RE-NOTICED FOR HEARING BEFORE THE JUDGE TO WHOM THIS CASE IS REASSIGNED. This is a text only docket entry; there is no document associated with this notice. (klh, COURT STAFF) (Filed on 1/31/2023) (Entered: 01/31/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 15,
+        "date_filed": "2023-01-31",
+        "time_filed": "",
+        "date_display": "Jan 31, 2023",
+        "description": "MOTION for leave to appear in Pro Hac Vice for Michael Keats ( Filing fee $ 317, receipt number ACANDC-17944633.) filed by Stability AI, Inc.. (Keats, Michael) (Filed on 1/31/2023) (Entered: 01/31/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.15.0.pdf"
+      },
+      {
+        "entry_number": 14,
+        "date_filed": "2023-01-31",
+        "time_filed": "",
+        "date_display": "Jan 31, 2023",
+        "description": "CONSENT/DECLINATION to Proceed Before a US Magistrate Judge by Stability AI, Inc... (Lemley, Mark) (Filed on 1/31/2023) (Entered: 01/31/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.14.0.pdf"
+      },
+      {
+        "entry_number": 13,
+        "date_filed": "2023-01-31",
+        "time_filed": "",
+        "date_display": "Jan 31, 2023",
+        "description": "MOTION for leave to appear in Pro Hac Vice for Nicole Jantzi ( Filing fee $ 317, receipt number ACANDC-17943605.) filed by Stability AI, Inc.. (Jantzi, Nicole) (Filed on 1/31/2023) (Entered: 01/31/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.13.0.pdf"
+      },
+      {
+        "entry_number": 12,
+        "date_filed": "2023-01-31",
+        "time_filed": "",
+        "date_display": "Jan 31, 2023",
+        "description": "MOTION for leave to appear in Pro Hac Vice for Paul Schoenhard ( Filing fee $ 317, receipt number ACANDC-17943582.) filed by Stability AI, Inc.. (Schoenhard, Paul) (Filed on 1/31/2023) (Entered: 01/31/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.12.0.pdf"
+      },
+      {
+        "entry_number": 11,
+        "date_filed": "2023-01-31",
+        "time_filed": "",
+        "date_display": "Jan 31, 2023",
+        "description": "NOTICE of Appearance by Mark Alan Lemley (Lemley, Mark) (Filed on 1/31/2023) (Entered: 01/31/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.11.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2023-01-31",
+        "time_filed": "",
+        "date_display": "Jan 31, 2023",
+        "description": "Clerk's Notice of Impending Reassignment - Text Only",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 10,
+        "date_filed": "2023-01-27",
+        "time_filed": "",
+        "date_display": "Jan 27, 2023",
+        "description": "CONSENT/DECLINATION to Proceed Before a US Magistrate Judge by Sarah Andersen.. (Saveri, Joseph) (Filed on 1/27/2023) (Entered: 01/27/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.10.0.pdf"
+      },
+      {
+        "entry_number": 9,
+        "date_filed": "2023-01-20",
+        "time_filed": "",
+        "date_display": "Jan 20, 2023",
+        "description": "Certificate of Interested Entities by Sarah Andersen, Kelly McKernan, Karla Ortiz (Saveri, Joseph) (Filed on 1/20/2023) (Entered: 01/20/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.9.0.pdf"
+      },
+      {
+        "entry_number": 8,
+        "date_filed": "2023-01-20",
+        "time_filed": "",
+        "date_display": "Jan 20, 2023",
+        "description": "SUMMONS Returned Executed by Sarah Andersen, Karla Ortiz, Kelly McKernan. Midjourney, Inc. served on 1/18/2023, answer due 2/8/2023. (Saveri, Joseph) (Filed on 1/20/2023) (Entered: 01/20/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.8.0.pdf"
+      },
+      {
+        "entry_number": 7,
+        "date_filed": "2023-01-19",
+        "time_filed": "",
+        "date_display": "Jan 19, 2023",
+        "description": "SUMMONS Returned Executed by Sarah Andersen, Karla Ortiz, Kelly McKernan. DeviantArt, Inc. served on 1/18/2023, answer due 2/8/2023. (Saveri, Joseph) (Filed on 1/19/2023) (Entered: 01/19/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.7.0.pdf"
+      },
+      {
+        "entry_number": 6,
+        "date_filed": "2023-01-19",
+        "time_filed": "",
+        "date_display": "Jan 19, 2023",
+        "description": "SUMMONS Returned Executed by Sarah Andersen, Karla Ortiz, Kelly McKernan. Stability AI, Inc. served on 1/18/2023, answer due 2/8/2023. (Saveri, Joseph) (Filed on 1/19/2023) (Entered: 01/19/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.6.0.pdf"
+      },
+      {
+        "entry_number": 5,
+        "date_filed": "2023-01-17",
+        "time_filed": "",
+        "date_display": "Jan 17, 2023",
+        "description": "Initial Case Management Scheduling Order with ADR Deadlines: Case Management Statement due by 4/7/2023. Initial Case Management Conference set for 4/14/2023 02:00 PM in San Francisco, Courtroom F, 15th Floor. (jml, COURT STAFF) (Filed on 1/17/2023) (Entered: 01/17/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.5.0.pdf"
+      },
+      {
+        "entry_number": 4,
+        "date_filed": "2023-01-17",
+        "time_filed": "",
+        "date_display": "Jan 17, 2023",
+        "description": "Summons Issued as to DeviantArt, Inc., Midjourney, Inc., Stability AI Ltd., Stability AI, Inc.. (jml, COURT STAFF) (Filed on 1/17/2023) (Entered: 01/17/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.407208/gov.uscourts.cand.407208.4.0.pdf"
+      },
+      {
+        "entry_number": 3,
+        "date_filed": "2023-01-17",
+        "time_filed": "",
+        "date_display": "Jan 17, 2023",
+        "description": "Case assigned to Magistrate Judge Joseph C. Spero. Counsel for plaintiff or the removing party is responsible for serving the Complaint or Notice of Removal, Summons and the assigned judge's standing orders and all other new case documents upon the opposing parties. For information, visit E-Filing A New Civil Case at http://cand.uscourts.gov/ecf/caseopening.Standing orders can be downloaded from the court's web page at www.cand.uscourts.gov/judges. Upon receipt, the summons will be issued and returned electronically. A scheduling order will be sent by Notice of Electronic Filing (NEF) within two business days. Consent/Declination due by 1/31/2023. (jrs, COURT STAFF) (Filed on 1/17/2023) (Entered: 01/17/2023)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2023-01-17",
+        "time_filed": "",
+        "date_display": "Jan 17, 2023",
+        "description": "~Util - Case Assigned by Intake",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=66732129&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=37"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=66732129&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=43"
   },
   "claims_administrator": null,
   "coverage": []
