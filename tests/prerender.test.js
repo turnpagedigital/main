@@ -386,3 +386,28 @@ test("an unlisted case page stays out of nav and footer", () => {
     assert.ok(!footer.includes(page.path), `${page.path} is linked from footer while still a draft`);
   }
 });
+
+test("a declared section type is actually offered in the Page Builder picker", () => {
+  /* section-types.json is not the gate: TemplatePicker.jsx renders a curated
+   * catalogue, so a type absent from it can never be added to a page. This is
+   * how case-briefing shipped invisible on its first deploy. */
+  const picker = readFileSync(new URL("../src/pages/admin/TemplatePicker.jsx", import.meta.url), "utf8");
+  const offered = new Set([...picker.matchAll(/"([a-z0-9-]+)"/g)].map((m) => m[1]));
+
+  /* Deliberately absent: superseded by the unified "cta" type, or driven by
+   * page data rather than added by hand. */
+  const NOT_OFFERED = new Set([
+    "cta-banner", "bottom-cta", "get-quote",
+    "timeline", "scenario-cards", "contact-form",
+  ]);
+
+  const missing = (sectionTypes.sectionTypes || [])
+    .map((t) => t.id)
+    .filter((id) => !offered.has(id) && !NOT_OFFERED.has(id));
+
+  assert.deepEqual(
+    missing,
+    [],
+    `declared but not addable in the Page Builder: ${missing.join(", ")}`,
+  );
+});

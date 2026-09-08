@@ -88,6 +88,12 @@ const TEMPLATE_GROUPS = [
       "registration-flow",
     ],
   },
+  {
+    label: "Reference",
+    items: [
+      { typeId: "case-briefing", label: "Case Briefing", description: "A whole page: dated status block, case facts, Markdown body with tables, update log, FAQs and sources. Educational by default — the selling CTA is one checkbox." },
+    ],
+  },
 ];
 
 export default function TemplatePicker({ sectionTypes, sections: _sections, selectedKey, onAdd, onClose }) {

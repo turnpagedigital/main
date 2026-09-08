@@ -839,6 +839,36 @@ function ScenarioCardsThumb() {
 }
 
 // ─── Fallback ─────────────────────────────────────────────────────────────────
+function CaseBriefingThumb() {
+  const line = (w, top = 10) => (
+    <div style={{ height: 11, width: w, background: INK_30, borderRadius: 2, marginTop: top }} />
+  );
+  return (
+    <div style={{ width: W, height: H, background: PAPER, padding: "44px 60px", boxSizing: "border-box" }}>
+      <Eyebrow color={INK_60}>Case Briefing · No. 00-00000</Eyebrow>
+      <p style={{ fontFamily: FONT, fontSize: 40, fontWeight: 800, letterSpacing: "-0.03em",
+        color: INK, margin: "0 0 6px", lineHeight: 1.05 }}>
+        Where creditors actually stand.
+      </p>
+      {line(560, 14)}
+      {line(470, 8)}
+      <div style={{ display: "flex", gap: 2, margin: "24px 0 0", background: INK_30 }}>
+        {["$0", "$5.5B", "~$100M", "16,640"].map((v) => (
+          <div key={v} style={{ flex: 1, background: "#FFF", padding: "14px 12px" }}>
+            <p style={{ fontFamily: FONT, fontSize: 24, fontWeight: 800, color: INK, margin: 0 }}>{v}</p>
+            <div style={{ height: 8, width: "80%", background: INK_30, borderRadius: 2, marginTop: 7 }} />
+          </div>
+        ))}
+      </div>
+      <div style={{ marginTop: 22 }}>
+        {line(700, 0)}
+        {line(680, 8)}
+        {line(430, 8)}
+      </div>
+    </div>
+  );
+}
+
 function DefaultThumb() {
   return (
     <div style={{ width: W, height: H, background: "#F4F5F7", display: "flex",
@@ -850,6 +880,7 @@ function DefaultThumb() {
 
 // ─── Registry ─────────────────────────────────────────────────────────────────
 const THUMBS = {
+  "case-briefing":                   CaseBriefingThumb,
   "home-hero":                       HomeHeroThumb,
   "hero":                            HeroThumb,
   "stats-band":                      StatsBandThumb,
