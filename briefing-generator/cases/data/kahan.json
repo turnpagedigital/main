@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
-    "date_last_filing": "2026-08-28",
-    "meta_fetched_at": "2026-09-05T00:14:56.785995+00:00",
-    "fetched_at": "2026-09-08T09:47:37.810736+00:00",
+    "date_last_filing": "2026-09-08",
+    "meta_fetched_at": "2026-09-08T21:57:22.085936+00:00",
+    "fetched_at": "2026-09-08T21:57:22.085936+00:00",
     "as_of": "Sep 8, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 386,
+        "date_filed": "2026-09-08",
+        "time_filed": "15:20:32",
+        "date_display": "Sep 8, 2026",
+        "description": "Order on Motion to Compel",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.386.0.pdf"
+      },
       {
         "entry_number": 383,
         "date_filed": "2026-08-28",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 381,
-        "date_filed": "2026-08-27",
-        "time_filed": "15:47:07",
-        "date_display": "Aug 27, 2026",
-        "description": "Order on Motion to Compel",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 386,
+        "date_filed": "2026-09-08",
+        "time_filed": "15:20:32",
+        "date_display": "Sep 8, 2026",
+        "description": "Order on Motion to Compel",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.386.0.pdf"
+      },
       {
         "entry_number": 383,
         "date_filed": "2026-08-28",

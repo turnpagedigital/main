@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67599029/in-re-google-generative-ai-copyright-litigation/",
-    "date_last_filing": "2026-08-25",
-    "meta_fetched_at": "2026-09-02T12:17:44.181510+00:00",
-    "fetched_at": "2026-09-08T09:46:53.530802+00:00",
+    "date_last_filing": "2026-09-08",
+    "meta_fetched_at": "2026-09-08T21:54:58.024880+00:00",
+    "fetched_at": "2026-09-08T21:54:58.024880+00:00",
     "as_of": "Sep 8, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 484,
+        "date_filed": "2026-09-08",
+        "time_filed": "14:04:56",
+        "date_display": "Sep 8, 2026",
+        "description": "Response",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 483,
         "date_filed": "2026-08-25",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.482.0.pdf"
-      },
-      {
-        "entry_number": 481,
-        "date_filed": "2026-08-24",
-        "time_filed": "09:11:54",
-        "date_display": "Aug 24, 2026",
-        "description": "ORDER Denying 328 Motion for Relief. Signed by Judge Eumi K. Lee.(lrt, COURT STAFF) (Filed on 8/24/2026) (Entered: 08/24/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.481.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 484,
+        "date_filed": "2026-09-08",
+        "time_filed": "14:04:56",
+        "date_display": "Sep 8, 2026",
+        "description": "Response",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 483,
         "date_filed": "2026-08-25",
