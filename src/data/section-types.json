@@ -899,6 +899,140 @@
         "variant": "paper",
         "backgroundImage": ""
       }
+    },
+    {
+      "id": "case-briefing",
+      "displayName": "Case Briefing",
+      "description": "Long-form, citable reference page for a single case — dated status block, case facts, body sections in Markdown, update log, FAQs and sources. Educational by default; the selling CTA is a single toggle. Background stays fixed while the status block carries its own date, so the page is refreshed rather than rewritten.",
+      "dataSource": "inline",
+      "allowMultiple": false,
+      "supportedColorSchemes": [
+        "paper",
+        "white",
+        "light-gray"
+      ],
+      "defaultColorScheme": "paper",
+      "defaultContent": {
+        "eyebrow": "Case Briefing · Case No. 00-00000 (Bankr. D. Del.)",
+        "title": "Case name: where creditors actually stand in 2026.",
+        "standfirst": "A reference for holders of claims against this estate: how the plan works, how claims are determined, what the court record shows, and where the case stands. The background does not change. The status section carries the current numbers and is dated.",
+        "byline": "Andrew, Turnpage Digital Markets",
+        "publishedDate": "",
+        "showContents": true,
+        "colorScheme": "paper",
+        "statusHeading": "Where the case stands",
+        "statusAsOf": "",
+        "statusIntro": "Summarise the current posture in a paragraph or two. Keep every figure in this block — it is the part that goes stale.",
+        "stats": [
+          {
+            "id": "cb-stat-1",
+            "value": "$0",
+            "label": "Paid to creditors to date"
+          },
+          {
+            "id": "cb-stat-2",
+            "value": "$0B",
+            "label": "Creditor claims against the estate"
+          },
+          {
+            "id": "cb-stat-3",
+            "value": "$0M",
+            "label": "Estate assets, conservative estimate"
+          },
+          {
+            "id": "cb-stat-4",
+            "value": "0",
+            "label": "Claims filed"
+          }
+        ],
+        "facts": [
+          {
+            "id": "cb-fact-1",
+            "label": "Debtors",
+            "value": ""
+          },
+          {
+            "id": "cb-fact-2",
+            "label": "Court",
+            "value": ""
+          },
+          {
+            "id": "cb-fact-3",
+            "label": "Plan",
+            "value": ""
+          },
+          {
+            "id": "cb-fact-4",
+            "label": "Administrator",
+            "value": ""
+          },
+          {
+            "id": "cb-fact-5",
+            "label": "Claims agents",
+            "value": ""
+          },
+          {
+            "id": "cb-fact-6",
+            "label": "Bar date",
+            "value": ""
+          },
+          {
+            "id": "cb-fact-7",
+            "label": "Related cases",
+            "value": ""
+          }
+        ],
+        "sections": [
+          {
+            "id": "cb-sec-1",
+            "heading": "The short version",
+            "markdown": "Two or three sentences a reader can quote. What is the claim actually worth, and what stands between the holder and a distribution?"
+          },
+          {
+            "id": "cb-sec-2",
+            "heading": "How claims are determined",
+            "markdown": "Explain the claim class, the evidence standard, and the determination process.\n\n| Stage | Figure | As of |\n| --- | --- | --- |\n| Claim forms submitted | 0 | — |\n| Determinations issued | 0 | — |"
+          },
+          {
+            "id": "cb-sec-3",
+            "heading": "Why there is no distribution date",
+            "markdown": "Set out what has to happen first, and what the docket does and does not say."
+          }
+        ],
+        "faqHeading": "Common questions",
+        "faqs": [
+          {
+            "id": "cb-faq-1",
+            "q": "Who is eligible?",
+            "a": ""
+          },
+          {
+            "id": "cb-faq-2",
+            "q": "When will holders be paid?",
+            "a": ""
+          }
+        ],
+        "updateLog": [
+          {
+            "id": "cb-log-1",
+            "date": "",
+            "note": "Page published."
+          }
+        ],
+        "sources": [
+          {
+            "id": "cb-src-1",
+            "label": "CourtListener docket",
+            "url": ""
+          }
+        ],
+        "ctaEnabled": false,
+        "ctaHeading": "Holding a claim in this case?",
+        "ctaBody": "If you have questions about the procedure, the numbers or the timeline, get in touch.",
+        "ctaLabel": "Get in touch",
+        "ctaHref": "/contact",
+        "disclaimer": "Turnpage Digital Markets LLC is not affiliated with, endorsed by, or acting for the court, the debtor, any trustee or plan administrator, or any claims agent in this case. Nothing here is legal or financial advice. Case status reflects the public record as of the date shown and may have changed."
+      }
     }
   ]
 }

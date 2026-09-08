@@ -98,11 +98,39 @@ export function miniMarkdownToHtml(src, baseLevel = 3) {
     }
   };
 
-  for (const raw of lines) {
+  /* GitHub-style pipe tables. Case briefings carry claim-reconciliation and
+   * docket figures; flattening those to prose loses the association between
+   * a label and its number, which is exactly what a crawler should read. */
+  const splitRow = (line) =>
+    line.replace(/^\||\|$/g, "").split("|").map((cell) => cell.trim());
+  const isDivider = (line) => /^\|?[\s:-]*-[\s|:-]*\|?$/.test(line) && line.includes("-");
+
+  for (let i = 0; i < lines.length; i++) {
+    const raw = lines[i];
     const line = raw.trim();
     if (!line) {
       flushBullets();
       flushPara();
+      continue;
+    }
+
+    const next = (lines[i + 1] || "").trim();
+    if (line.includes("|") && isDivider(next)) {
+      flushBullets();
+      flushPara();
+      const head = splitRow(line);
+      const body = [];
+      i += 2;
+      while (i < lines.length && lines[i].trim().includes("|")) {
+        body.push(splitRow(lines[i].trim()));
+        i++;
+      }
+      i--;
+      const thead = `<thead><tr>${head.map((h2) => `<th>${inline(h2)}</th>`).join("")}</tr></thead>`;
+      const tbody = body.length
+        ? `<tbody>${body.map((r) => `<tr>${r.map((cell) => `<td>${inline(cell)}</td>`).join("")}</tr>`).join("")}</tbody>`
+        : "";
+      out.push(`<table>${thead}${tbody}</table>`);
       continue;
     }
     const heading = line.match(/^(#{1,6})\s+(.*)$/);
@@ -245,6 +273,75 @@ const RENDERERS = {
 
   /* The contact page is the form; its only prose is the sidebar plus the
    * direct contact handles. Thin by design — don't pad it. */
+  /* Long-form reference page for a single case. Owns the page's <h1>; every
+   * body section becomes a real heading so the document has an outline a
+   * crawler and a citing model can follow. The CTA is emitted only when the
+   * author switched it on. */
+  "case-briefing": (c, lvl) => {
+    const out = [
+      eyebrow(c.eyebrow),
+      h(lvl, c.title),
+      p(c.standfirst),
+      p([clean(c.byline) && `By ${clean(c.byline)}`, clean(c.publishedDate) && `Published ${clean(c.publishedDate)}`]
+        .filter(Boolean).join(" · ")),
+    ];
+
+    if ((c.stats || []).length || clean(c.statusIntro)) {
+      out.push(h(lvl + 1, joinTitle(c.statusHeading || "Where the case stands",
+        clean(c.statusAsOf) && `— as of ${clean(c.statusAsOf)}`)));
+      out.push(list(c.stats, (s) =>
+        clean(s.value) || clean(s.label)
+          ? `<li>${escapeHtml(clean(s.value))} — ${escapeHtml(clean(s.label))}</li>`
+          : ""));
+      out.push(miniMarkdownToHtml(c.statusIntro, lvl + 2));
+    }
+
+    if ((c.facts || []).length) {
+      out.push(list(c.facts, (f) =>
+        clean(f.label) || clean(f.value)
+          ? `<li>${escapeHtml(clean(f.label))}: ${inline(f.value)}</li>`
+          : ""));
+    }
+
+    for (const sec of c.sections || []) {
+      if (!sec) continue;
+      out.push(h(lvl + 1, sec.heading));
+      out.push(miniMarkdownToHtml(sec.markdown, lvl + 2));
+    }
+
+    if ((c.updateLog || []).length) {
+      out.push(h(lvl + 1, "Update log"));
+      out.push(list(c.updateLog, (u) =>
+        clean(u.date) || clean(u.note)
+          ? `<li>${escapeHtml(clean(u.date))} — ${escapeHtml(clean(u.note))}</li>`
+          : ""));
+    }
+
+    if ((c.faqs || []).length) {
+      out.push(h(lvl + 1, c.faqHeading || "Common questions"));
+      for (const f of c.faqs) {
+        if (!f || !clean(f.q)) continue;
+        out.push(h(lvl + 2, f.q));
+        out.push(miniMarkdownToHtml(f.a, lvl + 3));
+      }
+    }
+
+    if ((c.sources || []).length) {
+      out.push(h(lvl + 1, "Sources"));
+      out.push(list(c.sources, (s) =>
+        clean(s.label) ? `<li>${link(s.label, s.url) || escapeHtml(clean(s.label))}</li>` : ""));
+    }
+
+    if (c.ctaEnabled === true) {
+      out.push(h(lvl + 1, c.ctaHeading));
+      out.push(p(c.ctaBody));
+      out.push(ctaList({ label: c.ctaLabel, href: c.ctaHref }));
+    }
+
+    out.push(p(c.disclaimer));
+    return out.filter(Boolean).join("");
+  },
+
   "contact-form": (c, lvl) =>
     [
       h(lvl, c.sidebarHeading),
@@ -397,7 +494,12 @@ export function buildPageHtml(page, ctx) {
 
   for (const section of sections) {
     /* The first hero on the page owns the single <h1>. */
-    const isHero = section.type === "hero" || section.type === "home-hero";
+    /* A case briefing is the page's document, so it claims the <h1> the way
+     * a hero does on a marketing page. */
+    const isHero =
+      section.type === "hero" ||
+      section.type === "home-hero" ||
+      section.type === "case-briefing";
     const lvl = isHero && !usedH1 ? 1 : 2;
     const html = buildSectionHtml(section, ctx, lvl);
     if (!html) continue;

@@ -984,6 +984,98 @@ export default function SectionEditorFields({ typeId, form, set }) {
       )}
 
       {/* ── What We Cover (situations) ── */}
+      {/* ── Case Briefing ── */}
+      {typeId === "case-briefing" && (
+        <>
+          <ColorSchemePicker typeId="case-briefing" value={form.colorScheme} onChange={v => set("colorScheme", v)} />
+          <div style={fieldGroup}><label style={labelStyle}>Eyebrow (case number and court)</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Title (the page&rsquo;s H1)</label><textarea style={{ ...inputStyle, minHeight: 60 }} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Standfirst (the paragraph under the title)</label><textarea style={{ ...inputStyle, minHeight: 80 }} value={form.standfirst || ""} onChange={e => set("standfirst", e.target.value)} /></div>
+          <div style={{ display: "flex", gap: 8 }}>
+            <div style={{ ...fieldGroup, flex: 1 }}><label style={labelStyle}>Byline</label><input style={inputStyle} value={form.byline || ""} onChange={e => set("byline", e.target.value)} /></div>
+            <div style={{ ...fieldGroup, flex: 1 }}><label style={labelStyle}>Published date</label><input style={inputStyle} placeholder="September 1, 2026" value={form.publishedDate || ""} onChange={e => set("publishedDate", e.target.value)} /></div>
+          </div>
+          <div style={fieldGroup}>
+            <label style={{ fontSize: "0.74rem", color: INK_60, display: "flex", alignItems: "center", gap: 6 }}>
+              <input type="checkbox" checked={form.showContents !== false} onChange={e => set("showContents", e.target.checked)} style={{ accentColor: NEON }} />
+              Show a contents list (built from the body headings)
+            </label>
+          </div>
+
+          <p style={sectionLabel}>Status block — the dated part</p>
+          <p style={{ fontSize: "0.7rem", color: INK_60, margin: "0 0 0.6rem" }}>Keep every figure that goes stale in here. The background sections below should stay true without edits.</p>
+          <div style={{ display: "flex", gap: 8 }}>
+            <div style={{ ...fieldGroup, flex: 1 }}><label style={labelStyle}>Status heading</label><input style={inputStyle} value={form.statusHeading || ""} onChange={e => set("statusHeading", e.target.value)} /></div>
+            <div style={{ ...fieldGroup, flex: 1 }}><label style={labelStyle}>Figures as of</label><input style={inputStyle} placeholder="September 1, 2026" value={form.statusAsOf || ""} onChange={e => set("statusAsOf", e.target.value)} /></div>
+          </div>
+          <div style={fieldGroup}><label style={labelStyle}>Status summary (Markdown)</label><textarea style={{ ...inputStyle, minHeight: 110 }} value={form.statusIntro || ""} onChange={e => set("statusIntro", e.target.value)} /></div>
+          <RowsEditor
+            title="Status figures" addLabel="+ Add figure" idPrefix="cb-stat"
+            rows={form.stats || []} onChange={v => set("stats", v)}
+            fields={[{ key: "value", placeholder: "$5.5B" }, { key: "label", placeholder: "Creditor claims against the estate" }]}
+          />
+
+          <p style={sectionLabel}>Case facts</p>
+          <RowsEditor
+            title="Facts" addLabel="+ Add fact" idPrefix="cb-fact"
+            rows={form.facts || []} onChange={v => set("facts", v)}
+            fields={[{ key: "label", placeholder: "Court" }, { key: "value", placeholder: "Bankr. D. Del., Judge …", area: true }]}
+          />
+
+          <p style={sectionLabel}>Body</p>
+          <RowsEditor
+            title="Sections" addLabel="+ Add section" idPrefix="cb-sec"
+            rows={form.sections || []} onChange={v => set("sections", v)}
+            fields={[{ key: "heading", placeholder: "Section heading" }, { key: "markdown", placeholder: "Body in Markdown. Pipe tables are supported.", area: true, tall: true }]}
+          />
+
+          <p style={sectionLabel}>Update log</p>
+          <RowsEditor
+            title="Updates" addLabel="+ Add update" idPrefix="cb-log"
+            rows={form.updateLog || []} onChange={v => set("updateLog", v)}
+            fields={[{ key: "date", placeholder: "Sep 1, 2026" }, { key: "note", placeholder: "What changed", area: true }]}
+          />
+
+          <p style={sectionLabel}>Questions</p>
+          <div style={fieldGroup}><label style={labelStyle}>FAQ heading</label><input style={inputStyle} value={form.faqHeading || ""} onChange={e => set("faqHeading", e.target.value)} /></div>
+          <RowsEditor
+            title="Questions" addLabel="+ Add question" idPrefix="cb-faq"
+            rows={form.faqs || []} onChange={v => set("faqs", v)}
+            fields={[{ key: "q", placeholder: "Question" }, { key: "a", placeholder: "Answer (Markdown)", area: true }]}
+          />
+
+          <p style={sectionLabel}>Sources</p>
+          <RowsEditor
+            title="Sources" addLabel="+ Add source" idPrefix="cb-src"
+            rows={form.sources || []} onChange={v => set("sources", v)}
+            fields={[{ key: "label", placeholder: "Law360, headline, date" }, { key: "url", placeholder: "https://…" }]}
+          />
+
+          <p style={sectionLabel}>Call to action</p>
+          <div style={{ marginBottom: "0.9rem", padding: "0.7rem 0.8rem", border: `1px solid ${LINE}`, background: form.ctaEnabled === true ? "#F9FAFB" : "transparent" }}>
+            <label style={{ fontSize: "0.8rem", fontWeight: 700, color: INK, display: "flex", alignItems: "center", gap: 8 }}>
+              <input type="checkbox" checked={form.ctaEnabled === true} onChange={e => set("ctaEnabled", e.target.checked)} style={{ accentColor: NEON }} />
+              Show a call to action on this page
+            </label>
+            <p style={{ fontSize: "0.7rem", color: INK_60, margin: "0.45rem 0 0" }}>
+              Off keeps the page purely educational — the version journalists, law firms and AI assistants are most likely to cite. Turn it on once there is an intake page to send readers to.
+            </p>
+            {form.ctaEnabled === true && (
+              <div style={{ marginTop: "0.8rem" }}>
+                <div style={fieldGroup}><label style={labelStyle}>Heading</label><input style={inputStyle} value={form.ctaHeading || ""} onChange={e => set("ctaHeading", e.target.value)} /></div>
+                <div style={fieldGroup}><label style={labelStyle}>Body</label><textarea style={{ ...inputStyle, minHeight: 70 }} value={form.ctaBody || ""} onChange={e => set("ctaBody", e.target.value)} /></div>
+                <div style={{ display: "flex", gap: 8 }}>
+                  <div style={{ ...fieldGroup, flex: 1 }}><label style={labelStyle}>Button label</label><input style={inputStyle} value={form.ctaLabel || ""} onChange={e => set("ctaLabel", e.target.value)} /></div>
+                  <div style={{ ...fieldGroup, flex: 1 }}><label style={labelStyle}>Button links to</label><input style={inputStyle} placeholder="/contact" value={form.ctaHref || ""} onChange={e => set("ctaHref", e.target.value)} /></div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div style={fieldGroup}><label style={labelStyle}>Disclaimer</label><textarea style={{ ...inputStyle, minHeight: 90 }} value={form.disclaimer || ""} onChange={e => set("disclaimer", e.target.value)} /></div>
+        </>
+      )}
+
       {typeId === "situations" && (
         <>
           <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.9rem" }}>
@@ -1318,6 +1410,61 @@ function ProcessStepsEditor({ steps, onChange }) {
 
 /* TimelineStepsEditor — milestones for the Timeline section. Each step has a
    date label, heading, body text, a dot state, and an optional status pill. */
+const sectionLabel = {
+  fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.03em",
+  textTransform: "uppercase", color: INK_60, margin: "1.2rem 0 0.5rem",
+};
+
+/* RowsEditor — a repeating list of small records. The Case Briefing has six
+   of these (figures, facts, sections, updates, questions, sources) and they
+   only differ by their field list, so they share one editor rather than six
+   near-identical ones. */
+function RowsEditor({ title, addLabel, idPrefix, rows, onChange, fields }) {
+  const list = rows || [];
+  const setField = (i, key, val) => {
+    const next = [...list];
+    next[i] = { ...next[i], [key]: val };
+    onChange(next);
+  };
+  const move = (i, dir) => {
+    const j = i + dir;
+    if (j < 0 || j >= list.length) return;
+    const next = [...list];
+    [next[i], next[j]] = [next[j], next[i]];
+    onChange(next);
+  };
+  return (
+    <div style={{ marginBottom: "0.9rem", padding: "0.6rem 0.7rem", border: `1px solid ${LINE}`, background: "#F9FAFB" }}>
+      <div style={{ fontSize: "0.7rem", fontWeight: 700, color: INK_60, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 8 }}>{title}</div>
+      {list.map((row, i) => (
+        <div key={row.id || i} style={{ marginBottom: 8, paddingBottom: 8, borderBottom: `1px solid ${LINE}` }}>
+          <div style={{ display: "flex", gap: 4, marginBottom: 4 }}>
+            <input
+              style={{ ...inputStyle, flex: 1 }}
+              placeholder={fields[0].placeholder}
+              value={row[fields[0].key] || ""}
+              onChange={e => setField(i, fields[0].key, e.target.value)}
+            />
+            <button type="button" onClick={() => move(i, -1)} disabled={i === 0} aria-label="Move up" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === 0 ? 0.5 : 1 }}>↑</button>
+            <button type="button" onClick={() => move(i, 1)} disabled={i === list.length - 1} aria-label="Move down" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === list.length - 1 ? 0.5 : 1 }}>↓</button>
+          </div>
+          {fields.slice(1).map(f => (
+            f.area
+              ? <textarea key={f.key} style={{ ...inputStyle, minHeight: f.tall ? 150 : 70, marginBottom: 4 }} placeholder={f.placeholder} value={row[f.key] || ""} onChange={e => setField(i, f.key, e.target.value)} />
+              : <input key={f.key} style={{ ...inputStyle, marginBottom: 4 }} placeholder={f.placeholder} value={row[f.key] || ""} onChange={e => setField(i, f.key, e.target.value)} />
+          ))}
+          <button type="button" onClick={() => onChange(list.filter((_, idx) => idx !== i))} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem" }}>Remove</button>
+        </div>
+      ))}
+      <button
+        type="button"
+        onClick={() => onChange([...list, Object.fromEntries([["id", `${idPrefix}-${Date.now().toString(36)}`], ...fields.map(f => [f.key, ""])])])}
+        style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.3rem 0.5rem" }}
+      >{addLabel}</button>
+    </div>
+  );
+}
+
 function TimelineStepsEditor({ steps, onChange }) {
   const handleChange = (i, field, val) => {
     const next = [...(steps || [])];

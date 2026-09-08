@@ -290,3 +290,99 @@ test("no _redirects rule loops back on itself", () => {
     );
   }
 });
+
+/* ---------------------------------------------------------------------------
+ * Case Briefing — the reusable long-form case template. Educational by
+ * default; the selling CTA is a single toggle. These lock the two properties
+ * that make it worth having: it is fully crawlable, and the CTA stays off
+ * unless someone deliberately turns it on.
+ * ------------------------------------------------------------------------ */
+
+const sectionTypes = J("src/data/section-types.json");
+const caseBriefingType = (sectionTypes.sectionTypes || []).find((t) => t.id === "case-briefing");
+
+const briefingPages = compositions.pages.filter((p) =>
+  (p.sections || []).some((s) => s.type === "case-briefing"),
+);
+
+test("the case-briefing type is declared and registered", () => {
+  assert.ok(caseBriefingType, "case-briefing missing from section-types.json");
+  assert.equal(caseBriefingType.ctaEnabled, undefined);
+  assert.equal(
+    caseBriefingType.defaultContent.ctaEnabled,
+    false,
+    "a new case briefing must default to no CTA",
+  );
+  const registry = readFileSync(
+    new URL("../src/components/sections/registry.js", import.meta.url),
+    "utf8",
+  );
+  assert.match(registry, /"case-briefing":\s*CaseBriefingSection/);
+});
+
+test("a case briefing prerenders as a full document", () => {
+  assert.ok(briefingPages.length, "no page uses the case-briefing section");
+  for (const page of briefingPages) {
+    const html = buildPageHtml(page, { ...BASE, pageKey: page.pageKey });
+    assert.ok(wordCount(html) > 1500, `${page.path} rendered only ${wordCount(html)} words`);
+    assert.equal(countTag(html, "h1"), 1, `${page.path} must have exactly one h1`);
+    assert.ok(countTag(html, "h2") >= 5, `${page.path} has too few section headings`);
+    /* Sources are the point of a citable reference page. */
+    assert.ok((html.match(/<a href=/g) || []).length >= 20, `${page.path} lost its source links`);
+  }
+});
+
+test("markdown tables survive into the crawlable HTML", () => {
+  const html = miniMarkdownToHtml(
+    "| Stage | Figure |\n| --- | --- |\n| Filed | 16,640 |\n| Issued | 8,449 |",
+    2,
+  );
+  assert.match(html, /<table>/);
+  assert.match(html, /<th>Stage<\/th>/);
+  assert.match(html, /<td>16,640<\/td>/);
+  assert.ok(!html.includes("|"), "raw pipes leaked into the output");
+});
+
+test("the CTA only renders when explicitly enabled", () => {
+  const base = {
+    title: "A case",
+    ctaHeading: "Holding a claim?",
+    ctaLabel: "Get in touch",
+    ctaHref: "/contact",
+  };
+  const off = buildSectionHtml(
+    { type: "case-briefing", content: { ...base, ctaEnabled: false } },
+    { ...BASE, pageKey: "x" },
+    1,
+  );
+  assert.ok(!off.includes("Get in touch"), "CTA rendered while switched off");
+
+  const on = buildSectionHtml(
+    { type: "case-briefing", content: { ...base, ctaEnabled: true } },
+    { ...BASE, pageKey: "x" },
+    1,
+  );
+  assert.match(on, /Get in touch/);
+  assert.match(on, /href="\/contact"/);
+});
+
+test("draft pages are kept out of the sitemap", () => {
+  const script = readFileSync(new URL("../scripts/generate-sitemap.mjs", import.meta.url), "utf8");
+  assert.match(script, /NON_ACTIVE_PATHS/, "sitemap no longer filters non-active pages");
+  const mw = readFileSync(new URL("../functions/_middleware.js", import.meta.url), "utf8");
+  assert.match(mw, /NON_ACTIVE_PATHS/, "middleware no longer noindexes non-active pages");
+  for (const page of briefingPages) {
+    if (page.status === "active") continue;
+    assert.ok(page.status, `${page.path} has no status, so it would be indexed by default`);
+  }
+});
+
+test("an unlisted case page stays out of nav and footer", () => {
+  const nav = readFileSync(new URL("../src/data/nav.json", import.meta.url), "utf8");
+  const footer = readFileSync(new URL("../src/data/footer.json", import.meta.url), "utf8");
+  for (const page of briefingPages) {
+    if (page.status === "active") continue;
+    assert.ok(!nav.includes(page.path), `${page.path} is linked from nav while still a draft`);
+    assert.ok(!footer.includes(page.path), `${page.path} is linked from footer while still a draft`);
+  }
+});

@@ -69,6 +69,11 @@ const PATH_TO_KEY = new Map(
   routesData.routes.filter((r) => !r.dynamic).map((r) => [r.path, r.key]),
 );
 const COMPOSITIONS = new Map((pageCompositions.pages || []).map((p) => [p.path, p]));
+/* Draft/archived Page Builder pages stay reachable for review but must never
+ * be indexed — the sitemap already skips them; this is the header half. */
+const NON_ACTIVE_PATHS = new Set(
+  (pageCompositions.pages || []).filter((p) => p.status && p.status !== "active").map((p) => p.path),
+);
 /* Nav + footer as real anchors, so authority flows between pages. */
 const LINK_GRAPH = buildLinkGraphHtml(navData, footerData);
 /* Never prerender: /admin (noindexed, and not public content), the unlisted
@@ -351,7 +356,7 @@ export async function onRequest(context) {
     return notFound;
   }
 
-  if (isDraftBriefing || url.pathname === "/admin" || url.pathname.startsWith("/admin/")) {
+  if (isDraftBriefing || NON_ACTIVE_PATHS.has(url.pathname.replace(/\/+$/, "") || "/") || url.pathname === "/admin" || url.pathname.startsWith("/admin/")) {
     const noindexed = new Response(transformed.body, transformed);
     noindexed.headers.set("X-Robots-Tag", "noindex, nofollow");
     return noindexed;

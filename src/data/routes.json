@@ -107,6 +107,13 @@
       "component": "Partners",
       "dynamic": false,
       "title": "Partner Portal"
+    },
+    {
+      "path": "/cases/terraform-labs",
+      "key": "case-terraform-labs",
+      "component": "DynamicPage",
+      "dynamic": false,
+      "title": "Terraform Labs — Case Briefing"
     }
   ]
 }

@@ -18,6 +18,14 @@ const ORIGIN = "https://turnpagedigital.com";
 const OUT = "dist/sitemap.xml";
 
 const routes = JSON.parse(await readFile("src/data/routes.json", "utf8")).routes;
+
+/* Page Builder pages carry a status (active / draft / archive). A draft is
+ * reachable at its URL for review but must not be advertised to Google, so
+ * the sitemap skips it until it is switched to active in /admin. */
+const compositions = JSON.parse(await readFile("src/data/page-compositions.json", "utf8")).pages || [];
+const NON_ACTIVE_PATHS = new Set(
+  compositions.filter((p) => p.status && p.status !== "active").map((p) => p.path),
+);
 const briefings = JSON.parse(await readFile("public/briefings/index.json", "utf8")).items;
 
 const urls = [];
@@ -25,6 +33,7 @@ const urls = [];
 for (const route of routes) {
   const path = route.path;
   if (path.startsWith("/admin")) continue; // never index the admin panel
+  if (NON_ACTIVE_PATHS.has(path)) continue; // draft/archived Page Builder pages
   if (route.dynamic || path.includes(":")) continue; // expanded separately
   const isLegal = path === "/privacy" || path === "/terms";
   urls.push({

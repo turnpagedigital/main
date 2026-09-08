@@ -34,6 +34,7 @@ import RichTextSection      from "./RichTextSection.jsx";
 import DamagesSection       from "./DamagesSection.jsx";
 import RegistrationFlowSection from "./RegistrationFlowSection.jsx";
 import ContactSection         from "./ContactSection.jsx";
+import CaseBriefingSection    from "./CaseBriefingSection.jsx";
 import CryptoClaimsChart    from "../CryptoClaimsChart.jsx";
 
 export const SECTION_MAP = {
@@ -65,5 +66,6 @@ export const SECTION_MAP = {
   "damages":        DamagesSection,
   "registration-flow": RegistrationFlowSection,
   "contact-form":     ContactSection,
+  "case-briefing":    CaseBriefingSection,
   "crypto-claims-chart": CryptoClaimsChart,
 };

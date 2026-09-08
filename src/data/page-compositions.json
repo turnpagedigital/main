@@ -1355,6 +1355,336 @@
           }
         }
       ]
+    },
+    {
+      "pageKey": "case-terraform-labs",
+      "title": "Terraform Labs — Case Briefing",
+      "path": "/cases/terraform-labs",
+      "builtIn": false,
+      "status": "draft",
+      "sections": [
+        {
+          "id": "cb-terraform",
+          "type": "case-briefing",
+          "visible": true,
+          "content": {
+            "eyebrow": "Crypto Bankruptcy Briefing · Case No. 24-10070 (Bankr. D. Del.)",
+            "title": "Terraform Labs bankruptcy claims: where Terra creditors actually stand in 2026.",
+            "standfirst": "A reference for holders of timely Crypto Loss Claims against the Terraform Labs estate: how the plan works, how claims are determined, what the court record shows, and where the case stands. The background does not change. The status section carries the current numbers and is dated.",
+            "byline": "Andrew, Turnpage Digital Markets",
+            "publishedDate": "September 1, 2026",
+            "showContents": true,
+            "colorScheme": "paper",
+            "statusHeading": "Where the case stands",
+            "statusAsOf": "September 1, 2026",
+            "statusIntro": "The Plan Administrator puts creditor claims above $5.5 billion. Estate assets come to about $100 million on conservative assumptions, a figure built from the 500 million PYTH tokens, the venture portfolio and the estate's other holdings, none of which has a fixed value until it is sold. That works out to roughly two cents on the dollar before costs. The Q1 2026 post-confirmation report for the Wind Down Trust ([Docket 1216](https://www.courtlistener.com/docket/68180454/1216/terraform-labs-pte-ltd/)) shows cumulative disbursements of $52,695,127 since October 1, 2024, of which $3,634,909 went out in that quarter, and $0 to holders of claims or interests. Q2 2026 reports were filed on July 30 ([Dockets 1305–1307](https://www.courtlistener.com/docket/68180454/1305/terraform-labs-pte-ltd/)) but were not yet available in readable form when this was written.\n\n| Crypto Loss Claim reconciliation | Figure | As of |\n| --- | --- | --- |\n| Claim forms submitted | 16,640 | Plan Administrator site, July 2026 |\n| Initial Determinations issued | 8,449 | February 17, 2026 |\n| Determinations accepted by claimants | ~87% | February 17, 2026 |\n| Claims in individualized review | 3,129 | February 17, 2026 |\n| Claimants asked for additional information | 3,760 | February 17, 2026 |\n| Distributions to Crypto Loss Claim holders | $0 | Q1 2026 post-confirmation report |\n\nThe Plan Administrator filed Q2 2026 post-confirmation reports on July 30, 2026 (Dockets 1305–1307) and updated Crypto Loss Claims registers on July 28, 2026 (Dockets 1303–1304). Figures above are the last publicly reported reconciliation counts.\n\nBoth lawsuits sit at the motion-to-dismiss stage. Jump's defendants filed their motions on August 19 and 20, 2026, with briefing through November 6. Jane Street's motion has been fully briefed since July 13 and awaits a ruling from Judge Ho. Neither case has produced a dollar for the estate, and either could end in zero.\n\nThere is no distribution date. The court has extended the wind-down authority once, from the end of 2025 to December 31, 2026, and with the Jump briefing running past November, another extension is the base case. The only outside analyst who has committed to a date puts retail disbursements no earlier than 2028 to 2029. Nothing on the docket contradicts that. A motion to authorize filed August 19 (Docket 1321) drew an objection and had its hearing cancelled on August 28, which in Delaware usually means the parties resolved it or agreed to push it.\n\n### Update log\n\n- Sep 1, 2026Page published. No distribution on file. Jump motions to dismiss filed; Jane Street motion pending. Wind-down deadline December 31, 2026.\n\nDebtors Terraform Labs Pte. Ltd. (Singapore), Case No. 24-10070; Terraform Labs Limited (BVI), Case No. 24-11481, filed July 1, 2024\nCourt U.S. Bankruptcy Court for the District of Delaware, Judge Brendan L. Shannon\nPlan Second Amended Chapter 11 Plan of Liquidation (Docket 717), confirmed September 20, 2024, effective October 1, 2024\nAdministrator Todd R. Snyder, Piper Sandler, as Plan Administrator; JTC (Cayman) Limited as Wind Down Trustee\nClaims agents Epiq (main docket and claims register); Kroll (Crypto Loss Claims portal at claims.terra.money)\nBar date Crypto Loss Claims: May 16, 2025, 11:59 p.m. ET (Docket 965, extended by Docket 986). Late-claim window October 1 to November 24, 2025. Closed.\nWind-down deadline December 31, 2026, extended from December 31, 2025\nRelated cases *SEC v. Terraform Labs Pte. Ltd. and Do Kwon*, No. 23-cv-1346 (S.D.N.Y., Rakoff, J.); *United States v. Kwon* (S.D.N.Y., Engelmayer, J.); *Snyder v. Jump Trading, LLC*, No. 1:25-cv-15414 (N.D. Ill.); Terraform Wind Down Trust v. Jane Street, No. 1:26-cv-01536 (S.D.N.Y.)",
+            "stats": [
+              {
+                "id": "cb-stat-1",
+                "value": "$0",
+                "label": "Paid to creditors, per the Q1 2026 Wind Down Trust report"
+              },
+              {
+                "id": "cb-stat-2",
+                "value": "$5.5B+",
+                "label": "Creditor claims against the estate, per the Plan Administrator"
+              },
+              {
+                "id": "cb-stat-3",
+                "value": "~$100M",
+                "label": "Estate assets on conservative estimates of PYTH, the venture portfolio and other holdings"
+              },
+              {
+                "id": "cb-stat-4",
+                "value": "16,640",
+                "label": "Crypto Loss Claims filed; about half had an Initial Determination at the last public count"
+              }
+            ],
+            "facts": [
+              {
+                "id": "cb-fact-1",
+                "label": "Debtors",
+                "value": "Terraform Labs Pte. Ltd. (Singapore), Case No. 24-10070; Terraform Labs Limited (BVI), Case No. 24-11481, filed July 1, 2024"
+              },
+              {
+                "id": "cb-fact-2",
+                "label": "Court",
+                "value": "U.S. Bankruptcy Court for the District of Delaware, Judge Brendan L. Shannon"
+              },
+              {
+                "id": "cb-fact-3",
+                "label": "Plan",
+                "value": "Second Amended Chapter 11 Plan of Liquidation (Docket 717), confirmed September 20, 2024, effective October 1, 2024"
+              },
+              {
+                "id": "cb-fact-4",
+                "label": "Administrator",
+                "value": "Todd R. Snyder, Piper Sandler, as Plan Administrator; JTC (Cayman) Limited as Wind Down Trustee"
+              },
+              {
+                "id": "cb-fact-5",
+                "label": "Claims agents",
+                "value": "Epiq (main docket and claims register); Kroll (Crypto Loss Claims portal at claims.terra.money)"
+              },
+              {
+                "id": "cb-fact-6",
+                "label": "Bar date",
+                "value": "Crypto Loss Claims: May 16, 2025, 11:59 p.m. ET (Docket 965, extended by Docket 986). Late-claim window October 1 to November 24, 2025. Closed."
+              },
+              {
+                "id": "cb-fact-7",
+                "label": "Wind-down deadline",
+                "value": "December 31, 2026, extended from December 31, 2025"
+              },
+              {
+                "id": "cb-fact-8",
+                "label": "Related cases",
+                "value": "SEC v. Terraform Labs Pte. Ltd. and Do Kwon, No. 23-cv-1346 (S.D.N.Y., Rakoff, J.); United States v. Kwon (S.D.N.Y., Engelmayer, J.); Snyder v. Jump Trading, LLC, No. 1:25-cv-15414 (N.D. Ill.); Terraform Wind Down Trust v. Jane Street, No. 1:26-cv-01536 (S.D.N.Y.)"
+              }
+            ],
+            "sections": [
+              {
+                "id": "cb-sec-1",
+                "heading": "The short version",
+                "markdown": "A timely Crypto Loss Claim is a claim against a liquidating trust that holds a small asset base against billions of dollars of claims, has set no distribution date, and is counting on two lawsuits that may never pay. The current figures are in the status section that follows.\n\nTerraform Labs Pte. Ltd. filed chapter 11 in Delaware on January 21, 2024, and Judge Shannon confirmed its liquidating plan ([Docket 717](https://www.courtlistener.com/docket/68180454/717/terraform-labs-pte-ltd/)) eight months later, on September 20 ([Docket 734](https://www.courtlistener.com/docket/68180454/734/terraform-labs-pte-ltd/)). When the plan went effective on October 1, 2024, the estate's assets passed to a Cayman wind-down trust with Todd Snyder of Piper Sandler as Plan Administrator. The SEC's $4.47 billion judgment, the figure in every headline, is subordinated to creditors and collects nothing until they are paid in full. On the estate's numbers, that will not happen.\n\nStatus"
+              },
+              {
+                "id": "cb-sec-2",
+                "heading": "Crypto Loss Claims and how they are determined",
+                "markdown": "Rather than run tens of thousands of token holders through a conventional proof of claim, the plan (Sections 3 and 5.7 of Docket 717) gave their losses a class of their own, Class 5, with its own procedure. A Crypto Loss Claim covers loss on an \"Eligible Loss Cryptocurrency,\" meaning UST, LUNA and the Terra-ecosystem tokens with more than $100 of on-chain liquidity; LUNA 2.0 on the new chain does not qualify. The Kroll portal opened March 31, 2025, the court moved the original April 30 deadline to May 16, 2025 at 11:59 p.m. ET, and a supplemental window ran from October 1 to November 24, 2025. Since then the court has denied late-claim motions in April and again in July 2026. The pool of filers is closed.\n\nThe procedure favors evidence a machine can verify: read-only exchange API keys and wallet signatures are the preferred proof, while screenshots and statements go into \"individualized review,\" where the Plan Administrator may disallow a claim if better evidence existed and the claimant did not provide it. From the proven holdings he computes a Crypto Loss Amount, issues an Initial Determination, and opens a dispute window. The portal launch notice carried this warning:\n\nYour pro rata share of amounts that are approved for distributions to holders of Allowed Crypto Loss Claims by the Plan Administrator may be materially less than your Crypto Loss Amount. Terraform Labs Crypto Loss Claims Portal launch notice, March 2025\nA submitted claim is not an allowed claim, and the final allowed total will turn on the claims still in individualized review and on outstanding information requests. Nor is the pool only retail. On October 7, 2025 the court approved a settlement reclassifying Three Arrows Capital's $1.3 billion claim, which the fund's liquidators had filed as a general unsecured claim, as a Crypto Loss Claim, so it now shares the same pro rata pool as the individual filers.\n\n| Class | Claims | Treatment under the confirmed plan |\n| --- | --- | --- |\n| 1 | Priority non-tax claims | Paid in full |\n| 2 | Secured claims | Unimpaired; collateral returned or claim paid |\n| 3 | Beltran secured claims (Singapore representative action) | Paid from escrow under the Singapore court's order |\n| 4 | General unsecured claims | Pro rata from the GUC Pool |\n| 5 | Crypto Loss Claims | Pro rata from the Crypto Loss Claim Pool under the CLC Procedures |\n| 6 | SEC claim ($4.47B) | No distribution until Classes 4 and 5 are paid in full |\n\nEquity interests are cancelled. Source: Second Amended Chapter 11 Plan of Liquidation, Docket 717; SEC v. Terraform distributions page."
+              },
+              {
+                "id": "cb-sec-3",
+                "heading": "What the estate projected, and what the SEC is owed",
+                "markdown": "The estate's own forecast is in the Liquidation Analysis, filed as Exhibit B to the disclosure statement on August 8, 2024 ([Docket 569-2](https://www.courtlistener.com/docket/68180454/569/2/terraform-labs-pte-ltd/)). It projected gross distributable value of $184.5 million to $442.2 million, took off 5 to 10 percent for liquidation costs, and after administrative, secured, Beltran and general unsecured claims left $51.1 million to $394.2 million for Class 5 and below. Because the Crypto Loss Claim bar date had not yet run, the debtors declined to estimate the class's size and reported a recovery range of 0.1 percent to 100 percent. Two of its assumptions have not aged well. The high case valued the venture portfolio at 98.7 percent of a $98.8 million book value with no marketing process yet begun, and the SEC Settlement Fund at a full $204.3 million with PYTH priced between $0.27 and $0.34. The figures in the status section put the case near the bottom of that range.\n\nThe SEC judgment against Terraform comes to $3,586,875,883 in disgorgement, $466,952,423 in prejudgment interest and $420,000,000 in civil penalty, with Kwon jointly liable for a further $204,320,196 that he agreed to deliver to the estate in cash, LFG crypto and 500 million PYTH tokens. Because the SEC holds the Class 6 claim, it is paid only after Classes 4 and 5 recover in full. Whether the PYTH tokens have actually reached the trust, after a long dispute with the Pyth Data Association over transfer mechanics, is not something the public record confirms, and PYTH trades at a price that can move any asset estimate in either direction.\n\nProfessional fees are the largest cost line by a wide margin. After negotiated reductions, the fee examiner's final report lists Dentons at $19.8 million in fees plus $4.8 million in expenses for the SEC litigation, Weil above $19.2 million requested, and Alvarez & Marsal above $11.5 million. Taken together, the estate holds a small fraction of what it owes, spends several million dollars a quarter, and depends on litigation for anything beyond low single digits."
+              },
+              {
+                "id": "cb-sec-4",
+                "heading": "Where to read the filings",
+                "markdown": "Every document below is on the Epiq docket at [dm.epiq11.com/case/terraform](https://dm.epiq11.com/case/terraform/dockets), free of charge. Where a copy is also on CourtListener, the link goes there.\n\nPlan Second Amended Chapter 11 Plan of Liquidation, filed September 18, 2024 ([Docket 717](https://www.courtlistener.com/docket/68180454/717/terraform-labs-pte-ltd/); the SEC also hosts a [copy](https://www.sec.gov/files/terraform-labs-limited-2nd-amended-ch11-liquidation-plan.pdf)). Section 3 classifies the claims, Section 5.5 establishes the Wind Down Trust, and Section 5.7 governs administration of Crypto Loss Claims.\nConfirmation order Findings of Fact, Conclusions of Law and Order Confirming the Plan, September 20, 2024 ([Docket 734](https://www.courtlistener.com/docket/68180454/734/terraform-labs-pte-ltd/)).\nDisclosure statement Solicitation version, August 8, 2024 ([Docket 569](https://www.courtlistener.com/docket/68180454/569/terraform-labs-pte-ltd/), 119 pages). Section VI covers tax consequences.\nLiquidation analysis Exhibit B to the disclosure statement ([Docket 569-2](https://www.courtlistener.com/docket/68180454/569/2/terraform-labs-pte-ltd/), 14 pages). The distributable value table is on page 6; the notes on assumptions follow.\nMonthly operating reports Filed for January through September 2024, while the debtors were in possession: [Docket 201](https://www.courtlistener.com/docket/68180454/201/terraform-labs-pte-ltd/) (January), [202](https://www.courtlistener.com/docket/68180454/202/terraform-labs-pte-ltd/) (February), [245](https://www.courtlistener.com/docket/68180454/245/terraform-labs-pte-ltd/) (March), [341](https://www.courtlistener.com/docket/68180454/341/terraform-labs-pte-ltd/) (April), [412](https://www.courtlistener.com/docket/68180454/412/terraform-labs-pte-ltd/) (May), [495](https://www.courtlistener.com/docket/68180454/495/terraform-labs-pte-ltd/) (June), [631](https://www.courtlistener.com/docket/68180454/631/terraform-labs-pte-ltd/) (July), [737](https://www.courtlistener.com/docket/68180454/737/terraform-labs-pte-ltd/) (August) and [801](https://www.courtlistener.com/docket/68180454/801/terraform-labs-pte-ltd/) (September). Monthly reporting stopped at the effective date.\nPost-confirmation reports Quarterly since the effective date, filed by the Plan Administrator for the post-effective-date debtors and, from Q4 2025, separately for the Wind Down Trust: [Dockets 886–888](https://www.courtlistener.com/docket/68180454/886/terraform-labs-pte-ltd/) (Q4 2024), [997–1000](https://www.courtlistener.com/docket/68180454/998/terraform-labs-pte-ltd/) (Q1 2025), [1026–1027](https://www.courtlistener.com/docket/68180454/1026/terraform-labs-pte-ltd/) (Q2 2025), [1121–1123](https://www.courtlistener.com/docket/68180454/1121/terraform-labs-pte-ltd/) (Q3 2025), [1166–1168](https://www.courtlistener.com/docket/68180454/1166/terraform-labs-pte-ltd/) (Q4 2025), [1214–1216](https://www.courtlistener.com/docket/68180454/1214/terraform-labs-pte-ltd/) (Q1 2026) and [1305–1307](https://www.courtlistener.com/docket/68180454/1305/terraform-labs-pte-ltd/) (Q2 2026). The Wind Down Trust report is the one that shows distributions to creditors.\nCrypto Loss Claim procedures Bar date order, March 12, 2025 (Docket 965), and the CLC Procedures and Eligible Loss Cryptocurrency schedule on the [Kroll site](https://restructuring.ra.kroll.com/Terraform/)."
+              },
+              {
+                "id": "cb-sec-5",
+                "heading": "The lawsuits",
+                "markdown": "The trust has two cases in the field. On December 18, 2025 it sued Jump Trading in the Northern District of Illinois for at least $4 billion, alleging that Jump secretly propped up UST's peg in May 2021 and took discounted LUNA and LFG reserves in return. On February 24, 2026 it sued Jane Street in the Southern District of New York over trading in the days before the May 2022 collapse. Jump calls the suit an attempt to shift responsibility for Kwon's crimes. Jane Street calls it an effort to make it \"foot the bill for a fraud that Terraform itself perpetrated,\" and argues that a wrongdoer's estate cannot recover for its own fraud, a defense that, if it succeeds, reaches both cases.\n\nBoth defendants can litigate for years, the estate pays its lawyers from the same assets creditors are waiting on, and either case could end in zero. Any claim valuation that counts a Jump recovery as cash is not reading the record. These cases are an option the estate pays to keep alive, not an asset. Their procedural status is in the status section."
+              },
+              {
+                "id": "cb-sec-6",
+                "heading": "Do Kwon",
+                "markdown": "Kwon's criminal case is finished, and it changes nothing for creditors. After Montenegro extradited him on December 31, 2024, he pleaded guilty on August 12, 2025 to conspiracy and wire fraud, and on December 11, 2025 Judge Engelmayer sentenced him to fifteen years with forfeiture of more than $19 million. Under the plea agreement, the government will not oppose his transfer to South Korea once he has served half the term. Both the forfeiture and the $204.3 million transfer were already in the estate's numbers, so the sentence adds no new source of recovery."
+              },
+              {
+                "id": "cb-sec-7",
+                "heading": "Why there is no distribution date",
+                "markdown": "A meaningful pro rata distribution requires a fixed denominator, and the denominator is not fixed until the claims in individualized review and the outstanding information requests are resolved. The Plan Administrator also has reason to hold cash, since the Jump and Jane Street cases need funding and any fee award or counterclaim against the trust would have to be reserved for. The plan set an initial wind-down deadline of December 31, 2025 and allowed the court to extend it, which it has. What a Terra creditor holds, then, is a claim with a defined process, a small and shrinking pool, an unresolved litigation overlay, and a timeline measured in years."
+              },
+              {
+                "id": "cb-sec-8",
+                "heading": "Case chronology",
+                "markdown": "- May 7–12, 2022UST loses its peg; LUNA supply hyperinflates; losses exceed $40 billion.\n\n- Feb 16, 2023SEC sues Terraform Labs and Do Kwon in the Southern District of New York.\n\n- Jan 21, 2024Terraform Labs Pte. Ltd. files chapter 11 in Delaware, No. 24-10070.\n\n- Apr 5, 2024Jury finds Terraform and Kwon liable for securities fraud.\n\n- Jun 12, 2024SEC final judgment of $4.47 billion; SEC agrees to be paid after creditors.\n\n- Aug 8, 2024Disclosure statement and Liquidation Analysis filed (Docket 569).\n\n- Sep 20, 2024Plan confirmed (Docket 734).\n\n- Oct 1, 2024Plan effective; assets vest in the Wind Down Trust; Todd Snyder appointed Plan Administrator.\n\n- Dec 31, 2024Kwon extradited from Montenegro to the United States.\n\n- Mar 12, 2025Crypto Loss Claim bar date order entered (Docket 965).\n\n- Mar 31, 2025Crypto Loss Claims portal opens on Kroll.\n\n- May 16, 2025Crypto Loss Claim bar date, 11:59 p.m. ET.\n\n- Aug 12, 2025Kwon pleads guilty to conspiracy and wire fraud.\n\n- Oct 7, 20253AC's $1.3 billion claim reclassified into the Crypto Loss Claim pool.\n\n- Nov 24, 2025Supplemental late-claim window closes.\n\n- Dec 11, 2025Kwon sentenced to fifteen years.\n\n- Dec 18, 2025Trust sues Jump Trading in the Northern District of Illinois.\n\n- Feb 24, 2026Trust sues Jane Street in the Southern District of New York.\n\n- Jul 9, 2026Court denies further late Crypto Loss Claims; the pool of filers is closed."
+              }
+            ],
+            "faqHeading": "Common questions",
+            "faqs": [
+              {
+                "id": "cb-faq-1",
+                "q": "Has Terraform Labs paid anything to creditors?",
+                "a": "Not as of the date in the status section above, which carries the latest figures from the Plan Administrator's quarterly reports. The Wind Down Trust's post-confirmation report is the filing that shows distributions to creditors."
+              },
+              {
+                "id": "cb-faq-2",
+                "q": "Can I still file a Crypto Loss Claim?",
+                "a": "No. The bar date was May 16, 2025 at 11:59 p.m. ET. A supplemental late window closed November 24, 2025, and the court has since denied further late-claim motions. The pool of filers is closed."
+              },
+              {
+                "id": "cb-faq-3",
+                "q": "What do the court's numbers say about recovery?",
+                "a": "The Plan Administrator has put creditor claims above $5.5 billion against estate assets estimated at about $100 million, before costs and before any litigation recovery. The 2024 Liquidation Analysis itself declined to estimate a Crypto Loss Claim recovery, reporting a range of 0.1 percent to 100 percent. The Plan Administrator has warned that pro rata recoveries may be materially less than a claimant's Crypto Loss Amount. Current figures are in the status section."
+              },
+              {
+                "id": "cb-faq-4",
+                "q": "Will the Jump Trading or Jane Street lawsuits change that?",
+                "a": "Nobody knows. Both defendants can fund years of litigation, the estate pays its own legal costs from the same assets creditors are waiting on, and either case could end in zero. Their procedural status is in the status section."
+              },
+              {
+                "id": "cb-faq-5",
+                "q": "Does the SEC's $4.47 billion judgment come ahead of creditors?",
+                "a": "No. The SEC holds the Class 6 claim under the confirmed plan and receives nothing until Class 4 general unsecured claims and Class 5 Crypto Loss Claims are paid in full."
+              },
+              {
+                "id": "cb-faq-6",
+                "q": "When will distributions happen?",
+                "a": "No date has been set. The trust needs a fixed pool of allowed claims and a view on its litigation before it can distribute, and the court has already extended the wind-down deadline once. The status section carries the current deadline and the latest outside estimate."
+              },
+              {
+                "id": "cb-faq-7",
+                "q": "Who runs the Wind Down Trust, and how do I know an email is real?",
+                "a": "JTC (Cayman) Limited is trustee. Todd R. Snyder of Piper Sandler is Plan Administrator. Epiq handles the main docket and Kroll runs the Crypto Loss Claims portal. The Plan Administrator writes only from donotreply@ra.kroll.com, Terraforminfo@ra.kroll.com, claims@terra.money and TerraAnswers@kirkland.com. Treat anything else as phishing."
+              }
+            ],
+            "updateLog": [
+              {
+                "id": "cb-log-1",
+                "date": "Sep 1, 2026",
+                "note": "Page published. No distribution on file. Jump motions to dismiss filed; Jane Street motion pending. Wind-down deadline December 31, 2026."
+              }
+            ],
+            "sources": [
+              {
+                "id": "cb-src-1",
+                "label": "Terraform Labs Wind Down Trust Crypto Loss Claims (Kroll)",
+                "url": "https://restructuring.ra.kroll.com/Terraform/"
+              },
+              {
+                "id": "cb-src-2",
+                "label": "Office of the Terraform Labs Plan Administrator",
+                "url": "https://www.terraformlabsplanadministrator.com/"
+              },
+              {
+                "id": "cb-src-3",
+                "label": "Terraform Labs Chapter 11 docket (Epiq)",
+                "url": "https://dm.epiq11.com/case/terraform/info"
+              },
+              {
+                "id": "cb-src-4",
+                "label": "Second Amended Chapter 11 Plan of Liquidation, Docket 717",
+                "url": "https://www.courtlistener.com/docket/68180454/717/terraform-labs-pte-ltd/"
+              },
+              {
+                "id": "cb-src-5",
+                "label": "Disclosure Statement (solicitation version), Docket 569",
+                "url": "https://www.courtlistener.com/docket/68180454/569/terraform-labs-pte-ltd/"
+              },
+              {
+                "id": "cb-src-6",
+                "label": "Liquidation Analysis, Docket 569-2",
+                "url": "https://www.courtlistener.com/docket/68180454/569/2/terraform-labs-pte-ltd/"
+              },
+              {
+                "id": "cb-src-7",
+                "label": "Confirmation Order, Docket 734",
+                "url": "https://www.courtlistener.com/docket/68180454/734/terraform-labs-pte-ltd/"
+              },
+              {
+                "id": "cb-src-8",
+                "label": "Q1 2026 Post-Confirmation Report (Wind Down Trust), Docket 1216",
+                "url": "https://www.courtlistener.com/docket/68180454/1216/terraform-labs-pte-ltd/"
+              },
+              {
+                "id": "cb-src-9",
+                "label": "SEC Press Release 2024-73, June 13, 2024",
+                "url": "https://www.sec.gov/newsroom/press-releases/2024-73"
+              },
+              {
+                "id": "cb-src-10",
+                "label": "SEC v. Terraform Labs distributions page",
+                "url": "https://www.sec.gov/enforcement-litigation/distributions-harmed-investors/sec-v-terraform-labs-pte-ltd-do-hyeong-kwon-no-23-cv-1346-jsr-sdny"
+              },
+              {
+                "id": "cb-src-11",
+                "label": "DOJ, Do Kwon Pleads Guilty to Fraud, Aug. 12, 2025",
+                "url": "https://www.justice.gov/usao-sdny/pr/do-kwon-pleads-guilty-fraud"
+              },
+              {
+                "id": "cb-src-12",
+                "label": "DOJ, Kwon Sentenced, Dec. 11, 2025",
+                "url": "https://www.justice.gov/usao-sdny/pr/crypto-enabled-fraudster-sentenced-orchestrating-40-billion-fraud"
+              },
+              {
+                "id": "cb-src-13",
+                "label": "Bloomberg, Do Kwon Gets 15 Years, Dec. 11, 2025",
+                "url": "https://www.bloomberg.com/news/articles/2025-12-11/do-kwon-gets-15-years-in-prison-for-40-billion-terraform-fraud"
+              },
+              {
+                "id": "cb-src-14",
+                "label": "Korea Times, possible Korean trial, Dec. 15, 2025",
+                "url": "https://www.koreatimes.co.kr/southkorea/law-crime/20251215/crypto-mogul-do-kwon-may-face-separate-trial-in-korea-despite-15-year-us-sentence"
+              },
+              {
+                "id": "cb-src-15",
+                "label": "Cointelegraph, court approves wind-down, Sept. 19, 2024",
+                "url": "https://cointelegraph.com/news/terraform-labs-winding-down-bankruptcy"
+              },
+              {
+                "id": "cb-src-16",
+                "label": "TheStreet, 3AC $1.3B settlement approved, Oct. 2025",
+                "url": "https://www.thestreet.com/crypto/bankruptcy/terraform-luna-1-3b-settlement"
+              },
+              {
+                "id": "cb-src-17",
+                "label": "DL News, Jump Trading suit, Dec. 2025",
+                "url": "https://www.dlnews.com/articles/defi/terraform-administrator-sues-jump-trading-for-terra-collapse/"
+              },
+              {
+                "id": "cb-src-18",
+                "label": "Bloomberg, Jane Street sued, Feb. 24, 2026",
+                "url": "https://www.bloomberg.com/news/articles/2026-02-24/jane-street-sued-for-insider-trading-by-terraform-administrator"
+              },
+              {
+                "id": "cb-src-19",
+                "label": "TheStreet, Jane Street motion to dismiss, Apr. 2026",
+                "url": "https://www.thestreet.com/crypto/markets/jane-street-seeks-to-throw-out-insider-trading-lawsuit"
+              },
+              {
+                "id": "cb-src-20",
+                "label": "CryptoSlate, July 2026 protective-order and late-claim rulings",
+                "url": "https://cryptoslate.com/judge-lets-terraform-use-jump-lawsuit-evidence-while-blocking-four-late-creditor-claims/"
+              },
+              {
+                "id": "cb-src-21",
+                "label": "Terra, Crypto Loss Claims Portal launch notice, Mar. 2025",
+                "url": "https://medium.com/terra-money/terraform-labs-crypto-loss-claims-portal-launch-7e85e3222db7"
+              },
+              {
+                "id": "cb-src-22",
+                "label": "Decrypt, claims portal and recovery range, Mar. 30, 2025",
+                "url": "https://decrypt.co/312291/terraform-labs-creditors-claims"
+              },
+              {
+                "id": "cb-src-23",
+                "label": "Elevenflo, Terraform Labs case tracker (updated June 2026)",
+                "url": "https://elevenflo.com/blog/terraform-labs-bankruptcy"
+              },
+              {
+                "id": "cb-src-24",
+                "label": "Reclaim Capital, distribution timing analysis, July 12, 2026",
+                "url": "https://reclaim-capital.com/news_eu/terraform-labs-distributions/"
+              },
+              {
+                "id": "cb-src-25",
+                "label": "SICC, Re Terraform Labs Pte Ltd [2025] SGHC(I) 4",
+                "url": "https://www.elitigation.sg/gd/s/2025_SGHCI_4"
+              },
+              {
+                "id": "cb-src-26",
+                "label": "SICC, Beltran v Terraform Labs [2026] SGHC(I) 9",
+                "url": "https://www.elitigation.sg/gdviewer/sicc/2026_SGHCI_9"
+              },
+              {
+                "id": "cb-src-27",
+                "label": "CourtListener, Terraform Labs Pte. Ltd. docket (RECAP)",
+                "url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/"
+              },
+              {
+                "id": "cb-src-28",
+                "label": "CourtListener, Snyder v. Jump Trading docket",
+                "url": "https://www.courtlistener.com/docket/72058085/"
+              },
+              {
+                "id": "cb-src-29",
+                "label": "CourtListener, Terraform v. Jane Street docket",
+                "url": "https://www.courtlistener.com/docket/72317589/"
+              }
+            ],
+            "ctaEnabled": false,
+            "ctaHeading": "Holding a Terra claim?",
+            "ctaBody": "If you hold a Crypto Loss Claim and have questions about the procedure, the numbers or the timeline, get in touch.",
+            "ctaLabel": "Get in touch",
+            "ctaHref": "/contact?source=terraform-labs",
+            "disclaimer": "Turnpage Digital Markets LLC is not affiliated with, endorsed by, or acting for the court, the Wind Down Trust, the Plan Administrator, Epiq, Kroll, or any other party in In re Terraform Labs Pte. Ltd., No. 24-10070 (Bankr. D. Del.). Nothing here is legal or financial advice. Case status reflects the public record as of the date shown and may have changed."
+          }
+        }
+      ]
     }
   ]
 }

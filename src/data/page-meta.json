@@ -97,6 +97,13 @@
       "description": "The terms governing use of turnpagedigital.com and Turnpage Digital Markets services.",
       "og": "home",
       "active": true
+    },
+    {
+      "path": "/cases/terraform-labs",
+      "title": "Terraform Labs Bankruptcy Claims: Where Terra Creditors Stand | Turnpage",
+      "description": "A sourced reference on the Terraform Labs chapter 11: how Crypto Loss Claims are determined, what the estate reports, the Jump and Jane Street suits, and why no distribution date is set.",
+      "og": "crypto",
+      "active": true
     }
   ]
 }
