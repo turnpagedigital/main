@@ -1,6 +1,36 @@
 {
   "items": [
     {
+      "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
+      "kind": "Asset Sale",
+      "source": "Daily DAC",
+      "source_id": "daily-dac-article",
+      "show": "news",
+      "title": "PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Westfield Steel, Inc. and Westfield Steel Express, LLC",
+      "url": "https://www.dailydac.com/public-notice-of-ucc-article-9-sale-westfield-steel-westfield-steel-express/?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-westfield-steel-westfield-steel-express",
+      "date": "2026-09-08",
+      "published_at": "2026-09-08T10:00:27+00:00",
+      "excerpt": "NOTICE OF PUBLIC SALE OF PERSONAL PROPERTY ASSETS OF WESTFIELD STEEL, INC. AND WESTFIELD STEEL EXPRESS, LLC UNDER UNIFORM COMMERCIAL CODE PLEASE TAKE NOTICE THAT on September 29, 2026 at the hour of 2:00 p.m. Central Time, Alloy Industrial Finance, LLC (&#8220;Secured Creditor&#8221;) as secured cre",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "steelblue-building-components-filing-alert",
+      "kind": "alert",
+      "source": "Bondoro",
+      "source_id": "bondoro-alert",
+      "show": "both",
+      "title": "Filing Alert: SteelBlue Building Components Chapter 11",
+      "url": "https://bondoro.com/steelblue-building-components-filing-alert/",
+      "date": "2026-09-06",
+      "published_at": "2026-09-06T02:24:00+00:00",
+      "excerpt": "SteelBlue Building Components Files Chapter 11 in Northern District of Georgia",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
       "id": "noble-supply-logistics",
       "kind": "summaries",
       "source": "Bondoro",

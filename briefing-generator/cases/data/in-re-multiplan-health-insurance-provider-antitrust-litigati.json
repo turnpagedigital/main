@@ -1927,5 +1927,70 @@
     ]
   },
   "claims_administrator": null,
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "Multiplan Update: August 2026",
+      "url": "https://www.msms.org/news/multiplan-update-august-2026",
+      "source": "Michigan State Medical Society (MSMS)",
+      "date": "2026-08-07",
+      "summary": "The MDL continued to advance with no July case management conference held; the next conference was scheduled for August 14, 2026. The court also approved 17 more insurers as defendants and rejected legal defenses aimed at limiting provider recovery."
+    },
+    {
+      "headline": "MultiPlan antitrust litigation gains momentum after rulings for providers",
+      "url": "https://www.hfma.org/payment-reimbursement-and-managed-care/multiplan-antitrust-litigation-provider-rulings/",
+      "source": "Healthcare Financial Management Association (HFMA)",
+      "date": "2026-07-22",
+      "summary": "Plaintiffs are seeking damages exceeding $100 billion before mandatory trebling, with the MDL carrying both class-action and individual tracks; the first bellwether trial is scheduled for December 2027."
+    },
+    {
+      "headline": "MultiPlan Price-Fixing Lawsuit – New July 2026 Case Update",
+      "url": "https://www.seegerweiss.com/antitrust/multiplan-price-fixing-lawsuit/",
+      "source": "Seeger Weiss LLP",
+      "date": "2026-07-08",
+      "summary": "Co-lead counsel's firm reports the Arizona Medical Association joined the MDL in March 2026 and the Maryland State Medical Society filed a new direct antitrust case in February 2026; plaintiffs are pressing the court to compel production of MultiPlan's pricing software code."
+    },
+    {
+      "headline": "Claritev Corp Form 8-K: Grand Jury Proceeding Closed, Civil Investigative Demand Received",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001793229/000179322926000056/ctev-20260622.htm",
+      "source": "SEC / Claritev Corp (CTEV)",
+      "date": "2026-06-22",
+      "summary": "Claritev disclosed via SEC filing that the DOJ's antitrust grand jury proceeding was closed on June 17, 2026 with no criminal charges, but the company separately received a civil investigative demand from the DOJ on May 19, 2026 and is cooperating."
+    },
+    {
+      "headline": "What to know about MultiPlan's litigation saga",
+      "url": "https://www.beckerspayer.com/financial/what-to-know-about-multiplans-litigation-saga/",
+      "source": "Becker's Payer Issues",
+      "date": "2026-06-11",
+      "summary": "Becker's chronicles the full sweep of Claritev/MultiPlan's legal exposure, including a May 2026 Capitol Forum report of a DOJ criminal price-fixing probe and Claritev's denial, alongside ongoing MDL discovery and related Zelis litigation."
+    },
+    {
+      "headline": "Claritev Corp Form 8-K: Response to DOJ Criminal Antitrust Probe Reports",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001793229/000179322926000052/ctev-20260518.htm",
+      "source": "SEC / Claritev Corp (CTEV)",
+      "date": "2026-05-18",
+      "summary": "In response to a May 14, 2026 news article alleging a DOJ criminal antitrust probe, Claritev disclosed it had received a confidential grand jury subpoena in August 2024 but stated it had never been informed it was a target of the investigation."
+    },
+    {
+      "headline": "DOJ Launches Criminal Antitrust Probe into Claritev",
+      "url": "https://thecapitolforum.com/doj-launches-criminal-antitrust-probe-into-claritev/",
+      "source": "The Capitol Forum",
+      "date": "2026-05-14",
+      "summary": "The Capitol Forum reported that the DOJ's antitrust division opened a criminal price-fixing investigation into Claritev (formerly MultiPlan) over its role in setting out-of-network reimbursement rates for major health insurers."
+    },
+    {
+      "headline": "MultiPlan, Zelis antitrust cases and pricing risk",
+      "url": "https://www.hfma.org/payment-reimbursement-and-managed-care/multiplan-zelis-antitrust-out-of-network-pricing/",
+      "source": "Healthcare Financial Management Association (HFMA)",
+      "date": "2026-04-27",
+      "summary": "HFMA analysis details how MultiPlan's platform allegedly facilitated $19 billion in underpayments in 2020 alone, with damages subject to mandatory trebling; bellwether trials involving Adventist, Ascension, CHS, and Texas Health Resources are set for December 2027."
+    },
+    {
+      "headline": "TMA Joins MDL Against Claritev And Major Insurers",
+      "url": "https://hoodline.com/2026/04/texas-docs-take-on-claritev-in-billion-dollar-payout-brawl/",
+      "source": "Hoodline (sourcing Texas Medical Association / Houston Business Journal)",
+      "date": "2026-04-16",
+      "summary": "The Texas Medical Association, representing more than 60,000 physicians, joined MDL No. 3121, alleging Claritev acted as a central hub for insurers' pricing decisions to suppress out-of-network reimbursements."
+    }
+  ],
+  "events": []
 }
