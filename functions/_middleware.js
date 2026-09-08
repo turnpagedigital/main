@@ -37,6 +37,19 @@ import {
   isKnownPath,
 } from "./_meta.js";
 import { assembleGuide, buildAiGuideJsonLd, buildAiGuideHtml } from "./_ai-guide.js";
+import pageCompositions from "../src/data/page-compositions.json";
+import navData from "../src/data/nav.json";
+import footerData from "../src/data/footer.json";
+import aiCopyrightContent from "../src/data/ai-copyright-content.json";
+import pressData from "../src/data/press.json";
+import {
+  buildPageHtml,
+  buildSectionHtml,
+  buildLinkGraphHtml,
+  buildBriefingsListHtml,
+  buildBriefingHtml,
+  buildPressListHtml,
+} from "./_prerender.js";
 
 /* Canonical/OG URLs always point at the apex host, so www and preview
  * deployments never compete with production in Google's index. A www→apex
@@ -47,6 +60,77 @@ const CANONICAL_ORIGIN = "https://turnpagedigital.com";
 const STATIC_PATHS = routesData.routes
   .filter((r) => !r.dynamic && !r.path.includes(":"))
   .map((r) => r.path);
+
+/* ---- Prerendered body for non-JS crawlers (see functions/_prerender.js) ----
+ * The SPA shell shipped 6-12 words and no <h1> on every URL; these maps turn
+ * the same composition data the React PageRenderer reads into static HTML
+ * that the #root handler below injects. React clears it on mount. */
+const PATH_TO_KEY = new Map(
+  routesData.routes.filter((r) => !r.dynamic).map((r) => [r.path, r.key]),
+);
+const COMPOSITIONS = new Map((pageCompositions.pages || []).map((p) => [p.path, p]));
+/* Nav + footer as real anchors, so authority flows between pages. */
+const LINK_GRAPH = buildLinkGraphHtml(navData, footerData);
+/* Never prerender: /admin (noindexed, and not public content), the unlisted
+ * partner portal, and /intel (own middleware). /ai-guide returns earlier. */
+const NO_PRERENDER = /^\/(admin|partners|intel)(\/|$)/;
+/* Per-isolate memo — the composition data is build-time constant. Bounded by
+ * the route table plus the briefing index. */
+const PRERENDER_CACHE = new Map();
+
+const PRERENDER_CTX = {
+  faqs: faqs.faqs || [],
+  deals: dealsData.deals || [],
+  testimonials: testimonialsData.testimonials || [],
+  bio: bioData,
+  damages: aiCopyrightContent.damagesData || [],
+};
+
+async function buildRootHtml(url, briefingSlug, isDraftBriefing) {
+  const path = url.pathname.replace(/\/+$/, "") || "/";
+  if (PRERENDER_CACHE.has(path)) return PRERENDER_CACHE.get(path);
+
+  let body = "";
+
+  if (briefingSlug) {
+    if (isDraftBriefing) return "";
+    const item = briefingsIndex.items.find((b) => b.slug === briefingSlug);
+    if (item) {
+      /* The markdown body is a bonus: if the subrequest fails the page still
+       * ships its title, date and summary rather than the old empty shell. */
+      let markdown = "";
+      try {
+        const res = await fetch(new URL(`/briefings/${briefingSlug}.md`, url.origin).toString());
+        if (res.ok) markdown = await res.text();
+      } catch {
+        /* ignore — fall through to title + summary only */
+      }
+      body = buildBriefingHtml(item, markdown);
+    }
+  } else if (path === "/briefings") {
+    body = buildBriefingsListHtml(briefingsIndex.items);
+  } else {
+    const pageKey = PATH_TO_KEY.get(path);
+    const page = COMPOSITIONS.get(path);
+    if (page && pageKey) {
+      /* /press's composition is just a closing CTA — the media list itself
+       * comes from press.json, the same source the Press page reads, and it
+       * owns the page's <h1>. */
+      const pressHtml = pageKey === "press" ? buildPressListHtml(pressData.items || []) : "";
+      const ctx = { ...PRERENDER_CTX, pageKey, h1Claimed: Boolean(pressHtml) };
+      body = pressHtml + buildPageHtml(page, ctx);
+      /* /faq's composition is just a hero — the questions themselves come
+       * from faqs.json, the same source the FAQ page component reads. */
+      if (pageKey === "faq") {
+        body += buildSectionHtml({ type: "faq", content: {} }, ctx, 2);
+      }
+    }
+  }
+
+  const html = body ? `${body}\n${LINK_GRAPH}` : "";
+  PRERENDER_CACHE.set(path, html);
+  return html;
+}
 
 /* Vanity referral links: /<code> 302-redirects to /?ref=<code>, so partners
  * can hand out turnpagedigital.com/pari-passu instead of a query-string URL.
@@ -203,6 +287,12 @@ export async function onRequest(context) {
     );
   }
 
+  /* Static body for crawlers that don't execute JavaScript. */
+  const rootHtml =
+    isKnown && !isAiGuide && !NO_PRERENDER.test(url.pathname)
+      ? await buildRootHtml(url, briefingSlugMatch && briefingSlugMatch[1], isDraftBriefing)
+      : "";
+
   const setContent = (value) => ({
     element(el) {
       el.setAttribute("content", value);
@@ -224,8 +314,12 @@ export async function onRequest(context) {
     })
     .on("#root", {
       element(el) {
-        /* Static guide for non-JS crawlers; React replaces it on mount. */
-        if (isAiGuide) el.setInnerContent(buildAiGuideHtml(AI_GUIDE, CANONICAL_ORIGIN), { html: true });
+        /* Static content for non-JS crawlers; React replaces it on mount. */
+        if (isAiGuide) {
+          el.setInnerContent(buildAiGuideHtml(AI_GUIDE, CANONICAL_ORIGIN), { html: true });
+        } else if (rootHtml) {
+          el.setInnerContent(rootHtml, { html: true });
+        }
       },
     })
     .on('meta[name="description"]', setContent(meta.description))
