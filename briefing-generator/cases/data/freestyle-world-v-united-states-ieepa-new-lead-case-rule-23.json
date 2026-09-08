@@ -19,5 +19,21 @@
     "entries": []
   },
   "claims_administrator": null,
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "Biz Pushes Class Cert. As Solution To IEEPA Refund Issues",
+      "url": "https://www.law360.com/internationaltrade/articles/2514168",
+      "source": "Law360",
+      "date": "2026-08-17",
+      "summary": "Freestyle World, the CIT's designated lead IEEPA refund test case, argued in pre-argument filings that the court should grant Rule 23(b)(2) class certification to cover importers seeking refunds of duties paid under the invalidated tariff regime. The government maintains the class certification request is untimely and invalid."
+    },
+    {
+      "headline": "Trump Admin Refunds $100 Billion in 'Liberation Day' Tariffs",
+      "url": "https://www.cnbc.com/2026/08/05/trump-tariffs-refunds-ieepa-lawsuit.html",
+      "source": "CNBC",
+      "date": "2026-08-05",
+      "summary": "CNBC reported that CBP's CAPE system has processed over $100 billion in IEEPA tariff refunds, while Freestyle World's pending class-action certification bid — on behalf of smaller importers facing CAPE access barriers — remains contested, with the government arguing the request is invalid."
+    }
+  ],
+  "events": []
 }
