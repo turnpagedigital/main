@@ -14,13 +14,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
-    "date_last_filing": "2026-09-04",
-    "meta_fetched_at": "2026-09-08T14:36:41.905463+00:00",
-    "fetched_at": "2026-09-08T14:36:41.905463+00:00",
+    "date_last_filing": "2026-09-08",
+    "meta_fetched_at": "2026-09-08T17:49:57.684914+00:00",
+    "fetched_at": "2026-09-08T17:49:57.684914+00:00",
     "as_of": "Sep 8, 2026",
-    "backfilled": false,
-    "new_in_72h": 0,
+    "backfilled": true,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 253,
+        "date_filed": "2026-09-08",
+        "time_filed": "10:40:15",
+        "date_display": "Sep 8, 2026",
+        "description": "Notice of Hearing - Notice of Re-Scheduled Omnibus Hearing Date (related document(s)166) Filed by Omnis Pleasants, LLC. Hearing scheduled for 10/13/2026 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Faris, S. Alexander) (Entered: 09/08/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.253.0.pdf"
+      },
       {
         "entry_number": 252,
         "date_filed": "2026-09-04",
@@ -40,19 +50,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 250,
-        "date_filed": "2026-09-04",
-        "time_filed": "13:20:34",
-        "date_display": "Sep 4, 2026",
-        "description": "Order Authorizing Retention and Employment of Houlihan Lokey Capital, Inc. as Investment Banker to the Debtor, Effective as of August 3, 2026 (Related Doc # 84, 202) Order Signed on 9/4/2026. (Attachments: # 1 Exhibit 1) (Mml) (Entered: 09/04/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 253,
+        "date_filed": "2026-09-08",
+        "time_filed": "10:40:15",
+        "date_display": "Sep 8, 2026",
+        "description": "Notice of Hearing - Notice of Re-Scheduled Omnibus Hearing Date (related document(s)166) Filed by Omnis Pleasants, LLC. Hearing scheduled for 10/13/2026 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Faris, S. Alexander) (Entered: 09/08/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.253.0.pdf"
+      },
       {
         "entry_number": 252,
         "date_filed": "2026-09-04",
@@ -2783,8 +2793,7 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=13"
+    ]
   },
   "claims_administrator": {
     "name": "Stretto",
