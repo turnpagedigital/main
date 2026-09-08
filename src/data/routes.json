@@ -88,13 +88,6 @@
       "title": "Admin"
     },
     {
-      "path": "/team",
-      "key": "team",
-      "component": "DynamicPage",
-      "dynamic": false,
-      "title": "Team"
-    },
-    {
       "path": "/bankruptcy-claims",
       "key": "bankruptcy-claims",
       "component": "DynamicPage",

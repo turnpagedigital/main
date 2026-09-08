@@ -196,3 +196,73 @@ test("unknown section types are skipped rather than throwing", () => {
   );
   assert.equal(html, "");
 });
+
+/* ---------------------------------------------------------------------------
+ * Page titles. The client used to carry its own hardcoded TITLES map in
+ * App.jsx, which drifted from page-meta.json: it overwrote the keyword-bearing
+ * server titles, and its lookup fell back to the home entry, so team,
+ * bankruptcy-claims and partners each rendered with the HOMEPAGE's title.
+ * These guard the single-source-of-truth that replaced it.
+ * ------------------------------------------------------------------------ */
+
+const pageMeta = J("src/data/page-meta.json");
+/* Not indexed, deliberately absent from page-meta; App.jsx names them. */
+const CHROME_KEYS = new Set(["admin", "partners"]);
+
+test("every routable page has its own title in page-meta.json", () => {
+  const byPath = new Map((pageMeta.pages || []).map((p) => [p.path, p.title]));
+  const missing = routes.routes
+    .filter((r) => !r.dynamic && !CHROME_KEYS.has(r.key) && !byPath.get(r.path))
+    .map((r) => r.path);
+  assert.deepEqual(
+    missing,
+    [],
+    `these routes would fall back to the site default title: ${missing.join(", ")}`,
+  );
+});
+
+test("no two pages share a title", () => {
+  const seen = new Map();
+  for (const p of pageMeta.pages || []) {
+    const prev = seen.get(p.title);
+    assert.equal(prev, undefined, `${p.path} and ${prev} share the title "${p.title}"`);
+    seen.set(p.title, p.path);
+  }
+});
+
+test("App.jsx does not reintroduce a hardcoded title map", () => {
+  const app = readFileSync(new URL("../src/App.jsx", import.meta.url), "utf8");
+  assert.ok(
+    !/const TITLES\s*=\s*\{/.test(app),
+    "a second copy of the titles is back in App.jsx — titles must come from page-meta.json",
+  );
+  assert.match(app, /TITLE_BY_KEY/, "App.jsx no longer resolves titles from page-meta");
+});
+
+test("removed routes leave no dangling references", () => {
+  /* /team was retired in favour of the Leadership section on the homepage. */
+  const paths = new Set(routes.routes.map((r) => r.path));
+  assert.ok(!paths.has("/team"), "/team is back in routes.json without a composition");
+
+  const redirects = readFileSync(new URL("../public/_redirects", import.meta.url), "utf8");
+  assert.match(redirects, /^\/team\s+\/#leadership\s+301$/m, "/team redirect missing");
+
+  /* The anchor those links point at has to actually exist as a bookmark. */
+  const bookmarks = new Set();
+  for (const page of compositions.pages) {
+    for (const s of page.sections || []) {
+      const b = (s.content || {})._bookmark;
+      if (b) bookmarks.add(String(b).toLowerCase());
+    }
+  }
+  for (const file of ["src/data/nav.json", "src/data/footer.json"]) {
+    const raw = readFileSync(new URL(`../${file}`, import.meta.url), "utf8");
+    assert.ok(!raw.includes('"/#team"'), `${file} still points at the dead /#team anchor`);
+    for (const m of raw.matchAll(/"\/#([a-z0-9-]+)"/gi)) {
+      assert.ok(
+        bookmarks.has(m[1].toLowerCase()),
+        `${file} links to /#${m[1]} but no section carries that bookmark`,
+      );
+    }
+  }
+});

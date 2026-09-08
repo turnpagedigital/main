@@ -46,20 +46,34 @@ function LoadingFallback() {
   );
 }
 
-const TITLES = {
-  "home": "Turnpage Digital Markets — The OTC Desk for Rights Holders",
-  "ai-copyright": "AI Copyright — Turnpage Digital Markets",
-  "crypto": "Crypto Claims — Turnpage Digital Markets",
-  "briefings": "Briefings — Turnpage Digital Markets",
-  "briefing": "Briefing — Turnpage Digital Markets",
-  "press": "Press & Publications — Turnpage Digital Markets",
-  "litigation-finance": "Litigation Funding — Turnpage Digital Markets",
-  "contact": "Get in Touch — Turnpage Digital Markets",
-  "faq": "FAQ — Turnpage Digital Markets",
-  "privacy": "Privacy Policy — Turnpage Digital Markets",
-  "terms": "Terms of Use — Turnpage Digital Markets",
-  "ai-guide": "AI Learning Bot Guide — Turnpage Digital Markets",
-  "admin": "Admin — Turnpage Digital Markets",
+/* Route key → <title>, resolved from page-meta.json — the SAME source
+ * functions/_middleware.js uses for the server-rendered title.
+ *
+ * This replaced a hardcoded map that had drifted badly. It overwrote the
+ * keyword-bearing server titles with brand slogans (/copyright shipped
+ * "Sell Your Bartz v. Anthropic Claim — Get Paid Now" and this rewrote it to
+ * "AI Copyright — Turnpage Digital Markets"), and because the lookup fell
+ * back to the home entry, the three keys it never had — team,
+ * bankruptcy-claims, partners — each rendered carrying the HOMEPAGE's title.
+ * Editing a title in /admin/structure now actually changes what the browser
+ * and Google see; there is no second copy to keep in sync. */
+const TITLE_BY_KEY = (() => {
+  const byPath = new Map((pageMeta.pages || []).map((pg) => [pg.path, pg.title]));
+  const out = {};
+  for (const r of routesData.routes) {
+    if (r.dynamic) continue;
+    const title = byPath.get(r.path);
+    if (title) out[r.key] = title;
+  }
+  return out;
+})();
+
+/* Admin and the unlisted partner portal are deliberately absent from
+ * page-meta.json (neither is indexed), so give them a real tab title rather
+ * than the site default. */
+const CHROME_TITLES = {
+  admin: `Admin — ${pageMeta.site.name}`,
+  partners: `Partner Portal — ${pageMeta.site.name}`,
 };
 
 // Pages that should NOT render the public marketing chrome (announcement
@@ -88,10 +102,15 @@ export default function App() {
     return () => style.remove();
   }, []);
 
-  // Update document title on route change
+  /* Keep the title in sync across client-side navigations. On first load the
+   * middleware has already put the right title in the HTML, and this resolves
+   * to the identical string, so the server and client no longer disagree.
+   * Briefing.jsx overrides this with the individual briefing's title. */
   useEffect(() => {
-    const t = TITLES[route.page] || TITLES["home"];
-    document.title = t;
+    document.title =
+      CHROME_TITLES[route.page] ||
+      TITLE_BY_KEY[route.page] ||
+      pageMeta.site.defaultTitle;
   }, [route.page]);
 
   // Hide the Brevo chat bubble on admin pages (CSS rule in GLOBAL_CSS keys
