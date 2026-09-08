@@ -114,6 +114,13 @@
       "component": "DynamicPage",
       "dynamic": false,
       "title": "Terraform Labs — Case Briefing"
+    },
+    {
+      "path": "/terraform-labs",
+      "key": "terraform-labs",
+      "component": "DynamicPage",
+      "dynamic": false,
+      "title": "Terraform Labs"
     }
   ]
 }

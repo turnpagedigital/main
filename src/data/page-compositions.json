@@ -1685,6 +1685,14 @@
           }
         }
       ]
+    },
+    {
+      "pageKey": "terraform-labs",
+      "title": "Terraform Labs",
+      "path": "/terraform-labs",
+      "builtIn": false,
+      "status": "active",
+      "sections": []
     }
   ]
 }
