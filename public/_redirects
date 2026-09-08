@@ -18,5 +18,9 @@
 /intel /intel/ 301
 /bartz-registration /bartz-v-anthropic 301
 /team /#leadership 301
-/ai-guide /ai-guide.html 200
+# /ai-guide is served straight from dist/ai-guide.html by Pages' own
+# clean-URL handling. There must be NO rule here: a `/ai-guide
+# /ai-guide.html 200` rewrite used to sit at this line and created an
+# infinite 308 loop, because Pages separately redirects /ai-guide.html
+# back to /ai-guide. The page was unreachable from ~Sep 3 to Sep 8 2026.
 /* /index.html 200

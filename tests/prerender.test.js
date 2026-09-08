@@ -266,3 +266,27 @@ test("removed routes leave no dangling references", () => {
     }
   }
 });
+
+test("no _redirects rule loops back on itself", () => {
+  /* Cloudflare Pages serves foo.html at /foo and 308-redirects /foo.html back
+   * to /foo. A rule pointing /foo at /foo.html therefore bounces forever. That
+   * is exactly what happened to /ai-guide: the page was unreachable for days
+   * while still being advertised in the sitemap. */
+  const raw = readFileSync(new URL("../public/_redirects", import.meta.url), "utf8");
+  /* Only the .html normalization is checked. Pages strips a .html extension
+   * and redirects to the clean path; it does NOT collapse trailing slashes the
+   * same way, so /intel -> /intel/ is a legitimate rule, not a loop. */
+  const clean = (u) => u.replace(/index\.html$/, "").replace(/\.html$/, "") || "/";
+
+  for (const line of raw.split("\n")) {
+    const t = line.trim();
+    if (!t || t.startsWith("#")) continue;
+    const [from, to] = t.split(/\s+/);
+    if (!from || !to || from.includes("*")) continue;
+    assert.notEqual(
+      clean(to.split("#")[0]),
+      clean(from),
+      `_redirects sends ${from} to ${to}, which normalizes back to itself — infinite loop`,
+    );
+  }
+});
