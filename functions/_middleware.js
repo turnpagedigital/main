@@ -69,10 +69,15 @@ const PATH_TO_KEY = new Map(
   routesData.routes.filter((r) => !r.dynamic).map((r) => [r.path, r.key]),
 );
 const COMPOSITIONS = new Map((pageCompositions.pages || []).map((p) => [p.path, p]));
-/* Draft/archived Page Builder pages stay reachable for review but must never
- * be indexed — the sitemap already skips them; this is the header half. */
+/* Draft, archived, and not-yet-built Page Builder pages stay reachable for
+ * review but must never be indexed. A page created in /admin starts with zero
+ * sections; advertising that to Google is how /team ended up in the sitemap
+ * with nothing behind it. The sitemap skips the same set; this is the header
+ * half. */
 const NON_ACTIVE_PATHS = new Set(
-  (pageCompositions.pages || []).filter((p) => p.status && p.status !== "active").map((p) => p.path),
+  (pageCompositions.pages || [])
+    .filter((p) => (p.status && p.status !== "active") || !(p.sections || []).length)
+    .map((p) => p.path),
 );
 /* Nav + footer as real anchors, so authority flows between pages. */
 const LINK_GRAPH = buildLinkGraphHtml(navData, footerData);

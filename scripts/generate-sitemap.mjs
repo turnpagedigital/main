@@ -24,7 +24,9 @@ const routes = JSON.parse(await readFile("src/data/routes.json", "utf8")).routes
  * the sitemap skips it until it is switched to active in /admin. */
 const compositions = JSON.parse(await readFile("src/data/page-compositions.json", "utf8")).pages || [];
 const NON_ACTIVE_PATHS = new Set(
-  compositions.filter((p) => p.status && p.status !== "active").map((p) => p.path),
+  compositions
+    .filter((p) => (p.status && p.status !== "active") || !(p.sections || []).length)
+    .map((p) => p.path),
 );
 const briefings = JSON.parse(await readFile("public/briefings/index.json", "utf8")).items;
 

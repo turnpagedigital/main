@@ -48,8 +48,11 @@ const textOf = (html) => html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim
 const wordCount = (html) => (textOf(html) ? textOf(html).split(" ").length : 0);
 const countTag = (html, tag) => (html.match(new RegExp(`<${tag}>`, "g")) || []).length;
 
-/* Every composed page, rendered the way _middleware.js renders it. */
-const pages = compositions.pages.map((page) => {
+/* Every composed page, rendered the way _middleware.js renders it.
+ * Pages with no sections are skipped: a page created in /admin legitimately
+ * starts empty. They are covered instead by the sitemap/noindex rules and by
+ * "a page with no sections is never advertised" below. */
+const pages = compositions.pages.filter((p) => (p.sections || []).length).map((page) => {
   const pageKey = PATH_TO_KEY.get(page.path);
   const pressHtml = pageKey === "press" ? buildPressListHtml(press.items || []) : "";
   const ctx = { ...BASE, pageKey, h1Claimed: Boolean(pressHtml) };
@@ -211,9 +214,16 @@ const CHROME_KEYS = new Set(["admin", "partners"]);
 
 test("every routable page has its own title in page-meta.json", () => {
   const byPath = new Map((pageMeta.pages || []).map((p) => [p.path, p.title]));
+  const built = new Set(
+    compositions.pages.filter((p) => (p.sections || []).length).map((p) => p.path),
+  );
+  const unbuilt = new Set(
+    compositions.pages.filter((p) => !(p.sections || []).length).map((p) => p.path),
+  );
   const missing = routes.routes
-    .filter((r) => !r.dynamic && !CHROME_KEYS.has(r.key) && !byPath.get(r.path))
+    .filter((r) => !r.dynamic && !CHROME_KEYS.has(r.key) && !byPath.get(r.path) && !unbuilt.has(r.path))
     .map((r) => r.path);
+  void built;
   assert.deepEqual(
     missing,
     [],
@@ -410,4 +420,23 @@ test("a declared section type is actually offered in the Page Builder picker", (
     [],
     `declared but not addable in the Page Builder: ${missing.join(", ")}`,
   );
+});
+
+test("a page with no sections is never advertised", () => {
+  /* A page created in /admin starts with zero sections. Serving that URL is
+   * fine — the author is about to build it — but putting it in the sitemap
+   * ships an empty result to Google, which is exactly what /team was. */
+  const empty = compositions.pages.filter((p) => !(p.sections || []).length);
+  const sitemapScript = readFileSync(new URL("../scripts/generate-sitemap.mjs", import.meta.url), "utf8");
+  const mw = readFileSync(new URL("../functions/_middleware.js", import.meta.url), "utf8");
+  for (const file of [sitemapScript, mw]) {
+    assert.match(
+      file,
+      /!\(p\.sections \|\| \[\]\)\.length/,
+      "empty compositions are no longer filtered out",
+    );
+  }
+  for (const p of empty) {
+    assert.ok(p.path, `composition ${p.pageKey} has no path`);
+  }
 });
