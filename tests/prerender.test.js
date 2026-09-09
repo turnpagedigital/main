@@ -440,3 +440,79 @@ test("a page with no sections is never advertised", () => {
     assert.ok(p.path, `composition ${p.pageKey} has no path`);
   }
 });
+
+/* ---------------------------------------------------------------------------
+ * Citation policy. Case pages are meant to be cited by journalists, law firms
+ * and AI assistants, which only works if what they cite is primary. A weak
+ * source is not a style problem here — linking a competitor hands them the
+ * referral and the authority on our own page.
+ * ------------------------------------------------------------------------ */
+
+const citationPolicy = J("src/data/citation-policy.json");
+
+const ALLOWED_HOSTS = new Set([
+  ...citationPolicy.court,
+  ...citationPolicy.government,
+  ...citationPolicy.media,
+]);
+
+/* An official company channel on a generic host (a plan-administrator notice
+ * on Medium, say) is a primary source, but allowlisting medium.com outright
+ * would let anything through. Each official channel is named by URL prefix so
+ * every exception stays auditable. */
+const DISCLOSURE_PREFIXES = (citationPolicy.companyDisclosureUrls || []).map((d) => d.prefix);
+
+function hostAllowed(url) {
+  if (DISCLOSURE_PREFIXES.some((prefix) => url.startsWith(prefix))) return true;
+  let host;
+  try {
+    host = new URL(url).hostname.toLowerCase().replace(/^www\./, "");
+  } catch {
+    return false;
+  }
+  if (ALLOWED_HOSTS.has(host)) return true;
+  /* Allow subdomains of an allowed registrable domain (docs.sec.gov, etc.). */
+  return [...ALLOWED_HOSTS].some((h) => host === h || host.endsWith(`.${h}`));
+}
+
+test("case briefings cite only approved sources", () => {
+  const offenders = [];
+  for (const page of briefingPages) {
+    for (const section of page.sections || []) {
+      if (section.type !== "case-briefing") continue;
+      const c = section.content || {};
+      for (const s of c.sources || []) {
+        if (!s.url) continue; // label-only entries are company disclosures
+        if (!hostAllowed(s.url)) offenders.push(`${page.path} sources: ${s.url}`);
+      }
+      const prose = [
+        c.statusIntro || "",
+        ...(c.sections || []).map((x) => x.markdown || ""),
+        ...(c.faqs || []).map((x) => x.a || ""),
+      ].join("\n");
+      for (const m of prose.matchAll(/\]\((https?:\/\/[^)]+)\)/g)) {
+        if (!hostAllowed(m[1])) offenders.push(`${page.path} body: ${m[1]}`);
+      }
+    }
+  }
+  assert.deepEqual(
+    offenders,
+    [],
+    `off-policy citations (add the outlet to src/data/citation-policy.json if it qualifies):\n  ${offenders.join("\n  ")}`,
+  );
+});
+
+test("no case page links to a competitor", () => {
+  /* Named explicitly rather than relying on the allowlist, so this still
+   * fails loudly if someone widens the policy without thinking. */
+  const COMPETITORS = [
+    "reclaim-capital.com", "terra-claim.com", "x-claim.com", "claims-market.com",
+    "paxtibi.xyz", "paxtibi.com", "found.xyz", "ftxcreditor.com", "athletecreditor.com",
+    "harucreditor.com", "qredax.com", "frnt.io", "ftxclaims.com", "slfaqllc.com",
+    "seaportmarketplace.com",
+  ];
+  const blob = JSON.stringify(briefingPages);
+  for (const c of COMPETITORS) {
+    assert.ok(!blob.includes(c), `a case page cites the competitor ${c}`);
+  }
+});
