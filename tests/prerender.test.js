@@ -17,6 +17,8 @@ import {
   buildBriefingHtml,
   buildPressListHtml,
   miniMarkdownToHtml,
+  isDocumentPage,
+  DOCUMENT_LINKS,
 } from "../functions/_prerender.js";
 
 const J = (p) => JSON.parse(readFileSync(new URL(`../${p}`, import.meta.url), "utf8"));
@@ -515,4 +517,40 @@ test("no case page links to a competitor", () => {
   for (const c of COMPETITORS) {
     assert.ok(!blob.includes(c), `a case page cites the competitor ${c}`);
   }
+});
+
+test("a reference page offers no link to sell a claim", () => {
+  /* The CTA toggle only governs the section. The marketing header and footer
+   * would still ring the document with "Copyright Claims", "Locked Crypto"
+   * and "Talk to Us", which is the opposite of what a citable page is for.
+   * DocumentChrome replaces them on the rendered page; DOCUMENT_LINKS does
+   * the same in the HTML a crawler reads. */
+  const SELLING_PATHS = [
+    "/copyright", "/crypto", "/bankruptcy-claims", "/litigation-funding",
+    "/contact", "rewindtariffs.com",
+  ];
+
+  for (const page of briefingPages) {
+    const body = buildPageHtml(page, { ...BASE, pageKey: page.pageKey });
+    const full = `${body}\n${DOCUMENT_LINKS}`;
+    for (const p of SELLING_PATHS) {
+      assert.ok(
+        !full.includes(`href="${p}"`) && !full.includes(`href="https://${p}`),
+        `${page.path} links to ${p}`,
+      );
+    }
+    assert.ok(isDocumentPage(page), `${page.path} is not recognised as a document page`);
+  }
+
+  /* And the chrome itself carries attribution only. */
+  assert.match(DOCUMENT_LINKS, /href="\/privacy"/);
+  assert.match(DOCUMENT_LINKS, /href="\/terms"/);
+  assert.equal((DOCUMENT_LINKS.match(/<a href=/g) || []).length, 3);
+});
+
+test("App.jsx routes case briefings through DocumentChrome", () => {
+  const app = readFileSync(new URL("../src/App.jsx", import.meta.url), "utf8");
+  assert.match(app, /DOCUMENT_PAGES/, "document-mode page set is gone");
+  assert.match(app, /case-briefing/, "DOCUMENT_PAGES no longer derives from the section type");
+  assert.match(app, /<DocumentChrome>/, "DocumentChrome is imported but never rendered");
 });
