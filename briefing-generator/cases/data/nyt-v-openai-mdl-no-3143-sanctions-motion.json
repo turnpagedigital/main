@@ -17,20 +17,20 @@
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
     "date_last_filing": "2026-09-08",
     "meta_fetched_at": "2026-09-08T21:57:36.104670+00:00",
-    "fetched_at": "2026-09-08T21:57:36.104670+00:00",
-    "as_of": "Sep 8, 2026",
+    "fetched_at": "2026-09-09T00:22:28.661006+00:00",
+    "as_of": "Sep 9, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 1,
     "recent": [
       {
         "entry_number": 1925,
         "date_filed": "2026-09-08",
-        "time_filed": "",
+        "time_filed": "17:29:38",
         "date_display": "Sep 8, 2026",
         "description": "PROPOSED STIPULATION AND ORDER. Document filed by David Baldacci..(Smyser, Craig) (Entered: 09/08/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1925.0.pdf"
       },
       {
         "entry_number": 1924,
@@ -38,7 +38,7 @@
         "time_filed": "14:04:19",
         "date_display": "Sep 6, 2026",
         "description": "CERTIFICATE OF SERVICE of Sealed Declarations and Exhibits filed in support of Motion for Partial Summary Judgment served on OpenAI Defendants, Microsoft on 9/4/2026. Document filed by The Center for Investigative Reporting, Inc., The Intercept Media, Inc.. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:24-cv-01515-SHS-OTW, 1:24-cv-04872-SHS-OTW.(Wallenberg, Kyle) (Entered: 09/06/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -57,12 +57,12 @@
       {
         "entry_number": 1925,
         "date_filed": "2026-09-08",
-        "time_filed": "",
+        "time_filed": "17:29:38",
         "date_display": "Sep 8, 2026",
         "description": "PROPOSED STIPULATION AND ORDER. Document filed by David Baldacci..(Smyser, Craig) (Entered: 09/08/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1925.0.pdf"
       },
       {
         "entry_number": 1924,
@@ -70,7 +70,7 @@
         "time_filed": "14:04:19",
         "date_display": "Sep 6, 2026",
         "description": "CERTIFICATE OF SERVICE of Sealed Declarations and Exhibits filed in support of Motion for Partial Summary Judgment served on OpenAI Defendants, Microsoft on 9/4/2026. Document filed by The Center for Investigative Reporting, Inc., The Intercept Media, Inc.. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:24-cv-01515-SHS-OTW, 1:24-cv-04872-SHS-OTW.(Wallenberg, Kyle) (Entered: 09/06/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
