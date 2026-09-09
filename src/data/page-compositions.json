@@ -1466,7 +1466,7 @@
               {
                 "id": "cb-sec-5",
                 "heading": "The lawsuits",
-                "markdown": "The trust has two cases in the field. On December 18, 2025 it sued Jump Trading in the Northern District of Illinois for at least $4 billion, alleging that Jump secretly propped up UST's peg in May 2021 and took discounted LUNA and LFG reserves in return. On February 24, 2026 it sued Jane Street in the Southern District of New York over trading in the days before the May 2022 collapse. Jump calls the suit an attempt to shift responsibility for Kwon's crimes. Jane Street calls it an effort to make it \"foot the bill for a fraud that Terraform itself perpetrated,\" and argues that a wrongdoer's estate cannot recover for its own fraud, a defense that, if it succeeds, reaches both cases.\n\nBoth defendants can litigate for years, the estate pays its lawyers from the same assets creditors are waiting on, and either case could end in zero. Any claim valuation that counts a Jump recovery as cash is not reading the record. These cases are an option the estate pays to keep alive, not an asset. Their procedural status is in the status section."
+                "markdown": "The trust has two cases in the field. On December 18, 2025 it sued Jump Trading in the Northern District of Illinois for at least $4 billion, alleging that Jump secretly propped up UST's peg in May 2021 and took discounted LUNA and LFG reserves in return. On February 24, 2026 it sued Jane Street in the Southern District of New York over trading in the days before the May 2022 collapse. Jump calls the suit an attempt to shift responsibility for Kwon's crimes. Jane Street calls it an effort to make it \"foot the bill for a fraud that Terraform itself perpetrated,\" and argues that a wrongdoer's estate cannot recover for its own fraud, a defense that, if it succeeds, reaches both cases.\n\nBoth of these are the estate's own actions, brought by the Plan Administrator and the Wind Down Trust, and any recovery flows into the pool that pays Class 4 and Class 5 claims. That is what makes them relevant to a claim holder. Jump and Jane Street also face litigation brought by other parties over the same 2021 and 2022 conduct, and rulings in those cases are reported under headlines that look identical to these. They are not estate assets. A plaintiff who succeeds in a private suit recovers for themselves; nothing in it reaches the Crypto Loss Claim pool, and a motion decided there does not move the trust's cases forward or back. When Jump or Jane Street appears in a Terra headline, the question that determines whether it matters to your claim is who is doing the suing.\n\nBoth defendants can litigate for years, the estate pays its lawyers from the same assets creditors are waiting on, and either case could end in zero. Any claim valuation that counts a Jump recovery as cash is not reading the record. These cases are an option the estate pays to keep alive, not an asset. Their procedural status is in the status section."
               },
               {
                 "id": "cb-sec-6",
@@ -1523,6 +1523,11 @@
               }
             ],
             "updateLog": [
+              {
+                "id": "cb-log-00",
+                "date": "Sep 9, 2026",
+                "note": "Clarified that the trust's suits against Jump and Jane Street are estate actions whose recoveries reach the claim pool, and that private litigation against the same defendants does not."
+              },
               {
                 "id": "cb-log-0",
                 "date": "Sep 8, 2026",
