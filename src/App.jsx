@@ -11,6 +11,7 @@ import pageMeta from "./data/page-meta.json";
 import pageCompositions from "./data/page-compositions.json";
 import routesData from "./data/routes.json";
 import PageRenderer from "./components/PageRenderer.jsx";
+import DocumentChrome from "./components/DocumentChrome.jsx";
 
 // Page components are lazy-loaded so each route becomes its own chunk.
 // Only downloaded when the user first navigates to that page.
@@ -79,6 +80,16 @@ const CHROME_TITLES = {
 // Pages that should NOT render the public marketing chrome (announcement
 // bar, nav, footer). Admin is a standalone app shell.
 const STANDALONE_PAGES = new Set(["admin"]);
+
+/* Reference pages render in DocumentChrome instead of the marketing header
+ * and footer. Derived from the compositions rather than hand-listed, so any
+ * future case briefing gets the same treatment automatically. A page whose
+ * job is to be cited should not be ringed with links to sell a claim. */
+const DOCUMENT_PAGES = new Set(
+  (pageCompositions.pages || [])
+    .filter((p) => (p.sections || []).some((s) => s.type === "case-briefing"))
+    .map((p) => p.pageKey),
+);
 
 /* Scroll to a section anchor, retrying while the target page mounts —
    lazy-loaded route chunks can take well over one tick on cold loads. */
@@ -199,17 +210,30 @@ export default function App() {
   }, []);
 
   const standalone = STANDALONE_PAGES.has(route.page);
+  const documentMode = DOCUMENT_PAGES.has(route.page);
+
+  /* Keyed by route so navigating away from a crashed page resets the
+     boundary and clears the error instead of staying stuck on the fallback. */
+  const body = (
+    <ErrorBoundary key={route.page + (route.slug || "")}>
+      <Suspense fallback={<LoadingFallback />}>
+        <main id="main-content">{renderPage(route)}</main>
+      </Suspense>
+    </ErrorBoundary>
+  );
+
+  if (documentMode) {
+    return (
+      <I18nProvider>
+        <DocumentChrome>{body}</DocumentChrome>
+      </I18nProvider>
+    );
+  }
 
   return (
     <I18nProvider>
       {!standalone && <AppHeader currentPage={route.page} />}
-      {/* Keyed by route so navigating away from a crashed page resets the
-          boundary and clears the error instead of staying stuck on the fallback. */}
-      <ErrorBoundary key={route.page + (route.slug || "")}>
-        <Suspense fallback={<LoadingFallback />}>
-          <main id="main-content">{renderPage(route)}</main>
-        </Suspense>
-      </ErrorBoundary>
+      {body}
       {!standalone && <Footer />}
     </I18nProvider>
   );

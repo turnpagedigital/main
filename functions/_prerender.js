@@ -487,6 +487,20 @@ export function buildLinkGraphHtml(nav, footer) {
   return items.length ? `<nav aria-label="Site"><ul>${items.join("")}</ul></nav>` : "";
 }
 
+/* The crawlable counterpart to DocumentChrome: a reference page ships
+ * attribution and legal links, never the marketing nav. Keeps the promise the
+ * rendered page makes — no link to sell a claim — in the HTML a crawler and a
+ * citing model actually read. */
+export const DOCUMENT_LINKS = `<nav aria-label="Site"><ul>${[
+  ["Turnpage Digital Markets", "/"],
+  ["Privacy", "/privacy"],
+  ["Terms", "/terms"],
+].map(([l, u]) => `<li>${link(l, u)}</li>`).join("")}</ul></nav>`;
+
+export function isDocumentPage(page) {
+  return ((page && page.sections) || []).some((s) => s.type === "case-briefing");
+}
+
 export function buildPageHtml(page, ctx) {
   const sections = (page && page.sections) || [];
   let usedH1 = false;

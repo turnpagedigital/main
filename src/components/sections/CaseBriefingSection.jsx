@@ -73,6 +73,7 @@ export default function CaseBriefingSection({ sectionConfig }) {
   }, []);
 
   const anchors = sections.map((s, i) => slugifyHeading(s.heading, `section-${i + 1}`));
+  const showRail = c.showContents !== false && sections.length > 2;
 
   return (
     <section
@@ -83,7 +84,8 @@ export default function CaseBriefingSection({ sectionConfig }) {
         padding: "clamp(3rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 4rem)",
       }}
     >
-      <div style={{ maxWidth: 860, margin: "0 auto" }}>
+      <div style={{ maxWidth: 1180, margin: "0 auto" }}>
+        <header style={{ maxWidth: 820 }}>
 
         {/* ── masthead ─────────────────────────────────────────── */}
         {c.eyebrow && (
@@ -119,27 +121,47 @@ export default function CaseBriefingSection({ sectionConfig }) {
           </div>
         )}
 
-        {/* ── contents ─────────────────────────────────────────── */}
-        {c.showContents !== false && sections.length > 2 && (
-          <nav aria-label="Contents" style={{
-            margin: "2rem 0 0", padding: "1.15rem 1.35rem",
-            background: scheme.surface, border: `1px solid ${LINE}`,
-          }}>
-            <p style={{
-              fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em",
-              textTransform: "uppercase", color: INK_40, margin: "0 0 0.7rem",
-            }}>Contents</p>
-            <ol style={{ margin: 0, paddingLeft: "1.1rem", display: "grid", gap: "0.3rem" }}>
-              {sections.map((s, i) => (
-                <li key={s.id || i} style={{ fontSize: "0.9rem" }}>
-                  <a href={`#${anchors[i]}`} style={{ color: INK, textDecorationColor: INK_40 }}>
-                    {s.heading}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </nav>
-        )}
+        </header>
+
+        {/* Two columns: a sticky contents rail on the left, the document on
+            the right. Below 1000px the rail collapses above the text — see
+            the .tp-brief-grid rules at the foot of this component. */}
+        <div className="tp-brief-grid">
+          {showRail ? (
+            <nav aria-label="Contents" className="tp-brief-rail">
+              <p style={{
+                fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.12em",
+                textTransform: "uppercase", color: INK_40, margin: "0 0 0.8rem",
+                paddingBottom: "0.6rem", borderBottom: `1px solid ${LINE_STRONG}`,
+              }}>Contents</p>
+              <ol style={{ margin: 0, padding: 0, listStyle: "none", display: "grid", gap: "0.55rem" }}>
+                {sections.map((s, i) => (
+                  <li key={s.id || i} style={{ fontSize: "0.83rem", lineHeight: 1.4 }}>
+                    <a href={`#${anchors[i]}`} style={{ color: INK_60, textDecoration: "none" }}>
+                      {s.heading}
+                    </a>
+                  </li>
+                ))}
+                {updates.length > 0 && (
+                  <li style={{ fontSize: "0.83rem", lineHeight: 1.4 }}>
+                    <a href="#update-log" style={{ color: INK_60, textDecoration: "none" }}>Update log</a>
+                  </li>
+                )}
+                {faqs.length > 0 && (
+                  <li style={{ fontSize: "0.83rem", lineHeight: 1.4 }}>
+                    <a href="#questions" style={{ color: INK_60, textDecoration: "none" }}>{c.faqHeading || "Common questions"}</a>
+                  </li>
+                )}
+                {sources.length > 0 && (
+                  <li style={{ fontSize: "0.83rem", lineHeight: 1.4 }}>
+                    <a href="#sources" style={{ color: INK_60, textDecoration: "none" }}>Sources</a>
+                  </li>
+                )}
+              </ol>
+            </nav>
+          ) : <div />}
+
+          <div className="tp-brief-main">
 
         {/* ── dated status block ───────────────────────────────── */}
         {(stats.length > 0 || c.statusIntro) && (
@@ -229,7 +251,7 @@ export default function CaseBriefingSection({ sectionConfig }) {
 
         {/* ── update log ───────────────────────────────────────── */}
         {updates.length > 0 && (
-          <div style={{ margin: "2.75rem 0 0" }}>
+          <div id="update-log" style={{ margin: "2.75rem 0 0", scrollMarginTop: "2rem" }}>
             <h2 style={{
               fontSize: "1.15rem", fontWeight: 800, letterSpacing: "-0.015em", margin: "0 0 0.9rem",
             }}>Update log</h2>
@@ -250,7 +272,7 @@ export default function CaseBriefingSection({ sectionConfig }) {
 
         {/* ── FAQs ─────────────────────────────────────────────── */}
         {faqs.length > 0 && (
-          <div style={{ margin: "2.75rem 0 0" }}>
+          <div id="questions" style={{ margin: "2.75rem 0 0", scrollMarginTop: "2rem" }}>
             <h2 style={{
               fontSize: "clamp(1.35rem, 2.5vw, 1.8rem)", fontWeight: 800,
               letterSpacing: "-0.02em", margin: "0 0 0.9rem",
@@ -277,7 +299,7 @@ export default function CaseBriefingSection({ sectionConfig }) {
 
         {/* ── sources ──────────────────────────────────────────── */}
         {sources.length > 0 && (
-          <div style={{ margin: "2.75rem 0 0" }}>
+          <div id="sources" style={{ margin: "2.75rem 0 0", scrollMarginTop: "2rem" }}>
             <h2 style={{
               fontSize: "1.15rem", fontWeight: 800, letterSpacing: "-0.015em", margin: "0 0 0.9rem",
             }}>Sources</h2>
@@ -325,6 +347,8 @@ export default function CaseBriefingSection({ sectionConfig }) {
             fontSize: "0.76rem", color: INK_40, lineHeight: 1.6, maxWidth: "78ch",
           }}>{c.disclaimer}</p>
         )}
+          </div>
+        </div>
       </div>
 
       <style>{`
@@ -345,6 +369,15 @@ export default function CaseBriefingSection({ sectionConfig }) {
         .tp-briefing-prose td { padding: 0.6rem 0.7rem; border-bottom: 1px solid ${LINE}; vertical-align: top; }
         .tp-briefing-prose tbody tr:last-child td { border-bottom: none; }
         .tp-briefing-prose td:not(:first-child) { font-variant-numeric: tabular-nums; }
+        .tp-brief-grid { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 3.5rem; align-items: start; margin-top: 2.75rem; }
+        .tp-brief-main { max-width: 760px; }
+        .tp-brief-rail { position: sticky; top: 2rem; max-height: calc(100vh - 4rem); overflow-y: auto; }
+        .tp-brief-rail a:hover { color: ${INK}; text-decoration: underline; text-underline-offset: 2px; }
+        @media (max-width: 1000px) {
+          .tp-brief-grid { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+          .tp-brief-rail { position: static; max-height: none; padding: 1.1rem 1.25rem; background: ${scheme.surface}; border: 1px solid ${LINE}; }
+          .tp-brief-main { max-width: none; }
+        }
       `}</style>
     </section>
   );

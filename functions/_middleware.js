@@ -49,6 +49,8 @@ import {
   buildBriefingsListHtml,
   buildBriefingHtml,
   buildPressListHtml,
+  isDocumentPage,
+  DOCUMENT_LINKS,
 } from "./_prerender.js";
 
 /* Canonical/OG URLs always point at the apex host, so www and preview
@@ -137,7 +139,11 @@ async function buildRootHtml(url, briefingSlug, isDraftBriefing) {
     }
   }
 
-  const html = body ? `${body}\n${LINK_GRAPH}` : "";
+  /* Reference pages carry attribution and legal links only — the marketing
+   * nav would put "sell your claim" links around a document meant to be
+   * cited. Mirrors DocumentChrome on the rendered page. */
+  const chrome = isDocumentPage(COMPOSITIONS.get(path)) ? DOCUMENT_LINKS : LINK_GRAPH;
+  const html = body ? `${body}\n${chrome}` : "";
   PRERENDER_CACHE.set(path, html);
   return html;
 }
