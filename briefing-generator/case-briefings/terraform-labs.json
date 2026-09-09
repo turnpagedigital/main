@@ -3,6 +3,34 @@
   "case_name": "Terraform Labs",
   "items": [
     {
+      "date": "2026-09-09",
+      "updated": "2026-09-09",
+      "lede": "On September 8, the Terraform Labs docket recorded a single Certificate of Mailing (Dkt. 1331) — ministerial filing infrastructure, no bearing on recovery or timing.",
+      "body_md": "On September 8, the Terraform Labs docket recorded a single Certificate of Mailing (Dkt. 1331) — ministerial filing infrastructure, no bearing on recovery or timing.\n\nToday is accordingly a context day. The most directly relevant open variable for Class 5 recovery posture remains the SEC's distribution plan for the $123.1 million Fair Fund — funded by Tai Mo Shan's consent-order payment — for which an August 20 deadline to submit eligibility criteria and payment procedures was reported by __[CryptoSlate](https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/)__. No public confirmation that the SEC met that deadline or that the plan has been filed has appeared in the search results; until the agency publishes a distribution plan, that pool remains locked. Separately, the authorization motion filed August 19 (Dkt. 1321) still shows no corresponding order on the docket, leaving its scope and effect unresolved.\n\nOn the litigation side, the plan administrator's $4 billion suit against Jump Trading, William DiSomma, and Kanav Kariya in the Northern District of Illinois remains the single largest potential recovery catalyst for the estate. The protective-order dispute — Jump argued the May 1, 2026 amended complaint improperly drew on documents produced under the bankruptcy protective order, prompting Judge Lefkow to stay litigation deadlines and direct the administrator to seek clarification from the Delaware court — has not produced a public resolution since it was last reported. The investor securities class action in the Northern District of California (Judge Pitts), in which Jump's motion to dismiss was denied on September 3 per __[Law360](https://www.law360.com/classaction/articles/2521162)__, runs as a separate but parallel pressure vector; Jump now defends on two fronts simultaneously, which may concentrate settlement incentives on the administrator's suit. Secondary-market activity in the Class 5 pool — the $3,454,036.42 claim transferred to Serrur Investment Partners, LP (Dkt. 1312, executed July 27, filed August 3) being the most recent confirmed trade — continues to reflect market participants positioning ahead of any distribution event.\n\nThe next fixed milestone remains December 31, 2026, the court-extended wind-down deadline. Resolution of the protective-order dispute before Judge Shannon — which, once clarified, would re-open the stayed Illinois deadlines — is the most proximate gating event for the Jump litigation, and thus the most meaningful near-term determinant of recovery trajectory for Class 5 claimants.\n\n## Sources\n\n- [Jump Trading Must Face Terraform Stablecoin Fraud Claims](https://www.law360.com/classaction/articles/2521162) — Law360, September 3, 2026\n- [SEC faces Aug. 20 deadline to unlock $123 million recovery fund for Terra investors](https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/) — CryptoSlate, August 20, 2026\n- [Terraform Ch. 11 Trust Gets OK For $45M Crypto Deal](https://www.law360.com/bankruptcy-authority/articles/2254629/terraform-ch-11-trust-gets-ok-for-45m-crypto-deal) — Law360, August 19, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Jump Trading Must Face Terraform Stablecoin Fraud Claims",
+          "url": "https://www.law360.com/classaction/articles/2521162",
+          "note": "Law360, September 3, 2026"
+        },
+        {
+          "title": "SEC faces Aug. 20 deadline to unlock $123 million recovery fund for Terra investors",
+          "url": "https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/",
+          "note": "CryptoSlate, August 20, 2026"
+        },
+        {
+          "title": "Terraform Ch. 11 Trust Gets OK For $45M Crypto Deal",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2254629/terraform-ch-11-trust-gets-ok-for-45m-crypto-deal",
+          "note": "Law360, August 19, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-09-08"
+      }
+    },
+    {
       "date": "2026-09-04",
       "updated": "2026-09-04",
       "lede": "On September 3, a federal judge in the U.S. District Court for the Northern District of California ruled that Jump Trading LLC and its subsidiaries must face the bulk of a proposed securities class action from investors who claim it misled them and manipulated the market for Terraform Labs' stablecoins in the lead-up to the collapse of the Terraform ecosystem, per Law360. The ruling is an order surviving a motion to…",

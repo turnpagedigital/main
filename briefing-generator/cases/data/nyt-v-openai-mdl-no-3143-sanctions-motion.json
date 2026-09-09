@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
-    "date_last_filing": "2026-09-08",
-    "meta_fetched_at": "2026-09-09T14:41:04.890867+00:00",
-    "fetched_at": "2026-09-09T14:41:04.890867+00:00",
+    "date_last_filing": "2026-09-09",
+    "meta_fetched_at": "2026-09-09T17:42:49.012666+00:00",
+    "fetched_at": "2026-09-09T17:42:49.012666+00:00",
     "as_of": "Sep 9, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 3,
     "recent": [
+      {
+        "entry_number": 1927,
+        "date_filed": "2026-09-09",
+        "time_filed": "10:59:27",
+        "date_display": "Sep 9, 2026",
+        "description": "JOINT STIPULATION AND ORDER STAYING WIKIHOW ACTION: NOW, THEREFORE, IT IS HEREBY STIPULATED BY AND BETWEEN THE PARTIES THAT, subject to the Court's approval, as follows: 1. All proceedings and deadlines in the above-captioned Action are hereby stayed pending resolution of summary judgment motions in the other active cases in this multidistrict litigation. 2. Within 30 days of rulings on such motion(s) in the MDL, the parties shall file a joint status report in this Action to propose a case management conference and any appropriate further proceedings in light of the MDL decision. 3. While this stay is in effect, any party may move to lift the stay for good cause shown. Nothing in this stipulation shall preclude any party from seeking such relief, if necessary, or from seeking any other appropriate relief from the Court. SO ORDERED. Case stayed. (Signed by Judge Sidney H. Stein on…",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1927.0.pdf"
+      },
       {
         "entry_number": 1926,
         "date_filed": "2026-09-08",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1925.0.pdf"
-      },
-      {
-        "entry_number": 1924,
-        "date_filed": "2026-09-06",
-        "time_filed": "14:04:19",
-        "date_display": "Sep 6, 2026",
-        "description": "CERTIFICATE OF SERVICE of Sealed Declarations and Exhibits filed in support of Motion for Partial Summary Judgment served on OpenAI Defendants, Microsoft on 9/4/2026. Document filed by The Center for Investigative Reporting, Inc., The Intercept Media, Inc.. Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:24-cv-01515-SHS-OTW, 1:24-cv-04872-SHS-OTW.(Wallenberg, Kyle) (Entered: 09/06/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1927,
+        "date_filed": "2026-09-09",
+        "time_filed": "10:59:27",
+        "date_display": "Sep 9, 2026",
+        "description": "JOINT STIPULATION AND ORDER STAYING WIKIHOW ACTION: NOW, THEREFORE, IT IS HEREBY STIPULATED BY AND BETWEEN THE PARTIES THAT, subject to the Court's approval, as follows: 1. All proceedings and deadlines in the above-captioned Action are hereby stayed pending resolution of summary judgment motions in the other active cases in this multidistrict litigation. 2. Within 30 days of rulings on such motion(s) in the MDL, the parties shall file a joint status report in this Action to propose a case management conference and any appropriate further proceedings in light of the MDL decision. 3. While this stay is in effect, any party may move to lift the stay for good cause shown. Nothing in this stipulation shall preclude any party from seeking such relief, if necessary, or from seeking any other appropriate relief from the Court. SO ORDERED. Case stayed. (Signed by Judge Sidney H. Stein on…",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1927.0.pdf"
+      },
       {
         "entry_number": 1926,
         "date_filed": "2026-09-08",
