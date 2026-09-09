@@ -14,13 +14,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
-    "date_last_filing": "2026-09-08",
-    "meta_fetched_at": "2026-09-09T14:39:33.922684+00:00",
-    "fetched_at": "2026-09-09T14:39:33.922684+00:00",
+    "date_last_filing": "2026-09-09",
+    "meta_fetched_at": "2026-09-09T17:42:09.986555+00:00",
+    "fetched_at": "2026-09-09T17:42:09.986555+00:00",
     "as_of": "Sep 9, 2026",
-    "backfilled": false,
-    "new_in_72h": 3,
+    "backfilled": true,
+    "new_in_72h": 4,
     "recent": [
+      {
+        "entry_number": 256,
+        "date_filed": "2026-09-09",
+        "time_filed": "12:01:42",
+        "date_display": "Sep 9, 2026",
+        "description": "Agenda of Matters Scheduled for Hearing - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 255,
         "date_filed": "2026-09-08",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 253,
-        "date_filed": "2026-09-08",
-        "time_filed": "10:40:15",
-        "date_display": "Sep 8, 2026",
-        "description": "Notice of Hearing - Notice of Re-Scheduled Omnibus Hearing Date (related document(s)166) Filed by Omnis Pleasants, LLC. Hearing scheduled for 10/13/2026 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Faris, S. Alexander) (Entered: 09/08/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.253.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 256,
+        "date_filed": "2026-09-09",
+        "time_filed": "12:01:42",
+        "date_display": "Sep 9, 2026",
+        "description": "Agenda of Matters Scheduled for Hearing - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 255,
         "date_filed": "2026-09-08",
@@ -2823,8 +2833,7 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=13"
+    ]
   },
   "claims_administrator": {
     "name": "Stretto",
