@@ -15,13 +15,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
-    "date_last_filing": "2026-09-08",
-    "meta_fetched_at": "2026-09-09T12:28:37.349710+00:00",
-    "fetched_at": "2026-09-09T17:42:26.978191+00:00",
+    "date_last_filing": "2026-09-09",
+    "meta_fetched_at": "2026-09-09T18:40:46.666530+00:00",
+    "fetched_at": "2026-09-09T18:40:46.666530+00:00",
     "as_of": "Sep 9, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 5,
     "recent": [
+      {
+        "entry_number": 97,
+        "date_filed": "2026-09-09",
+        "time_filed": "14:29:07",
+        "date_display": "Sep 9, 2026",
+        "description": "Order Approving Motion for Admission pro hac vice of Tianjiao Li (Related Doc [96]) Signed on 9/9/2026. (LMC)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.97.0.pdf"
+      },
+      {
+        "entry_number": 96,
+        "date_filed": "2026-09-09",
+        "time_filed": "13:53:41",
+        "date_display": "Sep 9, 2026",
+        "description": "Motion to Appear pro hac vice . Receipt Number 5060944, Filed by Skillz Platform Inc.. (Beach, Sean)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.96.0.pdf"
+      },
       {
         "entry_number": 95,
         "date_filed": "2026-09-08",
@@ -31,29 +51,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-09-08",
-        "time_filed": "20:20:50",
-        "date_display": "Sep 8, 2026",
-        "description": "Letter (Bk)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 94,
-        "date_filed": "2026-09-07",
-        "time_filed": "23:24:42",
-        "date_display": "Sep 7, 2026",
-        "description": "Notice of Service Filed by Oriel Bachar. (Attachments: (1) Service List) (Malow, Jennifer)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.94.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 97,
+        "date_filed": "2026-09-09",
+        "time_filed": "14:29:07",
+        "date_display": "Sep 9, 2026",
+        "description": "Order Approving Motion for Admission pro hac vice of Tianjiao Li (Related Doc [96]) Signed on 9/9/2026. (LMC)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.97.0.pdf"
+      },
+      {
+        "entry_number": 96,
+        "date_filed": "2026-09-09",
+        "time_filed": "13:53:41",
+        "date_display": "Sep 9, 2026",
+        "description": "Motion to Appear pro hac vice . Receipt Number 5060944, Filed by Skillz Platform Inc.. (Beach, Sean)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.96.0.pdf"
+      },
       {
         "entry_number": 95,
         "date_filed": "2026-09-08",
