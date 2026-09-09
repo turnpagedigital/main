@@ -15,12 +15,32 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-09-09",
-    "meta_fetched_at": "2026-09-09T14:40:19.946329+00:00",
-    "fetched_at": "2026-09-09T17:42:32.559575+00:00",
+    "meta_fetched_at": "2026-09-09T18:40:53.214154+00:00",
+    "fetched_at": "2026-09-09T18:40:53.214154+00:00",
     "as_of": "Sep 9, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 5,
     "recent": [
+      {
+        "entry_number": 210,
+        "date_filed": "2026-09-09",
+        "time_filed": "14:21:53",
+        "date_display": "Sep 9, 2026",
+        "description": "Notice of Appearance and Request",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 209,
+        "date_filed": "2026-09-09",
+        "time_filed": "14:19:10",
+        "date_display": "Sep 9, 2026",
+        "description": "Retention",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 208,
         "date_filed": "2026-09-09",
@@ -30,29 +50,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 207,
-        "date_filed": "2026-09-08",
-        "time_filed": "18:56:50",
-        "date_display": "Sep 8, 2026",
-        "description": "Document re: Supplemental Declaration of Committee Chair in Support of Application of the Official Committee of Unsecured Creditors for Order, Pursuant to 11 U.S.C §§ 328 and 1103, Fed. R. Bankr. P. 2014, and Local Rule 2014-1, Authorizing and Approving the Employment and Retention of Pachulski Stang Ziehl & Jones LLP as Counsel to the Official Committee of Unsecured Creditors, Effective as of August 13, 2026 (related document:179 Application for Retention filed by Creditor Committee The Official Committee of Unsecured Creditors) filed by Bradford J. Sandler on behalf of The Official Committee of Unsecured Creditors. (Sandler, Bradford) (Entered: 09/08/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 206,
-        "date_filed": "2026-09-08",
-        "time_filed": "18:54:56",
-        "date_display": "Sep 8, 2026",
-        "description": "Document re: Supplemental Declaration of Bradford J. Sandler in Support of Application of the Official Committee of Unsecured Creditors for Order, Pursuant to 11 U.S.C §§ 328 and 1103, Fed. R. Bankr. P. 2014, and Local Rule 2014-1, Authorizing and Approving the Employment and Retention of Pachulski Stang Ziehl & Jones LLP as Counsel to the Official Committee of Unsecured Creditors, Effective as of August 13, 2026 (related document:179 Application for Retention filed by Creditor Committee The Official Committee of Unsecured Creditors) filed by Bradford J. Sandler on behalf of The Official Committee of Unsecured Creditors. (Sandler, Bradford) (Entered: 09/08/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 210,
+        "date_filed": "2026-09-09",
+        "time_filed": "14:21:53",
+        "date_display": "Sep 9, 2026",
+        "description": "Notice of Appearance and Request",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 209,
+        "date_filed": "2026-09-09",
+        "time_filed": "14:19:10",
+        "date_display": "Sep 9, 2026",
+        "description": "Retention",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 208,
         "date_filed": "2026-09-09",
