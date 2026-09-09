@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-09-04 22:47 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-09-09 04:42 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -167,6 +167,14 @@ hi
 ### (no docket number) — 2026-08-02 ★
 
 > New Chapter 11 Bankruptcy Filing — Poolin Technology PTE LTD — Petition's legal trade newsletter covers the July 22 Chapter 11 filing before Judge O'Hagan in the District of New Jersey, noting that Po
+
+## Power Block Coin
+
+### (no docket number) — 2026-08-26
+
+> Crypto CEO Says Investors Lack Proof In Refund Fraud Suit — The CEO of Power Block Coin LLC (d/b/a SmartFi) sought summary judgment in a Pennsylvania federal court suit alleging he refused to fulfill 
+
+Interesting - this appears to be a separate Tokenholder suit against Tilton
 
 ## Terraform Labs
 
