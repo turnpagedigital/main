@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
     "date_last_filing": "2026-09-08",
-    "meta_fetched_at": "2026-09-08T21:57:36.104670+00:00",
-    "fetched_at": "2026-09-09T09:52:22.787989+00:00",
+    "meta_fetched_at": "2026-09-09T14:41:04.890867+00:00",
+    "fetched_at": "2026-09-09T14:41:04.890867+00:00",
     "as_of": "Sep 9, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 1926,
+        "date_filed": "2026-09-08",
+        "time_filed": "",
+        "date_display": "Sep 8, 2026",
+        "description": "ORDER: In sum, the parties' outstanding sealing motions are GRANTED as proposed by the moving parties. The Clerk of Court is respectfully directed to close the following ECF Nos. in: Case No. 25-MD-3143: 937, 943, 944, 960, 976, 991, and 1199; Case No. 23-CV-8292: 834, 835, 836, 848, 855, 860, 861, 868, 871, 872, 873, 876, 879, 880, 881, 888, 895, 917, 925, 930, 941, 949, 955, 976, 979, 1005, 1029, 1032, 1034, 1046, and 1054; Case No. 23-CV-11195: 1079, 1083, 1088, 1096, 1114, 1123, 1184, 1234, 1240, 1261, 1263, and 1268; Case No. 24-CV-1514: 266; and Case No. 24-CV-3285: 559, 613, 623, 641, 656, and 689. SO ORDERED. Motions terminated: 960 LETTER MOTION to Seal re ECF 907 addressed to Judge Sidney H. Stein from Christopher S. Sun, Allison S. Blanco, Caitlin Sinclaire Blythe dated December 12, 2025. filed by OpenAI, Inc., OpenAI GP LLC, OpenAI Startup Fund GP I LLC, OpenAI LP, OAI…",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1926.0.pdf"
+      },
       {
         "entry_number": 1925,
         "date_filed": "2026-09-08",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 1908,
-        "date_filed": "2026-09-05",
-        "time_filed": "03:00:02",
-        "date_display": "Sep 5, 2026",
-        "description": "***SEALED***DECLARATION of Justin A. Nelson in Support re: (1759 in 1:25-md-03143-SHS-OTW) MOTION for Summary Judgment .. Document filed by David Baldacci. (Attachments: # 1 Exhibit 774, # 2 Exhibit 775, # 3 Exhibit 776, # 4 Exhibit 777, # 5 Exhibit 778, # 6 Exhibit 779, # 7 Exhibit 780, # 8 Exhibit 781, # 9 Exhibit 782, # 10 Exhibit 783, # 11 Exhibit 784, # 12 Exhibit 785, # 13 Exhibit 786, # 14 Exhibit 787, # 15 Exhibit 788, # 16 Exhibit 789, # 17 Exhibit 790, # 18 Exhibit 791, # 19 Exhibit 792, # 20 Exhibit 793, # 21 Exhibit 794, # 22 Exhibit 795, # 23 Exhibit 796, # 24 Exhibit 797, # 25 Exhibit 798, # 26 Exhibit 799, # 27 Exhibit 800, # 28 Exhibit 801, # 29 Exhibit 802, # 30 Exhibit 803, # 31 Exhibit 804, # 32 Exhibit 805, # 33 Exhibit 806, # 34 Exhibit 807, # 35 Exhibit 808, # 36 Exhibit 809, # 37 Exhibit 810, # 38 Exhibit 811, # 39 Exhibit 812, # 40 Exhibit 813)Filed In Associated…",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1926,
+        "date_filed": "2026-09-08",
+        "time_filed": "",
+        "date_display": "Sep 8, 2026",
+        "description": "ORDER: In sum, the parties' outstanding sealing motions are GRANTED as proposed by the moving parties. The Clerk of Court is respectfully directed to close the following ECF Nos. in: Case No. 25-MD-3143: 937, 943, 944, 960, 976, 991, and 1199; Case No. 23-CV-8292: 834, 835, 836, 848, 855, 860, 861, 868, 871, 872, 873, 876, 879, 880, 881, 888, 895, 917, 925, 930, 941, 949, 955, 976, 979, 1005, 1029, 1032, 1034, 1046, and 1054; Case No. 23-CV-11195: 1079, 1083, 1088, 1096, 1114, 1123, 1184, 1234, 1240, 1261, 1263, and 1268; Case No. 24-CV-1514: 266; and Case No. 24-CV-3285: 559, 613, 623, 641, 656, and 689. SO ORDERED. Motions terminated: 960 LETTER MOTION to Seal re ECF 907 addressed to Judge Sidney H. Stein from Christopher S. Sun, Allison S. Blanco, Caitlin Sinclaire Blythe dated December 12, 2025. filed by OpenAI, Inc., OpenAI GP LLC, OpenAI Startup Fund GP I LLC, OpenAI LP, OAI…",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1926.0.pdf"
+      },
       {
         "entry_number": 1925,
         "date_filed": "2026-09-08",
