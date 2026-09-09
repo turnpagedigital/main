@@ -1,0 +1,59 @@
+{
+  "_comment": "Citation policy for case-briefing pages. A case page may cite ONLY court and docket records, official case-administration sites, government releases, the subject company's own disclosures, and reputable general/financial/legal media. No crypto trade blogs, no aggregators, no case-tracker sites, and never a competitor. Enforced by tests/prerender.test.js. Add an outlet here rather than making an exception on a page.",
+  "court": [
+    "courtlistener.com",
+    "pacer.gov",
+    "uscourts.gov",
+    "epiq11.com",
+    "dm.epiq11.com",
+    "ra.kroll.com",
+    "restructuring.ra.kroll.com",
+    "kroll.com",
+    "elitigation.sg",
+    "terraformlabsplanadministrator.com",
+    "claims.terra.money",
+    "stretto.com",
+    "veritaglobal.net",
+    "kccllc.net",
+    "primeclerk.com"
+  ],
+  "government": [
+    "sec.gov",
+    "justice.gov",
+    "treasury.gov",
+    "cftc.gov",
+    "fincen.gov",
+    "cbp.gov",
+    "congress.gov",
+    "federalregister.gov",
+    "courts.state.ny.us"
+  ],
+  "media": [
+    "wsj.com",
+    "nytimes.com",
+    "bloomberg.com",
+    "bloomberglaw.com",
+    "law360.com",
+    "reuters.com",
+    "ft.com",
+    "prnewswire.com",
+    "businesswire.com",
+    "globenewswire.com",
+    "apnews.com",
+    "washingtonpost.com",
+    "economist.com",
+    "barrons.com",
+    "americanbanker.com",
+    "abi.org"
+  ],
+  "companyDisclosure": [
+    "Company filings and the subject's own announcements qualify regardless of host (an 8-K, a plan administrator notice, an official case blog). List the exact official channel under companyDisclosureUrls so every exception stays auditable — never allowlist a generic host like medium.com or substack.com outright."
+  ],
+  "companyDisclosureUrls": [
+    {
+      "prefix": "https://medium.com/terra-money/",
+      "issuer": "Terraform Labs (official Terra Money channel)",
+      "note": "Crypto Loss Claims portal launch notice, March 2025"
+    }
+  ]
+}

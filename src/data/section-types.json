@@ -903,7 +903,7 @@
     {
       "id": "case-briefing",
       "displayName": "Case Briefing",
-      "description": "Long-form, citable reference page for a single case — dated status block, case facts, body sections in Markdown, update log, FAQs and sources. Educational by default; the selling CTA is a single toggle. Background stays fixed while the status block carries its own date, so the page is refreshed rather than rewritten.",
+      "description": "Long-form, citable reference page for a single case — dated status block, case facts, body sections in Markdown, update log, FAQs and sources. Educational by default; the selling CTA is a single toggle. Background stays fixed while the status block carries its own date, so the page is refreshed rather than rewritten. Sources must be court and docket records, official case-administration sites, government releases, company disclosures, or reputable media (WSJ, NYT, Bloomberg, Law360, Reuters, PR Newswire) — see src/data/citation-policy.json. Never a crypto trade blog, an aggregator, or a competitor.",
       "dataSource": "inline",
       "allowMultiple": false,
       "supportedColorSchemes": [
