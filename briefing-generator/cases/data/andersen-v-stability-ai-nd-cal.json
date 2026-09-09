@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/66732129/andersen-v-stability-ai-ltd/",
-    "date_last_filing": "2026-09-04",
-    "meta_fetched_at": "2026-09-08T21:55:34.375124+00:00",
-    "fetched_at": "2026-09-08T21:55:34.375124+00:00",
-    "as_of": "Sep 8, 2026",
+    "date_last_filing": "2026-09-08",
+    "meta_fetched_at": "2026-09-09T09:52:59.022989+00:00",
+    "fetched_at": "2026-09-09T09:52:59.022989+00:00",
+    "as_of": "Sep 9, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 736,
+        "date_filed": "2026-09-08",
+        "time_filed": "18:40:23",
+        "date_display": "Sep 8, 2026",
+        "description": "Attachments to an Administrative Motion to File Under Seal",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 735,
         "date_filed": "2026-09-04",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-09-04",
-        "time_filed": "11:43:25",
-        "date_display": "Sep 4, 2026",
-        "description": "Order on Discovery Letter Brief",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 736,
+        "date_filed": "2026-09-08",
+        "time_filed": "18:40:23",
+        "date_display": "Sep 8, 2026",
+        "description": "Attachments to an Administrative Motion to File Under Seal",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 735,
         "date_filed": "2026-09-04",
