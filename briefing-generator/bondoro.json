@@ -1,6 +1,21 @@
 {
   "items": [
     {
+      "id": "liv-and-let-die",
+      "kind": "news",
+      "source": "Petition",
+      "source_id": "petition",
+      "show": "both",
+      "title": "⛳️LIV and Let Die⛳️",
+      "url": "https://www.petition11.com/p/liv-and-let-die",
+      "date": "2026-09-09",
+      "published_at": "2026-09-09T12:03:02+00:00",
+      "excerpt": "Abandoned by Crown Prince Mohammed bin Salman and the PIF, LIV Golf files to figure out its next round.",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
       "kind": "Asset Sale",
       "source": "Daily DAC",
@@ -11,6 +26,36 @@
       "date": "2026-09-08",
       "published_at": "2026-09-08T10:00:27+00:00",
       "excerpt": "NOTICE OF PUBLIC SALE OF PERSONAL PROPERTY ASSETS OF WESTFIELD STEEL, INC. AND WESTFIELD STEEL EXPRESS, LLC UNDER UNIFORM COMMERCIAL CODE PLEASE TAKE NOTICE THAT on September 29, 2026 at the hour of 2:00 p.m. Central Time, Alloy Industrial Finance, LLC (&#8220;Secured Creditor&#8221;) as secured cre",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
+      "kind": "Asset Sale",
+      "source": "Daily DAC",
+      "source_id": "daily-dac-article",
+      "show": "news",
+      "title": "PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Belen 1945 LLC & Brick House NY LLC",
+      "url": "https://www.dailydac.com/public-notice-of-ucc-article-9-sale-belen-1945-llc-brick-house-ny-llc/?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-belen-1945-llc-brick-house-ny-llc",
+      "date": "2026-09-08",
+      "published_at": "2026-09-08T19:27:25+00:00",
+      "excerpt": "AUCTIONWORKS, A DIVISION OF AW PROPERTIES GLOBAL, ANNOUNCES SECURED PARTY’S PUBLIC SALE OF THE MEMBERSHIP INTERESTS IN BELEN 1945 LLC and BRICK HOUSE NY LLC UNDER ARTICLE 9 OF THE UNIFORM COMMERCIAL CODE PLEASE TAKE NOTICE that on October 16, 2026, starting at 11:15 a.m. Eastern Time], AUCTIONWORKS,",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
+      "kind": "Asset Sale",
+      "source": "Daily DAC",
+      "source_id": "daily-dac-article",
+      "show": "news",
+      "title": "PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Monroe Cinemas, LLC",
+      "url": "https://www.dailydac.com/public-notice-of-ucc-article-9-sale-monroe-cinemas/?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-monroe-cinemas",
+      "date": "2026-09-08",
+      "published_at": "2026-09-08T19:26:56+00:00",
+      "excerpt": "AUCTIONWORKS, A DIVISION OF AW PROPERTIES GLOBAL, ANNOUNCES SECURED PARTY’S PUBLIC SALE OF THE MEMBERSHIP INTERESTS IN MONROE CINEMAS, LLC UNDER ARTICLE 9 OF THE UNIFORM COMMERCIAL CODE PLEASE TAKE NOTICE that on October 16, 2026, starting at 11:00 a.m. Eastern Time, AUCTIONWORKS, a division of AW P",
       "case_slug": null,
       "group_name": null,
       "theme_slug": null
@@ -1108,7 +1153,8 @@
       "excerpt": "Hughes Satellite Systems Corporation, Uniroyal Holding Inc., PJT Partners LP ($PJT), Houlihan Lokey Inc. ($HLI)",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "hughes-chapter-11-bankruptcy-filing",
@@ -1123,7 +1169,8 @@
       "excerpt": "DISH sister, Hughes Satellite Systems Corporation, falls out of orbit, crashes into chapter 11, primed for conflict with holders of the company's secured and unsecured notes.",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "uniroyal-chapter-11-bankruptcy-filing",
@@ -1138,7 +1185,8 @@
       "excerpt": "Legacy retiree and litigation entity files to distribute assets and liquidate",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "best-financial-advisors?mod=rss_markets_main",
