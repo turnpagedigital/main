@@ -16,18 +16,28 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70513159/disney-enterprises-inc-v-midjourney-inc/",
     "date_last_filing": "2026-09-09",
-    "meta_fetched_at": "2026-09-09T18:42:10.249693+00:00",
-    "fetched_at": "2026-09-09T18:42:10.249693+00:00",
+    "meta_fetched_at": "2026-09-09T21:45:30.616127+00:00",
+    "fetched_at": "2026-09-09T21:45:30.616127+00:00",
     "as_of": "Sep 9, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
       {
-        "entry_number": 184,
+        "entry_number": 185,
         "date_filed": "2026-09-09",
-        "time_filed": "10:46:43",
+        "time_filed": "11:51:47",
         "date_display": "Sep 9, 2026",
-        "description": "Leave to File Document Under Seal",
+        "description": "SEALED DOCUMENT re Order on Motion for Leave to File Document Under Seal,,, 184 filed by Defendant Midjourney Inc..(Sharma, Aastha) (Entered: 09/09/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 184,
+        "date_filed": "2026-09-08",
+        "time_filed": "",
+        "date_display": "Sep 8, 2026",
+        "description": "ORDER GRANTING DEFENDANT MIDJOURNEY, INC.S APPLICATION FOR LEAVE TO FILE UNDER SEAL PORTIONS OF JULY 31, 2026 IDC TRANSCRIPT by Magistrate Judge A. Joel Richlin. HAVING CONSIDERED Defendant Midjourney, Inc.'s Application for Leave to File Under Seal Portions of July 31, 2026 IDC Transcript (the \"Application\"), and the Declaration of Stephanie Schuyler in support thereof, the Court finds good cause exists for allowing certain confidential information to be maintained under seal. Accordingly, it is hereby ORDERED that the Application is GRANTED in its entirety. The following portions of the Transcript are FURTHER ORDERED to be redacted from the public record in accordance with the Application and the highlighting reflected in the exhibit to the Declaration of Stephanie Schuyler in support of the Application [SEE ORDER FOR DETAILS]. IT IS SO ORDERED. (nth) (Entered: 09/09/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -41,25 +51,25 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 182,
-        "date_filed": "2026-09-04",
-        "time_filed": "11:49:41",
-        "date_display": "Sep 4, 2026",
-        "description": "Joint STIPULATION for Order to Modify Briefing Schedule on Remaining Dispute as to Production of Training Data filed by Plaintiffs DC Comics, Disney Enterprises Inc., DreamWorks Animation L.L.C., Hanna-Barbera Productions, Inc., Lucasfilm Ltd. LLC, MVL Film Finance LLC, Marvel Characters Inc., The Cartoon Network, Inc., Turner Entertainment Co., Twentieth Century Fox Film Corporation, Universal City Studios Productions LLLP, Warner Bros. Entertainment Inc.. (Attachments: # 1 Declaration of K. Brandeisky in Support, # 2 Proposed Order)(Singer, David) (Entered: 09/04/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
       {
-        "entry_number": 184,
+        "entry_number": 185,
         "date_filed": "2026-09-09",
-        "time_filed": "10:46:43",
+        "time_filed": "11:51:47",
         "date_display": "Sep 9, 2026",
-        "description": "Leave to File Document Under Seal",
+        "description": "SEALED DOCUMENT re Order on Motion for Leave to File Document Under Seal,,, 184 filed by Defendant Midjourney Inc..(Sharma, Aastha) (Entered: 09/09/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 184,
+        "date_filed": "2026-09-08",
+        "time_filed": "",
+        "date_display": "Sep 8, 2026",
+        "description": "ORDER GRANTING DEFENDANT MIDJOURNEY, INC.S APPLICATION FOR LEAVE TO FILE UNDER SEAL PORTIONS OF JULY 31, 2026 IDC TRANSCRIPT by Magistrate Judge A. Joel Richlin. HAVING CONSIDERED Defendant Midjourney, Inc.'s Application for Leave to File Under Seal Portions of July 31, 2026 IDC Transcript (the \"Application\"), and the Declaration of Stephanie Schuyler in support thereof, the Court finds good cause exists for allowing certain confidential information to be maintained under seal. Accordingly, it is hereby ORDERED that the Application is GRANTED in its entirety. The following portions of the Transcript are FURTHER ORDERED to be redacted from the public record in accordance with the Application and the highlighting reflected in the exhibit to the Declaration of Stephanie Schuyler in support of the Application [SEE ORDER FOR DETAILS]. IT IS SO ORDERED. (nth) (Entered: 09/09/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
