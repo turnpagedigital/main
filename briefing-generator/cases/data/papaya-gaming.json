@@ -15,13 +15,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
-    "date_last_filing": "2026-09-07",
-    "meta_fetched_at": "2026-09-08T12:17:13.991240+00:00",
-    "fetched_at": "2026-09-09T00:20:21.509069+00:00",
+    "date_last_filing": "2026-09-08",
+    "meta_fetched_at": "2026-09-09T04:50:19.818664+00:00",
+    "fetched_at": "2026-09-09T04:50:19.818664+00:00",
     "as_of": "Sep 9, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 3,
     "recent": [
+      {
+        "entry_number": 95,
+        "date_filed": "2026-09-08",
+        "time_filed": "",
+        "date_display": "Sep 8, 2026",
+        "description": "[SEALED] Letter (related document(s)[93]) Filed by Oriel Bachar. (Malow, Jennifer)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-08",
+        "time_filed": "20:20:50",
+        "date_display": "Sep 8, 2026",
+        "description": "Letter (Bk)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 94,
         "date_filed": "2026-09-07",
@@ -31,29 +51,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.94.0.pdf"
-      },
+      }
+    ],
+    "entries": [
       {
-        "entry_number": 93,
-        "date_filed": "2026-09-04",
+        "entry_number": 95,
+        "date_filed": "2026-09-08",
         "time_filed": "",
-        "date_display": "Sep 4, 2026",
-        "description": "[SEALED] Letter Filed by Skillz Platform Inc.. (Neiburg, Michael)",
-        "is_new": false,
+        "date_display": "Sep 8, 2026",
+        "description": "[SEALED] Letter (related document(s)[93]) Filed by Oriel Bachar. (Malow, Jennifer)",
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
         "entry_number": null,
-        "date_filed": "2026-09-04",
-        "time_filed": "12:07:29",
-        "date_display": "Sep 4, 2026",
+        "date_filed": "2026-09-08",
+        "time_filed": "20:20:50",
+        "date_display": "Sep 8, 2026",
         "description": "Letter (Bk)",
-        "is_new": false,
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
-      }
-    ],
-    "entries": [
+      },
       {
         "entry_number": 94,
         "date_filed": "2026-09-07",
