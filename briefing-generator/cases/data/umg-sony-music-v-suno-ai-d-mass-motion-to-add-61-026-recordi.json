@@ -19,5 +19,35 @@
     "entries": []
   },
   "claims_administrator": null,
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "Judge clears UMG and Sony to accuse Suno of pirating YouTube via 'stream ripping' to train its AI",
+      "url": "https://www.musicbusinessworldwide.com/umg-and-sony-accuse-suno-of-pirating-youtube-via-stream-ripping-to-train-its-ai/",
+      "source": "Music Business Worldwide",
+      "date": "2026-08-27",
+      "summary": "Judge Saylor cleared UMG and Sony to amend their complaint to allege Suno trained its AI by stream-ripping YouTube, adding DMCA circumvention claims. Fact discovery in the Massachusetts case closes September 30, 2026, with both sides expected to move for summary judgment on the fair-use question."
+    },
+    {
+      "headline": "Why a fight over 61,000 recordings could shape the future of AI music licensing",
+      "url": "https://www.musicbusinessworldwide.com/why-a-fight-over-61000-recordings-could-shape-the-future-of-ai-music-licensing/",
+      "source": "Music Business Worldwide",
+      "date": "2026-07-14",
+      "summary": "Judge Saylor has yet to rule on the motion to add 61,026 works; Suno opposed the motion on June 4, arguing it would deny the company a timely fair-use ruling. Dispositive motions are due April 9, 2027, and any ruling is expected to reshape licensing leverage across the AI music industry."
+    },
+    {
+      "headline": "Suno asks court to block UMG and Sony from expanding copyright lawsuit to over 61,000 recordings",
+      "url": "https://www.musicbusinessworldwide.com/suno-asks-court-to-block-umg-and-sony-from-expanding-copyright-lawsuit-to-over-61000-recordings/",
+      "source": "Music Business Worldwide",
+      "date": "2026-06-08",
+      "summary": "Suno filed its opposition on June 4 to the labels' motion to add 61,026 recordings, arguing the expansion would deny it a timely ruling on whether AI training on copyrighted music constitutes fair use. Suno characterized the motion as a litigation tactic designed to delay and overwhelm the defense."
+    },
+    {
+      "headline": "UMG and Sony seek to add over 61k recordings to Suno lawsuit after discovery reveals AI trained on 'millions' of their copyrighted tracks",
+      "url": "https://www.musicbusinessworldwide.com/umg-and-sony-seek-to-add-61000-copyrighted-works-to-suno-lawsuit-after-discovery-reveals-suno-trained-on-millions-of-their-recordings/",
+      "source": "Music Business Worldwide",
+      "date": "2026-05-26",
+      "summary": "UMG and Sony filed a motion on May 21 to add 61,026 recordings identified via audio fingerprinting to their D. Mass. complaint, describing that figure as 'only a small fraction' of the matches their experts found. Suno had previously refused to disclose details of its training data, prompting the labels to use Audible Magic fingerprinting technology."
+    }
+  ],
+  "events": []
 }
