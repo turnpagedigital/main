@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
-    "date_last_filing": "2026-09-08",
-    "meta_fetched_at": "2026-09-08T21:57:22.085936+00:00",
-    "fetched_at": "2026-09-09T21:46:32.753933+00:00",
-    "as_of": "Sep 9, 2026",
+    "date_last_filing": "2026-09-09",
+    "meta_fetched_at": "2026-09-10T00:20:58.832640+00:00",
+    "fetched_at": "2026-09-10T00:20:58.832640+00:00",
+    "as_of": "Sep 10, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 387,
+        "date_filed": "2026-09-09",
+        "time_filed": "17:47:12",
+        "date_display": "Sep 9, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 386,
         "date_filed": "2026-09-08",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 382,
-        "date_filed": "2026-08-27",
-        "time_filed": "15:50:13",
-        "date_display": "Aug 27, 2026",
-        "description": "Order on Motion to Compel",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 387,
+        "date_filed": "2026-09-09",
+        "time_filed": "17:47:12",
+        "date_display": "Sep 9, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 386,
         "date_filed": "2026-09-08",
