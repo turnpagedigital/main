@@ -3,6 +3,44 @@
   "case_name": "Poolin",
   "items": [
     {
+      "date": "2026-09-10",
+      "updated": "2026-09-10",
+      "lede": "Today, the court-supervised auction call for Poolin's West Texas mining assets — the Pyote and Tarbush sites — is scheduled to proceed, with the outcome turning on whether any qualified bids above Thor CALAP LLC's $52 million stalking-horse floor were submitted by the September 8 deadline. No secondary source has reported auction results, and no docket entry confirms bid receipt or cancellation of the auction; the…",
+      "body_md": "Today, the court-supervised auction call for Poolin's West Texas mining assets — the Pyote and Tarbush sites — is scheduled to proceed, with the outcome turning on whether any qualified bids above Thor CALAP LLC's $52 million stalking-horse floor were submitted by the September 8 deadline. No secondary source has reported auction results, and no docket entry confirms bid receipt or cancellation of the auction; the proceeding's status as a live competitive event or a walkover for Thor CALAP remains unverified as of this briefing. \nThe August 17 bidding-procedures order set September 8 as the deadline for qualified bids, with the auction scheduled for September 10 if competing offers emerged.\n \nThe stalking-horse offer allocates $37 million to the Tarbush assets (including assumed liabilities) and $15 million to the Pyote site.\n \nThe marketing process reportedly drew 28 NDAs and seven letters of intent\n — a data point from pre-petition marketing that establishes early interest but does not confirm how many parties ultimately submitted qualified bids meeting the court's procedural threshold. Whatever the auction produces today is the first hard number on estate value above the floor, and it is the single most consequential input to creditor recovery before the September 18 sale hearing.\n\nOn the docket, Dkts. 209 and 210 — a retention filing and a notice of appearance, both dated September 9 — are procedural and routine; they carry no independent weight on sale economics or recovery timing. The M3 Advisory Partners retention application (Dkt. 201), with an objection deadline of September 11 per the docket, remains pending; no certification of no objection has yet appeared. If that deadline passes without opposition, the Committee will have both restructuring counsel (PSZJ, cleared via Dkt. 208) and financial advisory capacity (M3) in place before the sale hearing — a posture that directly determines how effectively the UCC can contest sale economics or press for value-maximizing modifications before Judge O'Hagan on September 18.\n\nThe structural overhang on the entire process remains the creditor's motion to appoint a Chapter 11 trustee, with a hearing set for October 21. That motion, which alleges that the Debtors' principal absconded from China with customer funds, \nmatters because all three entities currently remain debtors in possession, with existing management continuing to run day-to-day affairs under court oversight\n — a posture that the trustee motion directly targets. A sale confirmed at the September 18 hearing would substantially narrow the live assets subject to any trustee's mandate, but would not moot the motion's avoidance and transfer-probe theories. The next concrete milestone is today's auction call itself; if results are docketed or reported, they will anchor tomorrow's briefing.\n\n## Sources\n\n- [Poolin Auction Set With $52M Floor Bid](https://www.coininsider.org/news/poolin-auction-set-with-52m-floor-bid/) — CoinInsider, August 2026\n- [Poolin Files Chapter 11 With $52M Asset Sale and 163M in Debt](https://www.tftc.io/poolin-chapter-11-bankruptcy-52-million-west-texas-sale) — TFTC, July 24, 2026\n- [Poolin Bankruptcy: The End of Mining as a Business](https://d-central.tech/poolin-bankruptcy-end-of-mining-as-a-business/) — D-Central, July 25, 2026\n- [Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process](https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/) — CryptoNomist, August 21, 2026\n- [Case Information — Poolin Technology](https://veritaglobal.net/poolin) — Verita Global (case administrator)\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Poolin Auction Set With $52M Floor Bid",
+          "url": "https://www.coininsider.org/news/poolin-auction-set-with-52m-floor-bid/",
+          "note": "CoinInsider, August 2026"
+        },
+        {
+          "title": "Poolin Files Chapter 11 With $52M Asset Sale and 163M in Debt",
+          "url": "https://www.tftc.io/poolin-chapter-11-bankruptcy-52-million-west-texas-sale",
+          "note": "TFTC, July 24, 2026"
+        },
+        {
+          "title": "Poolin Bankruptcy: The End of Mining as a Business",
+          "url": "https://d-central.tech/poolin-bankruptcy-end-of-mining-as-a-business/",
+          "note": "D-Central, July 25, 2026"
+        },
+        {
+          "title": "Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process",
+          "url": "https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/",
+          "note": "CryptoNomist, August 21, 2026"
+        },
+        {
+          "title": "Case Information — Poolin Technology",
+          "url": "https://veritaglobal.net/poolin",
+          "note": "Verita Global (case administrator)"
+        }
+      ],
+      "activity": {
+        "filings": 5,
+        "articles": 0,
+        "latest": "2026-09-09"
+      }
+    },
+    {
       "date": "2026-09-09",
       "updated": "2026-09-09",
       "lede": "On September 9, the Poolin docket recorded a Certification of No Objection at Dkt. 208, paired with supplemental declarations at Dkts. 206 and 207 filed the day prior — together, these resolve the contested posture of the Official Committee of Unsecured Creditors' retention application for Pachulski Stang Ziehl & Jones LLP.",
