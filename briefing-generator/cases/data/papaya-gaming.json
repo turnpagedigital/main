@@ -2,7 +2,7 @@
   "case": {
     "slug": "papaya-gaming",
     "display_name": "Papaya Gaming",
-    "case_name": "Papaya Gaming Ltd.",
+    "case_name": "Oriel Bachar and Papaya Gaming Ltd.",
     "court": "United States Bankruptcy Court, D. Delaware",
     "case_number": "26-11217",
     "judge": "Mary F. Walrath",
@@ -14,14 +14,34 @@
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
-    "docket_url": "https://www.courtlistener.com/docket/73709081/papaya-gaming-ltd/",
+    "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-09-10",
-    "meta_fetched_at": "2026-09-10T12:22:15.177945+00:00",
-    "fetched_at": "2026-09-10T18:31:31.874186+00:00",
+    "meta_fetched_at": "2026-09-10T21:40:56.306166+00:00",
+    "fetched_at": "2026-09-10T21:40:56.306166+00:00",
     "as_of": "Sep 10, 2026",
     "backfilled": true,
-    "new_in_72h": 6,
+    "new_in_72h": 8,
     "recent": [
+      {
+        "entry_number": 101,
+        "date_filed": "2026-09-10",
+        "time_filed": "16:30:47",
+        "date_display": "Sep 10, 2026",
+        "description": "Motion to File Under Seal Filed by Skillz Platform Inc.. Objections due by 9/24/2026. (Attachments: (1) Exhibit) (Neiburg, Michael)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.101.0.pdf"
+      },
+      {
+        "entry_number": 100,
+        "date_filed": "2026-09-10",
+        "time_filed": "16:17:27",
+        "date_display": "Sep 10, 2026",
+        "description": "Order Shortening Notice and Scheduling the Motion for Protective Order and Status Conference (Related Doc [99]) Signed on 9/10/2026. (LMC)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.100.0.pdf"
+      },
       {
         "entry_number": 99,
         "date_filed": "2026-09-10",
@@ -31,29 +51,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.99.0.pdf"
-      },
-      {
-        "entry_number": 98,
-        "date_filed": "2026-09-10",
-        "time_filed": "02:08:39",
-        "date_display": "Sep 10, 2026",
-        "description": "Emergency Motion for Protective Order and Status Conference Filed by Oriel Bachar. Objections due by 9/10/2026. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D) (Malow, Jennifer) (Entered: 09/10/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.98.0.pdf"
-      },
-      {
-        "entry_number": 97,
-        "date_filed": "2026-09-09",
-        "time_filed": "14:29:07",
-        "date_display": "Sep 9, 2026",
-        "description": "Order Approving Motion for Admission pro hac vice of Tianjiao Li (Related Doc # 96) Signed on 9/9/2026. (LMC) (Entered: 09/09/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.97.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 101,
+        "date_filed": "2026-09-10",
+        "time_filed": "16:30:47",
+        "date_display": "Sep 10, 2026",
+        "description": "Motion to File Under Seal Filed by Skillz Platform Inc.. Objections due by 9/24/2026. (Attachments: (1) Exhibit) (Neiburg, Michael)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.101.0.pdf"
+      },
+      {
+        "entry_number": 100,
+        "date_filed": "2026-09-10",
+        "time_filed": "16:17:27",
+        "date_display": "Sep 10, 2026",
+        "description": "Order Shortening Notice and Scheduling the Motion for Protective Order and Status Conference (Related Doc [99]) Signed on 9/10/2026. (LMC)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.100.0.pdf"
+      },
       {
         "entry_number": 99,
         "date_filed": "2026-09-10",
