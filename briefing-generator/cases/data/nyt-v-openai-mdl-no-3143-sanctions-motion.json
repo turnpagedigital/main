@@ -18909,6 +18909,20 @@
   "claims_administrator": null,
   "coverage": [
     {
+      "headline": "NY Times Rips Trump's DOJ For Backing AI Companies In Class Action Suit",
+      "url": "https://deadline.com/2026/09/new-york-times-justice-department-openai-1237066310/",
+      "source": "Deadline",
+      "date": "2026-09-03",
+      "summary": "The New York Times publicly criticized the DOJ's statement of interest backing OpenAI's fair-use defense. Separately, the article reports that Judge Stein ordered the Times to show cause by September 11, 2026 why its case should not be stayed pending summary judgment rulings in other MDL cases, with defendants' response due September 18."
+    },
+    {
+      "headline": "DOJ Backs OpenAI Fair Use Claim in AI Copyright Fight; Creators Must Try Congress",
+      "url": "https://www.techtimes.com/articles/326401/20260903/doj-backs-openai-fair-use-claim-ai-copyright-fight-creators-must-try-congress.htm",
+      "source": "TechTimes",
+      "date": "2026-09-03",
+      "summary": "Detailed analysis of the DOJ's September 1 statement of interest supporting OpenAI's fair-use defense, noting it signals creators seeking AI training compensation must pursue relief from Congress or at the licensing table rather than in court. The piece also covers Judge Stein's August 31 show-cause order requiring the Times to justify by September 11 why its case should not be stayed."
+    },
+    {
       "headline": "Trump Administration Backs OpenAI in NY Times Copyright Suit",
       "url": "https://news.bloomberglaw.com/ip-law/trump-administration-backs-openai-in-ny-times-copyright-suit",
       "source": "Bloomberg Law",
@@ -19021,5 +19035,14 @@
       "summary": "Law360 reported on the earlier, January 2026 iteration of the discovery fight, detailing allegations that OpenAI failed to properly maintain or produce ChatGPT output logs in the MDL. This reporting laid the groundwork for the broader July sanctions motion."
     }
   ],
-  "events": []
+  "events": [
+    {
+      "title": "NYT Show-Cause Response Due: Times Must Explain Why Case Should Not Be Stayed",
+      "date": "2026-09-11",
+      "time": "",
+      "kind": "Deadline",
+      "url": "https://deadline.com/2026/09/new-york-times-justice-department-openai-1237066310/",
+      "source": "U.S. District Court, S.D.N.Y. (Judge Sidney H. Stein)"
+    }
+  ]
 }
