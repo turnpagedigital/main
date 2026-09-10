@@ -2,7 +2,7 @@
   "case": {
     "slug": "papaya-gaming",
     "display_name": "Papaya Gaming",
-    "case_name": "Oriel Bachar and Papaya Gaming Ltd.",
+    "case_name": "Papaya Gaming Ltd.",
     "court": "United States Bankruptcy Court, D. Delaware",
     "case_number": "26-11217",
     "judge": "Mary F. Walrath",
@@ -14,10 +14,10 @@
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
-    "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
+    "docket_url": "https://www.courtlistener.com/docket/73709081/papaya-gaming-ltd/",
     "date_last_filing": "2026-09-10",
-    "meta_fetched_at": "2026-09-10T09:48:46.712466+00:00",
-    "fetched_at": "2026-09-10T09:48:46.712466+00:00",
+    "meta_fetched_at": "2026-09-10T12:22:15.177945+00:00",
+    "fetched_at": "2026-09-10T12:22:15.177945+00:00",
     "as_of": "Sep 10, 2026",
     "backfilled": true,
     "new_in_72h": 6,
@@ -27,7 +27,7 @@
         "date_filed": "2026-09-10",
         "time_filed": "02:12:23",
         "date_display": "Sep 10, 2026",
-        "description": "Motion to Shorten (related document(s)[98]) Filed by Oriel Bachar. (Attachments: (1) Proposed Form of Order) (Malow, Jennifer)",
+        "description": "Motion to Shorten Notice with Respect to Emergency Motion of Foreign Representative for a Protective Order and Status Conference (related document(s)98) Filed by Oriel Bachar. (Attachments: # 1 Proposed Form of Order) (Malow, Jennifer) (Entered: 09/10/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.99.0.pdf"
@@ -37,7 +37,7 @@
         "date_filed": "2026-09-10",
         "time_filed": "02:08:39",
         "date_display": "Sep 10, 2026",
-        "description": "Emergency Motion for Protective Order Filed by Oriel Bachar. Objections due by 9/10/2026. (Attachments: (1) Exhibit A (2) Exhibit B (3) Exhibit C (4) Exhibit D) (Malow, Jennifer)",
+        "description": "Emergency Motion for Protective Order and Status Conference Filed by Oriel Bachar. Objections due by 9/10/2026. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D) (Malow, Jennifer) (Entered: 09/10/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.98.0.pdf"
@@ -47,7 +47,7 @@
         "date_filed": "2026-09-09",
         "time_filed": "14:29:07",
         "date_display": "Sep 9, 2026",
-        "description": "Order Approving Motion for Admission pro hac vice of Tianjiao Li (Related Doc [96]) Signed on 9/9/2026. (LMC)",
+        "description": "Order Approving Motion for Admission pro hac vice of Tianjiao Li (Related Doc # 96) Signed on 9/9/2026. (LMC) (Entered: 09/09/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.97.0.pdf"
@@ -59,7 +59,7 @@
         "date_filed": "2026-09-10",
         "time_filed": "02:12:23",
         "date_display": "Sep 10, 2026",
-        "description": "Motion to Shorten (related document(s)[98]) Filed by Oriel Bachar. (Attachments: (1) Proposed Form of Order) (Malow, Jennifer)",
+        "description": "Motion to Shorten Notice with Respect to Emergency Motion of Foreign Representative for a Protective Order and Status Conference (related document(s)98) Filed by Oriel Bachar. (Attachments: # 1 Proposed Form of Order) (Malow, Jennifer) (Entered: 09/10/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.99.0.pdf"
@@ -69,7 +69,7 @@
         "date_filed": "2026-09-10",
         "time_filed": "02:08:39",
         "date_display": "Sep 10, 2026",
-        "description": "Emergency Motion for Protective Order Filed by Oriel Bachar. Objections due by 9/10/2026. (Attachments: (1) Exhibit A (2) Exhibit B (3) Exhibit C (4) Exhibit D) (Malow, Jennifer)",
+        "description": "Emergency Motion for Protective Order and Status Conference Filed by Oriel Bachar. Objections due by 9/10/2026. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D) (Malow, Jennifer) (Entered: 09/10/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.98.0.pdf"
@@ -79,7 +79,7 @@
         "date_filed": "2026-09-09",
         "time_filed": "14:29:07",
         "date_display": "Sep 9, 2026",
-        "description": "Order Approving Motion for Admission pro hac vice of Tianjiao Li (Related Doc [96]) Signed on 9/9/2026. (LMC)",
+        "description": "Order Approving Motion for Admission pro hac vice of Tianjiao Li (Related Doc # 96) Signed on 9/9/2026. (LMC) (Entered: 09/09/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.97.0.pdf"
@@ -89,7 +89,7 @@
         "date_filed": "2026-09-09",
         "time_filed": "13:53:41",
         "date_display": "Sep 9, 2026",
-        "description": "Motion to Appear pro hac vice . Receipt Number 5060944, Filed by Skillz Platform Inc.. (Beach, Sean)",
+        "description": "Motion to Appear pro hac vice of Tianjiao Li of Latham & Watkins LLP. Receipt Number 5060944, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 09/09/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.96.0.pdf"
@@ -99,7 +99,7 @@
         "date_filed": "2026-09-08",
         "time_filed": "",
         "date_display": "Sep 8, 2026",
-        "description": "[SEALED] Letter (related document(s)[93]) Filed by Oriel Bachar. (Malow, Jennifer)",
+        "description": "[SEALED] Letter Regarding Response to Skillz' September 4, 2026 Letter to the U.S. Trustee (related document(s)93) Filed by Oriel Bachar. (Malow, Jennifer) (Entered: 09/08/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
