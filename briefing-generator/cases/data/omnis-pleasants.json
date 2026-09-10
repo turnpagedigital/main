@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-09-09",
-    "meta_fetched_at": "2026-09-10T00:18:51.886990+00:00",
-    "fetched_at": "2026-09-10T09:48:39.692580+00:00",
+    "meta_fetched_at": "2026-09-10T12:21:31.460894+00:00",
+    "fetched_at": "2026-09-10T12:21:31.460894+00:00",
     "as_of": "Sep 10, 2026",
-    "backfilled": true,
+    "backfilled": false,
     "new_in_72h": 7,
     "recent": [
       {
@@ -2863,7 +2863,8 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73673073&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": {
     "name": "Stretto",
