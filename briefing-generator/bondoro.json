@@ -1,6 +1,21 @@
 {
   "items": [
     {
+      "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
+      "kind": "Asset Sale",
+      "source": "Daily DAC",
+      "source_id": "daily-dac-article",
+      "show": "news",
+      "title": "PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Recovery Ally, LLC",
+      "url": "https://www.dailydac.com/public-notice-of-ucc-article-9-sale-recovery-ally-llc/?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-recovery-ally-llc",
+      "date": "2026-09-11",
+      "published_at": "2026-09-11T13:26:39+00:00",
+      "excerpt": "PLEASE TAKE NOTICE THAT, pursuant to Section 9-610 of the Uniform Commercial Code, Pine Valley Equities LLC (“Secured Party”) will sell all right, title and interest of the debtor listed below (the “Debtor”) in and to the and properties listed below (the “Collateral”) in public as follows: Day and D",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
       "id": "88-industrial-park-road-blvd-filing-alert",
       "kind": "alert",
       "source": "Bondoro",
@@ -11,6 +26,21 @@
       "date": "2026-09-10",
       "published_at": "2026-09-10T16:06:34+00:00",
       "excerpt": "88 Industrial Park Road Blvd Files Chapter 11 in District of New Jersey",
+      "case_slug": null,
+      "group_name": null,
+      "theme_slug": null
+    },
+    {
+      "id": "liv-golf",
+      "kind": "summaries",
+      "source": "Bondoro",
+      "source_id": "bondoro-summaries",
+      "show": "both",
+      "title": "Case Summary: LIV Golf Chapter 11",
+      "url": "https://bondoro.com/liv-golf/",
+      "date": "2026-09-10",
+      "published_at": "2026-09-10T17:59:52+00:00",
+      "excerpt": "LIV Golf filed for Chapter 11 after PIF ended equity funding for the loss-making league, entering with an RSA for a $300 million BC Partners-anchored investment in a restructured \"LIV 2.0,\" with the cases funded by a $49.6 million PIF DIP facility and an orderly wind-down as the alternative.",
       "case_slug": null,
       "group_name": null,
       "theme_slug": null
@@ -1093,7 +1123,8 @@
       "excerpt": "PHILLIPS TOTAL CARE PHARMACY, INC. BANKRUPTCY SALE October 9, 2026 PUBLIC NOTICE is hereby given that Phillips Total Care Pharmacy, Inc. (“Company”) will offer a 100% shareholder interest in the Company for sale at auction on Thursday, October 9, 2026, at 9:00 a.m. Central Time. I. AUCTION PROCEDURE",
       "case_slug": null,
       "group_name": null,
-      "theme_slug": null
+      "theme_slug": null,
+      "archived": true
     },
     {
       "id": "lourdes-university-filing-alert",
