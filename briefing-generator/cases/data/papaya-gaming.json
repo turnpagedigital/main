@@ -2,7 +2,7 @@
   "case": {
     "slug": "papaya-gaming",
     "display_name": "Papaya Gaming",
-    "case_name": "Oriel Bachar and Papaya Gaming Ltd.",
+    "case_name": "Papaya Gaming Ltd.",
     "court": "United States Bankruptcy Court, D. Delaware",
     "case_number": "26-11217",
     "judge": "Mary F. Walrath",
@@ -14,52 +14,72 @@
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
-    "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
-    "date_last_filing": "2026-09-10",
-    "meta_fetched_at": "2026-09-11T12:20:51.507169+00:00",
-    "fetched_at": "2026-09-11T18:37:56.525733+00:00",
+    "docket_url": "https://www.courtlistener.com/docket/73709081/papaya-gaming-ltd/",
+    "date_last_filing": "2026-09-11",
+    "meta_fetched_at": "2026-09-11T21:45:46.119755+00:00",
+    "fetched_at": "2026-09-11T21:45:46.119755+00:00",
     "as_of": "Sep 11, 2026",
     "backfilled": true,
-    "new_in_72h": 8,
+    "new_in_72h": 10,
     "recent": [
+      {
+        "entry_number": 105,
+        "date_filed": "2026-09-11",
+        "time_filed": "15:48:06",
+        "date_display": "Sep 11, 2026",
+        "description": "Status Report Filed by Oriel Bachar. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Malow, Jennifer) (Entered: 09/11/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.105.0.pdf"
+      },
+      {
+        "entry_number": 104,
+        "date_filed": "2026-09-11",
+        "time_filed": "15:05:02",
+        "date_display": "Sep 11, 2026",
+        "description": "Motion to File Under Seal// Motion of the Foreign Representative for Entry of an Order to File his Letter Dated September 8, 2026 Under Seal Filed by Oriel Bachar. (Attachments: # 1 Exhibit A - Proposed Order) (Malow, Jennifer) (Entered: 09/11/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.104.0.pdf"
+      },
       {
         "entry_number": 103,
         "date_filed": "2026-09-10",
         "time_filed": "21:54:05",
         "date_display": "Sep 10, 2026",
-        "description": "Amended Notice of Hearing (related document(s)[102]). Filed by Oriel Bachar. Hearing scheduled for 9/14/2026 at 10:30 AM at Virtual Hearing: Refer to Notice of Zoom Hearing. Objections due by 9/11/2026. (related document(s)[102]) (Malow, Jennifer)",
+        "description": "Amended Notice of Hearing on September 14, 2026, at 10:30 a.m. (ET) (related document(s)102). Filed by Oriel Bachar. Hearing scheduled for 9/14/2026 at 10:30 AM at Virtual Hearing: Refer to Notice of Zoom Hearing. Objections due by 9/11/2026. (related document(s)102) (Malow, Jennifer) (Entered: 09/10/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.103.0.pdf"
-      },
-      {
-        "entry_number": 102,
-        "date_filed": "2026-09-10",
-        "time_filed": "21:32:28",
-        "date_display": "Sep 10, 2026",
-        "description": "Notice of Hearing (related document(s)[98], [99], [100]) Filed by Oriel Bachar. Hearing scheduled for 9/14/2026 at 10:00 AM at Virtual Hearing: Refer to Notice of Zoom Hearing. Objections due by 9/11/2026. (Malow, Jennifer)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.102.0.pdf"
-      },
-      {
-        "entry_number": 101,
-        "date_filed": "2026-09-10",
-        "time_filed": "16:30:47",
-        "date_display": "Sep 10, 2026",
-        "description": "Motion to File Under Seal Filed by Skillz Platform Inc.. Objections due by 9/24/2026. (Attachments: (1) Exhibit) (Neiburg, Michael)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.101.0.pdf"
       }
     ],
     "entries": [
       {
+        "entry_number": 105,
+        "date_filed": "2026-09-11",
+        "time_filed": "15:48:06",
+        "date_display": "Sep 11, 2026",
+        "description": "Status Report Filed by Oriel Bachar. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Malow, Jennifer) (Entered: 09/11/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.105.0.pdf"
+      },
+      {
+        "entry_number": 104,
+        "date_filed": "2026-09-11",
+        "time_filed": "15:05:02",
+        "date_display": "Sep 11, 2026",
+        "description": "Motion to File Under Seal// Motion of the Foreign Representative for Entry of an Order to File his Letter Dated September 8, 2026 Under Seal Filed by Oriel Bachar. (Attachments: # 1 Exhibit A - Proposed Order) (Malow, Jennifer) (Entered: 09/11/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.104.0.pdf"
+      },
+      {
         "entry_number": 103,
         "date_filed": "2026-09-10",
         "time_filed": "21:54:05",
         "date_display": "Sep 10, 2026",
-        "description": "Amended Notice of Hearing (related document(s)[102]). Filed by Oriel Bachar. Hearing scheduled for 9/14/2026 at 10:30 AM at Virtual Hearing: Refer to Notice of Zoom Hearing. Objections due by 9/11/2026. (related document(s)[102]) (Malow, Jennifer)",
+        "description": "Amended Notice of Hearing on September 14, 2026, at 10:30 a.m. (ET) (related document(s)102). Filed by Oriel Bachar. Hearing scheduled for 9/14/2026 at 10:30 AM at Virtual Hearing: Refer to Notice of Zoom Hearing. Objections due by 9/11/2026. (related document(s)102) (Malow, Jennifer) (Entered: 09/10/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.103.0.pdf"
@@ -69,7 +89,7 @@
         "date_filed": "2026-09-10",
         "time_filed": "21:32:28",
         "date_display": "Sep 10, 2026",
-        "description": "Notice of Hearing (related document(s)[98], [99], [100]) Filed by Oriel Bachar. Hearing scheduled for 9/14/2026 at 10:00 AM at Virtual Hearing: Refer to Notice of Zoom Hearing. Objections due by 9/11/2026. (Malow, Jennifer)",
+        "description": "Notice of Hearing on September 14, 2026 at 10:00 a.m. (ET) (related document(s)98, 99, 100) Filed by Oriel Bachar. Hearing scheduled for 9/14/2026 at 10:00 AM at Virtual Hearing: Refer to Notice of Zoom Hearing. Objections due by 9/11/2026. (Malow, Jennifer) (Entered: 09/10/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.102.0.pdf"
@@ -79,7 +99,7 @@
         "date_filed": "2026-09-10",
         "time_filed": "16:30:47",
         "date_display": "Sep 10, 2026",
-        "description": "Motion to File Under Seal Filed by Skillz Platform Inc.. Objections due by 9/24/2026. (Attachments: (1) Exhibit) (Neiburg, Michael)",
+        "description": "Motion to File Under Seal- Motion for Entry of an Order (I) Authorizing Skillz Platform Inc. to File September 4, 2026 Letter Under Seal and (II) Granting Related Relief Filed by Skillz Platform Inc.. Objections due by 9/24/2026. (Attachments: # 1 Exhibit) (Neiburg, Michael) (Entered: 09/10/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.101.0.pdf"
@@ -89,7 +109,7 @@
         "date_filed": "2026-09-10",
         "time_filed": "16:17:27",
         "date_display": "Sep 10, 2026",
-        "description": "Order Shortening Notice and Scheduling the Motion for Protective Order and Status Conference (Related Doc [99]) Signed on 9/10/2026. (LMC)",
+        "description": "Order Shortening Notice and Scheduling the Motion for Protective Order and Status Conference (Related Doc # 99) Signed on 9/10/2026. (LMC) (Entered: 09/10/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.100.0.pdf"
@@ -159,7 +179,7 @@
         "date_filed": "2026-09-07",
         "time_filed": "23:24:42",
         "date_display": "Sep 7, 2026",
-        "description": "Notice of Service Filed by Oriel Bachar. (Attachments: (1) Service List) (Malow, Jennifer)",
+        "description": "Notice of Service of The Foreign Representative's First Supplemental Responses and Objections to Skillz Platform Inc.'s First Set of Interrogatories to Debtors in Connection with Chapter 15 Petition for Recognition Filed by Oriel Bachar. (Attachments: # 1 Service List) (Malow, Jennifer) (Entered: 09/07/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.94.0.pdf"
@@ -169,7 +189,7 @@
         "date_filed": "2026-09-04",
         "time_filed": "",
         "date_display": "Sep 4, 2026",
-        "description": "[SEALED] Letter Filed by Skillz Platform Inc.. (Neiburg, Michael)",
+        "description": "[SEALED] Letter to the United States Trustee Filed by Skillz Platform Inc.. (Neiburg, Michael) (Entered: 09/04/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -189,7 +209,7 @@
         "date_filed": "2026-09-02",
         "time_filed": "13:06:32",
         "date_display": "Sep 2, 2026",
-        "description": "Order Granting, in Part, Skillz Platform Inc.'s Motion to Compel Production of Documents and Witness for Deposition (Related Doc [73], [78], [91]) Signed on 9/2/2026. (LMC)",
+        "description": "Order Granting, in Part, Skillz Platform Inc.'s Motion to Compel Production of Documents and Witness for Deposition (Related Doc # 73, 78, 91) Signed on 9/2/2026. (LMC) (Entered: 09/02/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.92.0.pdf"
@@ -199,7 +219,7 @@
         "date_filed": "2026-09-01",
         "time_filed": "16:29:30",
         "date_display": "Sep 1, 2026",
-        "description": "Certification of Counsel (related document(s)[73]) Filed by Skillz Platform Inc.. (Neiburg, Michael)",
+        "description": "Certification of Counsel Regarding Proposed Order Granting, in Part, Skillz Platform Inc.'s Motion to Compel Production of Documents and Witness for Deposition (related document(s)73) Filed by Skillz Platform Inc.. (Neiburg, Michael) (Entered: 09/01/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.91.0.pdf"
