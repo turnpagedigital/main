@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72505829/bmg-rights-management-us-llc-v-anthropic-pbc/",
-    "date_last_filing": "2026-09-03",
-    "meta_fetched_at": "2026-09-05T00:11:47.626269+00:00",
-    "fetched_at": "2026-09-10T17:36:27.882945+00:00",
-    "as_of": "Sep 10, 2026",
+    "date_last_filing": "2026-09-10",
+    "meta_fetched_at": "2026-09-11T04:50:06.490223+00:00",
+    "fetched_at": "2026-09-11T04:50:06.490223+00:00",
+    "as_of": "Sep 11, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 44,
+        "date_filed": "2026-09-10",
+        "time_filed": "20:53:59",
+        "date_display": "Sep 10, 2026",
+        "description": "Amended Complaint",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 42,
         "date_filed": "2026-09-03",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 41,
-        "date_filed": "2026-09-02",
-        "time_filed": "",
-        "date_display": "Sep 2, 2026",
-        "description": "Minute Entry for proceedings held before Judge Eumi K. Lee: Status Conference held on 9/2/2026. The Court adopted its tentative ruling regarding phased discovery. The Court ordered the parties to meet and confer and file a proposed coordination and case management order by 9/23/2026. The Court ordered the parties to meet and confer regarding discovery relating to book scanning and allowed each side to file an issue statement of no more than three (3) pages by 9/11/2026. The Court ordered the parties to meet and confer regarding which of the pending Daubert motions must be addressed in connection with the pending motions for summary judgment. The parties are to notify the Court by filing a joint status report or by emailing the Courtroom Deputy by 9/11/2026. Plaintiffs' Attorneys: Matthew Oppenheim, Corey Miller, Michelle Gomez-Reichman; Robert Jacobs, Nathaniel Bach, Prana Topper, Evan…",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 44,
+        "date_filed": "2026-09-10",
+        "time_filed": "20:53:59",
+        "date_display": "Sep 10, 2026",
+        "description": "Amended Complaint",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 42,
         "date_filed": "2026-09-03",
