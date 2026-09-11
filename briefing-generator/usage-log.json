@@ -1799,6 +1799,27 @@
       "tokens_out": 13259,
       "ok": true,
       "model": "claude-sonnet-4-6"
+    },
+    {
+      "ts": "2026-09-11T17:41:54Z",
+      "date": "2026-09-11",
+      "task": "docket-sync",
+      "provider": "courtlistener",
+      "requests": 23,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ok": true
+    },
+    {
+      "ts": "2026-09-11T17:43:43Z",
+      "date": "2026-09-11",
+      "task": "case-briefings",
+      "provider": "anthropic",
+      "requests": 2,
+      "tokens_in": 6892,
+      "tokens_out": 3495,
+      "ok": true,
+      "model": "claude-sonnet-4-6"
     }
   ]
 }

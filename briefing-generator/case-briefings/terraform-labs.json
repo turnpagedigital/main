@@ -3,6 +3,39 @@
   "case_name": "Terraform Labs",
   "items": [
     {
+      "date": "2026-09-11",
+      "updated": "2026-09-11",
+      "lede": "Today, an objection was filed on the Terraform Labs docket as Dkt. 1332, the first substantive-category filing since the $45.5 million Luna Foundation Guard/Avalanche settlement order in August and the first objection to appear in the docket within this reporting stretch. The full text of Dkt. 1332 has not been pulled into the case record and no press coverage has confirmed its movant, target, or relief sought…",
+      "body_md": "Today, an objection was filed on the Terraform Labs docket as Dkt. 1332, the first substantive-category filing since the $45.5 million Luna Foundation Guard/Avalanche settlement order in August and the first objection to appear in the docket within this reporting stretch. The full text of Dkt. 1332 has not been pulled into the case record and no press coverage has confirmed its movant, target, or relief sought; accordingly, its precise effect on recovery posture cannot be stated with certainty. What confirmation would look like: the document appearing in PACER or the claims agent's docket at Kroll, identifying the objecting party, the claim or motion being challenged, and the dollar amount at issue. Until then, the filing must be treated as substantive-and-potentially-important — classification up per the uncertainty rule — but its weight cannot be assessed. Dkts. 1329 and 1330 (exhibits filed September 3, previously covered) may bear on the subject matter of this objection given the sequential proximity, though that connection is inferential absent the document text.\n\nThe broader recovery-posture variables from the prior briefing remain unresolved. The SEC's Fair Fund distribution plan for the $123.1 million pool funded by Tai Mo Shan's consent-order payment has produced no public confirmation that a plan was filed by the August 20 deadline reported by __[CryptoSlate](https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/)__; a prior SEC administrative order had already extended the submission deadline once (to February 20, 2026) before the August 20 date was reported, reflecting the agency's stated need to complete fund administrator selection and coordinate distribution methodology with the bankruptcy estate. Until the SEC publishes a proposed plan of distribution and opens a comment period, the $123.1 million remains locked and outside the estate's direct control. The plan administrator's authorization motion (Dkt. 1321, filed August 19) likewise shows no corresponding order on the docket, leaving its scope unresolved. \nMore than two years into the chapter 11, the Wind Down Trust had distributed nothing to plan creditors as of the quarter ending March 31, 2026, while the plan administrator continued reconciling more than 16,000 crypto loss claims and pressing the $4 billion lawsuit against Jump Trading.\n\n\nOn the Jump Trading litigation front, the protective-order dispute before Judge Shannon — arising from Jump's argument that the May 1, 2026 amended complaint improperly relied on documents produced under the bankruptcy protective order — remains the gating event for the stayed Illinois deadlines. \nOn May 29, 2026, the plan administrator moved to clarify or modify the protective order to authorize use of the \"Jump Reproduced Documents\" and de-designate four \"Highly Confidential\" documents relied on in the amended complaint.\n \nJump's June 8, 2026 objection argues the relief would reward a protective-order violation; the dispute was set for hearing in June 2026.\n No public resolution of that dispute has appeared since. Separately, the investor securities class action against Jump in the Northern District of California (where Jump's motion to dismiss was denied September 3 per __[Law360](https://www.law360.com/securities/articles/2521162)__) continues as a parallel pressure vector. The next fixed milestone is December 31, 2026 — the court-extended wind-down deadline — with resolution of the protective-order dispute before Judge Shannon the most proximate gating event for the Jump litigation and, consequently, for Class 5 recovery trajectory.\n\n## Sources\n\n- [SEC faces Aug. 20 deadline to unlock $123 million recovery fund for Terra investors](https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/) — CryptoSlate, August 20, 2026\n- [Jump Trading Must Face Terraform Stablecoin Fraud Claims](https://www.law360.com/securities/articles/2521162) — Law360, September 3, 2026\n- [Terraform Labs: $4.47B SEC Settlement Shapes Liquidating Plan](https://elevenflo.com/blog/terraform-labs-bankruptcy) — ElevenFlo, June 17, 2026\n- [SEC v. Terraform Labs – Fair Fund](https://www.sec.gov/enforcement-litigation/distributions-harmed-investors/sec-v-terraform-labs-pte-ltd-do-hyeong-kwon-no-23-cv-1346-jsr-sdny) — SEC.gov\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "SEC faces Aug. 20 deadline to unlock $123 million recovery fund for Terra investors",
+          "url": "https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/",
+          "note": "CryptoSlate, August 20, 2026"
+        },
+        {
+          "title": "Jump Trading Must Face Terraform Stablecoin Fraud Claims",
+          "url": "https://www.law360.com/securities/articles/2521162",
+          "note": "Law360, September 3, 2026"
+        },
+        {
+          "title": "Terraform Labs: $4.47B SEC Settlement Shapes Liquidating Plan",
+          "url": "https://elevenflo.com/blog/terraform-labs-bankruptcy",
+          "note": "ElevenFlo, June 17, 2026"
+        },
+        {
+          "title": "SEC v. Terraform Labs – Fair Fund",
+          "url": "https://www.sec.gov/enforcement-litigation/distributions-harmed-investors/sec-v-terraform-labs-pte-ltd-do-hyeong-kwon-no-23-cv-1346-jsr-sdny",
+          "note": "SEC.gov"
+        }
+      ],
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-09-11"
+      }
+    },
+    {
       "date": "2026-09-09",
       "updated": "2026-09-09",
       "lede": "On September 8, the Terraform Labs docket recorded a single Certificate of Mailing (Dkt. 1331) — ministerial filing infrastructure, no bearing on recovery or timing.",
