@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
     "date_last_filing": "2026-09-11",
-    "meta_fetched_at": "2026-09-11T17:39:27.014987+00:00",
-    "fetched_at": "2026-09-11T18:40:44.289277+00:00",
+    "meta_fetched_at": "2026-09-11T21:48:58.735082+00:00",
+    "fetched_at": "2026-09-11T21:48:58.735082+00:00",
     "as_of": "Sep 11, 2026",
     "backfilled": true,
-    "new_in_72h": 14,
+    "new_in_72h": 15,
     "recent": [
+      {
+        "entry_number": 1939,
+        "date_filed": "2026-09-11",
+        "time_filed": "14:43:54",
+        "date_display": "Sep 11, 2026",
+        "description": "RESPONSE TO ORDER TO SHOW CAUSE re: 1678 Order to Show Cause,. Document filed by Zvi Bodie, Lion Den, Inc., Dana Loewy, Alan J. Marcus, Kevin T. Patton, Kenneth S. Saladin, Michael Sullivan. (Attachments: # 1 Affidavit /Declaration of Kim Pawlak).(Slarskey, David) (Entered: 09/11/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1939.0.pdf"
+      },
       {
         "entry_number": 1938,
         "date_filed": "2026-09-11",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-09-11",
-        "time_filed": "",
-        "date_display": "Sep 11, 2026",
-        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 1938 MOTION for Jim W. Ko to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number ANYSDC-33420098. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (rju)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1939,
+        "date_filed": "2026-09-11",
+        "time_filed": "14:43:54",
+        "date_display": "Sep 11, 2026",
+        "description": "RESPONSE TO ORDER TO SHOW CAUSE re: 1678 Order to Show Cause,. Document filed by Zvi Bodie, Lion Den, Inc., Dana Loewy, Alan J. Marcus, Kevin T. Patton, Kenneth S. Saladin, Michael Sullivan. (Attachments: # 1 Affidavit /Declaration of Kim Pawlak).(Slarskey, David) (Entered: 09/11/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1939.0.pdf"
+      },
       {
         "entry_number": 1938,
         "date_filed": "2026-09-11",
