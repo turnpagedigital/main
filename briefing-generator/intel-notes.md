@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-09-09 04:42 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-09-11 00:35 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -201,6 +201,14 @@ Interesting - this appears to be a separate Tokenholder suit against Tilton
 ### (no docket number) — 2026-09-03
 
 > Filing Alert: Geospan Corporation Chapter 11 — Geospan Corporation Files Chapter 11 in Southern District of California
+
+### (no docket number) — 2026-09-01
+
+> Filing Alert: WC Galleria Oaks Center Chapter 11 — WC Galleria Oaks Center Files Chapter 11 in Western District of Texas
+
+### (no docket number) — 2026-09-01
+
+> Filing Alert: Mike's Heating Air Conditioning & Electrical Chapter 11 — Mike's Heating Air Conditioning & Electrical Files Chapter 11 in Eastern District of North Carolina
 
 ### (no docket number) — 2026-08-17
 
