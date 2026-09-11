@@ -1,6 +1,89 @@
 {
-  "generated_at": "2026-09-10T17:37:47+00:00",
+  "generated_at": "2026-09-11T17:41:55+00:00",
   "items": [
+    {
+      "slug": "terraform-labs",
+      "case_name": "Terraform Labs",
+      "short_name": "Terraform Labs",
+      "emoji": "⚖️",
+      "themes": [
+        "crypto-insolvency",
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "Bankr. D. Del.",
+      "status": "active",
+      "signature": "615789b0babb",
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-09-11"
+      },
+      "checked": "2026-09-11T17:41:55+00:00",
+      "date": "2026-09-11",
+      "updated": "2026-09-11",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "Today, an objection was filed on the Terraform Labs docket as Dkt. 1332, the first substantive-category filing since the $45.5 million Luna Foundation Guard/Avalanche settlement order in August and the first objection to appear in the docket within this reporting stretch. The full text of Dkt. 1332 has not been pulled into the case record and no press coverage has confirmed its movant, target, or relief sought…",
+      "body_md": "Today, an objection was filed on the Terraform Labs docket as Dkt. 1332, the first substantive-category filing since the $45.5 million Luna Foundation Guard/Avalanche settlement order in August and the first objection to appear in the docket within this reporting stretch. The full text of Dkt. 1332 has not been pulled into the case record and no press coverage has confirmed its movant, target, or relief sought; accordingly, its precise effect on recovery posture cannot be stated with certainty. What confirmation would look like: the document appearing in PACER or the claims agent's docket at Kroll, identifying the objecting party, the claim or motion being challenged, and the dollar amount at issue. Until then, the filing must be treated as substantive-and-potentially-important — classification up per the uncertainty rule — but its weight cannot be assessed. Dkts. 1329 and 1330 (exhibits filed September 3, previously covered) may bear on the subject matter of this objection given the sequential proximity, though that connection is inferential absent the document text.\n\nThe broader recovery-posture variables from the prior briefing remain unresolved. The SEC's Fair Fund distribution plan for the $123.1 million pool funded by Tai Mo Shan's consent-order payment has produced no public confirmation that a plan was filed by the August 20 deadline reported by __[CryptoSlate](https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/)__; a prior SEC administrative order had already extended the submission deadline once (to February 20, 2026) before the August 20 date was reported, reflecting the agency's stated need to complete fund administrator selection and coordinate distribution methodology with the bankruptcy estate. Until the SEC publishes a proposed plan of distribution and opens a comment period, the $123.1 million remains locked and outside the estate's direct control. The plan administrator's authorization motion (Dkt. 1321, filed August 19) likewise shows no corresponding order on the docket, leaving its scope unresolved. \nMore than two years into the chapter 11, the Wind Down Trust had distributed nothing to plan creditors as of the quarter ending March 31, 2026, while the plan administrator continued reconciling more than 16,000 crypto loss claims and pressing the $4 billion lawsuit against Jump Trading.\n\n\nOn the Jump Trading litigation front, the protective-order dispute before Judge Shannon — arising from Jump's argument that the May 1, 2026 amended complaint improperly relied on documents produced under the bankruptcy protective order — remains the gating event for the stayed Illinois deadlines. \nOn May 29, 2026, the plan administrator moved to clarify or modify the protective order to authorize use of the \"Jump Reproduced Documents\" and de-designate four \"Highly Confidential\" documents relied on in the amended complaint.\n \nJump's June 8, 2026 objection argues the relief would reward a protective-order violation; the dispute was set for hearing in June 2026.\n No public resolution of that dispute has appeared since. Separately, the investor securities class action against Jump in the Northern District of California (where Jump's motion to dismiss was denied September 3 per __[Law360](https://www.law360.com/securities/articles/2521162)__) continues as a parallel pressure vector. The next fixed milestone is December 31, 2026 — the court-extended wind-down deadline — with resolution of the protective-order dispute before Judge Shannon the most proximate gating event for the Jump litigation and, consequently, for Class 5 recovery trajectory.\n\n## Sources\n\n- [SEC faces Aug. 20 deadline to unlock $123 million recovery fund for Terra investors](https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/) — CryptoSlate, August 20, 2026\n- [Jump Trading Must Face Terraform Stablecoin Fraud Claims](https://www.law360.com/securities/articles/2521162) — Law360, September 3, 2026\n- [Terraform Labs: $4.47B SEC Settlement Shapes Liquidating Plan](https://elevenflo.com/blog/terraform-labs-bankruptcy) — ElevenFlo, June 17, 2026\n- [SEC v. Terraform Labs – Fair Fund](https://www.sec.gov/enforcement-litigation/distributions-harmed-investors/sec-v-terraform-labs-pte-ltd-do-hyeong-kwon-no-23-cv-1346-jsr-sdny) — SEC.gov\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "SEC faces Aug. 20 deadline to unlock $123 million recovery fund for Terra investors",
+          "url": "https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/",
+          "note": "CryptoSlate, August 20, 2026"
+        },
+        {
+          "title": "Jump Trading Must Face Terraform Stablecoin Fraud Claims",
+          "url": "https://www.law360.com/securities/articles/2521162",
+          "note": "Law360, September 3, 2026"
+        },
+        {
+          "title": "Terraform Labs: $4.47B SEC Settlement Shapes Liquidating Plan",
+          "url": "https://elevenflo.com/blog/terraform-labs-bankruptcy",
+          "note": "ElevenFlo, June 17, 2026"
+        },
+        {
+          "title": "SEC v. Terraform Labs – Fair Fund",
+          "url": "https://www.sec.gov/enforcement-litigation/distributions-harmed-investors/sec-v-terraform-labs-pte-ltd-do-hyeong-kwon-no-23-cv-1346-jsr-sdny",
+          "note": "SEC.gov"
+        }
+      ]
+    },
+    {
+      "slug": "papaya-gaming",
+      "case_name": "Papaya Gaming",
+      "short_name": "Papaya Gaming",
+      "emoji": "⚖️",
+      "themes": [
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "United States Bankruptcy Court, D. Delaware",
+      "status": "active",
+      "signature": "38cbf9d69192",
+      "activity": {
+        "filings": 8,
+        "articles": 0,
+        "latest": "2026-09-10"
+      },
+      "checked": "2026-09-11T17:41:55+00:00",
+      "date": "2026-09-11",
+      "updated": "2026-09-11",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "On September 10, Judge Walrath signed the Order Shortening Notice (Dkt. 100) granting Bachar's emergency request (Dkt. 99), and the docket immediately followed with a Notice of Hearing (Dkt. 102) scheduling the Emergency Motion for Protective Order and Status Conference (Dkt. 98) for September 14 at 10:00 AM via Zoom — later amended the same day (Dkt. 103) to 10:30 AM. Objections to the emergency protective order…",
+      "body_md": "On September 10, Judge Walrath signed the Order Shortening Notice (Dkt. 100) granting Bachar's emergency request (Dkt. 99), and the docket immediately followed with a Notice of Hearing (Dkt. 102) scheduling the Emergency Motion for Protective Order and Status Conference (Dkt. 98) for September 14 at 10:00 AM via Zoom — later amended the same day (Dkt. 103) to 10:30 AM. Objections to the emergency protective order were due by the close of today, September 11. The court's willingness to grant the motion to shorten notice confirms that Judge Walrath accepted the emergency framing: Bachar secured a hearing on the underlying discovery dispute in four days from the date of filing, compressing what would ordinarily be a multi-week notice cycle.\n\nThe substance at issue on September 14 is the scope and conditions of the compelled production under Judge Walrath's September 2 partial compel order (Dkt. 92). Bachar filed four exhibits with the protective order motion (Dkt. 98), but the motion is not reproduced on the public docket, so the precise relief requested — whether a stay of the compel order, a confidentiality framework, limitations on deposition scope, or some combination — cannot be confirmed from public filings alone. What is clear is that both sides will be before the court in three days on a contested discovery dispute that directly gates Skillz's ability to build its factual record in support of, or in opposition to, recognition of the Israeli proceeding. Also filed September 10: Skillz's Motion to File Under Seal (Dkt. 101), with an objection deadline of September 24 — procedural posture suggests Skillz is attempting to shield materials it has submitted or intends to submit from public disclosure, likely in connection with the same discovery contest, though the substance of the sealed filing is not on the public record.\n\nThe Israeli standstill clock sharpens the stakes materially. \nThe Israeli proceeding remains subject to a temporary 45-day pause on collection efforts beginning August 3, 2026\n, placing expiration on or around September 17 — six days from today — per __[FIRY Inc. investor release, investors.skillz.com](https://investors.skillz.com/news/news-details/2026/Israeli-Court-Says-Papaya-Gaming-Should-Improve-Its-Debt-Settlement-Proposal-to-Repay-730-Million-to-Skillz-a-FIRY-NYSE-FIRY-Company-and-Declines-to-Send-It-to-a-Creditor-Vote/default.aspx)__. No FIRY press release or public reporting has confirmed whether Judge Lushi-Abudi has extended or modified that pause; the arrangement manager, \nAttorney Gil Oren of Arnon, Tadmor-Levy, appointed to work with Papaya and its creditors on a revised proposal\n, per __[PocketGamer.biz](https://www.pocketgamer.biz/israeli-court-rejects-papaya-gaming-debt-plan-to-repay-skillz/)__, has produced no public work product. The September 14 Delaware hearing lands three days before that potential inflection point. If the standstill lapses unextended on September 17, Skillz's collection rights in Israel revive at the precise moment the Delaware court is adjudicating how much Bachar must disclose in U.S. discovery — a convergence that simultaneously expands Skillz's enforcement leverage in Israel and intensifies the protective order fight in Delaware. Any Skillz objection to the protective order filed today will be visible on the docket; its absence would narrow the contested issues before the court on Monday.\n\nThe next concrete milestones are: the objection deadline on Dkt. 98, today, September 11; the September 14, 10:30 AM virtual hearing on the Emergency Motion for Protective Order and Status Conference (Dkt. 98); and the Israeli standstill expiration on or around September 17, with any Tel Aviv court action preceding it the critical variable for Skillz's collection posture on both fronts.\n\n## Sources\n\n- [Israeli Court Says Papaya Gaming Should Improve Its Debt Settlement Proposal to Repay $730 Million to Skillz](https://investors.skillz.com/news/news-details/2026/Israeli-Court-Says-Papaya-Gaming-Should-Improve-Its-Debt-Settlement-Proposal-to-Repay-730-Million-to-Skillz-a-FIRY-NYSE-FIRY-Company-and-Declines-to-Send-It-to-a-Creditor-Vote/default.aspx) — Firy Inc. (NYSE: FIRY), August 31, 2026\n- [Israeli court rejects Papaya Gaming debt plan to repay Skillz](https://www.pocketgamer.biz/israeli-court-rejects-papaya-gaming-debt-plan-to-repay-skillz/) — PocketGamer.biz, August 31, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Israeli Court Says Papaya Gaming Should Improve Its Debt Settlement Proposal to Repay $730 Million to Skillz",
+          "url": "https://investors.skillz.com/news/news-details/2026/Israeli-Court-Says-Papaya-Gaming-Should-Improve-Its-Debt-Settlement-Proposal-to-Repay-730-Million-to-Skillz-a-FIRY-NYSE-FIRY-Company-and-Declines-to-Send-It-to-a-Creditor-Vote/default.aspx",
+          "note": "Firy Inc. (NYSE: FIRY), August 31, 2026"
+        },
+        {
+          "title": "Israeli court rejects Papaya Gaming debt plan to repay Skillz",
+          "url": "https://www.pocketgamer.biz/israeli-court-rejects-papaya-gaming-debt-plan-to-repay-skillz/",
+          "note": "PocketGamer.biz, August 31, 2026"
+        }
+      ]
+    },
     {
       "slug": "omnis-pleasants",
       "case_name": "Omnis Pleasants",
@@ -13,15 +96,15 @@
       "status": "active",
       "signature": "953e21e0fa4f",
       "activity": {
-        "filings": 8,
+        "filings": 5,
         "articles": 0,
         "latest": "2026-09-10"
       },
-      "checked": "2026-09-10T17:37:47+00:00",
+      "checked": "2026-09-11T17:41:55+00:00",
       "date": "2026-09-10",
       "updated": "2026-09-10",
-      "moved": true,
-      "no_change_since": null,
+      "moved": false,
+      "no_change_since": "2026-09-10",
       "lede": "Today, Omnis Pleasants filed a hearing transcript (no docket number assigned as of this writing), completing the paper record from the September 3 hearing before Judge Owens. The transcript's docketing is procedural and routine, but its substantive significance lies in what it memorializes: the September 3 proceeding was the contested hearing on final cash-collateral authority, the bidding-procedures motion, and the…",
       "body_md": "Today, Omnis Pleasants filed a hearing transcript (no docket number assigned as of this writing), completing the paper record from the September 3 hearing before Judge Owens. The transcript's docketing is procedural and routine, but its substantive significance lies in what it memorializes: the September 3 proceeding was the contested hearing on final cash-collateral authority, the bidding-procedures motion, and the HSF Kramer retention, all of which drew six formal objections from Omnis Fuel Technologies, Quantum Pleasants, WVEDA, and the U.S. Trustee. Because the full text of the transcript has not been pulled into this record, the precise rulings — including the current status of the final cash-collateral order and any ruling on HSF Kramer's retention — cannot be confirmed with precision from the transcript itself; they will require a PACER pull. What the docket does confirm is that no final cash-collateral order or retention approval appears in the post-September 3 docket entries reviewed for this record, suggesting those matters remain unresolved or were continued to the October 13 omnibus hearing (Dkt. 253).\n\nDkt. 256, the agenda filed September 9, schedules a hearing for September 11, 2026, at 3:00 PM ET in Courtroom 3 at 824 Market Street, Wilmington — a development that was not flagged in yesterday's briefing and is the most operationally significant item in today's review. The September 11 hearing is one day out, and the matters listed on that agenda have not been pulled for this record. Given the case's open items — final cash-collateral authority, the HSF Kramer disqualification dispute, bidding procedures, and the rescheduled October 13 omnibus (Dkt. 253) — any of those could be on for September 11. The agenda's existence also signals the case is moving on a tighter timeline than the October 13 date alone would suggest; a hearing this soon after September 3 implies either a continuation of matters left unresolved on September 3 or an emergency or interim matter that ripened in the intervening week. That distinction matters for creditor recovery: an HSF Kramer ruling on the merits shifts who controls the debtor's legal strategy, and any modification to cash-collateral terms or adequate protection directly affects the secured creditors' position and the estate's operating runway. Dkts. 257, 258, and 259 — three affidavits/declarations of service filed September 9 — are procedural and routine.\n\nDkt. 255 (the Statement of Financial Affairs) and Dkt. 254 (Schedules A-B, D, E-F, G, H, Summary of Assets and Liabilities, and Declaration Concerning Schedules), filed September 8, remain the most substantive filings since the September 3 hearing, as covered yesterday. \nWVEDA holds a claim exceeding $50 million arising from a loan to Quantum Pleasants that Omnis Pleasants guaranteed\n — one of the anchoring figures against which the schedules' sworn asset and liability numbers will now be tested. The next concrete milestone is the September 11 hearing at 3:00 PM ET; the specific matters on for that hearing, and any rulings Judge Owens issues, will determine whether October 13 remains the operative next date for the case's unresolved substantive questions.\n\n## Sources\n\n- [OMNIS ENERGY: SIX OBJECTIONS SET STAGE FOR SEPTEMBER 3 PLEASANTS BANKRUPTCY HEARING](https://www.prnewswire.com/news-releases/omnis-energy-six-objections-set-stage-for-september-3-pleasants-bankruptcy-hearing-302866877.html) — PR Newswire (Omnis Energy), September 1, 2026\n- [Omnis Pleasants, LLC Bankruptcy Case](https://elevenflo.com/cases/17751) — ElevenFlo, ongoing\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
@@ -38,47 +121,6 @@
       ]
     },
     {
-      "slug": "papaya-gaming",
-      "case_name": "Papaya Gaming",
-      "short_name": "Papaya Gaming",
-      "emoji": "⚖️",
-      "themes": [
-        "bankruptcy-creditor-rights"
-      ],
-      "court": "United States Bankruptcy Court, D. Delaware",
-      "status": "active",
-      "signature": "82f3178cb8d9",
-      "activity": {
-        "filings": 6,
-        "articles": 0,
-        "latest": "2026-09-10"
-      },
-      "checked": "2026-09-10T17:37:47+00:00",
-      "date": "2026-09-10",
-      "updated": "2026-09-10",
-      "moved": true,
-      "no_change_since": null,
-      "lede": "Today, foreign representative Oriel Bachar filed an Emergency Motion for Protective Order and Status Conference (Dkt. 98) and a companion Motion to Shorten Notice (Dkt. 99) before Judge Walrath in Case No. 26-11217. The objection deadline printed on Dkt. 98 is September 10, 2026 — the same day of filing — confirming the emergency posture.",
-      "body_md": "Today, foreign representative Oriel Bachar filed an Emergency Motion for Protective Order and Status Conference (Dkt. 98) and a companion Motion to Shorten Notice (Dkt. 99) before Judge Walrath in Case No. 26-11217. The objection deadline printed on Dkt. 98 is September 10, 2026 — the same day of filing — confirming the emergency posture. Four exhibits are attached (Exhibits A through D), and both motions were filed by Jennifer Malow of counsel. The content of the protective order motion is not reproduced on the public docket, but the timing is dispositive context: Bachar filed this emergency request less than two weeks after Judge Walrath's September 2 partial compel order (Dkt. 92) directed production of documents and a witness for deposition, and the sealed letter exchange that followed between the parties on September 4 (Skillz, Dkt. 93) and September 8 (Bachar, Dkt. 95) strongly suggests that a dispute over the scope or conditions of that compelled production is what drove Bachar to court on an emergency basis today.\n\nThe motion to shorten notice (Dkt. 99) is procedural but important: it requests that the court compress the normal notice period for the underlying emergency motion, which in practice means Bachar is pressing for a hearing and status conference on a timeline measured in hours or days rather than weeks. That posture, combined with the same-day objection deadline on Dkt. 98, signals that Bachar is seeking either a court-supervised framework governing what is produced under Dkt. 92, a stay or modification of the compel order's directives pending a hearing, or both. Skillz's admission of Tianjiao Li of Latham & Watkins LLP pro hac vice (Dkt. 96, ordered at Dkt. 97 on September 9) may reflect Skillz reinforcing its team ahead of the anticipated protective order fight. The substantive question — whether and on what terms Bachar must produce documents and sit for deposition — remains unresolved and is now squarely before the court on an emergency footing.\n\nThe Israeli standstill clock remains the overarching variable. \nThe Israeli proceeding remains subject to a temporary 45-day pause on collection efforts beginning on August 3, 2026\n, placing expiration on or around September 17 — seven days out — per __[FIRY investor release, investors.skillz.com](https://investors.skillz.com/news/news-details/2026/Israeli-Court-Says-Papaya-Gaming-Should-Improve-Its-Debt-Settlement-Proposal-to-Repay-730-Million-to-Skillz-a-FIRY-NYSE-FIRY-Company-and-Declines-to-Send-It-to-a-Creditor-Vote/default.aspx)__. No public reporting confirms whether Judge Lushi-Abudi has extended or modified that pause, and no FIRY press release or investor update has appeared since August 31. The arrangement manager, \nAttorney Gil Oren of Arnon, Tadmor-Levy, appointed to work with Papaya and its creditors on a revised proposal\n, has not surfaced any public work product. The convergence of the standstill deadline and the Delaware emergency motion makes the next seventy-two hours unusually dense: if the Israeli court allows the standstill to lapse or declines to extend it, Skillz's ability to pursue collection in Israel revives at the same moment Bachar is fighting in Delaware to limit what Skillz can compel from him in discovery. That tension — expanding Israeli enforcement rights alongside active U.S. discovery pressure — is the operative recovery risk for Skillz on both fronts simultaneously.\n\nThe next concrete milestones are: Judge Walrath's ruling on the motion to shorten notice (Dkt. 99) and the underlying emergency protective order (Dkt. 98), which could come as early as today; the September 17 Israeli standstill expiration and any Tel Aviv court action preceding it; and any hearing or order flowing from the status conference Bachar has requested.\n\n## Sources\n\n- [Israeli Court Says Papaya Gaming Should Improve Its Debt Settlement Proposal to Repay $730 Million to Skillz](https://investors.skillz.com/news/news-details/2026/Israeli-Court-Says-Papaya-Gaming-Should-Improve-Its-Debt-Settlement-Proposal-to-Repay-730-Million-to-Skillz-a-FIRY-NYSE-FIRY-Company-and-Declines-to-Send-It-to-a-Creditor-Vote/default.aspx) — FIRY Inc. (Skillz), August 31, 2026\n- [Israeli Court Says Papaya Gaming Should Improve Its Debt Settlement Proposal to Repay $730 Million to Skillz](https://finance.yahoo.com/markets/stocks/articles/israeli-court-says-papaya-gaming-120000588.html) — Business Wire / Yahoo Finance, August 31, 2026\n- [Israeli court rejects Papaya Gaming debt plan to repay Skillz](https://www.pocketgamer.biz/israeli-court-rejects-papaya-gaming-debt-plan-to-repay-skillz/) — PocketGamer.biz, August 31, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
-      "sources": [
-        {
-          "title": "Israeli Court Says Papaya Gaming Should Improve Its Debt Settlement Proposal to Repay $730 Million to Skillz",
-          "url": "https://investors.skillz.com/news/news-details/2026/Israeli-Court-Says-Papaya-Gaming-Should-Improve-Its-Debt-Settlement-Proposal-to-Repay-730-Million-to-Skillz-a-FIRY-NYSE-FIRY-Company-and-Declines-to-Send-It-to-a-Creditor-Vote/default.aspx",
-          "note": "FIRY Inc. (Skillz), August 31, 2026"
-        },
-        {
-          "title": "Israeli Court Says Papaya Gaming Should Improve Its Debt Settlement Proposal to Repay $730 Million to Skillz",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/israeli-court-says-papaya-gaming-120000588.html",
-          "note": "Business Wire / Yahoo Finance, August 31, 2026"
-        },
-        {
-          "title": "Israeli court rejects Papaya Gaming debt plan to repay Skillz",
-          "url": "https://www.pocketgamer.biz/israeli-court-rejects-papaya-gaming-debt-plan-to-repay-skillz/",
-          "note": "PocketGamer.biz, August 31, 2026"
-        }
-      ]
-    },
-    {
       "slug": "poolin",
       "case_name": "Poolin",
       "short_name": "Poolin",
@@ -91,15 +133,15 @@
       "status": "active",
       "signature": "a87668d321e5",
       "activity": {
-        "filings": 5,
+        "filings": 3,
         "articles": 0,
         "latest": "2026-09-09"
       },
-      "checked": "2026-09-10T17:37:47+00:00",
+      "checked": "2026-09-11T17:41:55+00:00",
       "date": "2026-09-10",
       "updated": "2026-09-10",
-      "moved": true,
-      "no_change_since": null,
+      "moved": false,
+      "no_change_since": "2026-09-09",
       "lede": "Today, the court-supervised auction call for Poolin's West Texas mining assets — the Pyote and Tarbush sites — is scheduled to proceed, with the outcome turning on whether any qualified bids above Thor CALAP LLC's $52 million stalking-horse floor were submitted by the September 8 deadline. No secondary source has reported auction results, and no docket entry confirms bid receipt or cancellation of the auction; the…",
       "body_md": "Today, the court-supervised auction call for Poolin's West Texas mining assets — the Pyote and Tarbush sites — is scheduled to proceed, with the outcome turning on whether any qualified bids above Thor CALAP LLC's $52 million stalking-horse floor were submitted by the September 8 deadline. No secondary source has reported auction results, and no docket entry confirms bid receipt or cancellation of the auction; the proceeding's status as a live competitive event or a walkover for Thor CALAP remains unverified as of this briefing. \nThe August 17 bidding-procedures order set September 8 as the deadline for qualified bids, with the auction scheduled for September 10 if competing offers emerged.\n \nThe stalking-horse offer allocates $37 million to the Tarbush assets (including assumed liabilities) and $15 million to the Pyote site.\n \nThe marketing process reportedly drew 28 NDAs and seven letters of intent\n — a data point from pre-petition marketing that establishes early interest but does not confirm how many parties ultimately submitted qualified bids meeting the court's procedural threshold. Whatever the auction produces today is the first hard number on estate value above the floor, and it is the single most consequential input to creditor recovery before the September 18 sale hearing.\n\nOn the docket, Dkts. 209 and 210 — a retention filing and a notice of appearance, both dated September 9 — are procedural and routine; they carry no independent weight on sale economics or recovery timing. The M3 Advisory Partners retention application (Dkt. 201), with an objection deadline of September 11 per the docket, remains pending; no certification of no objection has yet appeared. If that deadline passes without opposition, the Committee will have both restructuring counsel (PSZJ, cleared via Dkt. 208) and financial advisory capacity (M3) in place before the sale hearing — a posture that directly determines how effectively the UCC can contest sale economics or press for value-maximizing modifications before Judge O'Hagan on September 18.\n\nThe structural overhang on the entire process remains the creditor's motion to appoint a Chapter 11 trustee, with a hearing set for October 21. That motion, which alleges that the Debtors' principal absconded from China with customer funds, \nmatters because all three entities currently remain debtors in possession, with existing management continuing to run day-to-day affairs under court oversight\n — a posture that the trustee motion directly targets. A sale confirmed at the September 18 hearing would substantially narrow the live assets subject to any trustee's mandate, but would not moot the motion's avoidance and transfer-probe theories. The next concrete milestone is today's auction call itself; if results are docketed or reported, they will anchor tomorrow's briefing.\n\n## Sources\n\n- [Poolin Auction Set With $52M Floor Bid](https://www.coininsider.org/news/poolin-auction-set-with-52m-floor-bid/) — CoinInsider, August 2026\n- [Poolin Files Chapter 11 With $52M Asset Sale and 163M in Debt](https://www.tftc.io/poolin-chapter-11-bankruptcy-52-million-west-texas-sale) — TFTC, July 24, 2026\n- [Poolin Bankruptcy: The End of Mining as a Business](https://d-central.tech/poolin-bankruptcy-end-of-mining-as-a-business/) — D-Central, July 25, 2026\n- [Poolin Bankruptcy Filing Sparks Crypto Mining Bankruptcy Process](https://en.cryptonomist.ch/2026/08/21/poolin-bankruptcy-filing-2/) — CryptoNomist, August 21, 2026\n- [Case Information — Poolin Technology](https://veritaglobal.net/poolin) — Verita Global (case administrator)\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
@@ -142,11 +184,11 @@
       "status": "active",
       "signature": "d7e1db16b779",
       "activity": {
-        "filings": 2,
+        "filings": 1,
         "articles": 0,
         "latest": "2026-09-09"
       },
-      "checked": "2026-09-10T17:37:47+00:00",
+      "checked": "2026-09-11T17:41:55+00:00",
       "date": "2026-09-09",
       "updated": "2026-09-09",
       "moved": false,
@@ -154,48 +196,6 @@
       "lede": "On September 9, Judge Eumi K. Lee entered Dkt. 485 — an order that simultaneously terminated one or more pending motions, per the docket's \"Order AND ~Util - Terminate Motions\" designation. The order followed a Response filed yesterday, Dkt. 484, which itself arrived after the opposition at Dkt. 483 (filed August 25).",
       "body_md": "On September 9, Judge Eumi K. Lee entered Dkt. 485 — an order that simultaneously terminated one or more pending motions, per the docket's \"Order AND ~Util - Terminate Motions\" designation. The order followed a Response filed yesterday, Dkt. 484, which itself arrived after the opposition at Dkt. 483 (filed August 25). That sequencing — opposition, then a further response, then an order closing motions the same day — is consistent with the court resolving a fully briefed administrative motion on the papers. The most plausible candidate remains Google's August 21 Administrative Motion to Consider Whether Cases Should Be Related (Dkt. 478), which drew an opposition on its August 25 deadline (Dkt. 483) and now a reply-level response (Dkt. 484) before today's order.\n\nThe case-relation motion matters because a grant would link this proceeding — or a related action — to a coordinated docket under a single judicial assignment, with downstream consequences for discovery scheduling, briefing calendars, and the pace at which class certification issues get resolved. A denial keeps each proceeding on its own track. The \"Terminate Motions\" utility event confirms the court has formally closed at least one motion, but the identity of every motion terminated, the direction of the ruling, and any conditions attached cannot be stated from the docket text alone; the full text of Dkt. 485 on PACER at 5:23-cv-03440 is the controlling document and the priority pull. Until it is retrieved, the outcome is unverified and is not stated here.\n\nThe longer-standing open item — the content and effect of the August 24 omnibus order at Dkt. 482, which resolved class certification, the sanctions motion, and the intervention motion — remains unreported by any secondary outlet as of this briefing. That document continues to control whether the class is certified, in what form, and whether the Lee Child/Andrew Child/Girlcomix intervenors (Dkt. 468) are in the case. The next concrete milestone is the full text of Dkt. 485, which should be pulled immediately; if today's order granted the case-relation motion, any resulting judicial reassignment or coordination order would follow and should be treated as the next reportable event.\n\n## Sources\n\n*No press-sourced propositions appear in this briefing. All factual statements derive from the authoritative docket record.*\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": []
-    },
-    {
-      "slug": "terraform-labs",
-      "case_name": "Terraform Labs",
-      "short_name": "Terraform Labs",
-      "emoji": "⚖️",
-      "themes": [
-        "crypto-insolvency",
-        "bankruptcy-creditor-rights"
-      ],
-      "court": "Bankr. D. Del.",
-      "status": "active",
-      "signature": "5e0a83cb3ce4",
-      "activity": {
-        "filings": 1,
-        "articles": 0,
-        "latest": "2026-09-08"
-      },
-      "checked": "2026-09-10T17:37:47+00:00",
-      "date": "2026-09-09",
-      "updated": "2026-09-09",
-      "moved": false,
-      "no_change_since": "2026-09-08",
-      "lede": "On September 8, the Terraform Labs docket recorded a single Certificate of Mailing (Dkt. 1331) — ministerial filing infrastructure, no bearing on recovery or timing.",
-      "body_md": "On September 8, the Terraform Labs docket recorded a single Certificate of Mailing (Dkt. 1331) — ministerial filing infrastructure, no bearing on recovery or timing.\n\nToday is accordingly a context day. The most directly relevant open variable for Class 5 recovery posture remains the SEC's distribution plan for the $123.1 million Fair Fund — funded by Tai Mo Shan's consent-order payment — for which an August 20 deadline to submit eligibility criteria and payment procedures was reported by __[CryptoSlate](https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/)__. No public confirmation that the SEC met that deadline or that the plan has been filed has appeared in the search results; until the agency publishes a distribution plan, that pool remains locked. Separately, the authorization motion filed August 19 (Dkt. 1321) still shows no corresponding order on the docket, leaving its scope and effect unresolved.\n\nOn the litigation side, the plan administrator's $4 billion suit against Jump Trading, William DiSomma, and Kanav Kariya in the Northern District of Illinois remains the single largest potential recovery catalyst for the estate. The protective-order dispute — Jump argued the May 1, 2026 amended complaint improperly drew on documents produced under the bankruptcy protective order, prompting Judge Lefkow to stay litigation deadlines and direct the administrator to seek clarification from the Delaware court — has not produced a public resolution since it was last reported. The investor securities class action in the Northern District of California (Judge Pitts), in which Jump's motion to dismiss was denied on September 3 per __[Law360](https://www.law360.com/classaction/articles/2521162)__, runs as a separate but parallel pressure vector; Jump now defends on two fronts simultaneously, which may concentrate settlement incentives on the administrator's suit. Secondary-market activity in the Class 5 pool — the $3,454,036.42 claim transferred to Serrur Investment Partners, LP (Dkt. 1312, executed July 27, filed August 3) being the most recent confirmed trade — continues to reflect market participants positioning ahead of any distribution event.\n\nThe next fixed milestone remains December 31, 2026, the court-extended wind-down deadline. Resolution of the protective-order dispute before Judge Shannon — which, once clarified, would re-open the stayed Illinois deadlines — is the most proximate gating event for the Jump litigation, and thus the most meaningful near-term determinant of recovery trajectory for Class 5 claimants.\n\n## Sources\n\n- [Jump Trading Must Face Terraform Stablecoin Fraud Claims](https://www.law360.com/classaction/articles/2521162) — Law360, September 3, 2026\n- [SEC faces Aug. 20 deadline to unlock $123 million recovery fund for Terra investors](https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/) — CryptoSlate, August 20, 2026\n- [Terraform Ch. 11 Trust Gets OK For $45M Crypto Deal](https://www.law360.com/bankruptcy-authority/articles/2254629/terraform-ch-11-trust-gets-ok-for-45m-crypto-deal) — Law360, August 19, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
-      "sources": [
-        {
-          "title": "Jump Trading Must Face Terraform Stablecoin Fraud Claims",
-          "url": "https://www.law360.com/classaction/articles/2521162",
-          "note": "Law360, September 3, 2026"
-        },
-        {
-          "title": "SEC faces Aug. 20 deadline to unlock $123 million recovery fund for Terra investors",
-          "url": "https://cryptoslate.com/sec-faces-aug-20-deadline-to-unlock-123-million-recovery-fund-for-terra-investors/",
-          "note": "CryptoSlate, August 20, 2026"
-        },
-        {
-          "title": "Terraform Ch. 11 Trust Gets OK For $45M Crypto Deal",
-          "url": "https://www.law360.com/bankruptcy-authority/articles/2254629/terraform-ch-11-trust-gets-ok-for-45m-crypto-deal",
-          "note": "Law360, August 19, 2026"
-        }
-      ]
     },
     {
       "slug": "bartz-anthropic",
@@ -214,7 +214,7 @@
         "articles": 0,
         "latest": "2026-09-04"
       },
-      "checked": "2026-09-10T17:37:47+00:00",
+      "checked": "2026-09-11T17:41:55+00:00",
       "date": "2026-09-07",
       "updated": "2026-09-07",
       "moved": false,
@@ -260,7 +260,7 @@
         "articles": 0,
         "latest": "2026-08-21"
       },
-      "checked": "2026-09-10T17:37:47+00:00",
+      "checked": "2026-09-11T17:41:55+00:00",
       "date": "2026-08-14",
       "updated": "2026-08-14",
       "moved": false,
