@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/66732129/andersen-v-stability-ai-ltd/",
     "date_last_filing": "2026-09-09",
     "meta_fetched_at": "2026-09-09T21:45:07.350521+00:00",
-    "fetched_at": "2026-09-10T21:41:44.075338+00:00",
-    "as_of": "Sep 10, 2026",
+    "fetched_at": "2026-09-11T00:15:05.779891+00:00",
+    "as_of": "Sep 11, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 1,
     "recent": [
       {
         "entry_number": 737,
@@ -38,7 +38,7 @@
         "time_filed": "18:40:23",
         "date_display": "Sep 8, 2026",
         "description": "EXHIBITS re 729 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Plaintiffs' Motion for Discovery Sanctions (Declaration of Simeon Botwinick in Support of 729 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed) filed byDeviantArt, Inc.. (Attachments: # 1 Exhibit 1 [Sealed], # 2 Exhibit 2 [Sealed], # 3 Exhibit 3 [Sealed], # 4 Proposed Order, # 5 Certificate of Service)(Related document(s) 729 ) (Botwinick, Simeon) (Filed on 9/8/2026) (Entered: 09/08/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -70,7 +70,7 @@
         "time_filed": "18:40:23",
         "date_display": "Sep 8, 2026",
         "description": "EXHIBITS re 729 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Plaintiffs' Motion for Discovery Sanctions (Declaration of Simeon Botwinick in Support of 729 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed) filed byDeviantArt, Inc.. (Attachments: # 1 Exhibit 1 [Sealed], # 2 Exhibit 2 [Sealed], # 3 Exhibit 3 [Sealed], # 4 Proposed Order, # 5 Certificate of Service)(Related document(s) 729 ) (Botwinick, Simeon) (Filed on 9/8/2026) (Entered: 09/08/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
