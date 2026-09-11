@@ -15,13 +15,23 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70513159/disney-enterprises-inc-v-midjourney-inc/",
-    "date_last_filing": "2026-09-09",
-    "meta_fetched_at": "2026-09-09T21:45:30.616127+00:00",
-    "fetched_at": "2026-09-10T21:42:06.865229+00:00",
-    "as_of": "Sep 10, 2026",
+    "date_last_filing": "2026-09-10",
+    "meta_fetched_at": "2026-09-11T00:15:43.780457+00:00",
+    "fetched_at": "2026-09-11T00:15:43.780457+00:00",
+    "as_of": "Sep 11, 2026",
     "backfilled": true,
     "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 186,
+        "date_filed": "2026-09-10",
+        "time_filed": "16:37:45",
+        "date_display": "Sep 10, 2026",
+        "description": "Extension of Time to File Document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 185,
         "date_filed": "2026-09-09",
@@ -38,16 +48,6 @@
         "time_filed": "",
         "date_display": "Sep 8, 2026",
         "description": "ORDER GRANTING DEFENDANT MIDJOURNEY, INC.S APPLICATION FOR LEAVE TO FILE UNDER SEAL PORTIONS OF JULY 31, 2026 IDC TRANSCRIPT by Magistrate Judge A. Joel Richlin. HAVING CONSIDERED Defendant Midjourney, Inc.'s Application for Leave to File Under Seal Portions of July 31, 2026 IDC Transcript (the \"Application\"), and the Declaration of Stephanie Schuyler in support thereof, the Court finds good cause exists for allowing certain confidential information to be maintained under seal. Accordingly, it is hereby ORDERED that the Application is GRANTED in its entirety. The following portions of the Transcript are FURTHER ORDERED to be redacted from the public record in accordance with the Application and the highlighting reflected in the exhibit to the Declaration of Stephanie Schuyler in support of the Application [SEE ORDER FOR DETAILS]. IT IS SO ORDERED. (nth) (Entered: 09/09/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 183,
-        "date_filed": "2026-09-04",
-        "time_filed": "",
-        "date_display": "Sep 4, 2026",
-        "description": "Text Only Entry by U.S. Magistrate Judge A. Joel Richlin: The Court is in receipt of the parties' Joint Stipulation to Modify Briefing Scheduling on Remaining Dispute as to Production of Training Data. Accordingly, the Court extends the deadlines as stipulated by the parties. Plaintiffs shall file their motion to compel, if any, no later than September 10, 2026. Defendant shall file its opposition, if any, no later than September 24, 2026. IT IS SO ORDERED. THERE IS NO PDF DOCUMENT ASSOCIATED WITH THIS ENTRY. (AJR) TEXT ONLY ENTRY (Entered: 09/04/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -55,6 +55,16 @@
     ],
     "entries": [
       {
+        "entry_number": 186,
+        "date_filed": "2026-09-10",
+        "time_filed": "16:37:45",
+        "date_display": "Sep 10, 2026",
+        "description": "Extension of Time to File Document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 185,
         "date_filed": "2026-09-09",
         "time_filed": "11:51:47",
@@ -70,7 +80,7 @@
         "time_filed": "",
         "date_display": "Sep 8, 2026",
         "description": "ORDER GRANTING DEFENDANT MIDJOURNEY, INC.S APPLICATION FOR LEAVE TO FILE UNDER SEAL PORTIONS OF JULY 31, 2026 IDC TRANSCRIPT by Magistrate Judge A. Joel Richlin. HAVING CONSIDERED Defendant Midjourney, Inc.'s Application for Leave to File Under Seal Portions of July 31, 2026 IDC Transcript (the \"Application\"), and the Declaration of Stephanie Schuyler in support thereof, the Court finds good cause exists for allowing certain confidential information to be maintained under seal. Accordingly, it is hereby ORDERED that the Application is GRANTED in its entirety. The following portions of the Transcript are FURTHER ORDERED to be redacted from the public record in accordance with the Application and the highlighting reflected in the exhibit to the Declaration of Stephanie Schuyler in support of the Application [SEE ORDER FOR DETAILS]. IT IS SO ORDERED. (nth) (Entered: 09/09/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

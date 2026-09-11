@@ -15,14 +15,24 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
-    "date_last_filing": "2026-09-09",
-    "meta_fetched_at": "2026-09-09T18:43:05.418665+00:00",
-    "fetched_at": "2026-09-10T21:43:03.404779+00:00",
-    "as_of": "Sep 10, 2026",
+    "date_last_filing": "2026-09-10",
+    "meta_fetched_at": "2026-09-11T00:16:41.737353+00:00",
+    "fetched_at": "2026-09-11T00:16:41.737353+00:00",
+    "as_of": "Sep 11, 2026",
     "backfilled": true,
     "new_in_72h": 3,
     "recent": [
       {
+        "entry_number": 828,
+        "date_filed": "2026-09-10",
+        "time_filed": "16:19:16",
+        "date_display": "Sep 10, 2026",
+        "description": "Transcript Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 827,
         "date_filed": "2026-09-09",
         "time_filed": "10:18:32",
@@ -41,20 +51,20 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 825,
-        "date_filed": "2026-09-08",
-        "time_filed": "21:44:14",
-        "date_display": "Sep 8, 2026",
-        "description": "CASE MANAGEMENT STATEMENT (Joint) filed by Meta Platforms, Inc.. (Stameshkin, Elizabeth) (Filed on 9/8/2026) (Entered: 09/08/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.825.0.pdf"
       }
     ],
     "entries": [
       {
+        "entry_number": 828,
+        "date_filed": "2026-09-10",
+        "time_filed": "16:19:16",
+        "date_display": "Sep 10, 2026",
+        "description": "Transcript Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 827,
         "date_filed": "2026-09-09",
         "time_filed": "10:18:32",
@@ -80,7 +90,7 @@
         "time_filed": "21:44:14",
         "date_display": "Sep 8, 2026",
         "description": "CASE MANAGEMENT STATEMENT (Joint) filed by Meta Platforms, Inc.. (Stameshkin, Elizabeth) (Filed on 9/8/2026) (Entered: 09/08/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.825.0.pdf"
       },

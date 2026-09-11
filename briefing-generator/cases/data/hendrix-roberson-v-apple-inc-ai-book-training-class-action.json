@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/71279155/hendrix-v-apple-inc/",
     "date_last_filing": "2026-09-08",
     "meta_fetched_at": "2026-09-08T21:56:47.680763+00:00",
-    "fetched_at": "2026-09-10T21:42:46.719537+00:00",
-    "as_of": "Sep 10, 2026",
+    "fetched_at": "2026-09-11T00:16:25.996836+00:00",
+    "as_of": "Sep 11, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 129,
@@ -28,7 +28,7 @@
         "time_filed": "08:55:20",
         "date_display": "Sep 8, 2026",
         "description": "ORDER DENYING 128 Stipulation Regarding Training Data Inspection Protocol Without Prejudice. Signed by Magistrate Judge Ajay Krishnan on 9/8/2026. (kmm2, COURT STAFF) (Filed on 9/8/2026) (Entered: 09/08/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.129.0.pdf"
       },
@@ -60,7 +60,7 @@
         "time_filed": "08:55:20",
         "date_display": "Sep 8, 2026",
         "description": "ORDER DENYING 128 Stipulation Regarding Training Data Inspection Protocol Without Prejudice. Signed by Magistrate Judge Ajay Krishnan on 9/8/2026. (kmm2, COURT STAFF) (Filed on 9/8/2026) (Entered: 09/08/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.455858/gov.uscourts.cand.455858.129.0.pdf"
       },

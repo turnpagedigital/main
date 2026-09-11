@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73294740/elsevier-inc-v-meta-platforms-inc/",
     "date_last_filing": "2026-09-10",
-    "meta_fetched_at": "2026-09-10T14:33:18.378147+00:00",
-    "fetched_at": "2026-09-10T21:42:34.439563+00:00",
-    "as_of": "Sep 10, 2026",
+    "meta_fetched_at": "2026-09-11T00:16:14.899057+00:00",
+    "fetched_at": "2026-09-11T00:16:14.899057+00:00",
+    "as_of": "Sep 11, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 98,
+        "date_filed": "2026-09-10",
+        "time_filed": "18:17:09",
+        "date_display": "Sep 10, 2026",
+        "description": "Memo Endorsement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 97,
         "date_filed": "2026-09-10",
@@ -41,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.663308/gov.uscourts.nysd.663308.96.0.pdf"
-      },
-      {
-        "entry_number": 95,
-        "date_filed": "2026-08-18",
-        "time_filed": "13:42:37",
-        "date_display": "Aug 18, 2026",
-        "description": "JOINT LETTER addressed to Judge P. Kevin Castel from Jeffrey M. Gould dated August 18, 2026 re: Proposed Briefing Schedule for Plaintiffs' Anticipated Motion to Strike. Document filed by Cengage Learning, Inc., Elsevier Inc., Hachette Book Group, Inc., Macmillan Publishing Group, LLC d/b/a Macmillan Publishers, McGraw Hill LLC, S.C.R.I.B.E., Inc., Kenneth Saladin, Scott Turow..(Gould, Jeffrey) (Entered: 08/18/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.663308/gov.uscourts.nysd.663308.95.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 98,
+        "date_filed": "2026-09-10",
+        "time_filed": "18:17:09",
+        "date_display": "Sep 10, 2026",
+        "description": "Memo Endorsement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 97,
         "date_filed": "2026-09-10",
