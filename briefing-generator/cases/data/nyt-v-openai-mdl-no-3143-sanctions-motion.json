@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/",
     "date_last_filing": "2026-09-11",
-    "meta_fetched_at": "2026-09-11T21:48:58.735082+00:00",
-    "fetched_at": "2026-09-11T21:48:58.735082+00:00",
-    "as_of": "Sep 11, 2026",
+    "meta_fetched_at": "2026-09-12T13:41:09.307619+00:00",
+    "fetched_at": "2026-09-12T13:41:09.307619+00:00",
+    "as_of": "Sep 12, 2026",
     "backfilled": true,
-    "new_in_72h": 15,
+    "new_in_72h": 13,
     "recent": [
+      {
+        "entry_number": 1940,
+        "date_filed": "2026-09-11",
+        "time_filed": "18:04:56",
+        "date_display": "Sep 11, 2026",
+        "description": "Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1940.0.pdf"
+      },
       {
         "entry_number": 1939,
         "date_filed": "2026-09-11",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-09-11",
-        "time_filed": "10:15:58",
-        "date_display": "Sep 11, 2026",
-        "description": "Notice Regarding Pro Hac Vice Motion",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1940,
+        "date_filed": "2026-09-11",
+        "time_filed": "18:04:56",
+        "date_display": "Sep 11, 2026",
+        "description": "Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1940.0.pdf"
+      },
       {
         "entry_number": 1939,
         "date_filed": "2026-09-11",
@@ -180,7 +190,7 @@
         "time_filed": "22:19:08",
         "date_display": "Sep 9, 2026",
         "description": "CERTIFICATE OF SERVICE of ***SEALED***DECLARATION of Annette L. Hurst in Support re: (1473 in 1:23-cv-11195-SHS-OTW) MOTION for Summary Judgment in News Plaintiffs' Consolidated Cases., (777 in 1:23-cv-10211-SHS-OTW) MOTION for Summary Judgment in Books Plaintiffs' Consolidated Cases. served on Attorneys for Plaintiffs and the ProposeAttorneys for Plaintiffs and the Proposed Class; Attorneys for Plaintiff The New York Times Company; Attorneys for Plaintiffs The Intercept Media, Inc. and The Center for Investigative Reporting, Inc.; and Counsel for OpenAI Defendants on September 9, 2026. Document filed by Microsoft Corporation. Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Hurst, Annette) (Entered: 09/09/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -190,7 +200,7 @@
         "time_filed": "20:51:22",
         "date_display": "Sep 9, 2026",
         "description": "***SEALED***DECLARATION of Annette L. Hurst in Support re: (1473 in 1:23-cv-11195-SHS-OTW) MOTION for Summary Judgment in News Plaintiffs' Consolidated Cases., (777 in 1:23-cv-10211-SHS-OTW) MOTION for Summary Judgment in Books Plaintiffs' Consolidated Cases.. Document filed by Microsoft Corporation. (Attachments: # 1 Exhibit 9.A)Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al.Motion or Order to File Under Seal: 1685 .(Hurst, Annette) (Entered: 09/09/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -200,7 +210,7 @@
         "time_filed": "10:59:27",
         "date_display": "Sep 9, 2026",
         "description": "JOINT STIPULATION AND ORDER STAYING WIKIHOW ACTION: NOW, THEREFORE, IT IS HEREBY STIPULATED BY AND BETWEEN THE PARTIES THAT, subject to the Court's approval, as follows: 1. All proceedings and deadlines in the above-captioned Action are hereby stayed pending resolution of summary judgment motions in the other active cases in this multidistrict litigation. 2. Within 30 days of rulings on such motion(s) in the MDL, the parties shall file a joint status report in this Action to propose a case management conference and any appropriate further proceedings in light of the MDL decision. 3. While this stay is in effect, any party may move to lift the stay for good cause shown. Nothing in this stipulation shall preclude any party from seeking such relief, if necessary, or from seeking any other appropriate relief from the Court. SO ORDERED. Case stayed. (Signed by Judge Sidney H. Stein on…",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.640396/gov.uscourts.nysd.640396.1927.0.pdf"
       },

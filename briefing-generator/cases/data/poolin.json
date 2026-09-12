@@ -14,52 +14,72 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
-    "date_last_filing": "2026-09-09",
-    "meta_fetched_at": "2026-09-09T18:40:53.214154+00:00",
-    "fetched_at": "2026-09-11T21:45:54.726627+00:00",
-    "as_of": "Sep 11, 2026",
+    "date_last_filing": "2026-09-12",
+    "meta_fetched_at": "2026-09-12T13:39:50.892626+00:00",
+    "fetched_at": "2026-09-12T13:39:50.892626+00:00",
+    "as_of": "Sep 12, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 213,
+        "date_filed": "2026-09-12",
+        "time_filed": "00:20:40",
+        "date_display": "Sep 12, 2026",
+        "description": "BNC Certificate of Notice - Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 212,
+        "date_filed": "2026-09-12",
+        "time_filed": "00:20:40",
+        "date_display": "Sep 12, 2026",
+        "description": "BNC Certificate of Notice - Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 210,
         "date_filed": "2026-09-09",
         "time_filed": "14:21:53",
         "date_display": "Sep 9, 2026",
         "description": "Notice of Appearance and Request",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 209,
-        "date_filed": "2026-09-09",
-        "time_filed": "14:19:10",
-        "date_display": "Sep 9, 2026",
-        "description": "Retention",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 208,
-        "date_filed": "2026-09-09",
-        "time_filed": "09:53:55",
-        "date_display": "Sep 9, 2026",
-        "description": "Certification of No Objection (Chapter 11)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
       {
+        "entry_number": 213,
+        "date_filed": "2026-09-12",
+        "time_filed": "00:20:40",
+        "date_display": "Sep 12, 2026",
+        "description": "BNC Certificate of Notice - Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 212,
+        "date_filed": "2026-09-12",
+        "time_filed": "00:20:40",
+        "date_display": "Sep 12, 2026",
+        "description": "BNC Certificate of Notice - Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 210,
         "date_filed": "2026-09-09",
         "time_filed": "14:21:53",
         "date_display": "Sep 9, 2026",
         "description": "Notice of Appearance and Request",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -69,7 +89,7 @@
         "time_filed": "14:19:10",
         "date_display": "Sep 9, 2026",
         "description": "Retention",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -79,7 +99,7 @@
         "time_filed": "09:53:55",
         "date_display": "Sep 9, 2026",
         "description": "Certification of No Objection (Chapter 11)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

@@ -17,10 +17,10 @@
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
     "date_last_filing": "2026-09-10",
     "meta_fetched_at": "2026-09-10T17:37:40.887276+00:00",
-    "fetched_at": "2026-09-11T21:48:43.900574+00:00",
-    "as_of": "Sep 11, 2026",
+    "fetched_at": "2026-09-12T13:40:58.588035+00:00",
+    "as_of": "Sep 12, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 1,
     "recent": [
       {
         "entry_number": 388,
@@ -38,7 +38,7 @@
         "time_filed": "17:47:12",
         "date_display": "Sep 9, 2026",
         "description": "Certificate of Service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -70,7 +70,7 @@
         "time_filed": "17:47:12",
         "date_display": "Sep 9, 2026",
         "description": "Certificate of Service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
