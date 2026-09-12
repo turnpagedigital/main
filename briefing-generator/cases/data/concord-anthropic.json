@@ -15,13 +15,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
-    "date_last_filing": "2026-09-08",
-    "meta_fetched_at": "2026-09-09T09:53:16.630034+00:00",
-    "fetched_at": "2026-09-11T21:47:08.095363+00:00",
-    "as_of": "Sep 11, 2026",
+    "date_last_filing": "2026-09-11",
+    "meta_fetched_at": "2026-09-12T13:43:24.409339+00:00",
+    "fetched_at": "2026-09-12T13:43:24.409339+00:00",
+    "as_of": "Sep 12, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 803,
+        "date_filed": "2026-09-11",
+        "time_filed": "18:57:42",
+        "date_display": "Sep 11, 2026",
+        "description": "Statement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 802,
+        "date_filed": "2026-09-11",
+        "time_filed": "18:31:39",
+        "date_display": "Sep 11, 2026",
+        "description": "Statement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 801,
         "date_filed": "2026-09-08",
@@ -31,29 +51,29 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.801.0.pdf"
-      },
+      }
+    ],
+    "entries": [
       {
-        "entry_number": 800,
-        "date_filed": "2026-09-08",
-        "time_filed": "21:16:12",
-        "date_display": "Sep 8, 2026",
-        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal Anthropic's Reply in Support of Motion for Summary Judgment by Anthropic PBC. (Attachments: # 1 Anthropic's Reply Separate Statement in Support of Motion for Partial Summary Judgment, # 2 Exhibit - 160, # 3 Exhibit - 161, # 4 Exhibit - 163, # 5 Exhibit - 164, # 6 Exhibit - 165, # 7 Exhibit - 166, # 8 Exhibit - 167, # 9 Exhibit - 168, # 10 Exhibit - 173, # 11 Exhibit - 174, # 12 Exhibit - 176, # 13 Exhibit - 177, # 14 Exhibit - 183, # 15 Exhibit - 184)(Mehta, Sonal) (Filed on 9/8/2026) (Entered: 09/08/2026)",
-        "is_new": false,
+        "entry_number": 803,
+        "date_filed": "2026-09-11",
+        "time_filed": "18:57:42",
+        "date_display": "Sep 11, 2026",
+        "description": "Statement",
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 799,
-        "date_filed": "2026-09-08",
-        "time_filed": "17:43:11",
-        "date_display": "Sep 8, 2026",
-        "description": "Related Case Order. Case No. 26-cv-9217-EMC is related to Case No. 24-cv-03811-EKL and shall be reassigned to Judge Eumi K. Lee. Signed by Judge Eumi K. Lee on 9/8/2026. (lrt, COURT STAFF) (Filed on 9/8/2026) (Entered: 09/08/2026)",
-        "is_new": false,
+        "entry_number": 802,
+        "date_filed": "2026-09-11",
+        "time_filed": "18:31:39",
+        "date_display": "Sep 11, 2026",
+        "description": "Statement",
+        "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.799.0.pdf"
-      }
-    ],
-    "entries": [
+        "doc_url": ""
+      },
       {
         "entry_number": 801,
         "date_filed": "2026-09-08",

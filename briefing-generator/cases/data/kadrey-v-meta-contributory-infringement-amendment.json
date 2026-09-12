@@ -16,12 +16,32 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
     "date_last_filing": "2026-09-11",
-    "meta_fetched_at": "2026-09-11T21:48:37.381539+00:00",
-    "fetched_at": "2026-09-11T21:48:37.381539+00:00",
-    "as_of": "Sep 11, 2026",
+    "meta_fetched_at": "2026-09-12T13:40:52.569624+00:00",
+    "fetched_at": "2026-09-12T13:40:52.569624+00:00",
+    "as_of": "Sep 12, 2026",
     "backfilled": true,
-    "new_in_72h": 6,
+    "new_in_72h": 5,
     "recent": [
+      {
+        "entry_number": 832,
+        "date_filed": "2026-09-11",
+        "time_filed": "21:32:50",
+        "date_display": "Sep 11, 2026",
+        "description": "Stipulation and Proposed Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 831,
+        "date_filed": "2026-09-11",
+        "time_filed": "15:35:24",
+        "date_display": "Sep 11, 2026",
+        "description": "Discovery Order AND ~Util - Terminate Motions",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.831.0.pdf"
+      },
       {
         "entry_number": 830,
         "date_filed": "2026-09-11",
@@ -31,29 +51,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.830.0.pdf"
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-09-11",
-        "time_filed": "13:35:17",
-        "date_display": "Sep 11, 2026",
-        "description": "Case Management Conference - Further AND ~Util - Set Deadlines/Hearings",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 828,
-        "date_filed": "2026-09-10",
-        "time_filed": "16:19:16",
-        "date_display": "Sep 10, 2026",
-        "description": "TRANSCRIPT ORDER for proceedings held on 09/09/2026 before Judge Vince Chhabria by BCP Literary, Inc., Ta-Nehisi Coates, Daring Greatly Corporation, Junot Diaz, Eleven Eleven O' Clock Corporation, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson, for Court Reporter Stephen Franklin. (Stein, Joshua) (Filed on 9/10/2026) (Entered: 09/10/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 832,
+        "date_filed": "2026-09-11",
+        "time_filed": "21:32:50",
+        "date_display": "Sep 11, 2026",
+        "description": "Stipulation and Proposed Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 831,
+        "date_filed": "2026-09-11",
+        "time_filed": "15:35:24",
+        "date_display": "Sep 11, 2026",
+        "description": "Discovery Order AND ~Util - Terminate Motions",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.831.0.pdf"
+      },
       {
         "entry_number": 830,
         "date_filed": "2026-09-11",
@@ -90,7 +110,7 @@
         "time_filed": "",
         "date_display": "Sep 9, 2026",
         "description": "Minute Entry for proceedings held before Judge Vince Chhabria: Further Case Management Conference held via Zoom on 9/9/2026. Discussion held regarding issues teed up in the joint case management statements. Discussion held regarding whether to proceed with summary judgment or class certification first in Sullivan . Court provided In the next case management statement, parties to provide concrete examples of how effort would be duplicated by proceeding in two phases as opposed to one. Court will make a final decision at the next case management conference. Case Management Statement due by 9/23/2026. Further Case Management Conference set for 9/25/2026 at 09:00 AM by Videoconference Only. Total Time in Court: 1 hour. Court Reporter: Stephen Franklin. Plaintiff Attorney: Karen Dunn, Mark Weinstein, Phil Morton, Kyle Smith, Meryl Governsk. Defendant Attorney: Margaux Poueymirou, David…",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -100,7 +120,7 @@
         "time_filed": "10:18:32",
         "date_display": "Sep 9, 2026",
         "description": "**CORRECTED Transcript of Proceedings held on August 14, 2026, before Judge Vince Chhabria. Court Reporter, Marla F. Knox, RPR, CRR, RMR, telephone number (602) 391-6990/email marla_knox@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 815 Transcript Order, 816 Transcript Order ) Release of Transcript Restriction set for 12/8/2026. (Related documents(s) 815, 816 ) (Knox, Marla) (Filed on 9/9/2026) (Entered: 09/09/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -110,7 +130,7 @@
         "time_filed": "10:03:33",
         "date_display": "Sep 9, 2026",
         "description": "**CORRECTED Transcript of Proceedings held on August 14, 2026, before Judge Vince Chhabria. Court Reporter, Marla F. Knox, RPR, CRR, RMR, telephone number (602) 391-6990/email marla_knox@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 815 Transcript Order, 816 Transcript Order ) Release of Transcript Restriction set for 12/8/2026. (Related documents(s) 815, 816 ) (Knox, Marla) (Filed on 9/9/2026) (Entered: 09/09/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

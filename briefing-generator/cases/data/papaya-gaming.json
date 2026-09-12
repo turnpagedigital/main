@@ -2,7 +2,7 @@
   "case": {
     "slug": "papaya-gaming",
     "display_name": "Papaya Gaming",
-    "case_name": "Papaya Gaming Ltd.",
+    "case_name": "Oriel Bachar and Papaya Gaming Ltd.",
     "court": "United States Bankruptcy Court, D. Delaware",
     "case_number": "26-11217",
     "judge": "Mary F. Walrath",
@@ -14,47 +14,87 @@
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
-    "docket_url": "https://www.courtlistener.com/docket/73709081/papaya-gaming-ltd/",
+    "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-09-11",
-    "meta_fetched_at": "2026-09-11T21:45:46.119755+00:00",
-    "fetched_at": "2026-09-11T21:45:46.119755+00:00",
-    "as_of": "Sep 11, 2026",
+    "meta_fetched_at": "2026-09-12T13:39:11.546960+00:00",
+    "fetched_at": "2026-09-12T13:39:11.546960+00:00",
+    "as_of": "Sep 12, 2026",
     "backfilled": true,
-    "new_in_72h": 10,
+    "new_in_72h": 14,
     "recent": [
       {
-        "entry_number": 105,
+        "entry_number": 109,
         "date_filed": "2026-09-11",
-        "time_filed": "15:48:06",
+        "time_filed": "22:01:31",
         "date_display": "Sep 11, 2026",
-        "description": "Status Report Filed by Oriel Bachar. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Malow, Jennifer) (Entered: 09/11/2026)",
+        "description": "Response (related document(s)[98]) Filed by Skillz Platform Inc. (Attachments: (1) Exhibit A - B) (Neiburg, Michael)",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.105.0.pdf"
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.109.0.pdf"
       },
       {
-        "entry_number": 104,
+        "entry_number": 108,
         "date_filed": "2026-09-11",
-        "time_filed": "15:05:02",
+        "time_filed": "",
         "date_display": "Sep 11, 2026",
-        "description": "Motion to File Under Seal// Motion of the Foreign Representative for Entry of an Order to File his Letter Dated September 8, 2026 Under Seal Filed by Oriel Bachar. (Attachments: # 1 Exhibit A - Proposed Order) (Malow, Jennifer) (Entered: 09/11/2026)",
+        "description": "[SEALED] Appendix to Objection to Verified Petition Under Chapter 15 for Recognition of the Israeli Proceeding as a Foreign Main Proceeding or, Alternatively, a Foreign Nonmain Proceeding (related document(s)4, 107) Filed by Skillz Platform Inc.. (Attachments: # 1 Exhibit 1-17 # 2 Exhibit 18-35 # 3 Exhibit 36-68 # 4 Exhibit 69-71) (Beach, Sean) (Entered: 09/11/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.104.0.pdf"
+        "doc_url": ""
       },
       {
-        "entry_number": 103,
-        "date_filed": "2026-09-10",
-        "time_filed": "21:54:05",
-        "date_display": "Sep 10, 2026",
-        "description": "Amended Notice of Hearing on September 14, 2026, at 10:30 a.m. (ET) (related document(s)102). Filed by Oriel Bachar. Hearing scheduled for 9/14/2026 at 10:30 AM at Virtual Hearing: Refer to Notice of Zoom Hearing. Objections due by 9/11/2026. (related document(s)102) (Malow, Jennifer) (Entered: 09/10/2026)",
+        "entry_number": 107,
+        "date_filed": "2026-09-11",
+        "time_filed": "",
+        "date_display": "Sep 11, 2026",
+        "description": "[SEALED] Objection to Verified Petition Under Chapter 15 for Recognition of the Israeli Proceeding as a Foreign Main Proceeding or, Alternatively, a Foreign Nonmain Proceeding (related document(s)4) Filed by Skillz Platform Inc. (Beach, Sean) (Entered: 09/11/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.103.0.pdf"
+        "doc_url": ""
       }
     ],
     "entries": [
       {
+        "entry_number": 109,
+        "date_filed": "2026-09-11",
+        "time_filed": "22:01:31",
+        "date_display": "Sep 11, 2026",
+        "description": "Response (related document(s)[98]) Filed by Skillz Platform Inc. (Attachments: (1) Exhibit A - B) (Neiburg, Michael)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.109.0.pdf"
+      },
+      {
+        "entry_number": 108,
+        "date_filed": "2026-09-11",
+        "time_filed": "",
+        "date_display": "Sep 11, 2026",
+        "description": "[SEALED] Appendix to Objection to Verified Petition Under Chapter 15 for Recognition of the Israeli Proceeding as a Foreign Main Proceeding or, Alternatively, a Foreign Nonmain Proceeding (related document(s)4, 107) Filed by Skillz Platform Inc.. (Attachments: # 1 Exhibit 1-17 # 2 Exhibit 18-35 # 3 Exhibit 36-68 # 4 Exhibit 69-71) (Beach, Sean) (Entered: 09/11/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 107,
+        "date_filed": "2026-09-11",
+        "time_filed": "",
+        "date_display": "Sep 11, 2026",
+        "description": "[SEALED] Objection to Verified Petition Under Chapter 15 for Recognition of the Israeli Proceeding as a Foreign Main Proceeding or, Alternatively, a Foreign Nonmain Proceeding (related document(s)4) Filed by Skillz Platform Inc. (Beach, Sean) (Entered: 09/11/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 106,
+        "date_filed": "2026-09-11",
+        "time_filed": "18:55:24",
+        "date_display": "Sep 11, 2026",
+        "description": "Certificate of Service (related document(s)98, 99, 100, 103, 104, 105) Filed by Oriel Bachar. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Malow, Jennifer) (Entered: 09/11/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.106.0.pdf"
+      },
+      {
         "entry_number": 105,
         "date_filed": "2026-09-11",
         "time_filed": "15:48:06",
@@ -73,6 +113,26 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.104.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-11",
+        "time_filed": "20:41:14",
+        "date_display": "Sep 11, 2026",
+        "description": "Appendix",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-09-11",
+        "time_filed": "20:32:21",
+        "date_display": "Sep 11, 2026",
+        "description": "Objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
       },
       {
         "entry_number": 103,
@@ -140,7 +200,7 @@
         "time_filed": "14:29:07",
         "date_display": "Sep 9, 2026",
         "description": "Order Approving Motion for Admission pro hac vice of Tianjiao Li (Related Doc # 96) Signed on 9/9/2026. (LMC) (Entered: 09/09/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.97.0.pdf"
       },
@@ -150,7 +210,7 @@
         "time_filed": "13:53:41",
         "date_display": "Sep 9, 2026",
         "description": "Motion to Appear pro hac vice of Tianjiao Li of Latham & Watkins LLP. Receipt Number 5060944, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 09/09/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.96.0.pdf"
       },
