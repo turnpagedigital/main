@@ -1840,26 +1840,6 @@
       "tokens_in": 0,
       "tokens_out": 0,
       "ok": true
-    },
-    {
-      "ts": "2026-09-12T00:29:19Z",
-      "date": "2026-09-12",
-      "task": "docket-sync",
-      "provider": "courtlistener",
-      "requests": 8,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "ok": false
-    },
-    {
-      "ts": "2026-09-12T04:52:08Z",
-      "date": "2026-09-12",
-      "task": "docket-sync",
-      "provider": "courtlistener",
-      "requests": 8,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "ok": false
     }
   ]
 }
