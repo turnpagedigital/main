@@ -16,12 +16,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-09-12",
-    "meta_fetched_at": "2026-09-12T17:15:48.544466+00:00",
-    "fetched_at": "2026-09-12T17:15:48.544466+00:00",
+    "meta_fetched_at": "2026-09-12T19:26:59.287816+00:00",
+    "fetched_at": "2026-09-12T19:26:59.287816+00:00",
     "as_of": "Sep 12, 2026",
     "backfilled": true,
-    "new_in_72h": 15,
+    "new_in_72h": 16,
     "recent": [
+      {
+        "entry_number": 111,
+        "date_filed": "2026-09-12",
+        "time_filed": "",
+        "date_display": "Sep 12, 2026",
+        "description": "Certificate of Service (related document(s)[110]) Filed by Oriel Bachar. (Attachments: (1) Service List) (Malow, Jennifer)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.111.0.pdf"
+      },
       {
         "entry_number": 110,
         "date_filed": "2026-09-12",
@@ -41,19 +51,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.109.0.pdf"
-      },
-      {
-        "entry_number": 108,
-        "date_filed": "2026-09-11",
-        "time_filed": "",
-        "date_display": "Sep 11, 2026",
-        "description": "[SEALED] Appendix to Objection to Verified Petition Under Chapter 15 for Recognition of the Israeli Proceeding as a Foreign Main Proceeding or, Alternatively, a Foreign Nonmain Proceeding (related document(s)4, 107) Filed by Skillz Platform Inc.. (Attachments: # 1 Exhibit 1-17 # 2 Exhibit 18-35 # 3 Exhibit 36-68 # 4 Exhibit 69-71) (Beach, Sean) (Entered: 09/11/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 111,
+        "date_filed": "2026-09-12",
+        "time_filed": "",
+        "date_display": "Sep 12, 2026",
+        "description": "Certificate of Service (related document(s)[110]) Filed by Oriel Bachar. (Attachments: (1) Service List) (Malow, Jennifer)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.111.0.pdf"
+      },
       {
         "entry_number": 110,
         "date_filed": "2026-09-12",
